@@ -1,31 +1,33 @@
 # acta-agentes
 
-Repositório que serve de "casa" para os agentes de inteligência de mercado e prospecção da Acta Robotics, executados via **Claude Code Routines (modo Remote/nuvem)**.
+Repositório-casa dos agentes de inteligência e prospecção da Acta Robotics.
 
-## Para que serve
-
-A cada execução da rotina, a nuvem da Anthropic **clona este repositório** e disponibiliza os arquivos abaixo ao agente. Eles contêm a identidade, as regras e os dados de referência que o agente usa para produzir o briefing diário.
+Este repositório existe porque as rotinas (Claude Code Routines) são repo-cêntricas:
+cada execução na nuvem clona um repositório. Aqui guardamos apenas conteúdo estável
+(o playbook do agente e os arquivos de referência), que muda raramente. Dados que
+mudam todo dia (sugestões de contato, status) ficam na planilha "Tracking Acta" no
+Google Drive, nunca aqui.
 
 ## Estrutura
 
-```
-acta-agentes/
-├── README.md          (este arquivo)
-├── SKILL.md           (playbook do agente: papel + regras + ponteiros)
-└── referencia/
-    ├── icp_acta.md        (perfis-alvo: cliente, fornecedor, parceiro)
-    ├── portfolio_acta.md  (produtos, serviços e disciplina de nomenclatura)
-    └── guardrails.md      (regras de segurança e de não-invenção)
-```
+- `SKILL.md` — playbook do agente (papel, regras inegociáveis, perfis-alvo). Versão
+  enxuta. O prompt operacional completo da rotina fica no campo de instruções da
+  própria rotina (ver `referencia/prompt_rotina.md` para a cópia de referência).
+- `referencia/icp_acta.md` — perfil de cliente, fornecedor e parceiro ideal.
+- `referencia/portfolio_acta.md` — divisões, produtos e disciplina de nomenclatura.
+- `referencia/guardrails.md` — regras de segurança e de não-invenção.
+- `referencia/prompt_rotina.md` — cópia do prompt completo que vai no campo de
+  instruções da rotina (mantida aqui para versionamento e referência).
 
-## Onde fica o prompt operacional
+## Operação
 
-O **passo a passo que roda a cada execução** fica no campo de **instruções da rotina** (na interface do Claude Code Routines), não neste repositório. Este repositório guarda apenas o **conteúdo estável** (playbook e referências). Veja o documento de arquitetura (`Arquitetura_Agentes_Acta_v1.md`, seção 5) para o prompt completo.
+A rotina "Briefing Acta" roda na nuvem da Anthropic todo dia útil às 07:00 (fuso de
+Brasília). Ela pesquisa, cruza com a planilha de rastreamento para não repetir
+contatos, e entrega um briefing diário. Nada é enviado automaticamente: o CEO revisa
+e envia tudo manualmente (e-mail pelo Titan, mensagens pelo LinkedIn) e mantém a
+planilha de rastreamento.
 
-## Regra de manutenção importante
+## Privado
 
-Routines, por padrão, só fazem push para branches com prefixo `claude/` e clonam a branch padrão (main) a cada execução. **Não use este repositório como banco de dados que muda todo dia.** Os dados diários (rastreamento de contatos) vivem na planilha **"Tracking Acta"** no Google Drive. Aqui só entra conteúdo que muda raramente.
-
-## Como atualizar
-
-Edite os arquivos de `referencia/` quando o portfólio, o perfil-alvo ou as regras mudarem (ex.: novo produto, novo setor de foco, nova trava). As mudanças passam a valer na próxima execução da rotina.
+Este repositório deve ser privado. Não contém segredos, mas também não há motivo para
+ser público.

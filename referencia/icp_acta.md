@@ -1,68 +1,68 @@
-# Perfis-alvo (ICP) — Acta Robotics
+# ICP da Acta Robotics — perfis-alvo para prospecção
 
-Referência para a descoberta de candidatos a **cliente**, **fornecedor** e **parceiro**. Use para qualificar e priorizar, e para personalizar os rascunhos com o motivo real do contato.
+Use este arquivo para qualificar candidatos. Quanto mais critérios um candidato
+satisfaz, maior a prioridade. Nunca invente dados sobre o candidato: tudo que não
+estiver em fonte pública confiável vira placeholder entre colchetes, com a fonte
+citada.
 
-## Contexto da Acta
+## Cliente ideal
 
-A Acta é fabricante e integradora nacional de robôs autônomos (AMRs). Atua hoje principalmente em **intralogística** (movimentação interna de itens fracionados em indústrias) e em **eventos promocionais**. Está em expansão para **centros logísticos** e prospecta os setores de **segurança, energia solar, óleo e gás e facilities**. Pode atuar como fabricante (robôs próprios) e como integradora turnkey (incluindo robôs de terceiros, caso a caso).
+Perfil central:
+- Indústrias médias e grandes, inovadoras, com necessidade de automação inteligente
+  para logística interna (intralogística) de itens fracionados: componentes, placas
+  eletrônicas, peças e partes até 100 kg.
+- Empresas que buscam ou estão estruturando centros logísticos automatizados (alvo de
+  expansão; exige validação do robô neste cenário).
 
-## Resultado que a Acta entrega ao cliente
+Setores adicionais de cliente:
+- Segurança patrimonial.
+- Energia solar (limpeza e monitoramento de painéis).
+- Óleo e gás.
+- Facilities.
+- Eventos promocionais (feiras, shoppings, lançamentos) — encaixe do Robertron.
 
-Aumento de eficiência operacional, redução de custos com movimentação interna, mais segurança operacional e uma experiência inovadora de automação. Liberação de pessoas de tarefas repetitivas para atividades de maior valor.
+Sinais de bom encaixe (priorizar quando presentes em fonte pública):
+- Investimento recente em automação, expansão de planta ou novo centro de distribuição.
+- Operação com alto volume de movimentação interna de pequenas cargas.
+- Dor declarada com custo, segurança ou eficiência em logística interna.
+- Postura inovadora (prêmios de inovação, parcerias com institutos de tecnologia,
+  programas de Indústria 4.0).
 
-## Diferenciais reais (usar nos rascunhos)
+## Fornecedor ideal
 
-- **Fabricação nacional** — reduz a dependência e os custos associados à importação de AMRs estrangeiros, e facilita manutenção e suporte locais. A maioria das soluções concorrentes no Brasil é importada, com pós-venda fraco.
-- **Suporte e manutenção próximos** — equipe própria, atendimento local, manutenção presencial.
-- **Customização** ao cenário e ao fluxo do cliente.
-- **IA embarcada** e navegação autônoma (LiDAR + câmera, SLAM).
-- **ROI rápido** como compromisso (sem prometer números específicos que não possam ser sustentados).
+- Fornecedores de componentes de robótica e eletrônica embarcada.
+- Sensores: LiDAR, câmeras (2D e 3D), sensores de segurança.
+- Atuadores e motores.
+- Baterias e sistemas de energia.
+- Computação embarcada.
+- Serviços de hardware e PCB relevantes para AMRs.
 
-> Não usar percentuais ou cifras de economia/ROI em primeiro contato, salvo se houver fonte/caso real para sustentar. Ver `guardrails.md`.
+Sinais de bom encaixe:
+- Presença ou representação no Brasil (reduz custo e prazo de importação).
+- Catálogo compatível com robótica móvel autônoma.
+- Disposição a parcerias técnicas ou condições para volume.
 
-## Perfil de CLIENTE ideal
+## Parceiro ideal
 
-Indústrias **médias e grandes**, inovadoras, com necessidade de **automação inteligente para logística de itens fracionados** (componentes, placas eletrônicas, peças e partes **até 100 kg**) — intralogística. Também são alvo:
+- Integradores de sistemas.
+- Institutos de tecnologia e centros de pesquisa.
+- Distribuidores e empresas com canal estabelecido nos setores-alvo.
+- Empresas que permitam à Acta atuar como fabricante e/ou integradora, inclusive em
+  modelo turnkey (a Acta integra robôs próprios e de terceiros numa solução única).
 
-- Operações de **segurança patrimonial** (patrulha/monitoramento autônomo).
-- **Energia solar** (limpeza e/ou monitoramento de painéis).
-- **Óleo e gás**.
-- **Facilities**.
-- Empresas que buscam **centros logísticos automatizados** (alvo de expansão; pode exigir validação técnica).
+Sinais de bom encaixe:
+- Carteira de clientes nos setores-alvo da Acta.
+- Complementaridade (oferecem o que a Acta não faz, e vice-versa).
+- Capacidade de co-venda ou co-desenvolvimento.
 
-Sinais de bom encaixe: alto volume de movimentação interna repetitiva; layout industrial com transporte de pequenos itens; cultura de inovação/automação; operação que valoriza suporte local; dores conhecidas com fornecedores importados.
+## Concorrentes e benchmark (referência de busca, não alvos de prospecção)
 
-## Perfil de FORNECEDOR ideal
+Use para contexto de mercado e como termos de busca, nunca como candidatos:
+- Benchmark internacional: Locus Robotics (intralogística de itens fracionados,
+  pallets e estantes).
+- Concorrentes nacionais: Automni, Human Robotics, Synkar, Instor.
 
-Fornecedores de componentes e insumos para robótica e eletrônica embarcada:
+## Calibração sazonal
 
-- Sensores: **LiDAR**, câmeras 2D/3D.
-- Atuadores, motores, rodas/rodízios.
-- **Baterias** e gestão de energia.
-- **Computação embarcada**.
-- Serviços de **hardware/PCB** e eletrônica.
-- Componentes mecânicos e estruturais relevantes para AMRs.
-
-Sinais de bom encaixe: capacidade de fornecer ao mercado brasileiro com prazo competitivo; qualidade e rastreabilidade; abertura a parceria de longo prazo.
-
-## Perfil de PARCEIRO ideal
-
-- **Integradores de sistemas** com presença nos setores-alvo.
-- **Institutos de tecnologia** e centros de P&D.
-- **Distribuidores** e empresas com **canal** nos setores-alvo (logística, segurança, solar, óleo e gás, facilities).
-- Empresas que permitam à Acta atuar no **modelo turnkey** (a Acta integra robôs próprios e/ou de terceiros).
-
-Sinais de bom encaixe: complementaridade (não concorrência direta); base de clientes nos setores-alvo; interesse em oferta conjunta.
-
-## Concorrentes e benchmark (referência de busca — não são alvos de prospecção)
-
-- Nacionais: **Automni**, **Human Robotics**, **Synkar**, **Instor**.
-- Benchmark internacional: **Locus Robotics**.
-
-Use-os como referência para monitorar o mercado e calibrar buscas, **não** como limite — o escopo de inteligência é global (ver prompt da rotina). Não prospectar concorrentes como clientes.
-
-## O que NÃO mirar / cuidados
-
-- Não prospecte concorrentes diretos como clientes.
-- Não sugira contatos já presentes na planilha "Tracking Acta" ou em briefings anteriores (ver regra de deduplicação no prompt da rotina).
-- Cuidado com homônimos e empresas de mesmo nome em regiões diferentes — confirme pela fonte antes de sugerir.
+Quando o CEO quiser focar um setor por uma temporada (ex.: solar por 30 dias),
+acrescente uma linha de prioridade no prompt da rotina indicando o foco e o período.

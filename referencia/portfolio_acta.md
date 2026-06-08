@@ -1,50 +1,52 @@
-# Portfólio e disciplina de nomenclatura — Acta Robotics
+# Portfólio e nomenclatura da Acta Robotics
 
-Referência para redigir rascunhos. **Escolha apenas o que for relevante para o setor do candidato** — não despeje o portfólio inteiro em um primeiro contato.
+Use os nomes externos corretos em qualquer conteúdo voltado ao mercado (notícias,
+rascunhos de e-mail e LinkedIn, briefing). Em caso de dúvida sobre divulgar um
+detalhe técnico interno, omita.
 
-## Produtos e linhas (nomes externos)
+## Estrutura por divisões (nomes externos)
 
-| Nome (externo) | O que é | Uso / setor |
-|---|---|---|
-| **Kappabot K100** | AMR para transporte de itens fracionados até 100 kg. Navegação por LiDAR + câmera, SLAM, operação interna. | Intralogística industrial |
-| **Robertron** | Robô de interação com o público; tela de 50", áudio e câmera para detecção de faces. | Eventos, feiras, varejo, ações promocionais |
-| **9fleet** | Plataforma de gestão de frota de robôs (vendor-agnostic). | Operações com múltiplos robôs; integradores |
-| **Roboteazy** | Modelo turnkey de operações robotizadas, agnóstico de fabricante (a Acta integra robôs próprios e de terceiros). | Smart building, smart hospital, mini centros de distribuição |
-| Robô de segurança (patrulha autônoma) | Robô autônomo para patrulha/monitoramento. Recursos de visão descritos apenas como "reconhecimento facial". | Segurança patrimonial |
-| **STREAM** | Robô anfíbio resistente a cloro/sal/UV. | Amostragem/monitoramento ambiental, aquático |
-| **k.flexstore** | Sistema automatizado de armazenagem e dispensação vertical (standalone; integração com AMR opcional). | Armazenagem |
-| **K.LAB** | Plataforma modular de laboratório de diagnóstico. | Saúde/diagnóstico |
-| **K.TWIN / K.SCAN** | Gêmeo digital / escaneamento 3D de ambientes. | Serviço de mapeamento 3D / digital twin |
+A Acta organiza sua oferta em cinco divisões:
 
-## Serviços
+- **Kappabot** — divisão de robôs autônomos desenvolvidos pela Acta. Inclui o robô
+  móvel autônomo (AMR) para transporte de itens fracionados até 100 kg e o robô de
+  interação com público para eventos.
+- **Roboteazy** — divisão de serviços: consultoria, integração, manutenção e suporte
+  de robôs de qualquer marca.
+- **9fleet** — software de gestão de frotas, capaz de gerenciar múltiplos robôs de
+  qualquer tipo desenvolvido pela Acta.
+- **Robot Forge** — divisão de capacitação em robótica, loja e desenvolvimento de
+  projetos customizados.
+- **AEX** — centro de exposição e laboratório de robôs, focado em promover negócios
+  de robótica e áreas correlatas.
 
-- **Mapeamento** — escaneamento do ambiente (LiDAR) e geração de planta para navegação dos robôs.
-- **Implantação** — configuração e ajuste do robô para operar com robustez no ambiente do cliente.
-- **Integração** — do simples (tablets que comandam o robô) ao avançado (integração com ERP/WMS).
-- **Manutenção** — atualizações, suporte remoto e visita técnica periódica.
+## Produtos e serviços (para ancorar rascunhos)
 
-## Disciplina de nomenclatura (obrigatória)
+Diferenciais reais da Acta a usar nos rascunhos (sem prometer números não
+sustentáveis e sem inventar cases):
+- Fabricação nacional, que reduz custo e facilita manutenção.
+- Suporte técnico próximo e manutenção local (contraste com soluções importadas com
+  pós-venda fraco).
+- Customização ao cenário do cliente.
+- IA embarcada.
+- ROI rápido.
 
-| Use sempre (externo) | Nunca use externamente |
-|---|---|
-| **9fleet** | "K.FLEET" (nome interno/técnico) |
-| **Roboteazy** | "K.CONCEPT" (codinome interno) |
-| "reconhecimento facial" (para a visão do robô de segurança) | O **nome do provedor de visão computacional** — nunca citar |
+Capacidades e serviços que podem ser citados conforme o encaixe do candidato:
+- Robô móvel autônomo para transporte de itens fracionados até 100 kg, com navegação
+  por LiDAR e câmera 3D para mapeamento e detecção de obstáculos.
+- Robô de interação para eventos, com tela grande, comunicação por voz e software de
+  reconhecimento facial (ver regra de nomenclatura abaixo).
+- Serviços: mapeamento de ambiente, implantação (configuração no ambiente do cliente),
+  integração (de tablets até ERP/WMS) e manutenção (atualizações, suporte remoto e
+  visita mensal).
+- Gestão de múltiplos robôs (frota).
 
-Observações:
-- "RobotForge" e "K.FORGE" ambos circulam conforme o contexto (linha de cursos/seminários e loja de robôs/componentes). Em material externo, prefira "RobotForge".
-- O robô de segurança e seu nome de produto interno **não** devem ser detalhados em primeiro contato; posicione como "robô de patrulha/segurança autônomo".
+## Disciplina de nomenclatura (regras rígidas)
 
-## O que pode e o que NÃO pode aparecer em primeiro contato
-
-**Pode:**
-- Descrição do que o robô/serviço faz e do benefício para o setor do candidato.
-- Diferenciais reais (fabricação nacional, suporte/manutenção local, customização, IA embarcada, ROI rápido — sem cifras não sustentáveis).
-- Proposta de uma conversa curta.
-
-**Não pode:**
-- **Preços** (mantê-los fora do primeiro contato).
-- Cifras/percentuais de economia ou ROI sem fonte/caso real.
-- Nome do provedor de visão computacional.
-- Detalhes técnicos internos sensíveis. Em dúvida, omitir.
-- Cases ou clientes inventados.
+1. Use SEMPRE os nomes externos das divisões e produtos: "9fleet" e "Roboteazy".
+   NÃO use nomes internos de projeto em conteúdo externo (por exemplo, não use
+   "K.FLEET" no lugar de "9fleet", nem "K.CONCEPT" no lugar de "Roboteazy").
+2. NUNCA cite pelo nome o fornecedor de visão computacional do robô de interação /
+   segurança. Refira-se apenas a "software de reconhecimento facial".
+3. Em dúvida sobre divulgar um detalhe técnico interno (arquitetura, fornecedor,
+   especificação não pública), omita.
