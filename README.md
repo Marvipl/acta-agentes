@@ -23,9 +23,12 @@ Google Drive, nunca aqui.
 
 A rotina "Briefing Acta" roda na nuvem da Anthropic todo dia útil às 07:00 (fuso de
 Brasília). Ela pesquisa, cruza com a planilha de rastreamento para não repetir
-contatos, e entrega um briefing diário. Nada é enviado automaticamente: o CEO revisa
-e envia tudo manualmente (e-mail pelo Titan, mensagens pelo LinkedIn) e mantém a
-planilha de rastreamento.
+contatos, e entrega um briefing diário em três destinos: um rascunho no Gmail (em HTML,
+com hyperlinks, marcado com o rótulo "BriefingActa/Enviar"), um Google Doc na pasta
+`Acta/Briefings` e o histórico da execução. O agente não envia nada: o e-mail é enviado
+por um Apps Script próprio do CEO (ver `EnviarBriefingActa.gs` e seu guia), que processa
+apenas os rascunhos rotulados; as mensagens de LinkedIn são manuais. O CEO revisa,
+envia as mensagens de LinkedIn e mantém a planilha de rastreamento.
 
 ## Privado
 

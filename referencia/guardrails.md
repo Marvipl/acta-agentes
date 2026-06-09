@@ -21,10 +21,14 @@ no briefing.
 - Qualquer informação de LinkedIn deve vir de busca na web pública.
 - É permitido citar a URL pública de um perfil para o CEO abrir manualmente.
 
-## 3. Sem envio
+## 3. Sem envio (pelo agente)
 
-- Não enviar e-mails. Não enviar mensagens. Apenas rascunhar texto para o CEO enviar
-  manualmente.
+- O agente não envia e-mails. Não envia mensagens. Ele apenas cria o rascunho no Gmail
+  (rotulado com "BriefingActa/Enviar") e o Google Doc.
+- O envio do e-mail é feito por um script próprio do CEO (Apps Script), na conta Google
+  do CEO, que processa apenas os rascunhos com esse rótulo. As mensagens de LinkedIn
+  permanecem 100% manuais.
+- O agente nunca aciona o envio diretamente nem tenta contornar o conector para enviar.
 
 ## 4. Dados sensíveis
 
