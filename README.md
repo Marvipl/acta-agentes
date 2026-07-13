@@ -7,7 +7,7 @@ cada execução na nuvem clona um repositório. Aqui guardamos apenas conteúdo 
 (playbooks dos agentes e arquivos de referência), que muda raramente. Dados que mudam
 todo dia (sugestões de contato, status, briefings) ficam no Google Drive, nunca aqui.
 
-## Os dois agentes (v3)
+## Os tres agentes (v3)
 
 A solução foi separada em DOIS agentes especializados, cada um em sua própria rotina
 Remote:
@@ -21,6 +21,17 @@ Remote:
    de contato. Prompt: `referencia/prompt_agente_prospeccao.md`. Entrega na pasta
    `Acta/Prospeccao`, rótulo de e-mail "ProspeccaoActa/Enviar". Usa a planilha
    `Tracking Acta` para deduplicação.
+
+3. AGENTE DE PAUTA ("Pauta Staff Acta") — coleta e consolidação da pauta da
+   reunião semanal de Staff C-Level. DUAS rotinas Remote: segunda 09:00 posta
+   a coleta de pauta adicional no canal do Slack
+   (prompt: `referencia/prompt_agente_pauta_coleta.md`); terça 09:00 consolida
+   as respostas da thread (cutoff segunda 23:59), carrega as pendências do
+   arquivo da última reunião (validado pelo conteúdo, não pelo nome) e publica
+   o DOCX no canal (prompt: `referencia/prompt_agente_pauta_consolida.md`).
+   Playbook, scripts e template em `pauta-staff/`. Variáveis de ambiente das
+   rotinas: SLACK_BOT_TOKEN e SLACK_CHANNEL_ID. Entrega no Slack — não usa
+   Drive nem o fluxo de rascunhos do Gmail.
 
 ## Estrutura
 
