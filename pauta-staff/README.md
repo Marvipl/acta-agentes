@@ -28,7 +28,7 @@ pauta-staff/
 ## Pré-requisitos
 
 1. **App do Slack** (já feito na Etapa 1): bot scopes `chat:write`, `channels:history`, `files:read`, `files:write` (`groups:history` se o canal for privado); bot convidado ao canal.
-2. **Credenciais**: `SLACK_BOT_TOKEN` (xoxb-...) e `SLACK_CHANNEL_ID` são exportados no início da INSTRUÇÃO de cada rotina (os prompts em `referencia/` têm placeholders — os valores reais são colados apenas no formulário da rotina no claude.ai, nunca commitados neste repo). Se a sua conta tiver a opção de Environments/ambiente de nuvem nas rotinas, prefira colocá-los lá com acesso de rede liberado para slack.com e files.slack.com.
+2. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...) e `SLACK_CHANNEL_ID`; acesso de rede Custom com `slack.com` e `files.slack.com` nos domínios permitidos (mantendo a lista padrão de gerenciadores de pacotes); script de configuração vazio. Nenhum segredo na instrução ou no repo.
 3. Ferramentas no ambiente de execução: `curl`, `jq`, `python3` (padrão nas sessões do Claude Code).
 
 ## Teste local (faça antes de agendar)

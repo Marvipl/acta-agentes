@@ -26,29 +26,35 @@ set -euo pipefail
 API="https://slack.com/api"
 AUTH=(-H "Authorization: Bearer ${SLACK_BOT_TOKEN}")
 
-_checa() { # falha com mensagem clara se ok=false
+_checa() { # falha com mensagem clara se ok=false ou resposta vazia (rede)
   local resp="$1"
-  if [ "$(echo "$resp" | jq -r .ok)" != "true" ]; then
-    echo "ERRO Slack: $(echo "$resp" | jq -r .error)" >&2
+  if [ -z "$resp" ]; then
+    echo "ERRO Slack: resposta vazia — provavel bloqueio de rede para slack.com" >&2
+    exit 2
+  fi
+  if [ "$(echo "$resp" | jq -r .ok 2>/dev/null)" != "true" ]; then
+    echo "ERRO Slack: $(echo "$resp" | jq -r .error 2>/dev/null)" >&2
     exit 1
   fi
 }
 
 
 testar() {
-  # diagnóstico: rede + token. Distingue bloqueio de rede (403/host_not_allowed)
-  # de token inválido (ok=false, invalid_auth).
-  local http resp
+  # diagnóstico: rede + token. Distingue bloqueio de rede (curl falha, 000, 403,
+  # x-deny-reason: host_not_allowed) de token inválido (ok=false, invalid_auth).
+  local http="000" resp
+  rm -f /tmp/slack_test.json
   http=$(curl -s -o /tmp/slack_test.json -w "%{http_code}" \
-    "${AUTH[@]}" "$API/auth.test" || echo "000")
-  if [ "$http" = "000" ] || [ "$http" = "403" ]; then
-    echo "FALHA DE REDE (HTTP $http): o ambiente provavelmente bloqueia slack.com." >&2
-    echo "Verifique o transcript por x-deny-reason: host_not_allowed." >&2
+    "${AUTH[@]}" "$API/auth.test") || true
+  if [ ! -s /tmp/slack_test.json ] || [ "$http" = "000" ] || [ "$http" = "403" ]; then
+    echo "FALHA DE REDE (HTTP $http): nao foi possivel alcancar slack.com." >&2
+    echo "O ambiente desta execucao esta bloqueando o dominio (procure por" >&2
+    echo "x-deny-reason: host_not_allowed). Nao e problema de token." >&2
     exit 2
   fi
   resp=$(cat /tmp/slack_test.json)
-  if [ "$(echo "$resp" | jq -r .ok)" != "true" ]; then
-    echo "TOKEN INVALIDO: $(echo "$resp" | jq -r .error)" >&2
+  if [ "$(echo "$resp" | jq -r .ok 2>/dev/null)" != "true" ]; then
+    echo "TOKEN INVALIDO: $(echo "$resp" | jq -r .error 2>/dev/null)" >&2
     exit 1
   fi
   echo "OK: conectado como $(echo "$resp" | jq -r .user) no workspace $(echo "$resp" | jq -r .team)"

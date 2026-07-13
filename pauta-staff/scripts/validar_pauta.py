@@ -17,7 +17,10 @@ Saída: JSON em stdout, ex.:
 Exit code 0 se válido, 2 se inválido, 1 se erro de leitura.
 
 Uso:
-    python3 scripts/validar_pauta.py arquivo.docx
+    python3 scripts/validar_pauta.py arquivo.docx [--tipo staff|conselho]
+
+--tipo staff (padrao): titulo deve conter STAFF ou C-LEVEL.
+--tipo conselho: titulo deve conter CONSELHO.
 """
 import json
 import re
@@ -60,7 +63,7 @@ def extrai_data(texto):
     return None, None
 
 
-def main(path):
+def main(path, tipo="staff"):
     try:
         with zipfile.ZipFile(path) as z:
             xml = z.read('word/document.xml').decode('utf-8')
@@ -78,7 +81,11 @@ def main(path):
         if el.startswith('<w:tbl>'):
             break
         t = normaliza(texto_paragrafo(el))
-        if 'STAFF' in t or 'CLEVEL' in t:
+        if tipo == 'conselho':
+            if 'CONSELHO' in t:
+                titulo_ok = True
+                break
+        elif 'STAFF' in t or 'CLEVEL' in t:
             titulo_ok = True
             break
 
@@ -99,7 +106,8 @@ def main(path):
     valido = titulo_ok and data_iso is not None
     motivo = None
     if not titulo_ok:
-        motivo = 'titulo nao contem STAFF/C-LEVEL'
+        motivo = ('titulo nao contem CONSELHO' if tipo == 'conselho'
+                  else 'titulo nao contem STAFF/C-LEVEL')
     elif not data_iso:
         motivo = 'linha Data nao encontrada ou data nao interpretavel'
 
@@ -110,7 +118,12 @@ def main(path):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    tipo = 'staff'
+    if '--tipo' in sys.argv:
+        tipo = sys.argv[sys.argv.index('--tipo') + 1]
+        args = [a for a in args if a != tipo]
+    if len(args) != 1 or tipo not in ('staff', 'conselho'):
         print(__doc__)
         sys.exit(1)
-    sys.exit(main(sys.argv[1]))
+    sys.exit(main(args[0], tipo))

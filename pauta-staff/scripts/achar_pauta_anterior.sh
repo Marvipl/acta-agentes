@@ -4,11 +4,12 @@
 # e não apenas pelo nome ou pela ordem de upload.
 #
 # Uso:
-#   ./scripts/achar_pauta_anterior.sh [ANTES_DE_ISO] [DESTINO]
+#   ./scripts/achar_pauta_anterior.sh [ANTES_DE_ISO] [DESTINO] [TIPO]
 #     ANTES_DE_ISO  limite superior exclusivo para a data interna (padrão: hoje+1).
 #                   Na rotina de terça, passe a data da PRÓXIMA quarta para
 #                   garantir que a pauta desta semana (se existir) seja ignorada.
 #     DESTINO       caminho do arquivo baixado (padrão: /tmp/pauta_anterior.docx)
+#     TIPO          staff (padrão) ou conselho — critério de validação do título
 #
 # Saída (stdout): JSON {"path", "name", "data_iso", "data_texto"} do escolhido.
 # Exit 3 se nenhum candidato válido for encontrado.
@@ -17,6 +18,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 ANTES_DE="${1:-$(python3 -c "import datetime;print((datetime.date.today()+datetime.timedelta(days=1)).isoformat())")}"
 DESTINO="${2:-/tmp/pauta_anterior.docx}"
+TIPO="${3:-staff}"
 
 melhor_json=""
 melhor_data=""
@@ -35,7 +37,7 @@ for i in $(seq 0 $((n-1))); do
     echo "AVISO: falha ao baixar $name — pulando" >&2
     continue
   fi
-  v=$(python3 "$DIR/validar_pauta.py" "$tmp" || true)
+  v=$(python3 "$DIR/validar_pauta.py" "$tmp" --tipo "$TIPO" || true)
   valido=$(echo "$v" | jq -r '.valido')
   data=$(echo "$v" | jq -r '.data_iso // empty')
   if [ "$valido" != "true" ]; then
@@ -56,5 +58,5 @@ for i in $(seq 0 $((n-1))); do
   rm -f "$tmp"
 done
 
-[ -z "$melhor_json" ] && { echo "Nenhuma pauta/ata de Staff valida encontrada" >&2; exit 3; }
+[ -z "$melhor_json" ] && { echo "Nenhuma pauta/ata valida do tipo $TIPO encontrada" >&2; exit 3; }
 echo "$melhor_json"

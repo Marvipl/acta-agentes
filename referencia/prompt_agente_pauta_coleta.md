@@ -1,26 +1,22 @@
 # Prompt — Agente de Pauta / Rotina 1: Coleta (segunda-feira 09:00)
 
 > Rotina Remote semanal. Repositório: acta-agentes. Fuso: America/Sao_Paulo.
->
-> ATENÇÃO — este arquivo commitado contém PLACEHOLDERS. Ao criar a rotina no
-> claude.ai, cole o texto abaixo no campo de instrução e SUBSTITUA os
-> placeholders pelos valores reais. Nunca commite o token neste repositório.
+> Requer, no ambiente de nuvem da rotina: variáveis SLACK_BOT_TOKEN e
+> SLACK_CHANNEL_ID, e acesso de rede liberado para slack.com e files.slack.com.
+> Nenhum segredo neste arquivo ou na instrução.
 
 ---
 
-Configuração (execute antes de qualquer outra coisa):
+Preparação: chmod +x pauta-staff/scripts/*.sh
 
-    export SLACK_BOT_TOKEN="<COLE_AQUI_O_TOKEN_XOXB>"
-    export SLACK_CHANNEL_ID="<COLE_AQUI_O_ID_DO_CANAL>"
-    chmod +x pauta-staff/scripts/*.sh
-
-Passo 0 — Diagnóstico: rode `pauta-staff/scripts/slack.sh testar`.
-- Se falhar com "FALHA DE REDE", pare imediatamente e reporte que o ambiente
-  da rotina está bloqueando slack.com (não é problema de token).
+Passo 0 — Diagnóstico: rode pauta-staff/scripts/slack.sh testar
+- Se falhar com "FALHA DE REDE", pare e reporte que o ambiente da rotina está
+  bloqueando slack.com (adicionar slack.com e files.slack.com aos domínios
+  permitidos do ambiente). Não é problema de token.
 - Se falhar com "TOKEN INVALIDO", pare e reporte o erro exato.
 
 Passo 1 — Poste no canal a seguinte mensagem, sem alterações, usando
-`pauta-staff/scripts/slack.sh postar`:
+pauta-staff/scripts/slack.sh postar:
 
 "Bom dia! Coleta de pauta adicional para a Reunião de Staff C-Level de
 quarta-feira. Respondam NESTA THREAD até hoje às 23:59 com os itens que querem

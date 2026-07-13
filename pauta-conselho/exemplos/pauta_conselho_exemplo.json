@@ -1,0 +1,78 @@
+{
+  "titulo": "PAUTA DE REUNIÃO",
+  "subtitulo": "CONSELHO CONSULTIVO",
+  "info": [
+    ["Reunião", "Reunião Ordinária do Conselho Consultivo"],
+    ["Data", "[ __ ] / 08 / 2026"],
+    ["Horário", "[15h às 17h]"],
+    ["Local / Formato", "(    ) Presencial    (    ) Remoto"],
+    ["Secretariado por", "Diego Nunes"]
+  ],
+  "participantes": [
+    ["Marcus Lima", "CEO"],
+    ["Vinicius Bastos", "CTO"],
+    ["Renato Correa", "CFO"],
+    ["Diego Nunes", "Secretário"],
+    ["Menotti Franceschini", "Conselheiro externo"],
+    ["Julio Oliveira", "Conselheiro externo"],
+    ["Erick Sighn", "S2 Investimentos"]
+  ],
+  "secoes": [
+    {
+      "titulo": "1. Pendências da Reunião Anterior (22/07/2026)",
+      "nota": "Follow-up das ações definidas na última reunião do Conselho.",
+      "bullets": [
+        [["[Ação da tabela de Próximos Passos] ([Responsável]): ", true], ["status a reportar.", false]]
+      ]
+    },
+    {
+      "titulo": "2. Status dos Projetos",
+      "blocos": [
+        {
+          "subtitulo": "ANP / STREAM",
+          "bullets": ["[consolidado das atas de staff do período]"]
+        }
+      ]
+    },
+    {
+      "titulo": "3. Pipeline Comercial",
+      "bullets": [
+        [["Funil Acta: ", true], ["[valor mais recente das atas de staff].", false]],
+        [["Funil JV-S2: ", true], ["[valor mais recente das atas de staff].", false]]
+      ]
+    },
+    {
+      "titulo": "4. Captação e Estrutura Societária",
+      "bullets": ["[consolidado das atas de staff do período]"]
+    },
+    {
+      "titulo": "5. Parcerias Estratégicas e Novos Negócios",
+      "bullets": ["[consolidado das atas de staff do período]"]
+    },
+    {
+      "titulo": "6. Financeiro e Caixa",
+      "bullets": ["Caixa: [a apresentar pelo CFO]."]
+    },
+    {
+      "titulo": "7. Pauta Adicional",
+      "nota": "Itens enviados pelo time (thread de coleta e menções a conselho no canal).",
+      "bullets": ["[Nome]: [item adicional]."]
+    }
+  ],
+  "plano_acao": {
+    "titulo": "8. Próximos Passos",
+    "nota": "Ações a definir na reunião, com responsáveis e prazos.",
+    "linhas": [],
+    "linhas_vazias": 5,
+    "quebra_pagina": true
+  },
+  "encerramento": "Nada mais havendo a tratar, a reunião foi encerrada e a presente ata lavrada para registro e aprovação dos membros do Conselho Consultivo da Acta Robotics.",
+  "assinaturas": [
+    ["Marcus Lima", "CEO"],
+    ["Vinicius Bastos", "CTO"],
+    ["Renato Correa", "CFO"],
+    ["Menotti Franceschini", "Conselheiro externo"],
+    ["Julio Oliveira", "Conselheiro externo"],
+    ["Erick Sighn", "S2 Investimentos"]
+  ]
+}
