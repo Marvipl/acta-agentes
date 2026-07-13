@@ -1,0 +1,62 @@
+{
+  "titulo": "PAUTA DE REUNIÃO",
+  "subtitulo": "STAFF C-LEVEL",
+  "footer_data": "15/07/2026",
+  "info": [
+    ["Reunião", "Reunião de Staff C-Level"],
+    ["Data", "15 de julho de 2026"],
+    ["Formato", "Staff — alinhamento semanal"],
+    ["Secretariado por", "[a definir]"]
+  ],
+  "participantes": [
+    ["Marcus Lima", "CEO"],
+    ["Renato Correa", "CFO"],
+    ["Vinicius Bastos", "CTO"],
+    ["Diego Nunes", "Gestor de Finanças"]
+  ],
+  "secoes": [
+    {
+      "titulo": "1. Pendências da Semana Anterior",
+      "nota": "Follow-up das ações da reunião anterior.",
+      "pendencias": [
+        ["Vinicius", "1 Kappabot disponível", "3ª semana de julho"],
+        ["Marcus", "Revisar processo de orçamentos", "13/07/2026"],
+        ["Renato", "Verificar erro no Stratum (Novos Produtos e Projetos)", "13/07/2026"],
+        ["Marcus", "Checar faturamento das 2 parcelas de 30k HBR — resolver minuta", "15/07/2026"]
+      ]
+    },
+    {
+      "titulo": "2. Projetos",
+      "bullets": ["Apresentação de status semanal de projetos."]
+    },
+    {
+      "titulo": "3. Comercial",
+      "bullets": ["Apresentação de status das ações comerciais."]
+    },
+    {
+      "titulo": "4. Financeiro",
+      "bullets": ["Apresentação de status do financeiro."]
+    },
+    {
+      "titulo": "5. Pauta Adicional",
+      "nota": "Itens enviados pelo time na thread de coleta.",
+      "bullets": [
+        "[Nome]: [item adicional de exemplo]."
+      ]
+    }
+  ],
+  "plano_acao": {
+    "titulo": "6. Plano de Ação",
+    "nota": "Próximos passos definidos na reunião, com responsáveis e prazos.",
+    "linhas": [],
+    "linhas_vazias": 5,
+    "quebra_pagina": false
+  },
+  "encerramento": "Nada mais havendo a tratar, a reunião foi encerrada e a presente ata lavrada para registro e aprovação do Staff C-Level da Acta Robotics.",
+  "assinaturas": [
+    ["Marcus Lima", "CEO"],
+    ["Renato Correa", "CFO"],
+    ["Vinicius Bastos", "CTO"],
+    ["Diego Nunes", "Gestor de Finanças"]
+  ]
+}
