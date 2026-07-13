@@ -117,8 +117,10 @@ Nunca imprima o valor do token.
 4. **Montagem**: escreva o JSON de conteudo (esquema no cabecalho de
    `pauta-staff/scripts/gerar_pauta.py`; exemplo em
    `pauta-conselho/exemplos/pauta_conselho_exemplo.json`). `footer_data` =
-   "[__]/MM/AAAA" nao e aceito pelo rodape — use a data placeholder do primeiro
-   dia util previsto ou omita `footer_data` para manter o rodape do template.
+   data de emissao da minuta (a propria terca-feira, formato dd/mm/aaaa). O
+   rodape passa a registrar quando a minuta foi gerada — a data da REUNIAO
+   permanece placeholder no corpo, e o time a preenche (corpo e rodape) na
+   versao final.
 5. **Geracao**: `python3 pauta-staff/scripts/gerar_pauta.py --template
    pauta-conselho/templates/Template_Pauta_Conselho.docx --json /tmp/conteudo.json
    --out /tmp/Pauta_Conselho_AAAA-MM.docx` (ano-mes da reuniao no nome).
