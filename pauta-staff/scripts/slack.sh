@@ -8,6 +8,7 @@
 # Requer: curl, jq, python3
 #
 # Uso:
+#   ./scripts/slack.sh testar                            # diagnostico de rede + token
 #   ./scripts/slack.sh postar "texto da mensagem" [thread_ts]
 #   ./scripts/slack.sh historico [oldest_ts] [latest_ts]
 #   ./scripts/slack.sh respostas <thread_ts>
@@ -31,6 +32,26 @@ _checa() { # falha com mensagem clara se ok=false
     echo "ERRO Slack: $(echo "$resp" | jq -r .error)" >&2
     exit 1
   fi
+}
+
+
+testar() {
+  # diagnóstico: rede + token. Distingue bloqueio de rede (403/host_not_allowed)
+  # de token inválido (ok=false, invalid_auth).
+  local http resp
+  http=$(curl -s -o /tmp/slack_test.json -w "%{http_code}" \
+    "${AUTH[@]}" "$API/auth.test" || echo "000")
+  if [ "$http" = "000" ] || [ "$http" = "403" ]; then
+    echo "FALHA DE REDE (HTTP $http): o ambiente provavelmente bloqueia slack.com." >&2
+    echo "Verifique o transcript por x-deny-reason: host_not_allowed." >&2
+    exit 2
+  fi
+  resp=$(cat /tmp/slack_test.json)
+  if [ "$(echo "$resp" | jq -r .ok)" != "true" ]; then
+    echo "TOKEN INVALIDO: $(echo "$resp" | jq -r .error)" >&2
+    exit 1
+  fi
+  echo "OK: conectado como $(echo "$resp" | jq -r .user) no workspace $(echo "$resp" | jq -r .team)"
 }
 
 postar() {
@@ -142,6 +163,7 @@ PY
 
 cmd="${1:-}"; shift || true
 case "$cmd" in
+  testar)                testar ;;
   postar)                postar "$@" ;;
   historico)             historico "$@" ;;
   respostas)             respostas "$@" ;;

@@ -90,8 +90,10 @@ de projetos").
 
 ## Fluxo de execucao (rotina de terca-feira 9h)
 
-Pre-requisitos no ambiente: `SLACK_BOT_TOKEN`, `SLACK_CHANNEL_ID`, `curl`,
-`jq`, `python3`.
+Pre-requisitos: variaveis `SLACK_BOT_TOKEN` e `SLACK_CHANNEL_ID` exportadas
+(a instrucao da rotina faz o export antes de chamar este fluxo), e as
+ferramentas `curl`, `jq`, `python3`. Rode `pauta-staff/scripts/slack.sh testar`
+antes de qualquer outro passo. Nunca imprima o valor do token.
 
 1. **Janela de coleta**: calcule segunda-feira desta semana 09:00 e 23:59
    (America/Sao_Paulo) e converta para epoch com
