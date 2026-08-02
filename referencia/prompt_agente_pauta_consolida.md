@@ -1,11 +1,12 @@
 # Prompt — Agente de Pauta / Rotina 2: Consolidação (terça-feira 09:00)
 
 > Rotina Remote semanal. Repositório: acta-agentes. Fuso: America/Sao_Paulo.
-> Requer, no ambiente de nuvem da rotina: variáveis SLACK_BOT_TOKEN e
-> SLACK_CHANNEL_ID (e, opcional, SLACK_DM_USER_IDS — IDs U... separados por
-> vírgula, ou "canal" para todos os membros humanos do canal — para envio da
-> pauta também por DM), e acesso de rede liberado para slack.com e
-> files.slack.com. Nenhum segredo neste arquivo ou na instrução.
+> Requer, no ambiente de nuvem da rotina: variáveis SLACK_BOT_TOKEN,
+> SLACK_CHANNEL_ID e SLACK_LIST_ID (lista de pendências); opcional
+> SLACK_DM_USER_IDS — IDs U... separados por vírgula, ou "canal" para todos os
+> membros humanos do canal — para envio da pauta também por DM. Acesso de rede
+> liberado para slack.com e files.slack.com. Nenhum segredo neste arquivo ou
+> na instrução.
 
 ---
 
@@ -28,18 +29,19 @@ Resumo do fluxo (a referência completa é o SKILL.md):
    pauta-staff/scripts/achar_pauta_anterior.sh (validação pelo CONTEÚDO —
    título Staff/C-Level + data interna — nunca pelo nome do arquivo), passando
    a data da próxima quarta-feira como limite.
-3. Extrair do arquivo APENAS as tabelas de pendências e de plano de ação
-   (ignorando a coluna Update, se existir).
-4. Coletar os updates de pendências: localizar as mensagens do bot de ontem
-   iniciadas com "Update de pendencia (" e ler a thread de cada uma (cutoff
-   segunda 23:59). Cada pendência entra na pauta com seu update na coluna
-   Update ("—" se ninguém respondeu).
+3. Sincronizar o Plano de Ação da última ata com a lista de pendências:
+   criar na lista (slack.sh lista_criar_item, status aberto) as ações que
+   ainda não existem nela. Nunca duplicar nem alterar itens existentes.
+4. Ler a lista (slack.sh lista_itens) e montar o resumo da seção 1 da pauta:
+   contagens por status e responsáveis sem atualização — sem tabela de
+   pendências no documento; a lista é a fonte única.
 5. Gerar o DOCX com pauta-staff/scripts/gerar_pauta.py sobre o template oficial.
    Seções Projetos, Comercial e Financeiro sempre com o texto genérico fixo;
    seção Pauta Adicional somente se houver itens coletados.
 6. Verificar o arquivo gerado com pauta-staff/scripts/ler_docx.py antes de
    publicar. Nunca publicar sem essa verificação.
-7. Publicar no canal com pauta-staff/scripts/slack.sh enviar_arquivo.
+7. Publicar no canal com pauta-staff/scripts/slack.sh enviar_arquivo, com o
+   link da lista (slack.sh lista_url) no comentário.
 8. Se SLACK_DM_USER_IDS estiver definida, enviar o mesmo arquivo por mensagem
    individual a cada ID com pauta-staff/scripts/slack.sh dm_arquivo (mesmo
    comentário da publicação). Falha em uma DM não invalida a publicação no

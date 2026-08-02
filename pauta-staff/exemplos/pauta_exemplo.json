@@ -17,12 +17,10 @@
   "secoes": [
     {
       "titulo": "1. Pendências da Semana Anterior",
-      "nota": "Follow-up das ações da reunião anterior. Updates enviados pelo time no Slack; itens sem update serão tratados na reunião.",
-      "pendencias": [
-        ["Vinicius", "1 Kappabot disponível", "3ª semana de julho", "Montagem concluída; em testes finais, disponível na sexta."],
-        ["Marcus", "Revisar processo de orçamentos", "13/07/2026", "Revisado com o comercial; proposta de novo fluxo na reunião."],
-        ["Renato", "Verificar erro no Stratum (Novos Produtos e Projetos)", "13/07/2026", "—"],
-        ["Marcus", "Checar faturamento das 2 parcelas de 30k HBR — resolver minuta", "15/07/2026", "Minuta resolvida; faturamento agendado."]
+      "nota": "As pendências são acompanhadas na lista 'Pendências — Staff C-Level' do Slack; verificação item a item direto na lista.",
+      "bullets": [
+        [["Resumo da lista: ", true], ["12 em aberto, 5 em andamento, 3 concluídas.", false]],
+        [["Sem atualização desde a semana passada: ", true], ["Marcus (2 itens), Vinicius (1 item).", false]]
       ]
     },
     {

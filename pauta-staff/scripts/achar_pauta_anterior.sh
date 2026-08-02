@@ -44,7 +44,7 @@ for i in $(seq 0 $((n-1))); do
     echo "descartado: $name ($(echo "$v" | jq -r '.motivo'))" >&2
     rm -f "$tmp"; continue
   fi
-  if [ "$data" \>= "$ANTES_DE" ]; then
+  if ! [[ "$data" < "$ANTES_DE" ]]; then
     echo "descartado: $name (data interna $data >= limite $ANTES_DE)" >&2
     rm -f "$tmp"; continue
   fi

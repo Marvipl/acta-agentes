@@ -5,10 +5,12 @@
 
 Automação semanal via **Claude Code Routines**:
 
-- **Segunda 09:00** — o agente posta no canal do Slack pedindo itens de pauta adicional (respostas na thread até 23:59) e, em seguida, publica **uma mensagem por pendência** da última reunião, pedindo ao responsável que responda na thread daquela mensagem com um update (também até 23:59).
-- **Terça 09:00** — o agente coleta as respostas da thread de pauta adicional e os updates das threads de pendência (cutoff segunda 23:59), extrai **apenas as pendências e o plano de ação** do último arquivo de pauta/ata do canal, gera a pauta da reunião de quarta com os updates na tabela de pendências e publica o DOCX no canal (e por DM, se configurado).
+As pendências vivem numa **lista do Slack** ("Pendências — Staff C-Level", colunas Pendência / Responsável / Data prevista / Status / Comentário) — fonte única, atualizada pelo próprio time direto na lista. Na reunião, a verificação item a item é feita na lista, não na pauta.
 
-A pauta gerada é um esqueleto padrão: Pendências da Semana Anterior (do arquivo anterior, com a coluna Update preenchida pelas respostas do Slack — a ideia é todos lerem os updates antes da reunião, em vez de passar pelas pendências uma a uma), Projetos / Comercial / Financeiro com texto genérico fixo ("Apresentação de status..."), Pauta Adicional (somente se houver itens no Slack) e Plano de Ação em branco. O detalhamento das seções é preenchido manualmente pelo time após a reunião e enviado ao canal — esse arquivo vira a referência de pendências da semana seguinte.
+- **Segunda 09:00** — o agente posta no canal pedindo itens de pauta adicional (respostas na thread até 23:59) e um lembrete com o link da lista, mencionando os responsáveis por itens não concluídos para atualizarem status e comentário até 23:59.
+- **Terça 09:00** — o agente coleta as respostas da thread (cutoff segunda 23:59), sincroniza o Plano de Ação da última ata do canal com a lista (cria os itens novos, status Aberto), lê a lista e gera a pauta da reunião de quarta com um resumo das pendências (contagens por status + quem está sem atualização), publicando o DOCX no canal (e por DM, se configurado).
+
+A pauta gerada é um esqueleto padrão: Pendências da Semana Anterior (resumo da lista, sem tabela), Projetos / Comercial / Financeiro com texto genérico fixo ("Apresentação de status..."), Pauta Adicional (somente se houver itens no Slack) e Plano de Ação em branco. O detalhamento das seções é preenchido manualmente pelo time após a reunião e enviado ao canal — o Plano de Ação desse arquivo vira itens novos na lista na terça seguinte.
 
 ## Estrutura
 
@@ -19,7 +21,7 @@ pauta-staff/
   templates/Template_Ata_Staff.docx  Template real (logo, estilos, rodapé) — o corpo é regenerado
   scripts/gerar_pauta.py             Gera o DOCX a partir de um JSON de conteúdo (stdlib apenas)
   scripts/ler_docx.py                Extrai texto/tabelas de um DOCX (stdlib apenas)
-  scripts/slack.sh                   postar | historico | respostas | listar_arquivos_docx | baixar | enviar_arquivo | dm_arquivo | ts
+  scripts/slack.sh                   postar | historico | respostas | listar_arquivos_docx | baixar | enviar_arquivo | dm_arquivo | lista_itens | lista_criar_item | lista_url | ts
   scripts/validar_pauta.py           Valida um DOCX pelo conteúdo: título Staff/C-Level + data interna (stdlib apenas)
   scripts/achar_pauta_anterior.sh    Baixa os .docx do canal, valida cada um e escolhe o da última reunião
   exemplos/pauta_exemplo.json        Exemplo funcional do esquema de conteúdo
@@ -27,9 +29,10 @@ pauta-staff/
 
 ## Pré-requisitos
 
-1. **App do Slack** (já feito na Etapa 1): bot scopes `chat:write`, `channels:history`, `files:read`, `files:write` (`groups:history` se o canal for privado; `im:write` para o envio da pauta por DM; `channels:read` + `users:read` para o modo `canal` das DMs — `groups:read` no lugar de `channels:read` se o canal for privado); bot convidado ao canal.
-2. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...) e `SLACK_CHANNEL_ID`; opcionalmente `SLACK_DM_USER_IDS` — quem recebe a pauta também por mensagem individual: IDs de usuário U... separados por vírgula, ou o valor especial `canal` para enviar a todos os membros humanos do canal (a lista é resolvida a cada envio — quem entra/sai do canal passa a receber/deixa de receber sozinho); vazio/ausente desliga as DMs; acesso de rede Custom com `slack.com` e `files.slack.com` nos domínios permitidos (mantendo a lista padrão de gerenciadores de pacotes); script de configuração vazio. Nenhum segredo na instrução ou no repo.
-3. Ferramentas no ambiente de execução: `curl`, `jq`, `python3` (padrão nas sessões do Claude Code).
+1. **App do Slack** (já feito na Etapa 1): bot scopes `chat:write`, `channels:history`, `files:read`, `files:write`, `lists:read`, `lists:write` (`groups:history` se o canal for privado; `im:write` para o envio da pauta por DM; `channels:read` + `users:read` para o modo `canal` das DMs e para as menções — `groups:read` no lugar de `channels:read` se o canal for privado); bot convidado ao canal.
+2. **Lista de pendências**: lista do Slack criada com colunas pendencia (texto, primária), responsavel (usuário), data_prevista (data), status (seleção: aberto/fazendo/concluido) e comentario (texto) — a lista atual do workspace é a "Pendências — Staff C-Level" (`F0BMARU8NMR`). As chaves das colunas são resolvidas pelo schema em tempo de execução; recriar a lista exige apenas as mesmas chaves.
+3. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...), `SLACK_CHANNEL_ID` e `SLACK_LIST_ID` (ID F... da lista de pendências); opcionalmente `SLACK_DM_USER_IDS` — quem recebe a pauta também por mensagem individual: IDs de usuário U... separados por vírgula, ou o valor especial `canal` para enviar a todos os membros humanos do canal (a lista de destinatários é resolvida a cada envio); vazio/ausente desliga as DMs; acesso de rede Custom com `slack.com` e `files.slack.com` nos domínios permitidos (mantendo a lista padrão de gerenciadores de pacotes); script de configuração vazio. Nenhum segredo na instrução ou no repo.
+4. Ferramentas no ambiente de execução: `curl`, `jq`, `python3` (padrão nas sessões do Claude Code).
 
 ## Teste local (faça antes de agendar)
 
@@ -59,6 +62,11 @@ pauta-staff/scripts/slack.sh dm_arquivo /tmp/teste.docx "teste de DM — pode ig
 # 5) modo canal funciona? (opcional — requer channels:read + users:read;
 #    só lista os destinatários, não envia nada)
 pauta-staff/scripts/slack.sh membros_canal
+
+# 6) lista de pendências funciona? (requer SLACK_LIST_ID exportada; só leitura)
+export SLACK_LIST_ID=F...
+pauta-staff/scripts/slack.sh lista_url
+pauta-staff/scripts/slack.sh lista_itens | jq 'group_by(.status) | map({status: .[0].status, n: length})'
 ```
 
 Depois, rode o prompt da Rotina 2 (abaixo) numa sessão interativa do Claude Code
@@ -74,12 +82,10 @@ Horários no fuso local (America/Sao_Paulo).
 ```
 Leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execucao (rotina de
 segunda-feira 9h — coleta)" descrito nele. Resumo: postar a mensagem padrão de
-coleta de pauta adicional (texto fixo no prompt), localizar o arquivo da
-última reunião com pauta-staff/scripts/achar_pauta_anterior.sh, extrair as
-pendências e o plano de ação, e postar uma mensagem avulsa por pendência
-(prefixo "Update de pendencia (i/N)"), mencionando o responsável (<@ID>, via
-slack.sh usuarios_canal) e pedindo o update na thread até 23:59. Nunca
-inventar pendências nem mencionar por palpite. Prompt completo em
+coleta de pauta adicional (texto fixo no prompt) e, em seguida, um lembrete
+com o link da lista de pendências (slack.sh lista_url), mencionando (<@ID>)
+os responsáveis por itens não concluídos para atualizarem status e comentário
+na lista até 23:59. Nunca mencionar por palpite. Prompt completo em
 referencia/prompt_agente_pauta_coleta.md.
 ```
 
@@ -88,19 +94,20 @@ referencia/prompt_agente_pauta_coleta.md.
 ```
 Leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execução" descrito
 nele para gerar e publicar a pauta da Reunião de Staff C-Level de quarta-feira.
-Resumo: coletar as respostas da thread de coleta de ontem e os updates das
-threads de "Update de pendencia" (considerando apenas mensagens até
-segunda-feira 23:59, America/Sao_Paulo), localizar o arquivo da última
+Resumo: coletar as respostas da thread de coleta de ontem (apenas mensagens
+até segunda-feira 23:59, America/Sao_Paulo), localizar o arquivo da última
 reunião com pauta-staff/scripts/achar_pauta_anterior.sh (validação pelo conteúdo: título
-Staff/C-Level + data interna — não pelo nome do arquivo), extrair dele apenas
-as pendências e o plano de ação, gerar o DOCX com
-pauta-staff/scripts/gerar_pauta.py sobre o template oficial (seções Projetos, Comercial e
+Staff/C-Level + data interna — não pelo nome do arquivo), sincronizar o Plano
+de Ação dele com a lista de pendências (slack.sh lista_criar_item, sem
+duplicar nem alterar itens existentes), ler a lista (slack.sh lista_itens) e
+gerar o DOCX com pauta-staff/scripts/gerar_pauta.py sobre o template oficial
+(seção 1 apenas com o resumo da lista; seções Projetos, Comercial e
 Financeiro sempre com o texto genérico fixo; Pauta Adicional somente se houver
-itens) e publicar no canal. Se a variável SLACK_DM_USER_IDS estiver definida,
-enviar em seguida o mesmo arquivo por mensagem individual a cada ID com
-pauta-staff/scripts/slack.sh dm_arquivo. Respeite todas as regras invioláveis
-do SKILL.md — em especial: nunca inventar dados e nunca publicar sem a
-verificação final.
+itens) e publicar no canal com o link da lista no comentário. Se a variável
+SLACK_DM_USER_IDS estiver definida, enviar em seguida o mesmo arquivo por
+mensagem individual a cada ID com pauta-staff/scripts/slack.sh dm_arquivo.
+Respeite todas as regras invioláveis do SKILL.md — em especial: nunca inventar
+dados e nunca publicar sem a verificação final.
 ```
 
 ## Notas operacionais
@@ -116,6 +123,10 @@ verificação final.
 - No modo `SLACK_DM_USER_IDS=canal`, TODO membro humano do canal recebe a DM.
   Se o canal tiver gente além do C-Level (assistentes, convidados), prefira a
   lista explícita de IDs — ou mantenha o canal restrito ao staff.
+- Fixe a lista de pendências no canal do staff (compartilhe o link e use
+  "Fixar no canal") para todos acharem com um clique. O agente nunca edita nem
+  apaga itens existentes da lista — só cria os novos a partir do Plano de
+  Ação; status e comentário são sempre do time.
 - Se o download do arquivo vier como HTML (erro "download nao parece um DOCX"),
   confira o scope `files:read` e se o arquivo está no mesmo workspace.
 - Para mudar o modelo do documento, edite o SKILL.md (estrutura/regras) e, se for

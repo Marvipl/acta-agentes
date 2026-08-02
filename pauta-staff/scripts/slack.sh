@@ -9,6 +9,9 @@
 #                      ou o valor especial "canal" para enviar a todos os membros
 #                      humanos do canal (requer também channels:read e users:read;
 #                      groups:read se o canal for privado)
+#   SLACK_LIST_ID      opcional: ID (F...) da lista de pendências do Slack —
+#                      necessário para os comandos lista_* (scopes lists:read,
+#                      lists:write)
 #
 # Requer: curl, jq, python3
 #
@@ -24,6 +27,9 @@
 #   ./scripts/slack.sh dm_arquivo <caminho> "comentário" [U111,U222|canal]  # padrão: SLACK_DM_USER_IDS
 #   ./scripts/slack.sh membros_canal                  # IDs dos membros humanos do canal (sem bots)
 #   ./scripts/slack.sh usuarios_canal                 # ID <tab> nome real <tab> display name, por membro
+#   ./scripts/slack.sh lista_itens                    # itens da lista de pendências (JSON simplificado)
+#   ./scripts/slack.sh lista_criar_item "<pendência>" ["U1,U2"] ["AAAA-MM-DD"] [aberto|fazendo|concluido] ["comentário"]
+#   ./scripts/slack.sh lista_url                      # permalink da lista de pendências
 #   ./scripts/slack.sh ts "2026-07-13 23:59"         # converte data local em epoch (America/Sao_Paulo)
 
 set -euo pipefail
@@ -199,6 +205,65 @@ membros_canal() {
   usuarios_canal | cut -f1 | paste -sd, -
 }
 
+lista_itens() {
+  # imprime os itens da lista de pendências como JSON simplificado:
+  # [{id, pendencia, responsavel: [U...], data_prevista, status, comentario}]
+  : "${SLACK_LIST_ID:?Defina SLACK_LIST_ID}"
+  local resp
+  resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
+    -d "$(jq -n --arg l "$SLACK_LIST_ID" '{list_id:$l, limit:100}')" \
+    "$API/slackLists.items.list")
+  _checa "$resp"
+  echo "$resp" | jq '[.items[] | {
+    id,
+    pendencia:     ([.fields[] | select(.key=="pendencia").text]     | first // ""),
+    responsavel:   ([.fields[] | select(.key=="responsavel").user]   | first // []),
+    data_prevista: ([.fields[] | select(.key=="data_prevista").value] | first // ""),
+    status:        ([.fields[] | select(.key=="status").value]       | first // ""),
+    comentario:    ([.fields[] | select(.key=="comentario").text]    | first // "")
+  }]'
+}
+
+_lista_schema() { # imprime o schema (colunas) da lista de pendências
+  local resp
+  resp=$(curl -s "${AUTH[@]}" "$API/files.info?file=${SLACK_LIST_ID}")
+  _checa "$resp"
+  echo "$resp" | jq '.file.list_metadata.schema'
+}
+
+lista_criar_item() {
+  # cria um item na lista de pendências (colunas resolvidas pelo schema, por chave)
+  # uso: lista_criar_item "<pendência>" ["U1,U2"] ["AAAA-MM-DD"] [status] ["comentário"]
+  : "${SLACK_LIST_ID:?Defina SLACK_LIST_ID}"
+  local pend="$1" users="${2:-}" data="${3:-}" status="${4:-aberto}" coment="${5:-}"
+  local schema payload resp
+  schema=$(_lista_schema)
+  payload=$(jq -n --argjson s "$schema" --arg l "$SLACK_LIST_ID" --arg p "$pend" \
+      --arg u "$users" --arg d "$data" --arg st "$status" --arg c "$coment" '
+    def col(k): ($s[] | select(.key==k) | .id);
+    def rt(t): [{"type":"rich_text","elements":[{"type":"rich_text_section",
+                 "elements":[{"type":"text","text":t}]}]}];
+    {list_id: $l, initial_fields:
+      ([{column_id: col("pendencia"), rich_text: rt($p)},
+        {column_id: col("status"), select: [$st]}]
+       + (if $u != "" then [{column_id: col("responsavel"), user: ($u | split(","))}] else [] end)
+       + (if $d != "" then [{column_id: col("data_prevista"), date: [$d]}] else [] end)
+       + (if $c != "" then [{column_id: col("comentario"), rich_text: rt($c)}] else [] end))}')
+  resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
+    -d "$payload" "$API/slackLists.items.create")
+  _checa "$resp"
+  echo "$resp" | jq -r '.item.id'
+}
+
+lista_url() {
+  # imprime o permalink da lista de pendências
+  : "${SLACK_LIST_ID:?Defina SLACK_LIST_ID}"
+  local resp
+  resp=$(curl -s "${AUTH[@]}" "$API/files.info?file=${SLACK_LIST_ID}")
+  _checa "$resp"
+  echo "$resp" | jq -r '.file.permalink'
+}
+
 dm_arquivo() {
   # envia o arquivo por mensagem individual a cada usuário da lista (3º argumento
   # ou SLACK_DM_USER_IDS). "canal" = todos os membros humanos do canal. Falha em
@@ -257,6 +322,9 @@ case "$cmd" in
   dm_arquivo)            dm_arquivo "$@" ;;
   membros_canal)         membros_canal ;;
   usuarios_canal)        usuarios_canal ;;
+  lista_itens)           lista_itens ;;
+  lista_criar_item)      lista_criar_item "$@" ;;
+  lista_url)             lista_url ;;
   ts)                    ts "$@" ;;
   *) grep '^#' "$0" | sed 's/^# \{0,1\}//'; exit 1 ;;
 esac
