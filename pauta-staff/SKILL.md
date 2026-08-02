@@ -42,13 +42,20 @@ tabela de participantes e as secoes, nesta ordem:
 
 1. **Pendencias da Semana Anterior** — nota "As pendencias sao acompanhadas na
    lista 'Pendências — Staff C-Level' do Slack; verificacao item a item direto
-   na lista." + dois bullets com dados REAIS lidos da lista no passo 5 do
-   fluxo de terca:
-   - "Resumo da lista: X em aberto, Y em andamento, Z concluidas."
-   - "Sem atualizacao desde a semana passada: [Nome] (n itens), ..." — apenas
-     se houver itens nao concluidos com comentario vazio; se todos tiverem
-     comentario, omita este bullet.
-   Sem tabela de pendencias no documento — a lista e a fonte unica.
+   na lista." + tres bullets de INDICADORES com dados reais calculados no
+   passo 5 do fluxo de terca (sem tabela de pendencias — a lista e a fonte
+   unica):
+   - "Nao finalizadas (aberto + fazendo): N — semana passada: M." — M e o
+     total registrado na ata anterior; se a ata anterior nao tiver esse
+     registro (formato antigo), escreva "semana passada: sem registro". O
+     bullet DEVE comecar com "Nao finalizadas" e trazer N como primeiro
+     numero — e assim que a rotina seguinte le o historico.
+   - "Por responsavel: Nome N, Nome N, ..." — contagem de nao finalizadas por
+     responsavel, em ordem decrescente; acrescente "sem responsavel: N"
+     apenas se houver itens sem responsavel.
+   - "Concluidas na lista: N."
+   (No DOCX, com acentuacao correta: "Não finalizadas...", "Por
+   responsável...", "Concluídas...".)
 2. **Projetos** — bullet unico e fixo: "Apresentacao de status semanal de projetos."
 3. **Comercial** — bullet unico e fixo: "Apresentacao de status das acoes comerciais."
 4. **Financeiro** — bullet unico e fixo: "Apresentacao de status do financeiro."
@@ -166,11 +173,17 @@ antes de qualquer outro passo. Nunca imprima o valor do token.
    "Prazo original: <texto>". Nunca crie duplicatas nem apague/edite itens
    existentes. Se nao houver arquivo valido (exit 3), pule a sincronizacao e
    registre o aviso.
-5. **Leitura da lista**: leia `./pauta-staff/scripts/slack.sh lista_itens`
-   (ja com os itens recem-sincronizados) e calcule: contagem por status
-   (aberto / fazendo / concluido) e, entre os itens nao concluidos, os
-   responsaveis com comentario vazio (para o bullet "Sem atualizacao desde a
-   semana passada", com nomes em texto — sem mencao dentro do DOCX).
+5. **Leitura da lista e indicadores**: leia
+   `./pauta-staff/scripts/slack.sh lista_itens` (ja com os itens
+   recem-sincronizados) e calcule: (a) total de NAO finalizadas — status
+   aberto + fazendo; (b) contagem de nao finalizadas por responsavel, com
+   nomes resolvidos via `usuarios_canal` (item com mais de um responsavel
+   conta para cada um; sem responsavel entra em "sem responsavel");
+   (c) total de concluidas. Para a comparacao semanal, extraia da secao 1 da
+   ata anterior (/tmp/anterior.docx, ja baixada no passo 4) o PRIMEIRO numero
+   do bullet que comeca com "Nao finalizadas"/"Não finalizadas"; se o bullet
+   nao existir, use "sem registro". Nunca calcule o numero anterior por conta
+   propria — apenas o que esta registrado na ata.
 6. **Montagem**: escreva o JSON de conteudo seguindo `pauta-staff/exemplos/pauta_exemplo.json`
    (esquema completo no cabecalho de `pauta-staff/scripts/gerar_pauta.py`).
    A secao 1 usa apenas bullets (resumo da lista, conforme "Estrutura

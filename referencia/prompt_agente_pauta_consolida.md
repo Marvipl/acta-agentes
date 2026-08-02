@@ -34,9 +34,11 @@ Resumo do fluxo (a referência completa é o SKILL.md):
    (antes, rode slack.sh lista_garantir): criar na lista (slack.sh
    lista_criar_item, status aberto) as ações que ainda não existem nela.
    Nunca duplicar nem alterar itens existentes.
-4. Ler a lista (slack.sh lista_itens) e montar o resumo da seção 1 da pauta:
-   contagens por status e responsáveis sem atualização — sem tabela de
-   pendências no documento; a lista é a fonte única.
+4. Ler a lista (slack.sh lista_itens) e montar os indicadores da seção 1 da
+   pauta: total de não finalizadas (aberto + fazendo) com comparação vs.
+   semana passada (número lido do bullet "Não finalizadas" da ata anterior),
+   contagem de não finalizadas por responsável e total de concluídas — sem
+   tabela de pendências no documento; a lista é a fonte única.
 5. Gerar o DOCX com pauta-staff/scripts/gerar_pauta.py sobre o template oficial.
    Seções Projetos, Comercial e Financeiro sempre com o texto genérico fixo;
    seção Pauta Adicional somente se houver itens coletados.

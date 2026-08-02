@@ -8,9 +8,9 @@ Automação semanal via **Claude Code Routines**:
 As pendências vivem numa **lista do Slack** ("Pendências — Staff C-Level", colunas Pendência / Responsável / Data prevista / Status / Comentário) — fonte única, atualizada pelo próprio time direto na lista. Na reunião, a verificação item a item é feita na lista, não na pauta.
 
 - **Segunda 09:00** — o agente posta no canal pedindo itens de pauta adicional (respostas na thread até 23:59) e um lembrete com o link da lista, mencionando os responsáveis por itens não concluídos para atualizarem status e comentário até 23:59.
-- **Terça 09:00** — o agente coleta as respostas da thread (cutoff segunda 23:59), sincroniza o Plano de Ação da última ata do canal com a lista (cria os itens novos, status Aberto), lê a lista e gera a pauta da reunião de quarta com um resumo das pendências (contagens por status + quem está sem atualização), publicando o DOCX no canal (e por DM, se configurado).
+- **Terça 09:00** — o agente coleta as respostas da thread (cutoff segunda 23:59), sincroniza o Plano de Ação da última ata do canal com a lista (cria os itens novos, status Aberto), lê a lista e gera a pauta da reunião de quarta com os indicadores das pendências — total não finalizado (aberto + fazendo) com comparação vs. semana passada, contagem por responsável e concluídas —, publicando o DOCX no canal (e por DM, se configurado).
 
-A pauta gerada é um esqueleto padrão: Pendências da Semana Anterior (resumo da lista, sem tabela), Projetos / Comercial / Financeiro com texto genérico fixo ("Apresentação de status..."), Pauta Adicional (somente se houver itens no Slack) e Plano de Ação em branco. O detalhamento das seções é preenchido manualmente pelo time após a reunião e enviado ao canal — o Plano de Ação desse arquivo vira itens novos na lista na terça seguinte.
+A pauta gerada é um esqueleto padrão: Pendências da Semana Anterior (indicadores da lista, sem tabela — para a reunião abrir com a visão de se o volume está crescendo ou caindo), Projetos / Comercial / Financeiro com texto genérico fixo ("Apresentação de status..."), Pauta Adicional (somente se houver itens no Slack) e Plano de Ação em branco. O detalhamento das seções é preenchido manualmente pelo time após a reunião e enviado ao canal — o Plano de Ação desse arquivo vira itens novos na lista na terça seguinte.
 
 ## Estrutura
 
