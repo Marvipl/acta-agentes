@@ -3,8 +3,9 @@
 > Rotina Remote semanal. Repositório: acta-agentes. Fuso: America/Sao_Paulo.
 > Requer, no ambiente de nuvem da rotina: variáveis SLACK_BOT_TOKEN e
 > SLACK_CHANNEL_ID (e, opcional, SLACK_DM_USER_IDS — IDs U... separados por
-> vírgula para envio da pauta também por DM), e acesso de rede liberado para
-> slack.com e files.slack.com. Nenhum segredo neste arquivo ou na instrução.
+> vírgula, ou "canal" para todos os membros humanos do canal — para envio da
+> pauta também por DM), e acesso de rede liberado para slack.com e
+> files.slack.com. Nenhum segredo neste arquivo ou na instrução.
 
 ---
 

@@ -92,8 +92,9 @@ de projetos").
 
 Pre-requisitos: variaveis `SLACK_BOT_TOKEN` e `SLACK_CHANNEL_ID` exportadas
 (a instrucao da rotina faz o export antes de chamar este fluxo) e, opcional,
-`SLACK_DM_USER_IDS` (IDs de usuario U... separados por virgula) para o envio
-por DM do passo 9; ferramentas `curl`, `jq`, `python3`. Rode `pauta-staff/scripts/slack.sh testar`
+`SLACK_DM_USER_IDS` para o envio por DM do passo 9 — IDs de usuario U...
+separados por virgula, ou o valor especial `canal` para enviar a todos os
+membros humanos do canal; ferramentas `curl`, `jq`, `python3`. Rode `pauta-staff/scripts/slack.sh testar`
 antes de qualquer outro passo. Nunca imprima o valor do token.
 
 1. **Janela de coleta**: calcule segunda-feira desta semana 09:00 e 23:59
@@ -130,12 +131,14 @@ antes de qualquer outro passo. Nunca imprima o valor do token.
    "Pauta da reuniao de quarta-feira <data>. Itens de ultima hora podem ser
    levados diretamente na reuniao."`
 9. **Copia por DM**: se `SLACK_DM_USER_IDS` estiver definida, envie o MESMO
-   arquivo por mensagem individual a cada ID com
+   arquivo por mensagem individual a cada destinatario com
    `./pauta-staff/scripts/slack.sh dm_arquivo /tmp/Pauta_Staff_....docx
-   "<mesmo comentario da publicacao>"`. O comando continua nos demais
-   destinatarios se um falhar — falha parcial de DM nao invalida a publicacao
-   no canal; apenas registre os avisos no relato final. Se a variavel nao
-   estiver definida, pule este passo.
+   "<mesmo comentario da publicacao>"`. Com o valor `canal`, o proprio script
+   resolve os destinatarios na hora: membros atuais do canal, excluindo bots e
+   contas desativadas. O comando continua nos demais destinatarios se um
+   falhar — falha parcial de DM nao invalida a publicacao no canal; apenas
+   registre os avisos no relato final. Se a variavel nao estiver definida,
+   pule este passo.
 10. **Sem respostas na thread**: gere a pauta sem a secao Pauta Adicional e
     informe no comentario de publicacao: "Nenhum item adicional foi enviado
     nesta semana."

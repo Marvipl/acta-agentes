@@ -5,7 +5,10 @@
 #   SLACK_BOT_TOKEN    token do bot (xoxb-...)
 #   SLACK_CHANNEL_ID   ID do canal (ex.: C0123456789)
 #   SLACK_DM_USER_IDS  opcional: IDs de usuário (U...) separados por vírgula,
-#                      destinatários padrão de dm_arquivo (requer scope im:write)
+#                      destinatários padrão de dm_arquivo (requer scope im:write);
+#                      ou o valor especial "canal" para enviar a todos os membros
+#                      humanos do canal (requer também channels:read e users:read;
+#                      groups:read se o canal for privado)
 #
 # Requer: curl, jq, python3
 #
@@ -18,7 +21,8 @@
 #   ./scripts/slack.sh listar_arquivos_docx           # JSON array dos .docx recentes do canal
 #   ./scripts/slack.sh baixar <url_private> <destino>
 #   ./scripts/slack.sh enviar_arquivo <caminho> "comentário inicial"
-#   ./scripts/slack.sh dm_arquivo <caminho> "comentário" [U111,U222]  # padrão: SLACK_DM_USER_IDS
+#   ./scripts/slack.sh dm_arquivo <caminho> "comentário" [U111,U222|canal]  # padrão: SLACK_DM_USER_IDS
+#   ./scripts/slack.sh membros_canal                  # IDs dos membros humanos do canal (sem bots)
 #   ./scripts/slack.sh ts "2026-07-13 23:59"         # converte data local em epoch (America/Sao_Paulo)
 
 set -euo pipefail
@@ -173,11 +177,38 @@ _abrir_dm() { # user_id -> imprime o ID do canal de DM (D...)
   echo "$resp" | jq -r '.channel.id'
 }
 
+membros_canal() {
+  # imprime os IDs dos membros humanos do canal, separados por vírgula
+  # (exclui bots, o Slackbot e contas desativadas)
+  local resp user uresp humanos=()
+  resp=$(curl -s "${AUTH[@]}" \
+    "$API/conversations.members?channel=${SLACK_CHANNEL_ID}&limit=200")
+  _checa "$resp"
+  for user in $(echo "$resp" | jq -r '.members[]'); do
+    [ "$user" = "USLACKBOT" ] && continue
+    uresp=$(curl -s "${AUTH[@]}" "$API/users.info?user=${user}")
+    _checa "$uresp"
+    if [ "$(echo "$uresp" | jq -r '.user.is_bot or .user.deleted')" = "false" ]; then
+      humanos+=("$user")
+    fi
+  done
+  (IFS=','; echo "${humanos[*]-}")
+}
+
 dm_arquivo() {
   # envia o arquivo por mensagem individual a cada usuário da lista (3º argumento
-  # ou SLACK_DM_USER_IDS). Falha em um destinatário não interrompe os demais;
-  # exit 1 apenas se houve destinatários e nenhuma DM saiu.
+  # ou SLACK_DM_USER_IDS). "canal" = todos os membros humanos do canal. Falha em
+  # um destinatário não interrompe os demais; exit 1 apenas se houve
+  # destinatários e nenhuma DM saiu.
   local caminho="$1" comentario="${2:-}" ids="${3:-${SLACK_DM_USER_IDS:-}}"
+  if [ "$ids" = "canal" ]; then
+    ids=$(membros_canal)
+    if [ -z "$ids" ]; then
+      echo "ERRO: modo canal — nenhum membro humano encontrado no canal" >&2
+      return 1
+    fi
+    echo "Modo canal: destinatarios ${ids}"
+  fi
   if [ -z "$ids" ]; then
     echo "AVISO: SLACK_DM_USER_IDS vazio e nenhuma lista informada — nenhuma DM enviada" >&2
     return 0
@@ -220,6 +251,7 @@ case "$cmd" in
   baixar)                baixar "$@" ;;
   enviar_arquivo)        enviar_arquivo "$@" ;;
   dm_arquivo)            dm_arquivo "$@" ;;
+  membros_canal)         membros_canal ;;
   ts)                    ts "$@" ;;
   *) grep '^#' "$0" | sed 's/^# \{0,1\}//'; exit 1 ;;
 esac

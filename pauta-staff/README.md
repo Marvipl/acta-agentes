@@ -27,8 +27,8 @@ pauta-staff/
 
 ## Pré-requisitos
 
-1. **App do Slack** (já feito na Etapa 1): bot scopes `chat:write`, `channels:history`, `files:read`, `files:write` (`groups:history` se o canal for privado; `im:write` para o envio da pauta por DM); bot convidado ao canal.
-2. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...) e `SLACK_CHANNEL_ID`; opcionalmente `SLACK_DM_USER_IDS` (IDs de usuário U... separados por vírgula — quem recebe a pauta também por mensagem individual; vazio/ausente desliga as DMs); acesso de rede Custom com `slack.com` e `files.slack.com` nos domínios permitidos (mantendo a lista padrão de gerenciadores de pacotes); script de configuração vazio. Nenhum segredo na instrução ou no repo.
+1. **App do Slack** (já feito na Etapa 1): bot scopes `chat:write`, `channels:history`, `files:read`, `files:write` (`groups:history` se o canal for privado; `im:write` para o envio da pauta por DM; `channels:read` + `users:read` para o modo `canal` das DMs — `groups:read` no lugar de `channels:read` se o canal for privado); bot convidado ao canal.
+2. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...) e `SLACK_CHANNEL_ID`; opcionalmente `SLACK_DM_USER_IDS` — quem recebe a pauta também por mensagem individual: IDs de usuário U... separados por vírgula, ou o valor especial `canal` para enviar a todos os membros humanos do canal (a lista é resolvida a cada envio — quem entra/sai do canal passa a receber/deixa de receber sozinho); vazio/ausente desliga as DMs; acesso de rede Custom com `slack.com` e `files.slack.com` nos domínios permitidos (mantendo a lista padrão de gerenciadores de pacotes); script de configuração vazio. Nenhum segredo na instrução ou no repo.
 3. Ferramentas no ambiente de execução: `curl`, `jq`, `python3` (padrão nas sessões do Claude Code).
 
 ## Teste local (faça antes de agendar)
@@ -55,6 +55,10 @@ pauta-staff/scripts/achar_pauta_anterior.sh   # deve encontrar e validar o arqui
 
 # 4) DM funciona? (opcional — requer scope im:write; use seu próprio ID U...)
 pauta-staff/scripts/slack.sh dm_arquivo /tmp/teste.docx "teste de DM — pode ignorar" U0SEUID
+
+# 5) modo canal funciona? (opcional — requer channels:read + users:read;
+#    só lista os destinatários, não envia nada)
+pauta-staff/scripts/slack.sh membros_canal
 ```
 
 Depois, rode o prompt da Rotina 2 (abaixo) numa sessão interativa do Claude Code
@@ -108,6 +112,9 @@ verificação final.
 - Para obter o ID de usuário (U...) de alguém: perfil da pessoa no Slack → menu
   "⋮" → "Copiar ID do membro". A DM chega pela aba de mensagens do app do bot —
   se alguém não estiver recebendo, confira se não silenciou o app.
+- No modo `SLACK_DM_USER_IDS=canal`, TODO membro humano do canal recebe a DM.
+  Se o canal tiver gente além do C-Level (assistentes, convidados), prefira a
+  lista explícita de IDs — ou mantenha o canal restrito ao staff.
 - Se o download do arquivo vier como HTML (erro "download nao parece um DOCX"),
   confira o scope `files:read` e se o arquivo está no mesmo workspace.
 - Para mudar o modelo do documento, edite o SKILL.md (estrutura/regras) e, se for
