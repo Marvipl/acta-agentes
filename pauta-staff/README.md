@@ -5,10 +5,10 @@
 
 Automação semanal via **Claude Code Routines**:
 
-- **Segunda 09:00** — o agente posta no canal do Slack pedindo itens de pauta adicional (respostas na thread até 23:59).
-- **Terça 09:00** — o agente coleta as respostas da thread (cutoff segunda 23:59), extrai **apenas as pendências e o plano de ação** do último arquivo de pauta/ata do canal, gera a pauta da reunião de quarta e publica o DOCX no canal.
+- **Segunda 09:00** — o agente posta no canal do Slack pedindo itens de pauta adicional (respostas na thread até 23:59) e, em seguida, publica **uma mensagem por pendência** da última reunião, pedindo ao responsável que responda na thread daquela mensagem com um update (também até 23:59).
+- **Terça 09:00** — o agente coleta as respostas da thread de pauta adicional e os updates das threads de pendência (cutoff segunda 23:59), extrai **apenas as pendências e o plano de ação** do último arquivo de pauta/ata do canal, gera a pauta da reunião de quarta com os updates na tabela de pendências e publica o DOCX no canal (e por DM, se configurado).
 
-A pauta gerada é um esqueleto padrão: Pendências da Semana Anterior (do arquivo anterior), Projetos / Comercial / Financeiro com texto genérico fixo ("Apresentação de status..."), Pauta Adicional (somente se houver itens no Slack) e Plano de Ação em branco. O detalhamento das seções é preenchido manualmente pelo time após a reunião e enviado ao canal — esse arquivo vira a referência de pendências da semana seguinte.
+A pauta gerada é um esqueleto padrão: Pendências da Semana Anterior (do arquivo anterior, com a coluna Update preenchida pelas respostas do Slack — a ideia é todos lerem os updates antes da reunião, em vez de passar pelas pendências uma a uma), Projetos / Comercial / Financeiro com texto genérico fixo ("Apresentação de status..."), Pauta Adicional (somente se houver itens no Slack) e Plano de Ação em branco. O detalhamento das seções é preenchido manualmente pelo time após a reunião e enviado ao canal — esse arquivo vira a referência de pendências da semana seguinte.
 
 ## Estrutura
 
@@ -72,15 +72,14 @@ Horários no fuso local (America/Sao_Paulo).
 ### Rotina 1 — `pauta-coleta` — semanal, segunda 09:00
 
 ```
-Poste no canal do Slack (use pauta-staff/scripts/slack.sh; token e canal estão nas variáveis
-de ambiente) a seguinte mensagem, sem alterações:
-
-"Bom dia! Coleta de pauta adicional para a Reunião de Staff C-Level de quarta-feira.
-Respondam NESTA THREAD até hoje às 23:59 com os itens que querem incluir
-(tema, contexto em 1-2 linhas e se é informativo ou para decisão).
-A pauta consolidada será publicada amanhã às 9h."
-
-Não faça mais nada além de postar a mensagem e confirmar o envio.
+Leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execucao (rotina de
+segunda-feira 9h — coleta)" descrito nele. Resumo: postar a mensagem padrão de
+coleta de pauta adicional (texto fixo no prompt), localizar o arquivo da
+última reunião com pauta-staff/scripts/achar_pauta_anterior.sh, extrair as
+pendências e o plano de ação, e postar uma mensagem avulsa por pendência
+(prefixo "Update de pendencia (i/N)") pedindo ao responsável o update na
+thread até 23:59. Nunca inventar pendências. Prompt completo em
+referencia/prompt_agente_pauta_coleta.md.
 ```
 
 ### Rotina 2 — `pauta-consolida` — semanal, terça 09:00
@@ -88,8 +87,9 @@ Não faça mais nada além de postar a mensagem e confirmar o envio.
 ```
 Leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execução" descrito
 nele para gerar e publicar a pauta da Reunião de Staff C-Level de quarta-feira.
-Resumo: coletar as respostas da thread de coleta de ontem (considerando apenas
-mensagens até segunda-feira 23:59, America/Sao_Paulo), localizar o arquivo da última
+Resumo: coletar as respostas da thread de coleta de ontem e os updates das
+threads de "Update de pendencia" (considerando apenas mensagens até
+segunda-feira 23:59, America/Sao_Paulo), localizar o arquivo da última
 reunião com pauta-staff/scripts/achar_pauta_anterior.sh (validação pelo conteúdo: título
 Staff/C-Level + data interna — não pelo nome do arquivo), extrair dele apenas
 as pendências e o plano de ação, gerar o DOCX com

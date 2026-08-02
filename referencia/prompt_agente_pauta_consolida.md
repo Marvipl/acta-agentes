@@ -28,14 +28,19 @@ Resumo do fluxo (a referência completa é o SKILL.md):
    pauta-staff/scripts/achar_pauta_anterior.sh (validação pelo CONTEÚDO —
    título Staff/C-Level + data interna — nunca pelo nome do arquivo), passando
    a data da próxima quarta-feira como limite.
-3. Extrair do arquivo APENAS as tabelas de pendências e de plano de ação.
-4. Gerar o DOCX com pauta-staff/scripts/gerar_pauta.py sobre o template oficial.
+3. Extrair do arquivo APENAS as tabelas de pendências e de plano de ação
+   (ignorando a coluna Update, se existir).
+4. Coletar os updates de pendências: localizar as mensagens do bot de ontem
+   iniciadas com "Update de pendencia (" e ler a thread de cada uma (cutoff
+   segunda 23:59). Cada pendência entra na pauta com seu update na coluna
+   Update ("—" se ninguém respondeu).
+5. Gerar o DOCX com pauta-staff/scripts/gerar_pauta.py sobre o template oficial.
    Seções Projetos, Comercial e Financeiro sempre com o texto genérico fixo;
    seção Pauta Adicional somente se houver itens coletados.
-5. Verificar o arquivo gerado com pauta-staff/scripts/ler_docx.py antes de
+6. Verificar o arquivo gerado com pauta-staff/scripts/ler_docx.py antes de
    publicar. Nunca publicar sem essa verificação.
-6. Publicar no canal com pauta-staff/scripts/slack.sh enviar_arquivo.
-7. Se SLACK_DM_USER_IDS estiver definida, enviar o mesmo arquivo por mensagem
+7. Publicar no canal com pauta-staff/scripts/slack.sh enviar_arquivo.
+8. Se SLACK_DM_USER_IDS estiver definida, enviar o mesmo arquivo por mensagem
    individual a cada ID com pauta-staff/scripts/slack.sh dm_arquivo (mesmo
    comentário da publicação). Falha em uma DM não invalida a publicação no
    canal — apenas relate os avisos.

@@ -16,7 +16,11 @@ Gera a pauta da reuniao de Staff C-Level (toda quarta-feira). A pauta e um
 
 1. **Pendencias da Semana Anterior** — extraidas do ultimo arquivo de pauta/ata
    disponivel no canal do Slack (tabela de pendencias + tabela de plano de acao).
-   Este e o UNICO uso do arquivo anterior.
+   Este e o UNICO uso do arquivo anterior. Cada pendencia carrega tambem o
+   UPDATE respondido pelo responsavel no Slack na segunda-feira (dinamica de
+   updates: a rotina de segunda posta uma mensagem por pendencia e o
+   responsavel responde na thread; o objetivo e todos lerem os updates antes
+   da reuniao e nao gastar tempo passando item a item).
 2. **Pauta Adicional** — itens enviados pelo time na thread da mensagem de coleta
    de segunda-feira (cutoff segunda 23:59, America/Sao_Paulo).
 
@@ -35,10 +39,14 @@ Titulo "PAUTA DE REUNIÃO" + subtitulo "STAFF C-LEVEL", tabela de informacoes,
 tabela de participantes e as secoes, nesta ordem:
 
 1. **Pendencias da Semana Anterior** — nota "Follow-up das acoes da reuniao
-   anterior." + tabela Responsavel | Pendencia | Prazo. Conteudo: uniao das
-   linhas da tabela de pendencias e da tabela de plano de acao do arquivo
-   anterior (sem duplicatas; campo vazio vira "—"). Se nao houver arquivo
-   anterior, uma linha unica: ["—", "[sem arquivo de referencia no canal]", "—"].
+   anterior. Updates enviados pelo time no Slack; itens sem update serao
+   tratados na reuniao." + tabela Responsavel | Pendencia | Prazo | Update.
+   Conteudo: uniao das linhas da tabela de pendencias e da tabela de plano de
+   acao do arquivo anterior (sem duplicatas; campo vazio vira "—"), com a
+   coluna Update preenchida pelas respostas coletadas no Slack (passo 5 do
+   fluxo de terca; pendencia sem resposta fica com "—"). Se nao houver
+   arquivo anterior, uma linha unica:
+   ["—", "[sem arquivo de referencia no canal]", "—", "—"].
 2. **Projetos** — bullet unico e fixo: "Apresentacao de status semanal de projetos."
 3. **Comercial** — bullet unico e fixo: "Apresentacao de status das acoes comerciais."
 4. **Financeiro** — bullet unico e fixo: "Apresentacao de status do financeiro."
@@ -88,11 +96,37 @@ de projetos").
 - Portugues do Brasil, tom de registro de ata (impessoal).
 - Fuso horario de referencia: America/Sao_Paulo.
 
+## Fluxo de execucao (rotina de segunda-feira 9h — coleta)
+
+Pre-requisitos: os mesmos do fluxo de terca (sem necessidade de
+`SLACK_DM_USER_IDS`). Rode `pauta-staff/scripts/slack.sh testar` antes de
+qualquer outro passo. Nunca imprima o valor do token.
+
+1. **Mensagem de coleta**: poste com `./pauta-staff/scripts/slack.sh postar` a
+   mensagem padrao de coleta de pauta adicional (texto fixo no prompt da
+   rotina), sem alteracoes.
+2. **Pendencias para update**: localize o arquivo da ultima reuniao com
+   `./pauta-staff/scripts/achar_pauta_anterior.sh <data_da_proxima_quarta_ISO> /tmp/anterior.docx`
+   e extraia a uniao das linhas das tabelas de pendencias e de plano de acao —
+   mesma regra do passo 4 do fluxo de terca, usando APENAS as colunas
+   Responsavel, Pendencia e Prazo (ignore a coluna Update se existir). Se nao
+   houver arquivo valido (exit 3) ou nenhuma pendencia, pule o passo 3 e
+   encerre reportando o motivo.
+3. **Uma mensagem por pendencia**: para cada pendencia, na ordem, poste uma
+   mensagem AVULSA no canal (nunca dentro de thread), no formato exato:
+   "Update de pendencia (i/N) — Responsavel: <responsavel> — <pendencia>
+   (prazo: <prazo>). Responda NESTA thread com o status ate hoje as 23:59."
+   O prefixo "Update de pendencia (" e obrigatorio — e por ele que a rotina de
+   terca localiza estas mensagens. Cada mensagem tem a propria thread, entao
+   cada pendencia pode ser respondida individualmente.
+4. Nao faca mais nada alem disso; encerre reportando o ts da mensagem de
+   coleta e quantas mensagens de pendencia foram postadas.
+
 ## Fluxo de execucao (rotina de terca-feira 9h)
 
 Pre-requisitos: variaveis `SLACK_BOT_TOKEN` e `SLACK_CHANNEL_ID` exportadas
 (a instrucao da rotina faz o export antes de chamar este fluxo) e, opcional,
-`SLACK_DM_USER_IDS` para o envio por DM do passo 9 — IDs de usuario U...
+`SLACK_DM_USER_IDS` para o envio por DM do passo 10 — IDs de usuario U...
 separados por virgula, ou o valor especial `canal` para enviar a todos os
 membros humanos do canal; ferramentas `curl`, `jq`, `python3`. Rode `pauta-staff/scripts/slack.sh testar`
 antes de qualquer outro passo. Nunca imprima o valor do token.
@@ -114,23 +148,37 @@ antes de qualquer outro passo. Nunca imprima o valor do token.
    `pauta-staff/scripts/validar_pauta.py`), escolhendo o de data interna mais recente
    anterior a proxima reuniao — nunca confie apenas no nome ou na ordem de
    upload. Depois `python3 pauta-staff/scripts/ler_docx.py /tmp/anterior.docx` e extraia
-   APENAS as linhas das tabelas "Responsavel | Pendencia | Prazo" e
-   "# | Acao | Responsavel | Prazo" (ignorando linhas vazias e cabecalhos).
+   APENAS as linhas das tabelas de pendencias ("Responsavel | Pendencia |
+   Prazo", ignorando a coluna Update se existir) e de plano de acao
+   ("# | Acao | Responsavel | Prazo"), sem linhas vazias nem cabecalhos.
    Nao leia nem use o restante do documento.
-5. **Montagem**: escreva o JSON de conteudo seguindo `pauta-staff/exemplos/pauta_exemplo.json`
-   (esquema completo no cabecalho de `pauta-staff/scripts/gerar_pauta.py`). Inclua
-   `footer_data` com a data da reuniao (dd/mm/aaaa).
-6. **Geracao**: `python3 pauta-staff/scripts/gerar_pauta.py --template
+5. **Updates de pendencias**: busque no historico de segunda-feira as mensagens
+   do bot iniciadas com "Update de pendencia (" e leia a thread de cada uma com
+   `./pauta-staff/scripts/slack.sh respostas <ts>`. Respeite o cutoff de
+   segunda 23:59 e ignore mensagens do proprio bot. O update de cada pendencia
+   e o texto das respostas humanas da thread (mais de uma resposta: junte;
+   texto longo: resuma sem adicionar informacao). Pendencia sem resposta fica
+   com update "—". Associe cada mensagem a sua pendencia pelo indice (i/N) e
+   pelo texto. Se a rotina de segunda nao postou mensagens de pendencia,
+   todas as pendencias ficam com update "—".
+6. **Montagem**: escreva o JSON de conteudo seguindo `pauta-staff/exemplos/pauta_exemplo.json`
+   (esquema completo no cabecalho de `pauta-staff/scripts/gerar_pauta.py`).
+   As linhas de `pendencias` tem 4 colunas: [responsavel, pendencia, prazo,
+   update]. Inclua `footer_data` com a data da reuniao (dd/mm/aaaa).
+7. **Geracao**: `python3 pauta-staff/scripts/gerar_pauta.py --template
    pauta-staff/templates/Template_Ata_Staff.docx --json /tmp/conteudo.json --out
    /tmp/Pauta_Staff_AAAA-MM-DD.docx` (data da quarta-feira no nome).
-7. **Verificacao antes de publicar**: rode `python3 pauta-staff/scripts/ler_docx.py` no
+8. **Verificacao antes de publicar**: rode `python3 pauta-staff/scripts/ler_docx.py` no
    arquivo gerado e confira: (a) toda resposta valida da thread virou item da
    Pauta Adicional, (b) as pendencias do arquivo anterior estao na tabela,
-   (c) as secoes 2-4 contem apenas o texto generico fixo, (d) a data esta correta.
-8. **Publicacao**: `./pauta-staff/scripts/slack.sh enviar_arquivo /tmp/Pauta_Staff_....docx
-   "Pauta da reuniao de quarta-feira <data>. Itens de ultima hora podem ser
-   levados diretamente na reuniao."`
-9. **Copia por DM**: se `SLACK_DM_USER_IDS` estiver definida, envie o MESMO
+   (c) cada update coletado no passo 5 esta na coluna Update da pendencia
+   certa, (d) as secoes 2-4 contem apenas o texto generico fixo, (e) a data
+   esta correta.
+9. **Publicacao**: `./pauta-staff/scripts/slack.sh enviar_arquivo /tmp/Pauta_Staff_....docx
+   "Pauta da reuniao de quarta-feira <data>. Leiam os updates das pendencias
+   antes da reuniao. Itens de ultima hora podem ser levados diretamente na
+   reuniao."`
+10. **Copia por DM**: se `SLACK_DM_USER_IDS` estiver definida, envie o MESMO
    arquivo por mensagem individual a cada destinatario com
    `./pauta-staff/scripts/slack.sh dm_arquivo /tmp/Pauta_Staff_....docx
    "<mesmo comentario da publicacao>"`. Com o valor `canal`, o proprio script
@@ -139,7 +187,7 @@ antes de qualquer outro passo. Nunca imprima o valor do token.
    falhar — falha parcial de DM nao invalida a publicacao no canal; apenas
    registre os avisos no relato final. Se a variavel nao estiver definida,
    pule este passo.
-10. **Sem respostas na thread**: gere a pauta sem a secao Pauta Adicional e
+11. **Sem respostas na thread**: gere a pauta sem a secao Pauta Adicional e
     informe no comentario de publicacao: "Nenhum item adicional foi enviado
     nesta semana."
 

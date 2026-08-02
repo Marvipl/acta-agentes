@@ -27,6 +27,8 @@ Esquema do JSON (todas as chaves de seção são opcionais):
       "titulo": "1. Pendências da Semana Anterior",
       "nota": "Follow-up das ações da reunião anterior.",
       "pendencias": [["Vinicius","1 Kappabot disponível","3ª semana de julho"], ...],
+                     // 3 colunas (Responsável|Pendência|Prazo) ou 4 colunas com
+                     // Update no final — o cabeçalho da tabela se adapta sozinho
       "bullets": ["texto simples", [["Prefixo em negrito: ", true], ["resto do texto.", false]]],
       "blocos": [
         {"subtitulo": "Kappabot", "bullets": [ ... mesmo formato ... ]}
@@ -310,9 +312,16 @@ def main():
             if sec.get('nota'):
                 D.append(nota(sec['nota']))
             if sec.get('pendencias'):
-                D.append(tabela_dados([1954, 5551, 1955],
-                                      ['Responsável', 'Pendência', 'Prazo'],
-                                      sec['pendencias']))
+                linhas = sec['pendencias']
+                if any(len(l) >= 4 for l in linhas):
+                    linhas = [list(l[:4]) + ['—'] * (4 - len(l)) for l in linhas]
+                    D.append(tabela_dados([1700, 3300, 1260, 3200],
+                                          ['Responsável', 'Pendência', 'Prazo', 'Update'],
+                                          linhas))
+                else:
+                    D.append(tabela_dados([1954, 5551, 1955],
+                                          ['Responsável', 'Pendência', 'Prazo'],
+                                          linhas))
             for b in sec.get('bullets', []):
                 D.append(bullet(b, NUM_ID))
             for bloco in sec.get('blocos', []):
