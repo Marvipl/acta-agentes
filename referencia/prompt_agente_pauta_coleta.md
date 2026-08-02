@@ -1,10 +1,11 @@
 # Prompt — Agente de Pauta / Rotina 1: Coleta (segunda-feira 09:00)
 
 > Rotina Remote semanal. Repositório: acta-agentes. Fuso: America/Sao_Paulo.
-> Requer, no ambiente de nuvem da rotina: variáveis SLACK_BOT_TOKEN,
-> SLACK_CHANNEL_ID e SLACK_LIST_ID (lista de pendências), e acesso de rede
-> liberado para slack.com e files.slack.com. Nenhum segredo neste arquivo ou
-> na instrução.
+> Requer, no ambiente de nuvem da rotina: variáveis SLACK_BOT_TOKEN e
+> SLACK_CHANNEL_ID, e acesso de rede liberado para slack.com e
+> files.slack.com. A lista de pendências é localizada pelo nome em tempo de
+> execução — nenhum ID de lista é configurado. Nenhum segredo neste arquivo
+> ou na instrução.
 
 ---
 
@@ -29,8 +30,9 @@ quarta-feira. Respondam NESTA THREAD até hoje às 23:59 com os itens que querem
 incluir (tema, contexto em 1-2 linhas e se é informativo ou para decisão).
 A pauta consolidada será publicada amanhã às 9h."
 
-2. Leia a lista de pendências (pauta-staff/scripts/slack.sh lista_itens) e o
-   link dela (slack.sh lista_url). Poste UMA mensagem avulsa de lembrete no
+2. Rode pauta-staff/scripts/slack.sh lista_garantir (localiza a lista pelo
+   nome; cria e compartilha no canal se não existir — imprime id e url) e
+   leia a lista (slack.sh lista_itens). Poste UMA mensagem avulsa de lembrete no
    formato do SKILL.md: atualizar status e comentário dos itens na lista até
    23:59, com o link, mencionando (<@ID>) uma única vez cada responsável de
    item não concluído. Sem itens pendentes, poste o lembrete sem menções.

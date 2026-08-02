@@ -30,8 +30,8 @@ pauta-staff/
 ## Pré-requisitos
 
 1. **App do Slack** (já feito na Etapa 1): bot scopes `chat:write`, `channels:history`, `files:read`, `files:write`, `lists:read`, `lists:write` (`groups:history` se o canal for privado; `im:write` para o envio da pauta por DM; `channels:read` + `users:read` para o modo `canal` das DMs e para as menções — `groups:read` no lugar de `channels:read` se o canal for privado); bot convidado ao canal.
-2. **Lista de pendências**: lista do Slack criada com colunas pendencia (texto, primária), responsavel (usuário), data_prevista (data), status (seleção: aberto/fazendo/concluido) e comentario (texto) — a lista atual do workspace é a "Pendências — Staff C-Level" (`F0BMARU8NMR`). As chaves das colunas são resolvidas pelo schema em tempo de execução; recriar a lista exige apenas as mesmas chaves.
-3. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...), `SLACK_CHANNEL_ID` e `SLACK_LIST_ID` (ID F... da lista de pendências); opcionalmente `SLACK_DM_USER_IDS` — quem recebe a pauta também por mensagem individual: IDs de usuário U... separados por vírgula, ou o valor especial `canal` para enviar a todos os membros humanos do canal (a lista de destinatários é resolvida a cada envio); vazio/ausente desliga as DMs; acesso de rede Custom com `slack.com` e `files.slack.com` nos domínios permitidos (mantendo a lista padrão de gerenciadores de pacotes); script de configuração vazio. Nenhum segredo na instrução ou no repo.
+2. **Lista de pendências**: totalmente automática — os comandos `lista_*` localizam a lista **pelo nome** ("Pendências — Staff C-Level") em tempo de execução, e `lista_garantir` a cria (colunas pendencia/responsavel/data_prevista/status/comentario) e a compartilha no canal se não existir. Nenhum ID configurado; se a lista for recriada, nada precisa mudar. Overrides opcionais: `SLACK_LIST_NAME` (outro nome) ou `SLACK_LIST_ID` (ID fixo).
+3. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...) e `SLACK_CHANNEL_ID`; opcionalmente `SLACK_DM_USER_IDS` — quem recebe a pauta também por mensagem individual: IDs de usuário U... separados por vírgula, ou o valor especial `canal` para enviar a todos os membros humanos do canal (a lista de destinatários é resolvida a cada envio); vazio/ausente desliga as DMs; acesso de rede Custom com `slack.com` e `files.slack.com` nos domínios permitidos (mantendo a lista padrão de gerenciadores de pacotes); script de configuração vazio. Nenhum segredo na instrução ou no repo.
 4. Ferramentas no ambiente de execução: `curl`, `jq`, `python3` (padrão nas sessões do Claude Code).
 
 ## Teste local (faça antes de agendar)
@@ -63,9 +63,8 @@ pauta-staff/scripts/slack.sh dm_arquivo /tmp/teste.docx "teste de DM — pode ig
 #    só lista os destinatários, não envia nada)
 pauta-staff/scripts/slack.sh membros_canal
 
-# 6) lista de pendências funciona? (requer SLACK_LIST_ID exportada; só leitura)
-export SLACK_LIST_ID=F...
-pauta-staff/scripts/slack.sh lista_url
+# 6) lista de pendências funciona? (resolução pelo nome — nenhum ID necessário)
+pauta-staff/scripts/slack.sh lista_garantir   # cria e compartilha se não existir
 pauta-staff/scripts/slack.sh lista_itens | jq 'group_by(.status) | map({status: .[0].status, n: length})'
 ```
 
@@ -123,10 +122,14 @@ dados e nunca publicar sem a verificação final.
 - No modo `SLACK_DM_USER_IDS=canal`, TODO membro humano do canal recebe a DM.
   Se o canal tiver gente além do C-Level (assistentes, convidados), prefira a
   lista explícita de IDs — ou mantenha o canal restrito ao staff.
-- Fixe a lista de pendências no canal do staff (compartilhe o link e use
-  "Fixar no canal") para todos acharem com um clique. O agente nunca edita nem
-  apaga itens existentes da lista — só cria os novos a partir do Plano de
-  Ação; status e comentário são sempre do time.
+- O compartilhamento da lista com o canal é automático (`lista_garantir`).
+  Para facilitar ainda mais o acesso, fixe a mensagem com o link da lista no
+  canal ("Fixar no canal"). O agente nunca edita nem apaga itens existentes da
+  lista — só cria os novos a partir do Plano de Ação; status e comentário são
+  sempre do time.
+- Não renomeie a lista no Slack: a localização é pelo nome exato "Pendências —
+  Staff C-Level". Se precisar renomear, defina SLACK_LIST_NAME (ou
+  SLACK_LIST_ID) no ambiente das rotinas com o novo nome/ID.
 - Se o download do arquivo vier como HTML (erro "download nao parece um DOCX"),
   confira o scope `files:read` e se o arquivo está no mesmo workspace.
 - Para mudar o modelo do documento, edite o SKILL.md (estrutura/regras) e, se for

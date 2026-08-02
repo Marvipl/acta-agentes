@@ -15,8 +15,9 @@ Gera a pauta da reuniao de Staff C-Level (toda quarta-feira). A pauta e um
 **esqueleto padrao** com apenas duas partes dinamicas:
 
 1. **Pendencias da Semana Anterior** — acompanhadas na LISTA do Slack
-   "Pendências — Staff C-Level" (ID na variavel `SLACK_LIST_ID`), fonte unica
-   das pendencias. Colunas: Pendencia, Responsavel, Data prevista, Status
+   "Pendências — Staff C-Level", fonte unica das pendencias. A lista e
+   localizada PELO NOME em tempo de execucao (nenhum ID fixo); o comando
+   `lista_garantir` a cria e compartilha no canal se nao existir. Colunas: Pendencia, Responsavel, Data prevista, Status
    (Aberto/Fazendo/Concluido) e Comentario. O time atualiza status e
    comentario direto na lista (lembrete da rotina de segunda, ate segunda
    23:59); a rotina de terca cria na lista os itens novos vindos do Plano de
@@ -100,16 +101,16 @@ de projetos").
 ## Fluxo de execucao (rotina de segunda-feira 9h — coleta)
 
 Pre-requisitos: os mesmos do fluxo de terca (sem necessidade de
-`SLACK_DM_USER_IDS`; `SLACK_LIST_ID` e obrigatoria). Rode
-`pauta-staff/scripts/slack.sh testar` antes de qualquer outro passo. Nunca
-imprima o valor do token.
+`SLACK_DM_USER_IDS`). Rode `pauta-staff/scripts/slack.sh testar` antes de
+qualquer outro passo. Nunca imprima o valor do token.
 
 1. **Mensagem de coleta**: poste com `./pauta-staff/scripts/slack.sh postar` a
    mensagem padrao de coleta de pauta adicional (texto fixo no prompt da
    rotina), sem alteracoes.
-2. **Lembrete da lista de pendencias**: leia a lista com
-   `./pauta-staff/scripts/slack.sh lista_itens` e o permalink com
-   `./pauta-staff/scripts/slack.sh lista_url`. Identifique os responsaveis
+2. **Lembrete da lista de pendencias**: rode
+   `./pauta-staff/scripts/slack.sh lista_garantir` (localiza a lista pelo
+   nome, cria e compartilha no canal se nao existir; imprime id e url) e leia
+   a lista com `./pauta-staff/scripts/slack.sh lista_itens`. Identifique os responsaveis
    (IDs U... da coluna responsavel) dos itens com status DIFERENTE de
    "concluido". Poste UMA mensagem avulsa no canal:
    "Lembrete das pendencias: atualizem o status e o comentario dos seus itens
@@ -123,12 +124,13 @@ imprima o valor do token.
 
 ## Fluxo de execucao (rotina de terca-feira 9h)
 
-Pre-requisitos: variaveis `SLACK_BOT_TOKEN`, `SLACK_CHANNEL_ID` e
-`SLACK_LIST_ID` (lista de pendencias) exportadas (a instrucao da rotina faz o
-export antes de chamar este fluxo) e, opcional, `SLACK_DM_USER_IDS` para o
-envio por DM do passo 10 — IDs de usuario U... separados por virgula, ou o
-valor especial `canal` para enviar a todos os membros humanos do canal;
-ferramentas `curl`, `jq`, `python3`. Rode `pauta-staff/scripts/slack.sh testar`
+Pre-requisitos: variaveis `SLACK_BOT_TOKEN` e `SLACK_CHANNEL_ID` exportadas
+(a instrucao da rotina faz o export antes de chamar este fluxo) e, opcional,
+`SLACK_DM_USER_IDS` para o envio por DM do passo 10 — IDs de usuario U...
+separados por virgula, ou o valor especial `canal` para enviar a todos os
+membros humanos do canal. A lista de pendencias e localizada pelo nome em
+tempo de execucao (`lista_garantir`) — nenhum ID de lista e configurado.
+Ferramentas: `curl`, `jq`, `python3`. Rode `pauta-staff/scripts/slack.sh testar`
 antes de qualquer outro passo. Nunca imprima o valor do token.
 
 1. **Janela de coleta**: calcule segunda-feira desta semana 09:00 e 23:59
@@ -150,7 +152,9 @@ antes de qualquer outro passo. Nunca imprima o valor do token.
    anterior a proxima reuniao — nunca confie apenas no nome ou na ordem de
    upload. Depois `python3 pauta-staff/scripts/ler_docx.py /tmp/anterior.docx` e extraia
    APENAS as linhas preenchidas da tabela de plano de acao
-   ("# | Acao | Responsavel | Prazo"). Para cada acao que NAO exista na lista
+   ("# | Acao | Responsavel | Prazo"). Rode
+   `./pauta-staff/scripts/slack.sh lista_garantir` antes de mexer na lista.
+   Para cada acao que NAO exista na lista
    (compare o texto com o campo pendencia dos itens de
    `./pauta-staff/scripts/slack.sh lista_itens`, ignorando diferencas de
    caixa/espacos), crie o item com
