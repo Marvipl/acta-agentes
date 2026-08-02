@@ -77,8 +77,9 @@ segunda-feira 9h — coleta)" descrito nele. Resumo: postar a mensagem padrão d
 coleta de pauta adicional (texto fixo no prompt), localizar o arquivo da
 última reunião com pauta-staff/scripts/achar_pauta_anterior.sh, extrair as
 pendências e o plano de ação, e postar uma mensagem avulsa por pendência
-(prefixo "Update de pendencia (i/N)") pedindo ao responsável o update na
-thread até 23:59. Nunca inventar pendências. Prompt completo em
+(prefixo "Update de pendencia (i/N)"), mencionando o responsável (<@ID>, via
+slack.sh usuarios_canal) e pedindo o update na thread até 23:59. Nunca
+inventar pendências nem mencionar por palpite. Prompt completo em
 referencia/prompt_agente_pauta_coleta.md.
 ```
 

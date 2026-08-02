@@ -112,13 +112,20 @@ qualquer outro passo. Nunca imprima o valor do token.
    Responsavel, Pendencia e Prazo (ignore a coluna Update se existir). Se nao
    houver arquivo valido (exit 3) ou nenhuma pendencia, pule o passo 3 e
    encerre reportando o motivo.
-3. **Uma mensagem por pendencia**: para cada pendencia, na ordem, poste uma
-   mensagem AVULSA no canal (nunca dentro de thread), no formato exato:
-   "Update de pendencia (i/N) — Responsavel: <responsavel> — <pendencia>
+3. **Uma mensagem por pendencia**: liste os membros do canal com
+   `./pauta-staff/scripts/slack.sh usuarios_canal` (ID, nome real e display
+   name) e associe cada responsavel a um ID pelo nome (ex.: "Renato" e o
+   membro Renato Correa). Para cada pendencia, na ordem, poste uma mensagem
+   AVULSA no canal (nunca dentro de thread), no formato exato:
+   "Update de pendencia (i/N) — Responsavel: <@ID> — <pendencia>
    (prazo: <prazo>). Responda NESTA thread com o status ate hoje as 23:59."
-   O prefixo "Update de pendencia (" e obrigatorio — e por ele que a rotina de
-   terca localiza estas mensagens. Cada mensagem tem a propria thread, entao
-   cada pendencia pode ser respondida individualmente.
+   A mencao `<@ID>` (sintaxe literal do Slack) notifica o responsavel. Se o
+   responsavel nao tiver correspondencia clara e UNICA entre os membros (nome
+   ambiguo, "—" ou pessoa fora do canal), use o nome em texto simples no
+   lugar da mencao — nunca mencione por palpite. O prefixo
+   "Update de pendencia (" e obrigatorio — e por ele que a rotina de terca
+   localiza estas mensagens. Cada mensagem tem a propria thread, entao cada
+   pendencia pode ser respondida individualmente.
 4. Nao faca mais nada alem disso; encerre reportando o ts da mensagem de
    coleta e quantas mensagens de pendencia foram postadas.
 

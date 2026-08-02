@@ -38,8 +38,11 @@ reunião. A pauta consolidada será publicada amanhã às 9h."
 
 3. Poste UMA mensagem avulsa no canal por pendência (nunca dentro de thread),
    no formato exato do SKILL.md, começando com "Update de pendencia (i/N)" —
-   é por esse prefixo que a rotina de terça encontra as mensagens. Cada
-   mensagem tem a própria thread, para o responsável responder individualmente.
+   é por esse prefixo que a rotina de terça encontra as mensagens. Mencione o
+   responsável com a sintaxe <@ID> (IDs via pauta-staff/scripts/slack.sh
+   usuarios_canal, associados pelo nome; sem correspondência clara e única,
+   use o nome em texto — nunca mencione por palpite). Cada mensagem tem a
+   própria thread, para o responsável responder individualmente.
 
 4. Se não houver arquivo anterior válido ou nenhuma pendência, poste apenas a
    mensagem de coleta e encerre reportando o motivo.

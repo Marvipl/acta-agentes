@@ -23,6 +23,7 @@
 #   ./scripts/slack.sh enviar_arquivo <caminho> "comentário inicial"
 #   ./scripts/slack.sh dm_arquivo <caminho> "comentário" [U111,U222|canal]  # padrão: SLACK_DM_USER_IDS
 #   ./scripts/slack.sh membros_canal                  # IDs dos membros humanos do canal (sem bots)
+#   ./scripts/slack.sh usuarios_canal                 # ID <tab> nome real <tab> display name, por membro
 #   ./scripts/slack.sh ts "2026-07-13 23:59"         # converte data local em epoch (America/Sao_Paulo)
 
 set -euo pipefail
@@ -177,10 +178,10 @@ _abrir_dm() { # user_id -> imprime o ID do canal de DM (D...)
   echo "$resp" | jq -r '.channel.id'
 }
 
-membros_canal() {
-  # imprime os IDs dos membros humanos do canal, separados por vírgula
+usuarios_canal() {
+  # imprime "ID<tab>nome real<tab>display name" por membro humano do canal
   # (exclui bots, o Slackbot e contas desativadas)
-  local resp user uresp humanos=()
+  local resp user uresp
   resp=$(curl -s "${AUTH[@]}" \
     "$API/conversations.members?channel=${SLACK_CHANNEL_ID}&limit=200")
   _checa "$resp"
@@ -188,11 +189,14 @@ membros_canal() {
     [ "$user" = "USLACKBOT" ] && continue
     uresp=$(curl -s "${AUTH[@]}" "$API/users.info?user=${user}")
     _checa "$uresp"
-    if [ "$(echo "$uresp" | jq -r '.user.is_bot or .user.deleted')" = "false" ]; then
-      humanos+=("$user")
-    fi
+    echo "$uresp" | jq -r 'select((.user.is_bot or .user.deleted) | not) |
+      [.user.id, .user.profile.real_name // "", .user.profile.display_name // ""] | @tsv'
   done
-  (IFS=','; echo "${humanos[*]-}")
+}
+
+membros_canal() {
+  # imprime os IDs dos membros humanos do canal, separados por vírgula
+  usuarios_canal | cut -f1 | paste -sd, -
 }
 
 dm_arquivo() {
@@ -252,6 +256,7 @@ case "$cmd" in
   enviar_arquivo)        enviar_arquivo "$@" ;;
   dm_arquivo)            dm_arquivo "$@" ;;
   membros_canal)         membros_canal ;;
+  usuarios_canal)        usuarios_canal ;;
   ts)                    ts "$@" ;;
   *) grep '^#' "$0" | sed 's/^# \{0,1\}//'; exit 1 ;;
 esac
