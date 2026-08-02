@@ -2,8 +2,10 @@
 # slack.sh — Helpers de Slack para os agentes da Acta Robotics.
 #
 # Requer variáveis de ambiente:
-#   SLACK_BOT_TOKEN   token do bot (xoxb-...)
-#   SLACK_CHANNEL_ID  ID do canal (ex.: C0123456789)
+#   SLACK_BOT_TOKEN    token do bot (xoxb-...)
+#   SLACK_CHANNEL_ID   ID do canal (ex.: C0123456789)
+#   SLACK_DM_USER_IDS  opcional: IDs de usuário (U...) separados por vírgula,
+#                      destinatários padrão de dm_arquivo (requer scope im:write)
 #
 # Requer: curl, jq, python3
 #
@@ -16,6 +18,7 @@
 #   ./scripts/slack.sh listar_arquivos_docx           # JSON array dos .docx recentes do canal
 #   ./scripts/slack.sh baixar <url_private> <destino>
 #   ./scripts/slack.sh enviar_arquivo <caminho> "comentário inicial"
+#   ./scripts/slack.sh dm_arquivo <caminho> "comentário" [U111,U222]  # padrão: SLACK_DM_USER_IDS
 #   ./scripts/slack.sh ts "2026-07-13 23:59"         # converte data local em epoch (America/Sao_Paulo)
 
 set -euo pipefail
@@ -131,10 +134,10 @@ baixar() {
   echo "$destino"
 }
 
-enviar_arquivo() {
+_upload() {
   # fluxo novo do Slack (files.upload foi descontinuado):
   # getUploadURLExternal -> POST binário -> completeUploadExternal
-  local caminho="$1" comentario="${2:-}"
+  local canal="$1" caminho="$2" comentario="${3:-}"
   local nome tamanho resp url file_id
   nome=$(basename "$caminho")
   tamanho=$(wc -c < "$caminho" | tr -d ' ')
@@ -150,11 +153,50 @@ enviar_arquivo() {
   local files_json
   files_json=$(jq -n --arg id "$file_id" --arg t "$nome" '[{id:$id, title:$t}]')
   resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
-    -d "$(jq -n --argjson f "$files_json" --arg c "$SLACK_CHANNEL_ID" --arg ic "$comentario" \
+    -d "$(jq -n --argjson f "$files_json" --arg c "$canal" --arg ic "$comentario" \
           '{files:$f, channel_id:$c, initial_comment:$ic}')" \
     "$API/files.completeUploadExternal")
   _checa "$resp"
-  echo "Arquivo enviado: ${nome}"
+}
+
+enviar_arquivo() {
+  local caminho="$1" comentario="${2:-}"
+  _upload "$SLACK_CHANNEL_ID" "$caminho" "$comentario"
+  echo "Arquivo enviado: $(basename "$caminho")"
+}
+
+_abrir_dm() { # user_id -> imprime o ID do canal de DM (D...)
+  local user="$1" resp
+  resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
+    -d "$(jq -n --arg u "$user" '{users:$u}')" "$API/conversations.open")
+  _checa "$resp"
+  echo "$resp" | jq -r '.channel.id'
+}
+
+dm_arquivo() {
+  # envia o arquivo por mensagem individual a cada usuário da lista (3º argumento
+  # ou SLACK_DM_USER_IDS). Falha em um destinatário não interrompe os demais;
+  # exit 1 apenas se houve destinatários e nenhuma DM saiu.
+  local caminho="$1" comentario="${2:-}" ids="${3:-${SLACK_DM_USER_IDS:-}}"
+  if [ -z "$ids" ]; then
+    echo "AVISO: SLACK_DM_USER_IDS vazio e nenhuma lista informada — nenhuma DM enviada" >&2
+    return 0
+  fi
+  local enviadas=0 falhas=0 user canal
+  IFS=',' read -ra _lista <<< "$ids"
+  for user in "${_lista[@]}"; do
+    user="${user//[[:space:]]/}"
+    [ -z "$user" ] && continue
+    if canal=$(_abrir_dm "$user") && (_upload "$canal" "$caminho" "$comentario"); then
+      echo "DM enviada para ${user}"
+      enviadas=$((enviadas + 1))
+    else
+      echo "AVISO: falha na DM para ${user} (scope im:write ausente ou ID invalido?)" >&2
+      falhas=$((falhas + 1))
+    fi
+  done
+  echo "DMs: ${enviadas} enviada(s), ${falhas} falha(s)"
+  [ "$enviadas" -gt 0 ] || [ "$falhas" -eq 0 ]
 }
 
 ts() {
@@ -177,6 +219,7 @@ case "$cmd" in
   listar_arquivos_docx)  listar_arquivos_docx ;;
   baixar)                baixar "$@" ;;
   enviar_arquivo)        enviar_arquivo "$@" ;;
+  dm_arquivo)            dm_arquivo "$@" ;;
   ts)                    ts "$@" ;;
   *) grep '^#' "$0" | sed 's/^# \{0,1\}//'; exit 1 ;;
 esac

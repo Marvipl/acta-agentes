@@ -19,7 +19,7 @@ pauta-staff/
   templates/Template_Ata_Staff.docx  Template real (logo, estilos, rodapé) — o corpo é regenerado
   scripts/gerar_pauta.py             Gera o DOCX a partir de um JSON de conteúdo (stdlib apenas)
   scripts/ler_docx.py                Extrai texto/tabelas de um DOCX (stdlib apenas)
-  scripts/slack.sh                   postar | historico | respostas | listar_arquivos_docx | baixar | enviar_arquivo | ts
+  scripts/slack.sh                   postar | historico | respostas | listar_arquivos_docx | baixar | enviar_arquivo | dm_arquivo | ts
   scripts/validar_pauta.py           Valida um DOCX pelo conteúdo: título Staff/C-Level + data interna (stdlib apenas)
   scripts/achar_pauta_anterior.sh    Baixa os .docx do canal, valida cada um e escolhe o da última reunião
   exemplos/pauta_exemplo.json        Exemplo funcional do esquema de conteúdo
@@ -27,8 +27,8 @@ pauta-staff/
 
 ## Pré-requisitos
 
-1. **App do Slack** (já feito na Etapa 1): bot scopes `chat:write`, `channels:history`, `files:read`, `files:write` (`groups:history` se o canal for privado); bot convidado ao canal.
-2. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...) e `SLACK_CHANNEL_ID`; acesso de rede Custom com `slack.com` e `files.slack.com` nos domínios permitidos (mantendo a lista padrão de gerenciadores de pacotes); script de configuração vazio. Nenhum segredo na instrução ou no repo.
+1. **App do Slack** (já feito na Etapa 1): bot scopes `chat:write`, `channels:history`, `files:read`, `files:write` (`groups:history` se o canal for privado; `im:write` para o envio da pauta por DM); bot convidado ao canal.
+2. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...) e `SLACK_CHANNEL_ID`; opcionalmente `SLACK_DM_USER_IDS` (IDs de usuário U... separados por vírgula — quem recebe a pauta também por mensagem individual; vazio/ausente desliga as DMs); acesso de rede Custom com `slack.com` e `files.slack.com` nos domínios permitidos (mantendo a lista padrão de gerenciadores de pacotes); script de configuração vazio. Nenhum segredo na instrução ou no repo.
 3. Ferramentas no ambiente de execução: `curl`, `jq`, `python3` (padrão nas sessões do Claude Code).
 
 ## Teste local (faça antes de agendar)
@@ -52,6 +52,9 @@ python3 pauta-staff/scripts/validar_pauta.py /tmp/teste.docx
 pauta-staff/scripts/slack.sh postar "teste do agente de pauta — pode ignorar"
 pauta-staff/scripts/slack.sh enviar_arquivo /tmp/teste.docx "teste de upload — pode ignorar"
 pauta-staff/scripts/achar_pauta_anterior.sh   # deve encontrar e validar o arquivo recém-enviado
+
+# 4) DM funciona? (opcional — requer scope im:write; use seu próprio ID U...)
+pauta-staff/scripts/slack.sh dm_arquivo /tmp/teste.docx "teste de DM — pode ignorar" U0SEUID
 ```
 
 Depois, rode o prompt da Rotina 2 (abaixo) numa sessão interativa do Claude Code
@@ -88,8 +91,11 @@ Staff/C-Level + data interna — não pelo nome do arquivo), extrair dele apenas
 as pendências e o plano de ação, gerar o DOCX com
 pauta-staff/scripts/gerar_pauta.py sobre o template oficial (seções Projetos, Comercial e
 Financeiro sempre com o texto genérico fixo; Pauta Adicional somente se houver
-itens) e publicar no canal. Respeite todas as regras invioláveis do SKILL.md —
-em especial: nunca inventar dados e nunca publicar sem a verificação final.
+itens) e publicar no canal. Se a variável SLACK_DM_USER_IDS estiver definida,
+enviar em seguida o mesmo arquivo por mensagem individual a cada ID com
+pauta-staff/scripts/slack.sh dm_arquivo. Respeite todas as regras invioláveis
+do SKILL.md — em especial: nunca inventar dados e nunca publicar sem a
+verificação final.
 ```
 
 ## Notas operacionais
@@ -99,6 +105,9 @@ em especial: nunca inventar dados e nunca publicar sem a verificação final.
 - O cutoff de segunda 23:59 é aplicado por filtro de timestamp na coleta — por isso
   não existe uma terceira rotina às 23:59.
 - Se o Slack retornar `not_in_channel`, o bot não foi convidado ao canal (`/invite @bot`).
+- Para obter o ID de usuário (U...) de alguém: perfil da pessoa no Slack → menu
+  "⋮" → "Copiar ID do membro". A DM chega pela aba de mensagens do app do bot —
+  se alguém não estiver recebendo, confira se não silenciou o app.
 - Se o download do arquivo vier como HTML (erro "download nao parece um DOCX"),
   confira o scope `files:read` e se o arquivo está no mesmo workspace.
 - Para mudar o modelo do documento, edite o SKILL.md (estrutura/regras) e, se for

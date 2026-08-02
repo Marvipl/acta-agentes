@@ -2,8 +2,9 @@
 
 > Rotina Remote semanal. Repositório: acta-agentes. Fuso: America/Sao_Paulo.
 > Requer, no ambiente de nuvem da rotina: variáveis SLACK_BOT_TOKEN e
-> SLACK_CHANNEL_ID, e acesso de rede liberado para slack.com e files.slack.com.
-> Nenhum segredo neste arquivo ou na instrução.
+> SLACK_CHANNEL_ID (e, opcional, SLACK_DM_USER_IDS — IDs U... separados por
+> vírgula para envio da pauta também por DM), e acesso de rede liberado para
+> slack.com e files.slack.com. Nenhum segredo neste arquivo ou na instrução.
 
 ---
 
@@ -33,6 +34,10 @@ Resumo do fluxo (a referência completa é o SKILL.md):
 5. Verificar o arquivo gerado com pauta-staff/scripts/ler_docx.py antes de
    publicar. Nunca publicar sem essa verificação.
 6. Publicar no canal com pauta-staff/scripts/slack.sh enviar_arquivo.
+7. Se SLACK_DM_USER_IDS estiver definida, enviar o mesmo arquivo por mensagem
+   individual a cada ID com pauta-staff/scripts/slack.sh dm_arquivo (mesmo
+   comentário da publicação). Falha em uma DM não invalida a publicação no
+   canal — apenas relate os avisos.
 
 Regras inegociáveis (detalhadas no SKILL.md): nunca inventar dados; pendência
 sem prazo vira "—"; sem emojis no documento; nomes comerciais 9fleet e
