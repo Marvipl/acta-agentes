@@ -216,15 +216,16 @@ antes de qualquer outro passo. Nunca imprima o valor do token.
 
 ## Pos-reuniao (fora do escopo do agente)
 
-O detalhamento das secoes Projetos, Comercial e Financeiro e preenchido
-manualmente pelo time com base no que foi discutido, e a ata final e enviada ao
-canal pelo proprio time. O agente nao participa dessa etapa — mas o Plano de
-Acao do arquivo enviado sera sincronizado com a lista de pendencias na terca
-seguinte (passo 4), desde que o documento mantenha o titulo Staff C-Level e a
-linha "Data" no padrao atual (a selecao e feita pelo conteudo do arquivo, nao
-pelo nome). Status e comentario das pendencias sao atualizados pelo time
-DIRETO na lista do Slack — o agente nunca altera itens existentes, apenas cria
-os novos.
+Com a lista como fonte unica, o ciclo das pendencias NAO depende de ata: o
+time cria as novas acoes direto na lista e atualiza status/comentario la. A
+ata editada e OPCIONAL (registro formal da reuniao); se o time enviar uma ao
+canal com o titulo Staff C-Level e a linha "Data" no padrao atual, o Plano de
+Acao dela sera sincronizado com a lista na terca seguinte (passo 4) como rede
+de seguranca — sem ata nova, o passo 4 encontra a propria pauta publicada
+pelo bot (Plano de Acao vazio) e nao cria nada, o que e o comportamento
+esperado. A comparacao semanal do passo 5 tambem funciona sem ata: o bullet
+"Nao finalizadas" e lido da propria pauta anterior publicada pelo bot. O
+agente nunca altera itens existentes da lista, apenas cria os novos.
 
 ## Tratamento de erros
 
