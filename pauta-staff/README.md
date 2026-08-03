@@ -129,12 +129,13 @@ dados e nunca publicar sem a verificação final.
 - Não renomeie a lista no Slack: a localização é pelo nome exato "Pendências —
   Staff C-Level". Se precisar renomear, defina SLACK_LIST_NAME (ou
   SLACK_LIST_ID) no ambiente das rotinas com o novo nome/ID.
-- Aviso no canal a cada mudança de Status: configurado direto no Slack, fora
-  do escopo do bot — abra a lista → ⚡ Automações → gatilho "Quando um item
-  for atualizado" (coluna Status) → etapa "Enviar mensagem ao canal" com as
-  variáveis do item. Automações do Workflow Builder são criadas manualmente
-  na interface (não há API para o bot criá-las). Para reduzir ruído,
-  adicione a condição "Status é Concluído".
+- Acompanhamento de mudanças na lista: cada membro ativa as atualizações da
+  lista no próprio feed de Atividade do Slack (na lista, ative as
+  notificações/atualizações) — abordagem adotada, sem ruído no canal. Se um
+  dia quiserem aviso coletivo no canal, dá para criar manualmente no
+  Workflow Builder (lista → ⚡ Automações → gatilho "Quando um item for
+  atualizado" na coluna Status → mensagem ao canal); não há API para o bot
+  criar automações.
 - Se o download do arquivo vier como HTML (erro "download nao parece um DOCX"),
   confira o scope `files:read` e se o arquivo está no mesmo workspace.
 - Para mudar o modelo do documento, edite o SKILL.md (estrutura/regras) e, se for
