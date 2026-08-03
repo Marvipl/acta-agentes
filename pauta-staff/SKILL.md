@@ -18,11 +18,12 @@ Gera a pauta da reuniao de Staff C-Level (toda quarta-feira). A pauta e um
    "Pendências — Staff C-Level", fonte unica das pendencias. A lista e
    localizada PELO NOME em tempo de execucao (nenhum ID fixo); o comando
    `lista_garantir` a cria e compartilha no canal se nao existir. Colunas: Pendencia, Responsavel, Data prevista, Status
-   (Aberto/Fazendo/Concluido) e Comentario. O time atualiza status e
-   comentario direto na lista (lembrete da rotina de segunda, ate segunda
-   23:59); a rotina de terca cria na lista os itens novos vindos do Plano de
-   Acao da ultima ata e poe na pauta apenas um RESUMO — a verificacao item a
-   item e feita direto na lista, fora ou durante a reuniao.
+   (Aberto/Fazendo/Concluido) e Comentario. O time cria as novas acoes e
+   atualiza status e comentario DIRETO na lista (lembrete da rotina de
+   segunda, ate segunda 23:59); a rotina de terca apenas LE a lista e poe na
+   pauta um RESUMO com indicadores — a verificacao item a item e feita direto
+   na lista, fora ou durante a reuniao. O agente nao baixa nem le arquivos de
+   pauta/ata do canal e nunca altera itens existentes da lista.
 2. **Pauta Adicional** — itens enviados pelo time na thread da mensagem de coleta
    de segunda-feira (cutoff segunda 23:59, America/Sao_Paulo).
 
@@ -43,13 +44,12 @@ tabela de participantes e as secoes, nesta ordem:
 1. **Pendencias da Semana Anterior** — nota "As pendencias sao acompanhadas na
    lista 'Pendências — Staff C-Level' do Slack; verificacao item a item direto
    na lista." + tres bullets de INDICADORES com dados reais calculados no
-   passo 5 do fluxo de terca (sem tabela de pendencias — a lista e a fonte
+   passo 4 do fluxo de terca (sem tabela de pendencias — a lista e a fonte
    unica):
    - "Nao finalizadas (aberto + fazendo): N — semana passada: M." — M e o
-     total registrado na ata anterior; se a ata anterior nao tiver esse
-     registro (formato antigo), escreva "semana passada: sem registro". O
-     bullet DEVE comecar com "Nao finalizadas" e trazer N como primeiro
-     numero — e assim que a rotina seguinte le o historico.
+     numero registrado no comentario de publicacao da pauta anterior
+     (mensagem do bot no canal, passo 4); sem registro anterior, escreva
+     "semana passada: sem registro".
    - "Por responsavel: Nome N, Nome N, ..." — contagem de nao finalizadas por
      responsavel, em ordem decrescente; acrescente "sem responsavel: N"
      apenas se houver itens sem responsavel.
@@ -133,7 +133,7 @@ qualquer outro passo. Nunca imprima o valor do token.
 
 Pre-requisitos: variaveis `SLACK_BOT_TOKEN` e `SLACK_CHANNEL_ID` exportadas
 (a instrucao da rotina faz o export antes de chamar este fluxo) e, opcional,
-`SLACK_DM_USER_IDS` para o envio por DM do passo 10 — IDs de usuario U...
+`SLACK_DM_USER_IDS` para o envio por DM do passo 9 — IDs de usuario U...
 separados por virgula, ou o valor especial `canal` para enviar a todos os
 membros humanos do canal. A lista de pendencias e localizada pelo nome em
 tempo de execucao (`lista_garantir`) — nenhum ID de lista e configurado.
@@ -150,58 +150,45 @@ antes de qualquer outro passo. Nunca imprima o valor do token.
    **Descarte qualquer mensagem com ts posterior a segunda 23:59.** Ignore
    mensagens do proprio bot. Cada resposta valida vira um item de Pauta
    Adicional com o nome de quem enviou.
-4. **Sincronizacao do Plano de Acao com a lista**: localize o arquivo da
-   ULTIMA reuniao com
-   `./pauta-staff/scripts/achar_pauta_anterior.sh <data_da_proxima_quarta_ISO> /tmp/anterior.docx`.
-   O script baixa os .docx recentes do canal e valida cada um PELO CONTEUDO
-   (titulo contendo Staff/C-Level + linha "Data" interpretavel, via
-   `pauta-staff/scripts/validar_pauta.py`), escolhendo o de data interna mais recente
-   anterior a proxima reuniao — nunca confie apenas no nome ou na ordem de
-   upload. Depois `python3 pauta-staff/scripts/ler_docx.py /tmp/anterior.docx` e extraia
-   APENAS as linhas preenchidas da tabela de plano de acao
-   ("# | Acao | Responsavel | Prazo"). Rode
-   `./pauta-staff/scripts/slack.sh lista_garantir` antes de mexer na lista.
-   Para cada acao que NAO exista na lista
-   (compare o texto com o campo pendencia dos itens de
-   `./pauta-staff/scripts/slack.sh lista_itens`, ignorando diferencas de
-   caixa/espacos), crie o item com
-   `./pauta-staff/scripts/slack.sh lista_criar_item "<acao>" "<IDs>" "<data>" aberto`
-   — responsavel mapeado por nome via `usuarios_canal` (mais de um nome:
-   IDs separados por virgula; sem correspondencia clara: deixe sem
-   responsavel e registre no relato); prazo no formato dd/mm/aaaa vira data
-   AAAA-MM-DD; prazo textual vai no 5º argumento como
-   "Prazo original: <texto>". Nunca crie duplicatas nem apague/edite itens
-   existentes. Se nao houver arquivo valido (exit 3), pule a sincronizacao e
-   registre o aviso.
-5. **Leitura da lista e indicadores**: leia
-   `./pauta-staff/scripts/slack.sh lista_itens` (ja com os itens
-   recem-sincronizados) e calcule: (a) total de NAO finalizadas — status
-   aberto + fazendo; (b) contagem de nao finalizadas por responsavel, com
-   nomes resolvidos via `usuarios_canal` (item com mais de um responsavel
-   conta para cada um; sem responsavel entra em "sem responsavel");
-   (c) total de concluidas. Para a comparacao semanal, extraia da secao 1 da
-   ata anterior (/tmp/anterior.docx, ja baixada no passo 4) o PRIMEIRO numero
-   do bullet que comeca com "Nao finalizadas"/"Não finalizadas"; se o bullet
-   nao existir, use "sem registro". Nunca calcule o numero anterior por conta
-   propria — apenas o que esta registrado na ata.
-6. **Montagem**: escreva o JSON de conteudo seguindo `pauta-staff/exemplos/pauta_exemplo.json`
+4. **Leitura da lista e indicadores**: rode
+   `./pauta-staff/scripts/slack.sh lista_garantir`, depois leia
+   `./pauta-staff/scripts/slack.sh lista_itens` e calcule: (a) total de NAO
+   finalizadas — status aberto + fazendo; (b) contagem de nao finalizadas por
+   responsavel, com nomes resolvidos via `usuarios_canal` (item com mais de
+   um responsavel conta para cada um; sem responsavel entra em "sem
+   responsavel"); (c) total de concluidas. Para a comparacao semanal, busque
+   no historico dos ultimos 8 dias
+   (`./pauta-staff/scripts/slack.sh historico <epoch_8_dias_atras>`) a
+   mensagem MAIS RECENTE do bot que contenha "finalizadas na lista:"
+   (comentario da publicacao da pauta anterior; a busca ignora o "Não"
+   inicial para nao depender de acento) e extraia o PRIMEIRO numero apos essa
+   expressao — esse e o M de "semana passada". Se nao houver tal
+   mensagem, use "sem registro". Nunca calcule o numero anterior por conta
+   propria — apenas o que esta registrado na mensagem. O agente NAO baixa nem
+   le arquivos de pauta/ata do canal neste fluxo — a lista e o historico de
+   mensagens sao as unicas fontes.
+5. **Montagem**: escreva o JSON de conteudo seguindo `pauta-staff/exemplos/pauta_exemplo.json`
    (esquema completo no cabecalho de `pauta-staff/scripts/gerar_pauta.py`).
    A secao 1 usa apenas bullets (resumo da lista, conforme "Estrutura
    obrigatoria"), sem tabela de pendencias. Inclua `footer_data` com a data
    da reuniao (dd/mm/aaaa).
-7. **Geracao**: `python3 pauta-staff/scripts/gerar_pauta.py --template
+6. **Geracao**: `python3 pauta-staff/scripts/gerar_pauta.py --template
    pauta-staff/templates/Template_Ata_Staff.docx --json /tmp/conteudo.json --out
    /tmp/Pauta_Staff_AAAA-MM-DD.docx` (data da quarta-feira no nome).
-8. **Verificacao antes de publicar**: rode `python3 pauta-staff/scripts/ler_docx.py` no
+7. **Verificacao antes de publicar**: rode `python3 pauta-staff/scripts/ler_docx.py` no
    arquivo gerado e confira: (a) toda resposta valida da thread virou item da
    Pauta Adicional, (b) as contagens do resumo batem com a lista lida no
-   passo 5, (c) as secoes 2-4 contem apenas o texto generico fixo, (d) a data
+   passo 4, (c) as secoes 2-4 contem apenas o texto generico fixo, (d) a data
    esta correta.
-9. **Publicacao**: `./pauta-staff/scripts/slack.sh enviar_arquivo /tmp/Pauta_Staff_....docx
-   "Pauta da reuniao de quarta-feira <data>. Pendencias na lista: <url de
-   lista_url> — revisem seus itens antes da reuniao. Itens de ultima hora
-   podem ser levados diretamente na reuniao."`
-10. **Copia por DM**: se `SLACK_DM_USER_IDS` estiver definida, envie o MESMO
+8. **Publicacao**: `./pauta-staff/scripts/slack.sh enviar_arquivo /tmp/Pauta_Staff_....docx
+   "Pauta da reuniao de quarta-feira <data>. Nao finalizadas na lista: <N>
+   (semana passada: <M ou sem registro>). Pendencias: <url de lista_url> —
+   revisem seus itens antes da reuniao. Itens de ultima hora podem ser
+   levados diretamente na reuniao."` — no comentario real, use acentuacao
+   correta ("Não finalizadas na lista: 19"). A expressao
+   "finalizadas na lista:" seguida do numero N e OBRIGATORIA e com esta
+   grafia: e dela que a rotina da proxima semana extrai o M da comparacao.
+9. **Copia por DM**: se `SLACK_DM_USER_IDS` estiver definida, envie o MESMO
    arquivo por mensagem individual a cada destinatario com
    `./pauta-staff/scripts/slack.sh dm_arquivo /tmp/Pauta_Staff_....docx
    "<mesmo comentario da publicacao>"`. Com o valor `canal`, o proprio script
@@ -210,27 +197,24 @@ antes de qualquer outro passo. Nunca imprima o valor do token.
    falhar — falha parcial de DM nao invalida a publicacao no canal; apenas
    registre os avisos no relato final. Se a variavel nao estiver definida,
    pule este passo.
-11. **Sem respostas na thread**: gere a pauta sem a secao Pauta Adicional e
+10. **Sem respostas na thread**: gere a pauta sem a secao Pauta Adicional e
     informe no comentario de publicacao: "Nenhum item adicional foi enviado
     nesta semana."
 
 ## Pos-reuniao (fora do escopo do agente)
 
-Com a lista como fonte unica, o ciclo das pendencias NAO depende de ata: o
-time cria as novas acoes direto na lista e atualiza status/comentario la. A
-ata editada e OPCIONAL (registro formal da reuniao); se o time enviar uma ao
-canal com o titulo Staff C-Level e a linha "Data" no padrao atual, o Plano de
-Acao dela sera sincronizado com a lista na terca seguinte (passo 4) como rede
-de seguranca — sem ata nova, o passo 4 encontra a propria pauta publicada
-pelo bot (Plano de Acao vazio) e nao cria nada, o que e o comportamento
-esperado. A comparacao semanal do passo 5 tambem funciona sem ata: o bullet
-"Nao finalizadas" e lido da propria pauta anterior publicada pelo bot. O
-agente nunca altera itens existentes da lista, apenas cria os novos.
+Com a lista como fonte unica, o ciclo das pendencias NAO depende de ata: apos
+a reuniao, o time cria as novas acoes DIRETO na lista e atualiza
+status/comentario la. O agente nao busca, baixa nem le arquivos de pauta/ata
+do canal — atas editadas que o time eventualmente enviar sao apenas registro
+formal, sem efeito no ciclo. A comparacao semanal vem do comentario de
+publicacao da pauta anterior (mensagem do bot no canal). O agente nunca
+altera itens existentes da lista.
 
 ## Tratamento de erros
 
 - Falha em chamada ao Slack: pare e reporte o erro exato (`ERRO Slack: <codigo>`).
-- `achar_pauta_anterior.sh` com exit 3 (nenhum candidato valido): siga a regra
-  da secao 1 (linha placeholder) e avise no comentario de publicacao. Os motivos
-  de descarte de cada candidato saem no stderr do script — inclua-os no log.
+- Sem mensagem de publicacao anterior no historico (primeira execucao ou
+  intervalo maior que 8 dias): use "semana passada: sem registro" — nunca
+  invente o numero.
 - Nunca publique um arquivo que nao passou pela verificacao do passo 7.

@@ -8,9 +8,9 @@ Automação semanal via **Claude Code Routines**:
 As pendências vivem numa **lista do Slack** ("Pendências — Staff C-Level", colunas Pendência / Responsável / Data prevista / Status / Comentário) — fonte única, atualizada pelo próprio time direto na lista. Na reunião, a verificação item a item é feita na lista, não na pauta.
 
 - **Segunda 09:00** — o agente posta no canal pedindo itens de pauta adicional (respostas na thread até 23:59) e um lembrete com o link da lista, mencionando os responsáveis por itens não concluídos para atualizarem status e comentário até 23:59.
-- **Terça 09:00** — o agente coleta as respostas da thread (cutoff segunda 23:59), sincroniza o Plano de Ação da última ata do canal com a lista (cria os itens novos, status Aberto), lê a lista e gera a pauta da reunião de quarta com os indicadores das pendências — total não finalizado (aberto + fazendo) com comparação vs. semana passada, contagem por responsável e concluídas —, publicando o DOCX no canal (e por DM, se configurado).
+- **Terça 09:00** — o agente coleta as respostas da thread (cutoff segunda 23:59), lê a lista e gera a pauta da reunião de quarta com os indicadores das pendências — total não finalizado (aberto + fazendo) com comparação vs. semana passada, contagem por responsável e concluídas —, publicando o DOCX no canal (e por DM, se configurado). Nenhum arquivo de pauta/ata é baixado ou lido: a lista e o histórico de mensagens são as únicas fontes.
 
-A pauta gerada é um esqueleto padrão: Pendências da Semana Anterior (indicadores da lista, sem tabela — para a reunião abrir com a visão de se o volume está crescendo ou caindo), Projetos / Comercial / Financeiro com texto genérico fixo ("Apresentação de status..."), Pauta Adicional (somente se houver itens no Slack) e Plano de Ação em branco. Após a reunião, o time adiciona as novas ações **direto na lista** — enviar uma ata editada ao canal é opcional (registro formal); se enviada, o Plano de Ação dela é sincronizado com a lista na terça seguinte como rede de segurança. A comparação semanal dos indicadores se alimenta da própria pauta publicada pelo bot, então o ciclo funciona por completo sem nenhuma ata.
+A pauta gerada é um esqueleto padrão: Pendências da Semana Anterior (indicadores da lista, sem tabela — para a reunião abrir com a visão de se o volume está crescendo ou caindo), Projetos / Comercial / Financeiro com texto genérico fixo ("Apresentação de status..."), Pauta Adicional (somente se houver itens no Slack) e Plano de Ação em branco. Após a reunião, o time adiciona as novas ações **direto na lista** — atas editadas são registro formal opcional, sem efeito no ciclo (o bot não busca nem lê arquivos do canal). A comparação semanal dos indicadores se alimenta do comentário de publicação da pauta anterior (mensagem do próprio bot), então o ciclo funciona por completo sem nenhuma ata.
 
 ## Estrutura
 
@@ -23,7 +23,7 @@ pauta-staff/
   scripts/ler_docx.py                Extrai texto/tabelas de um DOCX (stdlib apenas)
   scripts/slack.sh                   postar | historico | respostas | listar_arquivos_docx | baixar | enviar_arquivo | dm_arquivo | lista_itens | lista_criar_item | lista_url | ts
   scripts/validar_pauta.py           Valida um DOCX pelo conteúdo: título Staff/C-Level + data interna (stdlib apenas)
-  scripts/achar_pauta_anterior.sh    Baixa os .docx do canal, valida cada um e escolhe o da última reunião
+  scripts/achar_pauta_anterior.sh    Baixa os .docx do canal, valida cada um e escolhe o da última reunião (não usado no fluxo staff; mantido para o fluxo do conselho)
   exemplos/pauta_exemplo.json        Exemplo funcional do esquema de conteúdo
 ```
 
@@ -54,7 +54,6 @@ python3 pauta-staff/scripts/validar_pauta.py /tmp/teste.docx
 # 3) Slack funciona?
 pauta-staff/scripts/slack.sh postar "teste do agente de pauta — pode ignorar"
 pauta-staff/scripts/slack.sh enviar_arquivo /tmp/teste.docx "teste de upload — pode ignorar"
-pauta-staff/scripts/achar_pauta_anterior.sh   # deve encontrar e validar o arquivo recém-enviado
 
 # 4) DM funciona? (opcional — requer scope im:write; use seu próprio ID U...)
 pauta-staff/scripts/slack.sh dm_arquivo /tmp/teste.docx "teste de DM — pode ignorar" U0SEUID
@@ -94,15 +93,15 @@ referencia/prompt_agente_pauta_coleta.md.
 Leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execução" descrito
 nele para gerar e publicar a pauta da Reunião de Staff C-Level de quarta-feira.
 Resumo: coletar as respostas da thread de coleta de ontem (apenas mensagens
-até segunda-feira 23:59, America/Sao_Paulo), localizar o arquivo da última
-reunião com pauta-staff/scripts/achar_pauta_anterior.sh (validação pelo conteúdo: título
-Staff/C-Level + data interna — não pelo nome do arquivo), sincronizar o Plano
-de Ação dele com a lista de pendências (slack.sh lista_criar_item, sem
-duplicar nem alterar itens existentes), ler a lista (slack.sh lista_itens) e
-gerar o DOCX com pauta-staff/scripts/gerar_pauta.py sobre o template oficial
-(seção 1 apenas com o resumo da lista; seções Projetos, Comercial e
-Financeiro sempre com o texto genérico fixo; Pauta Adicional somente se houver
-itens) e publicar no canal com o link da lista no comentário. Se a variável
+até segunda-feira 23:59, America/Sao_Paulo), ler a lista de pendências
+(slack.sh lista_garantir e lista_itens) e montar os indicadores da seção 1
+(não finalizadas no total e por responsável; comparação com o número da
+mensagem de publicação da semana passada no histórico do canal), gerar o
+DOCX com pauta-staff/scripts/gerar_pauta.py sobre o template oficial (seções
+Projetos, Comercial e Financeiro sempre com o texto genérico fixo; Pauta
+Adicional somente se houver itens) e publicar no canal com comentário
+incluindo "Não finalizadas na lista: N (semana passada: M)" e o link da
+lista. Não baixar nem ler arquivos de pauta/ata do canal. Se a variável
 SLACK_DM_USER_IDS estiver definida, enviar em seguida o mesmo arquivo por
 mensagem individual a cada ID com pauta-staff/scripts/slack.sh dm_arquivo.
 Respeite todas as regras invioláveis do SKILL.md — em especial: nunca inventar

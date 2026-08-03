@@ -26,27 +26,23 @@ quarta-feira.
 Resumo do fluxo (a referência completa é o SKILL.md):
 1. Coletar as respostas da thread de coleta postada ontem, considerando apenas
    mensagens até segunda-feira 23:59 (America/Sao_Paulo).
-2. Localizar o arquivo da última reunião com
-   pauta-staff/scripts/achar_pauta_anterior.sh (validação pelo CONTEÚDO —
-   título Staff/C-Level + data interna — nunca pelo nome do arquivo), passando
-   a data da próxima quarta-feira como limite.
-3. Sincronizar o Plano de Ação da última ata com a lista de pendências
-   (antes, rode slack.sh lista_garantir): criar na lista (slack.sh
-   lista_criar_item, status aberto) as ações que ainda não existem nela.
-   Nunca duplicar nem alterar itens existentes.
-4. Ler a lista (slack.sh lista_itens) e montar os indicadores da seção 1 da
-   pauta: total de não finalizadas (aberto + fazendo) com comparação vs.
-   semana passada (número lido do bullet "Não finalizadas" da ata anterior),
-   contagem de não finalizadas por responsável e total de concluídas — sem
-   tabela de pendências no documento; a lista é a fonte única.
-5. Gerar o DOCX com pauta-staff/scripts/gerar_pauta.py sobre o template oficial.
+2. Ler a lista de pendências (slack.sh lista_garantir e depois lista_itens) e
+   montar os indicadores da seção 1 da pauta: total de não finalizadas
+   (aberto + fazendo) com comparação vs. semana passada (número extraído da
+   mensagem de publicação da pauta anterior no histórico do canal — expressão
+   "finalizadas na lista: N"), contagem de não finalizadas por responsável e
+   total de concluídas — sem tabela de pendências no documento; a lista é a
+   fonte única. Não baixar nem ler arquivos de pauta/ata do canal.
+3. Gerar o DOCX com pauta-staff/scripts/gerar_pauta.py sobre o template oficial.
    Seções Projetos, Comercial e Financeiro sempre com o texto genérico fixo;
    seção Pauta Adicional somente se houver itens coletados.
-6. Verificar o arquivo gerado com pauta-staff/scripts/ler_docx.py antes de
+4. Verificar o arquivo gerado com pauta-staff/scripts/ler_docx.py antes de
    publicar. Nunca publicar sem essa verificação.
-7. Publicar no canal com pauta-staff/scripts/slack.sh enviar_arquivo, com o
-   link da lista (slack.sh lista_url) no comentário.
-8. Se SLACK_DM_USER_IDS estiver definida, enviar o mesmo arquivo por mensagem
+5. Publicar no canal com pauta-staff/scripts/slack.sh enviar_arquivo, com
+   comentário incluindo "Não finalizadas na lista: N (semana passada: M)" e o
+   link da lista (slack.sh lista_url) — é dessa mensagem que a rotina da
+   próxima semana lê a comparação.
+6. Se SLACK_DM_USER_IDS estiver definida, enviar o mesmo arquivo por mensagem
    individual a cada ID com pauta-staff/scripts/slack.sh dm_arquivo (mesmo
    comentário da publicação). Falha em uma DM não invalida a publicação no
    canal — apenas relate os avisos.
