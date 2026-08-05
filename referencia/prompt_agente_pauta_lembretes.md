@@ -13,7 +13,8 @@ diaria 9h — lembretes de vencimento)" descrito nele.
 Resumo do fluxo:
 
 1. Calcular HOJE, HOJE+3 e ONTEM (America/Sao_Paulo).
-2. Ler a lista (pauta-staff/scripts/slack.sh lista_itens) e considerar apenas
+2. Ler a lista "Action Plan - Staff C-level" (pauta-staff/scripts/slack.sh
+   lista_itens — a localização pelo nome é automática) e considerar apenas
    itens não concluídos com data prevista preenchida.
 3. Itens que vencem em HOJE+3: enviar UMA mensagem privada por responsável
    (slack.sh dm_texto) listando as atividades dele que vencem em 3 dias, com
