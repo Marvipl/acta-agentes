@@ -23,7 +23,10 @@ Resumo do fluxo:
    consolidada no canal #avisos-action-items (id via slack.sh canal_por_nome
    avisos-action-items; postagem via slack.sh postar_em), mencionando os
    responsáveis (<@ID>).
-5. Sem itens nas duas janelas: encerrar sem postar nada.
+5. Sempre (com ou sem lembretes): atualizar a tabela-espelho de action items
+   na dash (slack.sh dash_canvas_id + canvas_substituir "Atividade") com os
+   itens não concluídos da lista.
+6. Sem itens nas janelas de lembrete: não postar mensagens nem DMs.
 
 Nunca alterar a lista, nunca postar no canal principal neste fluxo, nunca
 inventar atividades ou datas, e nunca imprimir o valor do token. Itens

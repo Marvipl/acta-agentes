@@ -12,7 +12,7 @@ Rotinas:
 
 - **Segunda 09:00** — lembrete único no canal: atualizar status/comentário na lista até 23:59 (mencionando responsáveis por itens em aberto) e adicionar pauta adicional direto na dash.
 - **Terça 09:00** — o agente lê a lista, atualiza os blocos do bot na dash (indicadores com comparação vs. semana passada, tabela por pessoa, histórico +1 linha, espelho de action items) e avisa no canal. As seções manuais nunca são tocadas.
-- **Diariamente 09:00** — lembretes de vencimento: DM privada aos responsáveis por atividades que vencem em 3 dias, e aviso consolidado no canal privado #avisos-action-items para as vencidas há 1 dia que seguem não concluídas.
+- **Diariamente 09:00** — lembretes de vencimento (DM privada aos responsáveis por atividades que vencem em 3 dias; aviso consolidado no canal privado #avisos-action-items para as vencidas há 1 dia que seguem não concluídas) e atualização diária da tabela-espelho de action items na dash.
 
 Após a reunião de quarta, o time cola o resumo na dash, cria as novas ações direto na lista e limpa a seção de pauta adicional. Atas em Word são história — os scripts de DOCX permanecem no repo apenas como legado/uso do fluxo do conselho.
 
@@ -78,11 +78,15 @@ em `referencia/`:
 
 - Routines está em research preview; cada execução consome os limites de uso do
   plano. As rotinas pertencem à conta que as criou.
-- A dash é o canvas do canal: seções ✍️ (Resumo, Lembretes, Pauta adicional)
-  são exclusivamente manuais; os blocos do bot (indicadores, tabelas de
-  desempenho/histórico/action items) são substituídos por inteiro na terça —
-  edições manuais nesses blocos serão sobrescritas. Se alguém apagar um bloco
-  do bot, a rotina o recria na terça seguinte.
+- A dash é o canvas do canal: seções ✍️ (Resumo, Lembretes em tabela
+  Descrição/Responsável/Observações/Data, Pauta adicional) são exclusivamente
+  manuais; os blocos do bot (indicadores, tabelas de desempenho/histórico na
+  terça; tabela de action items diariamente) são substituídos por inteiro —
+  edições manuais nesses blocos serão sobrescritas. A tabela de action items
+  é um espelho SOMENTE LEITURA da lista (o Slack não tem embed editável de
+  lista em canvas): para editar ao vivo, abra a lista pelo link da própria
+  seção. Se alguém apagar um bloco do bot, a rotina o recria na execução
+  seguinte.
 - O histórico semanal de analytics vive na tabela da própria dash (o bot só
   acrescenta linhas) — apagar linhas apaga histórico, sem backup.
 - Lembretes de vencimento (Rotina 3) são disparados por igualdade de data —

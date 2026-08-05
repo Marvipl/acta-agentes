@@ -52,12 +52,15 @@ Secoes, nesta ordem. As marcadas com ✍️ sao MANUAIS — o agente NUNCA as ed
      anteriores. O "semana passada: M" dos indicadores vem da ULTIMA linha
      existente antes da atualizacao.
 2. **📝 Resumo da última reunião** ✍️
-3. **✅ Action items** — linha fixa com o link da lista + tabela do agente
-   (busca: `Atividade`): colunas `Atividade | Responsável | Data | Status`,
-   apenas itens NAO concluidos, ordenados por data prevista crescente (sem
-   data ao final); Status como `🔴 Aberto` ou `🟡 Fazendo`; datas dd/mm.
+3. **✅ Action items** — nota fixa com o link da lista (o espelho e somente
+   leitura; edicao ao vivo e na lista) + tabela do agente (busca:
+   `Atividade`): colunas `Atividade | Responsável | Data | Status`, apenas
+   itens NAO concluidos, ordenados por data prevista crescente (sem data ao
+   final); Status como `🔴 Aberto` ou `🟡 Fazendo`; datas dd/mm. Atualizada
+   DIARIAMENTE pela rotina de lembretes e na terca pela rotina da dash.
 4. **📌 Lembretes** ✍️ — tracking de itens importantes que nao sao action
-   items.
+   items, em tabela manual `Descrição | Responsável | Observações | Data`
+   editada livremente pelo time (o agente nao a toca).
 5. **📋 Pauta padrão** — estatica (Projetos, Comercial, Financeiro). O agente
    nao edita.
 6. **➕ Pauta adicional** ✍️ — o time adiciona itens direto na dash; limpa
@@ -172,12 +175,18 @@ rotina roda TODOS os dias, inclusive fins de semana.
    Item sem responsavel: escreva "sem responsavel" em texto no lugar da
    mencao. Item concluido ate a data da checagem NAO entra no aviso. NAO
    poste no canal principal neste fluxo.
-5. **Nada nas duas janelas**: encerre sem postar nada e reporte "nada a
-   lembrar hoje".
-6. As duas partes sao independentes: se o canal de avisos nao for encontrado
-   (bot nao convidado), envie mesmo assim as DMs do passo 3 e reporte o erro
-   do canal no relato final.
-7. Nunca altere a lista. Itens vencidos ha mais de 1 dia (data < ONTEM) NAO
+5. **Espelho diario de action items na dash**: independentemente das janelas
+   de lembrete, atualize a tabela de action items da dash —
+   `id=$(dash_canvas_id)` e
+   `./pauta-staff/scripts/slack.sh canvas_substituir $id "Atividade" "<tabela>"`
+   com TODOS os itens nao concluidos, no formato definido em "Estrutura da
+   dash". Falha aqui nao cancela os lembretes (partes independentes).
+6. **Nada nas janelas de lembrete**: nao poste mensagens nem DMs e reporte
+   "nada a lembrar hoje" (o espelho do passo 5 e atualizado mesmo assim).
+7. As partes sao independentes: se o canal de avisos nao for encontrado
+   (bot nao convidado), envie mesmo assim as DMs do passo 3 e o espelho do
+   passo 5, e reporte o erro do canal no relato final.
+8. Nunca altere a lista. Itens vencidos ha mais de 1 dia (data < ONTEM) NAO
    geram novo aviso — o alerta de vencimento e unico, no dia seguinte ao
    vencimento.
 
