@@ -211,7 +211,8 @@ Pre-requisitos: `SLACK_BOT_TOKEN` e `SLACK_CHANNEL_ID` exportadas; scope
 imprima o valor do token. Esta rotina roda TODOS os dias, inclusive fins de
 semana.
 
-1. **Datas**: calcule HOJE e HOJE+3 no fuso America/Sao_Paulo (AAAA-MM-DD).
+1. **Datas**: calcule HOJE, HOJE+3 e ONTEM no fuso America/Sao_Paulo
+   (AAAA-MM-DD).
 2. **Itens ativos**: leia `./pauta-staff/scripts/slack.sh lista_itens` e
    considere apenas itens com status DIFERENTE de "concluido" E data_prevista
    preenchida. Guarde tambem a url da lista (`lista_url`).
@@ -225,20 +226,23 @@ semana.
    Atualize o status e o comentario na lista: <url>"
    Item sem responsavel nao gera DM (aparecera no aviso de vencimento).
 4. **Aviso de vencimento (canal de avisos)**: para os itens com
-   data_prevista == HOJE, poste UMA mensagem consolidada no canal de avisos
-   com `./pauta-staff/scripts/slack.sh postar_em <id_do_canal> "<texto>"`:
-   "⚠️ Atividades vencendo hoje (dd/mm/aaaa):
+   data_prevista == ONTEM (venceram ha 1 dia e continuam nao concluidos),
+   poste UMA mensagem consolidada no canal de avisos com
+   `./pauta-staff/scripts/slack.sh postar_em <id_do_canal> "<texto>"`:
+   "⚠️ Atividades vencidas ontem (dd/mm/aaaa) e ainda nao concluidas:
    • <pendencia> — <@ID> <@ID2>
    Atualizem o status na lista: <url>"
    Item sem responsavel: escreva "sem responsavel" em texto no lugar da
-   mencao. NAO poste no canal principal neste fluxo.
+   mencao. Item concluido ate a data da checagem NAO entra no aviso. NAO
+   poste no canal principal neste fluxo.
 5. **Nada nas duas janelas**: encerre sem postar nada e reporte "nada a
    lembrar hoje".
 6. As duas partes sao independentes: se o canal de avisos nao for encontrado
    (bot nao convidado), envie mesmo assim as DMs do passo 3 e reporte o erro
    do canal no relato final.
-7. Nunca altere a lista. Itens ja vencidos em dias anteriores (data < HOJE)
-   NAO geram novo aviso — o alerta de vencimento e unico, no proprio dia.
+7. Nunca altere a lista. Itens vencidos ha mais de 1 dia (data < ONTEM) NAO
+   geram novo aviso — o alerta de vencimento e unico, no dia seguinte ao
+   vencimento.
 
 ## Pos-reuniao (fora do escopo do agente)
 
