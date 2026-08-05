@@ -8,6 +8,7 @@ Automação semanal via **Claude Code Routines**:
 As pendências vivem numa **lista do Slack** ("Action Plan - Staff C-level", colunas Pendência / Responsável / Data prevista / Status / Comentário) — fonte única, atualizada pelo próprio time direto na lista. Na reunião, a verificação item a item é feita na lista, não na pauta.
 
 - **Segunda 09:00** — o agente posta no canal pedindo itens de pauta adicional (respostas na thread até 23:59) e um lembrete com o link da lista, mencionando os responsáveis por itens não concluídos para atualizarem status e comentário até 23:59.
+- **Diariamente 09:00** — lembretes de vencimento: DM privada aos responsáveis por atividades que vencem em 3 dias, e aviso consolidado no canal privado #avisos-action-items para as que vencem no dia.
 - **Terça 09:00** — o agente coleta as respostas da thread (cutoff segunda 23:59), lê a lista e gera a pauta da reunião de quarta com os indicadores das pendências — total não finalizado (aberto + fazendo) com comparação vs. semana passada, contagem por responsável e concluídas —, publicando o DOCX no canal (e por DM, se configurado). Nenhum arquivo de pauta/ata é baixado ou lido: a lista e o histórico de mensagens são as únicas fontes.
 
 A pauta gerada é um esqueleto padrão: Pendências da Semana Anterior (indicadores da lista, sem tabela — para a reunião abrir com a visão de se o volume está crescendo ou caindo), Projetos / Comercial / Financeiro com texto genérico fixo ("Apresentação de status..."), Pauta Adicional (somente se houver itens no Slack) e Plano de Ação em branco. Após a reunião, o time adiciona as novas ações **direto na lista** — atas editadas são registro formal opcional, sem efeito no ciclo (o bot não busca nem lê arquivos do canal). A comparação semanal dos indicadores se alimenta do comentário de publicação da pauta anterior (mensagem do próprio bot), então o ciclo funciona por completo sem nenhuma ata.
@@ -72,8 +73,9 @@ apontada para este repo e valide o DOCX gerado antes de agendar de verdade.
 
 ## Rotinas (claude.ai/code/routines, ou /schedule no CLI, ou Desktop → Schedule → New Remote Task)
 
-Ambas apontam para este repositório, com as duas variáveis de ambiente configuradas.
-Horários no fuso local (America/Sao_Paulo).
+Todas apontam para este repositório, com as duas variáveis de ambiente configuradas.
+Horários no fuso local (America/Sao_Paulo). Para a Rotina 3, o bot precisa
+estar convidado ao canal privado #avisos-action-items (`/invite @bot` lá).
 
 ### Rotina 1 — `pauta-coleta` — semanal, segunda 09:00
 
@@ -108,12 +110,32 @@ Respeite todas as regras invioláveis do SKILL.md — em especial: nunca inventa
 dados e nunca publicar sem a verificação final.
 ```
 
+### Rotina 3 — `pauta-lembretes` — diária, 09:00
+
+```
+Leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execucao (rotina
+diaria 9h — lembretes de vencimento)" descrito nele. Resumo: ler a lista
+(slack.sh lista_itens; itens não concluídos com data prevista), enviar DM
+(slack.sh dm_texto) aos responsáveis por atividades que vencem em 3 dias, e
+postar aviso consolidado no canal #avisos-action-items (slack.sh
+canal_por_nome + postar_em) para as que vencem hoje, mencionando os
+responsáveis. Sem itens nas janelas, encerrar sem postar. Nunca alterar a
+lista nem postar no canal principal. Prompt completo em
+referencia/prompt_agente_pauta_lembretes.md.
+```
+
 ## Notas operacionais
 
 - Routines está em research preview; cada execução consome os limites de uso do
   plano (2 execuções/semana é irrisório). As rotinas pertencem à conta que as criou.
 - O cutoff de segunda 23:59 é aplicado por filtro de timestamp na coleta — por isso
-  não existe uma terceira rotina às 23:59.
+  não existe uma rotina às 23:59.
+- Lembretes de vencimento (Rotina 3) são disparados por igualdade de data —
+  DM quando faltam exatos 3 dias, aviso no canal no próprio dia do vencimento —
+  então cada atividade gera no máximo um lembrete e um aviso, sem estado entre
+  execuções. Atividades que já estavam vencidas antes da rotina existir (ou cuja
+  data passou enquanto a rotina esteve pausada) não recebem aviso retroativo;
+  ajuste a data prevista na lista para reativá-las.
 - Se o Slack retornar `not_in_channel`, o bot não foi convidado ao canal (`/invite @bot`).
 - Para obter o ID de usuário (U...) de alguém: perfil da pessoa no Slack → menu
   "⋮" → "Copiar ID do membro". A DM chega pela aba de mensagens do app do bot —

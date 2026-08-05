@@ -201,6 +201,45 @@ antes de qualquer outro passo. Nunca imprima o valor do token.
     informe no comentario de publicacao: "Nenhum item adicional foi enviado
     nesta semana."
 
+## Fluxo de execucao (rotina diaria 9h — lembretes de vencimento)
+
+Pre-requisitos: `SLACK_BOT_TOKEN` e `SLACK_CHANNEL_ID` exportadas; scope
+`im:write` (DMs); bot convidado ao canal privado de avisos
+"avisos-action-items" (o ID e resolvido em tempo de execucao com
+`./pauta-staff/scripts/slack.sh canal_por_nome avisos-action-items`). Rode
+`pauta-staff/scripts/slack.sh testar` antes de qualquer outro passo. Nunca
+imprima o valor do token. Esta rotina roda TODOS os dias, inclusive fins de
+semana.
+
+1. **Datas**: calcule HOJE e HOJE+3 no fuso America/Sao_Paulo (AAAA-MM-DD).
+2. **Itens ativos**: leia `./pauta-staff/scripts/slack.sh lista_itens` e
+   considere apenas itens com status DIFERENTE de "concluido" E data_prevista
+   preenchida. Guarde tambem a url da lista (`lista_url`).
+3. **Lembrete D-3 (privado)**: para os itens com data_prevista == HOJE+3,
+   agrupe por responsavel (item com mais de um responsavel: cada um recebe) e
+   envie UMA DM por responsavel com
+   `./pauta-staff/scripts/slack.sh dm_texto <ID> "<texto>"`, no formato:
+   "⏰ Lembrete: sua(s) atividade(s) na lista Action Plan - Staff C-level
+   vence(m) em 3 dias (dd/mm/aaaa):
+   • <pendencia>
+   Atualize o status e o comentario na lista: <url>"
+   Item sem responsavel nao gera DM (aparecera no aviso de vencimento).
+4. **Aviso de vencimento (canal de avisos)**: para os itens com
+   data_prevista == HOJE, poste UMA mensagem consolidada no canal de avisos
+   com `./pauta-staff/scripts/slack.sh postar_em <id_do_canal> "<texto>"`:
+   "⚠️ Atividades vencendo hoje (dd/mm/aaaa):
+   • <pendencia> — <@ID> <@ID2>
+   Atualizem o status na lista: <url>"
+   Item sem responsavel: escreva "sem responsavel" em texto no lugar da
+   mencao. NAO poste no canal principal neste fluxo.
+5. **Nada nas duas janelas**: encerre sem postar nada e reporte "nada a
+   lembrar hoje".
+6. As duas partes sao independentes: se o canal de avisos nao for encontrado
+   (bot nao convidado), envie mesmo assim as DMs do passo 3 e reporte o erro
+   do canal no relato final.
+7. Nunca altere a lista. Itens ja vencidos em dias anteriores (data < HOJE)
+   NAO geram novo aviso — o alerta de vencimento e unico, no proprio dia.
+
 ## Pos-reuniao (fora do escopo do agente)
 
 Com a lista como fonte unica, o ciclo das pendencias NAO depende de ata: apos

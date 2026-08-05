@@ -28,6 +28,9 @@
 #   ./scripts/slack.sh baixar <url_private> <destino>
 #   ./scripts/slack.sh enviar_arquivo <caminho> "comentário inicial"
 #   ./scripts/slack.sh dm_arquivo <caminho> "comentário" [U111,U222|canal]  # padrão: SLACK_DM_USER_IDS
+#   ./scripts/slack.sh dm_texto <U111,U222|canal> "texto"   # mensagem privada de texto
+#   ./scripts/slack.sh postar_em <channel_id> "texto" [thread_ts]  # posta em canal específico
+#   ./scripts/slack.sh canal_por_nome <nome>          # ID de canal pelo nome (bot precisa ser membro)
 #   ./scripts/slack.sh membros_canal                  # IDs dos membros humanos do canal (sem bots)
 #   ./scripts/slack.sh usuarios_canal                 # ID <tab> nome real <tab> display name, por membro
 #   ./scripts/slack.sh lista_garantir                 # cria a lista se não existir e a compartilha no canal; imprime "id<tab>url"
@@ -209,6 +212,59 @@ membros_canal() {
   usuarios_canal | cut -f1 | paste -sd, -
 }
 
+dm_texto() {
+  # envia mensagem privada de texto: dm_texto <U1,U2|canal> "texto"
+  local dest="$1" texto="$2" ids
+  if [ "$dest" = "canal" ]; then ids=$(membros_canal); else ids=$(echo "$dest" | tr ',' '\n'); fi
+  local u dm resp falhas=0
+  for u in $ids; do
+    resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
+      -d "$(jq -n --arg u "$u" '{users:$u}')" "$API/conversations.open")
+    if [ "$(echo "$resp" | jq -r .ok)" != "true" ]; then
+      echo "AVISO: DM nao aberta para $u: $(echo "$resp" | jq -r .error)" >&2
+      falhas=$((falhas+1)); continue
+    fi
+    dm=$(echo "$resp" | jq -r '.channel.id')
+    resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
+      -d "$(jq -n --arg c "$dm" --arg t "$texto" '{channel:$c, text:$t}')" \
+      "$API/chat.postMessage")
+    if [ "$(echo "$resp" | jq -r .ok)" != "true" ]; then
+      echo "AVISO: falha na DM para $u: $(echo "$resp" | jq -r .error)" >&2
+      falhas=$((falhas+1))
+    else
+      echo "DM enviada para $u"
+    fi
+  done
+  [ "$falhas" -eq 0 ]
+}
+
+postar_em() {
+  # posta texto em um canal específico (o bot precisa ser membro se for privado)
+  local canal="$1" texto="$2" thread="${3:-}"
+  local payload resp
+  payload=$(jq -n --arg c "$canal" --arg t "$texto" --arg th "$thread" \
+    '{channel:$c, text:$t} + (if $th != "" then {thread_ts:$th} else {} end)')
+  resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
+    -d "$payload" "$API/chat.postMessage")
+  _checa "$resp"
+  echo "$resp" | jq -r '.ts'
+}
+
+canal_por_nome() {
+  # resolve o ID de um canal pelo nome, entre os canais dos quais o bot é membro
+  local nome="$1" resp id
+  resp=$(curl -s "${AUTH[@]}" \
+    "$API/users.conversations?types=public_channel,private_channel&limit=200")
+  _checa "$resp"
+  id=$(echo "$resp" | jq -r --arg n "$nome" \
+    '[.channels[] | select(.name == $n)] | first | .id // empty')
+  if [ -z "$id" ]; then
+    echo "ERRO: canal \"$nome\" nao encontrado entre os canais do bot — convide o bot para o canal (/invite)" >&2
+    exit 1
+  fi
+  echo "$id"
+}
+
 LISTA_NOME_PADRAO="Action Plan - Staff C-level"
 
 _lista_id() {
@@ -378,6 +434,9 @@ case "$cmd" in
   dm_arquivo)            dm_arquivo "$@" ;;
   membros_canal)         membros_canal ;;
   usuarios_canal)        usuarios_canal ;;
+  dm_texto)              dm_texto "$@" ;;
+  postar_em)             postar_em "$@" ;;
+  canal_por_nome)        canal_por_nome "$@" ;;
   lista_garantir)        lista_garantir ;;
   lista_itens)           lista_itens ;;
   lista_criar_item)      lista_criar_item "$@" ;;
