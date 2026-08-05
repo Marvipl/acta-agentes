@@ -37,6 +37,11 @@
 #   ./scripts/slack.sh lista_itens                    # itens da lista de pendências (JSON simplificado)
 #   ./scripts/slack.sh lista_criar_item "<pendência>" ["U1,U2"] ["AAAA-MM-DD"] [aberto|fazendo|concluido] ["comentário"]
 #   ./scripts/slack.sh lista_url                      # permalink da lista de pendências
+#   ./scripts/slack.sh dash_canvas_id                 # ID do canvas de canal (a dash) do canal principal
+#   ./scripts/slack.sh dash_url                       # permalink da dash
+#   ./scripts/slack.sh canvas_conteudo <canvas_id>    # HTML do conteúdo atual do canvas
+#   ./scripts/slack.sh canvas_substituir <canvas_id> "<texto_busca>" "<markdown>"  # troca o 1º bloco que contém o texto
+#   ./scripts/slack.sh canvas_inserir_apos <canvas_id> "<texto_busca>" "<markdown>"  # insere markdown após o bloco
 #   ./scripts/slack.sh ts "2026-07-13 23:59"         # converte data local em epoch (America/Sao_Paulo)
 
 set -euo pipefail
@@ -210,6 +215,81 @@ usuarios_canal() {
 membros_canal() {
   # imprime os IDs dos membros humanos do canal, separados por vírgula
   usuarios_canal | cut -f1 | paste -sd, -
+}
+
+dash_canvas_id() {
+  # ID do canvas de canal (a dash) do canal principal
+  local resp id
+  resp=$(curl -s "${AUTH[@]}" "$API/conversations.info?channel=${SLACK_CHANNEL_ID}")
+  _checa "$resp"
+  id=$(echo "$resp" | jq -r \
+    '[.channel.properties.tabs[]? | select(.type == "canvas")] | first | .data.file_id // empty')
+  if [ -z "$id" ]; then
+    echo "ERRO: o canal nao tem canvas de canal (a dash) — crie com conversations.canvases.create" >&2
+    exit 1
+  fi
+  echo "$id"
+}
+
+dash_url() {
+  # permalink da dash (canvas de canal)
+  local id resp
+  id=$(dash_canvas_id)
+  resp=$(curl -s "${AUTH[@]}" "$API/files.info?file=$id")
+  _checa "$resp"
+  echo "$resp" | jq -r '.file.permalink'
+}
+
+canvas_conteudo() {
+  # baixa o conteúdo atual do canvas (HTML) — para ler tabelas/blocos existentes
+  local id="$1" resp url
+  resp=$(curl -s "${AUTH[@]}" "$API/files.info?file=$id")
+  _checa "$resp"
+  url=$(echo "$resp" | jq -r '.file.url_private')
+  curl -sL "${AUTH[@]}" "$url"
+}
+
+_canvas_lookup() { # $1 canvas_id, $2 texto — imprime o id do 1º bloco que contém o texto
+  local resp
+  resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
+    -d "$(jq -n --arg c "$1" --arg t "$2" '{canvas_id:$c, criteria:{contains_text:$t}}')" \
+    "$API/canvases.sections.lookup")
+  _checa "$resp"
+  echo "$resp" | jq -r '.sections[0].id // empty'
+}
+
+canvas_substituir() {
+  # substitui o 1º bloco do canvas que contém o texto de busca pelo markdown dado
+  local id="$1" busca="$2" md="$3" sid resp
+  sid=$(_canvas_lookup "$id" "$busca")
+  if [ -z "$sid" ]; then
+    echo "ERRO: nenhum bloco do canvas contem \"$busca\"" >&2
+    exit 1
+  fi
+  resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
+    -d "$(jq -n --arg c "$id" --arg s "$sid" --arg m "$md" \
+          '{canvas_id:$c, changes:[{operation:"replace", section_id:$s,
+            document_content:{type:"markdown", markdown:$m}}]}')" \
+    "$API/canvases.edit")
+  _checa "$resp"
+  echo "bloco substituido"
+}
+
+canvas_inserir_apos() {
+  # insere markdown logo após o 1º bloco que contém o texto de busca
+  local id="$1" busca="$2" md="$3" sid resp
+  sid=$(_canvas_lookup "$id" "$busca")
+  if [ -z "$sid" ]; then
+    echo "ERRO: nenhum bloco do canvas contem \"$busca\"" >&2
+    exit 1
+  fi
+  resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
+    -d "$(jq -n --arg c "$id" --arg s "$sid" --arg m "$md" \
+          '{canvas_id:$c, changes:[{operation:"insert_after", section_id:$s,
+            document_content:{type:"markdown", markdown:$m}}]}')" \
+    "$API/canvases.edit")
+  _checa "$resp"
+  echo "bloco inserido"
 }
 
 dm_texto() {
@@ -434,6 +514,11 @@ case "$cmd" in
   dm_arquivo)            dm_arquivo "$@" ;;
   membros_canal)         membros_canal ;;
   usuarios_canal)        usuarios_canal ;;
+  dash_canvas_id)        dash_canvas_id ;;
+  dash_url)              dash_url ;;
+  canvas_conteudo)       canvas_conteudo "$@" ;;
+  canvas_substituir)     canvas_substituir "$@" ;;
+  canvas_inserir_apos)   canvas_inserir_apos "$@" ;;
   dm_texto)              dm_texto "$@" ;;
   postar_em)             postar_em "$@" ;;
   canal_por_nome)        canal_por_nome "$@" ;;

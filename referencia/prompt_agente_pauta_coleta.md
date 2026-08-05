@@ -1,41 +1,24 @@
-# Prompt — Agente de Pauta / Rotina 1: Coleta (segunda-feira 09:00)
+# Prompt — Rotina 1: Lembrete de segunda (staff)
 
 > Rotina Remote semanal. Repositório: acta-agentes. Fuso: America/Sao_Paulo.
+> Agendamento: segundas às 09:00 (America/Sao_Paulo) — cron UTC `0 12 * * 1`.
 > Requer, no ambiente de nuvem da rotina: variáveis SLACK_BOT_TOKEN e
 > SLACK_CHANNEL_ID, e acesso de rede liberado para slack.com e
-> files.slack.com. A lista de pendências é localizada pelo nome em tempo de
-> execução — nenhum ID de lista é configurado. Nenhum segredo neste arquivo
-> ou na instrução.
+> files.slack.com. A lista e a dash são localizadas em tempo de execução —
+> nenhum ID em configuração. Nenhum segredo neste arquivo ou na instrução.
 
----
+Leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execucao (rotina de
+segunda-feira 9h — lembrete)" descrito nele.
 
-Preparação: chmod +x pauta-staff/scripts/*.sh
+Resumo do fluxo:
 
-Passo 0 — Diagnóstico: rode pauta-staff/scripts/slack.sh testar
-- Se falhar com "FALHA DE REDE", pare e reporte que o ambiente da rotina está
-  bloqueando slack.com (adicionar slack.com e files.slack.com aos domínios
-  permitidos do ambiente). Não é problema de token.
-- Se falhar com "TOKEN INVALIDO", pare e reporte o erro exato.
+1. Ler a lista "Action Plan - Staff C-level"
+   (pauta-staff/scripts/slack.sh lista_garantir e lista_itens) e identificar
+   os responsáveis por itens não concluídos.
+2. Postar UMA mensagem no canal com os dois lembretes da semana: atualizar
+   status e comentário dos itens na lista até 23:59 (link via slack.sh
+   lista_url) e adicionar itens de pauta adicional direto na seção ➕ da
+   dash (link via slack.sh dash_url), mencionando (<@ID>) uma única vez cada
+   responsável por item em aberto. Nunca mencionar por palpite.
 
-Tarefa: leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execucao
-(rotina de segunda-feira 9h — coleta)" descrito nele.
-
-Resumo do fluxo (a referência completa é o SKILL.md):
-
-1. Poste no canal a seguinte mensagem, sem alterações, usando
-   pauta-staff/scripts/slack.sh postar:
-
-"Bom dia! Coleta de pauta adicional para a Reunião de Staff C-Level de
-quarta-feira. Respondam NESTA THREAD até hoje às 23:59 com os itens que querem
-incluir (tema, contexto em 1-2 linhas e se é informativo ou para decisão).
-A pauta consolidada será publicada amanhã às 9h."
-
-2. Rode pauta-staff/scripts/slack.sh lista_garantir (localiza a lista pelo
-   nome; cria e compartilha no canal se não existir — imprime id e url) e
-   leia a lista (slack.sh lista_itens). Poste UMA mensagem avulsa de lembrete no
-   formato do SKILL.md: atualizar status e comentário dos itens na lista até
-   23:59, com o link, mencionando (<@ID>) uma única vez cada responsável de
-   item não concluído. Sem itens pendentes, poste o lembrete sem menções.
-
-Não faça mais nada além disso; confirme o ts da mensagem de coleta e quantos
-responsáveis foram lembrados. Nunca imprima o valor do token em nenhuma saída.
+Não fazer mais nada além disso. Nunca imprimir o valor do token.

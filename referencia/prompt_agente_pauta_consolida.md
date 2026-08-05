@@ -1,53 +1,34 @@
-# Prompt — Agente de Pauta / Rotina 2: Consolidação (terça-feira 09:00)
+# Prompt — Rotina 2: Atualização da dash (staff)
 
 > Rotina Remote semanal. Repositório: acta-agentes. Fuso: America/Sao_Paulo.
+> Agendamento: terças às 09:00 (America/Sao_Paulo) — cron UTC `0 12 * * 2`.
 > Requer, no ambiente de nuvem da rotina: variáveis SLACK_BOT_TOKEN e
-> SLACK_CHANNEL_ID; opcional SLACK_DM_USER_IDS — IDs U... separados por
-> vírgula, ou "canal" para todos os membros humanos do canal — para envio da
-> pauta também por DM. A lista de pendências é localizada pelo nome em tempo
-> de execução — nenhum ID de lista é configurado. Acesso de rede liberado
-> para slack.com e files.slack.com. Nenhum segredo neste arquivo ou na
-> instrução.
+> SLACK_CHANNEL_ID, e acesso de rede liberado para slack.com e
+> files.slack.com. A lista e a dash são localizadas em tempo de execução —
+> nenhum ID em configuração. Nenhum segredo neste arquivo ou na instrução.
 
----
+Leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execucao (rotina de
+terca-feira 9h — atualizacao da dash)" descrito nele.
 
-Preparação: chmod +x pauta-staff/scripts/*.sh
+Resumo do fluxo:
 
-Passo 0 — Diagnóstico: rode pauta-staff/scripts/slack.sh testar
-- Se falhar com "FALHA DE REDE", pare e reporte que o ambiente da rotina está
-  bloqueando slack.com (adicionar slack.com e files.slack.com aos domínios
-  permitidos do ambiente). Não é problema de token.
-- Se falhar com "TOKEN INVALIDO", pare e reporte o erro exato.
+1. Ler a lista "Action Plan - Staff C-level" (slack.sh lista_garantir,
+   lista_itens, usuarios_canal) e calcular os indicadores: não finalizadas
+   (aberto + fazendo) no total e por pessoa, vencidas por pessoa, concluídas.
+2. Ler a dash (slack.sh dash_canvas_id + canvas_conteudo) e extrair da tabela
+   de histórico o número da semana passada (última linha) — nunca calcular
+   por conta própria.
+3. Atualizar os 4 blocos do bot na dash (slack.sh canvas_substituir):
+   indicadores, tabela de desempenho individual, tabela de histórico (linhas
+   antigas + a linha desta semana ao final) e tabela de action items não
+   concluídos. NUNCA editar as seções manuais (✍️ Resumo, Lembretes, Pauta
+   adicional) nem a Pauta padrão.
+4. Verificar relendo o canvas: números batem com a lista, histórico ganhou
+   exatamente uma linha, seções manuais intactas.
+5. Postar no canal: "📊 Dash atualizada para a reunião de amanhã: <url da
+   dash>. Não finalizadas: N (semana passada: M). Pauta adicional e resumo:
+   direto na dash."
 
-Tarefa: leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execucao"
-descrito nele para gerar e publicar a pauta da Reunião de Staff C-Level de
-quarta-feira.
-
-Resumo do fluxo (a referência completa é o SKILL.md):
-1. Coletar as respostas da thread de coleta postada ontem, considerando apenas
-   mensagens até segunda-feira 23:59 (America/Sao_Paulo).
-2. Ler a lista de pendências (slack.sh lista_garantir e depois lista_itens) e
-   montar os indicadores da seção 1 da pauta: total de não finalizadas
-   (aberto + fazendo) com comparação vs. semana passada (número extraído da
-   mensagem de publicação da pauta anterior no histórico do canal — expressão
-   "finalizadas na lista: N"), contagem de não finalizadas por responsável e
-   total de concluídas — sem tabela de pendências no documento; a lista é a
-   fonte única. Não baixar nem ler arquivos de pauta/ata do canal.
-3. Gerar o DOCX com pauta-staff/scripts/gerar_pauta.py sobre o template oficial.
-   Seções Projetos, Comercial e Financeiro sempre com o texto genérico fixo;
-   seção Pauta Adicional somente se houver itens coletados.
-4. Verificar o arquivo gerado com pauta-staff/scripts/ler_docx.py antes de
-   publicar. Nunca publicar sem essa verificação.
-5. Publicar no canal com pauta-staff/scripts/slack.sh enviar_arquivo, com
-   comentário incluindo "Não finalizadas na lista: N (semana passada: M)" e o
-   link da lista (slack.sh lista_url) — é dessa mensagem que a rotina da
-   próxima semana lê a comparação.
-6. Se SLACK_DM_USER_IDS estiver definida, enviar o mesmo arquivo por mensagem
-   individual a cada ID com pauta-staff/scripts/slack.sh dm_arquivo (mesmo
-   comentário da publicação). Falha em uma DM não invalida a publicação no
-   canal — apenas relate os avisos.
-
-Regras inegociáveis (detalhadas no SKILL.md): nunca inventar dados; pendência
-sem prazo vira "—"; sem emojis no documento; nomes comerciais 9fleet e
-Roboteazy; nunca citar Corsight, Venturus ou SiDi. Nunca imprima o valor do
-token em nenhuma saída.
+Este fluxo não gera arquivos nem envia DMs. Respeitar as regras invioláveis
+do SKILL.md — em especial: nunca inventar dados e nunca tocar nas seções
+manuais. Nunca imprimir o valor do token.

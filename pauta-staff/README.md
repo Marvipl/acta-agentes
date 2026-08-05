@@ -1,38 +1,40 @@
-# pauta-staff — Agente de Pauta do Staff C-Level
+# pauta-staff — Agente da Dash do Staff C-Level
 
-> Pasta autocontida dentro do repo `acta-agentes`, seguindo a filosofia do repositório: aqui fica só conteúdo estável (playbook, scripts e template); dados que mudam toda semana (pauta gerada, itens coletados) vivem no Slack, nunca aqui. Os prompts das duas rotinas estão em `referencia/prompt_agente_pauta_coleta.md` e `referencia/prompt_agente_pauta_consolida.md`, no padrão dos demais agentes.
+> Pasta autocontida dentro do repo `acta-agentes`, seguindo a filosofia do repositório: aqui fica só conteúdo estável (playbook e scripts); dados que mudam toda semana (atividades, analytics, resumo, pauta) vivem no Slack, nunca aqui. Os prompts das três rotinas estão em `referencia/prompt_agente_pauta_*.md`, no padrão dos demais agentes.
 > Não conflita com os demais agentes: nenhum arquivo fora de `pauta-staff/` é lido ou modificado, não há instalação de dependências e nada é gravado em configuração global do repositório.
 
-Automação semanal via **Claude Code Routines**:
+O acompanhamento da Reunião de Staff C-Level é feito em dois artefatos nativos do Slack, mantidos por rotinas do **Claude Code Routines** — não há mais pauta em Word:
 
-As pendências vivem numa **lista do Slack** ("Action Plan - Staff C-level", colunas Pendência / Responsável / Data prevista / Status / Comentário) — fonte única, atualizada pelo próprio time direto na lista. Na reunião, a verificação item a item é feita na lista, não na pauta.
+- **Lista "Action Plan - Staff C-level"** — fonte única das atividades (Pendência / Responsável / Data prevista / Status / Comentário). O time cria as ações e atualiza status direto nela.
+- **Dash (canvas do canal #staff)** — aba Canvas fixa no topo do canal, com: 📊 Analytics (indicadores, desempenho individual e histórico semanal — o histórico vive na própria dash), 📝 Resumo da última reunião (manual), ✅ Action items (espelho da lista), 📌 Lembretes (manual), 📋 Pauta padrão (Projetos / Comercial / Financeiro) e ➕ Pauta adicional (manual).
 
-- **Segunda 09:00** — o agente posta no canal pedindo itens de pauta adicional (respostas na thread até 23:59) e um lembrete com o link da lista, mencionando os responsáveis por itens não concluídos para atualizarem status e comentário até 23:59.
+Rotinas:
+
+- **Segunda 09:00** — lembrete único no canal: atualizar status/comentário na lista até 23:59 (mencionando responsáveis por itens em aberto) e adicionar pauta adicional direto na dash.
+- **Terça 09:00** — o agente lê a lista, atualiza os blocos do bot na dash (indicadores com comparação vs. semana passada, tabela por pessoa, histórico +1 linha, espelho de action items) e avisa no canal. As seções manuais nunca são tocadas.
 - **Diariamente 09:00** — lembretes de vencimento: DM privada aos responsáveis por atividades que vencem em 3 dias, e aviso consolidado no canal privado #avisos-action-items para as vencidas há 1 dia que seguem não concluídas.
-- **Terça 09:00** — o agente coleta as respostas da thread (cutoff segunda 23:59), lê a lista e gera a pauta da reunião de quarta com os indicadores das pendências — total não finalizado (aberto + fazendo) com comparação vs. semana passada, contagem por responsável e concluídas —, publicando o DOCX no canal (e por DM, se configurado). Nenhum arquivo de pauta/ata é baixado ou lido: a lista e o histórico de mensagens são as únicas fontes.
 
-A pauta gerada é um esqueleto padrão: Pendências da Semana Anterior (indicadores da lista, sem tabela — para a reunião abrir com a visão de se o volume está crescendo ou caindo), Projetos / Comercial / Financeiro com texto genérico fixo ("Apresentação de status..."), Pauta Adicional (somente se houver itens no Slack) e Plano de Ação em branco. Após a reunião, o time adiciona as novas ações **direto na lista** — atas editadas são registro formal opcional, sem efeito no ciclo (o bot não busca nem lê arquivos do canal). A comparação semanal dos indicadores se alimenta do comentário de publicação da pauta anterior (mensagem do próprio bot), então o ciclo funciona por completo sem nenhuma ata.
+Após a reunião de quarta, o time cola o resumo na dash, cria as novas ações direto na lista e limpa a seção de pauta adicional. Atas em Word são história — os scripts de DOCX permanecem no repo apenas como legado/uso do fluxo do conselho.
 
 ## Estrutura
 
 ```
 pauta-staff/
-  SKILL.md                           Modelo da pauta Acta + fluxo do agente (leitura obrigatória da rotina)
+  SKILL.md                           Estrutura da dash + fluxos das rotinas (leitura obrigatória da rotina)
   README.md                          Este arquivo
-  templates/Template_Ata_Staff.docx  Template real (logo, estilos, rodapé) — o corpo é regenerado
-  scripts/gerar_pauta.py             Gera o DOCX a partir de um JSON de conteúdo (stdlib apenas)
-  scripts/ler_docx.py                Extrai texto/tabelas de um DOCX (stdlib apenas)
-  scripts/slack.sh                   postar | historico | respostas | listar_arquivos_docx | baixar | enviar_arquivo | dm_arquivo | lista_itens | lista_criar_item | lista_url | ts
-  scripts/validar_pauta.py           Valida um DOCX pelo conteúdo: título Staff/C-Level + data interna (stdlib apenas)
-  scripts/achar_pauta_anterior.sh    Baixa os .docx do canal, valida cada um e escolhe o da última reunião (não usado no fluxo staff; mantido para o fluxo do conselho)
-  exemplos/pauta_exemplo.json        Exemplo funcional do esquema de conteúdo
+  scripts/slack.sh                   Helpers de Slack: mensagens, DMs, lista (lista_*), dash/canvas (dash_*, canvas_*), canais
+  templates/, scripts/gerar_pauta.py, scripts/ler_docx.py,
+  scripts/validar_pauta.py, scripts/achar_pauta_anterior.sh,
+  exemplos/pauta_exemplo.json        LEGADO (era da pauta em DOCX) — mantidos para o fluxo do conselho
 ```
+
+Comandos principais do `scripts/slack.sh` (rode sem argumentos para ver todos): `postar`, `postar_em`, `dm_texto`, `historico`, `canal_por_nome`, `lista_garantir`, `lista_itens`, `lista_criar_item`, `lista_url`, `dash_canvas_id`, `dash_url`, `canvas_conteudo`, `canvas_substituir`, `canvas_inserir_apos`, `ts`.
 
 ## Pré-requisitos
 
-1. **App do Slack** (já feito na Etapa 1): bot scopes `chat:write`, `channels:history`, `files:read`, `files:write`, `lists:read`, `lists:write` (`groups:history` se o canal for privado; `im:write` para o envio da pauta por DM; `channels:read` + `users:read` para o modo `canal` das DMs e para as menções — `groups:read` no lugar de `channels:read` se o canal for privado); bot convidado ao canal.
-2. **Lista de pendências**: totalmente automática — os comandos `lista_*` localizam a lista **pelo nome** ("Action Plan - Staff C-level") em tempo de execução, e `lista_garantir` a cria (colunas pendencia/responsavel/data_prevista/status/comentario) e a compartilha no canal se não existir. Nenhum ID configurado; se a lista for recriada, nada precisa mudar. Overrides opcionais: `SLACK_LIST_NAME` (outro nome) ou `SLACK_LIST_ID` (ID fixo).
-3. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...) e `SLACK_CHANNEL_ID`; opcionalmente `SLACK_DM_USER_IDS` — quem recebe a pauta também por mensagem individual: IDs de usuário U... separados por vírgula, ou o valor especial `canal` para enviar a todos os membros humanos do canal (a lista de destinatários é resolvida a cada envio); vazio/ausente desliga as DMs; acesso de rede Custom com `slack.com` e `files.slack.com` nos domínios permitidos (mantendo a lista padrão de gerenciadores de pacotes); script de configuração vazio. Nenhum segredo na instrução ou no repo.
+1. **App do Slack**: bot scopes `chat:write`, `channels:read`, `channels:history`, `users:read`, `files:read`, `lists:read`, `lists:write`, `canvases:read`, `canvases:write`, `im:write`, `groups:read` (canal privado de avisos); bot convidado ao canal principal E ao canal privado #avisos-action-items.
+2. **Lista e dash**: localizadas em tempo de execução — a lista **pelo nome** ("Action Plan - Staff C-level"; `lista_garantir` cria e compartilha se não existir; overrides `SLACK_LIST_NAME`/`SLACK_LIST_ID`), a dash como **canvas do canal** (`dash_canvas_id`). Nenhum ID em configuração. A criação da dash é ato único (já feito); as rotinas não a recriam.
+3. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...) e `SLACK_CHANNEL_ID`; acesso de rede Custom com `slack.com` e `files.slack.com` nos domínios permitidos (mantendo a lista padrão de gerenciadores de pacotes); script de configuração vazio. Nenhum segredo na instrução ou no repo.
 4. Ferramentas no ambiente de execução: `curl`, `jq`, `python3` (padrão nas sessões do Claude Code).
 
 ## Teste local (faça antes de agendar)
@@ -42,125 +44,62 @@ export SLACK_BOT_TOKEN=xoxb-...
 export SLACK_CHANNEL_ID=C...
 chmod +x pauta-staff/scripts/*.sh
 
-# 1) gerador funciona?
-python3 pauta-staff/scripts/gerar_pauta.py \
-  --template pauta-staff/templates/Template_Ata_Staff.docx \
-  --json pauta-staff/exemplos/pauta_exemplo.json \
-  --out /tmp/teste.docx
-python3 pauta-staff/scripts/ler_docx.py /tmp/teste.docx
+# 1) Slack funciona?
+pauta-staff/scripts/slack.sh testar
 
-# 2) validador funciona? (usa o próprio arquivo gerado no passo 1)
-python3 pauta-staff/scripts/validar_pauta.py /tmp/teste.docx
-
-# 3) Slack funciona?
-pauta-staff/scripts/slack.sh postar "teste do agente de pauta — pode ignorar"
-pauta-staff/scripts/slack.sh enviar_arquivo /tmp/teste.docx "teste de upload — pode ignorar"
-
-# 4) DM funciona? (opcional — requer scope im:write; use seu próprio ID U...)
-pauta-staff/scripts/slack.sh dm_arquivo /tmp/teste.docx "teste de DM — pode ignorar" U0SEUID
-
-# 5) modo canal funciona? (opcional — requer channels:read + users:read;
-#    só lista os destinatários, não envia nada)
-pauta-staff/scripts/slack.sh membros_canal
-
-# 6) lista de pendências funciona? (resolução pelo nome — nenhum ID necessário)
+# 2) lista funciona? (resolução pelo nome — nenhum ID necessário)
 pauta-staff/scripts/slack.sh lista_garantir   # cria e compartilha se não existir
 pauta-staff/scripts/slack.sh lista_itens | jq 'group_by(.status) | map({status: .[0].status, n: length})'
-```
 
-Depois, rode o prompt da Rotina 2 (abaixo) numa sessão interativa do Claude Code
-apontada para este repo e valide o DOCX gerado antes de agendar de verdade.
+# 3) dash acessível?
+pauta-staff/scripts/slack.sh dash_url
+pauta-staff/scripts/slack.sh canvas_conteudo "$(pauta-staff/scripts/slack.sh dash_canvas_id)" | head -c 400
+
+# 4) DM funciona? (use seu próprio ID U...)
+pauta-staff/scripts/slack.sh dm_texto U0SEUID "teste — pode ignorar"
+
+# 5) canal de avisos visível? (bot precisa estar convidado)
+pauta-staff/scripts/slack.sh canal_por_nome avisos-action-items
+```
 
 ## Rotinas (claude.ai/code/routines, ou /schedule no CLI, ou Desktop → Schedule → New Remote Task)
 
-Todas apontam para este repositório, com as duas variáveis de ambiente configuradas.
-Horários no fuso local (America/Sao_Paulo). Para a Rotina 3, o bot precisa
-estar convidado ao canal privado #avisos-action-items (`/invite @bot` lá).
+Todas apontam para este repositório, com as duas variáveis de ambiente
+configuradas. Horários no fuso local (America/Sao_Paulo). Prompts completos
+em `referencia/`:
 
-### Rotina 1 — `pauta-coleta` — semanal, segunda 09:00
-
-```
-Leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execucao (rotina de
-segunda-feira 9h — coleta)" descrito nele. Resumo: postar a mensagem padrão de
-coleta de pauta adicional (texto fixo no prompt) e, em seguida, um lembrete
-com o link da lista de pendências (slack.sh lista_url), mencionando (<@ID>)
-os responsáveis por itens não concluídos para atualizarem status e comentário
-na lista até 23:59. Nunca mencionar por palpite. Prompt completo em
-referencia/prompt_agente_pauta_coleta.md.
-```
-
-### Rotina 2 — `pauta-consolida` — semanal, terça 09:00
-
-```
-Leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execução" descrito
-nele para gerar e publicar a pauta da Reunião de Staff C-Level de quarta-feira.
-Resumo: coletar as respostas da thread de coleta de ontem (apenas mensagens
-até segunda-feira 23:59, America/Sao_Paulo), ler a lista de pendências
-(slack.sh lista_garantir e lista_itens) e montar os indicadores da seção 1
-(não finalizadas no total e por responsável; comparação com o número da
-mensagem de publicação da semana passada no histórico do canal), gerar o
-DOCX com pauta-staff/scripts/gerar_pauta.py sobre o template oficial (seções
-Projetos, Comercial e Financeiro sempre com o texto genérico fixo; Pauta
-Adicional somente se houver itens) e publicar no canal com comentário
-incluindo "Não finalizadas na lista: N (semana passada: M)" e o link da
-lista. Não baixar nem ler arquivos de pauta/ata do canal. Se a variável
-SLACK_DM_USER_IDS estiver definida, enviar em seguida o mesmo arquivo por
-mensagem individual a cada ID com pauta-staff/scripts/slack.sh dm_arquivo.
-Respeite todas as regras invioláveis do SKILL.md — em especial: nunca inventar
-dados e nunca publicar sem a verificação final.
-```
-
-### Rotina 3 — `pauta-lembretes` — diária, 09:00
-
-```
-Leia pauta-staff/SKILL.md e siga exatamente o "Fluxo de execucao (rotina
-diaria 9h — lembretes de vencimento)" descrito nele. Resumo: ler a lista
-(slack.sh lista_itens; itens não concluídos com data prevista), enviar DM
-(slack.sh dm_texto) aos responsáveis por atividades que vencem em 3 dias, e
-postar aviso consolidado no canal #avisos-action-items (slack.sh
-canal_por_nome + postar_em) para as que vencem hoje, mencionando os
-responsáveis. Sem itens nas janelas, encerrar sem postar. Nunca alterar a
-lista nem postar no canal principal. Prompt completo em
-referencia/prompt_agente_pauta_lembretes.md.
-```
+| Rotina | Agendamento | Cron UTC | Prompt |
+|---|---|---|---|
+| 1 — lembrete de segunda | segundas 09:00 | `0 12 * * 1` | `prompt_agente_pauta_coleta.md` |
+| 2 — atualização da dash | terças 09:00 | `0 12 * * 2` | `prompt_agente_pauta_consolida.md` |
+| 3 — lembretes de vencimento | diária 09:00 | `0 12 * * *` | `prompt_agente_pauta_lembretes.md` |
 
 ## Notas operacionais
 
 - Routines está em research preview; cada execução consome os limites de uso do
-  plano (2 execuções/semana é irrisório). As rotinas pertencem à conta que as criou.
-- O cutoff de segunda 23:59 é aplicado por filtro de timestamp na coleta — por isso
-  não existe uma rotina às 23:59.
+  plano. As rotinas pertencem à conta que as criou.
+- A dash é o canvas do canal: seções ✍️ (Resumo, Lembretes, Pauta adicional)
+  são exclusivamente manuais; os blocos do bot (indicadores, tabelas de
+  desempenho/histórico/action items) são substituídos por inteiro na terça —
+  edições manuais nesses blocos serão sobrescritas. Se alguém apagar um bloco
+  do bot, a rotina o recria na terça seguinte.
+- O histórico semanal de analytics vive na tabela da própria dash (o bot só
+  acrescenta linhas) — apagar linhas apaga histórico, sem backup.
 - Lembretes de vencimento (Rotina 3) são disparados por igualdade de data —
   DM quando faltam exatos 3 dias, aviso no canal 1 dia após o vencimento (quem
   concluir até o fim do dia do vencimento não entra no aviso) — então cada
   atividade gera no máximo um lembrete e um aviso, sem estado entre execuções.
-  Atividades que já estavam vencidas antes da rotina existir (ou cuja data
-  passou enquanto a rotina esteve pausada) não recebem aviso retroativo;
-  ajuste a data prevista na lista para reativá-las.
-- Se o Slack retornar `not_in_channel`, o bot não foi convidado ao canal (`/invite @bot`).
-- Para obter o ID de usuário (U...) de alguém: perfil da pessoa no Slack → menu
-  "⋮" → "Copiar ID do membro". A DM chega pela aba de mensagens do app do bot —
-  se alguém não estiver recebendo, confira se não silenciou o app.
-- No modo `SLACK_DM_USER_IDS=canal`, TODO membro humano do canal recebe a DM.
-  Se o canal tiver gente além do C-Level (assistentes, convidados), prefira a
-  lista explícita de IDs — ou mantenha o canal restrito ao staff.
-- O compartilhamento da lista com o canal é automático (`lista_garantir`).
-  Para facilitar ainda mais o acesso, fixe a mensagem com o link da lista no
-  canal ("Fixar no canal"). O agente nunca edita nem apaga itens existentes da
-  lista — só cria os novos a partir do Plano de Ação; status e comentário são
-  sempre do time.
-- Não renomeie a lista no Slack: a localização é pelo nome exato "Pendências —
-  Staff C-Level". Se precisar renomear, defina SLACK_LIST_NAME (ou
-  SLACK_LIST_ID) no ambiente das rotinas com o novo nome/ID.
+  Atividades cuja data passou enquanto a rotina esteve pausada não recebem
+  aviso retroativo; ajuste a data prevista na lista para reativá-las.
+- Não renomeie a lista no Slack: a localização é pelo nome exato
+  "Action Plan - Staff C-level". Se precisar renomear, defina SLACK_LIST_NAME
+  (ou SLACK_LIST_ID) no ambiente das rotinas com o novo nome/ID.
 - Acompanhamento de mudanças na lista: cada membro ativa as atualizações da
-  lista no próprio feed de Atividade do Slack (na lista, ative as
-  notificações/atualizações) — abordagem adotada, sem ruído no canal. Se um
-  dia quiserem aviso coletivo no canal, dá para criar manualmente no
-  Workflow Builder (lista → ⚡ Automações → gatilho "Quando um item for
-  atualizado" na coluna Status → mensagem ao canal); não há API para o bot
-  criar automações.
-- Se o download do arquivo vier como HTML (erro "download nao parece um DOCX"),
-  confira o scope `files:read` e se o arquivo está no mesmo workspace.
-- Para mudar o modelo do documento, edite o SKILL.md (estrutura/regras) e, se for
-  mudança visual, troque `templates/Template_Ata_Staff.docx` por uma ata mais recente
-  — o gerador se adapta sozinho (extrai logo, estilos e numeração do template).
+  lista no próprio feed de Atividade do Slack — abordagem adotada, sem ruído
+  no canal. Aviso coletivo por mudança de status exigiria automação manual no
+  Workflow Builder (não há API para o bot criá-la).
+- Se o Slack retornar `not_in_channel` ou "canal não encontrado", o bot não
+  foi convidado ao canal em questão (`/invite @bot`).
+- Para obter o ID de usuário (U...) de alguém: perfil da pessoa no Slack →
+  menu "⋮" → "Copiar ID do membro". DMs do bot chegam pela aba de mensagens
+  do app — se alguém não estiver recebendo, confira se não silenciou o app.
