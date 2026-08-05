@@ -18,14 +18,18 @@ Resumo do fluxo:
 2. Ler a dash (slack.sh dash_canvas_id + canvas_conteudo) e extrair da tabela
    de histórico o número da semana passada (última linha) — nunca calcular
    por conta própria.
-3. Atualizar os 4 blocos do bot na dash (slack.sh canvas_substituir):
+3. Arquivar o resumo atual da dash no canvas "Resumos de reuniões — Staff
+   C-Level" (slack.sh resumos_garantir + canvas_inserir_apos), com a data da
+   quarta-feira anterior — pulando se vazio ou já arquivado. Nunca alterar a
+   seção da dash nem entradas antigas do arquivo.
+4. Atualizar os 4 blocos do bot na dash (slack.sh canvas_substituir):
    indicadores, tabela de desempenho individual, tabela de histórico (linhas
    antigas + a linha desta semana ao final) e tabela de action items não
    concluídos. NUNCA editar as seções manuais (✍️ Resumo, Lembretes, Pauta
    adicional) nem a Pauta padrão.
-4. Verificar relendo o canvas: números batem com a lista, histórico ganhou
+5. Verificar relendo o canvas: números batem com a lista, histórico ganhou
    exatamente uma linha, seções manuais intactas.
-5. Postar no canal: "📊 Dash atualizada para a reunião de amanhã: <url da
+6. Postar no canal: "📊 Dash atualizada para a reunião de amanhã: <url da
    dash>. Não finalizadas: N (semana passada: M). Pauta adicional e resumo:
    direto na dash."
 

@@ -42,6 +42,7 @@
 #   ./scripts/slack.sh canvas_conteudo <canvas_id>    # HTML do conteúdo atual do canvas
 #   ./scripts/slack.sh canvas_substituir <canvas_id> "<texto_busca>" "<markdown>"  # troca o 1º bloco que contém o texto
 #   ./scripts/slack.sh canvas_inserir_apos <canvas_id> "<texto_busca>" "<markdown>"  # insere markdown após o bloco
+#   ./scripts/slack.sh resumos_garantir               # canvas de arquivo de resumos (cria/compartilha se preciso); imprime "id<tab>url"
 #   ./scripts/slack.sh ts "2026-07-13 23:59"         # converte data local em epoch (America/Sao_Paulo)
 
 set -euo pipefail
@@ -292,6 +293,35 @@ canvas_inserir_apos() {
   echo "bloco inserido"
 }
 
+RESUMOS_TITULO_PADRAO="Resumos de reuniões — Staff C-Level"
+
+resumos_garantir() {
+  # garante que o canvas de arquivo de resumos existe (cria com o cabeçalho
+  # padrão se necessário) e está compartilhado com o canal; imprime "id<tab>url"
+  local titulo="${SLACK_RESUMOS_TITULO:-$RESUMOS_TITULO_PADRAO}" resp id
+  resp=$(curl -s "${AUTH[@]}" "$API/files.list?types=canvas&count=100")
+  _checa "$resp"
+  id=$(echo "$resp" | jq -r --arg t "$titulo" \
+    '[.files[] | select((.title // "") == $t)] | sort_by(.created) | last | .id // empty')
+  if [ -z "$id" ]; then
+    resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
+      -d "$(jq -n --arg t "$titulo" '{title: $t, document_content: {type: "markdown",
+        markdown: ("# 🗄️ " + $t + "\n\n*Arquivo mantido automaticamente pelo actabot: toda terça, o resumo que estiver na dash é arquivado aqui com a data da reunião (mais recente no topo). Edições manuais são bem-vindas para correções.*\n")}}')" \
+      "$API/canvases.create")
+    _checa "$resp"
+    id=$(echo "$resp" | jq -r '.canvas_id')
+    echo "canvas de resumos \"$titulo\" criado: $id" >&2
+  fi
+  resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
+    -d "$(jq -n --arg c "$id" --arg ch "$SLACK_CHANNEL_ID" \
+          '{canvas_id:$c, access_level:"write", channel_ids:[$ch]}')" \
+    "$API/canvases.access.set")
+  _checa "$resp"
+  local url
+  url=$(curl -s "${AUTH[@]}" "$API/files.info?file=$id" | jq -r '.file.permalink')
+  printf '%s\t%s\n' "$id" "$url"
+}
+
 dm_texto() {
   # envia mensagem privada de texto: dm_texto <U1,U2|canal> "texto"
   local dest="$1" texto="$2" ids
@@ -519,6 +549,7 @@ case "$cmd" in
   canvas_conteudo)       canvas_conteudo "$@" ;;
   canvas_substituir)     canvas_substituir "$@" ;;
   canvas_inserir_apos)   canvas_inserir_apos "$@" ;;
+  resumos_garantir)      resumos_garantir ;;
   dm_texto)              dm_texto "$@" ;;
   postar_em)             postar_em "$@" ;;
   canal_por_nome)        canal_por_nome "$@" ;;

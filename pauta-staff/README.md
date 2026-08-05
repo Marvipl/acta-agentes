@@ -11,7 +11,7 @@ O acompanhamento da Reunião de Staff C-Level é feito em dois artefatos nativos
 Rotinas:
 
 - **Segunda 09:00** — lembrete único no canal: atualizar status/comentário na lista até 23:59 (mencionando responsáveis por itens em aberto) e adicionar pauta adicional direto na dash.
-- **Terça 09:00** — o agente lê a lista, atualiza os blocos do bot na dash (indicadores com comparação vs. semana passada, tabela por pessoa, histórico +1 linha, espelho de action items) e avisa no canal. As seções manuais nunca são tocadas.
+- **Terça 09:00** — o agente lê a lista, **arquiva o resumo atual** da dash no canvas "Resumos de reuniões — Staff C-Level" (histórico permanente, mais recente no topo — a seção da dash pode ser sobrescrita sem medo), atualiza os blocos do bot na dash (indicadores com comparação vs. semana passada, tabela por pessoa, histórico +1 linha, espelho de action items) e avisa no canal. As seções manuais nunca são tocadas.
 - **Diariamente 09:00** — lembretes de vencimento (DM privada aos responsáveis por atividades que vencem em 3 dias; aviso consolidado no canal privado #avisos-action-items para as vencidas há 1 dia que seguem não concluídas) e atualização diária da tabela-espelho de action items na dash.
 
 Após a reunião de quarta, o time cola o resumo na dash, cria as novas ações direto na lista e limpa a seção de pauta adicional. Atas em Word são história — os scripts de DOCX permanecem no repo apenas como legado/uso do fluxo do conselho.
@@ -98,6 +98,9 @@ em `referencia/`:
 - Não renomeie a lista no Slack: a localização é pelo nome exato
   "Action Plan - Staff C-level". Se precisar renomear, defina SLACK_LIST_NAME
   (ou SLACK_LIST_ID) no ambiente das rotinas com o novo nome/ID.
+- O mesmo vale para o canvas de arquivo "Resumos de reuniões — Staff C-Level"
+  (localizado pelo título; override SLACK_RESUMOS_TITULO). O arquivamento é
+  idempotente: resumo vazio ou já arquivado é pulado.
 - Acompanhamento de mudanças na lista: cada membro ativa as atualizações da
   lista no próprio feed de Atividade do Slack — abordagem adotada, sem ruído
   no canal. Aviso coletivo por mudança de status exigiria automação manual no

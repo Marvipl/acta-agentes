@@ -51,7 +51,12 @@ Secoes, nesta ordem. As marcadas com ✍️ sao MANUAIS — o agente NUNCA as ed
      terca; o agente ACRESCENTA a linha da semana ao final, preservando as
      anteriores. O "semana passada: M" dos indicadores vem da ULTIMA linha
      existente antes da atualizacao.
-2. **📝 Resumo da última reunião** ✍️
+2. **📝 Resumo da última reunião** ✍️ — logo abaixo do titulo ha uma nota
+   fixa com o link do canvas de arquivo de resumos; o time sobrescreve o
+   conteudo a vontade, pois toda terca a rotina ARQUIVA o resumo atual no
+   canvas "Resumos de reuniões — Staff C-Level" (localizado pelo titulo via
+   `resumos_garantir`; override `SLACK_RESUMOS_TITULO`), com a data da
+   reuniao e mais recente no topo.
 3. **✅ Action items** — nota fixa com o link da lista (o espelho e somente
    leitura; edicao ao vivo e na lista) + tabela do agente (busca:
    `Atividade`): colunas `Atividade | Responsável | Data | Status`, apenas
@@ -119,7 +124,19 @@ antes de qualquer outro passo.
    numero de nao finalizadas da ULTIMA linha — esse e o M de "semana
    passada". Sem tabela ou sem linhas: M = "sem registro". Nunca calcule M
    por conta propria.
-4. **Atualizacao dos 4 blocos** com
+4. **Arquivamento do resumo**: rode
+   `./pauta-staff/scripts/slack.sh resumos_garantir` (imprime id e url do
+   canvas de arquivo). Do `canvas_conteudo` da dash, extraia o texto da secao
+   📝 (entre o titulo "Resumo da última reunião" e a proxima secao),
+   IGNORANDO a nota fixa do historico. Se estiver vazio, pule. Leia o
+   `canvas_conteudo` do arquivo: se o conteudo ja constar na entrada mais
+   recente, pule (nada novo). Senao, insira com
+   `canvas_inserir_apos <id_arquivo> "Arquivo mantido automaticamente" "<md>"`
+   uma entrada `## Reunião de dd/mm/aaaa` (data da QUARTA-FEIRA anterior —
+   a reuniao a que o resumo se refere) seguida do conteudo (formatacao pode
+   ser simplificada para texto/bullets, sem perder informacao). NUNCA altere
+   a secao da dash nem as entradas ja arquivadas.
+5. **Atualizacao dos 4 blocos** com
    `./pauta-staff/scripts/slack.sh canvas_substituir $id "<busca>" "<markdown>"`:
    (a) indicadores — busca `Não finalizadas (aberto + fazendo):`, novo texto
    com N desta semana e o M do passo 3;
@@ -132,14 +149,14 @@ antes de qualquer outro passo.
    conforme "Estrutura da dash".
    Blocos de tabela: o markdown deve ser a tabela COMPLETA (cabecalho +
    linhas). Bloco nao encontrado: recrie conforme "Estrutura da dash".
-5. **Verificacao**: releia `canvas_conteudo $id` e confira que (a) os numeros
+6. **Verificacao**: releia `canvas_conteudo $id` e confira que (a) os numeros
    dos indicadores batem com a lista, (b) o historico ganhou exatamente uma
    linha (ou substituiu a de hoje), (c) as secoes manuais continuam
    intactas (presenca dos titulos ✍️ e da Pauta padrão).
-6. **Aviso no canal**: poste "📊 Dash atualizada para a reuniao de amanha:
+7. **Aviso no canal**: poste "📊 Dash atualizada para a reuniao de amanha:
    <url da dash>. Nao finalizadas: N (semana passada: M). Pauta adicional e
    resumo: direto na dash."
-7. Este fluxo NAO gera arquivos, NAO baixa documentos do canal e NAO envia
+8. Este fluxo NAO gera documentos, NAO baixa arquivos do canal e NAO envia
    DMs.
 
 ## Fluxo de execucao (rotina diaria 9h — lembretes de vencimento)
