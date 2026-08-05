@@ -122,8 +122,9 @@ antes de qualquer outro passo.
    `./pauta-staff/scripts/slack.sh canvas_conteudo $id` e extraia da tabela de
    historico (a que contem "Concluídas (acum.)") as linhas existentes e o
    numero de nao finalizadas da ULTIMA linha — esse e o M de "semana
-   passada". Sem tabela ou sem linhas: M = "sem registro". Nunca calcule M
-   por conta propria.
+   passada". Se a ultima linha for a de HOJE (re-execucao no mesmo dia), use
+   a linha ANTERIOR a ela; sem linha anterior, M = "sem registro". Nunca
+   calcule M por conta propria.
 4. **Arquivamento do resumo**: rode
    `./pauta-staff/scripts/slack.sh resumos_garantir` (imprime id e url do
    canvas de arquivo). Do `canvas_conteudo` da dash, extraia o texto da secao
@@ -133,9 +134,11 @@ antes de qualquer outro passo.
    recente, pule (nada novo). Senao, insira com
    `canvas_inserir_apos <id_arquivo> "Arquivo mantido automaticamente" "<md>"`
    uma entrada `## Reunião de dd/mm/aaaa` (data da QUARTA-FEIRA anterior —
-   a reuniao a que o resumo se refere) seguida do conteudo (formatacao pode
-   ser simplificada para texto/bullets, sem perder informacao). NUNCA altere
-   a secao da dash nem as entradas ja arquivadas.
+   a reuniao a que o resumo se refere) seguida do conteudo. Formatacao da
+   entrada: subtitulos como `### Topico`, bullets como `- item`, SEM negrito
+   inline (`**` e renderizado literalmente dentro de itens de lista no
+   canvas); paragrafo todo em negrito na dash vira `### `. Nao perca
+   informacao. NUNCA altere a secao da dash nem as entradas ja arquivadas.
 5. **Atualizacao dos 4 blocos** com
    `./pauta-staff/scripts/slack.sh canvas_substituir $id "<busca>" "<markdown>"`:
    (a) indicadores — busca `Não finalizadas (aberto + fazendo):`, novo texto
