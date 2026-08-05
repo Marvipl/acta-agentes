@@ -10,7 +10,7 @@
 #                      humanos do canal (requer também channels:read e users:read;
 #                      groups:read se o canal for privado)
 #   SLACK_LIST_NAME    opcional: nome da lista de pendências (padrão:
-#                      "Pendências — Staff C-Level"). Os comandos lista_*
+#                      "Action Plan - Staff C-level"). Os comandos lista_*
 #                      localizam a lista PELO NOME em tempo de execução
 #                      (scopes lists:read, lists:write) — nenhum ID fixo.
 #   SLACK_LIST_ID      opcional: ID (F...) fixo da lista — só use para apontar
@@ -209,7 +209,7 @@ membros_canal() {
   usuarios_canal | cut -f1 | paste -sd, -
 }
 
-LISTA_NOME_PADRAO="Pendências — Staff C-Level"
+LISTA_NOME_PADRAO="Action Plan - Staff C-level"
 
 _lista_id() {
   # resolve o ID da lista de pendências: SLACK_LIST_ID (se definida) ou busca

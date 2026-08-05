@@ -17,7 +17,7 @@
   "secoes": [
     {
       "titulo": "1. Pendências da Semana Anterior",
-      "nota": "As pendências são acompanhadas na lista 'Pendências — Staff C-Level' do Slack; verificação item a item direto na lista.",
+      "nota": "As pendências são acompanhadas na lista 'Action Plan - Staff C-level' do Slack; verificação item a item direto na lista.",
       "bullets": [
         [["Não finalizadas (aberto + fazendo): ", true], ["17 — semana passada: 20.", false]],
         [["Por responsável: ", true], ["Marcus 8, Vinicius 5, Renato 2, Diego 2.", false]],

@@ -5,7 +5,7 @@
 
 Automação semanal via **Claude Code Routines**:
 
-As pendências vivem numa **lista do Slack** ("Pendências — Staff C-Level", colunas Pendência / Responsável / Data prevista / Status / Comentário) — fonte única, atualizada pelo próprio time direto na lista. Na reunião, a verificação item a item é feita na lista, não na pauta.
+As pendências vivem numa **lista do Slack** ("Action Plan - Staff C-level", colunas Pendência / Responsável / Data prevista / Status / Comentário) — fonte única, atualizada pelo próprio time direto na lista. Na reunião, a verificação item a item é feita na lista, não na pauta.
 
 - **Segunda 09:00** — o agente posta no canal pedindo itens de pauta adicional (respostas na thread até 23:59) e um lembrete com o link da lista, mencionando os responsáveis por itens não concluídos para atualizarem status e comentário até 23:59.
 - **Terça 09:00** — o agente coleta as respostas da thread (cutoff segunda 23:59), lê a lista e gera a pauta da reunião de quarta com os indicadores das pendências — total não finalizado (aberto + fazendo) com comparação vs. semana passada, contagem por responsável e concluídas —, publicando o DOCX no canal (e por DM, se configurado). Nenhum arquivo de pauta/ata é baixado ou lido: a lista e o histórico de mensagens são as únicas fontes.
@@ -30,7 +30,7 @@ pauta-staff/
 ## Pré-requisitos
 
 1. **App do Slack** (já feito na Etapa 1): bot scopes `chat:write`, `channels:history`, `files:read`, `files:write`, `lists:read`, `lists:write` (`groups:history` se o canal for privado; `im:write` para o envio da pauta por DM; `channels:read` + `users:read` para o modo `canal` das DMs e para as menções — `groups:read` no lugar de `channels:read` se o canal for privado); bot convidado ao canal.
-2. **Lista de pendências**: totalmente automática — os comandos `lista_*` localizam a lista **pelo nome** ("Pendências — Staff C-Level") em tempo de execução, e `lista_garantir` a cria (colunas pendencia/responsavel/data_prevista/status/comentario) e a compartilha no canal se não existir. Nenhum ID configurado; se a lista for recriada, nada precisa mudar. Overrides opcionais: `SLACK_LIST_NAME` (outro nome) ou `SLACK_LIST_ID` (ID fixo).
+2. **Lista de pendências**: totalmente automática — os comandos `lista_*` localizam a lista **pelo nome** ("Action Plan - Staff C-level") em tempo de execução, e `lista_garantir` a cria (colunas pendencia/responsavel/data_prevista/status/comentario) e a compartilha no canal se não existir. Nenhum ID configurado; se a lista for recriada, nada precisa mudar. Overrides opcionais: `SLACK_LIST_NAME` (outro nome) ou `SLACK_LIST_ID` (ID fixo).
 3. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...) e `SLACK_CHANNEL_ID`; opcionalmente `SLACK_DM_USER_IDS` — quem recebe a pauta também por mensagem individual: IDs de usuário U... separados por vírgula, ou o valor especial `canal` para enviar a todos os membros humanos do canal (a lista de destinatários é resolvida a cada envio); vazio/ausente desliga as DMs; acesso de rede Custom com `slack.com` e `files.slack.com` nos domínios permitidos (mantendo a lista padrão de gerenciadores de pacotes); script de configuração vazio. Nenhum segredo na instrução ou no repo.
 4. Ferramentas no ambiente de execução: `curl`, `jq`, `python3` (padrão nas sessões do Claude Code).
 

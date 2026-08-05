@@ -15,7 +15,7 @@ Gera a pauta da reuniao de Staff C-Level (toda quarta-feira). A pauta e um
 **esqueleto padrao** com apenas duas partes dinamicas:
 
 1. **Pendencias da Semana Anterior** — acompanhadas na LISTA do Slack
-   "Pendências — Staff C-Level", fonte unica das pendencias. A lista e
+   "Action Plan - Staff C-level", fonte unica das pendencias. A lista e
    localizada PELO NOME em tempo de execucao (nenhum ID fixo); o comando
    `lista_garantir` a cria e compartilha no canal se nao existir. Colunas: Pendencia, Responsavel, Data prevista, Status
    (Aberto/Fazendo/Concluido) e Comentario. O time cria as novas acoes e
@@ -42,7 +42,7 @@ Titulo "PAUTA DE REUNIÃO" + subtitulo "STAFF C-LEVEL", tabela de informacoes,
 tabela de participantes e as secoes, nesta ordem:
 
 1. **Pendencias da Semana Anterior** — nota "As pendencias sao acompanhadas na
-   lista 'Pendências — Staff C-Level' do Slack; verificacao item a item direto
+   lista 'Action Plan - Staff C-level' do Slack; verificacao item a item direto
    na lista." + tres bullets de INDICADORES com dados reais calculados no
    passo 4 do fluxo de terca (sem tabela de pendencias — a lista e a fonte
    unica):
