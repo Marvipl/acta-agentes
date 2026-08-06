@@ -37,12 +37,14 @@ rotina(s) Remote:
    estratégicas do CEO no canal privado #estrategia do Slack EM TEMPO REAL,
    com base em evidências reais (lista Action Plan e dash/resumos do staff,
    briefings de inteligência do Drive, planejamento estratégico), e posta uma
-   leitura estratégica semanal cruzando execução e mercado. O tempo real é um
-   servidor sempre ligado (`assistente-estrategico/bot/`, Socket Mode +
-   Claude Agent SDK, cobrança via API); a leitura semanal é rotina Remote
-   (sexta 08:00, prompt: `referencia/prompt_agente_estrategico_semanal.md`) e
-   há uma rotina horária de fallback do Q&A
-   (prompt: `referencia/prompt_agente_estrategico.md`). Playbook e scripts em
+   leitura estratégica semanal cruzando execução e mercado. Q&A em dois modos:
+   (A) rotina Remote disparada via gatilho de API por um Apps Script que vigia
+   o canal (~2-4 min, sem servidor, cobrança na assinatura — padrão;
+   prompt: `referencia/prompt_agente_estrategico.md`) e (B) servidor opcional
+   em tempo real (`assistente-estrategico/bot/`, Socket Mode + Claude Agent
+   SDK, segundos, cobrança via API). A leitura semanal é rotina Remote (sexta
+   08:00, prompt: `referencia/prompt_agente_estrategico_semanal.md`).
+   Playbook e scripts em
    `assistente-estrategico/`. Somente leitura nas fontes; só escreve mensagens
    no próprio canal. CRM e financeiro são integrações futuras.
 

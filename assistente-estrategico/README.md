@@ -21,26 +21,36 @@ leitura estratégica semanal cruzando execução interna e mercado. Ele enxerga:
 CRM e financeiro ficam para integrações futuras — até lá, o agente declara a lacuna
 quando a pergunta depender desses dados, em vez de estimar.
 
-## Como funciona a interação: bot em TEMPO REAL
+## Como funciona a interação: dois modos
 
-O assistente é um bot do Slack de verdade, com o MESMO app dos demais agentes
-(actabot): um servidor sempre ligado (`bot/bot.py`, Socket Mode — sem URL pública)
-recebe cada mensagem do canal #estrategia no instante em que ela é postada, roda uma
-sessão do **Claude Agent SDK** com o playbook `SKILL.md` e responde na thread em
-segundos (o tempo de análise). A conversa tem memória por thread — follow-ups
-retomam a mesma sessão. Fora do #estrategia, o bot responde quando @mencionado
-(follow-ups fora do canal precisam de nova @menção).
+O assistente atende no canal #estrategia pelo MESMO app dos demais agentes
+(actabot), em um de dois modos — que convivem sem duplicar respostas, pois a
+detecção de pendências é idempotente:
 
-Por que não as alternativas:
+**Modo A — rotina disparada via API (recomendado: sem servidor, cobra da
+assinatura).** As rotinas do Claude Code aceitam um **gatilho de API** (beta): um
+endpoint `POST .../routines/{id}/fire` que dispara a rotina na hora. Como o Slack
+não tem passo nativo de web request para chamar esse endpoint, a ponte é um
+**Google Apps Script** (mesmo padrão do `EnviarBriefingActa.gs` já em produção):
+acionador a cada 1 minuto, olha o canal e, havendo mensagem humana nova (ou
+follow-up em thread), dispara a rotina de Q&A. Latência típica de ponta a ponta:
+**~2 a 4 minutos** (até 1 min de detecção + subida da sessão na nuvem + análise).
+Custo: Apps Script é gratuito e a rotina consome a assinatura do claude.ai, como
+os demais agentes.
 
-- **Claude Code Routines** são agendadas (mínimo 1 hora) — servem para o trabalho
-  proativo (leitura semanal) e como fallback do Q&A, não para conversa ao vivo.
-- **Claude Tag** (app oficial da Anthropic no Slack) responde em tempo real, mas não
-  lê listas do Slack, canvas nem o Drive — não alcança as fontes deste agente.
+**Modo B — servidor em tempo real (opcional: segundos, requer host + API key).**
+`bot/bot.py` (Socket Mode — sem URL pública) recebe cada mensagem no instante em
+que é postada, roda o **Claude Agent SDK** com o playbook `SKILL.md` e responde na
+thread em segundos, com memória por thread. Requer uma máquina sempre ligada e
+`ANTHROPIC_API_KEY` (cobrança por token, separada da assinatura). Fora do
+#estrategia responde a @menção.
 
-Custo: o servidor usa a **API da Anthropic** (`ANTHROPIC_API_KEY`, cobrança por
-token, separada da assinatura do claude.ai). Cada resposta consome tokens conforme
-as fontes consultadas. A rotina semanal pode continuar em Routines (assinatura).
+Descartado: **Claude Tag** (app oficial da Anthropic no Slack) responde em tempo
+real, mas não lê listas do Slack, canvas nem o Drive — não alcança as fontes deste
+agente.
+
+Comece pelo Modo A; suba o Modo B só se a latência de minutos incomodar no uso
+real.
 
 ## Estrutura
 
@@ -49,6 +59,7 @@ assistente-estrategico/
   SKILL.md                 Fontes, método de resposta e fluxos (leitura obrigatória)
   README.md                Este arquivo
   scripts/estrategia.sh    Helpers de canal: pendentes (perguntas sem resposta), responder, postar
+  gatilho/DispararAssistente.gs  Apps Script que dispara a rotina de Q&A via API (Modo A)
   bot/bot.py               Servidor em tempo real (Socket Mode + Claude Agent SDK)
   bot/prompt_bot.md        Instruções do modo tempo real (somadas ao SKILL.md)
   bot/drive.py             Leitura de briefings/planejamento no Drive via service account
@@ -59,7 +70,29 @@ assistente-estrategico/
 A leitura de lista/dash/canvas reusa `pauta-staff/scripts/slack.sh` (somente leitura;
 nenhum arquivo de `pauta-staff/` é modificado).
 
-## Subindo o bot em tempo real
+## Modo A — rotina disparada via API (sem servidor)
+
+1. **Criar a rotina de Q&A** (ver tabela de rotinas abaixo) com o prompt
+   `referencia/prompt_agente_estrategico.md` e o agendamento horário (que fica como
+   varredura de segurança).
+2. **Adicionar o gatilho de API** à rotina em claude.ai/code/routines (Add API
+   trigger) e copiar a URL de disparo e o bearer token. O recurso é beta
+   (header `anthropic-beta: experimental-cc-routine-2026-04-01`); se o formato
+   mudar, confira code.claude.com/docs/en/routines.
+3. **Apps Script**: em script.google.com, criar um projeto com o conteúdo de
+   `gatilho/DispararAssistente.gs`; em Configurações do projeto → Propriedades do
+   script, definir `SLACK_BOT_TOKEN`, `SLACK_CHANNEL_ID` (canal #estrategia),
+   `ROUTINE_FIRE_URL` e `ROUTINE_FIRE_TOKEN`; criar um acionador temporizado
+   ("a cada minuto") para a função `dispararSeHouverNovidade`.
+4. Pronto: mensagem nova no canal → rotina dispara em ~1 min → resposta na thread.
+   Disparo repetido não duplica resposta (fluxo idempotente); se um disparo
+   falhar, a varredura horária cobre. O payload do disparo é tratado como mero
+   despertador — a rotina ignora instruções vindas nele (regra no prompt).
+
+Alternativa à ponte, sem Apps Script: um automatizador SaaS (Zapier/Make) com
+gatilho "nova mensagem no canal" chamando a mesma URL de disparo.
+
+## Modo B — subindo o bot em tempo real
 
 1. **App do Slack** (api.slack.com/apps → app do actabot):
    - *Socket Mode*: ativar e criar um App-Level Token com scope `connections:write`
@@ -141,13 +174,13 @@ completos em `referencia/`:
 
 | Rotina | Agendamento | Cron UTC | Prompt |
 |---|---|---|---|
-| 1 — perguntas & respostas (FALLBACK) | dias úteis, de hora em hora, 08h–20h | `0 11-23 * * 1-5` | `prompt_agente_estrategico.md` |
+| 1 — perguntas & respostas | horária (varredura) + gatilho de API (Modo A) | `0 11-23 * * 1-5` | `prompt_agente_estrategico.md` |
 | 2 — leitura estratégica semanal | sextas 08:00 | `0 11 * * 5` | `prompt_agente_estrategico_semanal.md` |
 
-Com o bot em tempo real no ar, a rotina 1 é um FALLBACK opcional (cobre janelas em
-que o servidor esteja fora): a detecção de pendências é idempotente — pergunta já
-respondida pelo bot ao vivo não é respondida de novo. Se o servidor for estável,
-pode deixá-la desativada.
+No Modo A, a rotina 1 é o coração do Q&A: o Apps Script a dispara via API a cada
+novidade e o agendamento horário fica como varredura de segurança. Se o Modo B
+(servidor) estiver no ar, a rotina 1 pode ficar só na varredura — a detecção de
+pendências é idempotente e os modos não se duplicam.
 
 ## Notas operacionais
 

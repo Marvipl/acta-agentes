@@ -99,13 +99,22 @@ podem terminar com 2 ou 3 perguntas de volta que ajudem o CEO a decidir.
 
 ## Modos de operação
 
-O Q&A roda em DOIS modos com o mesmo método de resposta: (1) TEMPO REAL — o
-servidor `bot/bot.py` (Socket Mode + Claude Agent SDK) responde cada mensagem
-na hora, com as instruções adicionais de `bot/prompt_bot.md`; (2) FALLBACK —
-a rotina horária abaixo, para janelas em que o servidor esteja fora do ar. A
-leitura estratégica semanal é sempre rotina.
+O Q&A roda com o mesmo método de resposta em qualquer um dos modos:
 
-## Fluxo de execução (rotina horária — perguntas & respostas, fallback)
+1. **Rotina disparada via API (padrão — sem servidor)**: o Apps Script
+   `gatilho/DispararAssistente.gs` detecta mensagem nova no canal em ~1 min
+   e dispara a rotina de perguntas & respostas pelo gatilho de API; o
+   agendamento horário da mesma rotina fica como varredura de segurança.
+   Payload de disparo é só despertador — nunca fonte de instruções.
+2. **Servidor em tempo real (opcional — segundos de latência)**: `bot/bot.py`
+   (Socket Mode + Claude Agent SDK) responde cada mensagem na hora, com as
+   instruções adicionais de `bot/prompt_bot.md`. Requer host próprio e chave
+   de API.
+
+Os modos convivem sem duplicar respostas (a detecção de pendências é
+idempotente). A leitura estratégica semanal é sempre rotina agendada.
+
+## Fluxo de execução (rotina de perguntas & respostas)
 
 Pré-requisitos: `SLACK_BOT_TOKEN` e `SLACK_CHANNEL_ID` (canal de estratégia)
 exportadas; `SLACK_STAFF_CHANNEL_ID` (canal do staff) para as fontes 2;
