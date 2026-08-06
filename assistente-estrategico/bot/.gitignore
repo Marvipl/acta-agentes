@@ -1,3 +1,4 @@
 .sessoes.json
 *.json.bak
 service-account*.json
+__pycache__/
