@@ -18,6 +18,8 @@
 #   ./scripts/estrategia.sh pendentes [dias]             # perguntas sem resposta (JSON; padrão 7 dias)
 #   ./scripts/estrategia.sh responder <thread_ts> "txt"  # responde em thread; imprime o ts
 #   ./scripts/estrategia.sh postar "texto"               # mensagem avulsa no canal; imprime o ts
+#   ./scripts/estrategia.sh baixar <url_private> <destino>          # baixa anexo do Slack
+#   ./scripts/estrategia.sh arquivo <caminho> ["coment"] [thread]   # envia arquivo (thread opcional)
 
 set -euo pipefail
 
@@ -84,7 +86,8 @@ pendentes() {
       ts=$(echo "$msg" | jq -r '.ts')
       replies=$(echo "$msg" | jq -r '.reply_count // 0')
       if [ "$replies" = "0" ]; then
-        echo "$msg" | jq -c '{thread_ts: .ts, tipo: "nova", pergunta: .text, ultima_msg: .text, user}'
+        echo "$msg" | jq -c '{thread_ts: .ts, tipo: "nova", pergunta: .text, ultima_msg: .text, user,
+                              arquivos: [.files[]? | {name, mimetype, url_private}]}'
         continue
       fi
       thread=$(curl -s "${AUTH[@]}" \
@@ -102,7 +105,9 @@ pendentes() {
             ultima_msg: ([.messages[] | select((.subtype // "") == "" and (.bot_id == null)
                           and .user != $bot)] | last | .text),
             user: ([.messages[] | select((.subtype // "") == "" and (.bot_id == null)
-                    and .user != $bot)] | last | .user)}'
+                    and .user != $bot)] | last | .user),
+            arquivos: ([.messages[] | select((.subtype // "") == "" and (.bot_id == null)
+                        and .user != $bot)] | last | [.files[]? | {name, mimetype, url_private}])}'
       fi
     done | jq -s '.'
 }
@@ -126,6 +131,46 @@ postar() {
   echo "$resp" | jq -r '.ts'
 }
 
+baixar() {
+  # baixa um anexo do Slack (qualquer formato) a partir da url_private
+  local url="$1" destino="$2"
+  curl -sL "${AUTH[@]}" "$url" -o "$destino"
+  if grep -qi '<html' "$destino" 2>/dev/null && [ "$(wc -c < "$destino")" -lt 20000 ]; then
+    echo "ERRO: download devolveu HTML (bot sem acesso ao arquivo? scope files:read?)" >&2
+    exit 1
+  fi
+  echo "$destino"
+}
+
+arquivo() {
+  # envia um arquivo ao canal de estratégia, opcionalmente numa thread
+  # (fluxo novo do Slack: getUploadURLExternal -> POST binário -> completeUploadExternal;
+  #  requer scope files:write)
+  local caminho="$1" comentario="${2:-}" thread="${3:-}"
+  local nome tamanho resp url file_id
+  [ -f "$caminho" ] || { echo "ERRO: arquivo não existe: $caminho" >&2; exit 1; }
+  nome=$(basename "$caminho")
+  tamanho=$(wc -c < "$caminho" | tr -d ' ')
+
+  resp=$(curl -s "${AUTH[@]}" -G "$API/files.getUploadURLExternal" \
+    --data-urlencode "filename=${nome}" --data-urlencode "length=${tamanho}")
+  _checa "$resp"
+  url=$(echo "$resp" | jq -r .upload_url)
+  file_id=$(echo "$resp" | jq -r .file_id)
+
+  curl -s -X POST "$url" -F "file=@${caminho}" > /dev/null
+
+  resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
+    -d "$(jq -n --arg id "$file_id" --arg t "$nome" --arg c "$SLACK_CHANNEL_ID" \
+          --arg ic "$comentario" --arg th "$thread" \
+          '{files:[{id:$id, title:$t}], channel_id:$c}
+           + (if $ic != "" then {initial_comment:$ic} else {} end)
+           + (if $th != "" then {thread_ts:$th} else {} end)')" \
+    "$API/files.completeUploadExternal")
+  _checa "$resp"
+  echo "Arquivo enviado: $nome"
+}
+
 cmd="${1:-}"
 shift || true
 case "$cmd" in
@@ -134,6 +179,8 @@ case "$cmd" in
   pendentes)  pendentes "$@" ;;
   responder)  responder "$@" ;;
   postar)     postar "$@" ;;
+  baixar)     baixar "$@" ;;
+  arquivo)    arquivo "$@" ;;
   *)
     grep '^#   ./scripts/estrategia.sh' "$0" | sed 's/^#   //'
     exit 1

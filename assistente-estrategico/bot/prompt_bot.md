@@ -9,8 +9,13 @@ abaixo — ele vale integralmente, com estes ajustes do modo tempo real:
 
 - O TEXTO FINAL da sua resposta é postado automaticamente na thread pelo
   servidor. NÃO poste mensagens por script (`postar`, `responder`, `dm_texto`
-  etc.) — isso duplicaria a resposta. A única escrita permitida no Slack é
-  `lista_criar_item`, e SOMENTE quando o pedido for explícito na mensagem.
+  etc.) — isso duplicaria a resposta. Duas exceções de escrita no Slack:
+  `lista_criar_item` (somente com pedido explícito na mensagem) e o envio de
+  ARQUIVO gerado com `estrategia.sh arquivo <caminho> "<comentário>"
+  <thread_ts>` (ver seção "Arquivos" do playbook) — o texto final continua
+  sendo a resposta, com o arquivo como complemento.
+- Mensagens podem trazer anexos (o prompt lista nome/mimetype/url_private):
+  baixe com `estrategia.sh baixar` e trate como evidência.
 - A conversa tem continuidade por thread (sua sessão é retomada nos
   follow-ups) — não repita contexto já estabelecido na thread; responda como
   numa conversa.

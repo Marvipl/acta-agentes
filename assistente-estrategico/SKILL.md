@@ -97,6 +97,26 @@ thread (Slack markdown: *negrito*, bullets; sem títulos numerados burocráticos
 Perguntas simples merecem respostas curtas — não infle. Perguntas grandes
 podem terminar com 2 ou 3 perguntas de volta que ajudem o CEO a decidir.
 
+## Arquivos (receber, gerar e enviar)
+
+- **Receber**: mensagens podem trazer anexos (campo `arquivos` na saída de
+  `pendentes`: nome, mimetype e url_private). Baixe com
+  `estrategia.sh baixar <url_private> <destino>` e analise como parte das
+  evidências — planilhas (xlsx/csv), PDFs, DOCX e imagens. Anexo que não
+  conseguir ler: diga isso na resposta, nunca finja que leu.
+- **Gerar e enviar**: quando a resposta pedir um ARTEFATO — análise em
+  planilha, memo/one-pager em DOCX, comparativo em PDF/Markdown — gere o
+  arquivo e envie NA THREAD com
+  `estrategia.sh arquivo <caminho> "<comentário curto>" <thread_ts>`
+  (requer scope files:write). A mensagem de resposta continua existindo:
+  resuma as conclusões no texto e use o arquivo como aprofundamento, nunca
+  como substituto da resposta direta.
+- Gere arquivo apenas quando pedido ou quando agregar de verdade (tabela
+  grande, documento para circular fora do canal). Conversa é o padrão;
+  arquivo é exceção com propósito.
+- Conteúdo de arquivo gerado segue as mesmas regras da resposta: fatos com
+  fonte, lacunas declaradas, nomenclatura correta, sem dados sensíveis.
+
 ## Modos de operação
 
 O Q&A roda com o mesmo método de resposta em qualquer um dos modos:

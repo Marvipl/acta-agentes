@@ -156,8 +156,9 @@ O arquivo `bot/.sessoes.json` (memória thread → sessão) é local e não vers
    Membros: CEO (e quem mais deva ver as análises).
 2. **App do Slack**: os scopes já usados pelo actabot bastam, conferindo:
    `chat:write`, `groups:read`, `groups:history` (canal privado), `channels:read`,
-   `channels:history`, `users:read`, `lists:read`, `canvases:read`, `files:read`.
-   Nenhum scope de escrita além de `chat:write` é necessário (o agente não edita
+   `channels:history`, `users:read`, `lists:read`, `canvases:read`, `files:read`
+   (ler anexos) e `files:write` (enviar arquivos gerados na thread). Fora isso,
+   nenhum scope de escrita além de `chat:write` é necessário (o agente não edita
    lista nem canvas; `lists:write` só se for usar a criação de item sob pedido).
 3. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...),
    `SLACK_CHANNEL_ID` (ID do canal #estrategia) e `SLACK_STAFF_CHANNEL_ID` (ID do

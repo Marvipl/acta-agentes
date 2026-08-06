@@ -123,7 +123,7 @@ def _tratar(event: dict, client) -> None:
     thread_ts = event.get("thread_ts") or ts
     autor = event.get("user", "")
     texto_usuario = event.get("text", "").strip()
-    if not texto_usuario:
+    if not texto_usuario and not event.get("files"):
         return
 
     try:  # sinaliza que a mensagem foi vista (requer scope reactions:write)
@@ -131,12 +131,23 @@ def _tratar(event: dict, client) -> None:
     except Exception:
         pass
 
+    anexos = [
+        {"name": f.get("name"), "mimetype": f.get("mimetype"), "url_private": f.get("url_private")}
+        for f in event.get("files", [])
+    ]
+    bloco_anexos = (
+        "\n\nAnexos da mensagem (baixe com estrategia.sh baixar <url_private> <destino>):\n"
+        + json.dumps(anexos, ensure_ascii=False)
+        if anexos
+        else ""
+    )
     resume = _sessoes().get(thread_ts)
     prompt = (
         f"Mensagem recebida AGORA no Slack — canal {canal}, thread {thread_ts}, "
-        f"autor <@{autor}>:\n\n{texto_usuario}\n\n"
+        f"autor <@{autor}>:\n\n{texto_usuario}{bloco_anexos}\n\n"
         "Responda seguindo o método do playbook. O texto final da sua resposta será "
-        "postado na thread pelo servidor — NÃO use scripts para postar mensagens."
+        "postado na thread pelo servidor — NÃO use scripts para postar mensagens "
+        "(exceção: envio de ARQUIVO gerado, via estrategia.sh arquivo)."
     )
     log.info("processando %s (thread %s, resume=%s)", ts, thread_ts, bool(resume))
     try:
