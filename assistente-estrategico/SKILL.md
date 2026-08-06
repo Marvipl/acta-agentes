@@ -97,7 +97,15 @@ thread (Slack markdown: *negrito*, bullets; sem títulos numerados burocráticos
 Perguntas simples merecem respostas curtas — não infle. Perguntas grandes
 podem terminar com 2 ou 3 perguntas de volta que ajudem o CEO a decidir.
 
-## Fluxo de execução (rotina horária — perguntas & respostas)
+## Modos de operação
+
+O Q&A roda em DOIS modos com o mesmo método de resposta: (1) TEMPO REAL — o
+servidor `bot/bot.py` (Socket Mode + Claude Agent SDK) responde cada mensagem
+na hora, com as instruções adicionais de `bot/prompt_bot.md`; (2) FALLBACK —
+a rotina horária abaixo, para janelas em que o servidor esteja fora do ar. A
+leitura estratégica semanal é sempre rotina.
+
+## Fluxo de execução (rotina horária — perguntas & respostas, fallback)
 
 Pré-requisitos: `SLACK_BOT_TOKEN` e `SLACK_CHANNEL_ID` (canal de estratégia)
 exportadas; `SLACK_STAFF_CHANNEL_ID` (canal do staff) para as fontes 2;

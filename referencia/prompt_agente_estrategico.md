@@ -1,5 +1,8 @@
-# Prompt — Assistente Estratégico, Rotina 1: perguntas & respostas
+# Prompt — Assistente Estratégico, Rotina 1: perguntas & respostas (fallback)
 
+> FALLBACK do bot em tempo real (`assistente-estrategico/bot/`): use esta
+> rotina para cobrir janelas em que o servidor esteja fora do ar. A detecção
+> de pendências é idempotente — perguntas já respondidas ao vivo são puladas.
 > Rotina Remote horária. Repositório: acta-agentes. Fuso: America/Sao_Paulo.
 > Agendamento: dias úteis, de hora em hora, 08:00–20:00 (America/Sao_Paulo) —
 > cron UTC `0 11-23 * * 1-5`.

@@ -34,17 +34,17 @@ rotina(s) Remote:
    Drive nem o fluxo de rascunhos do Gmail.
 
 4. ASSISTENTE ESTRATÉGICO ("Assistente Estratégico Acta") — responde perguntas
-   estratégicas do CEO no canal privado #estrategia do Slack, com base em
-   evidências reais (lista Action Plan e dash/resumos do staff, briefings de
-   inteligência do Drive, planejamento estratégico), e posta uma leitura
-   estratégica semanal cruzando execução e mercado. DUAS rotinas Remote:
-   horária em dias úteis (prompt: `referencia/prompt_agente_estrategico.md`)
-   e sexta 08:00 (prompt: `referencia/prompt_agente_estrategico_semanal.md`).
-   Playbook e script em `assistente-estrategico/`. Variáveis de ambiente:
-   SLACK_BOT_TOKEN, SLACK_CHANNEL_ID (canal #estrategia) e
-   SLACK_STAFF_CHANNEL_ID; conector Google Drive. Somente leitura nas fontes;
-   só escreve mensagens no próprio canal. CRM e financeiro são integrações
-   futuras.
+   estratégicas do CEO no canal privado #estrategia do Slack EM TEMPO REAL,
+   com base em evidências reais (lista Action Plan e dash/resumos do staff,
+   briefings de inteligência do Drive, planejamento estratégico), e posta uma
+   leitura estratégica semanal cruzando execução e mercado. O tempo real é um
+   servidor sempre ligado (`assistente-estrategico/bot/`, Socket Mode +
+   Claude Agent SDK, cobrança via API); a leitura semanal é rotina Remote
+   (sexta 08:00, prompt: `referencia/prompt_agente_estrategico_semanal.md`) e
+   há uma rotina horária de fallback do Q&A
+   (prompt: `referencia/prompt_agente_estrategico.md`). Playbook e scripts em
+   `assistente-estrategico/`. Somente leitura nas fontes; só escreve mensagens
+   no próprio canal. CRM e financeiro são integrações futuras.
 
 ## Estrutura
 
