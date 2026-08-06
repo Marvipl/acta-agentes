@@ -29,21 +29,35 @@ detecção de pendências é idempotente:
 
 **Modo A — rotina disparada via API (recomendado: sem servidor, cobra da
 assinatura).** As rotinas do Claude Code aceitam um **gatilho de API** (beta): um
-endpoint `POST .../routines/{id}/fire` que dispara a rotina na hora. Como o Slack
-não tem passo nativo de web request para chamar esse endpoint, a ponte é um
-**Google Apps Script** (mesmo padrão do `EnviarBriefingActa.gs` já em produção):
-acionador a cada 1 minuto, olha o canal e, havendo mensagem humana nova (ou
-follow-up em thread), dispara a rotina de Q&A. Latência típica de ponta a ponta:
-**~2 a 4 minutos** (até 1 min de detecção + subida da sessão na nuvem + análise).
-Custo: Apps Script é gratuito e a rotina consome a assinatura do claude.ai, como
-os demais agentes.
+endpoint `POST .../routines/{id}/fire` que dispara a rotina na hora. A ponte que
+chama esse endpoint é **Google Apps Script** (mesmo padrão do
+`EnviarBriefingActa.gs` já em produção — o Google hospeda, nada para manter), em
+duas variantes que se complementam:
 
-**Modo B — servidor em tempo real (opcional: segundos, requer host + API key).**
-`bot/bot.py` (Socket Mode — sem URL pública) recebe cada mensagem no instante em
-que é postada, roda o **Claude Agent SDK** com o playbook `SKILL.md` e responde na
-thread em segundos, com memória por thread. Requer uma máquina sempre ligada e
+- **A2 — push em tempo real (`gatilho/ReceptorEventos.gs`)**: o Apps Script é
+  publicado como Web App e vira a Request URL da **Events API** do Slack — o
+  Slack EMPURRA o evento no instante em que a mensagem é postada e o script
+  dispara a rotina em segundos. Detecção em tempo real, sem polling.
+- **A1 — poller de reserva (`DispararAssistente.gs`)**: acionador temporizado
+  (a cada 10 min quando o A2 está ativo; a cada 1 min se usado sozinho) que
+  varre o canal e dispara se houver pendência — cobre o caso raro de o Slack
+  suspender a entrega de eventos.
+
+Latência de ponta a ponta no A2: **subida da sessão na nuvem (~1-2 min) +
+análise** — a detecção deixa de ser gargalo. Custo: Apps Script é gratuito e a
+rotina consome a assinatura do claude.ai, como os demais agentes. Execuções
+sobrepostas (mensagens em sequência) não duplicam respostas: além do freio de
+45s no receptor, a rotina relê a thread antes de postar cada resposta.
+
+**Modo B — servidor em tempo real (opcional: resposta em segundos, requer host +
+API key).** `bot/bot.py` (Socket Mode — sem URL pública) recebe cada mensagem no
+instante em que é postada, roda o **Claude Agent SDK** com o playbook `SKILL.md`
+e responde na thread em segundos, com memória por thread. Elimina também a subida
+de sessão (~1-2 min) que o Modo A sempre paga. Requer uma máquina sempre ligada e
 `ANTHROPIC_API_KEY` (cobrança por token, separada da assinatura). Fora do
-#estrategia responde a @menção.
+#estrategia responde a @menção. Atenção: Socket Mode ligado desvia os eventos da
+Request URL — os modos A2 e B usam a mesma assinatura de eventos do app e não
+rodam simultaneamente (o poller A1 continua válido como reserva de qualquer um).
 
 Descartado: **Claude Tag** (app oficial da Anthropic no Slack) responde em tempo
 real, mas não lê listas do Slack, canvas nem o Drive — não alcança as fontes deste
@@ -79,18 +93,28 @@ nenhum arquivo de `pauta-staff/` é modificado).
    trigger) e copiar a URL de disparo e o bearer token. O recurso é beta
    (header `anthropic-beta: experimental-cc-routine-2026-04-01`); se o formato
    mudar, confira code.claude.com/docs/en/routines.
-3. **Apps Script**: em script.google.com, criar um projeto com o conteúdo de
-   `gatilho/DispararAssistente.gs`; em Configurações do projeto → Propriedades do
-   script, definir `SLACK_BOT_TOKEN`, `SLACK_CHANNEL_ID` (canal #estrategia),
-   `ROUTINE_FIRE_URL` e `ROUTINE_FIRE_TOKEN`; criar um acionador temporizado
-   ("a cada minuto") para a função `dispararSeHouverNovidade`.
-4. Pronto: mensagem nova no canal → rotina dispara em ~1 min → resposta na thread.
-   Disparo repetido não duplica resposta (fluxo idempotente); se um disparo
-   falhar, a varredura horária cobre. O payload do disparo é tratado como mero
-   despertador — a rotina ignora instruções vindas nele (regra no prompt).
+3. **Apps Script**: em script.google.com, criar UM projeto com os dois arquivos de
+   `gatilho/` (`DispararAssistente.gs` e `ReceptorEventos.gs`); em Configurações
+   do projeto → Propriedades do script, definir `SLACK_BOT_TOKEN`,
+   `SLACK_CHANNEL_ID` (canal #estrategia), `ROUTINE_FIRE_URL` e
+   `ROUTINE_FIRE_TOKEN`.
+4. **A2 (push em tempo real)**: Implantar → Nova implantação → App da Web
+   ("Executar como: eu"; "Quem pode acessar: Qualquer pessoa") e copiar a URL
+   `/exec`. No app do Slack: Socket Mode DESATIVADO; Event Subscriptions →
+   Enable Events → Request URL = URL do web app (a verificação de desafio é
+   automática); Subscribe to bot events: `message.groups` e `message.channels`;
+   reinstalar o app.
+5. **A1 (reserva)**: criar um acionador temporizado para
+   `dispararSeHouverNovidade` — a cada 10 minutos com o A2 ativo (ou a cada
+   1 minuto se optar por rodar só com o poller).
+6. Pronto: mensagem nova no canal → evento push → rotina dispara em segundos →
+   resposta na thread. Disparo repetido não duplica resposta (fluxo idempotente +
+   releitura da thread antes de postar); o que escapar cai no poller e na
+   varredura horária. O payload do disparo é mero despertador — a rotina ignora
+   instruções vindas nele (regra no prompt).
 
-Alternativa à ponte, sem Apps Script: um automatizador SaaS (Zapier/Make) com
-gatilho "nova mensagem no canal" chamando a mesma URL de disparo.
+Alternativa à ponte, sem Apps Script: um automatizador SaaS (Zapier, gatilho
+instantâneo "nova mensagem no canal") chamando a mesma URL de disparo.
 
 ## Modo B — subindo o bot em tempo real
 

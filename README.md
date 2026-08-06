@@ -38,8 +38,9 @@ rotina(s) Remote:
    com base em evidências reais (lista Action Plan e dash/resumos do staff,
    briefings de inteligência do Drive, planejamento estratégico), e posta uma
    leitura estratégica semanal cruzando execução e mercado. Q&A em dois modos:
-   (A) rotina Remote disparada via gatilho de API por um Apps Script que vigia
-   o canal (~2-4 min, sem servidor, cobrança na assinatura — padrão;
+   (A) rotina Remote disparada via gatilho de API por um Apps Script que
+   recebe os eventos do Slack em push (detecção em segundos; total = subida
+   da sessão + análise; sem servidor, cobrança na assinatura — padrão;
    prompt: `referencia/prompt_agente_estrategico.md`) e (B) servidor opcional
    em tempo real (`assistente-estrategico/bot/`, Socket Mode + Claude Agent
    SDK, segundos, cobrança via API). A leitura semanal é rotina Remote (sexta

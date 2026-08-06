@@ -34,7 +34,10 @@ Resumo do fluxo:
    SLACK_CHANNEL_ID=$SLACK_STAFF_CHANNEL_ID para a dash), briefings de
    inteligência na pasta Acta/Briefings do Drive, documento de planejamento
    estratégico no Drive e arquivos de referência do repo.
-3. Responder cada pergunta NA THREAD (`estrategia.sh responder <thread_ts>`)
+3. Antes de postar cada resposta, reler a thread (proteção contra execuções
+   sobrepostas — se o bot já respondeu depois da última mensagem humana,
+   pular o item). Responder cada pergunta NA THREAD
+   (`estrategia.sh responder <thread_ts>`)
    no formato do "Método de resposta" do SKILL: resposta direta, evidências
    com fonte e data, leitura separando fato/inferência/opinião, lacunas
    (inclusive CRM/financeiro ainda não integrados) e próximo passo.
