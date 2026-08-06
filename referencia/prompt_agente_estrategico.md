@@ -11,7 +11,8 @@
 > (America/Sao_Paulo) — cron UTC `0 11-23 * * 1-5`.
 > Requer, no ambiente de nuvem da rotina: variáveis SLACK_BOT_TOKEN,
 > SLACK_CHANNEL_ID (canal #estrategia) e SLACK_STAFF_CHANNEL_ID (canal do
-> staff); acesso de rede liberado para slack.com e files.slack.com; conector
+> staff); acesso de rede AMPLO à web (como o Agente de Notícias — necessário
+> para a busca complementar), incluindo slack.com e files.slack.com; conector
 > Google Drive ativo; bot convidado aos dois canais. Opcional:
 > DRIVE_DOC_PLANEJAMENTO. Nenhum segredo neste arquivo ou na instrução.
 
@@ -33,7 +34,9 @@ Resumo do fluxo:
    (via pauta-staff/scripts/slack.sh, somente leitura, com
    SLACK_CHANNEL_ID=$SLACK_STAFF_CHANNEL_ID para a dash), briefings de
    inteligência na pasta Acta/Briefings do Drive, documento de planejamento
-   estratégico no Drive e arquivos de referência do repo.
+   estratégico no Drive e arquivos de referência do repo. Busca web só como
+   COMPLEMENTO, quando as fontes internas não cobrirem (regras da fonte 6 do
+   SKILL: link e data em tudo, guardrails, rotular o que veio da web).
 3. Antes de postar cada resposta, reler a thread (proteção contra execuções
    sobrepostas — se o bot já respondeu depois da última mensagem humana,
    pular o item). Responder cada pergunta NA THREAD

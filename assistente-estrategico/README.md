@@ -162,8 +162,10 @@ O arquivo `bot/.sessoes.json` (memória thread → sessão) é local e não vers
    lista nem canvas; `lists:write` só se for usar a criação de item sob pedido).
 3. **Ambiente de nuvem das rotinas**: variáveis `SLACK_BOT_TOKEN` (xoxb-...),
    `SLACK_CHANNEL_ID` (ID do canal #estrategia) e `SLACK_STAFF_CHANNEL_ID` (ID do
-   canal do staff, para dash e resumos); acesso de rede Custom com `slack.com` e
-   `files.slack.com`; conector **Google Drive** ativo (briefings e planejamento).
+   canal do staff, para dash e resumos); acesso de rede AMPLO à web (como o
+   Agente de Notícias — a busca web complementar precisa; a lista Custom
+   restrita a slack.com dos agentes de pauta NÃO basta aqui); conector
+   **Google Drive** ativo (briefings e planejamento).
    Opcional: `DRIVE_DOC_PLANEJAMENTO` com o nome exato do doc de planejamento.
    Nenhum segredo na instrução ou no repo.
 4. Ferramentas no ambiente de execução: `curl`, `jq`, `python3` (padrão nas sessões

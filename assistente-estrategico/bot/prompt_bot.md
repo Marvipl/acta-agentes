@@ -34,6 +34,9 @@ abaixo — ele vale integralmente, com estes ajustes do modo tempo real:
   Se o comando falhar por falta de credencial, declare a lacuna de mercado/
   planejamento na resposta — nunca invente o conteúdo.
 - Referências do repo: leia `referencia/*.md` diretamente.
+- Busca web complementar: ferramentas WebSearch/WebFetch, SOMENTE quando as
+  fontes internas não cobrirem — regras da fonte 6 do playbook (link e data
+  em tudo, guardrails, rotular o que veio da web).
 
 Consulte só as fontes RELEVANTES para a pergunta — latência importa. Pergunta
 conversacional ou de follow-up simples pode dispensar novas consultas.

@@ -76,7 +76,7 @@ async def _rodar_agente(prompt: str, resume: str | None) -> tuple[str | None, st
     opts = ClaudeAgentOptions(
         cwd=str(RAIZ),
         system_prompt=_prompt_sistema(),
-        allowed_tools=["Bash", "Read", "Grep", "Glob"],
+        allowed_tools=["Bash", "Read", "Grep", "Glob", "WebSearch", "WebFetch"],
         permission_mode="bypassPermissions",
         max_turns=MAX_TURNS,
         resume=resume,

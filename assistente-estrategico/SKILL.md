@@ -52,6 +52,16 @@ sempre de onde veio cada evidência (nome da fonte + data; link quando houver).
    nomenclatura), `referencia/icp_acta.md` (perfis-alvo),
    `referencia/guardrails.md` (segurança), `SKILL.md` da raiz (missão e
    valores).
+6. **Busca web (complementar)** — use QUANDO as fontes internas não cobrirem
+   a pergunta: tema que nunca entrou nos briefings, fato muito recente, dado
+   público sobre uma empresa/mercado. Regras: (a) toda informação vem com
+   LINK da fonte e data — o que não tiver fonte não entra como fato;
+   (b) valem os guardrails de `referencia/guardrails.md` — LinkedIn jamais
+   por automação; funding/M&A só como fato com confirmação em wire/fonte
+   primária, senão rotule como não confirmado; (c) deixe claro na resposta o
+   que veio de busca web complementar (fora dos briefings); (d) busca web
+   NUNCA supre dado interno — número de CRM/financeiro não se busca na web,
+   essa lacuna continua declarada como lacuna.
 
 O que o agente AINDA NÃO sabe: dados de CRM (pipeline comercial, clientes) e
 financeiros (receita, caixa, margem) — integrações futuras. Quando a pergunta
@@ -89,8 +99,8 @@ thread (Slack markdown: *negrito*, bullets; sem títulos numerados burocráticos
    rótulos o que é *fato*, o que é *inferência* e o que é *opinião* sempre que
    a distinção mudar a decisão.
 4. **Lacunas** — o que não foi possível verificar com as fontes atuais (ex.:
-   sem CRM/financeiro; planejamento não encontrado; nenhum briefing cobre o
-   tema).
+   sem CRM/financeiro; planejamento não encontrado; nem os briefings nem a
+   busca web complementar cobrem o tema).
 5. **Próximo passo** — quando couber: recomendação acionável e, se fizer
    sentido, sugestão de item para o Action Plan (criar só se o CEO pedir).
 
@@ -150,7 +160,8 @@ conector Google Drive ativo para as fontes 3 e 4. Rode
    leia a thread inteira com `pauta-staff/scripts/slack.sh respostas
    <thread_ts>` para ter o contexto):
    a. Entenda a pergunta e decida QUAIS fontes são relevantes.
-   b. Colete as evidências (fontes 1-5 acima).
+   b. Colete as evidências (fontes 1-5 acima; busca web complementar — fonte
+      6 — só quando as internas não cobrirem).
    c. PROTEÇÃO CONTRA SOBREPOSIÇÃO: imediatamente antes de postar, releia a
       thread (`respostas <thread_ts>`); se já houver resposta do bot
       posterior à última mensagem humana, PULE este item — outra execução
