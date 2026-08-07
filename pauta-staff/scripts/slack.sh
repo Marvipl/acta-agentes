@@ -40,7 +40,7 @@
 #   ./scripts/slack.sh dash_canvas_id                 # ID do canvas de canal (a dash) do canal principal
 #   ./scripts/slack.sh dash_url                       # permalink da dash
 #   ./scripts/slack.sh canvas_conteudo <canvas_id>    # HTML do conteúdo atual do canvas
-#   ./scripts/slack.sh canvas_substituir <canvas_id> "<texto_busca>" "<markdown>"  # troca o 1º bloco que contém o texto
+#   ./scripts/slack.sh canvas_substituir <canvas_id> "<texto_busca>" "<markdown>" [tabela]  # troca o 1º bloco; use "tabela" para substituir tabelas
 #   ./scripts/slack.sh canvas_inserir_apos <canvas_id> "<texto_busca>" "<markdown>"  # insere markdown após o bloco
 #   ./scripts/slack.sh resumos_garantir               # canvas de arquivo de resumos (cria/compartilha se preciso); imprime "id<tab>url"
 #   ./scripts/slack.sh ts "2026-07-13 23:59"         # converte data local em epoch (America/Sao_Paulo)
@@ -250,10 +250,15 @@ canvas_conteudo() {
   curl -sL "${AUTH[@]}" "$url"
 }
 
-_canvas_lookup() { # $1 canvas_id, $2 texto — imprime o id do 1º bloco que contém o texto
-  local resp
+_canvas_lookup() { # $1 canvas_id, $2 texto, $3 tipo opcional ("tabela") — imprime o id do 1º bloco
+  local resp criteria
+  if [ "${3:-}" = "tabela" ]; then
+    criteria=$(jq -n --arg t "$2" '{contains_text:$t, section_types:["table"]}')
+  else
+    criteria=$(jq -n --arg t "$2" '{contains_text:$t}')
+  fi
   resp=$(curl -s "${AUTH[@]}" -H "Content-Type: application/json; charset=utf-8" \
-    -d "$(jq -n --arg c "$1" --arg t "$2" '{canvas_id:$c, criteria:{contains_text:$t}}')" \
+    -d "$(jq -n --arg c "$1" --argjson cr "$criteria" '{canvas_id:$c, criteria:$cr}')" \
     "$API/canvases.sections.lookup")
   _checa "$resp"
   echo "$resp" | jq -r '.sections[0].id // empty'
@@ -261,8 +266,12 @@ _canvas_lookup() { # $1 canvas_id, $2 texto — imprime o id do 1º bloco que co
 
 canvas_substituir() {
   # substitui o 1º bloco do canvas que contém o texto de busca pelo markdown dado
-  local id="$1" busca="$2" md="$3" sid resp
-  sid=$(_canvas_lookup "$id" "$busca")
+  # uso: canvas_substituir <canvas_id> "<texto>" "<markdown>" [tabela]
+  # IMPORTANTE: para substituir uma TABELA, passe "tabela" como 4º argumento —
+  # sem ele o lookup encontra o parágrafo de DENTRO de uma célula e o markdown
+  # novo é despejado dentro dela (tabela quebrada numa célula só)
+  local id="$1" busca="$2" md="$3" tipo="${4:-}" sid resp
+  sid=$(_canvas_lookup "$id" "$busca" "$tipo")
   if [ -z "$sid" ]; then
     echo "ERRO: nenhum bloco do canvas contem \"$busca\"" >&2
     exit 1

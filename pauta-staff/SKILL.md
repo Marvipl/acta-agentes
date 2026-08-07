@@ -38,7 +38,11 @@ Fontes e papeis:
 Secoes, nesta ordem. As marcadas com ✍️ sao MANUAIS — o agente NUNCA as edita.
 
 1. **📊 Analytics** — tres blocos do agente, cada um localizavel por
-   `canvas_substituir` com um texto de busca ESTAVEL:
+   `canvas_substituir` com um texto de busca ESTAVEL. REGRA CRITICA: ao
+   substituir uma TABELA, passe `tabela` como 4º argumento de
+   `canvas_substituir` — sem ele o lookup acha o paragrafo de DENTRO de uma
+   celula e o markdown novo e despejado dentro dela, quebrando a tabela
+   inteira numa celula so. Blocos:
    - Bloco de indicadores (busca: `Não finalizadas (aberto + fazendo):`):
      "🔢 Não finalizadas (aberto + fazendo): N — semana passada: M."
    - Tabela de desempenho individual (busca: `Vencidas`):
@@ -142,16 +146,18 @@ antes de qualquer outro passo.
 5. **Atualizacao dos 4 blocos** com
    `./pauta-staff/scripts/slack.sh canvas_substituir $id "<busca>" "<markdown>"`:
    (a) indicadores — busca `Não finalizadas (aberto + fazendo):`, novo texto
-   com N desta semana e o M do passo 3;
-   (b) tabela de desempenho — busca `Vencidas`;
-   (c) tabela de historico — busca `Concluídas (acum.)`, TODAS as linhas
-   antigas + a linha nova `dd/mm/aaaa | N | concluidas` ao final (se ja
-   existir linha com a data de hoje, substitua apenas essa linha em vez de
-   duplicar);
-   (d) tabela de action items — busca `Atividade`, itens nao concluidos
-   conforme "Estrutura da dash".
+   com N desta semana e o M do passo 3 (bloco de paragrafo — SEM o argumento
+   `tabela`);
+   (b) tabela de desempenho — busca `Vencidas`, com o 4º argumento `tabela`;
+   (c) tabela de historico — busca `Concluídas (acum.)`, com o 4º argumento
+   `tabela`; TODAS as linhas antigas + a linha nova
+   `dd/mm/aaaa | N | concluidas` ao final (se ja existir linha com a data de
+   hoje, substitua apenas essa linha em vez de duplicar);
+   (d) tabela de action items — busca `Atividade`, com o 4º argumento
+   `tabela`, itens nao concluidos conforme "Estrutura da dash".
    Blocos de tabela: o markdown deve ser a tabela COMPLETA (cabecalho +
-   linhas). Bloco nao encontrado: recrie conforme "Estrutura da dash".
+   linhas) e o 4º argumento `tabela` e OBRIGATORIO. Bloco nao encontrado:
+   recrie conforme "Estrutura da dash".
 6. **Verificacao**: releia `canvas_conteudo $id` e confira que (a) os numeros
    dos indicadores batem com a lista, (b) o historico ganhou exatamente uma
    linha (ou substituiu a de hoje), (c) as secoes manuais continuam
@@ -198,9 +204,11 @@ rotina roda TODOS os dias, inclusive fins de semana.
 5. **Espelho diario de action items na dash**: independentemente das janelas
    de lembrete, atualize a tabela de action items da dash —
    `id=$(dash_canvas_id)` e
-   `./pauta-staff/scripts/slack.sh canvas_substituir $id "Atividade" "<tabela>"`
-   com TODOS os itens nao concluidos, no formato definido em "Estrutura da
-   dash". Falha aqui nao cancela os lembretes (partes independentes).
+   `./pauta-staff/scripts/slack.sh canvas_substituir $id "Atividade" "<tabela>" tabela`
+   (o 4º argumento `tabela` e OBRIGATORIO — ver regra critica em "Estrutura
+   da dash") com TODOS os itens nao concluidos, no formato definido em
+   "Estrutura da dash". Falha aqui nao cancela os lembretes (partes
+   independentes).
 6. **Nada nas janelas de lembrete**: nao poste mensagens nem DMs e reporte
    "nada a lembrar hoje" (o espelho do passo 5 e atualizado mesmo assim).
 7. As partes sao independentes: se o canal de avisos nao for encontrado
