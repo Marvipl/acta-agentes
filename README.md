@@ -7,10 +7,10 @@ cada execução na nuvem clona um repositório. Aqui guardamos apenas conteúdo 
 (playbooks dos agentes e arquivos de referência), que muda raramente. Dados que mudam
 todo dia (sugestões de contato, status, briefings) ficam no Google Drive, nunca aqui.
 
-## Os tres agentes (v3)
+## Os agentes (v3)
 
-A solução foi separada em DOIS agentes especializados, cada um em sua própria rotina
-Remote:
+A solução foi separada em agentes especializados, cada um em sua(s) própria(s)
+rotina(s) Remote:
 
 1. AGENTE DE NOTÍCIAS ("Inteligência Acta") — só inteligência de mercado e editais.
    Prompt: `referencia/prompt_agente_noticias.md`. Entrega na pasta `Acta/Briefings`,
@@ -33,6 +33,22 @@ Remote:
    rotinas: SLACK_BOT_TOKEN e SLACK_CHANNEL_ID. Entrega no Slack — não usa
    Drive nem o fluxo de rascunhos do Gmail.
 
+4. ASSISTENTE ESTRATÉGICO ("Assistente Estratégico Acta") — responde perguntas
+   estratégicas do CEO no canal privado #estrategia do Slack EM TEMPO REAL,
+   com base em evidências reais (lista Action Plan e dash/resumos do staff,
+   briefings de inteligência do Drive, planejamento estratégico), e posta uma
+   leitura estratégica semanal cruzando execução e mercado. Q&A em dois modos:
+   (A) rotina Remote disparada via gatilho de API por um Apps Script que
+   recebe os eventos do Slack em push (detecção em segundos; total = subida
+   da sessão + análise; sem servidor, cobrança na assinatura — padrão;
+   prompt: `referencia/prompt_agente_estrategico.md`) e (B) servidor opcional
+   em tempo real (`assistente-estrategico/bot/`, Socket Mode + Claude Agent
+   SDK, segundos, cobrança via API). A leitura semanal é rotina Remote (sexta
+   08:00, prompt: `referencia/prompt_agente_estrategico_semanal.md`).
+   Playbook e scripts em
+   `assistente-estrategico/`. Somente leitura nas fontes; só escreve mensagens
+   no próprio canal. CRM e financeiro são integrações futuras.
+
 ## Estrutura
 
 - `SKILL.md` — papel, regras inegociáveis e perfis (resumo compartilhado).
@@ -42,6 +58,9 @@ Remote:
 - `referencia/icp_acta.md` — perfil de cliente/fornecedor/parceiro.
 - `referencia/portfolio_acta.md` — divisões, produtos e disciplina de nomenclatura.
 - `referencia/guardrails.md` — regras de segurança e de não-invenção.
+- `referencia/prompt_agente_estrategico.md` e
+  `referencia/prompt_agente_estrategico_semanal.md` — prompts das rotinas do
+  Assistente Estratégico (playbook em `assistente-estrategico/SKILL.md`).
 
 Observação: `referencia/prompt_rotina.md` é o prompt antigo (v2, agente único) mantido
 apenas como histórico. Para a operação v3, use os dois prompts separados acima.
