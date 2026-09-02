@@ -94,8 +94,11 @@
   F.monitorar();
   log(DRY_RUN ? 'MODO SIMULACAO — nada sera escrito' : 'preenchendo de verdade',
       '| membros:', DADOS.length);
+  log('para interromper a qualquer momento: __finep.parar()');
 
+  F.retomar();   // limpa um aborto anterior
   for (let m = 0; m < DADOS.length; m++) {
+    F.checarAborto();
     const rotulo = 'membro ' + (m + 1) + '/' + DADOS.length +
       ' (' + (DADOS[m].nome || '?') + ')';
     let inputs;

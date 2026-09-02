@@ -32,11 +32,25 @@
     return false;
   };
 
-  F.esperar = async (limite = 20000) => {
+  // PARADA DE EMERGÊNCIA: __finep.parar() interrompe qualquer operação em curso.
+  F.parar = () => {
+    F._abortar = true;
+    try { F.pararMonitor(); } catch (e) { /* ignora */ }
+    return 'abortando — a operação em curso para no próximo passo. Use __finep.retomar() depois.';
+  };
+  F.retomar = () => { F._abortar = false; return 'liberado'; };
+  F.checarAborto = () => { if (F._abortar) throw new Error('ABORTADO por __finep.parar()'); };
+
+  F.esperar = async (limite = 15000) => {
     const t0 = Date.now();
     await F.pausa(200);
-    while (F.ocupado() && Date.now() - t0 < limite) await F.pausa(120);
+    while (F.ocupado() && Date.now() - t0 < limite) {
+      F.checarAborto();
+      await F.pausa(120);
+    }
+    if (Date.now() - t0 >= limite) console.warn('[finep] o ZK não respondeu em ' + limite + 'ms; seguindo');
     await F.pausa(350);
+    F.checarAborto();
   };
 
   F.monitorar = () => {
@@ -85,6 +99,7 @@
     if (!el) throw new Error('campo não encontrado: ' + id);
     if (el.readOnly || el.disabled) throw new Error('campo somente leitura: ' + id);
     if (!F._monitorAtivo) F.monitorar();
+    F.checarAborto();
 
     const wgt = F.widget(id);
     const uuid = wgt && wgt.uuid;
@@ -138,6 +153,7 @@
     const cb = F.widget(base);
     if (!cb) throw new Error('combobox não encontrado: ' + base);
     if (!F._monitorAtivo) F.monitorar();
+    F.checarAborto();
 
     const btn = document.getElementById(base + '-btn');
     if (btn) { btn.scrollIntoView({ block: 'center' }); btn.click(); await F.pausa(400); }
@@ -218,5 +234,6 @@
   F.inputsVisiveis = () => [...document.querySelectorAll('input')]
     .filter(e => e.type !== 'hidden' && e.id && (e.offsetParent || e.getClientRects().length));
 
-  console.log('helpers em window.__finep: monitorar, diagnosticar, escrever, selecionarCombo, esperar, inputsVisiveis');
+  console.log('helpers em window.__finep: monitorar, diagnosticar, escrever, selecionarCombo, inputsVisiveis');
+  console.log('PARA TUDO: __finep.parar()   |   voltar a permitir: __finep.retomar()');
 })();

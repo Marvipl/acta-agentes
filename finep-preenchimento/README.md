@@ -48,6 +48,28 @@ Campos cujo id termina em `-real` são **comboboxes** (dropdown), não texto liv
 6. Rode com `DRY_RUN = false` **para um único membro** primeiro. Confira na tela.
 7. Só então rode a lista completa.
 
+## Como interromper
+
+Dentro dos helpers:
+
+```js
+__finep.parar()      // aborta a operação em curso; __finep.retomar() libera de novo
+```
+
+Se isso não bastar (script antigo colado na aba, laço fora do meu controle):
+
+```js
+for (let i = 1; i < 99999; i++) { clearTimeout(i); clearInterval(i); }
+console.clear();
+```
+
+Todos os `await` destes scripts esperam num `setTimeout`, então limpar os timers
+interrompe a cadeia. Método garantido, se não houver trabalho a perder: `F5`.
+Nenhum script daqui submete a proposta, então recarregar nunca envia nada.
+
+Eventos `dummy` repetindo no console **não são laço**: é o keep-alive do ZK.
+`__finep.pararMonitor()` e `Ctrl+L` limpam.
+
 ## Limites deliberados
 
 - O script nunca clica em "Próximo Passo" nem em nada que submeta a proposta.
