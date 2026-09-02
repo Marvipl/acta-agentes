@@ -49,6 +49,17 @@ rotina(s) Remote:
    `assistente-estrategico/`. Somente leitura nas fontes; só escreve mensagens
    no próprio canal. CRM e financeiro são integrações futuras.
 
+## Preenchimento de formulários da FINEP
+
+`finep-agente/` — agente local que preenche o formulário eletrônico da FINEP
+(`credito.finep.gov.br`, framework ZK) a partir de um documento de referência,
+tela por tela, operando o Chrome do próprio CEO por depuração remota. Roda na
+máquina do usuário, não na nuvem: a sessão logada é dele. Nunca submete a
+proposta — a submissão é manual. Playbook em
+`.claude/skills/finep-formulario/SKILL.md`, instruções em
+`finep-agente/README.md`. `finep-preenchimento/` guarda os scripts de console
+da primeira abordagem, mantidos como diagnóstico.
+
 ## Estrutura
 
 - `SKILL.md` — papel, regras inegociáveis e perfis (resumo compartilhado).
