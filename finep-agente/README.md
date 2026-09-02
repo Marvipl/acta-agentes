@@ -13,18 +13,44 @@ o documento com os dados da equipe também não.
 
 ## Instalação (uma vez só)
 
-Abra o **PowerShell** e rode, um de cada vez:
+Rode **um comando por vez**, não cole o bloco inteiro: o PATH só passa a
+conhecer o `node` e o `git` numa janela aberta *depois* da instalação deles.
+
+Etapa 1 — abra o PowerShell e instale as duas dependências:
 
 ```powershell
 winget install OpenJS.NodeJS.LTS
+```
+
+```powershell
 winget install Git.Git
 ```
 
-Feche e reabra o PowerShell (para o PATH atualizar), depois:
+Etapa 2 — **feche essa janela e abra um PowerShell novo**. Vá para uma pasta
+sua (nunca `C:\Windows\system32`) e confirme que os dois foram reconhecidos:
+
+```powershell
+cd $HOME\Documents
+node -v; npm -v; git --version
+```
+
+Se algum não responder, recarregue o PATH sem reabrir:
+
+```powershell
+$env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [Environment]::GetEnvironmentVariable('Path','User')
+```
+
+Etapa 3 — instale o Claude Code e baixe este repositório:
 
 ```powershell
 npm install -g @anthropic-ai/claude-code
+```
+
+```powershell
 git clone https://github.com/Marvipl/acta-agentes.git
+```
+
+```powershell
 cd acta-agentes
 claude
 ```
@@ -34,7 +60,7 @@ perguntar se aprova o servidor MCP `playwright` deste projeto, aprove — é
 por ele que o agente enxerga o navegador.
 
 Se `winget` não existir na sua máquina, instale o Node.js LTS e o Git pelos
-sites oficiais e siga do `npm install` em diante.
+sites oficiais e siga da etapa 2 em diante.
 
 ## Uso (toda vez)
 
