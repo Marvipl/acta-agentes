@@ -25,18 +25,23 @@ Campos cujo id termina em `-real` são **comboboxes** (dropdown), não texto liv
 1. Abra a tela da equipe, já logado. F12 > Console. Se o Chrome bloquear o colar,
    digite `allow pasting` + Enter uma vez.
 2. Cole **`01-mapear.js`**. Ele não altera nada. Guarde o JSON gerado.
-3. Cole **`02-helpers.js`** e teste o mecanismo em um campo qualquer que já esteja
-   preenchido, reescrevendo o mesmo valor:
+3. Cole **`02-helpers.js`** e rode o diagnóstico. O valor de teste tem de ser
+   **diferente** do que está no campo: o ZK compara o valor novo com o que já
+   tem e não dispara nada se forem iguais. O helper escreve, verifica e
+   restaura o valor original sozinho.
 
    ```js
    __finep.monitorar()
-   await __finep.escrever('<id de um campo de texto>', 'valor')
-   await __finep.selecionarCombo('<id terminado em -real>', 'Opção exata')
+   await __finep.diagnosticar('<id de um campo de texto>', 'valor diferente')
+   await __finep.diagnosticar('<id terminado em -real>', 'Outra opção da lista')
    ```
 
-   Se aparecer no console `[ZK ->] onChange ...` (ou `onSelect`), o valor chegou
-   ao servidor e o resto funciona. Se não aparecer nada, pare: o mecanismo não é
-   esse e precisamos de outra abordagem.
+   O veredito sai no console. `ok: true` significa que um evento com o uuid do
+   campo foi de fato enviado ao servidor — o campo `via` diz por qual dos três
+   caminhos. `ok: false` significa que nada subiu, e aí a rota é Playwright
+   acoplado ao Chrome, que emula teclado e mouse de verdade.
+
+   Eventos `dummy` no monitor são round-trips no-op do ZK e ficam fora do log.
 4. Copie `dados-equipe.exemplo.js` para `dados-equipe.js` (ignorado pelo git),
    preencha com os membros e cole no console.
 5. Cole **`03-preencher.js`** com `DRY_RUN = true`. Confira o log.
