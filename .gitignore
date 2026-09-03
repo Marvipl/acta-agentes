@@ -1,0 +1,3 @@
+# Configuração de MCP é por máquina: no Windows usa "cmd", que não existe
+# no Linux onde as rotinas da Acta rodam. Nunca versionar.
+.mcp.json

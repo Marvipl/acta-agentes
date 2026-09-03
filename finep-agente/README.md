@@ -72,13 +72,31 @@ Etapa 4 — registre o servidor MCP que dá visão do navegador ao agente. Rode
 uma vez, dentro da pasta `acta-agentes`, com o `claude` **fechado**:
 
 ```powershell
-claude mcp add playwright -- cmd /c npx -y @playwright/mcp@latest --cdp-endpoint http://localhost:9222
+claude mcp add-json playwright '{\"command\":\"cmd\",\"args\":[\"/c\",\"npx\",\"-y\",\"@playwright/mcp@latest\",\"--cdp-endpoint\",\"http://localhost:9222\"]}'
 ```
 
-O registro fica na sua máquina, não no repositório. É de propósito: as rotinas
-da Acta clonam este repositório e rodam em Linux, onde `cmd` não existe — um
-`.mcp.json` versionado com esse comando quebraria o carregamento de MCP em
-todas elas.
+A forma em JSON é a mais segura: passar `-y` solto na linha de comando faz o
+parser do `claude` tentar interpretar a flag como dele e falhar com
+`unknown option '-y'`. Se preferir a forma com argumentos, esconda o `-y`
+dentro de uma string única:
+
+```powershell
+claude mcp add playwright -- cmd /c "npx -y @playwright/mcp@latest --cdp-endpoint http://localhost:9222"
+```
+
+Confira com `claude mcp list`.
+
+**Caminho manual**, se as duas falharem: copie `finep-agente\mcp.exemplo.json`
+para `.mcp.json` na raiz de `acta-agentes`. O `.gitignore` já impede que ele
+seja versionado.
+
+```powershell
+copy finep-agente\mcp.exemplo.json .mcp.json
+```
+
+O registro fica sempre na sua máquina, nunca no repositório. É de propósito: as
+rotinas da Acta clonam este repositório e rodam em Linux, onde `cmd` não existe
+— um `.mcp.json` versionado quebraria o carregamento de MCP em todas elas.
 
 Se `winget` não existir na sua máquina, instale o Node.js LTS e o Git pelos
 sites oficiais e siga da etapa 2 em diante.
