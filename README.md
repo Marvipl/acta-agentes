@@ -57,7 +57,9 @@ tela por tela, operando o Chrome do próprio CEO por depuração remota. Roda na
 máquina do usuário, não na nuvem: a sessão logada é dele. Nunca submete a
 proposta — a submissão é manual. Playbook em
 `.claude/skills/finep-formulario/SKILL.md`, instruções em
-`finep-agente/README.md`. `finep-preenchimento/` guarda os scripts de console
+`finep-agente/README.md`. O MCP do navegador é registrado por máquina
+(`claude mcp add`), nunca em `.mcp.json` versionado: as rotinas clonam este
+repositório e rodam em Linux, onde o comando do Windows não existe. `finep-preenchimento/` guarda os scripts de console
 da primeira abordagem, mantidos como diagnóstico.
 
 ## Estrutura

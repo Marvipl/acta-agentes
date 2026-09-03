@@ -55,9 +55,19 @@ cd acta-agentes
 claude
 ```
 
-Na primeira execução do `claude`, faça login na sua conta. Quando ele
-perguntar se aprova o servidor MCP `playwright` deste projeto, aprove — é
-por ele que o agente enxerga o navegador.
+Na primeira execução do `claude`, faça login na sua conta.
+
+Etapa 4 — registre o servidor MCP que dá visão do navegador ao agente. Rode
+uma vez, dentro da pasta `acta-agentes`, com o `claude` **fechado**:
+
+```powershell
+claude mcp add playwright -- cmd /c npx -y @playwright/mcp@latest --cdp-endpoint http://localhost:9222
+```
+
+O registro fica na sua máquina, não no repositório. É de propósito: as rotinas
+da Acta clonam este repositório e rodam em Linux, onde `cmd` não existe — um
+`.mcp.json` versionado com esse comando quebraria o carregamento de MCP em
+todas elas.
 
 Se `winget` não existir na sua máquina, instale o Node.js LTS e o Git pelos
 sites oficiais e siga da etapa 2 em diante.
@@ -103,8 +113,9 @@ sites oficiais e siga da etapa 2 em diante.
   a depuração ligada. Rode o `abrir-chrome.cmd` e reinicie o `claude`.
   Para conferir, abra `http://localhost:9222/json/version` no navegador — tem
   que devolver um JSON.
-- **O MCP não sobe no Windows**: é quase sempre o `npx`. O `.mcp.json` da raiz
-  já usa a forma `cmd /c npx`, que é a que funciona no Windows.
+- **O MCP não sobe**: confira se ele foi registrado, com `claude mcp list`. No
+  Windows o `npx` precisa ser chamado via `cmd /c`, que é a forma usada na
+  etapa 4 — sem isso o servidor falha com "Executable not found".
 - **A flag `--cdp-endpoint` foi recusada**: rode
   `npx @playwright/mcp@latest --help` e me mande a lista de opções.
 
