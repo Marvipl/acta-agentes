@@ -63,6 +63,14 @@ git clone https://github.com/Marvipl/acta-agentes.git
 
 ```powershell
 cd acta-agentes
+git checkout claude/finep-auto-fill-o9agfp
+```
+
+O `git checkout` é necessário enquanto este trabalho estiver na branch: o clone
+vem em `main`, que ainda não tem a pasta `finep-agente`. Confirme com `dir` que
+ela apareceu. Depois de a branch ser integrada à `main`, esse passo cai.
+
+```powershell
 claude
 ```
 
