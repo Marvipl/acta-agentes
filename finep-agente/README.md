@@ -40,6 +40,17 @@ Se algum não responder, recarregue o PATH sem reabrir:
 $env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [Environment]::GetEnvironmentVariable('Path','User')
 ```
 
+Se o `npm -v` falhar com *"a execução de scripts foi desabilitada neste
+sistema"*, é a política de execução do PowerShell bloqueando o `npm.ps1` — não
+tem a ver com o Node. Libere para o seu usuário (não precisa de administrador):
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
+
+`RemoteSigned` libera script local e continua exigindo assinatura em script
+baixado da internet. Sem isso o `claude` esbarra na mesma trava depois.
+
 Etapa 3 — instale o Claude Code e baixe este repositório:
 
 ```powershell
