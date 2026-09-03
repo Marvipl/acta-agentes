@@ -104,13 +104,21 @@ sites oficiais e siga da etapa 2 em diante.
 ## Uso (toda vez)
 
 1. **Abra o navegador do agente**: dê dois cliques em
-   `finep-agente\abrir-chrome.cmd`. Ele abre uma janela do Chrome num perfil
-   separado, com depuração remota na porta 9222. Faça login no FINEP nessa
-   janela e navegue até o formulário. Deixe a janela aberta.
+   `finep-agente\abrir-chrome.cmd` **ou** `finep-agente\abrir-edge.cmd` —
+   tanto faz, os dois são Chromium e expõem a mesma porta de depuração. Ele
+   abre uma janela num perfil separado, com depuração na porta 9222. Faça
+   login no FINEP nessa janela e navegue até o formulário. Deixe a janela
+   aberta.
 
    Perfil separado de propósito: a porta de depuração deixa qualquer programa
    local dirigir aquela janela, e não faz sentido expor seu navegador do dia a
    dia. Feche essa janela quando terminar.
+
+   Só um navegador por vez na porta 9222. Se quiser usar seu perfil normal em
+   vez do dedicado, apague o trecho `--user-data-dir="%PERFIL%"` do `.cmd` —
+   mas aí feche **todas** as janelas daquele navegador antes, senão a nova
+   instância entrega o comando para a que já está rodando e a flag de
+   depuração é ignorada.
 
 2. **Coloque o documento** com os dados em `finep-agente\dados\`
    (.docx, .xlsx, .pdf ou .md — veja `dados\LEIA-ME.md`). Nada dessa pasta vai
@@ -138,10 +146,10 @@ sites oficiais e siga da etapa 2 em diante.
 
 ## Se der errado
 
-- **O agente diz que não tem ferramentas de navegador**: o Chrome não está com
-  a depuração ligada. Rode o `abrir-chrome.cmd` e reinicie o `claude`.
-  Para conferir, abra `http://localhost:9222/json/version` no navegador — tem
-  que devolver um JSON.
+- **O agente diz que não tem ferramentas de navegador**: o navegador não está
+  com a depuração ligada. Rode o `abrir-chrome.cmd` (ou `abrir-edge.cmd`) e
+  reinicie o `claude`. Para conferir, abra `http://localhost:9222/json/version`
+  — tem que devolver um JSON com o nome e a versão do navegador.
 - **O MCP não sobe**: confira se ele foi registrado, com `claude mcp list`. No
   Windows o `npx` precisa ser chamado via `cmd /c`, que é a forma usada na
   etapa 4 — sem isso o servidor falha com "Executable not found".
