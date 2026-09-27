@@ -33,9 +33,11 @@ documento oficial: um dado inventado é pior do que um campo em branco.
    rodar `finep-agente\abrir-chrome.cmd` e pare.
 2. Leia `finep-agente/estado/progresso.md`. Se houver trabalho anterior,
    retome de onde parou em vez de recomeçar.
-3. Leia o documento de referência em `finep-agente/dados/`. Se for .docx,
-   .xlsx ou .pdf, use a skill correspondente para extrair o conteúdo.
-   Monte uma tabela mental: campo → valor → de onde veio.
+3. Leia **todos** os documentos de referência em `finep-agente/dados/` —
+   tipicamente o texto do projeto, a planilha de orçamento e o cronograma.
+   Se forem .docx, .xlsx ou .pdf, use a skill correspondente para extrair o
+   conteúdo. Monte uma tabela: campo → valor → de qual documento e de qual
+   trecho veio. Essa procedência entra no registro de progresso.
 4. Tire um snapshot da página e confirme com o usuário em que passo do
    formulário vocês estão.
 
@@ -55,6 +57,60 @@ Repita até o formulário acabar:
 6. Clique **Salvar**.
 7. **Registre** em `finep-agente/estado/progresso.md`.
 8. Clique **Próximo Passo**.
+
+## Tipos de campo além de texto curto
+
+### Texto longo com limite de caracteres
+
+Telas de caracterização do projeto (objetivo, justificativa, estado da arte,
+inovação, metodologia, resultados esperados) quase sempre limitam o tamanho.
+
+- **Leia o limite antes de escrever**: atributo `maxlength`, contador na tela
+  ou instrução do tipo "máximo N caracteres".
+- **Coube: escreva literal.** O texto é do usuário; não "melhore", não
+  reescreva, não corrija estilo.
+- **Não coube: nunca trunque.** Cortar no limite decepa a conclusão do
+  parágrafo e o avaliador lê um texto sem fim. Condense preservando o conteúdo
+  técnico e os números, **mostre a versão condensada ao usuário** e só escreva
+  depois do aval dele. Registre no progresso que aquele campo foi condensado.
+- Campo que pede algo que o documento não traz (uma seção que o projeto não
+  tem) fica vazio e vira pendência — não se escreve um parágrafo novo.
+
+### Orçamento e valores
+
+- **Valores vão exatos como na planilha.** Nunca arredonde, nunca converta
+  unidade, nunca "ajuste para fechar".
+- **Confira o formato da tela** antes do primeiro valor: separador decimal,
+  presença ou não de símbolo de moeda, milhar. Escreva no padrão que a tela
+  usa nos campos já preenchidos.
+- **Antes de sair da tela**, some as rubricas e compare com o total da
+  planilha **e** com o total que o formulário calcula sozinho. Divergência é
+  erro de entrada até prova em contrário: pare, mostre os três números ao
+  usuário e não avance.
+- Rubrica da tela sem correspondência óbvia na planilha (ou item da planilha
+  que caberia em duas rubricas): **pergunte**. Classificação de despesa muda
+  análise e prestação de contas — não é escolha sua.
+
+### Cronograma, metas e etapas
+
+- São blocos repetidos: uma meta ou etapa por vez, com `Adicionar` →
+  preencher → conferir → `Salvar` → próxima.
+- **Confirme a convenção de tempo antes do primeiro bloco**: a maioria das
+  telas usa mês relativo ao início do projeto (mês 1, mês 2...), não data de
+  calendário. Se a tela não deixar claro, pergunte em vez de supor.
+- Ao fechar a tela, verifique que nenhuma etapa ultrapassa o último mês do
+  projeto e que a duração total bate com o prazo declarado.
+
+### Coerência entre telas
+
+Antes de encerrar, confira os cruzamentos que o avaliador vai olhar:
+
+- total do orçamento = soma das rubricas = soma do cronograma de desembolso;
+- duração do cronograma = prazo do projeto declarado na caracterização;
+- meses de dedicação da equipe compatíveis com a duração do projeto.
+
+Divergência aqui vira relatório para o usuário, não correção por conta
+própria: mexer num número para fazer fechar é inventar dado.
 
 ## Regras do ZK (aprendidas neste sistema)
 
