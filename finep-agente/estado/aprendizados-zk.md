@@ -247,9 +247,13 @@ bateu ao centavo com o documento.
   originais (dois campos podem começar igual), `clear` + `typefile` + `Tab`, e
   depois do `Salvar` comparar caractere a caractere com o esperado — e conferir
   que nenhum outro campo mudou.
-- **Relação de itens, ICT**: a linha não tem quantidade (campo `N/A`, só
-  leitura); só total de horas × valor-hora. "Qtde × horas por pessoa" não se
-  expressa ali — fica no texto da ICT.
+- **Relação de itens, colunas**: Categoria de despesa de pessoal (`N/A` fora
+  da Equipe Própria) · **Qtde** · Qtde total de horas por pessoa (só para quem
+  vem da Equipe Executora) · Valor unitário. Lançar horas da ICT em **Qtde**
+  (11.520 × 107,00) faz o avaliador ler "11.520 h de uma pessoa". Solução
+  adotada: uma linha da ICT, Qtde 1 × valor total, e o detalhamento por pessoa
+  no texto da ICT. Ler o cabeçalho da tabela (screenshot) antes de concluir
+  o que um campo é — `title` vazio não diz nada.
 - **Relação de itens não tem coluna de fonte nem de parcela.** Fonte e parcela
   só existem no Cronograma Financeiro, por totais.
 - **Dados dos Responsáveis** (passo 2) é uma grade única "Dirigentes"; não há
