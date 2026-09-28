@@ -63,6 +63,33 @@ documento oficial: um dado inventado é pior do que um campo em branco.
 4. Tire um snapshot da página e confirme com o usuário em que passo do
    formulário vocês estão.
 
+## Modo correção
+
+Quando a proposta **já está preenchida** e o usuário traz uma lista de
+alterações (tipicamente um arquivo `correcoes-*.md` em `dados/`, vindo de uma
+auditoria), o trabalho muda de natureza: não se percorre o formulário inteiro,
+vai-se a cada item.
+
+- **Altere só o que está listado.** Não reescreva, não "melhore" e não
+  reorganize o resto. Problema novo encontrado no caminho vai para o
+  relatório, não para a plataforma.
+- **O arquivo de correções é a fonte da sessão.** Se outro arquivo de `dados/`
+  divergir dele, siga o de correções e registre a divergência. Itens marcados
+  como decididos não se perguntam de novo.
+- **Cópia antes de mexer.** `Exportar PDF` do estado atual antes da primeira
+  alteração, e anote os totais que a plataforma mostra. É o que permite
+  comparar e desfazer.
+- **Troca de texto é cirúrgica.** Substitua só o trecho indicado; o resto do
+  campo fica idêntico. Registre o trecho antes e depois.
+- **Substituir estrutura: crie antes de apagar.** Linha de orçamento, meta do
+  cronograma ou bloco repetido que será trocado: crie o novo, confira somas e
+  contagens, e só então apague o antigo.
+- **Totais que a correção declara invariantes são invariantes.** Confira pelo
+  valor do servidor depois de cada tela de orçamento; se mudou, pare.
+- **Registre por ID de item**: `feito`, `aguardando usuário`, `bloqueado` (com a
+  mensagem da plataforma) ou `não se aplica` (com o motivo). O relatório final
+  cobre todos os IDs, sem exceção.
+
 ## Ciclo por tela
 
 Repita até o formulário acabar:

@@ -28,6 +28,13 @@ início do projeto ou datas de calendário.
 **4. Equipe** (se for preencher essa aba). Um bloco por membro — ver
 `equipe.exemplo.md`.
 
+**5. Correções de uma proposta já preenchida.** Um arquivo `correcoes-*.md`
+com a lista de alterações, cada uma com ID, onde fica, o que mudar e como
+conferir. Com ele, o agente entra em modo correção: mexe só no que está listado
+e deixa o resto como está. Quando houver arquivo de correções, deixe na pasta só
+ele e a versão vigente do orçamento e cronograma — versões antigas geram
+divergência e interrupção.
+
 ## O que ajuda de verdade
 
 - **Campos de lista** (Sexo, Titulação, Vínculo, Função, Nível, rubrica):
