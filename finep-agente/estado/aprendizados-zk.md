@@ -196,6 +196,15 @@ O Cronograma de Execução usa **dhtmlxGantt 4.1.0**, com `window.gantt` exposto
   round-trip. Foram 49 atividades criadas assim, em 4 lotes.
 - `t.parent` volta como **string**: comparar com `String(t.parent)==='100000'`,
   não `===100000`. Comparação estrita silenciosa custou uma rodada.
+- **Só dois níveis: raiz (id 100000, a meta física) → atividades.** Em 27/09
+  foram criadas 8 "metas" sob a raiz e 49 atividades sob elas (3 níveis). O
+  `Salvar` respondeu sucesso e o gantt local mostrava tudo, mas na sessão
+  seguinte as 49 do 3º nível **tinham sumido**. Para indicar a meta, o título
+  da atividade leva o prefixo `(Meta N) ` (limite de 100 caracteres no título).
+- **Salvar com sucesso não prova persistência no gantt.** Prova é sair e voltar
+  (`Passo Anterior` → `Próximo Passo`) e conferir `gantt.eachTask` de novo.
+  Ao substituir estrutura: criar → salvar → vaivém → conferir → só então
+  `gantt.deleteTask` das antigas → salvar → vaivém de novo.
 - O botão "+" de cada linha tem **tamanho zero até o mouse passar por cima**.
   Por isso o `cdp.ps1` ganhou a op `hoverSel`. Ainda assim, criar pela API saiu
   mais confiável que caçar o "+".
@@ -223,6 +232,35 @@ R$ 207.630,00 menor. Reescrever resolveu.
 nunca o `value` do campo. O `value` prova digitação, não gravação. Foi assim que
 as 11 linhas de pessoal e as 38 da relação de itens foram validadas — cada soma
 bateu ao centavo com o documento.
+
+## Modo correção (sessão de 28/09)
+
+- **`Exportar PDF` exporta só o passo corrente** (4–6 páginas). A cópia
+  integral da proposta é o "Dados Preenchidos na Proposta", em *Resumo* no menu
+  lateral — peça ao usuário ou gere por lá antes de mexer.
+- **Limite de texto longo**: os `textarea` do passo 3 não têm `maxlength` no DOM
+  (`-1`). O limite real está no widget: `zk.Widget.$(ta).getMaxlength()` →
+  100000 nesses campos.
+- **Troca cirúrgica de texto que funcionou**: ler o `value` inteiro, aplicar as
+  trocas em node exigindo **exatamente 1 ocorrência** de cada trecho, gravar o
+  texto novo em arquivo, marcar o `textarea` pelo prefixo **e** comprimento
+  originais (dois campos podem começar igual), `clear` + `typefile` + `Tab`, e
+  depois do `Salvar` comparar caractere a caractere com o esperado — e conferir
+  que nenhum outro campo mudou.
+- **Relação de itens, ICT**: a linha não tem quantidade (campo `N/A`, só
+  leitura); só total de horas × valor-hora. "Qtde × horas por pessoa" não se
+  expressa ali — fica no texto da ICT.
+- **Relação de itens não tem coluna de fonte nem de parcela.** Fonte e parcela
+  só existem no Cronograma Financeiro, por totais.
+- **Dados dos Responsáveis** (passo 2) é uma grade única "Dirigentes"; não há
+  tipo Dirigente/Coordenador.
+- Linha de orçamento: o botão da lixeira é `button.btn-danger` com
+  `i.z-icon-trash-o` dentro, na altura do `textarea` da linha; pede "Sim/Não".
+- **Conferir as caixas da aba "Aprovação e Envio" no início da sessão.** Em
+  28/09 elas estavam marcadas sem que o agente tivesse tocado nelas. Não mexer;
+  relatar.
+- No plano JSON do `cdp.ps1`, `\(` dentro de `js` inline quebra o
+  `ConvertFrom-Json`. Regex com barra invertida vai por `evalfile`.
 
 ## Onde o agente para
 

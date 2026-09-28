@@ -220,6 +220,12 @@ exclusivo. O editor só tem duração — o mês de início, não. O caminho que
 funciona é a API: `gantt.addTask({text, detail, indicador, start_date,
 duration}, idDoPai)`, e isso **persiste** no `Salvar` do ZK.
 
+**O Gantt só aceita dois níveis**: a raiz (meta física, id 100000) e atividades
+diretamente sob ela. Sub-atividade some no servidor mesmo com "salvo com
+sucesso". Cada atividade vai direto sob a raiz, com a meta no título:
+`(Meta 1) Gestão técnica e financeira do projeto` (título ≤ 100 caracteres).
+Persistência só se prova saindo do passo e voltando.
+
 ## Ferramentas prontas
 
 Se o MCP do navegador não carregar, não pare a sessão: o Chrome/Edge aberto
