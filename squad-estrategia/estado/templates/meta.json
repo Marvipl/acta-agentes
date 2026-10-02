@@ -1,0 +1,13 @@
+{
+  "_template": true,
+  "projeto_id": "",
+  "ciclo": "2027",
+  "titulo": "",
+  "versao": 1,
+  "modo": "plano|estudo",
+  "data_base": "AAAA-MM-DD",
+  "mes_inicio": "AAAA-MM",
+  "horizonte_execucao": "2027",
+  "horizonte_direcao": "2028–2030",
+  "moeda": "BRL"
+}

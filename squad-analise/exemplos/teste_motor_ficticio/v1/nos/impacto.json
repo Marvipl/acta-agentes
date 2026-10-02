@@ -1,0 +1,25 @@
+{
+  "modelos": [
+    {
+      "id": "IMP-001",
+      "insight_ref": "INS-001",
+      "descricao": "Horas de robô recuperadas por mês se a noite igualar o dia",
+      "formula": "missoes_noite_mes * dif_min / 60 * custo_hora",
+      "premissas": {
+        "custo_hora": {
+          "min": 40,
+          "provavel": 55,
+          "max": 70,
+          "fonte": "FICTÍCIO – teste do motor"
+        }
+      },
+      "usa_resultados": {
+        "dif_min": "ANA-001.dif_duracao_min",
+        "missoes_noite_mes": "ANA-001.missoes_noite_por_mes"
+      },
+      "unidade": "R$/mês",
+      "investimento_ref": ""
+    }
+  ],
+  "iteracoes": 3000
+}

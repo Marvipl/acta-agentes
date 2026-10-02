@@ -1,0 +1,26 @@
+{
+  "_template": true,
+  "analises": [
+    {
+      "id": "ANA-001",
+      "pergunta_ref": "P1",
+      "tipo": "confirmatoria|exploratoria",
+      "nivel": "descritivo|associativo|causal",
+      "tipo_pergunta": "retrato|comparacao|previsao|causa|investimento",
+      "hipotese": "",
+      "metodo": "",
+      "metricas": [
+        "M1"
+      ],
+      "incerteza": "nenhuma|intervalo_confianca|intervalo_previsao|bootstrap|faixa_cenarios",
+      "desenho_causal": "",
+      "responsavel": "analista-exploratorio|estatistico|cientista-de-dados",
+      "script": "analises/ANA-001.py"
+    }
+  ],
+  "equipe": [
+    "analista-exploratorio"
+  ],
+  "correcao_multiplos_testes": "holm|bh|nenhuma",
+  "alfa": 0.05
+}

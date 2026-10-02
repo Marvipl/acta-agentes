@@ -1,0 +1,32 @@
+{
+  "_template": true,
+  "atividades": [
+    {
+      "id": "A01",
+      "nome": "",
+      "wbs_ids": [],
+      "duracao_dias": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "predecessoras": [],
+      "marco": false
+    }
+  ],
+  "esforco_gestao": [
+    {
+      "id": "G01",
+      "wbs_id": "",
+      "perfil": "",
+      "categoria": "gestao",
+      "horas": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "fonte": ""
+    }
+  ],
+  "observacoes": ""
+}

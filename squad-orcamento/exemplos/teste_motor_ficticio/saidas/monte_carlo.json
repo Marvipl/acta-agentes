@@ -1,0 +1,18 @@
+{
+  "iteracoes": 10000,
+  "custo_p10": 0.0,
+  "custo_p50": 0.0,
+  "custo_p80": 0.0,
+  "custo_p90": 0.0,
+  "custo_media": 0.0,
+  "prazo_p50_dias": 0.0,
+  "prazo_p80_dias": 0.0,
+  "prazo_p90_dias": 0.0,
+  "maiores_contribuidores": [],
+  "drivers": {
+    "cambio": null,
+    "produtividade": null
+  },
+  "percentil_contingencia": 80,
+  "custo_percentil_contingencia": 0.0
+}

@@ -1,0 +1,49 @@
+{
+  "_template": true,
+  "retrospectiva": [
+    {
+      "linha": "",
+      "receita_planejada": null,
+      "receita_realizada": null,
+      "margem_bruta_pct": null,
+      "observacao": "",
+      "evidencias": [
+        "INT-01"
+      ]
+    }
+  ],
+  "unit_economics": [
+    {
+      "linha": "",
+      "metrica": "",
+      "valor": null,
+      "evidencias": [
+        "INT-01"
+      ]
+    }
+  ],
+  "caixa_atual": null,
+  "caixa_data": "AAAA-MM-DD",
+  "queima_mensal": null,
+  "pipeline": [
+    {
+      "oportunidade": "",
+      "valor": null,
+      "probabilidade": null,
+      "evidencias": [
+        "INT-01"
+      ]
+    }
+  ],
+  "licoes": [],
+  "evidencias": [
+    {
+      "id": "INT-01",
+      "afirmacao": "",
+      "fonte": "",
+      "url": "",
+      "data": "AAAA-MM-DD",
+      "tipo": "interno"
+    }
+  ]
+}

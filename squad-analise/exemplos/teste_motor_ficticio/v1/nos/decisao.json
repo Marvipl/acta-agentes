@@ -1,0 +1,120 @@
+{
+  "tipo": "decisao",
+  "decisao": "Ampliar a operação noturna de 1 para 2 robôs?",
+  "alternativas": [
+    "Ampliar",
+    "Manter",
+    "Ampliar só depois de corrigir a produtividade noturna"
+  ],
+  "criterios": [
+    {
+      "id": "CR1",
+      "criterio": "Produtividade noturna",
+      "metrica": "M1",
+      "limite": "duração média noturna no máximo 10% acima da diurna",
+      "sentido": "menor_melhor"
+    }
+  ],
+  "perguntas": [
+    {
+      "id": "P1",
+      "pergunta": "As missões da noite demoram mais que as do dia?",
+      "criterio_ref": "CR1"
+    },
+    {
+      "id": "P2",
+      "pergunta": "A duração média está mudando ao longo dos meses?",
+      "criterio_ref": "CR1"
+    }
+  ],
+  "impacto_esperado": "FICTÍCIO – teste do motor",
+  "restricoes": [
+    "FICTÍCIO – teste do motor"
+  ],
+  "prazo": "2026-12-31",
+  "quem_decide": "FICTÍCIO",
+  "dimensoes": [
+    {
+      "id": "A01",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "A02",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "A03",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "A04",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "A05",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "A06",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "A07",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "A08",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    }
+  ],
+  "perguntas_chave": [],
+  "rodada_atual": 1
+}

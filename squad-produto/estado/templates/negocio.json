@@ -1,0 +1,75 @@
+{
+  "_template": true,
+  "modelo_receita": "venda|locacao|servico|hibrido",
+  "mix": {
+    "venda": null,
+    "locacao": null
+  },
+  "preco_venda": null,
+  "preco_locacao_mensal": null,
+  "preco_servico_mensal": null,
+  "preco_implantacao": null,
+  "custo_implantacao_por_cliente": {
+    "min": null,
+    "provavel": null,
+    "max": null
+  },
+  "custo_suporte_mensal_por_unidade": {
+    "min": null,
+    "provavel": null,
+    "max": null
+  },
+  "custo_unitario_override": null,
+  "unidades_por_cliente": null,
+  "volume_unidades_novas": {
+    "ano1": {
+      "min": null,
+      "provavel": null,
+      "max": null
+    },
+    "ano2": {
+      "min": null,
+      "provavel": null,
+      "max": null
+    },
+    "ano3": {
+      "min": null,
+      "provavel": null,
+      "max": null
+    }
+  },
+  "investimento_desenvolvimento": {
+    "ano1": {
+      "min": null,
+      "provavel": null,
+      "max": null
+    },
+    "ano2": {
+      "min": null,
+      "provavel": null,
+      "max": null
+    },
+    "ano3": {
+      "min": null,
+      "provavel": null,
+      "max": null
+    }
+  },
+  "impostos_receita_pct": null,
+  "comissao_pct": null,
+  "taxa_desconto_aa": null,
+  "wtp": [
+    {
+      "fonte": "",
+      "valor": "",
+      "evidencias": []
+    }
+  ],
+  "roi_cliente": {
+    "custo_atual_anual": null,
+    "custo_operacao_com_solucao_anual": null,
+    "memoria_calculo": "",
+    "evidencias": []
+  },
+  "premissas": []
+}

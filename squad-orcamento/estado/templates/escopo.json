@@ -1,0 +1,23 @@
+{
+  "_template": true,
+  "wbs": [
+    {
+      "id": "1",
+      "nome": "",
+      "pai": null,
+      "disciplina": "",
+      "descricao": ""
+    }
+  ],
+  "incluido": [],
+  "excluido": [],
+  "interfaces": [],
+  "premissas": [
+    {
+      "id": "P01",
+      "texto": "",
+      "fonte": "",
+      "confianca": "alta|media|baixa"
+    }
+  ]
+}

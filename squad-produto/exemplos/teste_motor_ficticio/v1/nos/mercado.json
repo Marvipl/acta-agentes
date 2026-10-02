@@ -1,0 +1,34 @@
+{
+  "segmentos": [
+    {
+      "id": "SEG1",
+      "nome": "Segmento fictício",
+      "descricao": "FICTÍCIO – teste do motor",
+      "clientes_potenciais": {
+        "min": 200,
+        "provavel": 400,
+        "max": 800
+      },
+      "ticket_anual": {
+        "min": 50000,
+        "provavel": 80000,
+        "max": 120000
+      },
+      "memoria_calculo": "FICTÍCIO – teste do motor",
+      "evidencias": [
+        "MKT-01"
+      ]
+    }
+  ],
+  "tendencias": [],
+  "evidencias": [
+    {
+      "id": "MKT-01",
+      "afirmacao": "FICTÍCIO",
+      "fonte": "FICTÍCIO – teste do motor",
+      "url": "https://exemplo.invalid",
+      "data": "2026-10-01",
+      "tipo": "estimativa"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "_template": true,
+  "projeto_id": "",
+  "tema": "",
+  "objetivo": "",
+  "versao": 1,
+  "modo": "rapido|padrao|completo",
+  "data_base": "AAAA-MM-DD"
+}

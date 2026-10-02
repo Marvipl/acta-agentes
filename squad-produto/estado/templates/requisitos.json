@@ -1,0 +1,22 @@
+{
+  "_template": true,
+  "itens": [
+    {
+      "id": "RQ01",
+      "tipo": "funcional|nao_funcional|regulatorio|operacional",
+      "descricao": "",
+      "prioridade": "must|should|could|wont",
+      "origem": [
+        "J1"
+      ],
+      "criterio_aceite": "",
+      "metrica": "",
+      "valor_alvo": "",
+      "especificacao_ref": "ESP1 (quando o requisito tem uma especificação comparável no benchmark)",
+      "valor_alvo_num": null,
+      "justificativa_alvo": "",
+      "release": "MVP"
+    }
+  ],
+  "fora_de_escopo": []
+}

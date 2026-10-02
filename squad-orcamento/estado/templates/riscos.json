@@ -1,0 +1,38 @@
+{
+  "_template": true,
+  "itens": [
+    {
+      "id": "RK01",
+      "descricao": "",
+      "categoria": "tecnico|suprimentos|cambio|prazo|cliente|regulatorio|contratual",
+      "probabilidade": null,
+      "impacto_custo": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "impacto_prazo_dias": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "mitigacao": "",
+      "dono": "",
+      "no_monte_carlo": true
+    }
+  ],
+  "drivers": {
+    "cambio": {
+      "min": null,
+      "provavel": 1.0,
+      "max": null,
+      "_leia": "multiplicador sobre a taxa de meta.cambio"
+    },
+    "produtividade": {
+      "min": null,
+      "provavel": 1.0,
+      "max": null,
+      "_leia": "multiplicador sobre todas as horas"
+    }
+  }
+}

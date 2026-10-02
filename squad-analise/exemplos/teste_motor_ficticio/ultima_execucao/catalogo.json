@@ -1,0 +1,32 @@
+{
+  "arquivos": [
+    {
+      "arquivo": "missoes.csv",
+      "sha256": "50b34238636bbe1465d7c2683a3fbae293ea10b636e686abae999c50bc4b3881",
+      "importado_em": "2026-10-02T22:10:13"
+    },
+    {
+      "arquivo": "robos.csv",
+      "sha256": "42ca0f022de7d0952530a67f8d975115ebf8f7f4ad5709801a3d397cf5ff1f59",
+      "importado_em": "2026-10-02T22:10:13"
+    }
+  ],
+  "tabelas": [
+    {
+      "tabela": "raw_missoes",
+      "arquivo": "missoes.csv",
+      "parte": null,
+      "leitura": "duckdb decimal ,",
+      "linhas": 3000,
+      "colunas": 10
+    },
+    {
+      "tabela": "raw_robos",
+      "arquivo": "robos.csv",
+      "parte": null,
+      "leitura": "duckdb",
+      "linhas": 6,
+      "colunas": 3
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "_leia": "Parâmetros do squad de estratégia. Ajuste com o uso.",
+  "drive_planejamento_dir": "[caminho local da pasta Acta > Planejamento Estratégico sincronizada pelo Google Drive para desktop]",
+  "capacidade_time_csv": "../squad-orcamento/conhecimento/mao_de_obra/capacidade_time.csv",
+  "descoberta": {
+    "_leia": "Enquadramento: limiares de prontidão (plano usa 'completo', estudo usa 'rapido'). Frações.",
+    "max_perguntas_por_rodada": 7,
+    "max_rodadas": 2,
+    "prontidao_minima": {
+      "rapido": 0.5,
+      "completo": 0.8
+    },
+    "valor_status": {
+      "completo": 1.0,
+      "premissa": 0.7,
+      "parcial": 0.5,
+      "ausente": 0.0
+    }
+  },
+  "revisao": {
+    "_leia": "Status dos KRs na revisão trimestral: fração do caminho entre baseline e meta do trimestre.",
+    "verde": 0.7,
+    "amarelo": 0.4
+  },
+  "max_rodadas_revisao": 2,
+  "termos_proibidos": [
+    "Corsight",
+    "K.FLEET",
+    "KFLEET",
+    "K.CONCEPT",
+    "Venturus",
+    "SiDi"
+  ],
+  "dias_por_mes": 30.4
+}

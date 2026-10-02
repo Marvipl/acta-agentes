@@ -1,0 +1,63 @@
+{
+  "atividades": [
+    {
+      "id": "A01",
+      "nome": "Engenharia",
+      "wbs_ids": [
+        "1.1"
+      ],
+      "duracao_dias": {
+        "min": 20,
+        "provavel": 30,
+        "max": 45
+      },
+      "predecessoras": []
+    },
+    {
+      "id": "A02",
+      "nome": "Compras e importação",
+      "wbs_ids": [
+        "1.2",
+        "1.4"
+      ],
+      "duracao_dias": {
+        "min": 45,
+        "provavel": 60,
+        "max": 90
+      },
+      "predecessoras": [
+        "A01"
+      ]
+    },
+    {
+      "id": "A03",
+      "nome": "Implantação",
+      "wbs_ids": [
+        "1.3"
+      ],
+      "duracao_dias": {
+        "min": 15,
+        "provavel": 20,
+        "max": 30
+      },
+      "predecessoras": [
+        "A02"
+      ]
+    }
+  ],
+  "esforco_gestao": [
+    {
+      "id": "G01",
+      "wbs_id": "1.4",
+      "perfil": "Diretor técnico (CTO)",
+      "categoria": "gestao",
+      "horas": {
+        "min": 40,
+        "provavel": 60,
+        "max": 80
+      },
+      "fonte": "FICTÍCIO – teste do motor"
+    }
+  ],
+  "observacoes": ""
+}

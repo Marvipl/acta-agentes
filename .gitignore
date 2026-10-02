@@ -1,0 +1,12 @@
+# squads:inicio (gerado; vale só dentro das pastas squad-*)
+squad-*/**/dados/
+squad-*/**/entrada/*
+!squad-*/**/entrada/LEIA.md
+squad-*/**/projetos/*
+!squad-*/**/projetos/.gitkeep
+squad-*/**/chave_local.key
+squad-*/**/*.duckdb
+squad-*/**/*.duckdb.wal
+squad-*/**/__pycache__/
+.playwright-mcp/
+# squads:fim

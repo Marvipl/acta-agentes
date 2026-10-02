@@ -1,0 +1,358 @@
+{
+  "nos": {
+    "meta": {
+      "hash": "e2008c122595",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {}
+    },
+    "briefing": {
+      "hash": "f6e0fb18dac5",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "meta": "e2008c122595"
+      }
+    },
+    "enquadramento": {
+      "hash": "acfb99e8da14",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "briefing": "f6e0fb18dac5"
+      }
+    },
+    "mercado": {
+      "hash": "254ae123db52",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "enquadramento": "acfb99e8da14"
+      }
+    },
+    "concorrencia": {
+      "hash": "f9015badf2f1",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "enquadramento": "acfb99e8da14"
+      }
+    },
+    "regulatorio": {
+      "hash": "ebd912f49350",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "enquadramento": "acfb99e8da14"
+      }
+    },
+    "interno": {
+      "hash": "01fc00b8f519",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "enquadramento": "acfb99e8da14"
+      }
+    },
+    "capacidades": {
+      "hash": "127251cfbbde",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "enquadramento": "acfb99e8da14"
+      }
+    },
+    "diagnostico": {
+      "hash": "fa3fc9c63559",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "mercado": "254ae123db52",
+        "concorrencia": "f9015badf2f1",
+        "regulatorio": "ebd912f49350",
+        "interno": "01fc00b8f519",
+        "capacidades": "127251cfbbde"
+      }
+    },
+    "opcoes": {
+      "hash": "b6eb5c27d76f",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "diagnostico": "fa3fc9c63559"
+      }
+    },
+    "portfolio": {
+      "hash": "4a5ae1afadf0",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "diagnostico": "fa3fc9c63559",
+        "opcoes": "b6eb5c27d76f"
+      }
+    },
+    "financeiro_opcoes": {
+      "hash": "a369d2bad6b6",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "opcoes": "b6eb5c27d76f",
+        "portfolio": "4a5ae1afadf0",
+        "interno": "01fc00b8f519"
+      }
+    },
+    "okrs": {
+      "hash": "60af81a3aca6",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "diagnostico": "fa3fc9c63559",
+        "opcoes": "b6eb5c27d76f"
+      }
+    },
+    "organizacao": {
+      "hash": "35baffccdf09",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "opcoes": "b6eb5c27d76f",
+        "capacidades": "127251cfbbde",
+        "okrs": "60af81a3aca6"
+      }
+    },
+    "iniciativas": {
+      "hash": "23a290b1fc3b",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "opcoes": "b6eb5c27d76f",
+        "portfolio": "4a5ae1afadf0",
+        "okrs": "60af81a3aca6",
+        "organizacao": "35baffccdf09"
+      }
+    },
+    "financeiro": {
+      "hash": "92458cc41199",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "opcoes": "b6eb5c27d76f",
+        "portfolio": "4a5ae1afadf0",
+        "interno": "01fc00b8f519",
+        "organizacao": "35baffccdf09",
+        "iniciativas": "23a290b1fc3b"
+      }
+    },
+    "riscos": {
+      "hash": "d7ad4fc7dedd",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "opcoes": "b6eb5c27d76f",
+        "iniciativas": "23a290b1fc3b",
+        "financeiro": "92458cc41199"
+      }
+    },
+    "governanca": {
+      "hash": "86095c412b57",
+      "agente": "teste",
+      "em": "2026-10-01T03:02:19",
+      "entradas": {
+        "okrs": "60af81a3aca6",
+        "riscos": "d7ad4fc7dedd",
+        "opcoes": "b6eb5c27d76f"
+      }
+    }
+  },
+  "aprovacoes": [
+    {
+      "gate": "G1",
+      "por": "teste",
+      "em": "2026-10-01T03:02:19",
+      "obs": "",
+      "hashes": {
+        "meta": "e2008c122595",
+        "briefing": "f6e0fb18dac5",
+        "enquadramento": "acfb99e8da14",
+        "mercado": "254ae123db52",
+        "concorrencia": "f9015badf2f1",
+        "regulatorio": "ebd912f49350",
+        "interno": "01fc00b8f519",
+        "capacidades": "127251cfbbde",
+        "diagnostico": "fa3fc9c63559",
+        "opcoes": "b6eb5c27d76f",
+        "portfolio": "4a5ae1afadf0",
+        "financeiro_opcoes": "a369d2bad6b6",
+        "okrs": "60af81a3aca6",
+        "organizacao": "35baffccdf09",
+        "iniciativas": "23a290b1fc3b",
+        "financeiro": "92458cc41199",
+        "riscos": "d7ad4fc7dedd",
+        "governanca": "86095c412b57"
+      }
+    },
+    {
+      "gate": "G2",
+      "por": "teste",
+      "em": "2026-10-01T03:02:19",
+      "obs": "",
+      "hashes": {
+        "meta": "e2008c122595",
+        "briefing": "f6e0fb18dac5",
+        "enquadramento": "acfb99e8da14",
+        "mercado": "254ae123db52",
+        "concorrencia": "f9015badf2f1",
+        "regulatorio": "ebd912f49350",
+        "interno": "01fc00b8f519",
+        "capacidades": "127251cfbbde",
+        "diagnostico": "fa3fc9c63559",
+        "opcoes": "b6eb5c27d76f",
+        "portfolio": "4a5ae1afadf0",
+        "financeiro_opcoes": "a369d2bad6b6",
+        "okrs": "60af81a3aca6",
+        "organizacao": "35baffccdf09",
+        "iniciativas": "23a290b1fc3b",
+        "financeiro": "92458cc41199",
+        "riscos": "d7ad4fc7dedd",
+        "governanca": "86095c412b57"
+      }
+    },
+    {
+      "gate": "G3",
+      "por": "teste",
+      "em": "2026-10-01T03:02:19",
+      "obs": "",
+      "hashes": {
+        "meta": "e2008c122595",
+        "briefing": "f6e0fb18dac5",
+        "enquadramento": "acfb99e8da14",
+        "mercado": "254ae123db52",
+        "concorrencia": "f9015badf2f1",
+        "regulatorio": "ebd912f49350",
+        "interno": "01fc00b8f519",
+        "capacidades": "127251cfbbde",
+        "diagnostico": "fa3fc9c63559",
+        "opcoes": "b6eb5c27d76f",
+        "portfolio": "4a5ae1afadf0",
+        "financeiro_opcoes": "a369d2bad6b6",
+        "okrs": "60af81a3aca6",
+        "organizacao": "35baffccdf09",
+        "iniciativas": "23a290b1fc3b",
+        "financeiro": "92458cc41199",
+        "riscos": "d7ad4fc7dedd",
+        "governanca": "86095c412b57"
+      }
+    }
+  ],
+  "congelado": false,
+  "historico": [
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "meta",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "briefing",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "enquadramento",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "mercado",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "concorrencia",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "regulatorio",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "interno",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "capacidades",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "diagnostico",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "opcoes",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "portfolio",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "financeiro_opcoes",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "okrs",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "organizacao",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "iniciativas",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "financeiro",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "riscos",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T03:02:19",
+      "evento": "carimbo",
+      "no": "governanca",
+      "agente": "teste"
+    }
+  ]
+}

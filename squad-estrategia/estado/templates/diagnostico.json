@@ -1,0 +1,43 @@
+{
+  "_template": true,
+  "swot": {
+    "forcas": [
+      {
+        "texto": "",
+        "evidencias": []
+      }
+    ],
+    "fraquezas": [
+      {
+        "texto": "",
+        "evidencias": []
+      }
+    ],
+    "oportunidades": [
+      {
+        "texto": "",
+        "evidencias": []
+      }
+    ],
+    "ameacas": [
+      {
+        "texto": "",
+        "evidencias": []
+      }
+    ]
+  },
+  "tows": [
+    {
+      "estrategia": "",
+      "tipo": "SO|ST|WO|WT",
+      "refs": []
+    }
+  ],
+  "questoes_criticas": [
+    {
+      "id": "QC1",
+      "pergunta": "",
+      "por_que_importa": ""
+    }
+  ]
+}

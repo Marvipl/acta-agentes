@@ -1,0 +1,41 @@
+{
+  "_template": true,
+  "criterios_atratividade": [
+    {
+      "criterio": "tamanho_e_crescimento",
+      "peso": null
+    },
+    {
+      "criterio": "margem",
+      "peso": null
+    },
+    {
+      "criterio": "aderencia_a_tese",
+      "peso": null
+    }
+  ],
+  "criterios_capacidade": [
+    {
+      "criterio": "vantagem_competitiva",
+      "peso": null
+    },
+    {
+      "criterio": "capacidade_de_entrega",
+      "peso": null
+    },
+    {
+      "criterio": "tracao_atual",
+      "peso": null
+    }
+  ],
+  "linhas": [
+    {
+      "linha": "",
+      "atratividade": {},
+      "capacidade_vencer": {},
+      "decisao": "investir|manter|colher|descontinuar|separar",
+      "justificativa": "",
+      "evidencias": []
+    }
+  ]
+}

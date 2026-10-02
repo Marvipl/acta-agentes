@@ -1,0 +1,106 @@
+{
+  "_template": true,
+  "arquitetura": "",
+  "criterios_selecao": [
+    {
+      "criterio": "aderencia_requisitos",
+      "peso": null
+    },
+    {
+      "criterio": "custo_total_propriedade",
+      "peso": null
+    },
+    {
+      "criterio": "maturidade_referencias",
+      "peso": null
+    },
+    {
+      "criterio": "suporte_pecas_brasil",
+      "peso": null
+    },
+    {
+      "criterio": "prazo_entrega",
+      "peso": null
+    },
+    {
+      "criterio": "risco_fornecedor",
+      "peso": null
+    },
+    {
+      "criterio": "integracao",
+      "peso": null
+    }
+  ],
+  "solucoes": [
+    {
+      "id": "S1",
+      "nome": "",
+      "descricao": "",
+      "alternativas": [
+        {
+          "id": "S1-A",
+          "opcao": "",
+          "fabricante": "",
+          "origem": "mercado|acta|parceiro",
+          "notas": {
+            "aderencia_requisitos": null
+          },
+          "custo_indicativo": null,
+          "fonte": ""
+        }
+      ],
+      "escolhida": "S1-A",
+      "justificativa": "",
+      "wbs_ids": [],
+      "dimensionamento": [
+        {
+          "parametro": "",
+          "valor": null,
+          "unidade": "",
+          "memoria_calculo": "",
+          "fonte": ""
+        }
+      ]
+    }
+  ],
+  "lista_tecnica": [
+    {
+      "id": "T01",
+      "wbs_id": "",
+      "descricao": "",
+      "especificacao": "",
+      "qtd": null,
+      "unidade": "un",
+      "critico": false
+    }
+  ],
+  "esforco": [
+    {
+      "id": "E01",
+      "wbs_id": "",
+      "perfil": "",
+      "categoria": "engenharia|software|eletronica|mecanica|montagem|integracao|testes",
+      "horas": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "fonte": ""
+    }
+  ],
+  "requisitos_infra_cliente": [
+    {
+      "id": "IC01",
+      "item": "",
+      "especificacao": "",
+      "responsavel": "cliente"
+    }
+  ],
+  "rastreabilidade": [
+    {
+      "requisito_id": "R01",
+      "solucao_id": "S1",
+      "como_atende": ""
+    }
+  ]
+}

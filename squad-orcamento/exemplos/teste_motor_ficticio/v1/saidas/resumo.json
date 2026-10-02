@@ -1,0 +1,185 @@
+{
+  "meta": {
+    "projeto_id": "exemplo-ficticio",
+    "cliente": "[Cliente fictício]",
+    "projeto": "Teste do motor – 3 AMRs",
+    "versao": 1,
+    "modo": "completo",
+    "classe_estimativa": 3,
+    "data_base": "2026-10-01",
+    "mes_inicio": "2027-01"
+  },
+  "prazo": {
+    "dias_provavel": 110.0,
+    "meses_provavel": 3.6,
+    "caminho_critico": [
+      "A01",
+      "A02",
+      "A03"
+    ],
+    "fim_mes": "2027-04"
+  },
+  "custos": {
+    "equipamentos": 735000.0,
+    "mao_de_obra": 41800.0,
+    "indiretos": 18000.0,
+    "overhead": 77680.0,
+    "base": 872480.0,
+    "contingencia": 89401.11829310737,
+    "com_contingencia": 961881.1182931074,
+    "recorrente_mensal": 2500.0
+  },
+  "preco": {
+    "impostos_medios": 0.154,
+    "comissao": 0.03,
+    "margem_alvo": 0.25,
+    "margem_minima": 0.12,
+    "sugerido": 1699436.6047581404,
+    "minimo": 1382013.100995844,
+    "receita_implantacao": 1699436.6047581404,
+    "origem_receita": "preco_sugerido",
+    "margem_resultante": 0.24999999999999997,
+    "recorrente_mensal": 6000,
+    "recorrente_meses": 24,
+    "margem_recorrente": 0.41333333333333333
+  },
+  "fluxo": {
+    "exposicao_maxima": -496879.5204975859,
+    "mes_pico": "2027-03",
+    "payback": "2027-04",
+    "vpl": 435681.71883306437,
+    "tir_aa": 117.05903704542611,
+    "horizonte_meses": 28
+  },
+  "dre": {
+    "receita_bruta": 1843436.6047581404,
+    "impostos": -286193.23713275365,
+    "receita_liquida": 1557243.3676253867,
+    "cpv_equipamentos": -735000.0,
+    "cpv_mao_de_obra": -41800.0,
+    "cpv_recorrente": -60000.0,
+    "cpv_operacao": 0.0,
+    "lucro_bruto": 720443.3676253867,
+    "comissao": -50983.09814274421,
+    "indiretos": -18000.0,
+    "overhead": -77680.0,
+    "contingencia": -89401.11829310737,
+    "resultado_operacional": 484379.15118953516,
+    "custo_financeiro": -7691.639234530154,
+    "resultado_projeto": 476687.511955005,
+    "margem_bruta": 0.3908153748091105,
+    "margem_liquida": 0.2585863331153428
+  },
+  "operacao_comercial": [],
+  "marcos": [
+    {
+      "id": "M1",
+      "evento": "Assinatura",
+      "pct": 0.3,
+      "mes": 0,
+      "valor_brl": 509830.9814274421
+    },
+    {
+      "id": "M2",
+      "evento": "Entrega dos equipamentos",
+      "pct": 0.4,
+      "mes": 3,
+      "valor_brl": 679774.6419032562
+    },
+    {
+      "id": "M3",
+      "evento": "Aceite",
+      "pct": 0.3,
+      "mes": 4,
+      "valor_brl": 509830.9814274421
+    }
+  ],
+  "capacidade": {
+    "sobrecargas": [
+      {
+        "perfil": "Engenheiro de software sênior",
+        "mes": "2027-01",
+        "horas": 160.0,
+        "disponivel": 64.0
+      }
+    ]
+  },
+  "fatores_aplicados": {},
+  "alertas": [],
+  "monte_carlo": {
+    "custo_p10": 801697.9491808895,
+    "custo_p50": 895569.3786199453,
+    "custo_p80": 961881.1182931074,
+    "custo_p90": 998198.3524689922,
+    "prazo_p50_dias": 121.90857570850446,
+    "prazo_p80_dias": 137.58152364705316,
+    "iteracoes": 10000
+  },
+  "fmt": {
+    "equipamentos": "R$ 735.000,00",
+    "mao_de_obra": "R$ 41.800,00",
+    "indiretos": "R$ 18.000,00",
+    "overhead": "R$ 77.680,00",
+    "base": "R$ 872.480,00",
+    "contingencia": "R$ 89.401,12",
+    "com_contingencia": "R$ 961.881,12",
+    "recorrente_mensal": "R$ 2.500,00",
+    "preco_impostos_medios": "15,4%",
+    "preco_comissao": "3,0%",
+    "preco_margem_alvo": "25,0%",
+    "preco_margem_minima": "12,0%",
+    "preco_sugerido": "R$ 1.699.436,60",
+    "preco_minimo": "R$ 1.382.013,10",
+    "preco_receita_implantacao": "R$ 1.699.436,60",
+    "preco_margem_resultante": "25,0%",
+    "preco_recorrente_mensal": "R$ 6.000,00",
+    "preco_margem_recorrente": "41,3%",
+    "exposicao_maxima": "-R$ 496.879,52",
+    "vpl": "R$ 435.681,72",
+    "tir_aa": "11705,9%",
+    "mes_pico": "2027-03",
+    "payback": "2027-04",
+    "dre_receita_bruta": "R$ 1.843.436,60",
+    "dre_impostos": "-R$ 286.193,24",
+    "dre_receita_liquida": "R$ 1.557.243,37",
+    "dre_cpv_equipamentos": "-R$ 735.000,00",
+    "dre_cpv_mao_de_obra": "-R$ 41.800,00",
+    "dre_cpv_recorrente": "-R$ 60.000,00",
+    "dre_cpv_operacao": "R$ 0,00",
+    "dre_lucro_bruto": "R$ 720.443,37",
+    "dre_comissao": "-R$ 50.983,10",
+    "dre_indiretos": "-R$ 18.000,00",
+    "dre_overhead": "-R$ 77.680,00",
+    "dre_contingencia": "-R$ 89.401,12",
+    "dre_resultado_operacional": "R$ 484.379,15",
+    "dre_custo_financeiro": "-R$ 7.691,64",
+    "dre_resultado_projeto": "R$ 476.687,51",
+    "dre_margem_bruta": "39,1%",
+    "dre_margem_liquida": "25,9%",
+    "prazo_meses": "3,6",
+    "custo_p10": "R$ 801.697,95",
+    "custo_p50": "R$ 895.569,38",
+    "custo_p80": "R$ 961.881,12",
+    "custo_p90": "R$ 998.198,35",
+    "prazo_p50_meses": "4,0",
+    "prazo_p80_meses": "4,5"
+  },
+  "_hashes": {
+    "meta": "05e1a6043419",
+    "briefing": "d4456401fdaa",
+    "especificacao": "28a27c41f735",
+    "requisitos": "d1063a9fd428",
+    "escopo": "d17ef928a4e0",
+    "solucao": "4219593f088b",
+    "operacoes": "a354af457a52",
+    "cronograma": "a03fead71826",
+    "bom": "0022ece8febf",
+    "tributos": "9659ad4dbe6d",
+    "custos_indiretos": "c18bede8292a",
+    "riscos": "a3b256998b39",
+    "preco": "a9ccb0bb8de5",
+    "contrato": "4360c25560f5",
+    "financeiro": "41da8a27c460"
+  },
+  "_gerado_em": "2026-10-01T08:51:06"
+}

@@ -1,0 +1,134 @@
+{
+  "_leia": "Contrato de dados entre os agentes. Campos: estado/templates/<no>.json. Validação: motor/validar.py.",
+  "nos": {
+    "meta": {
+      "dono": "chief-produto",
+      "fase": "P0",
+      "depende_de": [],
+      "modelo": "estado/templates/meta.json"
+    },
+    "briefing": {
+      "dono": "chief-produto",
+      "fase": "P0",
+      "depende_de": [
+        "meta"
+      ],
+      "modelo": "estado/templates/briefing.json"
+    },
+    "enquadramento": {
+      "dono": "enquadramento",
+      "fase": "P0",
+      "depende_de": [
+        "briefing"
+      ],
+      "modelo": "estado/templates/enquadramento.json"
+    },
+    "mercado": {
+      "dono": "pesquisa-mercado",
+      "fase": "P1",
+      "depende_de": [
+        "enquadramento"
+      ],
+      "modelo": "estado/templates/mercado.json"
+    },
+    "clientes": {
+      "dono": "pesquisa-cliente",
+      "fase": "P1",
+      "depende_de": [
+        "enquadramento"
+      ],
+      "modelo": "estado/templates/clientes.json"
+    },
+    "concorrencia": {
+      "dono": "analise-concorrencial",
+      "fase": "P1",
+      "depende_de": [
+        "enquadramento"
+      ],
+      "modelo": "estado/templates/concorrencia.json"
+    },
+    "normas": {
+      "dono": "regulatorio-normas",
+      "fase": "P1",
+      "depende_de": [
+        "enquadramento"
+      ],
+      "modelo": "estado/templates/normas.json"
+    },
+    "oportunidade": {
+      "dono": "estrategista-produto",
+      "fase": "P1",
+      "depende_de": [
+        "mercado",
+        "clientes",
+        "concorrencia",
+        "normas"
+      ],
+      "modelo": "estado/templates/oportunidade.json"
+    },
+    "conceitos": {
+      "dono": "estrategista-produto",
+      "fase": "P2",
+      "depende_de": [
+        "oportunidade",
+        "concorrencia",
+        "clientes"
+      ],
+      "modelo": "estado/templates/conceitos.json"
+    },
+    "requisitos": {
+      "dono": "requisitos-produto",
+      "fase": "P2",
+      "depende_de": [
+        "conceitos",
+        "clientes",
+        "normas",
+        "concorrencia"
+      ],
+      "modelo": "estado/templates/requisitos.json"
+    },
+    "arquitetura": {
+      "dono": "arquiteto-solucao",
+      "fase": "P3",
+      "depende_de": [
+        "conceitos",
+        "requisitos"
+      ],
+      "modelo": "estado/templates/arquitetura.json"
+    },
+    "negocio": {
+      "dono": "pricing-negocio",
+      "fase": "P3",
+      "depende_de": [
+        "conceitos",
+        "clientes",
+        "mercado",
+        "arquitetura"
+      ],
+      "modelo": "estado/templates/negocio.json"
+    },
+    "validacao": {
+      "dono": "validacao-experimentos",
+      "fase": "P3",
+      "depende_de": [
+        "oportunidade",
+        "conceitos",
+        "requisitos",
+        "arquitetura",
+        "negocio"
+      ],
+      "modelo": "estado/templates/validacao.json"
+    },
+    "roadmap": {
+      "dono": "roadmap-gtm",
+      "fase": "P3",
+      "depende_de": [
+        "requisitos",
+        "arquitetura",
+        "validacao",
+        "negocio"
+      ],
+      "modelo": "estado/templates/roadmap.json"
+    }
+  }
+}

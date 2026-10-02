@@ -1,0 +1,184 @@
+{
+  "_leia": "Contrato de dados entre os agentes. Campos: estado/templates/<no>.json. Validação: motor/validar.py.",
+  "convencoes": {
+    "evidencia": {
+      "id": "PREFIXO-nn",
+      "fonte": "",
+      "url": "",
+      "data": "AAAA-MM-DD",
+      "tipo": "confirmado|reportado|estimativa|interno"
+    },
+    "tres_pontos": {
+      "min": "",
+      "provavel": "",
+      "max": ""
+    },
+    "percentuais": "frações (0.15 = 15%)",
+    "meses": "AAAA-MM"
+  },
+  "nos": {
+    "meta": {
+      "dono": "chief-strategist",
+      "fase": "E0",
+      "depende_de": [],
+      "modelo": "estado/templates/meta.json"
+    },
+    "briefing": {
+      "dono": "chief-strategist",
+      "fase": "E0",
+      "depende_de": [
+        "meta"
+      ],
+      "modelo": "estado/templates/briefing.json"
+    },
+    "enquadramento": {
+      "dono": "enquadramento",
+      "fase": "E0",
+      "depende_de": [
+        "briefing"
+      ],
+      "modelo": "estado/templates/enquadramento.json"
+    },
+    "mercado": {
+      "dono": "inteligencia-mercado",
+      "fase": "E1",
+      "depende_de": [
+        "enquadramento"
+      ],
+      "modelo": "estado/templates/mercado.json"
+    },
+    "concorrencia": {
+      "dono": "concorrencia",
+      "fase": "E1",
+      "depende_de": [
+        "enquadramento"
+      ],
+      "modelo": "estado/templates/concorrencia.json"
+    },
+    "regulatorio": {
+      "dono": "regulatorio-fomento",
+      "fase": "E1",
+      "depende_de": [
+        "enquadramento"
+      ],
+      "modelo": "estado/templates/regulatorio.json"
+    },
+    "interno": {
+      "dono": "desempenho-interno",
+      "fase": "E1",
+      "depende_de": [
+        "enquadramento"
+      ],
+      "modelo": "estado/templates/interno.json"
+    },
+    "capacidades": {
+      "dono": "capacidades-organizacao",
+      "fase": "E1",
+      "depende_de": [
+        "enquadramento"
+      ],
+      "modelo": "estado/templates/capacidades.json"
+    },
+    "diagnostico": {
+      "dono": "chief-strategist",
+      "fase": "E1",
+      "depende_de": [
+        "mercado",
+        "concorrencia",
+        "regulatorio",
+        "interno",
+        "capacidades"
+      ],
+      "modelo": "estado/templates/diagnostico.json"
+    },
+    "opcoes": {
+      "dono": "arquiteto-estrategia",
+      "fase": "E2",
+      "depende_de": [
+        "diagnostico"
+      ],
+      "modelo": "estado/templates/opcoes.json"
+    },
+    "portfolio": {
+      "dono": "portfolio-iniciativas",
+      "fase": "E2",
+      "depende_de": [
+        "diagnostico",
+        "opcoes"
+      ],
+      "modelo": "estado/templates/portfolio.json"
+    },
+    "financeiro_opcoes": {
+      "dono": "financeiro-estrategico",
+      "fase": "E2",
+      "depende_de": [
+        "opcoes",
+        "portfolio",
+        "interno"
+      ],
+      "modelo": "estado/templates/financeiro_opcoes.json"
+    },
+    "okrs": {
+      "dono": "okr-kpi",
+      "fase": "E3",
+      "depende_de": [
+        "diagnostico",
+        "opcoes"
+      ],
+      "modelo": "estado/templates/okrs.json"
+    },
+    "organizacao": {
+      "dono": "capacidades-organizacao",
+      "fase": "E3",
+      "depende_de": [
+        "opcoes",
+        "capacidades",
+        "okrs"
+      ],
+      "modelo": "estado/templates/organizacao.json"
+    },
+    "iniciativas": {
+      "dono": "portfolio-iniciativas",
+      "fase": "E3",
+      "depende_de": [
+        "opcoes",
+        "portfolio",
+        "okrs",
+        "organizacao"
+      ],
+      "modelo": "estado/templates/iniciativas.json"
+    },
+    "financeiro": {
+      "dono": "financeiro-estrategico",
+      "fase": "E3",
+      "depende_de": [
+        "opcoes",
+        "portfolio",
+        "interno",
+        "organizacao",
+        "iniciativas"
+      ],
+      "modelo": "estado/templates/financeiro.json"
+    },
+    "riscos": {
+      "dono": "riscos-governanca",
+      "fase": "E3",
+      "depende_de": [
+        "opcoes",
+        "iniciativas",
+        "financeiro"
+      ],
+      "modelo": "estado/templates/riscos.json"
+    },
+    "governanca": {
+      "dono": "riscos-governanca",
+      "fase": "E3",
+      "depende_de": [
+        "okrs",
+        "riscos",
+        "opcoes"
+      ],
+      "modelo": "estado/templates/governanca.json"
+    }
+  }
+}

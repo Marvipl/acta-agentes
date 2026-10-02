@@ -1,0 +1,42 @@
+{
+  "_template": true,
+  "tipo_projeto": "[ex.: amr-intralogistica | condominio-robotico | seguranca | alimentos | evento | outro]",
+  "dimensoes": [
+    {
+      "id": "D01",
+      "status": "completo|premissa|parcial|ausente|nao_se_aplica",
+      "evidencias": [
+        ""
+      ],
+      "lacunas": [
+        ""
+      ],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    }
+  ],
+  "perguntas": [
+    {
+      "id": "Q01",
+      "rodada": 1,
+      "dimensao": "D01",
+      "pergunta": "",
+      "por_que_importa": "",
+      "impacto": "alto|medio",
+      "formato": "escolha|numero|texto",
+      "opcoes": [],
+      "resposta_proposta": "",
+      "destinatario": "marcus|cliente",
+      "status": "aberta|respondida|convertida_em_premissa",
+      "resposta": "",
+      "respondida_em": "",
+      "id_banco": ""
+    }
+  ],
+  "rodada_atual": 1,
+  "decisao": {
+    "modo_recomendado": "rapido|completo",
+    "classe_maxima": null,
+    "justificativa": ""
+  }
+}

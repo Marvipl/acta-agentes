@@ -1,0 +1,9 @@
+id,nome,critica,peso,o_que_cobrir
+A01,Decisão e alternativas,sim,3,"Que decisão a análise apoia, quais as alternativas e quem decide"
+A02,Critérios e limites,sim,3,"Métricas que decidem e os limites que mudam a decisão"
+A03,Perguntas de negócio,sim,3,"Perguntas que a análise precisa responder, ligadas aos critérios"
+A04,Fontes e período dos dados,sim,3,"De que sistema vêm os dados, período coberto, como foram extraídos"
+A05,Definições das métricas,sim,2,"Como o negócio define as métricas (ex.: o que conta como missão concluída)"
+A06,Restrições e privacidade,sim,2,"Dados pessoais, confidencialidade, prazo e esforço disponível"
+A07,Impacto esperado,nao,2,"Ordem de grandeza do que está em jogo (R$, horas, risco)"
+A08,Validação humana,nao,1,"Quem do setor pode validar interpretações decisivas"

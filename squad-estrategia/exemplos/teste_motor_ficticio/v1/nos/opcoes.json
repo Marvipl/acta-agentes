@@ -1,0 +1,126 @@
+{
+  "criterios_escolha": [
+    {
+      "criterio": "aderencia",
+      "peso": 3
+    },
+    {
+      "criterio": "caixa",
+      "peso": 2
+    }
+  ],
+  "opcoes": [
+    {
+      "id": "O1",
+      "nome": "Opção fictícia O1",
+      "tese": "FICTÍCIO – teste do motor",
+      "aspiracao": "FICTÍCIO – teste do motor",
+      "onde_jogar": {
+        "segmentos": [
+          "Segmento fictício"
+        ],
+        "clientes": [],
+        "geografia": [
+          "Brasil"
+        ],
+        "canais": []
+      },
+      "como_vencer": "FICTÍCIO – teste do motor",
+      "capacidades_necessarias": [],
+      "sistemas_de_gestao": [],
+      "wmbt": [
+        {
+          "id": "O1-W1",
+          "condicao": "FICTÍCIO – teste do motor",
+          "teste": "FICTÍCIO – teste do motor",
+          "criterio_de_falha": "FICTÍCIO – teste do motor",
+          "prazo": "2027-06",
+          "status": "nao_testada"
+        },
+        {
+          "id": "O1-W2",
+          "condicao": "FICTÍCIO – teste do motor",
+          "teste": "FICTÍCIO – teste do motor",
+          "criterio_de_falha": "FICTÍCIO – teste do motor",
+          "prazo": "2027-06",
+          "status": "nao_testada"
+        },
+        {
+          "id": "O1-W3",
+          "condicao": "FICTÍCIO – teste do motor",
+          "teste": "FICTÍCIO – teste do motor",
+          "criterio_de_falha": "FICTÍCIO – teste do motor",
+          "prazo": "2027-06",
+          "status": "nao_testada"
+        }
+      ],
+      "notas": {
+        "aderencia": 4,
+        "caixa": 3
+      },
+      "riscos": [],
+      "evidencias": []
+    },
+    {
+      "id": "O2",
+      "nome": "Opção fictícia O2",
+      "tese": "FICTÍCIO – teste do motor",
+      "aspiracao": "FICTÍCIO – teste do motor",
+      "onde_jogar": {
+        "segmentos": [
+          "Segmento fictício"
+        ],
+        "clientes": [],
+        "geografia": [
+          "Brasil"
+        ],
+        "canais": []
+      },
+      "como_vencer": "FICTÍCIO – teste do motor",
+      "capacidades_necessarias": [],
+      "sistemas_de_gestao": [],
+      "wmbt": [
+        {
+          "id": "O2-W1",
+          "condicao": "FICTÍCIO – teste do motor",
+          "teste": "FICTÍCIO – teste do motor",
+          "criterio_de_falha": "FICTÍCIO – teste do motor",
+          "prazo": "2027-06",
+          "status": "nao_testada"
+        },
+        {
+          "id": "O2-W2",
+          "condicao": "FICTÍCIO – teste do motor",
+          "teste": "FICTÍCIO – teste do motor",
+          "criterio_de_falha": "FICTÍCIO – teste do motor",
+          "prazo": "2027-06",
+          "status": "nao_testada"
+        },
+        {
+          "id": "O2-W3",
+          "condicao": "FICTÍCIO – teste do motor",
+          "teste": "FICTÍCIO – teste do motor",
+          "criterio_de_falha": "FICTÍCIO – teste do motor",
+          "prazo": "2027-06",
+          "status": "nao_testada"
+        }
+      ],
+      "notas": {
+        "aderencia": 4,
+        "caixa": 3
+      },
+      "riscos": [],
+      "evidencias": []
+    }
+  ],
+  "recomendacao": {
+    "opcao": "O1",
+    "justificativa": "FICTÍCIO – teste do motor",
+    "o_que_nao_fazer": [
+      "FICTÍCIO – teste do motor"
+    ]
+  },
+  "premortem": [
+    "FICTÍCIO – teste do motor"
+  ]
+}

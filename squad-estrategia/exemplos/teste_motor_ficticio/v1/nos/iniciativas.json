@@ -1,0 +1,64 @@
+{
+  "itens": [
+    {
+      "id": "I01",
+      "nome": "Iniciativa fictícia 1",
+      "objetivo_id": "OB1",
+      "linha": "Linha A",
+      "tipo": "aposta",
+      "valor": 5,
+      "confianca": 0.6,
+      "esforco_pessoas_mes": {
+        "min": 4,
+        "provavel": 6,
+        "max": 9
+      },
+      "custo_externo": {
+        "min": 10000,
+        "provavel": 20000,
+        "max": 40000
+      },
+      "inicio": "2027-02",
+      "duracao_meses": 6,
+      "perfis": [
+        {
+          "perfil": "Engenheiro de software sênior",
+          "fte": 1.0
+        }
+      ],
+      "dependencias": [],
+      "marco_de_decisao": "2027-06: continuar se KR1.1 >= 5",
+      "fonte": "FICTÍCIO – teste do motor"
+    },
+    {
+      "id": "I02",
+      "nome": "Iniciativa fictícia 2",
+      "objetivo_id": "OB2",
+      "linha": "Linha A",
+      "tipo": "melhoria",
+      "valor": 3,
+      "confianca": 0.8,
+      "esforco_pessoas_mes": {
+        "min": 2,
+        "provavel": 3,
+        "max": 5
+      },
+      "custo_externo": {
+        "min": 0,
+        "provavel": 5000,
+        "max": 10000
+      },
+      "inicio": "2027-03",
+      "duracao_meses": 3,
+      "perfis": [
+        {
+          "perfil": "Comercial e suporte ao cliente",
+          "fte": 0.5
+        }
+      ],
+      "dependencias": [],
+      "marco_de_decisao": "2027-05",
+      "fonte": "FICTÍCIO – teste do motor"
+    }
+  ]
+}

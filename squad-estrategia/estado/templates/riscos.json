@@ -1,0 +1,16 @@
+{
+  "_template": true,
+  "itens": [
+    {
+      "id": "R01",
+      "risco": "",
+      "categoria": "mercado|execucao|financeiro|regulatorio|pessoas|tecnologia|parceiros",
+      "probabilidade": "alta|media|baixa",
+      "impacto": "alto|medio|baixo",
+      "gatilho": "",
+      "mitigacao": "",
+      "plano_b": "",
+      "dono": ""
+    }
+  ]
+}

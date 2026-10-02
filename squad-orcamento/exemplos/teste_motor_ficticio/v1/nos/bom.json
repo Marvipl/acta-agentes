@@ -1,0 +1,116 @@
+{
+  "itens": [
+    {
+      "id": "B01",
+      "ref_tecnica": "T01",
+      "wbs_id": "1.2",
+      "descricao": "AMR 100 kg",
+      "fabricante": "[fictício]",
+      "modelo": "[fictício]",
+      "qtd": 3,
+      "unidade": "un",
+      "moeda": "USD",
+      "origem": "importado",
+      "preco_unit": {
+        "min": 20000,
+        "provavel": 25000,
+        "max": 30000
+      },
+      "fonte": {
+        "tipo": "cotacao",
+        "ref": "cotação fictícia (validade longa só para o teste não expirar)",
+        "data": "2026-10-01",
+        "validade_dias": 36500
+      },
+      "lead_time_dias": {
+        "min": 45,
+        "provavel": 60,
+        "max": 90
+      },
+      "alternativa": "",
+      "critico": true,
+      "pagamento": [
+        {
+          "evento": "pedido",
+          "pct": 0.5
+        },
+        {
+          "evento": "entrega",
+          "pct": 0.5
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "ref_tecnica": "T02",
+      "wbs_id": "1.2",
+      "descricao": "Estação de recarga",
+      "fabricante": "[fictício]",
+      "modelo": "[fictício]",
+      "qtd": 3,
+      "unidade": "un",
+      "moeda": "USD",
+      "origem": "importado",
+      "preco_unit": {
+        "min": 1500,
+        "provavel": 2000,
+        "max": 2500
+      },
+      "fonte": {
+        "tipo": "benchmark",
+        "ref": "pesquisa fictícia",
+        "data": "2026-10-01",
+        "validade_dias": 30
+      },
+      "lead_time_dias": {
+        "min": 30,
+        "provavel": 45,
+        "max": 60
+      },
+      "alternativa": "",
+      "critico": false,
+      "pagamento": [
+        {
+          "evento": "entrega",
+          "pct": 1.0
+        }
+      ]
+    },
+    {
+      "id": "B03",
+      "ref_tecnica": "T03",
+      "wbs_id": "1.2",
+      "descricao": "Licença de software",
+      "fabricante": "[fictício]",
+      "modelo": "[fictício]",
+      "qtd": 1,
+      "unidade": "un",
+      "moeda": "BRL",
+      "origem": "nacional",
+      "preco_unit": {
+        "min": 5000,
+        "provavel": 6000,
+        "max": 8000
+      },
+      "fonte": {
+        "tipo": "premissa",
+        "ref": "premissa fictícia",
+        "data": "2026-10-01",
+        "validade_dias": 30
+      },
+      "lead_time_dias": {
+        "min": 5,
+        "provavel": 10,
+        "max": 15
+      },
+      "alternativa": "",
+      "critico": false,
+      "pagamento": [
+        {
+          "evento": "pedido",
+          "pct": 1.0
+        }
+      ]
+    }
+  ]
+}

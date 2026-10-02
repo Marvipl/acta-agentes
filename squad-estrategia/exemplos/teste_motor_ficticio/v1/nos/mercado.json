@@ -1,0 +1,49 @@
+{
+  "tendencias": [
+    {
+      "id": "T01",
+      "titulo": "Tendência fictícia",
+      "descricao": "FICTÍCIO – teste do motor",
+      "horizonte": "2027",
+      "impacto_acta": "FICTÍCIO – teste do motor",
+      "evidencias": [
+        "MKT-01"
+      ]
+    }
+  ],
+  "dimensionamento": [
+    {
+      "segmento": "Segmento fictício",
+      "geografia": "Brasil",
+      "ano": 2027,
+      "tam": null,
+      "sam": null,
+      "som": null,
+      "moeda": "BRL",
+      "memoria_calculo": "FICTÍCIO – teste do motor",
+      "evidencias": [
+        "MKT-02"
+      ]
+    }
+  ],
+  "sinais_de_investimento": [],
+  "lacunas_de_fonte": [],
+  "evidencias": [
+    {
+      "id": "MKT-01",
+      "afirmacao": "FICTÍCIO",
+      "fonte": "FICTÍCIO – teste do motor",
+      "url": "https://exemplo.invalid",
+      "data": "2026-10-01",
+      "tipo": "confirmado"
+    },
+    {
+      "id": "MKT-02",
+      "afirmacao": "FICTÍCIO",
+      "fonte": "FICTÍCIO – teste do motor",
+      "url": "https://exemplo.invalid",
+      "data": "2026-10-01",
+      "tipo": "estimativa"
+    }
+  ]
+}

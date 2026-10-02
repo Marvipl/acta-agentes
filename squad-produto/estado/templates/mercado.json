@@ -1,0 +1,43 @@
+{
+  "_template": true,
+  "segmentos": [
+    {
+      "id": "SEG1",
+      "nome": "",
+      "descricao": "",
+      "clientes_potenciais": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "ticket_anual": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "memoria_calculo": "",
+      "evidencias": [
+        "MKT-01"
+      ]
+    }
+  ],
+  "tendencias": [
+    {
+      "titulo": "",
+      "impacto": "",
+      "evidencias": [
+        "MKT-01"
+      ]
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "MKT-01",
+      "afirmacao": "",
+      "fonte": "",
+      "url": "",
+      "data": "AAAA-MM-DD",
+      "tipo": "confirmado|reportado|estimativa|interno"
+    }
+  ]
+}

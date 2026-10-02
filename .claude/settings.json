@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(Invoke-RestMethod:*)",
+      "Bash(Invoke-WebRequest:*)",
+      "Bash(curl:*)",
+      "Bash(ftp:*)",
+      "Bash(irm:*)",
+      "Bash(iwr:*)",
+      "Bash(scp:*)",
+      "Bash(wget:*)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ferramentas/preparar_nuvem.py",
+            "timeout": 900
+          }
+        ]
+      }
+    ]
+  }
+}

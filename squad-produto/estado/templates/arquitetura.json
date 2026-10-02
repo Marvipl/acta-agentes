@@ -1,0 +1,33 @@
+{
+  "_template": true,
+  "visao": "",
+  "componentes": [
+    {
+      "id": "CP1",
+      "nome": "",
+      "tipo": "hardware|software|servico|integracao",
+      "decisao": "fazer|comprar|parceria",
+      "alternativas": [
+        {
+          "opcao": "",
+          "fornecedor": "",
+          "fonte": ""
+        }
+      ],
+      "trl": null,
+      "por_unidade": true,
+      "custo_unitario": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "fonte_custo": "",
+      "requisitos": [
+        "RQ01"
+      ],
+      "riscos_tecnicos": []
+    }
+  ],
+  "interfaces": [],
+  "riscos": []
+}

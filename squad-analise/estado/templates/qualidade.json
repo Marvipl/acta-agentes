@@ -1,0 +1,32 @@
+{
+  "_template": true,
+  "problemas": [
+    {
+      "id": "QD1",
+      "tabela": "",
+      "coluna": "",
+      "problema": "",
+      "linhas_afetadas": null,
+      "severidade": "alta|media|baixa",
+      "regra": "",
+      "etapa": ""
+    }
+  ],
+  "pseudonimizar": [
+    {
+      "tabela": "",
+      "coluna": ""
+    }
+  ],
+  "excluir_colunas": [
+    {
+      "tabela": "",
+      "coluna": "",
+      "motivo": ""
+    }
+  ],
+  "vies_de_amostra": [
+    ""
+  ],
+  "conclusao": ""
+}

@@ -1,0 +1,64 @@
+{
+  "id": "ANA-001",
+  "valores": {
+    "dif_duracao_min": {
+      "valor": 1.783897077586115,
+      "unidade": "min",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": 1.3684497541464244,
+        "superior": 2.1993444010258054,
+        "nivel": 0.95
+      },
+      "p_valor": 9.306953205698285e-17,
+      "efeito_d": 0.36159881138830996,
+      "n": [
+        811,
+        2189
+      ],
+      "teste": "Welch",
+      "amostra_pequena": false,
+      "media_a": 15.294710234278668,
+      "media_b": 13.510813156692553
+    },
+    "dif_relativa": {
+      "valor": 0.132034767774319,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.1005454369021098,
+        "superior": 0.1650356122603192,
+        "nivel": 0.95
+      },
+      "n": [
+        811,
+        2189
+      ]
+    },
+    "missoes_noite_por_mes": {
+      "valor": 135,
+      "unidade": "missões/mês",
+      "incerteza": null,
+      "contagem": true
+    },
+    "robusto_por_modelo": {
+      "valor": 1.0,
+      "unidade": "",
+      "incerteza": null,
+      "contagem": true
+    },
+    "robusto_por_mes": {
+      "valor": 1.0,
+      "unidade": "",
+      "incerteza": null,
+      "contagem": true
+    }
+  },
+  "tabelas": {
+    "robustez": "robustez.csv"
+  },
+  "figuras": [],
+  "notas": "FICTÍCIO",
+  "em": "2026-10-02T22:10:16",
+  "segundos": 0.19
+}

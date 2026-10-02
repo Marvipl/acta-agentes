@@ -1,0 +1,155 @@
+{
+  "arquitetura": "3 AMRs com recarga automática.",
+  "solucoes": [
+    {
+      "id": "S1",
+      "nome": "Transporte autônomo",
+      "descricao": "",
+      "wbs_ids": [
+        "1.1",
+        "1.2"
+      ],
+      "dimensionamento": [
+        {
+          "parametro": "robôs",
+          "valor": 3,
+          "unidade": "un",
+          "memoria_calculo": "demanda fictícia / ciclo fictício",
+          "fonte": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "alternativas": [
+        {
+          "id": "S1-A",
+          "opcao": "AMR fictício A",
+          "fabricante": "[fictício]",
+          "origem": "mercado",
+          "notas": {
+            "aderencia_requisitos": 4,
+            "custo_total_propriedade": 4,
+            "suporte_pecas_brasil": 3
+          },
+          "custo_indicativo": null,
+          "fonte": "FICTÍCIO"
+        },
+        {
+          "id": "S1-B",
+          "opcao": "AMR fictício B",
+          "fabricante": "[fictício]",
+          "origem": "mercado",
+          "notas": {
+            "aderencia_requisitos": 4,
+            "custo_total_propriedade": 3,
+            "suporte_pecas_brasil": 2
+          },
+          "custo_indicativo": null,
+          "fonte": "FICTÍCIO"
+        },
+        {
+          "id": "S1-C",
+          "opcao": "AMR fictício C",
+          "fabricante": "[fictício]",
+          "origem": "acta",
+          "notas": {
+            "aderencia_requisitos": 3,
+            "custo_total_propriedade": 3,
+            "suporte_pecas_brasil": 5
+          },
+          "custo_indicativo": null,
+          "fonte": "FICTÍCIO"
+        }
+      ],
+      "escolhida": "S1-A",
+      "justificativa": "Maior nota ponderada na matriz (FICTÍCIO)"
+    }
+  ],
+  "lista_tecnica": [
+    {
+      "id": "T01",
+      "wbs_id": "1.2",
+      "descricao": "AMR 100 kg",
+      "especificacao": "[●]",
+      "qtd": 3,
+      "unidade": "un",
+      "critico": true
+    },
+    {
+      "id": "T02",
+      "wbs_id": "1.2",
+      "descricao": "Estação de recarga",
+      "especificacao": "[●]",
+      "qtd": 3,
+      "unidade": "un",
+      "critico": false
+    },
+    {
+      "id": "T03",
+      "wbs_id": "1.2",
+      "descricao": "Licença de software",
+      "especificacao": "[●]",
+      "qtd": 1,
+      "unidade": "un",
+      "critico": false
+    }
+  ],
+  "esforco": [
+    {
+      "id": "E01",
+      "wbs_id": "1.1",
+      "perfil": "Engenheiro de software sênior",
+      "categoria": "software",
+      "horas": {
+        "min": 120,
+        "provavel": 160,
+        "max": 240
+      },
+      "fonte": "FICTÍCIO – teste do motor"
+    },
+    {
+      "id": "E02",
+      "wbs_id": "1.1",
+      "perfil": "Engenheiro eletrônico pleno",
+      "categoria": "eletronica",
+      "horas": {
+        "min": 40,
+        "provavel": 60,
+        "max": 100
+      },
+      "fonte": "FICTÍCIO – teste do motor"
+    }
+  ],
+  "requisitos_infra_cliente": [
+    {
+      "id": "IC01",
+      "item": "Wi-Fi",
+      "especificacao": "[●]",
+      "responsavel": "cliente"
+    }
+  ],
+  "rastreabilidade": [
+    {
+      "requisito_id": "R01",
+      "solucao_id": "S1",
+      "como_atende": "AMR 100 kg"
+    },
+    {
+      "requisito_id": "R02",
+      "solucao_id": "S1",
+      "como_atende": "recarga automática"
+    }
+  ],
+  "criterios_selecao": [
+    {
+      "criterio": "aderencia_requisitos",
+      "peso": 3
+    },
+    {
+      "criterio": "custo_total_propriedade",
+      "peso": 3
+    },
+    {
+      "criterio": "suporte_pecas_brasil",
+      "peso": 2
+    }
+  ]
+}

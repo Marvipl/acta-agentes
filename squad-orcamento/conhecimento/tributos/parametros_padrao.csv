@@ -1,0 +1,5 @@
+parametro,regime,valor,fonte,data,observacoes
+impostos_receita_pct.produto,[regime atual],,[contador],,fração (0.15 = 15%)
+impostos_receita_pct.servico,[regime atual],,[contador],,
+impostos_receita_pct.locacao,[regime atual],,[contador],,
+custo_importacao_pct.padrao,,,[contador / despachante],,sobre FOB convertido; inclui tributos e despesas de importação

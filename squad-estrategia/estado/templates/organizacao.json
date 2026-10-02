@@ -1,0 +1,18 @@
+{
+  "_template": true,
+  "estrutura": "",
+  "custo_pessoal_mensal_atual": null,
+  "custo_pessoal_fonte": "",
+  "contratacoes": [
+    {
+      "perfil": "",
+      "quantidade": null,
+      "mes_inicio": "AAAA-MM",
+      "custo_mensal_unitario": null,
+      "justificativa": "",
+      "fonte": ""
+    }
+  ],
+  "desligamentos_ou_realocacoes": [],
+  "cultura_e_rituais": []
+}

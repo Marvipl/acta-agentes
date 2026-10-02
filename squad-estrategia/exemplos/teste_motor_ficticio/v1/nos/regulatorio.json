@@ -1,0 +1,25 @@
+{
+  "itens": [
+    {
+      "tema": "reforma",
+      "descricao": "FICTÍCIO – teste do motor",
+      "impacto": "FICTÍCIO – teste do motor",
+      "prazo": "2027",
+      "evidencias": [
+        "REG-01"
+      ]
+    }
+  ],
+  "fomento_calendario": [],
+  "capital": [],
+  "evidencias": [
+    {
+      "id": "REG-01",
+      "afirmacao": "FICTÍCIO",
+      "fonte": "FICTÍCIO – teste do motor",
+      "url": "https://exemplo.invalid",
+      "data": "2026-10-01",
+      "tipo": "confirmado"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+# Orçamentos reais ficam fora do git (dados de clientes); são publicados no Drive
+projetos/*
+!projetos/.gitkeep
+# Documentos de clientes da pasta de entrada ficam fora do git
+entrada/*
+!entrada/LEIA.md

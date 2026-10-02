@@ -1,0 +1,139 @@
+{
+  "tabelas": [
+    {
+      "nome": "raw_missoes",
+      "origem": "Sistema fictício de frota",
+      "versao": "1",
+      "data_extracao": "2026-10-02",
+      "granularidade": "uma linha por missão",
+      "chave": [
+        "id_missao"
+      ],
+      "fuso_horario": "America/Sao_Paulo",
+      "colunas": [
+        {
+          "nome": "id_missao",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": false
+        },
+        {
+          "nome": "robo_id",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": false
+        },
+        {
+          "nome": "data",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": false
+        },
+        {
+          "nome": "turno",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": false
+        },
+        {
+          "nome": "duracao_min",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": false
+        },
+        {
+          "nome": "distancia_m",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": false
+        },
+        {
+          "nome": "carga_kg",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": false
+        },
+        {
+          "nome": "falha",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": false
+        },
+        {
+          "nome": "operador_nome",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": true
+        },
+        {
+          "nome": "operador_cpf",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": true
+        }
+      ]
+    },
+    {
+      "nome": "raw_robos",
+      "origem": "Cadastro fictício",
+      "versao": "1",
+      "data_extracao": "2026-10-02",
+      "granularidade": "uma linha por robô",
+      "chave": [
+        "robo_id"
+      ],
+      "fuso_horario": "America/Sao_Paulo",
+      "colunas": [
+        {
+          "nome": "robo_id",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": false
+        },
+        {
+          "nome": "modelo",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": false
+        },
+        {
+          "nome": "ano_fabricacao",
+          "tipo": "",
+          "unidade": "",
+          "significado": "FICTÍCIO – teste do motor",
+          "pessoal": false
+        }
+      ]
+    }
+  ],
+  "metricas": [
+    {
+      "id": "M1",
+      "nome": "Duração média da missão",
+      "definicao": "Tempo médio entre o início e o fim de uma missão concluída",
+      "formula": "avg(duracao_min)",
+      "unidade": "min",
+      "exclusoes": "nenhuma",
+      "tabela": "prep_missoes"
+    }
+  ],
+  "relacoes": [
+    {
+      "de": "raw_missoes.robo_id",
+      "para": "raw_robos.robo_id",
+      "tipo": "n:1"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "_template": true,
+  "tipo": "decisao|exploratoria",
+  "decisao": "",
+  "alternativas": [
+    ""
+  ],
+  "criterios": [
+    {
+      "id": "CR1",
+      "criterio": "",
+      "metrica": "",
+      "limite": "",
+      "sentido": "maior_melhor|menor_melhor"
+    }
+  ],
+  "perguntas": [
+    {
+      "id": "P1",
+      "pergunta": "",
+      "criterio_ref": "CR1"
+    }
+  ],
+  "impacto_esperado": "",
+  "restricoes": [],
+  "prazo": "AAAA-MM-DD",
+  "quem_decide": "",
+  "dimensoes": [
+    {
+      "id": "A01",
+      "status": "completo|premissa|parcial|ausente|nao_se_aplica",
+      "evidencias": [
+        ""
+      ],
+      "lacunas": [
+        ""
+      ],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    }
+  ],
+  "perguntas_chave": [
+    {
+      "id": "Q01",
+      "rodada": 1,
+      "dimensao": "A01",
+      "pergunta": "",
+      "por_que_importa": "",
+      "impacto": "alto|medio",
+      "formato": "escolha|numero|texto",
+      "opcoes": [],
+      "resposta_proposta": "",
+      "destinatario": "marcus|terceiros",
+      "status": "aberta|respondida|convertida_em_premissa",
+      "resposta": ""
+    }
+  ],
+  "rodada_atual": 1
+}

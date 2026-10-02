@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(Invoke-WebRequest:*)",
+      "Bash(Invoke-RestMethod:*)",
+      "Bash(iwr:*)",
+      "Bash(irm:*)",
+      "Bash(scp:*)",
+      "Bash(ftp:*)"
+    ]
+  }
+}

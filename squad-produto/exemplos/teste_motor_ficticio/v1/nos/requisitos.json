@@ -1,0 +1,49 @@
+{
+  "itens": [
+    {
+      "id": "RQ01",
+      "tipo": "funcional",
+      "descricao": "Transportar carga",
+      "prioridade": "must",
+      "origem": [
+        "J1"
+      ],
+      "criterio_aceite": "Carga de 100 kg por 8 h",
+      "metrica": "kg",
+      "valor_alvo": "100",
+      "release": "MVP",
+      "especificacao_ref": "ESP1",
+      "valor_alvo_num": 100,
+      "justificativa_alvo": ""
+    },
+    {
+      "id": "RQ02",
+      "tipo": "regulatorio",
+      "descricao": "Atender norma fictícia",
+      "prioridade": "must",
+      "origem": [
+        "N1"
+      ],
+      "criterio_aceite": "Certificado emitido",
+      "metrica": "certificado",
+      "valor_alvo": "sim",
+      "release": "MVP"
+    },
+    {
+      "id": "RQ03",
+      "tipo": "funcional",
+      "descricao": "Integração com sistema do cliente",
+      "prioridade": "should",
+      "origem": [
+        "DR1"
+      ],
+      "criterio_aceite": "Chamada via API",
+      "metrica": "",
+      "valor_alvo": "",
+      "release": "R1"
+    }
+  ],
+  "fora_de_escopo": [
+    "FICTÍCIO – teste do motor"
+  ]
+}

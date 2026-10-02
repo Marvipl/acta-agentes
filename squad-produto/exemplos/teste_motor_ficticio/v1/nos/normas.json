@@ -1,0 +1,29 @@
+{
+  "itens": [
+    {
+      "id": "N1",
+      "norma": "Norma fictícia de segurança",
+      "aplicavel": true,
+      "requisito_derivado": "FICTÍCIO – teste do motor",
+      "custo_certificacao": {
+        "min": 10000,
+        "provavel": 20000,
+        "max": 40000
+      },
+      "prazo_meses": 4,
+      "evidencias": [
+        "NOR-01"
+      ]
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "NOR-01",
+      "afirmacao": "FICTÍCIO",
+      "fonte": "FICTÍCIO – teste do motor",
+      "url": "https://exemplo.invalid",
+      "data": "2026-10-01",
+      "tipo": "confirmado"
+    }
+  ]
+}

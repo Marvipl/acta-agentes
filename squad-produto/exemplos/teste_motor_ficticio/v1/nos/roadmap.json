@@ -1,0 +1,53 @@
+{
+  "releases": [
+    {
+      "id": "MVP",
+      "objetivo": "FICTÍCIO – teste do motor",
+      "requisitos": [
+        "RQ01",
+        "RQ02"
+      ],
+      "inicio": "2027-02",
+      "duracao_meses": 5,
+      "perfis": [
+        {
+          "perfil": "Engenheiro de software sênior",
+          "fte": 0.8
+        }
+      ],
+      "marco_de_decisao": "2027-07: piloto atinge critério"
+    },
+    {
+      "id": "R1",
+      "objetivo": "FICTÍCIO – teste do motor",
+      "requisitos": [
+        "RQ03"
+      ],
+      "inicio": "2027-08",
+      "duracao_meses": 3,
+      "perfis": [
+        {
+          "perfil": "Engenheiro de software sênior",
+          "fte": 0.5
+        }
+      ],
+      "marco_de_decisao": "2027-11"
+    }
+  ],
+  "gtm": {
+    "segmento_inicial": "SEG1",
+    "canais": [
+      "venda direta"
+    ],
+    "mensagem": "FICTÍCIO – teste do motor",
+    "parceiros": [],
+    "pilotos": [
+      {
+        "perfil_cliente": "FICTÍCIO – teste do motor",
+        "objetivo": "FICTÍCIO – teste do motor",
+        "criterio_sucesso": "FICTÍCIO – teste do motor"
+      }
+    ],
+    "metas_lancamento": []
+  }
+}

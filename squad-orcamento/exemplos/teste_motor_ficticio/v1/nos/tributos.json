@@ -1,0 +1,17 @@
+{
+  "regime": "presumido",
+  "estabelecimento_emissor": "[●]",
+  "custo_importacao_pct": {
+    "padrao": 0.8
+  },
+  "custo_aquisicao_nacional_pct": 0.0,
+  "impostos_receita_pct": {
+    "produto": 0.15,
+    "servico": 0.17,
+    "locacao": 0.12
+  },
+  "memoria_calculo": "FICTÍCIO",
+  "fontes": [
+    "FICTÍCIO – teste do motor"
+  ]
+}

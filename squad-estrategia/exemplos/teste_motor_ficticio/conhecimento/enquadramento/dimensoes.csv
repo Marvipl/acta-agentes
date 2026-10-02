@@ -1,0 +1,9 @@
+id,nome,critica,peso,o_que_cobrir
+E01,Ambição e horizonte,sim,3,"O que é vencer no ciclo e na direção de longo prazo; horizonte de execução e de direção"
+E02,Uso do plano,sim,2,"Para quem e para quê: governança interna, conselho, captação; formato esperado"
+E03,Restrições,sim,3,"Caixa disponível, equipe, compromissos contratuais, prazos de fomento"
+E04,Decisões já tomadas,sim,3,"O que não está em discussão e o que está explicitamente aberto"
+E05,Dados internos disponíveis,sim,3,"Realizado do ano, budget, DRE, pipeline, contratos; onde estão"
+E06,Apetite a risco,nao,2,"Quanto risco de caixa e de foco o fundador e os sócios aceitam"
+E07,Partes interessadas e aprovação,nao,1,"Quem precisa aprovar e quem precisa ser ouvido"
+E08,Prazo do ciclo de planejamento,nao,1,"Data em que o plano precisa estar pronto"

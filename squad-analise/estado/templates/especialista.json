@@ -1,0 +1,49 @@
+{
+  "_template": true,
+  "setor": "",
+  "subsetor": "",
+  "papel": "",
+  "senioridade": "",
+  "foco": "",
+  "conhecimentos": [
+    {
+      "tema": "",
+      "conteudo": "",
+      "fonte": "",
+      "url": "",
+      "confianca": "alta|media|baixa"
+    }
+  ],
+  "indicadores": [
+    {
+      "nome": "",
+      "formula": "",
+      "faixa_tipica": "",
+      "fonte": "",
+      "confianca": "alta|media|baixa"
+    }
+  ],
+  "faixas_plausiveis": [
+    {
+      "tabela": "",
+      "coluna": "",
+      "min": null,
+      "max": null,
+      "justificativa": "",
+      "fonte": "",
+      "confianca": "alta|media|baixa"
+    }
+  ],
+  "armadilhas": [
+    ""
+  ],
+  "perguntas_do_especialista": [
+    ""
+  ],
+  "vocabulario": [
+    {
+      "termo": "",
+      "significado": ""
+    }
+  ]
+}

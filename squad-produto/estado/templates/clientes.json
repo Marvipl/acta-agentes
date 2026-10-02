@@ -1,0 +1,67 @@
+{
+  "_template": true,
+  "jtbd": [
+    {
+      "id": "J1",
+      "job": "",
+      "situacao": "",
+      "resultado_esperado": "",
+      "segmento": "SEG1",
+      "frequencia": "",
+      "evidencias": [
+        "CLI-01"
+      ]
+    }
+  ],
+  "dores": [
+    {
+      "id": "DR1",
+      "dor": "",
+      "intensidade": null,
+      "frequencia": "",
+      "jtbd_id": "J1",
+      "evidencias": [
+        "CLI-01"
+      ]
+    }
+  ],
+  "ganhos": [
+    {
+      "id": "GN1",
+      "ganho": "",
+      "jtbd_id": "J1",
+      "evidencias": [
+        "CLI-01"
+      ]
+    }
+  ],
+  "personas": [
+    {
+      "id": "PS1",
+      "papel": "",
+      "tipo": "decisor|usuario|influenciador|pagador",
+      "objetivos": [],
+      "criterios_de_compra": []
+    }
+  ],
+  "alternativas_atuais": [
+    {
+      "alternativa": "",
+      "custo_atual": "",
+      "problemas": [],
+      "evidencias": [
+        "CLI-01"
+      ]
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "CLI-01",
+      "afirmacao": "",
+      "fonte": "",
+      "url": "",
+      "data": "AAAA-MM-DD",
+      "tipo": "confirmado|reportado|estimativa|interno"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+id,nome,critica,peso,o_que_cobrir
+D01,Objetivo e critério de sucesso,sim,3,"Problema do cliente, resultado esperado e como ele vai medir sucesso (KPI, economia, ganho)"
+D02,"Tarefa, carga e volume",sim,3,"O que a solução faz, objeto ou carga (peso, dimensões), volume por hora/dia, picos, turnos"
+D03,Ambiente e percursos,sim,3,"Local, áreas, distâncias, piso, rampas, portas, elevadores, área externa, clima, maresia, poeira"
+D04,Integrações e sistemas,nao,2,"ERP, WMS, elevadores, controle de acesso, CFTV, aplicativos; quem fornece a interface"
+D05,Infraestrutura disponível,nao,2,"Energia, rede e Wi-Fi, espaço para recarga e servidores, obra civil necessária"
+D06,Prazo e restrições de implantação,nao,2,"Data desejada, marcos do cliente, janelas de instalação, dependência de obra"
+D07,"Segurança, normas e regulatório",nao,2,"Convivência com pessoas, normas aplicáveis, ANATEL, ANAC/DECEA, LGPD, segurança privada"
+D08,Modelo comercial e orçamento,sim,3,"Venda, locação ou serviço; verba disponível; forma de pagamento; concorrentes na disputa"
+D09,Operação e pós-venda,nao,1,"Quem opera, horário de operação, SLA esperado, suporte"
+D10,Decisão e partes interessadas,nao,1,"Quem decide, processo de compra, prazo da decisão"

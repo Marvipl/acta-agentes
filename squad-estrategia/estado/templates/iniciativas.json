@@ -1,0 +1,35 @@
+{
+  "_template": true,
+  "itens": [
+    {
+      "id": "I01",
+      "nome": "",
+      "objetivo_id": "OB1",
+      "linha": "",
+      "tipo": "aposta|melhoria|obrigatoria",
+      "valor": null,
+      "confianca": null,
+      "esforco_pessoas_mes": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "custo_externo": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "inicio": "AAAA-MM",
+      "duracao_meses": null,
+      "perfis": [
+        {
+          "perfil": "",
+          "fte": null
+        }
+      ],
+      "dependencias": [],
+      "marco_de_decisao": "",
+      "fonte": ""
+    }
+  ]
+}

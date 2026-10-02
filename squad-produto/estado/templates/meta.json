@@ -1,0 +1,11 @@
+{
+  "_template": true,
+  "projeto_id": "",
+  "produto": "",
+  "segmento": "",
+  "versao": 1,
+  "modo": "completo|oportunidade",
+  "data_base": "AAAA-MM-DD",
+  "mes_inicio": "AAAA-MM",
+  "moeda": "BRL"
+}

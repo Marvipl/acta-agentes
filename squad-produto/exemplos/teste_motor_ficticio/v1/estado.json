@@ -1,0 +1,908 @@
+{
+  "meta": {
+    "_aviso": "VALORES FICTÍCIOS",
+    "projeto_id": "exemplo-ficticio",
+    "produto": "Robô fictício de entrega",
+    "segmento": "Segmento fictício",
+    "versao": 1,
+    "modo": "completo",
+    "data_base": "2026-10-01",
+    "mes_inicio": "2027-01",
+    "moeda": "BRL"
+  },
+  "briefing": {
+    "texto": "Teste fictício do squad de produto.",
+    "documentos": [],
+    "pergunta": ""
+  },
+  "enquadramento": {
+    "objetivo": "FICTÍCIO – teste do motor",
+    "ligacao_estrategica": "FICTÍCIO – teste do motor",
+    "restricoes": [
+      "FICTÍCIO – teste do motor"
+    ],
+    "decisoes_ja_tomadas": [],
+    "fora_de_escopo": [],
+    "dimensoes": [
+      {
+        "id": "D01",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO – teste do motor"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D02",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO – teste do motor"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D03",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO – teste do motor"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D04",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO – teste do motor"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D05",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO – teste do motor"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D06",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO – teste do motor"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D07",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO – teste do motor"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D08",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO – teste do motor"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      }
+    ],
+    "perguntas": [],
+    "rodada_atual": 1
+  },
+  "mercado": {
+    "segmentos": [
+      {
+        "id": "SEG1",
+        "nome": "Segmento fictício",
+        "descricao": "FICTÍCIO – teste do motor",
+        "clientes_potenciais": {
+          "min": 200,
+          "provavel": 400,
+          "max": 800
+        },
+        "ticket_anual": {
+          "min": 50000,
+          "provavel": 80000,
+          "max": 120000
+        },
+        "memoria_calculo": "FICTÍCIO – teste do motor",
+        "evidencias": [
+          "MKT-01"
+        ]
+      }
+    ],
+    "tendencias": [],
+    "evidencias": [
+      {
+        "id": "MKT-01",
+        "afirmacao": "FICTÍCIO",
+        "fonte": "FICTÍCIO – teste do motor",
+        "url": "https://exemplo.invalid",
+        "data": "2026-10-01",
+        "tipo": "estimativa"
+      }
+    ]
+  },
+  "clientes": {
+    "jtbd": [
+      {
+        "id": "J1",
+        "job": "Levar itens entre setores sem tirar pessoas do posto",
+        "situacao": "FICTÍCIO – teste do motor",
+        "resultado_esperado": "FICTÍCIO – teste do motor",
+        "segmento": "SEG1",
+        "frequencia": "diária",
+        "evidencias": [
+          "CLI-01"
+        ]
+      }
+    ],
+    "dores": [
+      {
+        "id": "DR1",
+        "dor": "FICTÍCIO – teste do motor",
+        "intensidade": 4,
+        "frequencia": "diária",
+        "jtbd_id": "J1",
+        "evidencias": [
+          "CLI-01"
+        ]
+      }
+    ],
+    "ganhos": [],
+    "personas": [
+      {
+        "id": "PS1",
+        "papel": "Gerente de operações",
+        "tipo": "decisor",
+        "objetivos": [],
+        "criterios_de_compra": []
+      },
+      {
+        "id": "PS2",
+        "papel": "Operador",
+        "tipo": "usuario",
+        "objetivos": [],
+        "criterios_de_compra": []
+      }
+    ],
+    "alternativas_atuais": [
+      {
+        "alternativa": "Transporte manual",
+        "custo_atual": "FICTÍCIO – teste do motor",
+        "problemas": [],
+        "evidencias": [
+          "CLI-01"
+        ]
+      }
+    ],
+    "evidencias": [
+      {
+        "id": "CLI-01",
+        "afirmacao": "FICTÍCIO",
+        "fonte": "FICTÍCIO – teste do motor",
+        "url": "https://exemplo.invalid",
+        "data": "2026-10-01",
+        "tipo": "interno"
+      }
+    ]
+  },
+  "concorrencia": {
+    "criterios_comparacao": [
+      "preço",
+      "carga"
+    ],
+    "produtos": [
+      {
+        "nome": "Produto fictício 1",
+        "fabricante": "[fictício]",
+        "tipo": "produto",
+        "preco": {
+          "valor": null,
+          "moeda": "USD",
+          "tipo": "estimativa",
+          "unidade": "unidade",
+          "fonte": "CON-01"
+        },
+        "recursos": {},
+        "pontos_fortes": [],
+        "pontos_fracos": [],
+        "evidencias": [
+          "CON-01"
+        ],
+        "id": "PR1",
+        "ficha_tecnica_url": "https://exemplo.invalid/ficha.pdf",
+        "specs": {
+          "ESP1": {
+            "valor": 80,
+            "fonte": "CON-02",
+            "observacao": ""
+          },
+          "ESP2": {
+            "valor": 8,
+            "fonte": "CON-02",
+            "observacao": ""
+          },
+          "ESP3": {
+            "valor": 1.2,
+            "fonte": "CON-02",
+            "observacao": ""
+          },
+          "ESP4": {
+            "valor": 3,
+            "fonte": "CON-02",
+            "observacao": ""
+          },
+          "ESP5": {
+            "valor": "parcial",
+            "fonte": "CON-02",
+            "observacao": ""
+          }
+        },
+        "suporte_brasil": "parcial"
+      },
+      {
+        "nome": "Produto fictício 2",
+        "fabricante": "[fictício]",
+        "tipo": "produto",
+        "preco": {
+          "valor": null,
+          "moeda": "USD",
+          "tipo": "estimativa",
+          "unidade": "unidade",
+          "fonte": "CON-01"
+        },
+        "recursos": {},
+        "pontos_fortes": [],
+        "pontos_fracos": [],
+        "evidencias": [
+          "CON-01"
+        ],
+        "id": "PR2",
+        "ficha_tecnica_url": "https://exemplo.invalid/ficha.pdf",
+        "specs": {
+          "ESP1": {
+            "valor": 150,
+            "fonte": "CON-02",
+            "observacao": ""
+          },
+          "ESP2": {
+            "valor": 10,
+            "fonte": "CON-02",
+            "observacao": ""
+          },
+          "ESP3": {
+            "valor": 1.5,
+            "fonte": "CON-02",
+            "observacao": ""
+          },
+          "ESP4": {
+            "valor": 4,
+            "fonte": "CON-02",
+            "observacao": ""
+          },
+          "ESP5": {
+            "valor": "não",
+            "fonte": "CON-02",
+            "observacao": ""
+          }
+        },
+        "suporte_brasil": "não"
+      },
+      {
+        "nome": "Produto fictício 3",
+        "fabricante": "[fictício]",
+        "tipo": "produto",
+        "preco": {
+          "valor": null,
+          "moeda": "USD",
+          "tipo": "estimativa",
+          "unidade": "unidade",
+          "fonte": "CON-01"
+        },
+        "recursos": {},
+        "pontos_fortes": [],
+        "pontos_fracos": [],
+        "evidencias": [
+          "CON-01"
+        ],
+        "id": "PR3",
+        "ficha_tecnica_url": "https://exemplo.invalid/ficha.pdf",
+        "specs": {
+          "ESP1": {
+            "valor": 100,
+            "fonte": "CON-02",
+            "observacao": ""
+          },
+          "ESP2": {
+            "valor": 12,
+            "fonte": "CON-02",
+            "observacao": ""
+          },
+          "ESP3": {
+            "valor": 1.0,
+            "fonte": "CON-02",
+            "observacao": ""
+          },
+          "ESP4": {
+            "valor": 2.5,
+            "fonte": "CON-02",
+            "observacao": ""
+          },
+          "ESP5": {
+            "valor": "sim",
+            "fonte": "CON-02",
+            "observacao": ""
+          }
+        },
+        "suporte_brasil": "sim"
+      }
+    ],
+    "lacunas_de_mercado": [
+      {
+        "lacuna": "FICTÍCIO – teste do motor",
+        "jtbd_ref": "J1",
+        "evidencias": [
+          "CON-01"
+        ]
+      }
+    ],
+    "evidencias": [
+      {
+        "id": "CON-01",
+        "afirmacao": "FICTÍCIO",
+        "fonte": "FICTÍCIO – teste do motor",
+        "url": "https://exemplo.invalid",
+        "data": "2026-10-01",
+        "tipo": "reportado"
+      },
+      {
+        "id": "CON-02",
+        "afirmacao": "FICTÍCIO",
+        "fonte": "FICTÍCIO – teste do motor",
+        "url": "https://exemplo.invalid/ficha.pdf",
+        "data": "2026-10-02",
+        "tipo": "confirmado"
+      }
+    ],
+    "categoria_produto": "Robô fictício de entrega",
+    "especificacoes": [
+      {
+        "id": "ESP1",
+        "nome": "Carga útil",
+        "unidade": "kg",
+        "melhor": "maior",
+        "requisito_ref": "RQ01",
+        "observacao": ""
+      },
+      {
+        "id": "ESP2",
+        "nome": "Autonomia",
+        "unidade": "h",
+        "melhor": "maior",
+        "requisito_ref": "",
+        "observacao": ""
+      },
+      {
+        "id": "ESP3",
+        "nome": "Velocidade máxima",
+        "unidade": "m/s",
+        "melhor": "maior",
+        "requisito_ref": "",
+        "observacao": ""
+      },
+      {
+        "id": "ESP4",
+        "nome": "Tempo de recarga",
+        "unidade": "h",
+        "melhor": "menor",
+        "requisito_ref": "",
+        "observacao": ""
+      },
+      {
+        "id": "ESP5",
+        "nome": "Suporte no Brasil",
+        "unidade": "",
+        "melhor": "qualitativo",
+        "requisito_ref": "",
+        "observacao": ""
+      }
+    ]
+  },
+  "normas": {
+    "itens": [
+      {
+        "id": "N1",
+        "norma": "Norma fictícia de segurança",
+        "aplicavel": true,
+        "requisito_derivado": "FICTÍCIO – teste do motor",
+        "custo_certificacao": {
+          "min": 10000,
+          "provavel": 20000,
+          "max": 40000
+        },
+        "prazo_meses": 4,
+        "evidencias": [
+          "NOR-01"
+        ]
+      }
+    ],
+    "evidencias": [
+      {
+        "id": "NOR-01",
+        "afirmacao": "FICTÍCIO",
+        "fonte": "FICTÍCIO – teste do motor",
+        "url": "https://exemplo.invalid",
+        "data": "2026-10-01",
+        "tipo": "confirmado"
+      }
+    ]
+  },
+  "oportunidade": {
+    "problema": "FICTÍCIO – teste do motor",
+    "segmento_alvo": "SEG1",
+    "jtbd_alvo": [
+      "J1"
+    ],
+    "proposta_de_valor": {
+      "para_quem": "FICTÍCIO – teste do motor",
+      "que_problema": "FICTÍCIO – teste do motor",
+      "nossa_solucao": "FICTÍCIO – teste do motor",
+      "diferente_de": "FICTÍCIO – teste do motor",
+      "porque_acreditar": "FICTÍCIO – teste do motor"
+    },
+    "criterios": [
+      {
+        "criterio": "intensidade_da_dor",
+        "peso": 3
+      },
+      {
+        "criterio": "tamanho_do_mercado",
+        "peso": 2
+      },
+      {
+        "criterio": "vantagem_da_acta",
+        "peso": 2
+      }
+    ],
+    "notas": {
+      "intensidade_da_dor": 4,
+      "tamanho_do_mercado": 3,
+      "vantagem_da_acta": 3
+    },
+    "justificativas": {},
+    "decisao": "seguir",
+    "riscos_principais": [],
+    "evidencias": [
+      "CLI-01"
+    ]
+  },
+  "conceitos": {
+    "criterios_selecao": [
+      {
+        "criterio": "atende_jtbd",
+        "peso": 3
+      },
+      {
+        "criterio": "custo_e_preco",
+        "peso": 2
+      },
+      {
+        "criterio": "tempo_ate_mercado",
+        "peso": 2
+      }
+    ],
+    "conceitos": [
+      {
+        "id": "C1",
+        "nome": "Integrar robô de mercado",
+        "descricao": "FICTÍCIO – teste do motor",
+        "abordagem": "integrar",
+        "atende_jtbd": [
+          "J1"
+        ],
+        "notas": {
+          "atende_jtbd": 4,
+          "custo_e_preco": 4,
+          "tempo_ate_mercado": 5
+        },
+        "riscos": [],
+        "evidencias": []
+      },
+      {
+        "id": "C2",
+        "nome": "Construir plataforma própria",
+        "descricao": "FICTÍCIO – teste do motor",
+        "abordagem": "construir",
+        "atende_jtbd": [
+          "J1"
+        ],
+        "notas": {
+          "atende_jtbd": 5,
+          "custo_e_preco": 3,
+          "tempo_ate_mercado": 2
+        },
+        "riscos": [],
+        "evidencias": []
+      },
+      {
+        "id": "C3",
+        "nome": "Revender sem integração",
+        "descricao": "FICTÍCIO – teste do motor",
+        "abordagem": "revender",
+        "atende_jtbd": [
+          "J1"
+        ],
+        "notas": {
+          "atende_jtbd": 2,
+          "custo_e_preco": 5,
+          "tempo_ate_mercado": 5
+        },
+        "riscos": [],
+        "evidencias": []
+      }
+    ],
+    "escolhido": "C1",
+    "justificativa": "Maior nota ponderada (FICTÍCIO)"
+  },
+  "requisitos": {
+    "itens": [
+      {
+        "id": "RQ01",
+        "tipo": "funcional",
+        "descricao": "Transportar carga",
+        "prioridade": "must",
+        "origem": [
+          "J1"
+        ],
+        "criterio_aceite": "Carga de 100 kg por 8 h",
+        "metrica": "kg",
+        "valor_alvo": "100",
+        "release": "MVP",
+        "especificacao_ref": "ESP1",
+        "valor_alvo_num": 100,
+        "justificativa_alvo": ""
+      },
+      {
+        "id": "RQ02",
+        "tipo": "regulatorio",
+        "descricao": "Atender norma fictícia",
+        "prioridade": "must",
+        "origem": [
+          "N1"
+        ],
+        "criterio_aceite": "Certificado emitido",
+        "metrica": "certificado",
+        "valor_alvo": "sim",
+        "release": "MVP"
+      },
+      {
+        "id": "RQ03",
+        "tipo": "funcional",
+        "descricao": "Integração com sistema do cliente",
+        "prioridade": "should",
+        "origem": [
+          "DR1"
+        ],
+        "criterio_aceite": "Chamada via API",
+        "metrica": "",
+        "valor_alvo": "",
+        "release": "R1"
+      }
+    ],
+    "fora_de_escopo": [
+      "FICTÍCIO – teste do motor"
+    ]
+  },
+  "arquitetura": {
+    "visao": "FICTÍCIO – teste do motor",
+    "componentes": [
+      {
+        "id": "CP1",
+        "nome": "Base robótica",
+        "tipo": "hardware",
+        "decisao": "comprar",
+        "alternativas": [
+          {
+            "opcao": "A",
+            "fornecedor": "[fictício]",
+            "fonte": "FICTÍCIO – teste do motor"
+          },
+          {
+            "opcao": "B",
+            "fornecedor": "[fictício]",
+            "fonte": "FICTÍCIO – teste do motor"
+          }
+        ],
+        "trl": 8,
+        "por_unidade": true,
+        "custo_unitario": {
+          "min": 60000,
+          "provavel": 75000,
+          "max": 95000
+        },
+        "fonte_custo": "FICTÍCIO – teste do motor",
+        "requisitos": [
+          "RQ01"
+        ],
+        "riscos_tecnicos": []
+      },
+      {
+        "id": "CP2",
+        "nome": "Software de frota",
+        "tipo": "software",
+        "decisao": "fazer",
+        "alternativas": [
+          {
+            "opcao": "Próprio",
+            "fornecedor": "Acta",
+            "fonte": "FICTÍCIO – teste do motor"
+          },
+          {
+            "opcao": "Terceiro",
+            "fornecedor": "[fictício]",
+            "fonte": "FICTÍCIO – teste do motor"
+          }
+        ],
+        "trl": 6,
+        "por_unidade": true,
+        "custo_unitario": {
+          "min": 3000,
+          "provavel": 5000,
+          "max": 8000
+        },
+        "fonte_custo": "FICTÍCIO – teste do motor",
+        "requisitos": [
+          "RQ03"
+        ],
+        "riscos_tecnicos": []
+      }
+    ],
+    "interfaces": [],
+    "riscos": []
+  },
+  "negocio": {
+    "modelo_receita": "hibrido",
+    "mix": {
+      "venda": 0.4,
+      "locacao": 0.6
+    },
+    "preco_venda": 150000,
+    "preco_locacao_mensal": 6000,
+    "preco_servico_mensal": 800,
+    "preco_implantacao": 20000,
+    "custo_implantacao_por_cliente": {
+      "min": 8000,
+      "provavel": 12000,
+      "max": 20000
+    },
+    "custo_suporte_mensal_por_unidade": {
+      "min": 300,
+      "provavel": 500,
+      "max": 800
+    },
+    "custo_unitario_override": null,
+    "unidades_por_cliente": 2,
+    "volume_unidades_novas": {
+      "ano1": {
+        "min": 4,
+        "provavel": 8,
+        "max": 12
+      },
+      "ano2": {
+        "min": 10,
+        "provavel": 20,
+        "max": 30
+      },
+      "ano3": {
+        "min": 20,
+        "provavel": 35,
+        "max": 50
+      }
+    },
+    "investimento_desenvolvimento": {
+      "ano1": {
+        "min": 200000,
+        "provavel": 300000,
+        "max": 450000
+      },
+      "ano2": {
+        "min": 50000,
+        "provavel": 100000,
+        "max": 150000
+      },
+      "ano3": {
+        "min": 0,
+        "provavel": 50000,
+        "max": 100000
+      }
+    },
+    "impostos_receita_pct": 0.15,
+    "comissao_pct": 0.05,
+    "taxa_desconto_aa": 0.2,
+    "wtp": [
+      {
+        "fonte": "FICTÍCIO – teste do motor",
+        "valor": "FICTÍCIO – teste do motor",
+        "evidencias": [
+          "CLI-01"
+        ]
+      }
+    ],
+    "roi_cliente": {
+      "custo_atual_anual": 400000,
+      "custo_operacao_com_solucao_anual": 150000,
+      "memoria_calculo": "FICTÍCIO – teste do motor",
+      "evidencias": [
+        "CLI-01"
+      ]
+    },
+    "premissas": []
+  },
+  "validacao": {
+    "hipoteses": [
+      {
+        "id": "H01",
+        "hipotese": "FICTÍCIO – teste do motor",
+        "categoria": "desejabilidade",
+        "impacto": 5,
+        "incerteza": 4,
+        "evidencia_atual": "FICTÍCIO – teste do motor",
+        "experimento": {
+          "tipo": "entrevista",
+          "descricao": "FICTÍCIO – teste do motor",
+          "custo": 0,
+          "duracao_semanas": 2,
+          "criterio_sucesso": "FICTÍCIO – teste do motor",
+          "criterio_falha": "FICTÍCIO – teste do motor"
+        },
+        "status": "nao_testada",
+        "resultado": ""
+      },
+      {
+        "id": "H02",
+        "hipotese": "FICTÍCIO – teste do motor",
+        "categoria": "viabilidade",
+        "impacto": 4,
+        "incerteza": 4,
+        "evidencia_atual": "FICTÍCIO – teste do motor",
+        "experimento": {
+          "tipo": "entrevista",
+          "descricao": "FICTÍCIO – teste do motor",
+          "custo": 0,
+          "duracao_semanas": 2,
+          "criterio_sucesso": "FICTÍCIO – teste do motor",
+          "criterio_falha": "FICTÍCIO – teste do motor"
+        },
+        "status": "nao_testada",
+        "resultado": ""
+      },
+      {
+        "id": "H03",
+        "hipotese": "FICTÍCIO – teste do motor",
+        "categoria": "factibilidade",
+        "impacto": 3,
+        "incerteza": 3,
+        "evidencia_atual": "FICTÍCIO – teste do motor",
+        "experimento": {
+          "tipo": "entrevista",
+          "descricao": "FICTÍCIO – teste do motor",
+          "custo": 0,
+          "duracao_semanas": 2,
+          "criterio_sucesso": "FICTÍCIO – teste do motor",
+          "criterio_falha": "FICTÍCIO – teste do motor"
+        },
+        "status": "nao_testada",
+        "resultado": ""
+      },
+      {
+        "id": "H04",
+        "hipotese": "FICTÍCIO – teste do motor",
+        "categoria": "regulatoria",
+        "impacto": 4,
+        "incerteza": 2,
+        "evidencia_atual": "FICTÍCIO – teste do motor",
+        "experimento": {
+          "tipo": "entrevista",
+          "descricao": "FICTÍCIO – teste do motor",
+          "custo": 0,
+          "duracao_semanas": 2,
+          "criterio_sucesso": "FICTÍCIO – teste do motor",
+          "criterio_falha": "FICTÍCIO – teste do motor"
+        },
+        "status": "nao_testada",
+        "resultado": ""
+      },
+      {
+        "id": "H05",
+        "hipotese": "FICTÍCIO – teste do motor",
+        "categoria": "viabilidade",
+        "impacto": 3,
+        "incerteza": 2,
+        "evidencia_atual": "FICTÍCIO – teste do motor",
+        "experimento": {
+          "tipo": "entrevista",
+          "descricao": "FICTÍCIO – teste do motor",
+          "custo": 0,
+          "duracao_semanas": 2,
+          "criterio_sucesso": "FICTÍCIO – teste do motor",
+          "criterio_falha": "FICTÍCIO – teste do motor"
+        },
+        "status": "nao_testada",
+        "resultado": ""
+      }
+    ]
+  },
+  "roadmap": {
+    "releases": [
+      {
+        "id": "MVP",
+        "objetivo": "FICTÍCIO – teste do motor",
+        "requisitos": [
+          "RQ01",
+          "RQ02"
+        ],
+        "inicio": "2027-02",
+        "duracao_meses": 5,
+        "perfis": [
+          {
+            "perfil": "Engenheiro de software sênior",
+            "fte": 0.8
+          }
+        ],
+        "marco_de_decisao": "2027-07: piloto atinge critério"
+      },
+      {
+        "id": "R1",
+        "objetivo": "FICTÍCIO – teste do motor",
+        "requisitos": [
+          "RQ03"
+        ],
+        "inicio": "2027-08",
+        "duracao_meses": 3,
+        "perfis": [
+          {
+            "perfil": "Engenheiro de software sênior",
+            "fte": 0.5
+          }
+        ],
+        "marco_de_decisao": "2027-11"
+      }
+    ],
+    "gtm": {
+      "segmento_inicial": "SEG1",
+      "canais": [
+        "venda direta"
+      ],
+      "mensagem": "FICTÍCIO – teste do motor",
+      "parceiros": [],
+      "pilotos": [
+        {
+          "perfil_cliente": "FICTÍCIO – teste do motor",
+          "objetivo": "FICTÍCIO – teste do motor",
+          "criterio_sucesso": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "metas_lancamento": []
+    }
+  }
+}

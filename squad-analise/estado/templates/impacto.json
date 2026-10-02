@@ -1,0 +1,25 @@
+{
+  "_template": true,
+  "modelos": [
+    {
+      "id": "IMP-001",
+      "insight_ref": "INS-001",
+      "descricao": "",
+      "formula": "",
+      "premissas": {
+        "nome": {
+          "min": null,
+          "provavel": null,
+          "max": null,
+          "fonte": ""
+        }
+      },
+      "usa_resultados": {
+        "apelido": "ANA-001.chave"
+      },
+      "unidade": "R$/mes",
+      "investimento_ref": ""
+    }
+  ],
+  "iteracoes": 5000
+}

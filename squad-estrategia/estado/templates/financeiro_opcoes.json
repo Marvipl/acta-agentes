@@ -1,0 +1,66 @@
+{
+  "_template": true,
+  "opcoes": {
+    "O1": {
+      "anos": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "caixa_inicial": null,
+      "caixa_inicial_fonte": "",
+      "impostos_receita_pct": null,
+      "linhas": [
+        {
+          "linha": "",
+          "receita": {
+            "2027": null,
+            "2028": null,
+            "2029": null,
+            "2030": null
+          },
+          "margem_bruta_pct": null,
+          "premissa": "",
+          "evidencias": []
+        }
+      ],
+      "despesas": [
+        {
+          "item": "",
+          "valor": {
+            "2027": null,
+            "2028": null,
+            "2029": null,
+            "2030": null
+          },
+          "premissa": ""
+        }
+      ],
+      "pessoal_anual": null,
+      "capex": {
+        "2027": null,
+        "2028": null,
+        "2029": null,
+        "2030": null
+      },
+      "fomento": [
+        {
+          "programa": "",
+          "valor": null,
+          "mes": "AAAA-MM",
+          "status": "aprovado|submetido|previsto"
+        }
+      ],
+      "captacao": [
+        {
+          "tipo": "equity|divida|conversivel",
+          "valor": null,
+          "mes": "AAAA-MM",
+          "status": "assinado|em negociacao|previsto"
+        }
+      ]
+    }
+  },
+  "observacoes": ""
+}

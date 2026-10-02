@@ -1,0 +1,9 @@
+id,modo,dimensao,pergunta,por_que_importa,impacto_inicial,formato,opcoes,vezes_usada,vezes_mudou_o_plano,ultima_atualizacao
+BE01,todos,E01,"Em uma frase, o que precisa ser verdade em dez/2027 para o ano ter sido um sucesso?",Ancora a ambição e os OKRs,alto,texto,,0,0,
+BE02,todos,E03,Quanto caixa a Acta pode consumir no ciclo antes de precisar de nova captação?,Define o tamanho das apostas possíveis,alto,numero,,0,0,
+BE03,todos,E04,Quais decisões já estão tomadas e não devem ser rediscutidas?,Evita gastar o ciclo em temas fechados,alto,texto,,0,0,
+BE04,todos,E02,O plano será usado na captação? Com que valor e prazo previstos?,Muda o nível de detalhe financeiro e a narrativa,alto,texto,,0,0,
+BE05,todos,E05,Onde estão o realizado do ano e o pipeline atualizados?,Sem dado interno o diagnóstico vira opinião,alto,texto,,0,0,
+BE06,todos,E06,Qual o maior risco de caixa aceitável: prefere crescer mais devagar ou captar antes?,Define o desenho dos cenários,medio,escolha,crescer devagar|captar antes|depende do cenário,0,0,
+BE07,todos,E07,Quem precisa aprovar o plano e em que data?,Define o calendário dos portões,medio,texto,,0,0,
+BE08,estudo,E01,Que decisão este estudo precisa destravar e até quando?,Estudo sem decisão vira relatório,alto,texto,,0,0,

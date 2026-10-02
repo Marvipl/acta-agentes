@@ -1,0 +1,48 @@
+{
+  "gerado_em": "2026-10-02T22:10:16",
+  "projeto": "exemplo-ficticio",
+  "brutos": {
+    "missoes.csv": "50b34238636bbe1465d7c2683a3fbae293ea10b636e686abae999c50bc4b3881",
+    "robos.csv": "42ca0f022de7d0952530a67f8d975115ebf8f7f4ad5709801a3d397cf5ff1f59"
+  },
+  "preparacao": [
+    {
+      "etapa": "01_missoes.sql",
+      "sha256": "899b38f73d9241214c4feac6fd096311c3c36ee3d04a68a2c2eebb988cbcd2a6",
+      "tabelas": {
+        "prep_missoes": {
+          "linhas": 3000,
+          "impressao": "3658721357551516195"
+        }
+      }
+    }
+  ],
+  "analises": {
+    "ANA-001": {
+      "script_sha256": "ba6425ddefaa7a90dc8f227ba8e9f3f6d282e4cd46f0d8f951b66089c13d822d",
+      "resultado_sha256": "de9cdc87fc92742e58bb3f591bbacc01b27e5acbfe48606419ed08dc467b845e"
+    },
+    "ANA-002": {
+      "script_sha256": "670b4a11c5c8c9a26221f919c41845474e580448076894125e06a54f4dc074de",
+      "resultado_sha256": "861edd01883a099285e402c550d347c63433fb41dfd66e0a6c3c1fbbce61ce28"
+    }
+  },
+  "insights": {
+    "INS-001": "b54e7bb2e6efe165df94a30e51b64b9669c49fcee52807ff9b8eec51b417371b"
+  },
+  "ambiente": {
+    "python": "3.12.3",
+    "sistema": "Linux-6.18.44-fc-v51-x86_64-with-glibc2.39",
+    "pacotes": {
+      "duckdb": "1.5.6",
+      "pandas": "3.0.2",
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "statsmodels": "0.15.0",
+      "scikit-learn": "1.8.0",
+      "pyarrow": "25.0.1",
+      "matplotlib": "3.10.8",
+      "openpyxl": "3.1.5"
+    }
+  }
+}

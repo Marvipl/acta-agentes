@@ -1,0 +1,4 @@
+id,nome,inicio_dia,fim_dia,folga_dias,critica
+A01,Engenharia,0.0,30.0,0.0,True
+A02,Compras e importação,30.0,90.0,0.0,True
+A03,Implantação,90.0,110.0,0.0,True

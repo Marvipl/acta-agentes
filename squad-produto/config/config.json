@@ -1,0 +1,31 @@
+{
+  "_leia": "Parâmetros do squad de produto. Ajuste com o uso.",
+  "drive_produto_dir": "[caminho local da pasta Acta > Produtos sincronizada pelo Google Drive para desktop]",
+  "capacidade_time_csv": "../squad-orcamento/conhecimento/mao_de_obra/capacidade_time.csv",
+  "orcamento_entrada_dir": "../squad-orcamento/entrada",
+  "descoberta": {
+    "_leia": "Enquadramento: limiares de prontidão (modo completo usa 'completo'; oportunidade usa 'rapido').",
+    "max_perguntas_por_rodada": 7,
+    "max_rodadas": 2,
+    "prontidao_minima": {
+      "rapido": 0.5,
+      "completo": 0.8
+    },
+    "valor_status": {
+      "completo": 1.0,
+      "premissa": 0.7,
+      "parcial": 0.5,
+      "ausente": 0.0
+    }
+  },
+  "max_rodadas_revisao": 2,
+  "termos_proibidos": [
+    "Corsight",
+    "K.FLEET",
+    "KFLEET",
+    "K.CONCEPT",
+    "Venturus",
+    "SiDi"
+  ],
+  "dias_por_mes": 30.4
+}

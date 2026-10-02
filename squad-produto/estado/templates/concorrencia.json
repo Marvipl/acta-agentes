@@ -1,0 +1,67 @@
+{
+  "_template": true,
+  "categoria_produto": "[ex.: AMR de reboque, robô de entrega interna, robô de limpeza]",
+  "criterios_comparacao": [
+    ""
+  ],
+  "especificacoes": [
+    {
+      "id": "ESP1",
+      "nome": "Carga útil",
+      "unidade": "kg",
+      "melhor": "maior|menor|qualitativo",
+      "requisito_ref": "",
+      "observacao": ""
+    }
+  ],
+  "produtos": [
+    {
+      "id": "PR1",
+      "nome": "",
+      "fabricante": "",
+      "pais": "",
+      "tipo": "produto|servico|alternativa_nao_robotica",
+      "ficha_tecnica_url": "",
+      "preco": {
+        "valor": null,
+        "moeda": "USD|BRL|CNY",
+        "tipo": "lista|cotacao|estimativa",
+        "unidade": "unidade|mes",
+        "fonte": "CON-01"
+      },
+      "specs": {
+        "ESP1": {
+          "valor": null,
+          "fonte": "CON-01",
+          "observacao": ""
+        }
+      },
+      "suporte_brasil": "sim|parcial|nao",
+      "certificacoes": [],
+      "integracoes": [],
+      "recursos": {},
+      "pontos_fortes": [],
+      "pontos_fracos": [],
+      "evidencias": [
+        "CON-01"
+      ]
+    }
+  ],
+  "lacunas_de_mercado": [
+    {
+      "lacuna": "",
+      "jtbd_ref": "",
+      "evidencias": []
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "CON-01",
+      "afirmacao": "",
+      "fonte": "",
+      "url": "",
+      "data": "AAAA-MM-DD",
+      "tipo": "confirmado|reportado|estimativa|interno"
+    }
+  ]
+}

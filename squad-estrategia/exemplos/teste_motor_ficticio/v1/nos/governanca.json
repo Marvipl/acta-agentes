@@ -1,0 +1,20 @@
+{
+  "ritos": [
+    {
+      "nome": "Revisão trimestral",
+      "frequencia": "trimestral",
+      "participantes": [
+        "FICTÍCIO"
+      ],
+      "pauta": "FICTÍCIO – teste do motor",
+      "insumos": []
+    }
+  ],
+  "gatilhos_de_revisao": [
+    {
+      "gatilho": "FICTÍCIO – teste do motor",
+      "acao": "FICTÍCIO – teste do motor"
+    }
+  ],
+  "calendario_2027": []
+}

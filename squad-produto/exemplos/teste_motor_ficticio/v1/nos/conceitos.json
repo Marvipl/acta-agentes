@@ -1,0 +1,68 @@
+{
+  "criterios_selecao": [
+    {
+      "criterio": "atende_jtbd",
+      "peso": 3
+    },
+    {
+      "criterio": "custo_e_preco",
+      "peso": 2
+    },
+    {
+      "criterio": "tempo_ate_mercado",
+      "peso": 2
+    }
+  ],
+  "conceitos": [
+    {
+      "id": "C1",
+      "nome": "Integrar robô de mercado",
+      "descricao": "FICTÍCIO – teste do motor",
+      "abordagem": "integrar",
+      "atende_jtbd": [
+        "J1"
+      ],
+      "notas": {
+        "atende_jtbd": 4,
+        "custo_e_preco": 4,
+        "tempo_ate_mercado": 5
+      },
+      "riscos": [],
+      "evidencias": []
+    },
+    {
+      "id": "C2",
+      "nome": "Construir plataforma própria",
+      "descricao": "FICTÍCIO – teste do motor",
+      "abordagem": "construir",
+      "atende_jtbd": [
+        "J1"
+      ],
+      "notas": {
+        "atende_jtbd": 5,
+        "custo_e_preco": 3,
+        "tempo_ate_mercado": 2
+      },
+      "riscos": [],
+      "evidencias": []
+    },
+    {
+      "id": "C3",
+      "nome": "Revender sem integração",
+      "descricao": "FICTÍCIO – teste do motor",
+      "abordagem": "revender",
+      "atende_jtbd": [
+        "J1"
+      ],
+      "notas": {
+        "atende_jtbd": 2,
+        "custo_e_preco": 5,
+        "tempo_ate_mercado": 5
+      },
+      "riscos": [],
+      "evidencias": []
+    }
+  ],
+  "escolhido": "C1",
+  "justificativa": "Maior nota ponderada (FICTÍCIO)"
+}

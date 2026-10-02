@@ -1,0 +1,41 @@
+{
+  "_template": true,
+  "tabelas": [
+    {
+      "nome": "",
+      "origem": "",
+      "versao": "",
+      "data_extracao": "AAAA-MM-DD",
+      "granularidade": "uma linha por ...",
+      "chave": [],
+      "fuso_horario": "America/Sao_Paulo",
+      "colunas": [
+        {
+          "nome": "",
+          "tipo": "",
+          "unidade": "",
+          "significado": "",
+          "pessoal": false
+        }
+      ]
+    }
+  ],
+  "metricas": [
+    {
+      "id": "M1",
+      "nome": "",
+      "definicao": "",
+      "formula": "",
+      "unidade": "",
+      "exclusoes": "",
+      "tabela": ""
+    }
+  ],
+  "relacoes": [
+    {
+      "de": "tabela.coluna",
+      "para": "tabela.coluna",
+      "tipo": "n:1"
+    }
+  ]
+}

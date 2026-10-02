@@ -1,0 +1,52 @@
+{
+  "criterios_atratividade": [
+    {
+      "criterio": "tamanho_e_crescimento",
+      "peso": 2
+    },
+    {
+      "criterio": "margem",
+      "peso": 1
+    }
+  ],
+  "criterios_capacidade": [
+    {
+      "criterio": "vantagem_competitiva",
+      "peso": 1
+    },
+    {
+      "criterio": "tracao_atual",
+      "peso": 1
+    }
+  ],
+  "linhas": [
+    {
+      "linha": "Linha A",
+      "atratividade": {
+        "tamanho_e_crescimento": 4,
+        "margem": 3
+      },
+      "capacidade_vencer": {
+        "vantagem_competitiva": 4,
+        "tracao_atual": 3
+      },
+      "decisao": "investir",
+      "justificativa": "FICTÍCIO – teste do motor",
+      "evidencias": []
+    },
+    {
+      "linha": "Linha B",
+      "atratividade": {
+        "tamanho_e_crescimento": 2,
+        "margem": 2
+      },
+      "capacidade_vencer": {
+        "vantagem_competitiva": 2,
+        "tracao_atual": 1
+      },
+      "decisao": "colher",
+      "justificativa": "FICTÍCIO – teste do motor",
+      "evidencias": []
+    }
+  ]
+}

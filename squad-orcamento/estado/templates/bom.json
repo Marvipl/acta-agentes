@@ -1,0 +1,41 @@
+{
+  "_template": true,
+  "itens": [
+    {
+      "id": "B01",
+      "ref_tecnica": "T01",
+      "wbs_id": "",
+      "descricao": "",
+      "fabricante": "",
+      "modelo": "",
+      "qtd": null,
+      "unidade": "un",
+      "moeda": "USD|BRL|CNY",
+      "origem": "importado|nacional",
+      "preco_unit": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "fonte": {
+        "tipo": "cotacao|base_interna|benchmark|premissa",
+        "ref": "",
+        "data": "AAAA-MM-DD",
+        "validade_dias": null
+      },
+      "lead_time_dias": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "alternativa": "",
+      "critico": false,
+      "pagamento": [
+        {
+          "evento": "pedido|entrega",
+          "pct": null
+        }
+      ]
+    }
+  ]
+}

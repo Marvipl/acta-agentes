@@ -1,0 +1,78 @@
+{
+  "_leia": "Contrato de dados entre os agentes.",
+  "nos": {
+    "meta": {
+      "dono": "orquestrador",
+      "fase": "D0",
+      "depende_de": [],
+      "modelo": "estado/templates/meta.json"
+    },
+    "briefing": {
+      "dono": "orquestrador",
+      "fase": "D0",
+      "depende_de": [
+        "meta"
+      ],
+      "modelo": "estado/templates/briefing.json"
+    },
+    "decisao": {
+      "dono": "arquiteto-da-decisao",
+      "fase": "D0",
+      "depende_de": [
+        "briefing"
+      ],
+      "modelo": "estado/templates/decisao.json"
+    },
+    "contrato": {
+      "dono": "engenheiro-de-dados",
+      "fase": "D1",
+      "depende_de": [
+        "decisao"
+      ],
+      "modelo": "estado/templates/contrato.json"
+    },
+    "especialista": {
+      "dono": "perfilador-setorial",
+      "fase": "D1",
+      "depende_de": [
+        "decisao",
+        "contrato"
+      ],
+      "modelo": "estado/templates/especialista.json"
+    },
+    "qualidade": {
+      "dono": "qualidade-privacidade",
+      "fase": "D1",
+      "depende_de": [
+        "contrato",
+        "especialista"
+      ],
+      "modelo": "estado/templates/qualidade.json"
+    },
+    "plano": {
+      "dono": "planejador-analitico",
+      "fase": "D2",
+      "depende_de": [
+        "decisao",
+        "contrato",
+        "especialista",
+        "qualidade"
+      ],
+      "modelo": "estado/templates/plano.json"
+    },
+    "impacto": {
+      "dono": "analista-de-impacto",
+      "fase": "D4",
+      "depende_de": [
+        "decisao",
+        "plano"
+      ],
+      "modelo": "estado/templates/impacto.json"
+    }
+  },
+  "outros_artefatos": {
+    "etapas/": "engenheiro-de-dados",
+    "analises/ANA-xxx.py": "responsável indicado no plano",
+    "evidencias/INS-xxx.json": "quem descobre cria; estatístico, red teams e impacto completam os campos do seu estado"
+  }
+}

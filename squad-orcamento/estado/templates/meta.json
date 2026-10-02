@@ -1,0 +1,20 @@
+{
+  "_template": true,
+  "projeto_id": "",
+  "cliente": "",
+  "projeto": "",
+  "versao": 1,
+  "modo": "rapido|completo",
+  "classe_estimativa": 5,
+  "data_base": "AAAA-MM-DD",
+  "mes_inicio": "AAAA-MM",
+  "moeda": "BRL",
+  "cambio": {
+    "USD": {
+      "taxa": null,
+      "data": "AAAA-MM-DD",
+      "fonte": "[PTAX venda Banco Central / outra]"
+    }
+  },
+  "tipo_projeto": "[ex.: amr-intralogistica | condominio-robotico | evento | outro]"
+}

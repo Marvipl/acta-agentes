@@ -1,0 +1,27 @@
+{
+  "itens": [
+    {
+      "id": "R01",
+      "categoria": "carga",
+      "descricao": "Carga útil por robô",
+      "valor": 100,
+      "unidade": "kg",
+      "origem": "cliente",
+      "status": "confirmado",
+      "prioridade": "obrigatorio",
+      "fonte": "FICTÍCIO – teste do motor"
+    },
+    {
+      "id": "R02",
+      "categoria": "operacao",
+      "descricao": "Operação em 2 turnos",
+      "valor": 16,
+      "unidade": "h/dia",
+      "origem": "cliente",
+      "status": "confirmado",
+      "prioridade": "obrigatorio",
+      "fonte": "FICTÍCIO – teste do motor"
+    }
+  ],
+  "perguntas_abertas": []
+}

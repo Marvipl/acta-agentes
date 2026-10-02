@@ -1,0 +1,93 @@
+{
+  "objetivo": "FICTÍCIO – teste do motor",
+  "ligacao_estrategica": "FICTÍCIO – teste do motor",
+  "restricoes": [
+    "FICTÍCIO – teste do motor"
+  ],
+  "decisoes_ja_tomadas": [],
+  "fora_de_escopo": [],
+  "dimensoes": [
+    {
+      "id": "D01",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D02",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D03",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D04",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D05",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D06",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D07",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D08",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    }
+  ],
+  "perguntas": [],
+  "rodada_atual": 1
+}

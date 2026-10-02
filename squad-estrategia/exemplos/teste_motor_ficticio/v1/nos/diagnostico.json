@@ -1,0 +1,60 @@
+{
+  "swot": {
+    "forcas": [
+      {
+        "texto": "FICTÍCIO – teste do motor",
+        "evidencias": [
+          "MKT-01"
+        ]
+      }
+    ],
+    "fraquezas": [
+      {
+        "texto": "FICTÍCIO – teste do motor",
+        "evidencias": [
+          "MKT-01"
+        ]
+      }
+    ],
+    "oportunidades": [
+      {
+        "texto": "FICTÍCIO – teste do motor",
+        "evidencias": [
+          "MKT-01"
+        ]
+      }
+    ],
+    "ameacas": [
+      {
+        "texto": "FICTÍCIO – teste do motor",
+        "evidencias": [
+          "MKT-01"
+        ]
+      }
+    ]
+  },
+  "tows": [
+    {
+      "estrategia": "FICTÍCIO – teste do motor",
+      "tipo": "SO",
+      "refs": []
+    }
+  ],
+  "questoes_criticas": [
+    {
+      "id": "QC1",
+      "pergunta": "FICTÍCIO – teste do motor",
+      "por_que_importa": "FICTÍCIO – teste do motor"
+    },
+    {
+      "id": "QC2",
+      "pergunta": "FICTÍCIO – teste do motor",
+      "por_que_importa": "FICTÍCIO – teste do motor"
+    },
+    {
+      "id": "QC3",
+      "pergunta": "FICTÍCIO – teste do motor",
+      "por_que_importa": "FICTÍCIO – teste do motor"
+    }
+  ]
+}

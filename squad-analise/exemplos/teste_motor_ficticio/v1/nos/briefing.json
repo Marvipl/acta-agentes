@@ -1,0 +1,8 @@
+{
+  "texto": "FICTÍCIO – teste do motor",
+  "documentos": [],
+  "fontes_de_dados": [
+    "missoes.csv",
+    "robos.csv"
+  ]
+}

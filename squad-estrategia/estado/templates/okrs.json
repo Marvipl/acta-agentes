@@ -1,0 +1,48 @@
+{
+  "_template": true,
+  "perspectivas": [
+    "financeira",
+    "clientes",
+    "processos",
+    "pessoas e tecnologia"
+  ],
+  "objetivos": [
+    {
+      "id": "OB1",
+      "perspectiva": "",
+      "objetivo": "",
+      "opcao_ref": "O1"
+    }
+  ],
+  "krs": [
+    {
+      "id": "KR1.1",
+      "objetivo_id": "OB1",
+      "kr": "",
+      "metrica": "",
+      "unidade": "",
+      "baseline": null,
+      "meta_anual": null,
+      "metas_trimestrais": {
+        "T1": null,
+        "T2": null,
+        "T3": null,
+        "T4": null
+      },
+      "dono": "",
+      "fonte_dado": "",
+      "tipo": "compromisso|aspiracional"
+    }
+  ],
+  "kpis": [
+    {
+      "nome": "",
+      "formula": "",
+      "baseline": null,
+      "meta": null,
+      "frequencia": "mensal",
+      "fonte_dado": "",
+      "dono": ""
+    }
+  ]
+}

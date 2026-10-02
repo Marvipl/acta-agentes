@@ -1,0 +1,34 @@
+{
+  "plano_implantacao": "Mapeamento, configuração, testes.",
+  "treinamento": "",
+  "sla_proposto": "",
+  "esforco": [
+    {
+      "id": "O01",
+      "wbs_id": "1.3",
+      "perfil": "Engenheiro de software sênior",
+      "categoria": "implantacao",
+      "horas": {
+        "min": 80,
+        "provavel": 120,
+        "max": 180
+      },
+      "fonte": "FICTÍCIO – teste do motor"
+    }
+  ],
+  "custos_recorrentes": [
+    {
+      "id": "CR01",
+      "descricao": "Manutenção",
+      "custo_mensal": {
+        "min": 2000,
+        "provavel": 2500,
+        "max": 3500
+      },
+      "inicio_rel_entrega": 0,
+      "meses": 24,
+      "fonte": "FICTÍCIO – teste do motor"
+    }
+  ],
+  "pecas_reposicao": []
+}

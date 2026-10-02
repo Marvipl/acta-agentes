@@ -1,0 +1,25 @@
+{
+  "ativos": [
+    {
+      "nome": "Ativo fictício",
+      "descricao": "FICTÍCIO – teste do motor",
+      "diferenciacao": "parcial",
+      "evidencias": [
+        "CAP-01"
+      ]
+    }
+  ],
+  "equipe": [],
+  "capacidades_tecnicas": [],
+  "lacunas_criticas": [],
+  "evidencias": [
+    {
+      "id": "CAP-01",
+      "afirmacao": "FICTÍCIO",
+      "fonte": "FICTÍCIO – teste do motor",
+      "url": "https://exemplo.invalid",
+      "data": "2026-10-01",
+      "tipo": "interno"
+    }
+  ]
+}

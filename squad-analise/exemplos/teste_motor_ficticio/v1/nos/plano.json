@@ -1,0 +1,43 @@
+{
+  "analises": [
+    {
+      "id": "ANA-001",
+      "pergunta_ref": "P1",
+      "tipo": "confirmatoria",
+      "nivel": "associativo",
+      "tipo_pergunta": "comparacao",
+      "hipotese": "A duração média noturna é maior que a diurna",
+      "metodo": "Diferença de médias (Welch) com IC 95% e robustez por modelo de robô e por mês",
+      "metricas": [
+        "M1"
+      ],
+      "incerteza": "intervalo_confianca",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-001.py"
+    },
+    {
+      "id": "ANA-002",
+      "pergunta_ref": "P2",
+      "tipo": "exploratoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "retrato",
+      "hipotese": "",
+      "metodo": "Tendência mensal da duração média",
+      "metricas": [
+        "M1"
+      ],
+      "incerteza": "intervalo_confianca",
+      "desenho_causal": "",
+      "responsavel": "analista-exploratorio",
+      "script": "analises/ANA-002.py"
+    }
+  ],
+  "equipe": [
+    "analista-exploratorio",
+    "estatistico",
+    "analista-de-impacto"
+  ],
+  "correcao_multiplos_testes": "holm",
+  "alfa": 0.05
+}

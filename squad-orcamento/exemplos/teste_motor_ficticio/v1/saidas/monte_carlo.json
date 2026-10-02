@@ -1,0 +1,77 @@
+{
+  "iteracoes": 10000,
+  "custo_p10": 801697.9491808895,
+  "custo_p50": 895569.3786199453,
+  "custo_p80": 961881.1182931074,
+  "custo_p90": 998198.3524689922,
+  "custo_media": 897708.3027982693,
+  "prazo_p50_dias": 121.90857570850446,
+  "prazo_p80_dias": 137.58152364705316,
+  "prazo_p90_dias": 148.52538679364616,
+  "maiores_contribuidores": [
+    {
+      "item": "BOM B01 AMR 100 kg",
+      "correlacao": 0.989,
+      "desvio_brl": 65724.87
+    },
+    {
+      "item": "BOM B02 Estação de recarga",
+      "correlacao": 0.335,
+      "desvio_brl": 6366.01
+    },
+    {
+      "item": "Risco RK01 Retenção aduaneira",
+      "correlacao": 0.076,
+      "desvio_brl": 4866.41
+    },
+    {
+      "item": "Horas E01 Engenheiro de software sênior",
+      "correlacao": 0.072,
+      "desvio_brl": 3348.12
+    },
+    {
+      "item": "Horas O01 Engenheiro de software sênior",
+      "correlacao": 0.068,
+      "desvio_brl": 2639.53
+    },
+    {
+      "item": "Horas G01 Diretor técnico (CTO)",
+      "correlacao": 0.06,
+      "desvio_brl": 1685.63
+    },
+    {
+      "item": "Horas E02 Engenheiro eletrônico pleno",
+      "correlacao": 0.05,
+      "desvio_brl": 1237.92
+    },
+    {
+      "item": "Indireto I02 Viagens",
+      "correlacao": 0.015,
+      "desvio_brl": 1428.76
+    },
+    {
+      "item": "Indireto I01 Frete e desembaraço",
+      "correlacao": 0.012,
+      "desvio_brl": 1482.44
+    },
+    {
+      "item": "BOM B03 Licença de software",
+      "correlacao": 0.006,
+      "desvio_brl": 621.11
+    }
+  ],
+  "drivers": {
+    "cambio": {
+      "min": 0.9,
+      "provavel": 1.0,
+      "max": 1.15
+    },
+    "produtividade": {
+      "min": 0.9,
+      "provavel": 1.0,
+      "max": 1.4
+    }
+  },
+  "percentil_contingencia": 80,
+  "custo_percentil_contingencia": 961881.1182931074
+}

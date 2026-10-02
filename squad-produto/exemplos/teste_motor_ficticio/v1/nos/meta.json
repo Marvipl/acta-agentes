@@ -1,0 +1,11 @@
+{
+  "_aviso": "VALORES FICTÍCIOS",
+  "projeto_id": "exemplo-ficticio",
+  "produto": "Robô fictício de entrega",
+  "segmento": "Segmento fictício",
+  "versao": 1,
+  "modo": "completo",
+  "data_base": "2026-10-01",
+  "mes_inicio": "2027-01",
+  "moeda": "BRL"
+}

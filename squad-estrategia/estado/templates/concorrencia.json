@@ -1,0 +1,39 @@
+{
+  "_template": true,
+  "concorrentes": [
+    {
+      "nome": "",
+      "tipo": "nacional|importado|integrador|distribuidor",
+      "segmentos": [],
+      "proposta": "",
+      "preco_indicativo": "",
+      "forcas": [],
+      "fraquezas": [],
+      "movimentos_recentes": [],
+      "evidencias": [
+        "CON-01"
+      ]
+    }
+  ],
+  "benchmarks": [
+    {
+      "empresa": "",
+      "metrica": "",
+      "valor": "",
+      "evidencias": [
+        "CON-01"
+      ]
+    }
+  ],
+  "implicacoes": [],
+  "evidencias": [
+    {
+      "id": "CON-01",
+      "afirmacao": "",
+      "fonte": "",
+      "url": "",
+      "data": "AAAA-MM-DD",
+      "tipo": "confirmado|reportado|estimativa|interno"
+    }
+  ]
+}

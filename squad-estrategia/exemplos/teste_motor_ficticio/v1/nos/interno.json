@@ -1,0 +1,30 @@
+{
+  "retrospectiva": [
+    {
+      "linha": "Linha A",
+      "receita_planejada": 1000000,
+      "receita_realizada": 800000,
+      "margem_bruta_pct": 0.4,
+      "observacao": "FICTÍCIO – teste do motor",
+      "evidencias": [
+        "INT-01"
+      ]
+    }
+  ],
+  "unit_economics": [],
+  "caixa_atual": 500000,
+  "caixa_data": "2026-10-01",
+  "queima_mensal": 50000,
+  "pipeline": [],
+  "licoes": [],
+  "evidencias": [
+    {
+      "id": "INT-01",
+      "afirmacao": "FICTÍCIO",
+      "fonte": "FICTÍCIO – teste do motor",
+      "url": "https://exemplo.invalid",
+      "data": "2026-10-01",
+      "tipo": "interno"
+    }
+  ]
+}

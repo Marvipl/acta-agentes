@@ -1,0 +1,45 @@
+{
+  "wbs": [
+    {
+      "id": "1",
+      "nome": "Projeto",
+      "pai": null
+    },
+    {
+      "id": "1.1",
+      "nome": "Engenharia",
+      "pai": "1"
+    },
+    {
+      "id": "1.2",
+      "nome": "Equipamentos",
+      "pai": "1"
+    },
+    {
+      "id": "1.3",
+      "nome": "Implantação",
+      "pai": "1"
+    },
+    {
+      "id": "1.4",
+      "nome": "Gestão",
+      "pai": "1"
+    }
+  ],
+  "incluido": [
+    "3 AMRs",
+    "implantação"
+  ],
+  "excluido": [
+    "obra civil"
+  ],
+  "interfaces": [],
+  "premissas": [
+    {
+      "id": "P01",
+      "texto": "Piso nivelado",
+      "fonte": "FICTÍCIO – teste do motor",
+      "confianca": "media"
+    }
+  ]
+}

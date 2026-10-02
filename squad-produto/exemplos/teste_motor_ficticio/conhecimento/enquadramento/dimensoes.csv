@@ -1,0 +1,9 @@
+id,nome,critica,peso,o_que_cobrir
+D01,Problema e objetivo do produto,sim,3,"Que problema, de quem, e o que é sucesso para a Acta com este produto"
+D02,Segmento e cliente-alvo,sim,3,"Segmento, porte, quem decide e quem usa"
+D03,Ligação com a estratégia,nao,2,Aposta do plano estratégico a que o produto serve
+D04,Restrições,sim,3,"Investimento máximo, prazo, equipe, tecnologias obrigatórias ou proibidas"
+D05,Decisões já tomadas,sim,2,"O que não está em discussão (por exemplo, construir sobre plataforma existente)"
+D06,Evidências disponíveis,sim,3,"Entrevistas, pedidos de clientes, RFPs, dados de uso, pesquisas"
+D07,Modelo comercial pretendido,nao,2,"Venda, locação, serviço; faixa de preço imaginada"
+D08,Acesso a clientes para validar,nao,2,Clientes ou parceiros disponíveis para entrevistas e pilotos

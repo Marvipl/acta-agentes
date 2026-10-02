@@ -1,0 +1,35 @@
+{
+  "itens": [
+    {
+      "id": "RK01",
+      "descricao": "Retenção aduaneira",
+      "categoria": "suprimentos",
+      "probabilidade": 0.2,
+      "impacto_custo": {
+        "min": 5000,
+        "provavel": 10000,
+        "max": 20000
+      },
+      "impacto_prazo_dias": {
+        "min": 15,
+        "provavel": 30,
+        "max": 45
+      },
+      "mitigacao": "despachante com antecedência",
+      "dono": "suprimentos",
+      "no_monte_carlo": true
+    }
+  ],
+  "drivers": {
+    "cambio": {
+      "min": 0.9,
+      "provavel": 1.0,
+      "max": 1.15
+    },
+    "produtividade": {
+      "min": 0.9,
+      "provavel": 1.0,
+      "max": 1.4
+    }
+  }
+}

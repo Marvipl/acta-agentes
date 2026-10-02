@@ -1,0 +1,64 @@
+{
+  "jtbd": [
+    {
+      "id": "J1",
+      "job": "Levar itens entre setores sem tirar pessoas do posto",
+      "situacao": "FICTÍCIO – teste do motor",
+      "resultado_esperado": "FICTÍCIO – teste do motor",
+      "segmento": "SEG1",
+      "frequencia": "diária",
+      "evidencias": [
+        "CLI-01"
+      ]
+    }
+  ],
+  "dores": [
+    {
+      "id": "DR1",
+      "dor": "FICTÍCIO – teste do motor",
+      "intensidade": 4,
+      "frequencia": "diária",
+      "jtbd_id": "J1",
+      "evidencias": [
+        "CLI-01"
+      ]
+    }
+  ],
+  "ganhos": [],
+  "personas": [
+    {
+      "id": "PS1",
+      "papel": "Gerente de operações",
+      "tipo": "decisor",
+      "objetivos": [],
+      "criterios_de_compra": []
+    },
+    {
+      "id": "PS2",
+      "papel": "Operador",
+      "tipo": "usuario",
+      "objetivos": [],
+      "criterios_de_compra": []
+    }
+  ],
+  "alternativas_atuais": [
+    {
+      "alternativa": "Transporte manual",
+      "custo_atual": "FICTÍCIO – teste do motor",
+      "problemas": [],
+      "evidencias": [
+        "CLI-01"
+      ]
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "CLI-01",
+      "afirmacao": "FICTÍCIO",
+      "fonte": "FICTÍCIO – teste do motor",
+      "url": "https://exemplo.invalid",
+      "data": "2026-10-01",
+      "tipo": "interno"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "marcos": [
+    {
+      "id": "M1",
+      "evento": "Assinatura",
+      "pct": 0.3,
+      "mes": 0
+    },
+    {
+      "id": "M2",
+      "evento": "Entrega dos equipamentos",
+      "pct": 0.4,
+      "atividade_id": "A02",
+      "prazo_pagamento_dias": 30
+    },
+    {
+      "id": "M3",
+      "evento": "Aceite",
+      "pct": 0.3,
+      "atividade_id": "A03",
+      "prazo_pagamento_dias": 30
+    }
+  ],
+  "retencao_pct": 0.0,
+  "liberacao_retencao_dias": 0,
+  "garantias": [],
+  "estrutura_recomendada": "",
+  "clausulas_criticas": []
+}

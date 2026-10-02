@@ -1,0 +1,30 @@
+{
+  "_template": true,
+  "itens": [
+    {
+      "id": "N1",
+      "norma": "",
+      "aplicavel": true,
+      "requisito_derivado": "",
+      "custo_certificacao": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "prazo_meses": null,
+      "evidencias": [
+        "NOR-01"
+      ]
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "NOR-01",
+      "afirmacao": "",
+      "fonte": "",
+      "url": "",
+      "data": "AAAA-MM-DD",
+      "tipo": "confirmado|reportado|estimativa|interno"
+    }
+  ]
+}

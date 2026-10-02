@@ -1,0 +1,94 @@
+{
+  "hipoteses": [
+    {
+      "id": "H01",
+      "hipotese": "FICTÍCIO – teste do motor",
+      "categoria": "desejabilidade",
+      "impacto": 5,
+      "incerteza": 4,
+      "evidencia_atual": "FICTÍCIO – teste do motor",
+      "experimento": {
+        "tipo": "entrevista",
+        "descricao": "FICTÍCIO – teste do motor",
+        "custo": 0,
+        "duracao_semanas": 2,
+        "criterio_sucesso": "FICTÍCIO – teste do motor",
+        "criterio_falha": "FICTÍCIO – teste do motor"
+      },
+      "status": "nao_testada",
+      "resultado": ""
+    },
+    {
+      "id": "H02",
+      "hipotese": "FICTÍCIO – teste do motor",
+      "categoria": "viabilidade",
+      "impacto": 4,
+      "incerteza": 4,
+      "evidencia_atual": "FICTÍCIO – teste do motor",
+      "experimento": {
+        "tipo": "entrevista",
+        "descricao": "FICTÍCIO – teste do motor",
+        "custo": 0,
+        "duracao_semanas": 2,
+        "criterio_sucesso": "FICTÍCIO – teste do motor",
+        "criterio_falha": "FICTÍCIO – teste do motor"
+      },
+      "status": "nao_testada",
+      "resultado": ""
+    },
+    {
+      "id": "H03",
+      "hipotese": "FICTÍCIO – teste do motor",
+      "categoria": "factibilidade",
+      "impacto": 3,
+      "incerteza": 3,
+      "evidencia_atual": "FICTÍCIO – teste do motor",
+      "experimento": {
+        "tipo": "entrevista",
+        "descricao": "FICTÍCIO – teste do motor",
+        "custo": 0,
+        "duracao_semanas": 2,
+        "criterio_sucesso": "FICTÍCIO – teste do motor",
+        "criterio_falha": "FICTÍCIO – teste do motor"
+      },
+      "status": "nao_testada",
+      "resultado": ""
+    },
+    {
+      "id": "H04",
+      "hipotese": "FICTÍCIO – teste do motor",
+      "categoria": "regulatoria",
+      "impacto": 4,
+      "incerteza": 2,
+      "evidencia_atual": "FICTÍCIO – teste do motor",
+      "experimento": {
+        "tipo": "entrevista",
+        "descricao": "FICTÍCIO – teste do motor",
+        "custo": 0,
+        "duracao_semanas": 2,
+        "criterio_sucesso": "FICTÍCIO – teste do motor",
+        "criterio_falha": "FICTÍCIO – teste do motor"
+      },
+      "status": "nao_testada",
+      "resultado": ""
+    },
+    {
+      "id": "H05",
+      "hipotese": "FICTÍCIO – teste do motor",
+      "categoria": "viabilidade",
+      "impacto": 3,
+      "incerteza": 2,
+      "evidencia_atual": "FICTÍCIO – teste do motor",
+      "experimento": {
+        "tipo": "entrevista",
+        "descricao": "FICTÍCIO – teste do motor",
+        "custo": 0,
+        "duracao_semanas": 2,
+        "criterio_sucesso": "FICTÍCIO – teste do motor",
+        "criterio_falha": "FICTÍCIO – teste do motor"
+      },
+      "status": "nao_testada",
+      "resultado": ""
+    }
+  ]
+}

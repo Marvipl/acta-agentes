@@ -1,0 +1,35 @@
+{
+  "_template": true,
+  "plano_implantacao": "",
+  "treinamento": "",
+  "sla_proposto": "",
+  "esforco": [
+    {
+      "id": "O01",
+      "wbs_id": "",
+      "perfil": "",
+      "categoria": "implantacao|treinamento|suporte",
+      "horas": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "fonte": ""
+    }
+  ],
+  "custos_recorrentes": [
+    {
+      "id": "CR01",
+      "descricao": "",
+      "custo_mensal": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "inicio_rel_entrega": 0,
+      "meses": null,
+      "fonte": ""
+    }
+  ],
+  "pecas_reposicao": []
+}

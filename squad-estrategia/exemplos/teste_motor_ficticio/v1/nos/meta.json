@@ -1,0 +1,13 @@
+{
+  "_aviso": "VALORES FICTÍCIOS",
+  "projeto_id": "exemplo-ficticio",
+  "ciclo": "2027",
+  "titulo": "Teste do motor",
+  "versao": 1,
+  "modo": "plano",
+  "data_base": "2026-10-01",
+  "mes_inicio": "2027-01",
+  "horizonte_execucao": "2027",
+  "horizonte_direcao": "2028–2030",
+  "moeda": "BRL"
+}

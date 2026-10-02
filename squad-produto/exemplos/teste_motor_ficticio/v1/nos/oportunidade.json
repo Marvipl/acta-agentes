@@ -1,0 +1,39 @@
+{
+  "problema": "FICTÍCIO – teste do motor",
+  "segmento_alvo": "SEG1",
+  "jtbd_alvo": [
+    "J1"
+  ],
+  "proposta_de_valor": {
+    "para_quem": "FICTÍCIO – teste do motor",
+    "que_problema": "FICTÍCIO – teste do motor",
+    "nossa_solucao": "FICTÍCIO – teste do motor",
+    "diferente_de": "FICTÍCIO – teste do motor",
+    "porque_acreditar": "FICTÍCIO – teste do motor"
+  },
+  "criterios": [
+    {
+      "criterio": "intensidade_da_dor",
+      "peso": 3
+    },
+    {
+      "criterio": "tamanho_do_mercado",
+      "peso": 2
+    },
+    {
+      "criterio": "vantagem_da_acta",
+      "peso": 2
+    }
+  ],
+  "notas": {
+    "intensidade_da_dor": 4,
+    "tamanho_do_mercado": 3,
+    "vantagem_da_acta": 3
+  },
+  "justificativas": {},
+  "decisao": "seguir",
+  "riscos_principais": [],
+  "evidencias": [
+    "CLI-01"
+  ]
+}

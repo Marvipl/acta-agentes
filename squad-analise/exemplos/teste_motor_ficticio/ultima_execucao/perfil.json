@@ -1,0 +1,224 @@
+{
+  "gerado_em": "2026-10-02T22:10:13",
+  "tabelas": {
+    "raw_missoes": {
+      "linhas": 3000,
+      "duplicadas": 0,
+      "colunas": [
+        {
+          "coluna": "id_missao",
+          "tipo": "VARCHAR",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 3137,
+          "min": "M00000",
+          "max": "M02999",
+          "media": "nan",
+          "desvio": "nan",
+          "q25": "nan",
+          "q50": "nan",
+          "q75": "nan",
+          "chave_candidata": true,
+          "pessoal": []
+        },
+        {
+          "coluna": "robo_id",
+          "tipo": "VARCHAR",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 6,
+          "min": "R01",
+          "max": "R06",
+          "media": "nan",
+          "desvio": "nan",
+          "q25": "nan",
+          "q50": "nan",
+          "q75": "nan",
+          "chave_candidata": false,
+          "pessoal": []
+        },
+        {
+          "coluna": "data",
+          "tipo": "DATE",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 228,
+          "min": "2026-01-01",
+          "max": "2026-06-30",
+          "media": "2026-04-01 08:39:50.4",
+          "desvio": "nan",
+          "q25": "2026-02-15",
+          "q50": "2026-04-02",
+          "q75": "2026-05-17",
+          "chave_candidata": false,
+          "pessoal": []
+        },
+        {
+          "coluna": "turno",
+          "tipo": "VARCHAR",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 3,
+          "min": "manha",
+          "max": "tarde",
+          "media": "nan",
+          "desvio": "nan",
+          "q25": "nan",
+          "q50": "nan",
+          "q75": "nan",
+          "chave_candidata": false,
+          "pessoal": []
+        },
+        {
+          "coluna": "duracao_min",
+          "tipo": "DOUBLE",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 1140,
+          "min": "2.59",
+          "max": "36.49",
+          "media": "13.993060000000018",
+          "desvio": "4.995783280587294",
+          "q25": "10.26432185610268",
+          "q50": "13.413162064282481",
+          "q75": "16.998788571428573",
+          "chave_candidata": false,
+          "pessoal": []
+        },
+        {
+          "coluna": "distancia_m",
+          "tipo": "DOUBLE",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 1260,
+          "min": "40.3",
+          "max": "335.8",
+          "media": "179.5366666666669",
+          "desvio": "40.17900952600811",
+          "q25": "153.225",
+          "q50": "179.09348201112243",
+          "q75": "206.14522357723578",
+          "chave_candidata": false,
+          "pessoal": []
+        },
+        {
+          "coluna": "carga_kg",
+          "tipo": "DOUBLE",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 1013,
+          "min": "5.0",
+          "max": "95.0",
+          "media": "50.04450000000002",
+          "desvio": "26.009433416080817",
+          "q25": "27.326190476190472",
+          "q50": "49.895456667008176",
+          "q75": "73.13798087048087",
+          "chave_candidata": false,
+          "pessoal": []
+        },
+        {
+          "coluna": "falha",
+          "tipo": "BIGINT",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 2,
+          "min": "0",
+          "max": "1",
+          "media": "0.03233333333333333",
+          "desvio": "0.17691331680452022",
+          "q25": "0",
+          "q50": "0",
+          "q75": "0",
+          "chave_candidata": false,
+          "pessoal": []
+        },
+        {
+          "coluna": "operador_nome",
+          "tipo": "VARCHAR",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 25,
+          "min": null,
+          "max": null,
+          "media": null,
+          "desvio": null,
+          "q25": null,
+          "q50": null,
+          "q75": null,
+          "chave_candidata": false,
+          "pessoal": [
+            "nome da coluna"
+          ]
+        },
+        {
+          "coluna": "operador_cpf",
+          "tipo": "VARCHAR",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 3109,
+          "min": null,
+          "max": null,
+          "media": null,
+          "desvio": null,
+          "q25": null,
+          "q50": null,
+          "q75": null,
+          "chave_candidata": true,
+          "pessoal": [
+            "nome da coluna",
+            "valores com formato de cpf"
+          ]
+        }
+      ]
+    },
+    "raw_robos": {
+      "linhas": 6,
+      "duplicadas": 0,
+      "colunas": [
+        {
+          "coluna": "robo_id",
+          "tipo": "VARCHAR",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 6,
+          "min": "R01",
+          "max": "R06",
+          "media": "nan",
+          "desvio": "nan",
+          "q25": "nan",
+          "q50": "nan",
+          "q75": "nan",
+          "chave_candidata": true,
+          "pessoal": []
+        },
+        {
+          "coluna": "modelo",
+          "tipo": "VARCHAR",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 2,
+          "min": "K100",
+          "max": "T300",
+          "media": "nan",
+          "desvio": "nan",
+          "q25": "nan",
+          "q50": "nan",
+          "q75": "nan",
+          "chave_candidata": false,
+          "pessoal": []
+        },
+        {
+          "coluna": "ano_fabricacao",
+          "tipo": "BIGINT",
+          "nulos_pct": 0.0,
+          "distintos_aprox": 3,
+          "min": "2023",
+          "max": "2025",
+          "media": "2024.0",
+          "desvio": "0.8944271909999413",
+          "q25": "2023",
+          "q50": "2024",
+          "q75": "2025",
+          "chave_candidata": false,
+          "pessoal": []
+        }
+      ]
+    }
+  },
+  "ligacoes": [
+    {
+      "de": "raw_missoes.robo_id",
+      "para": "raw_robos.robo_id",
+      "cobertura": 1.0
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "nos": {
+    "meta": {
+      "hash": "e62bc1e9ab9b",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {}
+    },
+    "briefing": {
+      "hash": "073eabc4914a",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "meta": "e62bc1e9ab9b"
+      }
+    },
+    "enquadramento": {
+      "hash": "ce7d3a3326ea",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "briefing": "073eabc4914a"
+      }
+    },
+    "mercado": {
+      "hash": "add09910b259",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "enquadramento": "ce7d3a3326ea"
+      }
+    },
+    "clientes": {
+      "hash": "f8b3adabafb0",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "enquadramento": "ce7d3a3326ea"
+      }
+    },
+    "concorrencia": {
+      "hash": "91b3bf6e5d27",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "enquadramento": "ce7d3a3326ea"
+      }
+    },
+    "normas": {
+      "hash": "d467e8f34fa2",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "enquadramento": "ce7d3a3326ea"
+      }
+    },
+    "oportunidade": {
+      "hash": "5bc12f8d36b5",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "mercado": "add09910b259",
+        "clientes": "f8b3adabafb0",
+        "concorrencia": "91b3bf6e5d27",
+        "normas": "d467e8f34fa2"
+      }
+    },
+    "conceitos": {
+      "hash": "22dc20917737",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "oportunidade": "5bc12f8d36b5",
+        "concorrencia": "91b3bf6e5d27",
+        "clientes": "f8b3adabafb0"
+      }
+    },
+    "requisitos": {
+      "hash": "256ef13d8c7b",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "conceitos": "22dc20917737",
+        "clientes": "f8b3adabafb0",
+        "normas": "d467e8f34fa2",
+        "concorrencia": "91b3bf6e5d27"
+      }
+    },
+    "arquitetura": {
+      "hash": "d19c0e1de4c8",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "conceitos": "22dc20917737",
+        "requisitos": "256ef13d8c7b"
+      }
+    },
+    "negocio": {
+      "hash": "fdb2837a6031",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "conceitos": "22dc20917737",
+        "clientes": "f8b3adabafb0",
+        "mercado": "add09910b259",
+        "arquitetura": "d19c0e1de4c8"
+      }
+    },
+    "validacao": {
+      "hash": "64234b608615",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "oportunidade": "5bc12f8d36b5",
+        "conceitos": "22dc20917737",
+        "requisitos": "256ef13d8c7b",
+        "arquitetura": "d19c0e1de4c8",
+        "negocio": "fdb2837a6031"
+      }
+    },
+    "roadmap": {
+      "hash": "fe1218646219",
+      "agente": "teste",
+      "em": "2026-10-02T21:20:18",
+      "entradas": {
+        "requisitos": "256ef13d8c7b",
+        "arquitetura": "d19c0e1de4c8",
+        "validacao": "64234b608615",
+        "negocio": "fdb2837a6031"
+      }
+    }
+  },
+  "aprovacoes": [
+    {
+      "gate": "G1",
+      "por": "teste",
+      "em": "2026-10-02T21:20:18",
+      "obs": "",
+      "hashes": {
+        "meta": "e62bc1e9ab9b",
+        "briefing": "073eabc4914a",
+        "enquadramento": "ce7d3a3326ea",
+        "mercado": "add09910b259",
+        "clientes": "f8b3adabafb0",
+        "concorrencia": "91b3bf6e5d27",
+        "normas": "d467e8f34fa2",
+        "oportunidade": "5bc12f8d36b5",
+        "conceitos": "22dc20917737",
+        "requisitos": "256ef13d8c7b",
+        "arquitetura": "d19c0e1de4c8",
+        "negocio": "fdb2837a6031",
+        "validacao": "64234b608615",
+        "roadmap": "fe1218646219"
+      }
+    },
+    {
+      "gate": "G2",
+      "por": "teste",
+      "em": "2026-10-02T21:20:18",
+      "obs": "",
+      "hashes": {
+        "meta": "e62bc1e9ab9b",
+        "briefing": "073eabc4914a",
+        "enquadramento": "ce7d3a3326ea",
+        "mercado": "add09910b259",
+        "clientes": "f8b3adabafb0",
+        "concorrencia": "91b3bf6e5d27",
+        "normas": "d467e8f34fa2",
+        "oportunidade": "5bc12f8d36b5",
+        "conceitos": "22dc20917737",
+        "requisitos": "256ef13d8c7b",
+        "arquitetura": "d19c0e1de4c8",
+        "negocio": "fdb2837a6031",
+        "validacao": "64234b608615",
+        "roadmap": "fe1218646219"
+      }
+    },
+    {
+      "gate": "G3",
+      "por": "teste",
+      "em": "2026-10-02T21:20:18",
+      "obs": "",
+      "hashes": {
+        "meta": "e62bc1e9ab9b",
+        "briefing": "073eabc4914a",
+        "enquadramento": "ce7d3a3326ea",
+        "mercado": "add09910b259",
+        "clientes": "f8b3adabafb0",
+        "concorrencia": "91b3bf6e5d27",
+        "normas": "d467e8f34fa2",
+        "oportunidade": "5bc12f8d36b5",
+        "conceitos": "22dc20917737",
+        "requisitos": "256ef13d8c7b",
+        "arquitetura": "d19c0e1de4c8",
+        "negocio": "fdb2837a6031",
+        "validacao": "64234b608615",
+        "roadmap": "fe1218646219"
+      }
+    }
+  ],
+  "congelado": false,
+  "historico": [
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "meta",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "briefing",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "enquadramento",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "mercado",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "clientes",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "concorrencia",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "normas",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "oportunidade",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "conceitos",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "requisitos",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "arquitetura",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "negocio",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "validacao",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-02T21:20:18",
+      "evento": "carimbo",
+      "no": "roadmap",
+      "agente": "teste"
+    }
+  ]
+}

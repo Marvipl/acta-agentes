@@ -1,0 +1,42 @@
+{
+  "_template": true,
+  "tendencias": [
+    {
+      "id": "T01",
+      "titulo": "",
+      "descricao": "",
+      "horizonte": "2027|2028-2030|2030+",
+      "impacto_acta": "",
+      "evidencias": [
+        "MKT-01"
+      ]
+    }
+  ],
+  "dimensionamento": [
+    {
+      "segmento": "",
+      "geografia": "Brasil",
+      "ano": 2027,
+      "tam": null,
+      "sam": null,
+      "som": null,
+      "moeda": "BRL",
+      "memoria_calculo": "",
+      "evidencias": [
+        "MKT-01"
+      ]
+    }
+  ],
+  "sinais_de_investimento": [],
+  "lacunas_de_fonte": [],
+  "evidencias": [
+    {
+      "id": "MKT-01",
+      "afirmacao": "",
+      "fonte": "",
+      "url": "",
+      "data": "AAAA-MM-DD",
+      "tipo": "confirmado|reportado|estimativa|interno"
+    }
+  ]
+}

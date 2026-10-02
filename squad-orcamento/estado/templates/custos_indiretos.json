@@ -1,0 +1,20 @@
+{
+  "_template": true,
+  "itens": [
+    {
+      "id": "I01",
+      "descricao": "",
+      "categoria": "logistica|viagens|seguros|garantias|software|regulatorio|homologacao|outros",
+      "valor": {
+        "min": null,
+        "provavel": null,
+        "max": null
+      },
+      "distribuicao": "inicio|fim|linear",
+      "fonte": ""
+    }
+  ],
+  "overhead_pct": null,
+  "overhead_fonte": "",
+  "observacoes": ""
+}

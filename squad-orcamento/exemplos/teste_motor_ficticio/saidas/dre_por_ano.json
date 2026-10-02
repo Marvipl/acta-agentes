@@ -1,0 +1,18 @@
+{
+  "2000": {
+    "receita_implantacao": 0.0,
+    "receita_recorrente": 0.0,
+    "receita_operacao": 0.0,
+    "impostos": 0.0,
+    "comissao": 0.0,
+    "equipamentos": 0.0,
+    "mao_de_obra": 0.0,
+    "indiretos": 0.0,
+    "overhead": 0.0,
+    "contingencia": 0.0,
+    "custos_recorrentes": 0.0,
+    "custo_variavel_operacao": 0.0,
+    "custo_financeiro": 0.0,
+    "saldo_mes": 0.0
+  }
+}

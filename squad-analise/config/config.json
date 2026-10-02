@@ -1,0 +1,34 @@
+{
+  "_leia": "Parâmetros do squad de análise de dados.",
+  "drive_analises_dir": "[caminho local da pasta Acta > Análises sincronizada pelo Google Drive para desktop]",
+  "descoberta": {
+    "_leia": "Prontidão do enquadramento da decisão: 'rapido' para o nível rápido, 'completo' para padrão e completo.",
+    "max_perguntas_por_rodada": 7,
+    "max_rodadas": 2,
+    "prontidao_minima": {
+      "rapido": 0.5,
+      "completo": 0.8
+    },
+    "valor_status": {
+      "completo": 1.0,
+      "premissa": 0.7,
+      "parcial": 0.5,
+      "ausente": 0.0
+    }
+  },
+  "privacidade": {
+    "_leia": "Pseudonimização sempre ligada. Para desligar, ativa=false e o nome de quem autorizou.",
+    "ativa": true,
+    "desligada_autorizada_por": ""
+  },
+  "minimo_registros_por_grupo": 5,
+  "max_tentativas_auditoria": 2,
+  "termos_proibidos": [
+    "Corsight",
+    "K.FLEET",
+    "KFLEET",
+    "K.CONCEPT",
+    "Venturus",
+    "SiDi"
+  ]
+}

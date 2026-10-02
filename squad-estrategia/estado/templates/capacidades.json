@@ -1,0 +1,32 @@
+{
+  "_template": true,
+  "ativos": [
+    {
+      "nome": "",
+      "descricao": "",
+      "diferenciacao": "forte|parcial|nenhuma",
+      "evidencias": [
+        "CAP-01"
+      ]
+    }
+  ],
+  "equipe": [
+    {
+      "perfil": "",
+      "pessoas": null,
+      "lacunas": ""
+    }
+  ],
+  "capacidades_tecnicas": [],
+  "lacunas_criticas": [],
+  "evidencias": [
+    {
+      "id": "CAP-01",
+      "afirmacao": "",
+      "fonte": "",
+      "url": "",
+      "data": "AAAA-MM-DD",
+      "tipo": "interno"
+    }
+  ]
+}

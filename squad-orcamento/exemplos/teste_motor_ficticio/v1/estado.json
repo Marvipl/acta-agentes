@@ -1,0 +1,746 @@
+{
+  "meta": {
+    "_aviso": "VALORES FICTÍCIOS",
+    "projeto_id": "exemplo-ficticio",
+    "cliente": "[Cliente fictício]",
+    "projeto": "Teste do motor – 3 AMRs",
+    "versao": 1,
+    "modo": "completo",
+    "classe_estimativa": 3,
+    "data_base": "2026-10-01",
+    "mes_inicio": "2027-01",
+    "moeda": "BRL",
+    "cambio": {
+      "USD": {
+        "taxa": 5.0,
+        "data": "2026-10-01",
+        "fonte": "FICTÍCIO – teste do motor"
+      }
+    },
+    "tipo_projeto": "amr-intralogistica"
+  },
+  "briefing": {
+    "texto": "Cliente fictício quer transportar caixas entre almoxarifado e linha com 3 AMRs.",
+    "documentos": [],
+    "contato_cliente": "[●]",
+    "data_recebimento": "2026-10-01"
+  },
+  "especificacao": {
+    "_aviso": "VALORES FICTÍCIOS",
+    "tipo_projeto": "amr-intralogistica",
+    "dimensoes": [
+      {
+        "id": "D01",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D02",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D03",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D04",
+        "status": "premissa",
+        "evidencias": [
+          "FICTÍCIO"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "Chamada por tablet, sem integração com ERP",
+        "premissa_aceita_por": "teste"
+      },
+      {
+        "id": "D05",
+        "status": "parcial",
+        "evidencias": [
+          "FICTÍCIO"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D06",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D07",
+        "status": "premissa",
+        "evidencias": [
+          "FICTÍCIO"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "Sem normas especiais além das usuais",
+        "premissa_aceita_por": "teste"
+      },
+      {
+        "id": "D08",
+        "status": "completo",
+        "evidencias": [
+          "FICTÍCIO"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D09",
+        "status": "parcial",
+        "evidencias": [
+          "FICTÍCIO"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      },
+      {
+        "id": "D10",
+        "status": "ausente",
+        "evidencias": [
+          "FICTÍCIO"
+        ],
+        "lacunas": [],
+        "premissa_adotada": "",
+        "premissa_aceita_por": ""
+      }
+    ],
+    "perguntas": [
+      {
+        "id": "Q01",
+        "rodada": 1,
+        "dimensao": "D02",
+        "pergunta": "Qual o peso máximo da carga?",
+        "por_que_importa": "Define a classe do robô",
+        "impacto": "alto",
+        "formato": "numero",
+        "opcoes": [],
+        "resposta_proposta": "100 kg",
+        "destinatario": "marcus",
+        "status": "respondida",
+        "resposta": "100 kg (FICTÍCIO)",
+        "respondida_em": "2026-10-01",
+        "id_banco": "BP06"
+      }
+    ],
+    "rodada_atual": 1,
+    "decisao": {
+      "modo_recomendado": "completo",
+      "classe_maxima": 3,
+      "justificativa": "FICTÍCIO"
+    }
+  },
+  "requisitos": {
+    "itens": [
+      {
+        "id": "R01",
+        "categoria": "carga",
+        "descricao": "Carga útil por robô",
+        "valor": 100,
+        "unidade": "kg",
+        "origem": "cliente",
+        "status": "confirmado",
+        "prioridade": "obrigatorio",
+        "fonte": "FICTÍCIO – teste do motor"
+      },
+      {
+        "id": "R02",
+        "categoria": "operacao",
+        "descricao": "Operação em 2 turnos",
+        "valor": 16,
+        "unidade": "h/dia",
+        "origem": "cliente",
+        "status": "confirmado",
+        "prioridade": "obrigatorio",
+        "fonte": "FICTÍCIO – teste do motor"
+      }
+    ],
+    "perguntas_abertas": []
+  },
+  "escopo": {
+    "wbs": [
+      {
+        "id": "1",
+        "nome": "Projeto",
+        "pai": null
+      },
+      {
+        "id": "1.1",
+        "nome": "Engenharia",
+        "pai": "1"
+      },
+      {
+        "id": "1.2",
+        "nome": "Equipamentos",
+        "pai": "1"
+      },
+      {
+        "id": "1.3",
+        "nome": "Implantação",
+        "pai": "1"
+      },
+      {
+        "id": "1.4",
+        "nome": "Gestão",
+        "pai": "1"
+      }
+    ],
+    "incluido": [
+      "3 AMRs",
+      "implantação"
+    ],
+    "excluido": [
+      "obra civil"
+    ],
+    "interfaces": [],
+    "premissas": [
+      {
+        "id": "P01",
+        "texto": "Piso nivelado",
+        "fonte": "FICTÍCIO – teste do motor",
+        "confianca": "media"
+      }
+    ]
+  },
+  "solucao": {
+    "arquitetura": "3 AMRs com recarga automática.",
+    "solucoes": [
+      {
+        "id": "S1",
+        "nome": "Transporte autônomo",
+        "descricao": "",
+        "wbs_ids": [
+          "1.1",
+          "1.2"
+        ],
+        "dimensionamento": [
+          {
+            "parametro": "robôs",
+            "valor": 3,
+            "unidade": "un",
+            "memoria_calculo": "demanda fictícia / ciclo fictício",
+            "fonte": "FICTÍCIO – teste do motor"
+          }
+        ],
+        "alternativas": [
+          {
+            "id": "S1-A",
+            "opcao": "AMR fictício A",
+            "fabricante": "[fictício]",
+            "origem": "mercado",
+            "notas": {
+              "aderencia_requisitos": 4,
+              "custo_total_propriedade": 4,
+              "suporte_pecas_brasil": 3
+            },
+            "custo_indicativo": null,
+            "fonte": "FICTÍCIO"
+          },
+          {
+            "id": "S1-B",
+            "opcao": "AMR fictício B",
+            "fabricante": "[fictício]",
+            "origem": "mercado",
+            "notas": {
+              "aderencia_requisitos": 4,
+              "custo_total_propriedade": 3,
+              "suporte_pecas_brasil": 2
+            },
+            "custo_indicativo": null,
+            "fonte": "FICTÍCIO"
+          },
+          {
+            "id": "S1-C",
+            "opcao": "AMR fictício C",
+            "fabricante": "[fictício]",
+            "origem": "acta",
+            "notas": {
+              "aderencia_requisitos": 3,
+              "custo_total_propriedade": 3,
+              "suporte_pecas_brasil": 5
+            },
+            "custo_indicativo": null,
+            "fonte": "FICTÍCIO"
+          }
+        ],
+        "escolhida": "S1-A",
+        "justificativa": "Maior nota ponderada na matriz (FICTÍCIO)"
+      }
+    ],
+    "lista_tecnica": [
+      {
+        "id": "T01",
+        "wbs_id": "1.2",
+        "descricao": "AMR 100 kg",
+        "especificacao": "[●]",
+        "qtd": 3,
+        "unidade": "un",
+        "critico": true
+      },
+      {
+        "id": "T02",
+        "wbs_id": "1.2",
+        "descricao": "Estação de recarga",
+        "especificacao": "[●]",
+        "qtd": 3,
+        "unidade": "un",
+        "critico": false
+      },
+      {
+        "id": "T03",
+        "wbs_id": "1.2",
+        "descricao": "Licença de software",
+        "especificacao": "[●]",
+        "qtd": 1,
+        "unidade": "un",
+        "critico": false
+      }
+    ],
+    "esforco": [
+      {
+        "id": "E01",
+        "wbs_id": "1.1",
+        "perfil": "Engenheiro de software sênior",
+        "categoria": "software",
+        "horas": {
+          "min": 120,
+          "provavel": 160,
+          "max": 240
+        },
+        "fonte": "FICTÍCIO – teste do motor"
+      },
+      {
+        "id": "E02",
+        "wbs_id": "1.1",
+        "perfil": "Engenheiro eletrônico pleno",
+        "categoria": "eletronica",
+        "horas": {
+          "min": 40,
+          "provavel": 60,
+          "max": 100
+        },
+        "fonte": "FICTÍCIO – teste do motor"
+      }
+    ],
+    "requisitos_infra_cliente": [
+      {
+        "id": "IC01",
+        "item": "Wi-Fi",
+        "especificacao": "[●]",
+        "responsavel": "cliente"
+      }
+    ],
+    "rastreabilidade": [
+      {
+        "requisito_id": "R01",
+        "solucao_id": "S1",
+        "como_atende": "AMR 100 kg"
+      },
+      {
+        "requisito_id": "R02",
+        "solucao_id": "S1",
+        "como_atende": "recarga automática"
+      }
+    ],
+    "criterios_selecao": [
+      {
+        "criterio": "aderencia_requisitos",
+        "peso": 3
+      },
+      {
+        "criterio": "custo_total_propriedade",
+        "peso": 3
+      },
+      {
+        "criterio": "suporte_pecas_brasil",
+        "peso": 2
+      }
+    ]
+  },
+  "operacoes": {
+    "plano_implantacao": "Mapeamento, configuração, testes.",
+    "treinamento": "",
+    "sla_proposto": "",
+    "esforco": [
+      {
+        "id": "O01",
+        "wbs_id": "1.3",
+        "perfil": "Engenheiro de software sênior",
+        "categoria": "implantacao",
+        "horas": {
+          "min": 80,
+          "provavel": 120,
+          "max": 180
+        },
+        "fonte": "FICTÍCIO – teste do motor"
+      }
+    ],
+    "custos_recorrentes": [
+      {
+        "id": "CR01",
+        "descricao": "Manutenção",
+        "custo_mensal": {
+          "min": 2000,
+          "provavel": 2500,
+          "max": 3500
+        },
+        "inicio_rel_entrega": 0,
+        "meses": 24,
+        "fonte": "FICTÍCIO – teste do motor"
+      }
+    ],
+    "pecas_reposicao": []
+  },
+  "cronograma": {
+    "atividades": [
+      {
+        "id": "A01",
+        "nome": "Engenharia",
+        "wbs_ids": [
+          "1.1"
+        ],
+        "duracao_dias": {
+          "min": 20,
+          "provavel": 30,
+          "max": 45
+        },
+        "predecessoras": []
+      },
+      {
+        "id": "A02",
+        "nome": "Compras e importação",
+        "wbs_ids": [
+          "1.2",
+          "1.4"
+        ],
+        "duracao_dias": {
+          "min": 45,
+          "provavel": 60,
+          "max": 90
+        },
+        "predecessoras": [
+          "A01"
+        ]
+      },
+      {
+        "id": "A03",
+        "nome": "Implantação",
+        "wbs_ids": [
+          "1.3"
+        ],
+        "duracao_dias": {
+          "min": 15,
+          "provavel": 20,
+          "max": 30
+        },
+        "predecessoras": [
+          "A02"
+        ]
+      }
+    ],
+    "esforco_gestao": [
+      {
+        "id": "G01",
+        "wbs_id": "1.4",
+        "perfil": "Diretor técnico (CTO)",
+        "categoria": "gestao",
+        "horas": {
+          "min": 40,
+          "provavel": 60,
+          "max": 80
+        },
+        "fonte": "FICTÍCIO – teste do motor"
+      }
+    ],
+    "observacoes": ""
+  },
+  "bom": {
+    "itens": [
+      {
+        "id": "B01",
+        "ref_tecnica": "T01",
+        "wbs_id": "1.2",
+        "descricao": "AMR 100 kg",
+        "fabricante": "[fictício]",
+        "modelo": "[fictício]",
+        "qtd": 3,
+        "unidade": "un",
+        "moeda": "USD",
+        "origem": "importado",
+        "preco_unit": {
+          "min": 20000,
+          "provavel": 25000,
+          "max": 30000
+        },
+        "fonte": {
+          "tipo": "cotacao",
+          "ref": "cotação fictícia (validade longa só para o teste não expirar)",
+          "data": "2026-10-01",
+          "validade_dias": 36500
+        },
+        "lead_time_dias": {
+          "min": 45,
+          "provavel": 60,
+          "max": 90
+        },
+        "alternativa": "",
+        "critico": true,
+        "pagamento": [
+          {
+            "evento": "pedido",
+            "pct": 0.5
+          },
+          {
+            "evento": "entrega",
+            "pct": 0.5
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "ref_tecnica": "T02",
+        "wbs_id": "1.2",
+        "descricao": "Estação de recarga",
+        "fabricante": "[fictício]",
+        "modelo": "[fictício]",
+        "qtd": 3,
+        "unidade": "un",
+        "moeda": "USD",
+        "origem": "importado",
+        "preco_unit": {
+          "min": 1500,
+          "provavel": 2000,
+          "max": 2500
+        },
+        "fonte": {
+          "tipo": "benchmark",
+          "ref": "pesquisa fictícia",
+          "data": "2026-10-01",
+          "validade_dias": 30
+        },
+        "lead_time_dias": {
+          "min": 30,
+          "provavel": 45,
+          "max": 60
+        },
+        "alternativa": "",
+        "critico": false,
+        "pagamento": [
+          {
+            "evento": "entrega",
+            "pct": 1.0
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "ref_tecnica": "T03",
+        "wbs_id": "1.2",
+        "descricao": "Licença de software",
+        "fabricante": "[fictício]",
+        "modelo": "[fictício]",
+        "qtd": 1,
+        "unidade": "un",
+        "moeda": "BRL",
+        "origem": "nacional",
+        "preco_unit": {
+          "min": 5000,
+          "provavel": 6000,
+          "max": 8000
+        },
+        "fonte": {
+          "tipo": "premissa",
+          "ref": "premissa fictícia",
+          "data": "2026-10-01",
+          "validade_dias": 30
+        },
+        "lead_time_dias": {
+          "min": 5,
+          "provavel": 10,
+          "max": 15
+        },
+        "alternativa": "",
+        "critico": false,
+        "pagamento": [
+          {
+            "evento": "pedido",
+            "pct": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  "tributos": {
+    "regime": "presumido",
+    "estabelecimento_emissor": "[●]",
+    "custo_importacao_pct": {
+      "padrao": 0.8
+    },
+    "custo_aquisicao_nacional_pct": 0.0,
+    "impostos_receita_pct": {
+      "produto": 0.15,
+      "servico": 0.17,
+      "locacao": 0.12
+    },
+    "memoria_calculo": "FICTÍCIO",
+    "fontes": [
+      "FICTÍCIO – teste do motor"
+    ]
+  },
+  "custos_indiretos": {
+    "itens": [
+      {
+        "id": "I01",
+        "descricao": "Frete e desembaraço",
+        "categoria": "logistica",
+        "valor": {
+          "min": 8000,
+          "provavel": 10000,
+          "max": 15000
+        },
+        "distribuicao": "inicio",
+        "fonte": "FICTÍCIO – teste do motor"
+      },
+      {
+        "id": "I02",
+        "descricao": "Viagens",
+        "categoria": "viagens",
+        "valor": {
+          "min": 5000,
+          "provavel": 8000,
+          "max": 12000
+        },
+        "distribuicao": "linear",
+        "fonte": "FICTÍCIO – teste do motor"
+      }
+    ],
+    "overhead_pct": 0.1,
+    "overhead_fonte": "FICTÍCIO – teste do motor"
+  },
+  "riscos": {
+    "itens": [
+      {
+        "id": "RK01",
+        "descricao": "Retenção aduaneira",
+        "categoria": "suprimentos",
+        "probabilidade": 0.2,
+        "impacto_custo": {
+          "min": 5000,
+          "provavel": 10000,
+          "max": 20000
+        },
+        "impacto_prazo_dias": {
+          "min": 15,
+          "provavel": 30,
+          "max": 45
+        },
+        "mitigacao": "despachante com antecedência",
+        "dono": "suprimentos",
+        "no_monte_carlo": true
+      }
+    ],
+    "drivers": {
+      "cambio": {
+        "min": 0.9,
+        "provavel": 1.0,
+        "max": 1.15
+      },
+      "produtividade": {
+        "min": 0.9,
+        "provavel": 1.0,
+        "max": 1.4
+      }
+    }
+  },
+  "preco": {
+    "modalidade": "venda",
+    "receita_fixada": null,
+    "preco_proposto": null,
+    "composicao_receita": {
+      "produto": 0.8,
+      "servico": 0.2
+    },
+    "comissao_pct": 0.03,
+    "comissao_sobre_recorrente": false,
+    "margem_alvo": 0.25,
+    "margem_minima": 0.12,
+    "recorrente": {
+      "tipo": "servico",
+      "mensalidade": 6000,
+      "meses": 24,
+      "inicio_rel_entrega": 0
+    },
+    "roi_cliente": {
+      "investimento": null,
+      "economia_anual": null,
+      "payback_meses": null,
+      "memoria_calculo": "FICTÍCIO",
+      "fontes": [
+        "FICTÍCIO – teste do motor"
+      ]
+    },
+    "faixa_negociacao": "",
+    "estrategia": "",
+    "concorrencia": ""
+  },
+  "contrato": {
+    "marcos": [
+      {
+        "id": "M1",
+        "evento": "Assinatura",
+        "pct": 0.3,
+        "mes": 0
+      },
+      {
+        "id": "M2",
+        "evento": "Entrega dos equipamentos",
+        "pct": 0.4,
+        "atividade_id": "A02",
+        "prazo_pagamento_dias": 30
+      },
+      {
+        "id": "M3",
+        "evento": "Aceite",
+        "pct": 0.3,
+        "atividade_id": "A03",
+        "prazo_pagamento_dias": 30
+      }
+    ],
+    "retencao_pct": 0.0,
+    "liberacao_retencao_dias": 0,
+    "garantias": [],
+    "estrutura_recomendada": "",
+    "clausulas_criticas": []
+  },
+  "financeiro": {
+    "custo_capital_aa": 0.18,
+    "custo_capital_fonte": "FICTÍCIO – teste do motor",
+    "analise": "",
+    "recomendacoes": []
+  }
+}

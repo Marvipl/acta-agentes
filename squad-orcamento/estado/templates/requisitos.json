@@ -1,0 +1,24 @@
+{
+  "_template": true,
+  "itens": [
+    {
+      "id": "R01",
+      "categoria": "carga|velocidade|autonomia|ambiente|piso|integracao|seguranca|regulatorio|operacao|comercial",
+      "descricao": "",
+      "valor": null,
+      "unidade": "",
+      "origem": "cliente|documento|inferido",
+      "status": "confirmado|pendente",
+      "prioridade": "obrigatorio|desejavel",
+      "fonte": ""
+    }
+  ],
+  "perguntas_abertas": [
+    {
+      "id": "Q01",
+      "pergunta": "",
+      "resposta_proposta": "",
+      "impacto": "alto|medio|baixo"
+    }
+  ]
+}

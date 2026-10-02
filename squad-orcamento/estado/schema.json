@@ -1,0 +1,161 @@
+{
+  "_leia": "Contrato de dados entre os agentes. Estrutura de campos: ver estado/templates/<no>.json. Validação: motor/validar.py.",
+  "convencoes": {
+    "tres_pontos": {
+      "min": "número",
+      "provavel": "número",
+      "max": "número"
+    },
+    "fonte_tipos": [
+      "cotacao",
+      "base_interna",
+      "benchmark",
+      "premissa"
+    ],
+    "percentuais": "frações (0.15 = 15%)",
+    "datas": "AAAA-MM-DD",
+    "meses": "AAAA-MM"
+  },
+  "nos": {
+    "meta": {
+      "dono": "chief-estimator",
+      "fase": "F0",
+      "depende_de": [],
+      "modelo": "estado/templates/meta.json"
+    },
+    "briefing": {
+      "dono": "chief-estimator",
+      "fase": "F0",
+      "depende_de": [
+        "meta"
+      ],
+      "modelo": "estado/templates/briefing.json"
+    },
+    "especificacao": {
+      "dono": "descoberta",
+      "fase": "F0",
+      "depende_de": [
+        "briefing"
+      ],
+      "modelo": "estado/templates/especificacao.json"
+    },
+    "requisitos": {
+      "dono": "requisitos",
+      "fase": "F0",
+      "depende_de": [
+        "briefing",
+        "especificacao"
+      ],
+      "modelo": "estado/templates/requisitos.json"
+    },
+    "escopo": {
+      "dono": "chief-estimator",
+      "fase": "F1",
+      "depende_de": [
+        "requisitos"
+      ],
+      "modelo": "estado/templates/escopo.json"
+    },
+    "solucao": {
+      "dono": "engenharia-robotica",
+      "fase": "F1",
+      "depende_de": [
+        "requisitos",
+        "escopo"
+      ],
+      "modelo": "estado/templates/solucao.json"
+    },
+    "operacoes": {
+      "dono": "operacoes-posvenda",
+      "fase": "F1",
+      "depende_de": [
+        "solucao"
+      ],
+      "modelo": "estado/templates/operacoes.json"
+    },
+    "cronograma": {
+      "dono": "gestao-projetos",
+      "fase": "F2",
+      "depende_de": [
+        "escopo",
+        "solucao",
+        "operacoes"
+      ],
+      "modelo": "estado/templates/cronograma.json"
+    },
+    "bom": {
+      "dono": "suprimentos",
+      "fase": "F2",
+      "depende_de": [
+        "solucao"
+      ],
+      "modelo": "estado/templates/bom.json"
+    },
+    "tributos": {
+      "dono": "tributario",
+      "fase": "F3",
+      "depende_de": [
+        "meta",
+        "solucao",
+        "bom"
+      ],
+      "modelo": "estado/templates/tributos.json"
+    },
+    "custos_indiretos": {
+      "dono": "cost-engineering",
+      "fase": "F3",
+      "depende_de": [
+        "solucao",
+        "bom",
+        "cronograma",
+        "operacoes"
+      ],
+      "modelo": "estado/templates/custos_indiretos.json"
+    },
+    "riscos": {
+      "dono": "contratos-riscos",
+      "fase": "F3",
+      "depende_de": [
+        "escopo",
+        "solucao",
+        "bom",
+        "cronograma"
+      ],
+      "modelo": "estado/templates/riscos.json"
+    },
+    "preco": {
+      "dono": "comercial-pricing",
+      "fase": "F4",
+      "depende_de": [
+        "requisitos",
+        "solucao",
+        "operacoes",
+        "cronograma",
+        "bom",
+        "tributos",
+        "custos_indiretos",
+        "riscos"
+      ],
+      "modelo": "estado/templates/preco.json"
+    },
+    "contrato": {
+      "dono": "contratos-riscos",
+      "fase": "F4",
+      "depende_de": [
+        "cronograma",
+        "preco",
+        "riscos"
+      ],
+      "modelo": "estado/templates/contrato.json"
+    },
+    "financeiro": {
+      "dono": "financeiro",
+      "fase": "F4",
+      "depende_de": [
+        "preco",
+        "contrato"
+      ],
+      "modelo": "estado/templates/financeiro.json"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "em": "2026-10-02T22:10:16",
+  "modelos": {
+    "IMP-001": {
+      "descricao": "Horas de robô recuperadas por mês se a noite igualar o dia",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-001",
+      "provavel": 220.75726335128172,
+      "p10": 179.52865662204684,
+      "p50": 217.92129104169817,
+      "p90": 263.15149185931773
+    }
+  }
+}

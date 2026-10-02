@@ -1,0 +1,45 @@
+{
+  "_template": true,
+  "criterios_escolha": [
+    {
+      "criterio": "",
+      "peso": null
+    }
+  ],
+  "opcoes": [
+    {
+      "id": "O1",
+      "nome": "",
+      "tese": "",
+      "aspiracao": "",
+      "onde_jogar": {
+        "segmentos": [],
+        "clientes": [],
+        "geografia": [],
+        "canais": []
+      },
+      "como_vencer": "",
+      "capacidades_necessarias": [],
+      "sistemas_de_gestao": [],
+      "wmbt": [
+        {
+          "id": "O1-W1",
+          "condicao": "",
+          "teste": "",
+          "criterio_de_falha": "",
+          "prazo": "AAAA-MM",
+          "status": "nao_testada|em_teste|confirmada|refutada"
+        }
+      ],
+      "notas": {},
+      "riscos": [],
+      "evidencias": []
+    }
+  ],
+  "recomendacao": {
+    "opcao": "O1",
+    "justificativa": "",
+    "o_que_nao_fazer": []
+  },
+  "premortem": []
+}

@@ -1,0 +1,17 @@
+{
+  "_template": true,
+  "regime": "simples|presumido|real",
+  "estabelecimento_emissor": "matriz-manaus|filial-campinas",
+  "custo_importacao_pct": {
+    "padrao": null
+  },
+  "custo_aquisicao_nacional_pct": 0.0,
+  "impostos_receita_pct": {
+    "produto": null,
+    "servico": null,
+    "locacao": null
+  },
+  "memoria_calculo": "",
+  "fontes": [],
+  "alertas": []
+}

@@ -1,0 +1,231 @@
+{
+  "custo_capital_aa": 0.2,
+  "custo_capital_fonte": "FICTÍCIO – teste do motor",
+  "cenarios": {
+    "conservador": {
+      "anos": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "caixa_inicial": 500000,
+      "caixa_inicial_fonte": "FICTÍCIO – teste do motor",
+      "impostos_receita_pct": 0.1,
+      "linhas": [
+        {
+          "linha": "Linha A",
+          "receita": {
+            "2027": 840000.0,
+            "2028": 1400000.0,
+            "2029": 2100000.0,
+            "2030": 2800000.0
+          },
+          "margem_bruta_pct": 0.4,
+          "premissa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        },
+        {
+          "linha": "Linha B",
+          "receita": {
+            "2027": 210000.0,
+            "2028": 420000.0,
+            "2029": 630000.0,
+            "2030": 840000.0
+          },
+          "margem_bruta_pct": 0.6,
+          "premissa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        }
+      ],
+      "despesas": [
+        {
+          "item": "Marketing e vendas",
+          "valor": {
+            "2027": 120000,
+            "2028": 180000,
+            "2029": 240000,
+            "2030": 300000
+          },
+          "premissa": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "pessoal_anual": null,
+      "capex": {
+        "2027": 60000,
+        "2028": 60000,
+        "2029": 60000,
+        "2030": 60000
+      },
+      "fomento": [
+        {
+          "programa": "Edital fictício",
+          "valor": 200000,
+          "mes": "2027-06",
+          "status": "aprovado"
+        }
+      ],
+      "captacao": [
+        {
+          "tipo": "equity",
+          "valor": 1500000,
+          "mes": "2027-04",
+          "status": "previsto"
+        }
+      ]
+    },
+    "base": {
+      "anos": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "caixa_inicial": 500000,
+      "caixa_inicial_fonte": "FICTÍCIO – teste do motor",
+      "impostos_receita_pct": 0.1,
+      "linhas": [
+        {
+          "linha": "Linha A",
+          "receita": {
+            "2027": 1200000.0,
+            "2028": 2000000.0,
+            "2029": 3000000.0,
+            "2030": 4000000.0
+          },
+          "margem_bruta_pct": 0.4,
+          "premissa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        },
+        {
+          "linha": "Linha B",
+          "receita": {
+            "2027": 300000.0,
+            "2028": 600000.0,
+            "2029": 900000.0,
+            "2030": 1200000.0
+          },
+          "margem_bruta_pct": 0.6,
+          "premissa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        }
+      ],
+      "despesas": [
+        {
+          "item": "Marketing e vendas",
+          "valor": {
+            "2027": 120000,
+            "2028": 180000,
+            "2029": 240000,
+            "2030": 300000
+          },
+          "premissa": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "pessoal_anual": null,
+      "capex": {
+        "2027": 60000,
+        "2028": 60000,
+        "2029": 60000,
+        "2030": 60000
+      },
+      "fomento": [
+        {
+          "programa": "Edital fictício",
+          "valor": 200000,
+          "mes": "2027-06",
+          "status": "aprovado"
+        }
+      ],
+      "captacao": [
+        {
+          "tipo": "equity",
+          "valor": 1500000,
+          "mes": "2027-04",
+          "status": "previsto"
+        }
+      ]
+    },
+    "otimista": {
+      "anos": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "caixa_inicial": 500000,
+      "caixa_inicial_fonte": "FICTÍCIO – teste do motor",
+      "impostos_receita_pct": 0.1,
+      "linhas": [
+        {
+          "linha": "Linha A",
+          "receita": {
+            "2027": 1560000.0,
+            "2028": 2600000.0,
+            "2029": 3900000.0,
+            "2030": 5200000.0
+          },
+          "margem_bruta_pct": 0.4,
+          "premissa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        },
+        {
+          "linha": "Linha B",
+          "receita": {
+            "2027": 390000.0,
+            "2028": 780000.0,
+            "2029": 1170000.0,
+            "2030": 1560000.0
+          },
+          "margem_bruta_pct": 0.6,
+          "premissa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        }
+      ],
+      "despesas": [
+        {
+          "item": "Marketing e vendas",
+          "valor": {
+            "2027": 120000,
+            "2028": 180000,
+            "2029": 240000,
+            "2030": 300000
+          },
+          "premissa": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "pessoal_anual": null,
+      "capex": {
+        "2027": 60000,
+        "2028": 60000,
+        "2029": 60000,
+        "2030": 60000
+      },
+      "fomento": [
+        {
+          "programa": "Edital fictício",
+          "valor": 200000,
+          "mes": "2027-06",
+          "status": "aprovado"
+        }
+      ],
+      "captacao": [
+        {
+          "tipo": "equity",
+          "valor": 1500000,
+          "mes": "2027-04",
+          "status": "previsto"
+        }
+      ]
+    }
+  },
+  "plano_captacao": {
+    "valor": 1500000,
+    "instrumento": "equity",
+    "prazo": "2027-04",
+    "uso_dos_recursos": [
+      "FICTÍCIO – teste do motor"
+    ]
+  },
+  "analise": "FICTÍCIO – teste do motor"
+}

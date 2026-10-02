@@ -1,0 +1,47 @@
+{
+  "_template": true,
+  "itens": [
+    {
+      "tema": "tributario|simples|reforma|anatel|normas|lgpd|seguranca|importacao|outro",
+      "descricao": "",
+      "impacto": "",
+      "prazo": "",
+      "evidencias": [
+        "REG-01"
+      ]
+    }
+  ],
+  "fomento_calendario": [
+    {
+      "programa": "",
+      "orgao": "",
+      "prazo": "AAAA-MM-DD",
+      "valor": "",
+      "aderencia": "alta|media|baixa",
+      "evidencias": [
+        "REG-01"
+      ]
+    }
+  ],
+  "capital": [
+    {
+      "fonte": "",
+      "tipo": "anjo|vc|corporate|divida|publico",
+      "ticket": "",
+      "tese": "",
+      "evidencias": [
+        "REG-01"
+      ]
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "REG-01",
+      "afirmacao": "",
+      "fonte": "",
+      "url": "",
+      "data": "AAAA-MM-DD",
+      "tipo": "confirmado|reportado|estimativa|interno"
+    }
+  ]
+}

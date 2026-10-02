@@ -1,0 +1,113 @@
+{
+  "ambicao": "FICTÍCIO",
+  "usos_do_plano": [
+    "governanca interna"
+  ],
+  "restricoes": [
+    "FICTÍCIO – teste do motor"
+  ],
+  "decisoes_ja_tomadas": [],
+  "fora_de_escopo": [],
+  "questoes_criticas_iniciais": [
+    "FICTÍCIO – teste do motor"
+  ],
+  "dimensoes": [
+    {
+      "id": "E01",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "E02",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "E03",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "E04",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "E05",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "E06",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "E07",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "E08",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO – teste do motor"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    }
+  ],
+  "perguntas": [
+    {
+      "id": "Q01",
+      "rodada": 1,
+      "dimensao": "E03",
+      "pergunta": "Caixa disponível?",
+      "por_que_importa": "Define apostas",
+      "impacto": "alto",
+      "formato": "numero",
+      "opcoes": [],
+      "resposta_proposta": "R$ 500 mil",
+      "destinatario": "marcus",
+      "status": "respondida",
+      "resposta": "FICTÍCIO"
+    }
+  ],
+  "rodada_atual": 1
+}

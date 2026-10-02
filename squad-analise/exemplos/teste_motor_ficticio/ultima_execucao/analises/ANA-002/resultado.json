@@ -1,0 +1,26 @@
+{
+  "id": "ANA-002",
+  "valores": {
+    "tendencia_mensal": {
+      "valor": -8.708818838609744e-05,
+      "unidade": "min por mês",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.12795965426639963,
+        "superior": 0.12778547788962744,
+        "nivel": 0.95
+      },
+      "p_valor": 0.9985818182019016,
+      "n": 6
+    }
+  },
+  "tabelas": {
+    "por_mes": "por_mes.csv"
+  },
+  "figuras": [
+    "duracao_mensal.png"
+  ],
+  "notas": "",
+  "em": "2026-10-02T22:10:16",
+  "segundos": 0.08
+}

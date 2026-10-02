@@ -1,0 +1,30 @@
+{
+  "itens": [
+    {
+      "id": "I01",
+      "descricao": "Frete e desembaraço",
+      "categoria": "logistica",
+      "valor": {
+        "min": 8000,
+        "provavel": 10000,
+        "max": 15000
+      },
+      "distribuicao": "inicio",
+      "fonte": "FICTÍCIO – teste do motor"
+    },
+    {
+      "id": "I02",
+      "descricao": "Viagens",
+      "categoria": "viagens",
+      "valor": {
+        "min": 5000,
+        "provavel": 8000,
+        "max": 12000
+      },
+      "distribuicao": "linear",
+      "fonte": "FICTÍCIO – teste do motor"
+    }
+  ],
+  "overhead_pct": 0.1,
+  "overhead_fonte": "FICTÍCIO – teste do motor"
+}

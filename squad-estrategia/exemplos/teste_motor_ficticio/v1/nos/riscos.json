@@ -1,0 +1,37 @@
+{
+  "itens": [
+    {
+      "id": "R01",
+      "risco": "FICTÍCIO – teste do motor",
+      "categoria": "execucao",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "gatilho": "FICTÍCIO – teste do motor",
+      "mitigacao": "FICTÍCIO – teste do motor",
+      "plano_b": "FICTÍCIO – teste do motor",
+      "dono": "FICTÍCIO"
+    },
+    {
+      "id": "R02",
+      "risco": "FICTÍCIO – teste do motor",
+      "categoria": "execucao",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "gatilho": "FICTÍCIO – teste do motor",
+      "mitigacao": "FICTÍCIO – teste do motor",
+      "plano_b": "FICTÍCIO – teste do motor",
+      "dono": "FICTÍCIO"
+    },
+    {
+      "id": "R03",
+      "risco": "FICTÍCIO – teste do motor",
+      "categoria": "execucao",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "gatilho": "FICTÍCIO – teste do motor",
+      "mitigacao": "FICTÍCIO – teste do motor",
+      "plano_b": "FICTÍCIO – teste do motor",
+      "dono": "FICTÍCIO"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "setor": "Intralogística",
+  "subsetor": "Operação de robôs móveis",
+  "papel": "Gerente de operações",
+  "senioridade": "sênior",
+  "foco": "produtividade por turno",
+  "conhecimentos": [
+    {
+      "tema": "turnos",
+      "conteudo": "FICTÍCIO – teste do motor",
+      "fonte": "FICTÍCIO – teste do motor",
+      "url": "",
+      "confianca": "media"
+    }
+  ],
+  "indicadores": [
+    {
+      "nome": "Missões por hora",
+      "formula": "missões / horas operadas",
+      "faixa_tipica": "FICTÍCIO – teste do motor",
+      "fonte": "FICTÍCIO – teste do motor",
+      "confianca": "media"
+    }
+  ],
+  "faixas_plausiveis": [
+    {
+      "tabela": "raw_missoes",
+      "coluna": "duracao_min",
+      "min": 1,
+      "max": 120,
+      "justificativa": "FICTÍCIO – teste do motor",
+      "fonte": "FICTÍCIO – teste do motor",
+      "confianca": "media"
+    }
+  ],
+  "armadilhas": [
+    "FICTÍCIO – teste do motor"
+  ],
+  "perguntas_do_especialista": [
+    "FICTÍCIO – teste do motor"
+  ],
+  "vocabulario": []
+}

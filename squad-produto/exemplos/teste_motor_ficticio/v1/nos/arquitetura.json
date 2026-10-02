@@ -1,0 +1,67 @@
+{
+  "visao": "FICTÍCIO – teste do motor",
+  "componentes": [
+    {
+      "id": "CP1",
+      "nome": "Base robótica",
+      "tipo": "hardware",
+      "decisao": "comprar",
+      "alternativas": [
+        {
+          "opcao": "A",
+          "fornecedor": "[fictício]",
+          "fonte": "FICTÍCIO – teste do motor"
+        },
+        {
+          "opcao": "B",
+          "fornecedor": "[fictício]",
+          "fonte": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "trl": 8,
+      "por_unidade": true,
+      "custo_unitario": {
+        "min": 60000,
+        "provavel": 75000,
+        "max": 95000
+      },
+      "fonte_custo": "FICTÍCIO – teste do motor",
+      "requisitos": [
+        "RQ01"
+      ],
+      "riscos_tecnicos": []
+    },
+    {
+      "id": "CP2",
+      "nome": "Software de frota",
+      "tipo": "software",
+      "decisao": "fazer",
+      "alternativas": [
+        {
+          "opcao": "Próprio",
+          "fornecedor": "Acta",
+          "fonte": "FICTÍCIO – teste do motor"
+        },
+        {
+          "opcao": "Terceiro",
+          "fornecedor": "[fictício]",
+          "fonte": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "trl": 6,
+      "por_unidade": true,
+      "custo_unitario": {
+        "min": 3000,
+        "provavel": 5000,
+        "max": 8000
+      },
+      "fonte_custo": "FICTÍCIO – teste do motor",
+      "requisitos": [
+        "RQ03"
+      ],
+      "riscos_tecnicos": []
+    }
+  ],
+  "interfaces": [],
+  "riscos": []
+}

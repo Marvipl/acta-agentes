@@ -1,0 +1,78 @@
+{
+  "modelo_receita": "hibrido",
+  "mix": {
+    "venda": 0.4,
+    "locacao": 0.6
+  },
+  "preco_venda": 150000,
+  "preco_locacao_mensal": 6000,
+  "preco_servico_mensal": 800,
+  "preco_implantacao": 20000,
+  "custo_implantacao_por_cliente": {
+    "min": 8000,
+    "provavel": 12000,
+    "max": 20000
+  },
+  "custo_suporte_mensal_por_unidade": {
+    "min": 300,
+    "provavel": 500,
+    "max": 800
+  },
+  "custo_unitario_override": null,
+  "unidades_por_cliente": 2,
+  "volume_unidades_novas": {
+    "ano1": {
+      "min": 4,
+      "provavel": 8,
+      "max": 12
+    },
+    "ano2": {
+      "min": 10,
+      "provavel": 20,
+      "max": 30
+    },
+    "ano3": {
+      "min": 20,
+      "provavel": 35,
+      "max": 50
+    }
+  },
+  "investimento_desenvolvimento": {
+    "ano1": {
+      "min": 200000,
+      "provavel": 300000,
+      "max": 450000
+    },
+    "ano2": {
+      "min": 50000,
+      "provavel": 100000,
+      "max": 150000
+    },
+    "ano3": {
+      "min": 0,
+      "provavel": 50000,
+      "max": 100000
+    }
+  },
+  "impostos_receita_pct": 0.15,
+  "comissao_pct": 0.05,
+  "taxa_desconto_aa": 0.2,
+  "wtp": [
+    {
+      "fonte": "FICTÍCIO – teste do motor",
+      "valor": "FICTÍCIO – teste do motor",
+      "evidencias": [
+        "CLI-01"
+      ]
+    }
+  ],
+  "roi_cliente": {
+    "custo_atual_anual": 400000,
+    "custo_operacao_com_solucao_anual": 150000,
+    "memoria_calculo": "FICTÍCIO – teste do motor",
+    "evidencias": [
+      "CLI-01"
+    ]
+  },
+  "premissas": []
+}

@@ -1,0 +1,139 @@
+{
+  "perspectivas": [
+    "financeira",
+    "clientes",
+    "processos",
+    "pessoas e tecnologia"
+  ],
+  "objetivos": [
+    {
+      "id": "OB1",
+      "perspectiva": "financeira",
+      "objetivo": "Objetivo fictício 1",
+      "opcao_ref": "O1"
+    },
+    {
+      "id": "OB2",
+      "perspectiva": "financeira",
+      "objetivo": "Objetivo fictício 2",
+      "opcao_ref": "O1"
+    },
+    {
+      "id": "OB3",
+      "perspectiva": "financeira",
+      "objetivo": "Objetivo fictício 3",
+      "opcao_ref": "O1"
+    }
+  ],
+  "krs": [
+    {
+      "id": "KR1.1",
+      "objetivo_id": "OB1",
+      "kr": "KR fictício",
+      "metrica": "número",
+      "unidade": "un",
+      "baseline": 0,
+      "meta_anual": 10,
+      "metas_trimestrais": {
+        "T1": 2,
+        "T2": 5,
+        "T3": 7,
+        "T4": 10
+      },
+      "dono": "FICTÍCIO",
+      "fonte_dado": "FICTÍCIO – teste do motor",
+      "tipo": "compromisso"
+    },
+    {
+      "id": "KR1.2",
+      "objetivo_id": "OB1",
+      "kr": "KR fictício",
+      "metrica": "número",
+      "unidade": "un",
+      "baseline": 0,
+      "meta_anual": 10,
+      "metas_trimestrais": {
+        "T1": 2,
+        "T2": 5,
+        "T3": 7,
+        "T4": 10
+      },
+      "dono": "FICTÍCIO",
+      "fonte_dado": "FICTÍCIO – teste do motor",
+      "tipo": "compromisso"
+    },
+    {
+      "id": "KR2.1",
+      "objetivo_id": "OB2",
+      "kr": "KR fictício",
+      "metrica": "número",
+      "unidade": "un",
+      "baseline": 0,
+      "meta_anual": 10,
+      "metas_trimestrais": {
+        "T1": 2,
+        "T2": 5,
+        "T3": 7,
+        "T4": 10
+      },
+      "dono": "FICTÍCIO",
+      "fonte_dado": "FICTÍCIO – teste do motor",
+      "tipo": "compromisso"
+    },
+    {
+      "id": "KR2.2",
+      "objetivo_id": "OB2",
+      "kr": "KR fictício",
+      "metrica": "número",
+      "unidade": "un",
+      "baseline": 0,
+      "meta_anual": 10,
+      "metas_trimestrais": {
+        "T1": 2,
+        "T2": 5,
+        "T3": 7,
+        "T4": 10
+      },
+      "dono": "FICTÍCIO",
+      "fonte_dado": "FICTÍCIO – teste do motor",
+      "tipo": "compromisso"
+    },
+    {
+      "id": "KR3.1",
+      "objetivo_id": "OB3",
+      "kr": "KR fictício",
+      "metrica": "número",
+      "unidade": "un",
+      "baseline": 0,
+      "meta_anual": 10,
+      "metas_trimestrais": {
+        "T1": 2,
+        "T2": 5,
+        "T3": 7,
+        "T4": 10
+      },
+      "dono": "FICTÍCIO",
+      "fonte_dado": "FICTÍCIO – teste do motor",
+      "tipo": "compromisso"
+    },
+    {
+      "id": "KR3.2",
+      "objetivo_id": "OB3",
+      "kr": "KR fictício",
+      "metrica": "número",
+      "unidade": "un",
+      "baseline": 0,
+      "meta_anual": 10,
+      "metas_trimestrais": {
+        "T1": 2,
+        "T2": 5,
+        "T3": 7,
+        "T4": 10
+      },
+      "dono": "FICTÍCIO",
+      "fonte_dado": "FICTÍCIO – teste do motor",
+      "tipo": "compromisso"
+    }
+  ],
+  "kpis": []
+}

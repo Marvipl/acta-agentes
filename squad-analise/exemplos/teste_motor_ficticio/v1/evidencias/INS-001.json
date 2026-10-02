@@ -1,0 +1,46 @@
+{
+  "id": "INS-001",
+  "estado": "acionavel",
+  "afirmacao": "Missões do turno da noite duram {{v.dif}} a mais que as do dia ({{v.rel}} acima).",
+  "pergunta_ref": "P1",
+  "criterio_ref": "CR1",
+  "valores": {
+    "dif": "ANA-001.dif_duracao_min",
+    "rel": "ANA-001.dif_relativa"
+  },
+  "nivel": "associativo",
+  "robustez": [
+    {
+      "recorte": "por modelo de robô",
+      "analise": "ANA-001",
+      "resultado": "passa",
+      "nota": ""
+    },
+    {
+      "recorte": "por mês",
+      "analise": "ANA-001",
+      "resultado": "passa",
+      "nota": ""
+    }
+  ],
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "FICTÍCIO – teste do motor",
+    "em": "2026-10-02"
+  },
+  "impacto": {
+    "modelo": "IMP-001"
+  },
+  "acao": "FICTÍCIO – teste do motor",
+  "dono": "FICTÍCIO",
+  "premissas": [
+    "FICTÍCIO – teste do motor"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "FICTÍCIO – teste do motor"
+  },
+  "confianca": "media",
+  "justificativa_confianca": "FICTÍCIO – teste do motor",
+  "historico": []
+}

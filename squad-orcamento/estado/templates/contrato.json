@@ -1,0 +1,17 @@
+{
+  "_template": true,
+  "marcos": [
+    {
+      "id": "M1",
+      "evento": "",
+      "pct": null,
+      "atividade_id": "",
+      "prazo_pagamento_dias": null
+    }
+  ],
+  "retencao_pct": 0.0,
+  "liberacao_retencao_dias": 0,
+  "garantias": [],
+  "estrutura_recomendada": "",
+  "clausulas_criticas": []
+}

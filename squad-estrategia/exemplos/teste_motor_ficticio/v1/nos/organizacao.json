@@ -1,0 +1,17 @@
+{
+  "estrutura": "FICTÍCIO – teste do motor",
+  "custo_pessoal_mensal_atual": 60000,
+  "custo_pessoal_fonte": "FICTÍCIO – teste do motor",
+  "contratacoes": [
+    {
+      "perfil": "Engenheiro de software sênior",
+      "quantidade": 1,
+      "mes_inicio": "2027-04",
+      "custo_mensal_unitario": 20000,
+      "justificativa": "FICTÍCIO – teste do motor",
+      "fonte": "FICTÍCIO – teste do motor"
+    }
+  ],
+  "desligamentos_ou_realocacoes": [],
+  "cultura_e_rituais": []
+}

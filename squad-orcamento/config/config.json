@@ -1,0 +1,95 @@
+{
+  "_leia": "Parâmetros do squad. Valores null precisam ser definidos por Marcus/Renato antes do primeiro orçamento completo.",
+  "drive_orcamentos_dir": "[caminho local da pasta Acta > Orçamentos sincronizada pelo Google Drive para desktop]",
+  "politica_comercial": {
+    "_leia": "Defina com Marcus antes do primeiro orçamento. Usada no modo rápido e como referência no completo. Frações (0.25 = 25%).",
+    "margem_alvo": null,
+    "margem_minima": null,
+    "comissao_pct": null,
+    "marcos_padrao": [
+      {
+        "evento": "[ex.: assinatura]",
+        "pct": null
+      },
+      {
+        "evento": "[ex.: entrega dos equipamentos]",
+        "pct": null
+      },
+      {
+        "evento": "[ex.: aceite]",
+        "pct": null
+      }
+    ],
+    "custo_capital_aa": null
+  },
+  "descoberta": {
+    "_leia": "Limiares propostos para a prontidão da especificação; ajuste com o uso. Frações (0.8 = 80%).",
+    "max_perguntas_por_rodada": 7,
+    "max_rodadas": 2,
+    "prontidao_minima": {
+      "rapido": 0.5,
+      "completo": 0.8
+    },
+    "valor_status": {
+      "completo": 1.0,
+      "premissa": 0.7,
+      "parcial": 0.5,
+      "ausente": 0.0
+    }
+  },
+  "monte_carlo_iteracoes": 10000,
+  "semente_aleatoria": 42,
+  "percentil_contingencia": 80,
+  "item_critico_pct_bom": 0.05,
+  "validade_cotacao_dias": 90,
+  "calibracao_amostra_minima": 3,
+  "calibracao_meia_vida_meses": 12,
+  "dias_por_mes": 30.4,
+  "max_rodadas_revisao": 2,
+  "pagamento_padrao_bom": {
+    "_leia": "Condição padrão de pagamento a fornecedores quando o item da BOM não define a sua. Ex.: [{\"evento\": \"pedido\", \"pct\": 0.5}, {\"evento\": \"entrega\", \"pct\": 0.5}]",
+    "importado": null,
+    "nacional": null
+  },
+  "termos_proibidos": [
+    "Corsight",
+    "K.FLEET",
+    "KFLEET",
+    "K.CONCEPT",
+    "Venturus",
+    "SiDi"
+  ],
+  "classes_estimativa": {
+    "_fonte": "AACE International RP 18R-97 (referência; faixas típicas, não garantias)",
+    "5": {
+      "definicao_projeto": "0–2%",
+      "faixa_baixa": "-20% a -50%",
+      "faixa_alta": "+30% a +100%",
+      "uso": "triagem / ordem de grandeza"
+    },
+    "4": {
+      "definicao_projeto": "1–15%",
+      "faixa_baixa": "-15% a -30%",
+      "faixa_alta": "+20% a +50%",
+      "uso": "estudo de viabilidade"
+    },
+    "3": {
+      "definicao_projeto": "10–40%",
+      "faixa_baixa": "-10% a -20%",
+      "faixa_alta": "+10% a +30%",
+      "uso": "proposta / orçamento"
+    },
+    "2": {
+      "definicao_projeto": "30–75%",
+      "faixa_baixa": "-5% a -15%",
+      "faixa_alta": "+5% a +20%",
+      "uso": "controle / proposta firme"
+    },
+    "1": {
+      "definicao_projeto": "65–100%",
+      "faixa_baixa": "-3% a -10%",
+      "faixa_alta": "+3% a +15%",
+      "uso": "verificação"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+id,modo,dimensao,pergunta,por_que_importa,impacto_inicial,formato,opcoes,vezes_usada,vezes_mudou_a_especificacao,ultima_atualizacao
+BP01,todos,D01,Que resultado o cliente precisa alcançar que hoje não alcança?,Define o JTBD e a proposta de valor,alto,texto,,0,0,
+BP02,todos,D02,Quem assina a compra e quem usa no dia a dia?,"Muda requisitos, preço e canal",alto,texto,,0,0,
+BP03,todos,D04,Qual o investimento máximo de desenvolvimento aceitável até o primeiro piloto?,Limita conceitos e escopo do MVP,alto,numero,,0,0,
+BP04,todos,D06,"Temos pedidos, RFPs ou entrevistas com clientes sobre este problema? Onde estão?","Sem evidência de cliente, a especificação vira suposição",alto,texto,,0,0,
+BP05,todos,D07,"O cliente prefere comprar, alugar ou contratar como serviço?",Muda o caso de negócio e o capital necessário,alto,escolha,comprar|alugar|serviço|não sabe,0,0,
+BP06,todos,D08,Há clientes dispostos a pilotar? Quais?,Define o plano de validação,medio,texto,,0,0,
+BP07,todos,D05,"Há tecnologia, plataforma ou parceiro obrigatório?",Restringe os conceitos,medio,texto,,0,0,

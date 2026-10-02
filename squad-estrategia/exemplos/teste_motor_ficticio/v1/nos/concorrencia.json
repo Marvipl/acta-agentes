@@ -1,0 +1,57 @@
+{
+  "concorrentes": [
+    {
+      "nome": "Concorrente fictício 1",
+      "tipo": "nacional",
+      "segmentos": [],
+      "proposta": "FICTÍCIO – teste do motor",
+      "preco_indicativo": "",
+      "forcas": [],
+      "fraquezas": [],
+      "movimentos_recentes": [],
+      "evidencias": [
+        "CON-01"
+      ]
+    },
+    {
+      "nome": "Concorrente fictício 2",
+      "tipo": "nacional",
+      "segmentos": [],
+      "proposta": "FICTÍCIO – teste do motor",
+      "preco_indicativo": "",
+      "forcas": [],
+      "fraquezas": [],
+      "movimentos_recentes": [],
+      "evidencias": [
+        "CON-01"
+      ]
+    },
+    {
+      "nome": "Concorrente fictício 3",
+      "tipo": "nacional",
+      "segmentos": [],
+      "proposta": "FICTÍCIO – teste do motor",
+      "preco_indicativo": "",
+      "forcas": [],
+      "fraquezas": [],
+      "movimentos_recentes": [],
+      "evidencias": [
+        "CON-01"
+      ]
+    }
+  ],
+  "benchmarks": [],
+  "implicacoes": [
+    "FICTÍCIO – teste do motor"
+  ],
+  "evidencias": [
+    {
+      "id": "CON-01",
+      "afirmacao": "FICTÍCIO",
+      "fonte": "FICTÍCIO – teste do motor",
+      "url": "https://exemplo.invalid",
+      "data": "2026-10-01",
+      "tipo": "reportado"
+    }
+  ]
+}

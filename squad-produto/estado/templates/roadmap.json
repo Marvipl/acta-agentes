@@ -1,0 +1,35 @@
+{
+  "_template": true,
+  "releases": [
+    {
+      "id": "MVP",
+      "objetivo": "",
+      "requisitos": [
+        "RQ01"
+      ],
+      "inicio": "AAAA-MM",
+      "duracao_meses": null,
+      "perfis": [
+        {
+          "perfil": "",
+          "fte": null
+        }
+      ],
+      "marco_de_decisao": ""
+    }
+  ],
+  "gtm": {
+    "segmento_inicial": "",
+    "canais": [],
+    "mensagem": "",
+    "parceiros": [],
+    "pilotos": [
+      {
+        "perfil_cliente": "",
+        "objetivo": "",
+        "criterio_sucesso": ""
+      }
+    ],
+    "metas_lancamento": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "problemas": [
+    {
+      "id": "QD1",
+      "tabela": "raw_missoes",
+      "coluna": "duracao_min",
+      "problema": "verificar valores fora da faixa plausível",
+      "linhas_afetadas": 0,
+      "severidade": "baixa",
+      "regra": "manter 1 a 120 min",
+      "etapa": "01_missoes.sql"
+    }
+  ],
+  "pseudonimizar": [
+    {
+      "tabela": "raw_missoes",
+      "coluna": "operador_nome"
+    },
+    {
+      "tabela": "raw_missoes",
+      "coluna": "operador_cpf"
+    }
+  ],
+  "excluir_colunas": [],
+  "nao_pessoal": [],
+  "vies_de_amostra": [
+    "FICTÍCIO – teste do motor"
+  ],
+  "conclusao": "FICTÍCIO – teste do motor"
+}

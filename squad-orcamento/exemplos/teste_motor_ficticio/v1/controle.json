@@ -1,0 +1,285 @@
+{
+  "nos": {
+    "meta": {
+      "hash": "05e1a6043419",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {}
+    },
+    "briefing": {
+      "hash": "d4456401fdaa",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "meta": "05e1a6043419"
+      }
+    },
+    "especificacao": {
+      "hash": "28a27c41f735",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "briefing": "d4456401fdaa"
+      }
+    },
+    "requisitos": {
+      "hash": "d1063a9fd428",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "briefing": "d4456401fdaa",
+        "especificacao": "28a27c41f735"
+      }
+    },
+    "escopo": {
+      "hash": "d17ef928a4e0",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "requisitos": "d1063a9fd428"
+      }
+    },
+    "solucao": {
+      "hash": "4219593f088b",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "requisitos": "d1063a9fd428",
+        "escopo": "d17ef928a4e0"
+      }
+    },
+    "operacoes": {
+      "hash": "a354af457a52",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "solucao": "4219593f088b"
+      }
+    },
+    "cronograma": {
+      "hash": "a03fead71826",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "escopo": "d17ef928a4e0",
+        "solucao": "4219593f088b",
+        "operacoes": "a354af457a52"
+      }
+    },
+    "bom": {
+      "hash": "0022ece8febf",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "solucao": "4219593f088b"
+      }
+    },
+    "tributos": {
+      "hash": "9659ad4dbe6d",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "meta": "05e1a6043419",
+        "solucao": "4219593f088b",
+        "bom": "0022ece8febf"
+      }
+    },
+    "custos_indiretos": {
+      "hash": "c18bede8292a",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "solucao": "4219593f088b",
+        "bom": "0022ece8febf",
+        "cronograma": "a03fead71826",
+        "operacoes": "a354af457a52"
+      }
+    },
+    "riscos": {
+      "hash": "a3b256998b39",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "escopo": "d17ef928a4e0",
+        "solucao": "4219593f088b",
+        "bom": "0022ece8febf",
+        "cronograma": "a03fead71826"
+      }
+    },
+    "preco": {
+      "hash": "a9ccb0bb8de5",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "requisitos": "d1063a9fd428",
+        "solucao": "4219593f088b",
+        "operacoes": "a354af457a52",
+        "cronograma": "a03fead71826",
+        "bom": "0022ece8febf",
+        "tributos": "9659ad4dbe6d",
+        "custos_indiretos": "c18bede8292a",
+        "riscos": "a3b256998b39"
+      }
+    },
+    "contrato": {
+      "hash": "4360c25560f5",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "cronograma": "a03fead71826",
+        "preco": "a9ccb0bb8de5",
+        "riscos": "a3b256998b39"
+      }
+    },
+    "financeiro": {
+      "hash": "41da8a27c460",
+      "agente": "teste",
+      "em": "2026-10-01T08:51:06",
+      "entradas": {
+        "preco": "a9ccb0bb8de5",
+        "contrato": "4360c25560f5"
+      }
+    }
+  },
+  "aprovacoes": [
+    {
+      "gate": "G1",
+      "por": "teste",
+      "em": "2026-10-01T08:51:06",
+      "obs": "",
+      "hashes": {
+        "meta": "05e1a6043419",
+        "briefing": "d4456401fdaa",
+        "especificacao": "28a27c41f735",
+        "requisitos": "d1063a9fd428",
+        "escopo": "d17ef928a4e0",
+        "solucao": "4219593f088b",
+        "operacoes": "a354af457a52",
+        "cronograma": "a03fead71826",
+        "bom": "0022ece8febf",
+        "tributos": "9659ad4dbe6d",
+        "custos_indiretos": "c18bede8292a",
+        "riscos": "a3b256998b39",
+        "preco": "a9ccb0bb8de5",
+        "contrato": "4360c25560f5",
+        "financeiro": "41da8a27c460"
+      }
+    },
+    {
+      "gate": "G2",
+      "por": "teste",
+      "em": "2026-10-01T08:51:06",
+      "obs": "",
+      "hashes": {
+        "meta": "05e1a6043419",
+        "briefing": "d4456401fdaa",
+        "especificacao": "28a27c41f735",
+        "requisitos": "d1063a9fd428",
+        "escopo": "d17ef928a4e0",
+        "solucao": "4219593f088b",
+        "operacoes": "a354af457a52",
+        "cronograma": "a03fead71826",
+        "bom": "0022ece8febf",
+        "tributos": "9659ad4dbe6d",
+        "custos_indiretos": "c18bede8292a",
+        "riscos": "a3b256998b39",
+        "preco": "a9ccb0bb8de5",
+        "contrato": "4360c25560f5",
+        "financeiro": "41da8a27c460"
+      }
+    }
+  ],
+  "congelado": false,
+  "historico": [
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "meta",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "briefing",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "especificacao",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "requisitos",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "escopo",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "solucao",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "operacoes",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "cronograma",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "bom",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "tributos",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "custos_indiretos",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "riscos",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "preco",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "contrato",
+      "agente": "teste"
+    },
+    {
+      "em": "2026-10-01T08:51:06",
+      "evento": "carimbo",
+      "no": "financeiro",
+      "agente": "teste"
+    }
+  ]
+}

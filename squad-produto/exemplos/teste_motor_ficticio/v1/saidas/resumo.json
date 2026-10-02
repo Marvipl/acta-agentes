@@ -1,0 +1,396 @@
+{
+  "meta": {
+    "projeto_id": "exemplo-ficticio",
+    "produto": "Robô fictício de entrega",
+    "segmento": "Segmento fictício",
+    "versao": 1,
+    "modo": "completo",
+    "data_base": "2026-10-01",
+    "mes_inicio": "2027-01"
+  },
+  "oportunidade": {
+    "nota": 3.4285714285714284,
+    "decisao": "seguir"
+  },
+  "conceitos": {
+    "ranking": [
+      {
+        "id": "C1",
+        "nome": "Integrar robô de mercado",
+        "abordagem": "integrar",
+        "nota": 4.285714285714286
+      },
+      {
+        "id": "C3",
+        "nome": "Revender sem integração",
+        "abordagem": "revender",
+        "nota": 3.7142857142857144
+      },
+      {
+        "id": "C2",
+        "nome": "Construir plataforma própria",
+        "abordagem": "construir",
+        "nota": 3.5714285714285716
+      }
+    ],
+    "escolhido": "C1"
+  },
+  "requisitos": {
+    "total": 3,
+    "por_prioridade": {
+      "must": 2,
+      "should": 1,
+      "could": 0,
+      "wont": 0
+    },
+    "jtbd_sem_must": [],
+    "normas_sem_requisito": []
+  },
+  "negocio": {
+    "vpl": -44649.074074074044,
+    "acumulado_3anos": 106200.0,
+    "payback": "ano3",
+    "custo_unitario": 80000.0,
+    "margem_unitaria_venda": 39999.999999999985,
+    "anos": [
+      {
+        "ano": "ano1",
+        "unidades_novas": 8.0,
+        "base_instalada": 8.0,
+        "receita": 771200.0,
+        "impostos": 115680.0,
+        "comissao": 38560.0,
+        "custo_equipamentos_vendidos": 256000.0,
+        "custo_implantacao": 48000.0,
+        "custo_suporte": 24000.0,
+        "margem_contribuicao": 288960.0,
+        "capex_locacao": 384000.0,
+        "investimento_desenvolvimento": 300000.0,
+        "fluxo": -395040.0,
+        "acumulado": -395040.0
+      },
+      {
+        "ano": "ano2",
+        "unidades_novas": 20.0,
+        "base_instalada": 28.0,
+        "receita": 2350400.0,
+        "impostos": 352560.0,
+        "comissao": 117520.0,
+        "custo_equipamentos_vendidos": 640000.0,
+        "custo_implantacao": 120000.0,
+        "custo_suporte": 108000.0,
+        "margem_contribuicao": 1012320.0,
+        "capex_locacao": 960000.0,
+        "investimento_desenvolvimento": 100000.0,
+        "fluxo": -47680.0,
+        "acumulado": -442720.0
+      },
+      {
+        "ano": "ano3",
+        "unidades_novas": 35.0,
+        "base_instalada": 63.0,
+        "receita": 4852400.0,
+        "impostos": 727860.0,
+        "comissao": 242620.0,
+        "custo_equipamentos_vendidos": 1120000.0,
+        "custo_implantacao": 210000.0,
+        "custo_suporte": 273000.0,
+        "margem_contribuicao": 2278920.0,
+        "capex_locacao": 1680000.0,
+        "investimento_desenvolvimento": 50000.0,
+        "fluxo": 548920.0,
+        "acumulado": 106200.0
+      }
+    ],
+    "sensibilidade": [
+      {
+        "driver": "Custo unitário",
+        "vpl_min": 649124.0740740742,
+        "vpl_max": -983283.3333333335,
+        "amplitude": 1632407.4074074076
+      },
+      {
+        "driver": "Preço ±20%",
+        "vpl_min": -727866.8518518519,
+        "vpl_max": 638568.7037037038,
+        "amplitude": 1366435.5555555557
+      },
+      {
+        "driver": "Volume de unidades",
+        "vpl_min": -213701.8518518518,
+        "vpl_max": 124403.70370370377,
+        "amplitude": 338105.55555555556
+      },
+      {
+        "driver": "Investimento de desenvolvimento",
+        "vpl_min": 102341.66666666669,
+        "vpl_max": -233306.48148148146,
+        "amplitude": 335648.14814814815
+      }
+    ],
+    "custo_unitario_min": 63000.0,
+    "custo_unitario_max": 103000.0
+  },
+  "roi_cliente": {
+    "modelo_avaliado": "locacao",
+    "investimento_cliente": 20000.0,
+    "mensalidade_cliente": 13600.0,
+    "economia_liquida_anual": 86800.0,
+    "payback_meses": 2.7649769585253456
+  },
+  "benchmark": {
+    "produtos": [
+      {
+        "id": "PR1",
+        "nome": "Produto fictício 1",
+        "fabricante": "[fictício]",
+        "tipo": "produto",
+        "ficha_tecnica_url": "https://exemplo.invalid/ficha.pdf"
+      },
+      {
+        "id": "PR2",
+        "nome": "Produto fictício 2",
+        "fabricante": "[fictício]",
+        "tipo": "produto",
+        "ficha_tecnica_url": "https://exemplo.invalid/ficha.pdf"
+      },
+      {
+        "id": "PR3",
+        "nome": "Produto fictício 3",
+        "fabricante": "[fictício]",
+        "tipo": "produto",
+        "ficha_tecnica_url": "https://exemplo.invalid/ficha.pdf"
+      }
+    ],
+    "especificacoes": [
+      {
+        "id": "ESP1",
+        "nome": "Carga útil",
+        "unidade": "kg",
+        "melhor": "maior",
+        "valores": {
+          "PR1": 80,
+          "PR2": 150,
+          "PR3": 100
+        },
+        "melhor_valor": 150.0,
+        "mediana": 100.0,
+        "lider": "PR2",
+        "n_dados": 3
+      },
+      {
+        "id": "ESP2",
+        "nome": "Autonomia",
+        "unidade": "h",
+        "melhor": "maior",
+        "valores": {
+          "PR1": 8,
+          "PR2": 10,
+          "PR3": 12
+        },
+        "melhor_valor": 12.0,
+        "mediana": 10.0,
+        "lider": "PR3",
+        "n_dados": 3
+      },
+      {
+        "id": "ESP3",
+        "nome": "Velocidade máxima",
+        "unidade": "m/s",
+        "melhor": "maior",
+        "valores": {
+          "PR1": 1.2,
+          "PR2": 1.5,
+          "PR3": 1.0
+        },
+        "melhor_valor": 1.5,
+        "mediana": 1.2,
+        "lider": "PR2",
+        "n_dados": 3
+      },
+      {
+        "id": "ESP4",
+        "nome": "Tempo de recarga",
+        "unidade": "h",
+        "melhor": "menor",
+        "valores": {
+          "PR1": 3,
+          "PR2": 4,
+          "PR3": 2.5
+        },
+        "melhor_valor": 2.5,
+        "mediana": 3.0,
+        "lider": "PR3",
+        "n_dados": 3
+      },
+      {
+        "id": "ESP5",
+        "nome": "Suporte no Brasil",
+        "unidade": "",
+        "melhor": "qualitativo",
+        "valores": {
+          "PR1": "parcial",
+          "PR2": "não",
+          "PR3": "sim"
+        },
+        "melhor_valor": null,
+        "mediana": null,
+        "lider": null,
+        "n_dados": 3
+      }
+    ],
+    "atendimento": [
+      {
+        "requisito": "RQ01",
+        "descricao": "Transportar carga",
+        "prioridade": "must",
+        "especificacao": "ESP1",
+        "nome_especificacao": "Carga útil",
+        "unidade": "kg",
+        "alvo": 100.0,
+        "melhor_mercado": 150.0,
+        "lider": "Produto fictício 2",
+        "mediana": 100.0,
+        "atendem": [
+          "Produto fictício 2",
+          "Produto fictício 3"
+        ],
+        "posicao": "entre a mediana e o melhor"
+      }
+    ],
+    "precos": [
+      {
+        "produto": "Produto fictício 1",
+        "fabricante": "[fictício]",
+        "valor": null,
+        "moeda": "USD",
+        "tipo": "estimativa",
+        "unidade": "unidade",
+        "suporte_brasil": "parcial"
+      },
+      {
+        "produto": "Produto fictício 2",
+        "fabricante": "[fictício]",
+        "valor": null,
+        "moeda": "USD",
+        "tipo": "estimativa",
+        "unidade": "unidade",
+        "suporte_brasil": "não"
+      },
+      {
+        "produto": "Produto fictício 3",
+        "fabricante": "[fictício]",
+        "valor": null,
+        "moeda": "USD",
+        "tipo": "estimativa",
+        "unidade": "unidade",
+        "suporte_brasil": "sim"
+      }
+    ],
+    "cobertura_dados": 1.0,
+    "dados_confirmados": 1.0,
+    "alertas": []
+  },
+  "hipoteses": [
+    {
+      "id": "H01",
+      "hipotese": "FICTÍCIO – teste do motor",
+      "categoria": "desejabilidade",
+      "risco": 20.0,
+      "status": "nao_testada",
+      "tem_experimento": true
+    },
+    {
+      "id": "H02",
+      "hipotese": "FICTÍCIO – teste do motor",
+      "categoria": "viabilidade",
+      "risco": 16.0,
+      "status": "nao_testada",
+      "tem_experimento": true
+    },
+    {
+      "id": "H03",
+      "hipotese": "FICTÍCIO – teste do motor",
+      "categoria": "factibilidade",
+      "risco": 9.0,
+      "status": "nao_testada",
+      "tem_experimento": true
+    },
+    {
+      "id": "H04",
+      "hipotese": "FICTÍCIO – teste do motor",
+      "categoria": "regulatoria",
+      "risco": 8.0,
+      "status": "nao_testada",
+      "tem_experimento": true
+    },
+    {
+      "id": "H05",
+      "hipotese": "FICTÍCIO – teste do motor",
+      "categoria": "viabilidade",
+      "risco": 6.0,
+      "status": "nao_testada",
+      "tem_experimento": true
+    }
+  ],
+  "capacidade": {
+    "sobrecargas": []
+  },
+  "alertas": [],
+  "fmt": {
+    "oportunidade_nota": "3,43",
+    "n_requisitos": "3",
+    "n_must": "2",
+    "n_hipoteses": "5",
+    "n_concorrentes": "3",
+    "n_especificacoes": "5",
+    "cobertura_benchmark": "100,0%",
+    "benchmark_confirmado": "100,0%",
+    "n_requisitos_benchmark": "1",
+    "n_requisitos_abaixo_mediana": "0",
+    "vpl_3anos": "-R$ 44.649,07",
+    "acumulado_3anos": "R$ 106.200,00",
+    "payback": "ano3",
+    "custo_unitario": "R$ 80.000,00",
+    "custo_unitario_min": "R$ 63.000,00",
+    "custo_unitario_max": "R$ 103.000,00",
+    "margem_unitaria_venda": "R$ 40.000,00",
+    "receita_ano1": "R$ 771.200,00",
+    "margem_contribuicao_ano1": "R$ 288.960,00",
+    "fluxo_ano1": "-R$ 395.040,00",
+    "acumulado_ano1": "-R$ 395.040,00",
+    "unidades_ano1": "8",
+    "receita_ano2": "R$ 2.350.400,00",
+    "margem_contribuicao_ano2": "R$ 1.012.320,00",
+    "fluxo_ano2": "-R$ 47.680,00",
+    "acumulado_ano2": "-R$ 442.720,00",
+    "unidades_ano2": "20",
+    "receita_ano3": "R$ 4.852.400,00",
+    "margem_contribuicao_ano3": "R$ 2.278.920,00",
+    "fluxo_ano3": "R$ 548.920,00",
+    "acumulado_ano3": "R$ 106.200,00",
+    "unidades_ano3": "35",
+    "maior_sensibilidade": "Custo unitário",
+    "roi_investimento_cliente": "R$ 20.000,00",
+    "roi_mensalidade_cliente": "R$ 13.600,00",
+    "roi_economia_anual": "R$ 86.800,00",
+    "roi_payback_meses": "2,8"
+  },
+  "_hashes": {
+    "meta": "e62bc1e9ab9b",
+    "briefing": "073eabc4914a",
+    "enquadramento": "ce7d3a3326ea",
+    "mercado": "add09910b259",
+    "clientes": "f8b3adabafb0",
+    "concorrencia": "91b3bf6e5d27",
+    "normas": "d467e8f34fa2",
+    "oportunidade": "5bc12f8d36b5",
+    "conceitos": "22dc20917737",
+    "requisitos": "256ef13d8c7b",
+    "arquitetura": "d19c0e1de4c8",
+    "negocio": "fdb2837a6031",
+    "validacao": "64234b608615",
+    "roadmap": "fe1218646219"
+  },
+  "_gerado_em": "2026-10-02T21:20:18"
+}

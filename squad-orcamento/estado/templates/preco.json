@@ -1,0 +1,30 @@
+{
+  "_template": true,
+  "modalidade": "venda|locacao|servico",
+  "receita_fixada": null,
+  "preco_proposto": null,
+  "composicao_receita": {
+    "produto": null,
+    "servico": null
+  },
+  "comissao_pct": null,
+  "comissao_sobre_recorrente": false,
+  "margem_alvo": null,
+  "margem_minima": null,
+  "recorrente": {
+    "tipo": "servico|locacao",
+    "mensalidade": null,
+    "meses": null,
+    "inicio_rel_entrega": 0
+  },
+  "roi_cliente": {
+    "investimento": null,
+    "economia_anual": null,
+    "payback_meses": null,
+    "memoria_calculo": "",
+    "fontes": []
+  },
+  "faixa_negociacao": "",
+  "estrategia": "",
+  "concorrencia": ""
+}

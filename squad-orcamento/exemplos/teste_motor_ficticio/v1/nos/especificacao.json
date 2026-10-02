@@ -1,0 +1,130 @@
+{
+  "_aviso": "VALORES FICTÍCIOS",
+  "tipo_projeto": "amr-intralogistica",
+  "dimensoes": [
+    {
+      "id": "D01",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D02",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D03",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D04",
+      "status": "premissa",
+      "evidencias": [
+        "FICTÍCIO"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "Chamada por tablet, sem integração com ERP",
+      "premissa_aceita_por": "teste"
+    },
+    {
+      "id": "D05",
+      "status": "parcial",
+      "evidencias": [
+        "FICTÍCIO"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D06",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D07",
+      "status": "premissa",
+      "evidencias": [
+        "FICTÍCIO"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "Sem normas especiais além das usuais",
+      "premissa_aceita_por": "teste"
+    },
+    {
+      "id": "D08",
+      "status": "completo",
+      "evidencias": [
+        "FICTÍCIO"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D09",
+      "status": "parcial",
+      "evidencias": [
+        "FICTÍCIO"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "D10",
+      "status": "ausente",
+      "evidencias": [
+        "FICTÍCIO"
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    }
+  ],
+  "perguntas": [
+    {
+      "id": "Q01",
+      "rodada": 1,
+      "dimensao": "D02",
+      "pergunta": "Qual o peso máximo da carga?",
+      "por_que_importa": "Define a classe do robô",
+      "impacto": "alto",
+      "formato": "numero",
+      "opcoes": [],
+      "resposta_proposta": "100 kg",
+      "destinatario": "marcus",
+      "status": "respondida",
+      "resposta": "100 kg (FICTÍCIO)",
+      "respondida_em": "2026-10-01",
+      "id_banco": "BP06"
+    }
+  ],
+  "rodada_atual": 1,
+  "decisao": {
+    "modo_recomendado": "completo",
+    "classe_maxima": 3,
+    "justificativa": "FICTÍCIO"
+  }
+}

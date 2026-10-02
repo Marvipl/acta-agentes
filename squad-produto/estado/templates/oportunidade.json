@@ -1,0 +1,42 @@
+{
+  "_template": true,
+  "problema": "",
+  "segmento_alvo": "SEG1",
+  "jtbd_alvo": [
+    "J1"
+  ],
+  "proposta_de_valor": {
+    "para_quem": "",
+    "que_problema": "",
+    "nossa_solucao": "",
+    "diferente_de": "",
+    "porque_acreditar": ""
+  },
+  "criterios": [
+    {
+      "criterio": "intensidade_da_dor",
+      "peso": null
+    },
+    {
+      "criterio": "tamanho_do_mercado",
+      "peso": null
+    },
+    {
+      "criterio": "disposicao_a_pagar",
+      "peso": null
+    },
+    {
+      "criterio": "vantagem_da_acta",
+      "peso": null
+    },
+    {
+      "criterio": "aderencia_estrategica",
+      "peso": null
+    }
+  ],
+  "notas": {},
+  "justificativas": {},
+  "decisao": "seguir|pivotar|parar",
+  "riscos_principais": [],
+  "evidencias": []
+}

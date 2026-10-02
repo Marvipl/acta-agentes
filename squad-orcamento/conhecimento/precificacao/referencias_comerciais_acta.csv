@@ -1,0 +1,15 @@
+item,unidade,preco_brl,tipo,cliente,status,data,fonte,observacoes
+Kappabot K100 – venda,unidade,120000,tabela,,"preço ""a partir de""",[a confirmar],perfil institucional informado pelo CEO,valor mínimo de tabela
+Kappabot K100 – locação,unidade/mês,7000,tabela,,"preço ""a partir de""",[a confirmar],perfil institucional informado pelo CEO,contrato mínimo de 12 meses
+Robertron – venda,unidade,160000,tabela,,"preço ""a partir de""",[a confirmar],perfil institucional informado pelo CEO,
+Robertron – locação,unidade/mês,7500,tabela,,vigente,[a confirmar],perfil institucional informado pelo CEO,
+Mapeamento,m²,30,tabela,,vigente,[a confirmar],perfil institucional informado pelo CEO,
+Implantação,robô,24000,tabela,,vigente,[a confirmar],perfil institucional informado pelo CEO,
+Integração simples (tablets),projeto,12000,tabela,,vigente,[a confirmar],perfil institucional informado pelo CEO,integração com ERP/WMS precificada caso a caso
+Manutenção,robô/mês,1000,tabela,,vigente,[a confirmar],perfil institucional informado pelo CEO,contrato mínimo de 12 meses
+Projeto (locação 2× K100),projeto,31500,contrato,LATAM (MRO São Carlos),em assinatura,2026-09,contrato de locação LATAM v3,
+Mapeamento (locação 2× K100),projeto,62484.75,contrato,LATAM (MRO São Carlos),em assinatura,2026-09,contrato de locação LATAM v3,
+Locação Kappabot K100 (24 meses),unidade/mês,6300,contrato,LATAM (MRO São Carlos),em assinatura,2026-09,contrato de locação LATAM v3,desconto de 10% vinculado ao prazo de 24 meses
+Hikrobot Q3-600D com instalação/configuração e carregador – venda,unidade,520000,proposta,NHS (Curitiba),proposta,2026-07-30,proposta NHS-003 v1.0,entrega 30 dias após assinatura
+7 robôs Husqvarna 435X AWD NERA (compra + instalação + configuração),lote,430000,proposta,Orbital Inc,proposta,2026-09,proposta comercial Orbital,"parte do orçamento total de R$ 3,93 mi"
+Suporte e manutenção de toda a solução Orbital,mês,35000,proposta,Orbital Inc,proposta,2026-09,proposta comercial Orbital,inclui 1 bateria de reposição do drone por mês

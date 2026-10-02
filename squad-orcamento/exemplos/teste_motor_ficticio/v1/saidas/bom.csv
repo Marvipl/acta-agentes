@@ -1,0 +1,4 @@
+id,descricao,qtd,moeda,preco_unit,cambio,aliq_aquisicao,fator,total_brl,fonte,atividade,mes_pedido,mes_entrega
+B01,AMR 100 kg,3,USD,25000.0,5.0,0.8,1.0,675000.0,cotacao,A02,0,2
+B02,Estação de recarga,3,USD,2000.0,5.0,0.8,1.0,54000.0,benchmark,A02,0,2
+B03,Licença de software,1,BRL,6000.0,1.0,0.0,1.0,6000.0,premissa,A02,0,1

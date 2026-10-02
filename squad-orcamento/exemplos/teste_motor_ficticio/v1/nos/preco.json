@@ -1,0 +1,31 @@
+{
+  "modalidade": "venda",
+  "receita_fixada": null,
+  "preco_proposto": null,
+  "composicao_receita": {
+    "produto": 0.8,
+    "servico": 0.2
+  },
+  "comissao_pct": 0.03,
+  "comissao_sobre_recorrente": false,
+  "margem_alvo": 0.25,
+  "margem_minima": 0.12,
+  "recorrente": {
+    "tipo": "servico",
+    "mensalidade": 6000,
+    "meses": 24,
+    "inicio_rel_entrega": 0
+  },
+  "roi_cliente": {
+    "investimento": null,
+    "economia_anual": null,
+    "payback_meses": null,
+    "memoria_calculo": "FICTÍCIO",
+    "fontes": [
+      "FICTÍCIO – teste do motor"
+    ]
+  },
+  "faixa_negociacao": "",
+  "estrategia": "",
+  "concorrencia": ""
+}

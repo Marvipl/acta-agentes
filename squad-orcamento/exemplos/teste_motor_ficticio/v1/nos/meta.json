@@ -1,0 +1,20 @@
+{
+  "_aviso": "VALORES FICTÍCIOS",
+  "projeto_id": "exemplo-ficticio",
+  "cliente": "[Cliente fictício]",
+  "projeto": "Teste do motor – 3 AMRs",
+  "versao": 1,
+  "modo": "completo",
+  "classe_estimativa": 3,
+  "data_base": "2026-10-01",
+  "mes_inicio": "2027-01",
+  "moeda": "BRL",
+  "cambio": {
+    "USD": {
+      "taxa": 5.0,
+      "data": "2026-10-01",
+      "fonte": "FICTÍCIO – teste do motor"
+    }
+  },
+  "tipo_projeto": "amr-intralogistica"
+}

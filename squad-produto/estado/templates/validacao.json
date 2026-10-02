@@ -1,0 +1,23 @@
+{
+  "_template": true,
+  "hipoteses": [
+    {
+      "id": "H01",
+      "hipotese": "",
+      "categoria": "desejabilidade|viabilidade|factibilidade|regulatoria",
+      "impacto": null,
+      "incerteza": null,
+      "evidencia_atual": "",
+      "experimento": {
+        "tipo": "",
+        "descricao": "",
+        "custo": null,
+        "duracao_semanas": null,
+        "criterio_sucesso": "",
+        "criterio_falha": ""
+      },
+      "status": "nao_testada|em_teste|confirmada|refutada",
+      "resultado": ""
+    }
+  ]
+}

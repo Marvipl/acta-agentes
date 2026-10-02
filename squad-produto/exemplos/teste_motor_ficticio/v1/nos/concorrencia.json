@@ -1,0 +1,222 @@
+{
+  "criterios_comparacao": [
+    "preço",
+    "carga"
+  ],
+  "produtos": [
+    {
+      "nome": "Produto fictício 1",
+      "fabricante": "[fictício]",
+      "tipo": "produto",
+      "preco": {
+        "valor": null,
+        "moeda": "USD",
+        "tipo": "estimativa",
+        "unidade": "unidade",
+        "fonte": "CON-01"
+      },
+      "recursos": {},
+      "pontos_fortes": [],
+      "pontos_fracos": [],
+      "evidencias": [
+        "CON-01"
+      ],
+      "id": "PR1",
+      "ficha_tecnica_url": "https://exemplo.invalid/ficha.pdf",
+      "specs": {
+        "ESP1": {
+          "valor": 80,
+          "fonte": "CON-02",
+          "observacao": ""
+        },
+        "ESP2": {
+          "valor": 8,
+          "fonte": "CON-02",
+          "observacao": ""
+        },
+        "ESP3": {
+          "valor": 1.2,
+          "fonte": "CON-02",
+          "observacao": ""
+        },
+        "ESP4": {
+          "valor": 3,
+          "fonte": "CON-02",
+          "observacao": ""
+        },
+        "ESP5": {
+          "valor": "parcial",
+          "fonte": "CON-02",
+          "observacao": ""
+        }
+      },
+      "suporte_brasil": "parcial"
+    },
+    {
+      "nome": "Produto fictício 2",
+      "fabricante": "[fictício]",
+      "tipo": "produto",
+      "preco": {
+        "valor": null,
+        "moeda": "USD",
+        "tipo": "estimativa",
+        "unidade": "unidade",
+        "fonte": "CON-01"
+      },
+      "recursos": {},
+      "pontos_fortes": [],
+      "pontos_fracos": [],
+      "evidencias": [
+        "CON-01"
+      ],
+      "id": "PR2",
+      "ficha_tecnica_url": "https://exemplo.invalid/ficha.pdf",
+      "specs": {
+        "ESP1": {
+          "valor": 150,
+          "fonte": "CON-02",
+          "observacao": ""
+        },
+        "ESP2": {
+          "valor": 10,
+          "fonte": "CON-02",
+          "observacao": ""
+        },
+        "ESP3": {
+          "valor": 1.5,
+          "fonte": "CON-02",
+          "observacao": ""
+        },
+        "ESP4": {
+          "valor": 4,
+          "fonte": "CON-02",
+          "observacao": ""
+        },
+        "ESP5": {
+          "valor": "não",
+          "fonte": "CON-02",
+          "observacao": ""
+        }
+      },
+      "suporte_brasil": "não"
+    },
+    {
+      "nome": "Produto fictício 3",
+      "fabricante": "[fictício]",
+      "tipo": "produto",
+      "preco": {
+        "valor": null,
+        "moeda": "USD",
+        "tipo": "estimativa",
+        "unidade": "unidade",
+        "fonte": "CON-01"
+      },
+      "recursos": {},
+      "pontos_fortes": [],
+      "pontos_fracos": [],
+      "evidencias": [
+        "CON-01"
+      ],
+      "id": "PR3",
+      "ficha_tecnica_url": "https://exemplo.invalid/ficha.pdf",
+      "specs": {
+        "ESP1": {
+          "valor": 100,
+          "fonte": "CON-02",
+          "observacao": ""
+        },
+        "ESP2": {
+          "valor": 12,
+          "fonte": "CON-02",
+          "observacao": ""
+        },
+        "ESP3": {
+          "valor": 1.0,
+          "fonte": "CON-02",
+          "observacao": ""
+        },
+        "ESP4": {
+          "valor": 2.5,
+          "fonte": "CON-02",
+          "observacao": ""
+        },
+        "ESP5": {
+          "valor": "sim",
+          "fonte": "CON-02",
+          "observacao": ""
+        }
+      },
+      "suporte_brasil": "sim"
+    }
+  ],
+  "lacunas_de_mercado": [
+    {
+      "lacuna": "FICTÍCIO – teste do motor",
+      "jtbd_ref": "J1",
+      "evidencias": [
+        "CON-01"
+      ]
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "CON-01",
+      "afirmacao": "FICTÍCIO",
+      "fonte": "FICTÍCIO – teste do motor",
+      "url": "https://exemplo.invalid",
+      "data": "2026-10-01",
+      "tipo": "reportado"
+    },
+    {
+      "id": "CON-02",
+      "afirmacao": "FICTÍCIO",
+      "fonte": "FICTÍCIO – teste do motor",
+      "url": "https://exemplo.invalid/ficha.pdf",
+      "data": "2026-10-02",
+      "tipo": "confirmado"
+    }
+  ],
+  "categoria_produto": "Robô fictício de entrega",
+  "especificacoes": [
+    {
+      "id": "ESP1",
+      "nome": "Carga útil",
+      "unidade": "kg",
+      "melhor": "maior",
+      "requisito_ref": "RQ01",
+      "observacao": ""
+    },
+    {
+      "id": "ESP2",
+      "nome": "Autonomia",
+      "unidade": "h",
+      "melhor": "maior",
+      "requisito_ref": "",
+      "observacao": ""
+    },
+    {
+      "id": "ESP3",
+      "nome": "Velocidade máxima",
+      "unidade": "m/s",
+      "melhor": "maior",
+      "requisito_ref": "",
+      "observacao": ""
+    },
+    {
+      "id": "ESP4",
+      "nome": "Tempo de recarga",
+      "unidade": "h",
+      "melhor": "menor",
+      "requisito_ref": "",
+      "observacao": ""
+    },
+    {
+      "id": "ESP5",
+      "nome": "Suporte no Brasil",
+      "unidade": "",
+      "melhor": "qualitativo",
+      "requisito_ref": "",
+      "observacao": ""
+    }
+  ]
+}

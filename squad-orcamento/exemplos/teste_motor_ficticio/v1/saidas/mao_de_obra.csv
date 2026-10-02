@@ -1,0 +1,5 @@
+id,origem,perfil,categoria,horas,custo_hora,total_brl,atividade
+E01,solucao,Engenheiro de software sênior,software,160.0,100.0,16000.0,A01
+E02,solucao,Engenheiro eletrônico pleno,eletronica,60.0,80.0,4800.0,A01
+O01,operacoes,Engenheiro de software sênior,implantacao,120.0,100.0,12000.0,A03
+G01,cronograma,Diretor técnico (CTO),gestao,60.0,150.0,9000.0,A02

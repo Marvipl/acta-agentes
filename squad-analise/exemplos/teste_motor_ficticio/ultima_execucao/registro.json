@@ -1,0 +1,30 @@
+{
+  "ANA-001": {
+    "pergunta_ref": "P1",
+    "tipo": "confirmatoria",
+    "nivel": "associativo",
+    "metodo": "Diferença de médias (Welch) com IC 95% e robustez por modelo de robô e por mês",
+    "script": "analises/ANA-001.py",
+    "script_sha256": "ba6425ddefaa7a90dc8f227ba8e9f3f6d282e4cd46f0d8f951b66089c13d822d",
+    "resultado_sha256": "de9cdc87fc92742e58bb3f591bbacc01b27e5acbfe48606419ed08dc467b845e",
+    "chaves": [
+      "dif_duracao_min",
+      "dif_relativa",
+      "missoes_noite_por_mes",
+      "robusto_por_mes",
+      "robusto_por_modelo"
+    ]
+  },
+  "ANA-002": {
+    "pergunta_ref": "P2",
+    "tipo": "exploratoria",
+    "nivel": "descritivo",
+    "metodo": "Tendência mensal da duração média",
+    "script": "analises/ANA-002.py",
+    "script_sha256": "670b4a11c5c8c9a26221f919c41845474e580448076894125e06a54f4dc074de",
+    "resultado_sha256": "861edd01883a099285e402c550d347c63433fb41dfd66e0a6c3c1fbbce61ce28",
+    "chaves": [
+      "tendencia_mensal"
+    ]
+  }
+}

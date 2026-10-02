@@ -1,0 +1,25 @@
+{
+  "em": "2026-10-02T22:10:15",
+  "etapas": [
+    {
+      "arquivo": "01_missoes.sql",
+      "sha256": "899b38f73d9241214c4feac6fd096311c3c36ee3d04a68a2c2eebb988cbcd2a6",
+      "tabelas": {
+        "prep_missoes": {
+          "linhas": 3000,
+          "impressao": "3658721357551516195"
+        }
+      }
+    }
+  ],
+  "base": {
+    "base_missoes": {
+      "linhas": 3000,
+      "impressao": "18050431518447070690"
+    },
+    "base_robos": {
+      "linhas": 6,
+      "impressao": "81587763937346207"
+    }
+  }
+}

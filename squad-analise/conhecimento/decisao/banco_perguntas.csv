@@ -1,0 +1,8 @@
+id,nivel,dimensao,pergunta,por_que_importa,impacto_inicial,formato,opcoes,vezes_usada,vezes_mudou_a_analise,ultima_atualizacao
+BA01,todos,A01,"Que decisão esta análise precisa destravar, e quais são as alternativas?",Sem decisão a análise vira curiosidade,alto,texto,,0,0,
+BA02,todos,A02,A partir de que valor da métrica principal você mudaria de decisão?,Define o limite que torna um insight acionável,alto,numero,,0,0,
+BA03,todos,A04,De que sistema vieram os dados e que período cobrem?,"Afeta qualidade, sazonalidade e comparabilidade",alto,texto,,0,0,
+BA04,todos,A05,Como a empresa define a métrica principal (o que entra e o que não entra)?,Evita calcular a métrica errada,alto,texto,,0,0,
+BA05,todos,A06,Os dados têm informação pessoal ou de cliente que não pode circular?,Define pseudonimização e o que pode ir no relatório,alto,escolha,sim|não|não sei,0,0,
+BA06,todos,A07,Qual a ordem de grandeza do que está em jogo?,Calibra o esforço e o nível de rigor,medio,texto,,0,0,
+BA07,todos,A08,Quem do setor pode validar as interpretações principais?,Interpretação decisiva precisa de validação humana,medio,texto,,0,0,

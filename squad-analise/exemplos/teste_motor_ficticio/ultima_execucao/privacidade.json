@@ -1,0 +1,11 @@
+{
+  "em": "2026-10-02T22:10:15",
+  "ativa": true,
+  "pseudonimizadas": {
+    "raw_missoes": [
+      "operador_nome",
+      "operador_cpf"
+    ]
+  },
+  "excluidas": []
+}

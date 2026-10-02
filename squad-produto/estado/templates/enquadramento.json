@@ -1,0 +1,39 @@
+{
+  "_template": true,
+  "objetivo": "",
+  "ligacao_estrategica": "",
+  "restricoes": [],
+  "decisoes_ja_tomadas": [],
+  "fora_de_escopo": [],
+  "dimensoes": [
+    {
+      "id": "D01",
+      "status": "completo|premissa|parcial|ausente|nao_se_aplica",
+      "evidencias": [
+        ""
+      ],
+      "lacunas": [
+        ""
+      ],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    }
+  ],
+  "perguntas": [
+    {
+      "id": "Q01",
+      "rodada": 1,
+      "dimensao": "D01",
+      "pergunta": "",
+      "por_que_importa": "",
+      "impacto": "alto|medio",
+      "formato": "escolha|numero|texto",
+      "opcoes": [],
+      "resposta_proposta": "",
+      "destinatario": "marcus|terceiros",
+      "status": "aberta|respondida|convertida_em_premissa",
+      "resposta": ""
+    }
+  ],
+  "rodada_atual": 1
+}

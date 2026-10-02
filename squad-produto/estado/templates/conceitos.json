@@ -1,0 +1,41 @@
+{
+  "_template": true,
+  "criterios_selecao": [
+    {
+      "criterio": "atende_jtbd",
+      "peso": null
+    },
+    {
+      "criterio": "custo_e_preco",
+      "peso": null
+    },
+    {
+      "criterio": "tempo_ate_mercado",
+      "peso": null
+    },
+    {
+      "criterio": "risco_tecnico",
+      "peso": null
+    },
+    {
+      "criterio": "diferenciacao",
+      "peso": null
+    }
+  ],
+  "conceitos": [
+    {
+      "id": "C1",
+      "nome": "",
+      "descricao": "",
+      "abordagem": "construir|integrar|revender|parceria",
+      "atende_jtbd": [
+        "J1"
+      ],
+      "notas": {},
+      "riscos": [],
+      "evidencias": []
+    }
+  ],
+  "escolhido": "C1",
+  "justificativa": ""
+}
