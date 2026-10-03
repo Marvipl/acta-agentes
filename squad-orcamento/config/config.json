@@ -45,9 +45,27 @@
   "dias_por_mes": 30.4,
   "max_rodadas_revisao": 2,
   "pagamento_padrao_bom": {
-    "_leia": "Condição padrão de pagamento a fornecedores quando o item da BOM não define a sua. Ex.: [{\"evento\": \"pedido\", \"pct\": 0.5}, {\"evento\": \"entrega\", \"pct\": 0.5}]",
-    "importado": null,
-    "nacional": null
+    "_leia": "Definida por Marcus em 03/10/2026. O motor só reconhece os eventos pedido e entrega. No importado, Marcus informou 70% no embarque para o Brasil; foi gravado como entrega, então o caixa mostra essa saída algumas semanas depois do real (tempo de trânsito).",
+    "importado": [
+      {
+        "evento": "pedido",
+        "pct": 0.3
+      },
+      {
+        "evento": "entrega",
+        "pct": 0.7
+      }
+    ],
+    "nacional": [
+      {
+        "evento": "pedido",
+        "pct": 0.5
+      },
+      {
+        "evento": "entrega",
+        "pct": 0.5
+      }
+    ]
   },
   "termos_proibidos": [
     "Corsight",
