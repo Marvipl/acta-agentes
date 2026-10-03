@@ -27,12 +27,25 @@ def rodar(dv, forcar=False):
     lista, pend = insights.checar(dv)
     linhagem.gerar(dv)
     arq, falta = relatorio.gerar(dv)
+    _resumo(dv, lista)
     print(f"\nInsights: {len(lista)} ({sum(1 for i in lista if i['estado'] == 'aprovado')} aprovados) · pendências: {len(pend)}")
     for p in pend: print("pendência:", p)
     for k, v in falta.items():
         if v: print(f"entregável {k}: variáveis sem valor {v}")
     print(f"Planilha: {arq}\nPainel: {dv / 'saidas' / 'painel.html'}")
     return erros
+
+
+def _resumo(dv, lista):
+    """Grava saidas/resumo.json, que o congelamento usa como baseline da versão."""
+    from .util import salvar_json, agora
+    from .reprodutibilidade import assinatura_registro
+    imp = (carregar_json(dv / "saidas" / "impacto.json", {}) or {}).get("modelos", {})
+    aud = carregar_json(dv / "saidas" / "auditoria.json", {}) or {}
+    salvar_json(dv / "saidas" / "resumo.json", {
+        "em": agora(), "assinatura_registro": assinatura_registro(dv), "auditoria": aud.get("status"),
+        "insights": {i["id"]: {"estado": i["estado"], "texto": i["texto"]} for i in lista},
+        "impacto": {k: {q: m.get(q) for q in ("provavel", "p10", "p50", "p90", "unidade")} for k, m in imp.items()}})
 
 
 if __name__ == "__main__":
