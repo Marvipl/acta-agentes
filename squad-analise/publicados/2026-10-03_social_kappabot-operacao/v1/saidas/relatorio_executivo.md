@@ -2,7 +2,7 @@
 
 Objetivo: Encontrar padrões, insights e informações sobre a operação do Kappabot na Social para enriquecer a oferta de venda para a Social · data-base 2026-10-03 · versão v1
 
-**Rascunho pré-G3:** 20 de 71 insights aprovados; auditoria de reprodutibilidade aprovada. Os insights abaixo são acionáveis e aguardam o G3 de Marcus. Todos são descritivos; nenhum afirma causa.
+**Aprovado por Marcus no G3 (03/10/2026):** 20 de 71 insights aprovados; auditoria de reprodutibilidade aprovada. Os insights abaixo foram aprovados no G3. Todos são descritivos; nenhum afirma causa.
 
 ## Resposta
 
@@ -63,7 +63,7 @@ Uma vaga inteira liberada (CR8, leitura colaborativa) pede 0,95 postos. O rateio
 - **Meta de sucesso do piloto, fixada antes (mesma regra da oferta).** Meta de ritmo do robô no piloto, em linhas por hora, fixada antes e lida em cada teto de intervalo, com o ritmo manual medido no mesmo teto e a frota do próprio piloto (pedido-a-pedido do armazém, sem checkout e sem PR11). Teto conservador: 141 linhas/h; folga contra o teto de manuseio do deck (limite físico do robô): -63,1 linhas/h, negativa: a meta é inatingível e não pode ser critério de sucesso. Teto base: 83,7 linhas/h; folga -5,71 linhas/h, inconclusiva (a faixa cruza o limite físico). Teto mais folgado: 62,3 linhas/h; folga 15,7 linhas/h, atingível. Só a leitura do teto mais folgado pode valer como critério de sucesso, e vencê-la não prova viabilidade nos outros tetos: o relatório do piloto mostra as três leituras. O armazém inteiro é o teto do escopo, então a meta real é igual ou maior. Medição pelo mesmo método do WMS, com sorteio de pedidos, espera do robô e pessoas-hora por mil linhas no pico. Marcus e o planejador confirmam no G3.
 - **Encerrar o piloto gratuito.** Custo de manter: R$ 1.000/mês, vezes os meses de espera pelas respostas de PR11 e do prazo do checkout. O valor que se perde (parceria e operação de referência) é [●]. Gatilhos: a Social confirma conferência abaixo do limiar com reserva e implementação; a Royal Canin não aceita conferência na coleta; sem prazo do checkout dentro do que Marcus aceita esperar; o piloto pago não é aceito ou não atinge a meta. A relação segue depois, com uma oferta de pico, quando houver dados de alta temporada.
 
-## Insights para aprovação no G3 (rascunho até a aprovação)
+## Insights aprovados no G3
 
 ### Franquia, volume e o que o deck afirma
 
@@ -223,4 +223,4 @@ Cada linha é uma escolha de Marcus. A leitura registrada no plano e o desvio de
 - **Teto conservador e teto mais folgado:** limites do intervalo entre tarefas usado para medir o ritmo manual.
 - **Portão:** a pergunta a fazer antes de qualquer desenvolvimento.
 
-Rascunho pré-G3 · auditoria de reprodutibilidade: aprovada.
+Aprovado no G3 · auditoria de reprodutibilidade: aprovada.

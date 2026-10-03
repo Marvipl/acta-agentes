@@ -1,6 +1,6 @@
 # Memorando de decisão — {{meta.tema}}
 
-**Rascunho pré-G3:** {{fmt.n_aprovados}} de {{fmt.n_insights}} aprovados; auditoria {{fmt.auditoria}}.
+**Aprovado por Marcus no G3 (03/10/2026):** {{fmt.n_aprovados}} de {{fmt.n_insights}} aprovados; auditoria {{fmt.auditoria}}.
 
 **Decisão:** que oferta levar à Social, para reduzir custo de mão de obra e dependência de contratação, com viabilidade para a Acta.
 

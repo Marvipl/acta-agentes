@@ -1,6 +1,6 @@
 # Memorando de decisão — Social
 
-**Rascunho pré-G3:** 20 de 71 aprovados; auditoria aprovada.
+**Aprovado por Marcus no G3 (03/10/2026):** 20 de 71 aprovados; auditoria aprovada.
 
 **Decisão:** que oferta levar à Social, para reduzir custo de mão de obra e dependência de contratação, com viabilidade para a Acta.
 

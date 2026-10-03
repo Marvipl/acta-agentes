@@ -1,6 +1,6 @@
 # Oferta enriquecida — {{meta.tema}}
 
-> **USO INTERNO DA ACTA. Não encaminhar à Social nem à Royal Canin.** Rascunho pré-G3: {{fmt.n_aprovados}} de {{fmt.n_insights}} insights aprovados; auditoria {{fmt.auditoria}}. Todos os insights citados são descritivos.
+> **USO INTERNO DA ACTA. Não encaminhar à Social nem à Royal Canin.** Aprovado no G3 (03/10/2026): {{fmt.n_aprovados}} de {{fmt.n_insights}} insights aprovados; auditoria {{fmt.auditoria}}. Todos os insights citados são descritivos.
 
 Para Marcus Lima e Matheus Correa (comercial). Versão v{{meta.versao}} · data-base {{meta.data_base}}.
 
