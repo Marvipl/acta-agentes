@@ -30,7 +30,9 @@ def _fmt(v):
     if inc and inc.get("inferior") is not None and u not in ("R$", "BRL"):
         f = (lambda y: f"{y * 100:.1f}".replace(".", ",")) if u in ("%", "p.p.") else (lambda y: f"{y:,.2f}".replace(",", "X").replace(".", ",").replace("X", "."))
         suf = "%" if u == "%" else (" p.p." if u == "p.p." else "")
-        s += f" (IC {f(inc['inferior'])}{suf} a {f(inc['superior'])}{suf})" if inc["tipo"] != "intervalo_previsao" else f" (previsão entre {f(inc['inferior'])}{suf} e {f(inc['superior'])}{suf})"
+        rot = {"intervalo_previsao": "previsão entre", "faixa_cenarios": "faixa de cenários de", "bootstrap": "IC bootstrap"}.get(inc["tipo"], "IC")
+        sep = " e " if inc["tipo"] == "intervalo_previsao" else " a "
+        s += f" ({rot} {f(inc['inferior'])}{suf}{sep}{f(inc['superior'])}{suf})"
     return s
 
 
