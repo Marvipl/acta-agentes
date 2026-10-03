@@ -61,6 +61,7 @@ def montar(simular=False):
     for s in squads:
         for c in (s / ".claude" / "commands").glob("*.md"):
             cmds_por_nome.setdefault(c.stem, []).append(s.name)
+    destinos = json.loads((RAIZ / "ferramentas" / "squads.json").read_text(encoding="utf-8")) if (RAIZ / "ferramentas" / "squads.json").exists() else {}
     deny, resumo = set(), []
     for s in squads:
         pre = PREFIXOS.get(s.name, s.name.replace("squad-", "")); cab = _cabecalho(s.name, pre); n_ag = 0
@@ -81,12 +82,31 @@ def montar(simular=False):
             fm = "---\n" + "".join(f"{k}: {v}\n" for k, v in campos.items() if k != "description")
             d_cmd = f"[Squad de {NOMES.get(s.name, s.name)}] {_desc(campos.get('description', ''))}".replace('"', "'")
             fm = fm.replace("---\n", f"---\ndescription: \"{d_cmd}\"\n", 1)
+            if c.stem in (destinos.get(s.name) or {}).get("publicar_ao_final", []):
+                corpo = corpo.rstrip() + (
+                    f"\n\n**Publicação automática: passo final obrigatório, sem esperar novo pedido.** Assim que a versão for congelada "
+                    f"(ou, se o fluxo não congelar, assim que Marcus aprovar o último portão), publique:\n"
+                    f"- na nuvem (variável de ambiente `CLAUDE_CODE_REMOTE=true`): siga `.claude/commands/publicar-drive.md` com `{s.name}` e a pasta da versão, "
+                    f"enviando o pacote completo (documentos finais e metadados) para `{(destinos.get(s.name) or {}).get('drive', 'Acta')}`. Se o conector do Google Drive "
+                    f"não estiver habilitado na sessão, peça a Marcus para habilitar e publique logo em seguida;\n"
+                    f"- no computador: `cd {s.name} && python -m motor.publicar <pasta da versão>`.\n"
+                    f"Termine a resposta final com o link da pasta no Drive e o total de arquivos publicados.\n")
             gerar[f".claude/commands/{nome}.md"] = fm + "---\n" + cab + corpo
             cmds.append("/" + nome)
         st = s / ".claude" / "settings.json"
         if st.exists():
             deny |= set((json.loads(st.read_text(encoding="utf-8")).get("permissions") or {}).get("deny") or [])
         resumo.append((s.name, pre, n_ag, cmds))
+    gerar[".claude/commands/publicar-drive.md"] = (
+        '---\ndescription: "Publica no Google Drive o pacote completo de uma versão: documentos finais e metadados (JSON, CSV, planilha, nós, revisões), igual à publicação local"\n'
+        "argument-hint: <squad> <pasta da versão, relativa ao squad>\n---\n"
+        "1. Rode `python ferramentas/publicar_nuvem.py $ARGUMENTS`. Ele monta `<squad>/publicados/<projeto>/v<n>/` com as mesmas subpastas da publicação local, o `manifesto_publicacao.json` e um zip com tudo.\n"
+        "2. Leia o manifesto: `pasta_drive` é o destino (por exemplo `Acta > Orçamentos > <projeto> > v1`). Com o conector do Google Drive, encontre cada nível dessa pasta e crie só o que não existir; nunca crie pasta duplicada.\n"
+        "3. Envie **todos** os arquivos listados em `arquivos`, recriando as subpastas (`saidas/`, `nos/`, `revisoes/`, `insumos/` e as demais do manifesto), mais o próprio `manifesto_publicacao.json`. Use o tipo do manifesto e mantenha o formato original: não converta JSON, CSV, MD ou XLSX para Google Docs ou Planilhas.\n"
+        "4. Se a pasta da versão já tiver arquivos de uma publicação anterior, substitua os que têm o mesmo nome e caminho.\n"
+        "5. Confira: liste cada pasta no Drive e compare nomes e quantidades com o manifesto. Reenvie o que faltar. Se um arquivo não subir depois de duas tentativas, informe nome, tamanho e erro, e confirme que ele está dentro do zip enviado.\n"
+        "6. Faça commit e push de `<squad>/publicados/` na branch da sessão.\n"
+        "7. Responda com o link da pasta da versão no Drive, o total enviado por subpasta e qualquer pendência.\n")
     for rel in gerar:
         p = RAIZ / rel
         if p.exists() and rel not in antes:
@@ -103,12 +123,12 @@ def montar(simular=False):
         ss.append({"matcher": "startup|resume", "hooks": [{"type": "command", "command": hook_cmd, "timeout": 900}]})
     # CLAUDE.md da raiz: bloco gerenciado
     linhas = ["<!-- squads:inicio (gerado por ferramentas/montar_nuvem.py; não edite à mão) -->", "## Squads da Acta", "",
-              "| Squad | Pasta | Prefixo dos agentes | Comandos |", "|---|---|---|---|"]
-    linhas += [f"| {NOMES.get(n, n)} | `{n}/` | `{p}-` | {', '.join(c)} |" for n, p, _, c in resumo]
+              "| Squad | Pasta | Prefixo dos agentes | Comandos | Pasta no Drive |", "|---|---|---|---|---|"]
+    linhas += [f"| {NOMES.get(n, n)} | `{n}/` | `{p}-` | {', '.join(c)} | {(destinos.get(n) or {}).get('drive', '[●]')} |" for n, p, _, c in resumo]
     linhas += ["", "Regras para todos os squads, em especial na nuvem:",
                "- Cada squad tem o seu `CLAUDE.md`, motor e base de conhecimento. Rode os comandos do motor de dentro da pasta do squad (`cd squad-x && python -m motor...`).",
                "- Na nuvem, arquivos de entrada vêm do Google Drive pelo conector: baixe para `<squad>/entrada/<trabalho>/` (fora do git) e importe como no uso local.",
-               "- Ao concluir, publique com `python ferramentas/publicar_nuvem.py <squad> <pasta da versão>` e faça commit e push só de `<squad>/publicados/`. Nunca commite `projetos/`, `entrada/`, `dados/` nem chaves.",
+               "- Ao concluir, os comandos principais dos squads publicam sozinhos; para publicar de novo ou manualmente, use `/publicar-drive <squad> <pasta da versão>`: ele envia ao Drive o pacote completo (documentos finais e metadados: JSON, CSV, planilha, nós, revisões), igual à publicação local, e faz commit de `<squad>/publicados/`. A publicação do próprio squad (`python -m motor.publicar`) só funciona no computador, com a pasta do Drive sincronizada. Nunca commite `projetos/`, `entrada/`, `dados/` nem chaves.",
                "- Dados com informação pessoal ou de cliente (squad de análise) só na nuvem se Marcus autorizar; a opção padrão é rodar no computador dele com Remote Control.",
                "<!-- squads:fim -->"]
     bloco = "\n".join(linhas) + "\n"

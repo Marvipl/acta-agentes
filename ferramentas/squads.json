@@ -1,0 +1,30 @@
+{
+  "_leia": "Pasta de destino no Google Drive de cada squad (usada por /publicar-drive) e comandos que publicam automaticamente ao terminar. Ajuste se os nomes forem outros.",
+  "squad-orcamento": {
+    "drive": "Acta > Orçamentos",
+    "publicar_ao_final": [
+      "orcar"
+    ]
+  },
+  "squad-estrategia": {
+    "drive": "Acta > Planejamento Estratégico",
+    "publicar_ao_final": [
+      "estrategia",
+      "revisao-trimestral"
+    ]
+  },
+  "squad-produto": {
+    "drive": "Acta > Produtos",
+    "publicar_ao_final": [
+      "produto",
+      "revisao-produto"
+    ]
+  },
+  "squad-analise": {
+    "drive": "Acta > Análises",
+    "publicar_ao_final": [
+      "analisar",
+      "atualizar-analise"
+    ]
+  }
+}
