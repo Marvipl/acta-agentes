@@ -2,25 +2,23 @@
   "_leia": "Parâmetros do squad. Valores null precisam ser definidos por Marcus/Renato antes do primeiro orçamento completo.",
   "drive_orcamentos_dir": "[caminho local da pasta Acta > Orçamentos sincronizada pelo Google Drive para desktop]",
   "politica_comercial": {
-    "_leia": "Defina com Marcus antes do primeiro orçamento. Usada no modo rápido e como referência no completo. Frações (0.25 = 25%).",
-    "margem_alvo": null,
-    "margem_minima": null,
-    "comissao_pct": null,
+    "_leia": "Definida por Marcus em 03/10/2026. Usada no modo rápido e como referência no completo. Frações (0.25 = 25%). Margem = lucro líquido sobre o preço de venda, após impostos sobre receita (DAS cheio no Simples) e comissão.",
+    "margem_alvo": 0.3,
+    "margem_minima": 0.2,
+    "comissao_pct": 0.02,
     "marcos_padrao": [
       {
-        "evento": "[ex.: assinatura]",
-        "pct": null
+        "evento": "assinatura (entrada)",
+        "pct": 0.5,
+        "pct_minimo_negociacao": 0.3
       },
       {
-        "evento": "[ex.: entrega dos equipamentos]",
-        "pct": null
-      },
-      {
-        "evento": "[ex.: aceite]",
-        "pct": null
+        "evento": "parcelas mensais iguais, do mês seguinte à assinatura até o aceite (número de parcelas conforme o cronograma do projeto)",
+        "pct": 0.5
       }
     ],
-    "custo_capital_aa": null
+    "custo_capital_aa": 0.1365,
+    "_fonte_custo_capital": "CDI estimado em 03/10/2026: Selic meta 13,75% a.a. (Copom set/2026, fontes secundárias: melhorinvestimento.net/noticias/copom-decisao-selic-setembro-2026 e remessaonline.com.br/blog/reuniao-copom-setembro-2026) menos 0,10 p.p. Atualizar a cada decisão do Copom."
   },
   "descoberta": {
     "_leia": "Limiares propostos para a prontidão da especificação; ajuste com o uso. Frações (0.8 = 80%).",
