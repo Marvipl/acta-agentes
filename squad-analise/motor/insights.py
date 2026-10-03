@@ -10,7 +10,7 @@ Números na afirmação só por marcadores {{v.apelido}}, resolvidos a partir da
 """
 import argparse, json, re, sys
 from pathlib import Path
-from .util import carregar_json, salvar_json, agora
+from .util import carregar_json, salvar_json, agora, formatar_numero
 from .registro import valor
 
 ESTADOS = ["descoberto", "quantificado", "validado", "acionavel", "aprovado"]
@@ -22,13 +22,16 @@ PESO = {"alta": 1.0, "media": 0.6, "baixa": 0.3}
 def _fmt(v):
     if v is None: return "[●]"
     x, u = v["valor"], (v.get("unidade") or "")
-    if u == "%": s = f"{x * 100:.1f}%".replace(".", ",")
-    elif u == "p.p.": s = f"{x * 100:.1f}".replace(".", ",") + " p.p."
-    elif u in ("R$", "BRL"): s = "R$ " + f"{x:,.0f}".replace(",", ".")
-    else: s = (f"{x:,.0f}" if abs(x) >= 100 else f"{x:,.2f}").replace(",", "X").replace(".", ",").replace("X", ".") + (f" {u}" if u else "")
+    s = formatar_numero(x, u)
     inc = v.get("incerteza")
-    if inc and inc.get("inferior") is not None and u not in ("R$", "BRL"):
-        f = (lambda y: f"{y * 100:.1f}".replace(".", ",")) if u in ("%", "p.p.") else (lambda y: f"{y:,.2f}".replace(",", "X").replace(".", ",").replace("X", "."))
+    if inc and inc.get("inferior") is not None:
+        moeda = u in ("R$", "BRL") or u.startswith("R$")
+        if u in ("%", "p.p."):
+            f = lambda y: f"{y * 100:.1f}".replace(".", ",")
+        elif moeda:
+            f = lambda y: formatar_numero(y, "R$")
+        else:
+            f = lambda y: formatar_numero(y, "")
         suf = "%" if u == "%" else (" p.p." if u == "p.p." else "")
         rot = {"intervalo_previsao": "previsão entre", "faixa_cenarios": "faixa de cenários de", "bootstrap": "IC bootstrap"}.get(inc["tipo"], "IC")
         sep = " e " if inc["tipo"] == "intervalo_previsao" else " a "

@@ -5,17 +5,12 @@ com os números), {{fmt.imp_IMP_001_p50}}, {{fmt.n_aprovados}}, {{fmt.auditoria}
 """
 import base64, html
 from pathlib import Path
-from .util import carregar_json, agora
+from .util import carregar_json, agora, formatar_numero
 from .renderizar import renderizar
 
 
 def _num(v, u=""):
-    if v is None: return "[●]"
-    if u in ("R$", "BRL", "R$/mes", "R$/mês", "R$/ano"):
-        return "R$ " + f"{v:,.0f}".replace(",", ".") + (u[2:] if u.startswith("R$/") else "")
-    if u == "%":  # fração (0,38) exibida como percentual (38,0%), como em motor.insights._fmt
-        return f"{v * 100:.1f}%".replace(".", ",")
-    return f"{v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") + (f" {u}" if u else "")
+    return formatar_numero(v, u)
 
 
 def resumo(dv):

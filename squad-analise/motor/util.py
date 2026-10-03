@@ -178,3 +178,29 @@ def fatores_aprovados():
         except Exception:
             pass
     return out
+
+
+def _milhar(x, casas):
+    return f"{x:,.{casas}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+
+def formatar_numero(x, u=""):
+    """Formata um valor do motor para texto em português: frações em %, reais com R$ na frente, contagens sem casas."""
+    if x is None:
+        return "[●]"
+    u = u or ""
+    if u == "%":
+        return f"{x * 100:.1f}%".replace(".", ",")
+    if u == "p.p.":
+        return f"{x * 100:.1f}".replace(".", ",") + " p.p."
+    if u in ("R$", "BRL") or u.startswith("R$"):
+        resto = "" if u in ("R$", "BRL") else u[2:]
+        s = "R$ " + _milhar(abs(x), 0 if abs(x) >= 100 else 2) + resto
+        return ("-" + s) if x < 0 else s
+    if float(x).is_integer() or abs(x) >= 100:
+        casas = 0
+    elif abs(x) >= 10:
+        casas = 1
+    else:
+        casas = 2
+    return _milhar(x, casas) + (f" {u}" if u else "")
