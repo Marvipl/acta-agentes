@@ -23,7 +23,7 @@ def _fmt(v):
     if v is None: return "[●]"
     x, u = v["valor"], (v.get("unidade") or "")
     if u == "%": s = f"{x * 100:.1f}%".replace(".", ",")
-    elif u == "p.p.": s = f"{x * 100:.1f} p.p.".replace(".", ",")
+    elif u == "p.p.": s = f"{x * 100:.1f}".replace(".", ",") + " p.p."
     elif u in ("R$", "BRL"): s = "R$ " + f"{x:,.0f}".replace(",", ".")
     else: s = (f"{x:,.0f}" if abs(x) >= 100 else f"{x:,.2f}").replace(",", "X").replace(".", ",").replace("X", ".") + (f" {u}" if u else "")
     inc = v.get("incerteza")
