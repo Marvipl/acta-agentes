@@ -58,6 +58,7 @@ def gerar(caminho, res, det, nos):
             ("Necessidade de captação (sem captação planejada)", "necessidade_captacao", BRL),
             ("Mês em que o caixa zera sem captação", "mes_caixa_zera_sem_captacao", None),
             ("Primeiro ano com EBITDA positivo", "ano_ebitda_positivo", None), ("Queima média mensal no ano 1", "queima_media_ano1", BRL),
+            ("Runway sem captação (meses)", "runway_meses_sem_captacao", None),
             ("Caixa final do horizonte", "caixa_final", BRL)]
     for i, (nome, k, fmt) in enumerate(inds, 2):
         _v(ws, i, 1, nome)
@@ -103,6 +104,24 @@ def gerar(caminho, res, det, nos):
     _v(wi, r, 1, "Sobrecargas de capacidade (FTE)", font=B)
     for i, s in enumerate(res.get("capacidade", {}).get("sobrecargas") or [{"perfil": "nenhuma"}], r + 1):
         _v(wi, i, 1, s.get("perfil")); _v(wi, i, 2, s.get("mes")); _v(wi, i, 3, s.get("fte_necessario")); _v(wi, i, 4, s.get("fte_disponivel"))
+
+    rm = res.get("roadmap", [])
+    tri = sorted({t for r in rm for t in r["trimestres"]})
+    wm = wb.create_sheet("Roadmap")
+    _cab(wm, ["ID", "Iniciativa", "Área", "Dono", "Prioridade"] + tri, {2: 40, 3: 22, 4: 18})
+    for i, r in enumerate(sorted(rm, key=lambda x: (x["area"] or "", -(x["prioridade"] or 0))), 2):
+        for j, v in enumerate([r["id"], r["nome"], r["area"], r["dono"], r["prioridade"]], 1):
+            _v(wm, i, j, v, "0.00" if j == 5 else None)
+        for j, t in enumerate(tri, 6):
+            if t in r["trimestres"]:
+                c = _v(wm, i, j, "■"); c.fill = PatternFill("solid", fgColor="EE7D00"); c.font = Font(name="Arial", size=10, color="FFFFFF")
+
+    wa = wb.create_sheet("Areas")
+    _cab(wa, ["Área", "Dono", "Iniciativas", "Esforço (pessoas-mês)", "Custo externo das iniciativas", "Despesas recorrentes ano 1", "Total"], {1: 26, 2: 18})
+    for i, d in enumerate(res.get("areas", []), 2):
+        for j, v in enumerate([d["area"], d.get("dono"), d["iniciativas"], d["esforco_pessoas_mes"], d["custo_externo"], d["despesas_recorrentes_ano"]], 1):
+            _v(wa, i, j, v, BRL if j in (5, 6) else ("0.0" if j == 4 else None), AZ if j in (5, 6) else N)
+        _v(wa, i, 7, f"=E{i}+F{i}", BRL, B)
 
     wk = wb.create_sheet("OKRs")
     _cab(wk, ["Objetivo", "KR", "Métrica", "Baseline", "Meta anual", "T1", "T2", "T3", "T4", "Dono", "Fonte do dado"], {1: 30, 2: 40})

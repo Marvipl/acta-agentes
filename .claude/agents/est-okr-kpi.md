@@ -20,7 +20,7 @@ model: sonnet
 1. Objetivos traduzem a opção escolhida em 3 a 5 resultados qualitativos, cobrindo as perspectivas financeira, clientes, processos e pessoas e tecnologia.
 2. Cada objetivo tem de 2 a 5 KRs que medem resultado, não tarefa. Baseline numérico com fonte, meta anual e metas trimestrais acumuladas.
 3. Inclua KRs que testam as hipóteses mais duvidosas da opção escolhida: o plano aprende enquanto executa.
-4. Todo KR tem dono e fonte do dado que já existe ou que será criada (e nesse caso vira iniciativa).
+4. Todo objetivo tem dono. Todo KR tem dono e fonte do dado que já existe ou que será criada (e nesse caso vira iniciativa).
 5. Marque compromisso ou aspiracional.
 
 ## Autoverificação antes de entregar

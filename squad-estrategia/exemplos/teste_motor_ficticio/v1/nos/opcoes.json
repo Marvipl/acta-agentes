@@ -59,7 +59,42 @@
         "caixa": 3
       },
       "riscos": [],
-      "evidencias": []
+      "evidencias": [],
+      "modelo_negocio": {
+        "central": "integradora",
+        "complementares": [
+          "fabricante"
+        ],
+        "justificativa": "FICTÍCIO – teste do motor"
+      },
+      "icp": {
+        "setor": "Indústria fictícia",
+        "porte": "médio",
+        "dor_principal": "FICTÍCIO – teste do motor",
+        "quem_compra": "Gerente de operações",
+        "gatilho_de_compra": "FICTÍCIO – teste do motor"
+      },
+      "proposta_valor": "FICTÍCIO – teste do motor",
+      "posicionamento": "FICTÍCIO – teste do motor",
+      "vantagens_defensaveis": [
+        {
+          "vantagem": "FICTÍCIO – teste do motor",
+          "por_que_e_defensavel": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        }
+      ],
+      "modelo_receita": [
+        {
+          "tipo": "locacao_raas",
+          "papel": "principal",
+          "premissa": "FICTÍCIO – teste do motor"
+        },
+        {
+          "tipo": "venda",
+          "papel": "complementar",
+          "premissa": "FICTÍCIO – teste do motor"
+        }
+      ]
     },
     {
       "id": "O2",
@@ -110,7 +145,42 @@
         "caixa": 3
       },
       "riscos": [],
-      "evidencias": []
+      "evidencias": [],
+      "modelo_negocio": {
+        "central": "integradora",
+        "complementares": [
+          "fabricante"
+        ],
+        "justificativa": "FICTÍCIO – teste do motor"
+      },
+      "icp": {
+        "setor": "Indústria fictícia",
+        "porte": "médio",
+        "dor_principal": "FICTÍCIO – teste do motor",
+        "quem_compra": "Gerente de operações",
+        "gatilho_de_compra": "FICTÍCIO – teste do motor"
+      },
+      "proposta_valor": "FICTÍCIO – teste do motor",
+      "posicionamento": "FICTÍCIO – teste do motor",
+      "vantagens_defensaveis": [
+        {
+          "vantagem": "FICTÍCIO – teste do motor",
+          "por_que_e_defensavel": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        }
+      ],
+      "modelo_receita": [
+        {
+          "tipo": "locacao_raas",
+          "papel": "principal",
+          "premissa": "FICTÍCIO – teste do motor"
+        },
+        {
+          "tipo": "venda",
+          "papel": "complementar",
+          "premissa": "FICTÍCIO – teste do motor"
+        }
+      ]
     }
   ],
   "recomendacao": {

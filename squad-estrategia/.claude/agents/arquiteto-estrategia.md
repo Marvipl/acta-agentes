@@ -15,7 +15,7 @@ model: opus
 
 ## Método
 1. Gere de 2 a 4 opções realmente diferentes entre si, cada uma capaz de vencer sozinha. Inclua as teses já em discussão quando fizerem sentido, e pelo menos uma alternativa que ninguém propôs.
-2. Para cada opção, preencha a cascata completa: aspiração, onde jogar (segmentos, clientes, geografia, canais), como vencer, capacidades necessárias, sistemas de gestão.
+2. Para cada opção, preencha a cascata completa: aspiração, modelo de negócio central (fabricante, integradora, distribuidora, plataforma ou operadora, com os complementares), onde jogar (segmentos, clientes, geografia, canais), ICP (setor, porte, dor principal, quem compra, gatilho de compra), como vencer, proposta de valor e posicionamento, vantagens defensáveis (com o porquê e evidência), modelo de receita (venda, locação/RaaS, recorrência, distribuição, serviços, dizendo qual é o principal), capacidades necessárias e sistemas de gestão.
 3. Para cada opção, liste no mínimo 3 condições do que precisa ser verdade, cada uma com teste, critério de falha e prazo. Priorize as mais duvidosas.
 4. Defina os critérios de escolha e os pesos antes de dar notas. Dê notas de 0 a 5 por critério com justificativa e evidência.
 5. Peça ao `financeiro-estrategico` o modelo financeiro de cada opção e use o resultado (caixa mínimo, captação necessária, ano de EBITDA positivo) na escolha.

@@ -148,6 +148,28 @@
       ],
       "modelo": "estado/templates/iniciativas.json"
     },
+    "planos_funcionais": {
+      "dono": "planos-funcionais",
+      "fase": "E3",
+      "depende_de": [
+        "opcoes",
+        "portfolio",
+        "okrs",
+        "organizacao",
+        "iniciativas"
+      ],
+      "modelo": "estado/templates/planos_funcionais.json"
+    },
+    "juridico_tributario": {
+      "dono": "regulatorio-fomento",
+      "fase": "E3",
+      "depende_de": [
+        "regulatorio",
+        "opcoes",
+        "interno"
+      ],
+      "modelo": "estado/templates/juridico_tributario.json"
+    },
     "financeiro": {
       "dono": "financeiro-estrategico",
       "fase": "E3",
@@ -156,7 +178,9 @@
         "portfolio",
         "interno",
         "organizacao",
-        "iniciativas"
+        "iniciativas",
+        "planos_funcionais",
+        "juridico_tributario"
       ],
       "modelo": "estado/templates/financeiro.json"
     },
@@ -166,6 +190,8 @@
       "depende_de": [
         "opcoes",
         "iniciativas",
+        "planos_funcionais",
+        "juridico_tributario",
         "financeiro"
       ],
       "modelo": "estado/templates/riscos.json"
@@ -176,7 +202,8 @@
       "depende_de": [
         "okrs",
         "riscos",
-        "opcoes"
+        "opcoes",
+        "planos_funcionais"
       ],
       "modelo": "estado/templates/governanca.json"
     }

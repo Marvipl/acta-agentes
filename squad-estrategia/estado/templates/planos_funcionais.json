@@ -1,0 +1,133 @@
+{
+  "_template": true,
+  "areas": [
+    {
+      "area": "comercial_marketing",
+      "dono": "",
+      "objetivo_area": "",
+      "krs": [],
+      "iniciativas": [],
+      "metas": [
+        {
+          "metrica": "",
+          "baseline": null,
+          "meta": null,
+          "unidade": "",
+          "fonte": ""
+        }
+      ],
+      "politicas": [
+        {
+          "tema": "",
+          "decisao": "",
+          "justificativa": "",
+          "evidencias": []
+        }
+      ],
+      "despesas_recorrentes": [
+        {
+          "item": "",
+          "valor_anual": null,
+          "fonte": ""
+        }
+      ],
+      "riscos": []
+    },
+    {
+      "area": "produto_tecnologia",
+      "dono": "",
+      "objetivo_area": "",
+      "krs": [],
+      "iniciativas": [],
+      "metas": [
+        {
+          "metrica": "",
+          "baseline": null,
+          "meta": null,
+          "unidade": "",
+          "fonte": ""
+        }
+      ],
+      "politicas": [
+        {
+          "tema": "",
+          "decisao": "",
+          "justificativa": "",
+          "evidencias": []
+        }
+      ],
+      "despesas_recorrentes": [
+        {
+          "item": "",
+          "valor_anual": null,
+          "fonte": ""
+        }
+      ],
+      "riscos": []
+    },
+    {
+      "area": "operacoes",
+      "dono": "",
+      "objetivo_area": "",
+      "krs": [],
+      "iniciativas": [],
+      "metas": [
+        {
+          "metrica": "",
+          "baseline": null,
+          "meta": null,
+          "unidade": "",
+          "fonte": ""
+        }
+      ],
+      "politicas": [
+        {
+          "tema": "",
+          "decisao": "",
+          "justificativa": "",
+          "evidencias": []
+        }
+      ],
+      "despesas_recorrentes": [
+        {
+          "item": "",
+          "valor_anual": null,
+          "fonte": ""
+        }
+      ],
+      "riscos": []
+    },
+    {
+      "area": "parcerias",
+      "dono": "",
+      "objetivo_area": "",
+      "krs": [],
+      "iniciativas": [],
+      "metas": [
+        {
+          "metrica": "",
+          "baseline": null,
+          "meta": null,
+          "unidade": "",
+          "fonte": ""
+        }
+      ],
+      "politicas": [
+        {
+          "tema": "",
+          "decisao": "",
+          "justificativa": "",
+          "evidencias": []
+        }
+      ],
+      "despesas_recorrentes": [
+        {
+          "item": "",
+          "valor_anual": null,
+          "fonte": ""
+        }
+      ],
+      "riscos": []
+    }
+  ]
+}

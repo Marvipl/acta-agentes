@@ -31,5 +31,31 @@
     "Venturus",
     "SiDi"
   ],
-  "dias_por_mes": 30.4
+  "dias_por_mes": 30.4,
+  "retrospectiva_referencias_obrigatorias": [
+    "Budget 2026",
+    "Metas do Roboteazy"
+  ],
+  "temas_obrigatorios_planos": {
+    "comercial_marketing": [
+      "go_to_market",
+      "funil",
+      "canais",
+      "pricing"
+    ],
+    "produto_tecnologia": [
+      "roadmap_produtos",
+      "pd_financiado"
+    ],
+    "operacoes": [
+      "implantacao",
+      "suporte_sla",
+      "importacao_supply_chain",
+      "qualidade"
+    ],
+    "parcerias": [
+      "parcerias_prioritarias",
+      "metas_contratuais"
+    ]
+  }
 }

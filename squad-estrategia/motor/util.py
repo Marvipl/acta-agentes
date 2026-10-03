@@ -15,7 +15,7 @@ CONHEC = Path(os.environ.get("SQUAD_CONHECIMENTO", RAIZ / "conhecimento"))
 # Ordem dos nós e dependências (entradas que cada nó usa)
 NOS = ["meta", "briefing", "enquadramento", "mercado", "concorrencia", "regulatorio", "interno", "capacidades",
        "diagnostico", "opcoes", "portfolio", "financeiro_opcoes", "okrs", "organizacao", "iniciativas",
-       "financeiro", "riscos", "governanca"]
+       "planos_funcionais", "juridico_tributario", "financeiro", "riscos", "governanca"]
 
 DEPENDENCIAS = {
     "meta": [],
@@ -33,9 +33,11 @@ DEPENDENCIAS = {
     "okrs": ["diagnostico", "opcoes"],
     "organizacao": ["opcoes", "capacidades", "okrs"],
     "iniciativas": ["opcoes", "portfolio", "okrs", "organizacao"],
-    "financeiro": ["opcoes", "portfolio", "interno", "organizacao", "iniciativas"],
-    "riscos": ["opcoes", "iniciativas", "financeiro"],
-    "governanca": ["okrs", "riscos", "opcoes"],
+    "planos_funcionais": ["opcoes", "portfolio", "okrs", "organizacao", "iniciativas"],
+    "juridico_tributario": ["regulatorio", "opcoes", "interno"],
+    "financeiro": ["opcoes", "portfolio", "interno", "organizacao", "iniciativas", "planos_funcionais", "juridico_tributario"],
+    "riscos": ["opcoes", "iniciativas", "planos_funcionais", "juridico_tributario", "financeiro"],
+    "governanca": ["okrs", "riscos", "opcoes", "planos_funcionais"],
 }
 
 DONOS = {
@@ -45,6 +47,7 @@ DONOS = {
     "organizacao": "capacidades-organizacao", "opcoes": "arquiteto-estrategia", "portfolio": "portfolio-iniciativas",
     "iniciativas": "portfolio-iniciativas", "financeiro_opcoes": "financeiro-estrategico", "financeiro": "financeiro-estrategico",
     "okrs": "okr-kpi", "riscos": "riscos-governanca", "governanca": "riscos-governanca",
+    "planos_funcionais": "planos-funcionais", "juridico_tributario": "regulatorio-fomento",
 }
 
 

@@ -10,19 +10,22 @@
       "id": "OB1",
       "perspectiva": "financeira",
       "objetivo": "Objetivo fictício 1",
-      "opcao_ref": "O1"
+      "opcao_ref": "O1",
+      "dono": "FICTÍCIO"
     },
     {
       "id": "OB2",
       "perspectiva": "financeira",
       "objetivo": "Objetivo fictício 2",
-      "opcao_ref": "O1"
+      "opcao_ref": "O1",
+      "dono": "FICTÍCIO"
     },
     {
       "id": "OB3",
       "perspectiva": "financeira",
       "objetivo": "Objetivo fictício 3",
-      "opcao_ref": "O1"
+      "opcao_ref": "O1",
+      "dono": "FICTÍCIO"
     }
   ],
   "krs": [

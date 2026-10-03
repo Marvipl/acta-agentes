@@ -84,7 +84,9 @@ def projetar(modelo, meta, org=None, fatores=None):
     negativos = [x["mes"] for x in mensal if x["caixa"] < 0]
     be = next((a for a in anos if anual[a]["ebitda"] >= 0), None)
     queima = [-x["fluxo_operacional"] for x in mensal[:12] if x["fluxo_operacional"] < 0]
+    zera = next((i for i, x in enumerate(mensal) if x["caixa_sem_captacao"] < 0), None)
     ind = {"menor_caixa": menor["caixa"], "mes_menor_caixa": menor["mes"], "meses_caixa_negativo": negativos,
+           "runway_meses_sem_captacao": zera, 
            "necessidade_captacao": max(0.0, -menor_sem["caixa_sem_captacao"]), "mes_caixa_zera_sem_captacao":
            next((x["mes"] for x in mensal if x["caixa_sem_captacao"] < 0), None), "ano_ebitda_positivo": be,
            "queima_media_ano1": (sum(queima) / 12) if queima else 0.0, "caixa_final": mensal[-1]["caixa"]}
@@ -141,6 +143,7 @@ def iniciativas(ini, org, meta, anos):
                 uso[p.get("perfil")][m] += float(p.get("fte") or 0)
         custo = prov(it["custo_externo"]) if it.get("custo_externo") and it["custo_externo"].get("provavel") is not None else 0.0
         lista.append({"id": it.get("id"), "nome": it.get("nome"), "objetivo_id": it.get("objetivo_id"), "tipo": it.get("tipo"),
+                      "area": it.get("area"), "dono": it.get("dono"), "duracao_meses": dur,
                       "valor": val, "confianca": conf, "esforco_pessoas_mes": esf, "prioridade": prioridade,
                       "inicio": ini_m, "fim": ms[-1] if ms else None, "custo_externo": custo})
     lista.sort(key=lambda x: -(x["prioridade"] or 0))
@@ -158,7 +161,7 @@ def iniciativas(ini, org, meta, anos):
 def calcular(nos):
     meta = nos["meta"] or {}
     alertas = []
-    res = {"meta": {k: meta.get(k) for k in ["projeto_id", "ciclo", "titulo", "versao", "modo", "data_base", "mes_inicio"]}}
+    res = {"meta": {k: meta.get(k) for k in ["projeto_id", "ciclo", "titulo", "versao", "modo", "data_base", "mes_inicio", "horizonte_execucao", "horizonte_direcao"]}}
     det = {}
     fo = (nos["financeiro_opcoes"] or {}).get("opcoes") or {}
     res["opcoes"] = {}
@@ -184,12 +187,78 @@ def calcular(nos):
     det["uso_fte"] = uso
     if sobre:
         alertas.append(f"{len(sobre)} sobrecarga(s) de capacidade nas iniciativas")
+    res["roadmap"] = roadmap(lista, meta)
+    res["areas"] = areas(nos, lista, anos)
     okr = nos["okrs"] or {}
     res["contagens"] = {"objetivos": len(okr.get("objetivos", []) or []), "krs": len(okr.get("krs", []) or []),
                         "iniciativas": len(lista), "riscos": len((nos["riscos"] or {}).get("itens", []) or [])}
     res["alertas"] = alertas
     res["fmt"] = _fmt(res)
     return res, det
+
+
+NOMES_AREA = {"comercial_marketing": "Comercial e marketing", "produto_tecnologia": "Produto e tecnologia", "operacoes": "Operações",
+              "parcerias": "Parcerias e distribuição", "pessoas": "Pessoas e organização", "captacao": "Captação", "juridico": "Jurídico e tributário", "outra": "Outra"}
+
+
+def _trim(mes):
+    a, m = mes.split("-"); return f"{a}-T{(int(m) - 1) // 3 + 1}"
+
+
+def roadmap(lista, meta):
+    out = []
+    for x in lista:
+        if not x.get("inicio") or not x.get("duracao_meses"):
+            continue
+        meses = [mes_label(x["inicio"], i) for i in range(int(x["duracao_meses"]))]
+        out.append({"id": x["id"], "nome": x["nome"], "area": x.get("area"), "dono": x.get("dono"), "prioridade": x.get("prioridade"),
+                    "trimestres": sorted({_trim(m) for m in meses})})
+    return out
+
+
+def areas(nos, lista, anos):
+    pf = {a.get("area"): a for a in (nos.get("planos_funcionais") or {}).get("areas", []) or []}
+    ano1 = str(anos[0]) if anos else None
+    agg = {}
+    for x in lista:
+        k = x.get("area") or "outra"
+        d = agg.setdefault(k, {"area": k, "iniciativas": 0, "custo_externo": 0.0, "esforco_pessoas_mes": 0.0, "despesas_recorrentes_ano": 0.0})
+        d["iniciativas"] += 1; d["custo_externo"] += x.get("custo_externo") or 0.0; d["esforco_pessoas_mes"] += x.get("esforco_pessoas_mes") or 0.0
+    for k, a in pf.items():
+        d = agg.setdefault(k, {"area": k, "iniciativas": 0, "custo_externo": 0.0, "esforco_pessoas_mes": 0.0, "despesas_recorrentes_ano": 0.0})
+        d["despesas_recorrentes_ano"] = sum(float(x.get("valor_anual") or 0) for x in a.get("despesas_recorrentes", []) or [])
+        d["dono"] = a.get("dono")
+    for d in agg.values():
+        d["orcamento_total"] = d["custo_externo"] + d["despesas_recorrentes_ano"]
+    return sorted(agg.values(), key=lambda d: -d["orcamento_total"])
+
+
+def _tabelas(res, f):
+    tri = sorted({t for r in res.get("roadmap", []) for t in r["trimestres"]})
+    if tri:
+        l = ["| Iniciativa | Área | Dono | " + " | ".join(tri) + " |", "|---|---|---|" + "---|" * len(tri)]
+        for r in res["roadmap"]:
+            l.append(f"| {r['id']} · {r['nome']} | {NOMES_AREA.get(r['area'], r['area'] or '—')} | {r['dono'] or '[●]'} | " + " | ".join("■" if t in r["trimestres"] else "" for t in tri) + " |")
+        f["roadmap_tabela"] = "\n".join(l)
+    else:
+        f["roadmap_tabela"] = "Sem iniciativas com início e duração definidos."
+    l = ["| Área | Dono | Iniciativas | Esforço (pessoas-mês) | Custo externo das iniciativas | Despesas recorrentes no ano 1 | Total |", "|---|---|---|---|---|---|---|"]
+    for d in res.get("areas", []):
+        l.append(f"| {NOMES_AREA.get(d['area'], d['area'])} | {d.get('dono') or '[●]'} | {d['iniciativas']} | {num(d['esforco_pessoas_mes'], 1)} | {brl(d['custo_externo'])} | {brl(d['despesas_recorrentes_ano'])} | {brl(d['orcamento_total'])} |")
+    f["orcamento_areas_tabela"] = "\n".join(l)
+    cen = res.get("cenarios", {})
+    if cen:
+        ordem = [c for c in ("conservador", "base", "otimista") if c in cen] + [c for c in cen if c not in ("conservador", "base", "otimista")]
+        l = ["| Indicador | " + " | ".join(c.capitalize() for c in ordem) + " |", "|---|" + "---|" * len(ordem)]
+        a1 = lambda c, k: list(cen[c]["anual"].values())[0][k]
+        for nome, fn in [("Receita do ano 1", lambda c: brl(a1(c, "receita"))), ("EBITDA do ano 1", lambda c: brl(a1(c, "ebitda"))),
+                         ("Caixa no fim do ano 1", lambda c: brl(a1(c, "caixa_final"))), ("Menor caixa no horizonte", lambda c: brl(cen[c]["indicadores"]["menor_caixa"])),
+                         ("Necessidade de captação", lambda c: brl(cen[c]["indicadores"]["necessidade_captacao"])),
+                         ("Runway sem captação", lambda c: (f"{cen[c]['indicadores']['runway_meses_sem_captacao']} meses" if cen[c]["indicadores"]["runway_meses_sem_captacao"] is not None else "além do horizonte")),
+                         ("Primeiro ano com EBITDA positivo", lambda c: str(cen[c]["indicadores"]["ano_ebitda_positivo"] or "fora do horizonte"))]:
+            l.append(f"| {nome} | " + " | ".join(fn(c) for c in ordem) + " |")
+        f["cenarios_tabela"] = "\n".join(l)
+    return f
 
 
 def _fmt(res):
@@ -209,6 +278,7 @@ def _fmt(res):
             f[f"{nome}_ano_ebitda_positivo"] = str(ind["ano_ebitda_positivo"] or "fora do horizonte")
             f[f"{nome}_queima_media_ano1"] = brl(ind["queima_media_ano1"])
             f[f"{nome}_caixa_final"] = brl(ind["caixa_final"])
+            f[f"{nome}_runway_meses"] = (f"{ind['runway_meses_sem_captacao']} meses" if ind.get("runway_meses_sem_captacao") is not None else "além do horizonte")
     for k, v in res.get("contagens", {}).items():
         f[f"n_{k}"] = num(v)
-    return f
+    return _tabelas(res, f)

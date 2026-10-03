@@ -1,0 +1,36 @@
+{
+  "_template": true,
+  "regime_tributario": {
+    "atual": "",
+    "decisao": "",
+    "prazo": "AAAA-MM",
+    "impacto": "",
+    "evidencias": []
+  },
+  "estrutura_societaria": {
+    "situacao_atual": "",
+    "mudancas_previstas": [],
+    "evidencias": []
+  },
+  "matriz_filial": {
+    "situacao_atual": "",
+    "decisao": "",
+    "justificativa": ""
+  },
+  "contratos_e_pi": [
+    {
+      "tema": "",
+      "acao": ""
+    }
+  ],
+  "acoes": [
+    {
+      "acao": "",
+      "dono": "",
+      "prazo": "AAAA-MM",
+      "custo": null,
+      "iniciativa_ref": ""
+    }
+  ],
+  "riscos": []
+}

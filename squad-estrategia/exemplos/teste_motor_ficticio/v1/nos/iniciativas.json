@@ -28,7 +28,9 @@
       ],
       "dependencias": [],
       "marco_de_decisao": "2027-06: continuar se KR1.1 >= 5",
-      "fonte": "FICTÍCIO – teste do motor"
+      "fonte": "FICTÍCIO – teste do motor",
+      "dono": "FICTÍCIO",
+      "area": "comercial_marketing"
     },
     {
       "id": "I02",
@@ -58,7 +60,9 @@
       ],
       "dependencias": [],
       "marco_de_decisao": "2027-05",
-      "fonte": "FICTÍCIO – teste do motor"
+      "fonte": "FICTÍCIO – teste do motor",
+      "dono": "FICTÍCIO",
+      "area": "produto_tecnologia"
     }
   ]
 }

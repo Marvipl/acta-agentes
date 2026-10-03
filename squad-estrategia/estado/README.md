@@ -19,9 +19,11 @@ Cada ciclo é um conjunto de nós JSON em `nos/`, cada um com dono, fase e depen
 | `okrs` | okr-kpi | E3 | diagnostico, opcoes |
 | `organizacao` | capacidades-organizacao | E3 | opcoes, capacidades, okrs |
 | `iniciativas` | portfolio-iniciativas | E3 | opcoes, portfolio, okrs, organizacao |
-| `financeiro` | financeiro-estrategico | E3 | opcoes, portfolio, interno, organizacao, iniciativas |
-| `riscos` | riscos-governanca | E3 | opcoes, iniciativas, financeiro |
-| `governanca` | riscos-governanca | E3 | okrs, riscos, opcoes |
+| `planos_funcionais` | planos-funcionais | E3 | opcoes, portfolio, okrs, organizacao, iniciativas |
+| `juridico_tributario` | regulatorio-fomento | E3 | regulatorio, opcoes, interno |
+| `financeiro` | financeiro-estrategico | E3 | opcoes, portfolio, interno, organizacao, iniciativas, planos_funcionais, juridico_tributario |
+| `riscos` | riscos-governanca | E3 | opcoes, iniciativas, planos_funcionais, juridico_tributario, financeiro |
+| `governanca` | riscos-governanca | E3 | okrs, riscos, opcoes, planos_funcionais |
 
 ## Convenções
 - Evidências ficam nos nós de diagnóstico (`mercado`, `concorrencia`, `regulatorio`, `interno`, `capacidades`), com prefixos `MKT`, `CON`, `REG`, `INT`, `CAP`. As análises citam os ids.

@@ -8,7 +8,7 @@ model: sonnet
 # Riscos e Governança
 
 ## Entradas
-- `nos/opcoes.json` (pré-mortem e hipóteses), `nos/iniciativas.json`, `nos/financeiro.json`, `saidas/resumo.json`
+- `nos/opcoes.json` (pré-mortem e hipóteses), `nos/iniciativas.json`, `nos/financeiro.json`, `nos/planos_funcionais.json`, `nos/juridico_tributario.json`, `saidas/resumo.json`
 
 ## Saídas
 - `nos/riscos.json`: `itens`
@@ -17,7 +17,7 @@ model: sonnet
 ## Método
 1. Transforme o pré-mortem e as hipóteses em riscos: probabilidade, impacto, gatilho objetivo (número ou evento), mitigação, plano B e dono.
 2. Inclua riscos de caixa (cenário conservador), de concentração (cliente, fornecedor, pessoa-chave), regulatórios e de execução.
-3. Desenhe ritos enxutos para uma empresa do tamanho da Acta: frequência, participantes, pauta e insumos (o painel de KPIs, a revisão trimestral do motor).
+3. Desenhe ritos enxutos para uma empresa do tamanho da Acta, com dono: semanal, mensal, conselho, trimestral e a revisão semestral do plano (obrigatória). Para cada rito: frequência, participantes, pauta e insumos (o painel de KPIs, a revisão trimestral do motor).
 4. Defina gatilhos de revisão do plano: hipótese refutada, KR vermelho por dois trimestres, caixa abaixo de N meses de queima.
 5. Monte o calendário do ciclo com as revisões trimestrais e os prazos de fomento e captação.
 

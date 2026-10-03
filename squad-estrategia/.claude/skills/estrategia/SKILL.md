@@ -19,6 +19,9 @@ Você conduz o funil do macro para o detalhe, mantém a fonte única da verdade,
 ## Ciclo de revisão
 Especialista → supervisor (`sup-<nome>`) → se `revisar`, devolva os pontos → rodada 2. Máximo de 2 rodadas; `bloqueado` vai para Marcus. Ao fim de cada fase, `python -m motor.validar <dv> --fase Ex` e só avance com `LIBERADO`.
 
+## Estrutura do documento final
+O plano segue a estrutura definida por Marcus: 0 Sumário executivo, 1 Direção estratégica, 2 Diagnóstico, 3 Escolhas estratégicas, 4 Objetivos e metas, 5 Planos funcionais (sete áreas), 6 Plano financeiro, 7 Portfólio de iniciativas e roadmap, 8 Riscos e contingências, 9 Governança da execução (`templates/plano_estrategico.md.tpl`).
+
 ## Fluxo do modo plano
 
 | Fase | O que acontece | Portão |
@@ -26,7 +29,7 @@ Especialista → supervisor (`sup-<nome>`) → se `revisar`, devolva os pontos �
 | E0 Enquadramento | `enquadramento` → `avaliador-prontidao` → até 2 rodadas de perguntas-chave | **G1:** ambição, restrições, decisões já tomadas |
 | E1 Diagnóstico | Em paralelo: `inteligencia-mercado`, `concorrencia`, `regulatorio-fomento`, `desempenho-interno`, `capacidades-organizacao` → supervisores → você escreve `nos/diagnostico.json` (SWOT com evidências, TOWS, 3 a 5 questões críticas) | **G2:** diagnóstico e questões críticas |
 | E2 Escolhas | `arquiteto-estrategia` → `financeiro-estrategico` (modelo por opção) → motor → arquiteto fecha a recomendação → `portfolio-iniciativas` (portfólio) → supervisores | **G3:** Marcus escolhe a opção, as apostas e o que não fazer |
-| E3 Desdobramento | `okr-kpi` → `capacidades-organizacao` (organização) → `portfolio-iniciativas` (iniciativas) → motor → `financeiro-estrategico` (cenários) → motor → `riscos-governanca` → supervisores | **G4:** plano detalhado |
+| E3 Desdobramento | `okr-kpi` (objetivos com dono) → `capacidades-organizacao` (organização) → `portfolio-iniciativas` (iniciativas com dono e área) → `planos-funcionais` (comercial e marketing, produto e tecnologia, operações, parcerias) → `regulatorio-fomento` (jurídico, societário e tributário) → motor → `financeiro-estrategico` (três cenários e captação) → motor → `riscos-governanca` (riscos e ritos, com revisão semestral) → supervisores | **G4:** plano detalhado |
 | E4 Consolidação | `narrativa-comunicacao` → `red-team-estrategia` → donos tratam o top 5 → `auditor-consistencia` | **G5:** plano aprovado → congelar → publicar |
 
 ## Fluxo do modo estudo
@@ -36,8 +39,8 @@ Especialista → supervisor (`sup-<nome>`) → se `revisar`, devolva os pontos �
 Sempre com a sua resposta proposta para cada decisão:
 - **G1:** ambição em uma frase, restrições, o que está fora de discussão, premissas adotadas.
 - **G2:** SWOT com as evidências mais fortes, o que é confirmado e o que é reportado, e as questões críticas.
-- **G3:** tabela das opções com notas, caixa mínimo e captação necessária de cada uma, hipóteses mais duvidosas, recomendação e o que não fazer.
-- **G4:** OKRs, iniciativas priorizadas e sobrecargas, contratações, cenários e plano de captação, principais riscos.
+- **G3:** tabela das opções com modelo de negócio, ICP, proposta de valor e modelo de receita, notas, caixa mínimo e captação necessária de cada uma, hipóteses mais duvidosas, recomendação e o que não fazer.
+- **G4:** OKRs com donos, planos funcionais das sete áreas, orçamento por área, roteiro trimestral, contratações, três cenários com runway e plano de captação, principais riscos e ritos de governança.
 - **G5:** plano consolidado, top 5 do red team e como foi tratado, parecer do auditor.
 
 Registre: `python -m motor.estado aprovar <dv> --gate Gx --por Marcus --obs "<decisões>"`.

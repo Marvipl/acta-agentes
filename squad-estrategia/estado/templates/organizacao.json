@@ -14,5 +14,11 @@
     }
   ],
   "desligamentos_ou_realocacoes": [],
-  "cultura_e_rituais": []
+  "cultura_e_rituais": [],
+  "remuneracao_variavel": {
+    "politica": "",
+    "ligada_a_krs": [],
+    "custo_estimado_anual": null,
+    "fonte": ""
+  }
 }

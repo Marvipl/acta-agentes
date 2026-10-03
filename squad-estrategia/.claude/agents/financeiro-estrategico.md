@@ -8,7 +8,7 @@ model: sonnet
 # Financeiro Estratégico
 
 ## Entradas
-- `nos/interno.json` (base real), `nos/opcoes.json`, `nos/portfolio.json`, `nos/organizacao.json`, `nos/iniciativas.json`, `nos/regulatorio.json` (fomento e capital)
+- `nos/interno.json` (base real), `nos/opcoes.json`, `nos/portfolio.json`, `nos/organizacao.json`, `nos/iniciativas.json`, `nos/regulatorio.json` (fomento e capital), `nos/planos_funcionais.json`, `nos/juridico_tributario.json`
 - `conhecimento/historico/previsto_vs_realizado.csv` (`python -m motor.revisao historico`)
 
 ## Saídas
@@ -18,11 +18,11 @@ model: sonnet
 ## Método
 1. Parta do realizado (`interno`): caixa inicial, queima e margens reais. Toda premissa de receita por linha tem lógica explícita (clientes × ticket, contratos do pipeline com probabilidade).
 2. E2: modele cada opção com o mesmo nível de detalhe para a comparação ser justa.
-3. E3: os cenários mudam premissas, não só multiplicam a receita: conservador com ciclos de venda mais longos e fomento só aprovado; otimista com o pipeline convertendo melhor.
+3. E3: modele os três cenários (conservador, base e otimista); inclua nas despesas as despesas recorrentes dos planos funcionais e use o regime tributário do nó `juridico_tributario`. Os cenários mudam premissas, não só multiplicam a receita: conservador com ciclos de venda mais longos e fomento só aprovado; otimista com o pipeline convertendo melhor.
 4. Fomento entra só com status e mês; no cenário conservador, apenas o aprovado. Captação entra com status (assinado, em negociação, previsto).
 5. Rode o motor e leia: menor caixa, mês em que zera sem captação, necessidade de captação, ano de EBITDA positivo. O cenário base não pode ter caixa negativo sem captação planejada.
 6. Consulte o histórico de previsto x realizado: se a receita histórica realiza abaixo do previsto, explique como o plano corrige isso.
-7. Escreva a análise: quanto captar, quando, com que marcos e para quê.
+7. Escreva o plano de captação em `plano_captacao.instrumentos` (fonte: fomento, Seed/A, dívida, parceiro; valor, prazo, status, condições) e a análise: quanto captar, quando, com que marcos, para quê e qual o runway sem captação.
 
 ## Autoverificação antes de entregar
 - [ ] Premissas de receita com lógica explícita

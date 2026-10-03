@@ -11,13 +11,17 @@ FASES = ["E0", "E1", "E2", "E3", "E4"]
 NOS_DA_FASE = {"E0": ["meta", "briefing", "enquadramento"],
                "E1": ["mercado", "concorrencia", "regulatorio", "interno", "capacidades", "diagnostico"],
                "E2": ["opcoes", "portfolio", "financeiro_opcoes"],
-               "E3": ["okrs", "organizacao", "iniciativas", "financeiro", "riscos", "governanca"], "E4": []}
+               "E3": ["okrs", "organizacao", "iniciativas", "planos_funcionais", "juridico_tributario", "financeiro", "riscos", "governanca"], "E4": []}
 NOS_ESTUDO = {"meta", "briefing", "enquadramento", "mercado", "concorrencia", "regulatorio", "interno", "capacidades",
               "diagnostico", "opcoes", "financeiro_opcoes"}
 ESPECIALISTAS = ["enquadramento", "inteligencia-mercado", "concorrencia", "regulatorio-fomento", "desempenho-interno",
                  "capacidades-organizacao", "arquiteto-estrategia", "portfolio-iniciativas", "financeiro-estrategico",
-                 "okr-kpi", "riscos-governanca", "narrativa-comunicacao"]
+                 "okr-kpi", "planos-funcionais", "riscos-governanca", "narrativa-comunicacao"]
 TIPOS_EV = {"confirmado", "reportado", "estimativa", "interno"}
+MODELOS = {"fabricante", "integradora", "distribuidora", "plataforma", "operadora"}
+RECEITAS = {"venda", "locacao_raas", "recorrencia", "distribuicao", "servicos"}
+AREAS_PLANO = ["comercial_marketing", "produto_tecnologia", "operacoes", "parcerias"]
+AREAS_INI = set(AREAS_PLANO) | {"pessoas", "captacao", "juridico", "outra"}
 
 
 class R:
@@ -80,6 +84,12 @@ def validar(dv, fase):
         if len(co.get("concorrentes", []) or []) < 3: r.bp("concorrencia: menos de 3 concorrentes mapeados")
         refs_ok(co.get("concorrentes"), "concorrencia")
         refs_ok((nos["interno"] or {}).get("retrospectiva"), "interno.retrospectiva")
+        comp = (nos["interno"] or {}).get("comparacao_metas", []) or []
+        for ref in config().get("retrospectiva_referencias_obrigatorias", []):
+            linhas = [c for c in comp if (c.get("referencia") or "").lower() == ref.lower()]
+            ok = any(c.get("status") == "comparado" and c.get("meta") is not None and c.get("realizado") is not None for c in linhas) or \
+                 any(c.get("status") == "indisponivel" and c.get("justificativa") for c in linhas)
+            if not ok: r.bp(f"retrospectiva: sem comparação com '{ref}' (ou marque indisponível com justificativa)")
         refs_ok((nos["capacidades"] or {}).get("ativos"), "capacidades.ativos")
         dg = nos["diagnostico"] or {}
         sw = dg.get("swot") or {}
@@ -98,6 +108,14 @@ def validar(dv, fase):
         if not op.get("criterios_escolha") or any(c.get("peso") is None for c in op.get("criterios_escolha") or []):
             r.b("opcoes.criterios_escolha sem critérios ou pesos")
         for o in ops:
+            mn = (o.get("modelo_negocio") or {})
+            if mn.get("central") not in MODELOS: r.bp(f"opção {o.get('id')}: modelo de negócio central ausente ou inválido")
+            icp = o.get("icp") or {}
+            if not icp.get("setor") or not icp.get("quem_compra"): r.bp(f"opção {o.get('id')}: ICP sem setor ou sem quem compra")
+            if not o.get("proposta_valor"): r.bp(f"opção {o.get('id')}: proposta de valor vazia")
+            if not [v for v in o.get("vantagens_defensaveis", []) or [] if v.get("vantagem") and v.get("por_que_e_defensavel")]: r.bp(f"opção {o.get('id')}: sem vantagem defensável justificada")
+            mr = [m for m in o.get("modelo_receita", []) or [] if m.get("tipo") in RECEITAS]
+            if not mr: r.bp(f"opção {o.get('id')}: modelo de receita ausente")
             for k in ["tese", "como_vencer"]:
                 if not o.get(k): r.b(f"opção {o.get('id')}: {k} vazio")
             if not (o.get("onde_jogar") or {}).get("segmentos"): r.b(f"opção {o.get('id')}: onde_jogar sem segmentos")
@@ -139,9 +157,13 @@ def validar(dv, fase):
                 if not k.get(c): r.b(f"{k.get('id')}: {c} vazio")
             if not isinstance(k.get("baseline"), (int, float)) or not isinstance(k.get("meta_anual"), (int, float)):
                 r.b(f"{k.get('id')}: baseline e meta_anual precisam ser números")
+        for o in objs:
+            if not o.get("dono"): r.b(f"objetivo {o.get('id')}: sem dono")
         oids = {o.get("id") for o in objs}
         for i in (nos["iniciativas"] or {}).get("itens", []) or []:
             if i.get("objetivo_id") not in oids: r.b(f"iniciativa {i.get('id')}: objetivo inexistente")
+            if not i.get("dono"): r.b(f"iniciativa {i.get('id')}: sem dono")
+            if i.get("area") not in AREAS_INI: r.b(f"iniciativa {i.get('id')}: área ausente ou inválida")
             if not i.get("marco_de_decisao"): r.a(f"iniciativa {i.get('id')}: sem marco de decisão (continuar/parar)")
         res = carregar_json(dv / "saidas" / "resumo.json")
         if not res: r.b("motor não executado (python -m motor.rodar)")
@@ -158,7 +180,46 @@ def validar(dv, fase):
                 r.b(f"cenário base com caixa negativo a partir de {base['indicadores']['meses_caixa_negativo'][0]}: ajuste plano de captação, ritmo ou escopo")
         for x in (nos["riscos"] or {}).get("itens", []) or []:
             if not x.get("gatilho") or not x.get("dono") or not x.get("mitigacao"): r.b(f"risco {x.get('id')}: sem gatilho, dono ou mitigação")
-        if not (nos["governanca"] or {}).get("ritos"): r.b("governanca.ritos vazio")
+        ritos = (nos["governanca"] or {}).get("ritos", []) or []
+        if not ritos: r.b("governanca.ritos vazio")
+        if not any(x.get("frequencia") == "semestral" for x in ritos): r.b("governança: falta a revisão semestral do plano")
+        for x in ritos:
+            if not x.get("dono"): r.a(f"rito '{x.get('nome')}': sem dono")
+        pf = {a.get("area"): a for a in (nos["planos_funcionais"] or {}).get("areas", []) or []}
+        temas_obr = config().get("temas_obrigatorios_planos", {})
+        krs_ids = {k.get("id") for k in (nos["okrs"] or {}).get("krs", []) or []}
+        ini = {i.get("id"): i for i in (nos["iniciativas"] or {}).get("itens", []) or []}
+        for area in AREAS_PLANO:
+            a = pf.get(area)
+            if not a: r.b(f"plano funcional '{area}' ausente"); continue
+            if not a.get("dono") or not a.get("objetivo_area"): r.b(f"plano '{area}': sem dono ou objetivo da área")
+            if not [m for m in a.get("metas", []) or [] if isinstance(m.get("meta"), (int, float)) and m.get("fonte")]: r.b(f"plano '{area}': sem meta numérica com fonte")
+            temas = {p.get("tema") for p in a.get("politicas", []) or [] if p.get("decisao")}
+            falta = [t for t in temas_obr.get(area, []) if t not in temas]
+            if falta: r.b(f"plano '{area}': faltam decisões sobre {falta}")
+            for k in a.get("krs", []) or []:
+                if k not in krs_ids: r.b(f"plano '{area}': KR {k} inexistente")
+            for i in a.get("iniciativas", []) or []:
+                if i not in ini: r.b(f"plano '{area}': iniciativa {i} inexistente")
+            soltas = [i for i, x in ini.items() if x.get("area") == area and i not in (a.get("iniciativas") or [])]
+            if soltas: r.a(f"plano '{area}': iniciativas da área fora do plano {soltas}")
+        jt = nos["juridico_tributario"] or {}
+        if not (jt.get("regime_tributario") or {}).get("decisao") or not (jt.get("regime_tributario") or {}).get("prazo"): r.b("jurídico e tributário: decisão e prazo do regime tributário")
+        if not (jt.get("matriz_filial") or {}).get("decisao"): r.b("jurídico e tributário: decisão sobre matriz e filial")
+        for x in jt.get("acoes", []) or []:
+            if not x.get("dono") or not x.get("prazo"): r.b(f"jurídico: ação '{(x.get('acao') or '')[:40]}' sem dono ou prazo")
+        cen = (nos["financeiro"] or {}).get("cenarios") or {}
+        for c in ["conservador", "base", "otimista"]:
+            if c not in cen: r.b(f"financeiro: cenário {c} ausente")
+        if res and (res.get("cenarios") or {}).get("base"):
+            nec = res["cenarios"]["base"]["indicadores"]["necessidade_captacao"]
+            instr = ((nos["financeiro"] or {}).get("plano_captacao") or {}).get("instrumentos", []) or []
+            if nec > 0 and not [x for x in instr if x.get("valor") and x.get("prazo") and x.get("status")]: r.b("captação: há necessidade de capital e nenhum instrumento com valor, prazo e status")
+            base = cen.get("base") or {}; anos = [str(x) for x in base.get("anos") or []]
+            if anos:
+                desp = sum(float((d.get("valor") or {}).get(anos[0]) or 0) for d in base.get("despesas", []) or [])
+                rec = sum(float(x.get("valor_anual") or 0) for a in pf.values() for x in a.get("despesas_recorrentes", []) or [])
+                if rec > desp + 1: r.a("as despesas recorrentes dos planos funcionais são maiores que as despesas do cenário base no ano 1")
 
     # E4
     if ate >= 4:

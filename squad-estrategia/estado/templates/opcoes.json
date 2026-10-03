@@ -12,13 +12,41 @@
       "nome": "",
       "tese": "",
       "aspiracao": "",
+      "modelo_negocio": {
+        "central": "fabricante|integradora|distribuidora|plataforma|operadora",
+        "complementares": [],
+        "justificativa": ""
+      },
       "onde_jogar": {
         "segmentos": [],
         "clientes": [],
         "geografia": [],
         "canais": []
       },
+      "icp": {
+        "setor": "",
+        "porte": "",
+        "dor_principal": "",
+        "quem_compra": "",
+        "gatilho_de_compra": ""
+      },
       "como_vencer": "",
+      "proposta_valor": "",
+      "posicionamento": "",
+      "vantagens_defensaveis": [
+        {
+          "vantagem": "",
+          "por_que_e_defensavel": "",
+          "evidencias": []
+        }
+      ],
+      "modelo_receita": [
+        {
+          "tipo": "venda|locacao_raas|recorrencia|distribuicao|servicos",
+          "papel": "principal|complementar",
+          "premissa": ""
+        }
+      ],
       "capacidades_necessarias": [],
       "sistemas_de_gestao": [],
       "wmbt": [

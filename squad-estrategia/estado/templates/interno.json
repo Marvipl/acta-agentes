@@ -45,5 +45,19 @@
       "data": "AAAA-MM-DD",
       "tipo": "interno"
     }
+  ],
+  "comparacao_metas": [
+    {
+      "referencia": "Budget 2026|Metas do Roboteazy",
+      "metrica": "",
+      "meta": null,
+      "realizado": null,
+      "unidade": "",
+      "status": "comparado|indisponivel",
+      "justificativa": "",
+      "evidencias": [
+        "INT-01"
+      ]
+    }
   ]
 }

@@ -12,14 +12,15 @@ E1 Diagnóstico     mercado, concorrência, regulatório e fomento, desempenho i
                    ▶ G2 (Marcus): diagnóstico
 E2 Escolhas        arquiteto de estratégia (2 a 4 opções, hipóteses testáveis) + modelo financeiro por opção + portfólio
                    ▶ G3 (Marcus): opção, apostas e o que não fazer
-E3 Desdobramento   OKRs → organização → iniciativas (capacidade) → cenários financeiros → riscos e governança
+E3 Desdobramento   OKRs → organização → iniciativas (dono, área, capacidade) → planos funcionais (7 áreas)
+                   → jurídico e tributário → três cenários com runway e captação → riscos e governança
                    ▶ G4 (Marcus): plano detalhado
 E4 Consolidação    narrativa → red team (5 personas) → auditor
                    ▶ G5 (Marcus): aprovação → baseline congelada → Drive
 Execução           /revisao-trimestral: KRs, receita, caixa, hipóteses e gatilhos
 ```
 
-- **27 agentes:** 12 especialistas (Sonnet; o arquiteto de estratégia em Opus), 11 supervisores, avaliador de prontidão, red team e auditor (Opus), calibração (Sonnet).
+- **29 agentes:** 13 especialistas (Sonnet; o arquiteto de estratégia em Opus), 12 supervisores, avaliador de prontidão, red team e auditor (Opus), calibração (Sonnet).
 - **Dois modos:** `plano` (ciclo anual, cinco portões, supervisores) e `estudo` (uma decisão estratégica, três portões, red team e auditor, entrega um memorando).
 - **Evidências classificadas:** confirmado, reportado, estimativa ou interno. Reportado nunca vira fato.
 - **Motor:** projeção mensal plurianual por cenário e por opção (DRE, caixa, necessidade de captação, ano de EBITDA positivo), notas ponderadas de portfólio, prioridade de iniciativas e capacidade do time em FTE.
@@ -48,8 +49,8 @@ Execução           /revisao-trimestral: KRs, receita, caixa, hipóteses e gati
 Coloque em `entrada\<ciclo>\` o que já existe: trabalho anterior do plano, budget, DRE, pipeline e exportações da pasta Acta > Briefings. Documentos do Google Docs sincronizados pelo Drive para desktop são atalhos `.gdoc` sem conteúdo: exporte como .docx ou .pdf.
 
 ## Entregáveis (em `saidas\`)
-- `plano_<id>_v<n>.xlsx`: Resumo, DRE por cenário, DRE por opção, Caixa mensal, Portfólio, Iniciativas e capacidade, OKRs, Riscos, Hipóteses.
-- `plano_estrategico.md` (10 seções), `one_page.md`, `roteiro_deck.md` (brief para Claude Design ou pptx), `narrativa_investidor.md`; no modo estudo, `memo_estudo.md`.
+- `plano_<id>_v<n>.xlsx`: Resumo (com runway), DRE por cenário, DRE por opção, Caixa mensal, Portfólio, Iniciativas e capacidade, Roadmap trimestral, Orçamento por área, OKRs, Riscos, Hipóteses.
+- `plano_estrategico.md` na estrutura definida por Marcus (0 Sumário executivo a 9 Governança da execução, com planos funcionais das 7 áreas, orçamento por área, cenários com runway e roteiro trimestral), `one_page.md`, `roteiro_deck.md` (brief para Claude Design ou pptx), `narrativa_investidor.md`; no modo estudo, `memo_estudo.md`.
 
 ## Como o plano aprende
 - A revisão trimestral compara o realizado com a baseline congelada e registra previsto x realizado em `conhecimento\historico\`. Vieses que se repetem (por exemplo, receita de uma linha sempre abaixo do previsto) aparecem em `python -m motor.revisao historico` e entram no próximo ciclo.

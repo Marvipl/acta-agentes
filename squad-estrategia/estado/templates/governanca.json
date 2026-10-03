@@ -3,10 +3,11 @@
   "ritos": [
     {
       "nome": "",
-      "frequencia": "semanal|mensal|trimestral|anual",
+      "frequencia": "semanal|mensal|conselho|trimestral|semestral",
       "participantes": [],
       "pauta": "",
-      "insumos": []
+      "insumos": [],
+      "dono": ""
     }
   ],
   "gatilhos_de_revisao": [

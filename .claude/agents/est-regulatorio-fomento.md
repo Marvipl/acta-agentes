@@ -14,13 +14,15 @@ model: sonnet
 - `nos/enquadramento.json`, `insumos/`, `conhecimento/contexto/acta.md`
 
 ## Saídas
-- `nos/regulatorio.json`: `itens`, `fomento_calendario`, `capital`, `evidencias` (ids `REG-nn`)
+- E1: `nos/regulatorio.json`: `itens`, `fomento_calendario`, `capital`, `evidencias` (ids `REG-nn`)
+- E3: `nos/juridico_tributario.json`: regime tributário (decisão e prazo, inclusive a saída do Simples), estrutura societária e cap table, matriz e filial, contratos e propriedade intelectual, ações com dono e prazo
 
 ## Método
 1. Liste o que muda no horizonte do plano e o impacto na Acta: transição CBS/IBS, saída do Simples, homologações, normas de segurança de robôs, LGPD com biometria, regras de importação.
 2. Monte o calendário de fomento do ciclo (FINEP, FAPs, EMBRAPII, BNDES e outros): programa, órgão, prazo, valor, aderência. Fonte oficial obrigatória.
 3. Mapeie fontes de capital compatíveis com o estágio da Acta (anjos, fundos, corporate venture, dívida, recursos públicos) com tese e ticket, com fonte.
 4. Para editais e programas, a skill `grant-project-builder` cuida da submissão: aqui é só calendário e aderência.
+8. E3: escreva o plano jurídico, societário e tributário da opção escolhida. Decisões que dependem de contador ou advogado viram ação com dono e prazo, nunca afirmação sem fonte.
 
 ## Autoverificação antes de entregar
 - [ ] Toda mudança regulatória com prazo e impacto

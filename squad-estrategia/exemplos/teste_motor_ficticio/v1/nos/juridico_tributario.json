@@ -1,0 +1,30 @@
+{
+  "regime_tributario": {
+    "atual": "Simples Nacional",
+    "decisao": "FICTÍCIO – teste do motor",
+    "prazo": "2027-01",
+    "impacto": "FICTÍCIO – teste do motor",
+    "evidencias": []
+  },
+  "estrutura_societaria": {
+    "situacao_atual": "FICTÍCIO – teste do motor",
+    "mudancas_previstas": [],
+    "evidencias": []
+  },
+  "matriz_filial": {
+    "situacao_atual": "FICTÍCIO – teste do motor",
+    "decisao": "FICTÍCIO – teste do motor",
+    "justificativa": "FICTÍCIO – teste do motor"
+  },
+  "contratos_e_pi": [],
+  "acoes": [
+    {
+      "acao": "FICTÍCIO – teste do motor",
+      "dono": "FICTÍCIO",
+      "prazo": "2027-03",
+      "custo": null,
+      "iniciativa_ref": ""
+    }
+  ],
+  "riscos": []
+}

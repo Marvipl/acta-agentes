@@ -14,7 +14,7 @@ model: sonnet
 - `entregaveis/plano_estrategico.md.tpl` (seções de texto), `one_page.md.tpl`, `roteiro_deck.md.tpl`, `narrativa_investidor.md.tpl` (ou `memo_estudo.md.tpl` no modo estudo)
 
 ## Método
-1. Escreva para quem decide: cada seção abre com a conclusão. Frases curtas, sem jargão.
+1. Siga exatamente a estrutura do `plano_estrategico.md.tpl` (seções 0 a 9 definidas por Marcus). Escreva para quem decide: cada seção abre com a conclusão. Frases curtas, sem jargão. As tabelas de orçamento por área, cenários e roteiro já vêm do motor.
 2. Números somente por variáveis entre chaves duplas, como `{{fmt.base_receita_a1}}`. Nunca digite valores.
 3. Afirmações externas citam o id da evidência; reportado aparece como reportado.
 4. A one-page cabe numa página. O roteiro do deck tem uma mensagem por slide (a conclusão, não o tema) e serve de brief para o Claude Design ou para a skill de pptx.

@@ -186,9 +186,18 @@
   },
   "plano_captacao": {
     "valor": null,
-    "instrumento": "",
-    "prazo": "",
-    "uso_dos_recursos": []
+    "instrumentos": [
+      {
+        "fonte": "fomento|seed_a|divida|parceiro|outro",
+        "nome": "",
+        "valor": null,
+        "prazo": "AAAA-MM",
+        "status": "previsto|em negociacao|assinado",
+        "condicoes": ""
+      }
+    ],
+    "uso_dos_recursos": [],
+    "marcos_para_captar": []
   },
   "analise": ""
 }

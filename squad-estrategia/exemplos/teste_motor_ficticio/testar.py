@@ -2,7 +2,7 @@
 
 Uso, a partir da pasta squad-estrategia:  python exemplos/teste_motor_ficticio/testar.py
 """
-import os, shutil, sys
+import os, shutil, sys, tempfile
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
@@ -13,11 +13,11 @@ sys.path.insert(0, str(RAIZ))
 from motor.util import NOS, carregar_json        # noqa: E402
 from motor import estado, rodar, prontidao, validar  # noqa: E402
 
-dv = EX / "v1"
+# trabalha numa cópia temporária para não alterar os arquivos do repositório
+dv = Path(tempfile.mkdtemp(prefix="teste_estrategia_")) / "v1"
+shutil.copytree(EX / "v1", dv, ignore=shutil.ignore_patterns("saidas", "revisoes", "controle.json", "estado.json"))
 for sub in ["saidas", "revisoes"]:
-    shutil.rmtree(dv / sub, ignore_errors=True); (dv / sub).mkdir()
-for f in ["controle.json", "estado.json"]:
-    (dv / f).unlink(missing_ok=True)
+    (dv / sub).mkdir(exist_ok=True)
 for no in NOS:
     estado.carimbar(dv, no, "teste")
 for g in ["G1", "G2", "G3"]:

@@ -26,5 +26,29 @@
       "data": "2026-10-01",
       "tipo": "interno"
     }
+  ],
+  "comparacao_metas": [
+    {
+      "referencia": "Budget 2026",
+      "metrica": "Receita",
+      "meta": 1000000,
+      "realizado": 800000,
+      "unidade": "R$",
+      "status": "comparado",
+      "justificativa": "",
+      "evidencias": [
+        "INT-01"
+      ]
+    },
+    {
+      "referencia": "Metas do Roboteazy",
+      "metrica": "",
+      "meta": null,
+      "realizado": null,
+      "unidade": "",
+      "status": "indisponivel",
+      "justificativa": "FICTÍCIO – teste do motor",
+      "evidencias": []
+    }
   ]
 }

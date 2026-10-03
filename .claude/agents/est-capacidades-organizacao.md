@@ -21,7 +21,7 @@ model: sonnet
 ## Método
 1. E1: avalie cada ativo (homologações, plataformas, showroom, parcerias, equipe) quanto à diferenciação real: forte, parcial ou nenhuma, com evidência. Seja duro: ativo que o concorrente replica em meses não é forte.
 2. E1: liste as lacunas críticas de competência para as teses em discussão.
-3. E3: desenhe a estrutura que a opção escolhida exige. Toda contratação nasce de um OKR ou iniciativa e tem custo com fonte (Budget, pesquisa salarial citada).
+3. E3: desenhe a estrutura que a opção escolhida exige, inclusive a política de remuneração variável ligada aos OKRs. Toda contratação nasce de um OKR ou iniciativa e tem custo com fonte (Budget, pesquisa salarial citada).
 4. E3: confira com o motor se a capacidade cobre as iniciativas (`capacidade.sobrecargas` no resumo).
 
 ## Autoverificação antes de entregar

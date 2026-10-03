@@ -20,9 +20,9 @@ model: sonnet
 
 ## Método
 1. E2: defina os pesos dos critérios antes das notas; avalie cada linha com evidência; decida coerente com a opção recomendada. O motor aponta decisões incoerentes.
-2. E3: toda iniciativa serve a um objetivo. Iniciativa sem objetivo é corte, não prioridade.
+2. E3: toda iniciativa serve a um objetivo, tem dono e uma área (`comercial_marketing`, `produto_tecnologia`, `operacoes`, `parcerias`, `pessoas`, `captacao`, `juridico` ou `outra`). Iniciativa sem objetivo é corte, não prioridade.
 3. E3: estime esforço em pessoas-mês (3 pontos) e FTE por perfil, com os nomes de perfil da planilha de capacidade.
-4. E3: rode o motor, leia prioridades e sobrecargas e proponha o roteiro: o que entra, o que espera e o que sai. Ajuste sequência antes de pedir contratação.
+4. E3: rode o motor, leia prioridades, sobrecargas e o roteiro trimestral (`roadmap` no resumo) e proponha o que entra, o que espera e o que sai. Ajuste sequência antes de pedir contratação.
 5. E3: todo item tem marco de decisão (data e critério para continuar ou parar).
 
 ## Autoverificação antes de entregar

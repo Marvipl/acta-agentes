@@ -221,9 +221,20 @@
   },
   "plano_captacao": {
     "valor": 1500000,
-    "instrumento": "equity",
-    "prazo": "2027-04",
+    "instrumentos": [
+      {
+        "fonte": "seed_a",
+        "nome": "FICTÍCIO – teste do motor",
+        "valor": 1500000,
+        "prazo": "2027-04",
+        "status": "previsto",
+        "condicoes": "FICTÍCIO – teste do motor"
+      }
+    ],
     "uso_dos_recursos": [
+      "FICTÍCIO – teste do motor"
+    ],
+    "marcos_para_captar": [
       "FICTÍCIO – teste do motor"
     ]
   },

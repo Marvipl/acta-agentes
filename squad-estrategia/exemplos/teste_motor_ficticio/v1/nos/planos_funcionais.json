@@ -1,0 +1,200 @@
+{
+  "areas": [
+    {
+      "area": "comercial_marketing",
+      "dono": "FICTÍCIO",
+      "objetivo_area": "FICTÍCIO – teste do motor",
+      "krs": [
+        "KR1.1"
+      ],
+      "iniciativas": [
+        "I01"
+      ],
+      "metas": [
+        {
+          "metrica": "FICTÍCIO",
+          "baseline": 0,
+          "meta": 10,
+          "unidade": "un",
+          "fonte": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "politicas": [
+        {
+          "tema": "go_to_market",
+          "decisao": "FICTÍCIO – teste do motor",
+          "justificativa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        },
+        {
+          "tema": "funil",
+          "decisao": "FICTÍCIO – teste do motor",
+          "justificativa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        },
+        {
+          "tema": "canais",
+          "decisao": "FICTÍCIO – teste do motor",
+          "justificativa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        },
+        {
+          "tema": "pricing",
+          "decisao": "FICTÍCIO – teste do motor",
+          "justificativa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        }
+      ],
+      "despesas_recorrentes": [
+        {
+          "item": "FICTÍCIO – teste do motor",
+          "valor_anual": 20000,
+          "fonte": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "riscos": [
+        "R01"
+      ]
+    },
+    {
+      "area": "produto_tecnologia",
+      "dono": "FICTÍCIO",
+      "objetivo_area": "FICTÍCIO – teste do motor",
+      "krs": [
+        "KR1.1"
+      ],
+      "iniciativas": [
+        "I02"
+      ],
+      "metas": [
+        {
+          "metrica": "FICTÍCIO",
+          "baseline": 0,
+          "meta": 10,
+          "unidade": "un",
+          "fonte": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "politicas": [
+        {
+          "tema": "roadmap_produtos",
+          "decisao": "FICTÍCIO – teste do motor",
+          "justificativa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        },
+        {
+          "tema": "pd_financiado",
+          "decisao": "FICTÍCIO – teste do motor",
+          "justificativa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        }
+      ],
+      "despesas_recorrentes": [
+        {
+          "item": "FICTÍCIO – teste do motor",
+          "valor_anual": 20000,
+          "fonte": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "riscos": [
+        "R01"
+      ]
+    },
+    {
+      "area": "operacoes",
+      "dono": "FICTÍCIO",
+      "objetivo_area": "FICTÍCIO – teste do motor",
+      "krs": [
+        "KR1.1"
+      ],
+      "iniciativas": [],
+      "metas": [
+        {
+          "metrica": "FICTÍCIO",
+          "baseline": 0,
+          "meta": 10,
+          "unidade": "un",
+          "fonte": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "politicas": [
+        {
+          "tema": "implantacao",
+          "decisao": "FICTÍCIO – teste do motor",
+          "justificativa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        },
+        {
+          "tema": "suporte_sla",
+          "decisao": "FICTÍCIO – teste do motor",
+          "justificativa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        },
+        {
+          "tema": "importacao_supply_chain",
+          "decisao": "FICTÍCIO – teste do motor",
+          "justificativa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        },
+        {
+          "tema": "qualidade",
+          "decisao": "FICTÍCIO – teste do motor",
+          "justificativa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        }
+      ],
+      "despesas_recorrentes": [
+        {
+          "item": "FICTÍCIO – teste do motor",
+          "valor_anual": 20000,
+          "fonte": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "riscos": [
+        "R01"
+      ]
+    },
+    {
+      "area": "parcerias",
+      "dono": "FICTÍCIO",
+      "objetivo_area": "FICTÍCIO – teste do motor",
+      "krs": [
+        "KR1.1"
+      ],
+      "iniciativas": [],
+      "metas": [
+        {
+          "metrica": "FICTÍCIO",
+          "baseline": 0,
+          "meta": 10,
+          "unidade": "un",
+          "fonte": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "politicas": [
+        {
+          "tema": "parcerias_prioritarias",
+          "decisao": "FICTÍCIO – teste do motor",
+          "justificativa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        },
+        {
+          "tema": "metas_contratuais",
+          "decisao": "FICTÍCIO – teste do motor",
+          "justificativa": "FICTÍCIO – teste do motor",
+          "evidencias": []
+        }
+      ],
+      "despesas_recorrentes": [
+        {
+          "item": "FICTÍCIO – teste do motor",
+          "valor_anual": 20000,
+          "fonte": "FICTÍCIO – teste do motor"
+        }
+      ],
+      "riscos": [
+        "R01"
+      ]
+    }
+  ]
+}

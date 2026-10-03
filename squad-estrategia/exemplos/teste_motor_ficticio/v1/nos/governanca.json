@@ -7,7 +7,18 @@
         "FICTÍCIO"
       ],
       "pauta": "FICTÍCIO – teste do motor",
-      "insumos": []
+      "insumos": [],
+      "dono": "FICTÍCIO"
+    },
+    {
+      "nome": "Revisão semestral do plano",
+      "frequencia": "semestral",
+      "participantes": [
+        "FICTÍCIO"
+      ],
+      "pauta": "FICTÍCIO – teste do motor",
+      "insumos": [],
+      "dono": "FICTÍCIO"
     }
   ],
   "gatilhos_de_revisao": [

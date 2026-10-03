@@ -4,6 +4,8 @@
     {
       "id": "I01",
       "nome": "",
+      "area": "comercial_marketing|produto_tecnologia|operacoes|parcerias|pessoas|captacao|juridico|outra",
+      "dono": "",
       "objetivo_id": "OB1",
       "linha": "",
       "tipo": "aposta|melhoria|obrigatoria",

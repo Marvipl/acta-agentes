@@ -15,7 +15,7 @@ model: sonnet
 
 ## Método
 1. Use apenas documentos internos importados; cite arquivo e aba ou linha. Sem documento, pergunte a Marcus ou Renato.
-2. Compare planejado x realizado por linha de negócio, com margem quando houver. Explique as diferenças relevantes.
+2. Compare planejado x realizado por linha de negócio, com margem quando houver, e preencha `comparacao_metas` para cada referência obrigatória de `config.json` (hoje Budget 2026 e Metas do Roboteazy): métrica, meta, realizado, fonte. Sem o documento da referência, marque `indisponivel` com justificativa e pergunte a Marcus. Explique as diferenças relevantes.
 3. Calcule unit economics por linha só com dados disponíveis (ticket, margem, custo de implantação, recorrência).
 4. Registre caixa atual, data e queima mensal média; pipeline com probabilidade explícita e fonte.
 5. Extraia lições: o que funcionou, o que não funcionou e por quê.
