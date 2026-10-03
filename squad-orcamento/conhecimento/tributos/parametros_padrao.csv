@@ -1,5 +1,6 @@
 parametro,regime,valor,fonte,data,observacoes
-impostos_receita_pct.produto,[regime atual],,[contador],,fração (0.15 = 15%)
-impostos_receita_pct.servico,[regime atual],,[contador],,
-impostos_receita_pct.locacao,[regime atual],,[contador],,
-custo_importacao_pct.padrao,,,[contador / despachante],,sobre FOB convertido; inclui tributos e despesas de importação
+impostos_receita_pct.produto,"Simples Nacional, Anexo II, 3ª faixa",0.06535,"LC 123/2006 Anexo II (https://legis.senado.leg.br/norma/40180341/publicacao/40181111): nominal 10,00%, dedução R$ 13.860; RBT12 R$ 400 mil informado por Marcus","2026-10-03","fração (0.15 = 15%). Alíquota efetiva = (RBT12 × nominal − dedução) / RBT12. Robô fabricado pela Acta. Revenda (Anexo I, nominal 9,50%, dedução R$ 13.860) = 0.06035. Recalcular se o RBT12 sair da faixa R$ 360.000,01 a R$ 720.000"
+impostos_receita_pct.servico,"Simples Nacional, Anexo III, 3ª faixa",0.0909,"LC 123/2006 Anexo III (https://legis.senado.leg.br/norma/40180341/publicacao/40181117): nominal 13,50%, dedução R$ 17.640; RBT12 R$ 400 mil informado por Marcus","2026-10-03","Implantação, integração e manutenção. Supõe fator r ≥ 0,28 (folha/receita); se menor, Anexo V. Recalcular se o RBT12 sair da 3ª faixa"
+impostos_receita_pct.locacao,"Simples Nacional, Anexo III sem ISS, 3ª faixa",0.06136,"Anexo III efetiva 9,09% × (1 − 32,50% de ISS na partilha da 3ª faixa); regra da locação de bens móveis no Manual do PGDAS-D (Receita Federal)","2026-10-03","Recalcular se o RBT12 sair da 3ª faixa"
+custo_importacao_pct.padrao,,,"Marcus (média praticada): US$ 1 posto no Brasil = R$ 11,50 com todos os impostos e encargos","2026-10-03","sobre FOB convertido; inclui tributos e despesas de importação. Não é fixo: calcular por projeto como multiplicador_importacao_brl_por_usd ÷ câmbio USD/BRL do projeto − 1 (ex.: câmbio 5,00 → 1,30). Itens em outra moeda: converter para USD antes"
+multiplicador_importacao_brl_por_usd,,11.5,"Marcus (média praticada)","2026-10-03","R$ por US$ de compra, já com todos os impostos e encargos de importação"
