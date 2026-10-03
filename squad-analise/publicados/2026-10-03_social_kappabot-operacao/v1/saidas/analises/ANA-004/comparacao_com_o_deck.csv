@@ -1,0 +1,10 @@
+referencia,valor
+PR06 (linha de base manual do deck),31.0
+"PR05 (produtividade em zona, premissa do deck)",66.0
+PR05 ÷ 2 (metade do que o deck promete),33.0
+"PR17 (robô produtivo, s por coleta)",52.0
+"PR18 (robô com espera, s por coleta)",108.0
+"M14 medido, teto 300 s, padronizado",50.591203622346434
+"M14 medido, teto 600 s, padronizado",41.30138992748126
+"M14 medido, teto 900 s, padronizado",37.147407564760655
+"M14 medido, teto 1800 s, padronizado",31.164092542380413

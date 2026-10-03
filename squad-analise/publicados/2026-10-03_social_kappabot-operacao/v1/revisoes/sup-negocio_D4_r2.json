@@ -1,0 +1,141 @@
+{
+  "supervisor": "sup-negocio",
+  "agentes_revisados": ["analista-de-impacto", "especialista-setorial"],
+  "rodada": 2,
+  "fase": "D4",
+  "veredito": "aprovado_com_ressalvas",
+  "rubrica": [
+    {
+      "agente": "analista-de-impacto",
+      "criterio": "[crítico] Decisão com alternativas, critérios e limites",
+      "nota": 2,
+      "evidencia": "Os critérios e limites do piloto pago e de 'encerrar' estão em nos/impacto.json (criterios_de_saida): escopo, preço pela frota agrupada, meta fixada antes, donos e gatilhos de saída. O custo do status quo está em IMP-ALT1-CUSTO-MES-PILOTO-GRATUITO. O valor de referência que se perde ao encerrar fica [●], com pergunta. Ressalva: nos/decisao.json não mudou (02:10). As duas opções dependem do aceite de Marcus no G3, como o memorando declara."
+    },
+    {
+      "agente": "analista-de-impacto",
+      "criterio": "[crítico] Premissas do impacto com fonte; impacto comparado aos limites",
+      "nota": 2,
+      "evidencia": "O custo de implementação entrou como premissa com fonte (tabela da Acta), declarado como limite superior. O mapeamento e o desenvolvimento do checkout ficam [●], com dono (L6 a L8). Os limiares de PR11 vêm por configuração (sem e com reserva, sem e com implementação). A janela de preço sai por cenário, sem misturar. A margem da ALT6 compatível com CR1 está em IMP-CR6-ALT6-NO-TETO-INT. O custo de oportunidade contra a locação também está registrado. Refiz à mão 2 modelos novos e os 2 conferem (checagens). Ressalva: a implantação do robô que já está na Social entra na ALT4, mas não no piloto (ponto médio)."
+    },
+    {
+      "agente": "analista-de-impacto",
+      "criterio": "Perfil do especialista com fontes e confiança",
+      "nota": null,
+      "evidencia": "Não se aplica: critério do especialista e do perfilador."
+    },
+    {
+      "agente": "analista-de-impacto",
+      "criterio": "Recomendações viáveis na operação",
+      "nota": 2,
+      "evidencia": "As ações de INS-012, INS-054 e INS-089 têm prazo relativo ('antes da reunião com a Social', data [●]). INS-012 inclui a Royal Canin e a fração do posto que é conferência. O piloto agora usa a frota do escopo agrupado e mostra a implantação dos robôs extras (IMP-PILOTO-INVESTIMENTO-IMPLANTACAO, IMP-PILOTO-CUSTO-TOTAL-ACTA). INS-087 manda não aceitar a margem das tarifas do deck. Ressalva: a frota do piloto (4) é a de todos os outros depositantes, não a de 1 ou 2; isso está declarado como [●]."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "[crítico] Decisão com alternativas, critérios e limites",
+      "nota": null,
+      "evidencia": "Não se aplica: critério do arquiteto."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "[crítico] Premissas do impacto com fonte; impacto comparado aos limites",
+      "nota": 2,
+      "evidencia": "No D3 (20:11), os 5 valores antigos foram trocados pelas chaves atuais: margem da ALT6 de 1.007 com a ressalva de CR1, robô adicional de 554, frota de 5 e excedente pós-colmeia de 1,20, com o normal (0,82) só como descritivo. 'A conta leva à ALT6' e 'o que fecha é volume agrupado' saíram, e N13 foi criado. Ressalva: o D4 (20:12) é anterior aos modelos novos (20:14). Ele ainda diz que a implementação e o custo de manter o piloto 'não estão no motor' (ponto baixo)."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "Perfil do especialista com fontes e confiança",
+      "nota": 2,
+      "evidencia": "As 3 fontes conferidas na r1 seguem válidas. As referências legais novas do D4 (Lei 12.506/2011; Lei 8.036/1990, art. 18) estão no perfil (nos/especialista.json, conhecimento sobre dispensa sem justa causa, confiança alta). O que não tem fonte está em [●]: SLA da Royal Canin, ISO 3691-4 do Kappabot, acordo coletivo e contratos com depositantes."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "Recomendações viáveis na operação",
+      "nota": 2,
+      "evidencia": "revisoes/especialista_D4.md cobre os dois ramos. No portão: medir, não declarar (E20). Na ALT4: integração nova do checkout com risco de TI alto (E19), contingência da bancada, reserva, erro de conferência, garantia de capacidade condicionada ao separador na zona, layout, go-live e transição com custo legal. No outro ramo: piloto como aprendizado pago, com aceite dos depositantes, e encerramento com gatilho de reabertura. As interpretações decisivas estão marcadas 'validar com pessoa do setor'. A oferta já incorporou a condição da garantia de capacidade e N14."
+    }
+  ],
+  "checagens_executadas": [
+    "flock .../scratchpad/duckdb.lock python -m motor.impacto projetos/2026-10-03_social_kappabot-operacao/v1: 193 modelos. Comparei com o saidas/impacto.json anterior: 0 diferenças em provável, P10, P50 e P90.",
+    "Refiz à mão o limiar com reserva e implementação (IMP-INV-PR11-CR1-ALT4-ALT3-COM-RESERVA-COM-IMPL). Mão de obra residual: (0,082593 + 0,219348 × 50,5912/66) × 5.000 = 1.253,66. Piso: 3 × (1.000 + 24.000/24) + 12.000/24 = 6.500, maior que a receita de 2.268,28. Limiar: (1.253,66 + 6.500) ÷ 4.000 − 0,301941 = 1,6365 posto. Motor: 1,636. Confere.",
+    "Refiz à mão IMP-REC-MARGEM-ACTA-MES no cenário PR11 integral. Teto: 0,8 × (0,301941 + 2) × 5.000 − 1.253,66 = 7.954,11. Sem implementação: folga 7.954,11 − 3.000 = 4.954,11, margem 2.477,06, preço 5.477,06, economia da Social 41,5% e hardware máximo 2.477,06 ÷ 3 × 24 = 19.816. Com implementação: folga 1.454,11, margem 727,06, preço 7.227,06, economia 26,3% e só hardware 5.816. Motor: 2.477,06 / 727,06, 5.477,06 / 7.227,06, 0,415 / 0,263 e 19.816,44 / 5.816,44. Confere.",
+    "Conferi IMP-IMPL-INVESTIMENTO-ALT3 (2 × 24.000 + 12.000 = 60.000; com reserva, 84.000), IMP-PILOTO-CUSTO-TOTAL-ACTA (4 × 1.000 × 3 + 3 × 24.000 = 84.000) e IMP-REC-KMIN-COM-IMPL (6.500 ÷ 2.268,28 = 2,866). Os três conferem.",
+    "Procurei inconsistência na base da implementação e achei uma. A ALT4 conta a implantação de todos os robôs da frota, inclusive o que já opera na Social desde 20/07. O piloto desconta esse robô (robos_piloto_atual = 1). Na conta manual, descontar o robô atual no limiar com reserva e implementação daria cerca de 1,39 posto, em vez de 1,64. A conclusão não muda: os dois ficam acima do rateio de 0,47.",
+    "Revi os 13 pontos da r1, um a um, contra nos/impacto.json, evidencias/INS-*.json, o D3 corrigido, o D4 e os entregáveis. Os dois pontos críticos e altos do analista foram atendidos. O ponto alto sobre o nó decisão foi atendido em parte (critérios no nó de impacto; nos/decisao.json sem mudança). Os pontos do especialista foram atendidos.",
+    "Busquei no D3 os valores antigos (1.509, 36.221, 1.590, 2,18 e 'primeira fase'). O 1.590 e o 0,82 só aparecem como leitura superada ou descritiva. 'Primeira fase' só aparece como retirada.",
+    "Conferi as referências legais do D4 no perfil (nos/especialista.json): Lei 12.506/2011 e Lei 8.036/1990, art. 18, com confiança alta. Conferem.",
+    "Comparei o memorando com a oferta e o relatório. A oferta e o relatório trazem o hardware máximo pagável (19.816 e 5.816 R$/robô), a implantação do piloto (72.000 e 84.000) e o custo de oportunidade. O memorando não traz nenhum dos três.",
+    "Comparei o cabeçalho dos entregáveis com revisoes/auditor-reprodutibilidade.json. Os entregáveis (20:27) dizem 'auditoria reprovada'. A tentativa 2 do auditor (20:33) tem status ok, com 193 modelos e 18 análises iguais."
+  ],
+  "pontos": [
+    {
+      "severidade": "alta",
+      "local": "saidas/memo_decisao.md, 'Impacto' e 'Se passar'",
+      "problema": "O memorando diz que 'a Acta ganha R$ 727/mes com implementação', mas não diz que isso é antes do hardware. No preço recomendado, com implementação, a Acta paga no máximo 5.816 R$/robô de hardware em 24 meses (IMP-REC-HW-MAX-INT-COM-IMPL); sem implementação, 19.816 (IMP-REC-HW-MAX-INT-SEM-IMPL). CR6 pede que esse máximo seja entregue a Marcus para comparar com PR20, e a oferta e o relatório o trazem. Sem ele, o ramo 'Se passar' parece viável para a Acta mesmo que o hardware não se pague.",
+      "correcao_sugerida": "Narrativa: no 'Impacto' do memorando, uma linha com o hardware máximo pagável dos dois cenários e a condição 'viável para a Acta se o custo de hardware (PR20, [●]) ficar abaixo disso'."
+    },
+    {
+      "severidade": "media",
+      "local": "saidas/memo_decisao.md, 'Se não passar'",
+      "problema": "'Piloto pago a custo de servir (R$ 4.000/mes, 4 robôs)' omite a implantação dos 3 robôs extras: 72.000 a preço de tabela (IMP-PILOTO-INVESTIMENTO-IMPLANTACAO). O custo total para a Acta é 84.000 (IMP-PILOTO-CUSTO-TOTAL-ACTA). Se a implantação for recuperada no próprio piloto, o preço sobe a 28.000/mês. A oferta e o relatório trazem esses números; o memorando sugere um piloto neutro para a Acta.",
+      "correcao_sugerida": "Narrativa: acrescentar o investimento e o custo total no ramo do piloto, com 'quem paga: Marcus decide'."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/impacto.json: modelos *-COM-IMPL da ALT4, IMP-IMPL-INVESTIMENTO-*, IMP-REC-PISO-MES-COM-IMPL",
+      "problema": "A base da implantação é inconsistente. A ALT4 amortiza a implantação de todos os robôs, inclusive o que já opera na Social. O piloto desconta esse robô (robos_piloto_atual). O limiar com reserva e implementação (1,64) e o piso de 6.500 ficam um pouco altos. Na conta manual, sem o robô atual, o limiar seria cerca de 1,39. Está declarado como limite superior, e a conclusão do portão não muda.",
+      "correcao_sugerida": "Analista: usar a mesma premissa (robôs já implantados) nos modelos COM-IMPL da ALT4, ou explicar numa nota por que o robô atual seria reimplantado (por exemplo, remapeamento para o checkout)."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/decisao.json (alternativas, regra_decisao)",
+      "problema": "O piloto pago e 'encerrar' seguem fora do nó decisão. Os critérios e limites estão só em nos/impacto.json (criterios_de_saida). O limite de 'encerrar' depende de um valor de referência [●].",
+      "correcao_sugerida": "No G3, Marcus aceita ou recusa as duas opções. Se aceitar, o arquiteto as registra no nó com a regra, citando criterios_de_saida, numa v1.1 do nó ou na v2."
+    },
+    {
+      "severidade": "media",
+      "local": "saidas/memo_decisao.md, saidas/oferta_enriquecida.md e saidas/relatorio_executivo.md (cabeçalho e 'Auditoria')",
+      "problema": "Os entregáveis (20:27) dizem 'auditoria reprovada', mas a tentativa 2 do auditor (20:33) está ok: 18 análises e 193 modelos reproduzidos sem divergência.",
+      "correcao_sugerida": "Orquestrador: renderizar de novo os entregáveis depois da auditoria."
+    },
+    {
+      "severidade": "baixa",
+      "local": "saidas/memo_decisao.md, 'Se passar'",
+      "problema": "As tarifas recomendadas estão só para o caso em que todos os postos saem. Entre o limiar e 2 postos o teto cai: com 1 posto não há janela com implementação (IMP-ALT4-KMAX-ALT3-UM-POSTO 1,74 contra IMP-REC-KMIN-COM-IMPL 2,87). A oferta diz isso; o memorando, não. O memorando também diz 'Garantia de capacidade, não de economia', enquanto a oferta mantém a economia garantida só sobre a conferência medida.",
+      "correcao_sugerida": "Uma frase no memorando sobre o caso de 1 posto e alinhar a garantia com a oferta."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/impacto.json, comparacao_limites (IMP-REC-MARGEM-ACTA-MES-RAT-SEM-IMPL e -COM-IMPL)",
+      "problema": "As duas aparecem como 'passa' (margem zero por construção), num cenário sem janela em que a economia da Social falha.",
+      "correcao_sugerida": "Rotular 'sem janela: margem zero por construção'."
+    },
+    {
+      "severidade": "baixa",
+      "local": "revisoes/especialista_D4.md, conclusão 1, seção 1 (terceira linha da tabela) e seção 3.2",
+      "problema": "O parecer é de 20:12, antes dos modelos de 20:14. Ele diz que a implementação e o custo de manter o piloto 'não estão no motor' e usa 0,58 como limiar. Os limiares novos (0,76 e 1,64) reforçam a expectativa de 'não passa'.",
+      "correcao_sugerida": "Especialista: adendo de uma linha citando IMP-INV-PR11-CR1-ALT4-ALT3-COM-RESERVA(-COM-IMPL) e IMP-ALT1-CUSTO-MES-PILOTO-GRATUITO."
+    }
+  ],
+  "lacunas": [
+    "Custo de hardware por robô (PR20, [●]): decide se o ramo 'Se passar' é viável para a Acta, porque o máximo pagável com implementação é baixo. Dono: Renato Correa.",
+    "Custo real (e não de tabela) de implantação, integração e mapeamento; área a mapear; esforço e custo do checkout conferido e da integração nova com o Senior (L6 a L8).",
+    "Valor da operação de referência que se perde ao encerrar ([●]): sem ele, o limite de 'encerrar' é julgamento de Marcus.",
+    "Alternativas de saída (piloto pago e encerrar) ainda fora de nos/decisao.json, à espera do G3."
+  ],
+  "status_pontos_r1": {
+    "implementacao_ausente_critica": "atendido (premissas de tabela como limite superior, modelos COM-IMPL e SO-HARDWARE, L6 a L8, oferta com 'tudo incluído' tratado)",
+    "limiar_sem_reserva_alta": "atendido (limiares por configuração; janela por cenário)",
+    "margem_alt6_fora_de_cr1_alta": "atendido (INS-088 com IMP-CR6-ALT6-NO-TETO-INT; N13; V6 com força baixa)",
+    "encerrar_e_piloto_fora_do_no_alta": "atendido em parte (criterios_de_saida no nó de impacto; nó decisão sem mudança, a decidir no G3)",
+    "custo_de_oportunidade_media": "atendido (IMP-CR6-ALT3-RECEITA-ROBO-SOBRE-LOCACAO-*)",
+    "custos_de_transicao_media": "atendido (L10; cláusula na oferta)",
+    "o_que_manter_media": "atendido",
+    "royal_canin_e_prazo_media": "atendido nas ações e na oferta; o memorando segue sem a Royal Canin no próximo passo",
+    "ins086_modelo_baixa": "atendido",
+    "nota_extremo_desfavoravel_baixa": "atendido",
+    "especialista_d3_desatualizado_alta": "atendido",
+    "especialista_alt6_primeira_fase_alta": "atendido",
+    "especialista_viabilidade_d4_media": "atendido (D4 entregue; adendo baixo)"
+  },
+  "em": "2026-10-03"
+}

@@ -1,0 +1,13 @@
+variante,leitura,robos_proposta,frota_tipica_media_na_janela,sobra_tipico_media_na_janela,sobra_tipico_minima_na_hora,horas_da_janela_com_sobra_de_pelo_menos_1,frota_necessaria_p90_banda,sobra_pico_p90_banda,frota_necessaria_p90_dia_a_dia,sobra_pico_p90_dia_a_dia
+estresse,slide14_min,4,1.0,3.0,3.0,10,2,2,2,2
+estresse,slide14_max,5,1.0,4.0,4.0,10,2,3,2,3
+estresse,slide12_min,1,1.0,0.0,0.0,0,2,-1,2,-1
+estresse,slide12_max,2,1.0,1.0,1.0,10,2,0,2,0
+pos_colmeia,slide14_min,4,1.0,3.0,3.0,10,1,3,2,2
+pos_colmeia,slide14_max,5,1.0,4.0,4.0,10,1,4,2,3
+pos_colmeia,slide12_min,1,1.0,0.0,0.0,0,1,0,2,-1
+pos_colmeia,slide12_max,2,1.0,1.0,1.0,10,1,1,2,0
+normal,slide14_min,4,1.0,3.0,3.0,10,1,3,2,2
+normal,slide14_max,5,1.0,4.0,4.0,10,1,4,2,3
+normal,slide12_min,1,1.0,0.0,0.0,0,1,0,2,-1
+normal,slide12_max,2,1.0,1.0,1.0,10,1,1,2,0

@@ -1,0 +1,53 @@
+chave,valor,valor_texto,unidade,definicao,usado_por,recorte
+volume_q1,801.0,,linhas operacionais por dia pleno,"primeiro quartil do volume diário do armazém (M05, sem CANCELADO), dias plenos das semanas ímpares; dia típico = entre q1 e q3",PT-D2,descoberta: semanas ISO ímpares
+volume_q3,1133.0,,linhas operacionais por dia pleno,terceiro quartil do volume diário (M05),PT-D2,descoberta: semanas ISO ímpares
+volume_p90,1636.8,,linhas operacionais por dia pleno,percentil PAR04 do volume diário (M05); dia de pico = volume maior ou igual a este valor,PT-D2,descoberta: semanas ISO ímpares
+volume_mediana,965.0,,linhas operacionais por dia pleno,"mediana do volume diário (M05), só referência",,descoberta: semanas ISO ímpares
+n_dias_descoberta,37.0,,dias plenos,dias plenos das semanas ímpares,,descoberta: semanas ISO ímpares
+janela_hora_inicial,8.0,,hora do dia,"janela de operação observada (PAR06, M16): primeira hora",descritivo (nenhuma pista),descoberta: semanas ISO ímpares
+janela_hora_final,17.0,,hora do dia,"janela de operação observada (PAR06, M16): última hora",descritivo (nenhuma pista),descoberta: semanas ISO ímpares
+janela_horas,,"8,9,10,11,12,13,14,15,16,17",horas do dia,lista das horas da janela observada,descritivo (nenhuma pista),descoberta: semanas ISO ímpares
+faixa_refeicao_t300_hora_a,15.0,,hora do dia,"faixa de refeição (regra de H13b), teto 300 s: primeira hora (a faixa é esta hora e a seguinte)",,descoberta: semanas ISO ímpares
+faixa_refeicao_t300_hora_b,16.0,,hora do dia,"faixa de refeição, teto 300 s: segunda hora",,descoberta: semanas ISO ímpares
+faixa_refeicao_ampliada_t300_hora_a,14.0,,hora do dia,"faixa de refeição ampliada (hora anterior somada), teto 300 s: primeira hora (robustez)",,descoberta: semanas ISO ímpares
+faixa_refeicao_t600_hora_a,15.0,,hora do dia,"faixa de refeição (regra de H13b), teto 600 s: primeira hora (a faixa é esta hora e a seguinte)",,descoberta: semanas ISO ímpares
+faixa_refeicao_t600_hora_b,16.0,,hora do dia,"faixa de refeição, teto 600 s: segunda hora",,descoberta: semanas ISO ímpares
+faixa_refeicao_ampliada_t600_hora_a,14.0,,hora do dia,"faixa de refeição ampliada (hora anterior somada), teto 600 s: primeira hora (robustez)",,descoberta: semanas ISO ímpares
+faixa_refeicao_t900_hora_a,15.0,,hora do dia,"faixa de refeição (regra de H13b), teto 900 s: primeira hora (a faixa é esta hora e a seguinte)",descritivo (nenhuma pista),descoberta: semanas ISO ímpares
+faixa_refeicao_t900_hora_b,16.0,,hora do dia,"faixa de refeição, teto 900 s: segunda hora",descritivo (nenhuma pista),descoberta: semanas ISO ímpares
+faixa_refeicao_ampliada_t900_hora_a,14.0,,hora do dia,"faixa de refeição ampliada (hora anterior somada), teto 900 s: primeira hora (robustez)",,descoberta: semanas ISO ímpares
+faixa_refeicao_t1800_hora_a,13.0,,hora do dia,"faixa de refeição (regra de H13b), teto 1800 s: primeira hora (a faixa é esta hora e a seguinte)",,descoberta: semanas ISO ímpares
+faixa_refeicao_t1800_hora_b,14.0,,hora do dia,"faixa de refeição, teto 1800 s: segunda hora",,descoberta: semanas ISO ímpares
+faixa_refeicao_ampliada_t1800_hora_a,12.0,,hora do dia,"faixa de refeição ampliada (hora anterior somada), teto 1800 s: primeira hora (robustez)",,descoberta: semanas ISO ímpares
+corte_ativo_jornada_s,3600.0,,s de jornada ativa (M11),operador ativo no dia = jornada ativa de pelo menos uma hora (M24); [●] sem fonte setorial,PT-H10,descoberta: semanas ISO ímpares
+k_painel_semanas,4.0,,semanas desde a entrada,K do painel de novatos (excecao_P13),PT-H09,descoberta: semanas ISO ímpares
+semana_par11,30.0,,semana ISO,semana ISO do início da operação do robô (PAR11),,descoberta: semanas ISO ímpares
+teto_conservador_g2_s,300.0,,s,teto conservador fixado no G2,todas,descoberta: semanas ISO ímpares
+teto_base_s,900.0,,s,teto base (variante primária das pistas de apoio),todas,descoberta: semanas ISO ímpares
+horas_antes_da_refeicao_t900,,"8,9,10,11,12,13,14",horas do dia,horas da janela observada antes da faixa de refeição do teto base (contraste olhado e não proposto),descritivo (nenhuma pista),descoberta: semanas ISO ímpares
+horas_depois_da_refeicao_t900,,17,horas do dia,horas da janela observada depois da faixa de refeição do teto base (contraste olhado e não proposto),descritivo (nenhuma pista),descoberta: semanas ISO ímpares
+incidente_rc_inicio,,2026-09-21,data,"início do incidente operacional da Royal Canin (queda real, confirmada por Marcus): as linhas da Royal Canin desses dias saem das linhas e do tempo, e os dias saem das variáveis de volume e hora do dia do armazém; sensibilidades *_com_incidente",todas,descoberta: semanas ISO ímpares
+incidente_rc_fim,,2026-09-25,data,fim do incidente operacional da Royal Canin,todas,descoberta: semanas ISO ímpares
+faixas_enderecos,,"1,2,3,4-5,6+",faixas,faixas de endereços fixadas no plano (não recalculadas),"PT-D1, PT-D2, PT-D4",descoberta: semanas ISO ímpares
+peso_faixa_pap_rc_1,0.21541501976284586,,fração das coletas,peso da faixa 1 no mix de coletas do pedido-a-pedido da Royal Canin na descoberta (padronização de PT-D1),PT-D1,descoberta: semanas ISO ímpares
+peso_faixa_pap_rc_2,0.30873956960913485,,fração das coletas,peso da faixa 2 no mix de coletas do pedido-a-pedido da Royal Canin na descoberta (padronização de PT-D1),PT-D1,descoberta: semanas ISO ímpares
+peso_faixa_pap_rc_3,0.20487483530961792,,fração das coletas,peso da faixa 3 no mix de coletas do pedido-a-pedido da Royal Canin na descoberta (padronização de PT-D1),PT-D1,descoberta: semanas ISO ímpares
+peso_faixa_pap_rc_4-5,0.19740887132191481,,fração das coletas,peso da faixa 4-5 no mix de coletas do pedido-a-pedido da Royal Canin na descoberta (padronização de PT-D1),PT-D1,descoberta: semanas ISO ímpares
+peso_faixa_pap_rc_6+,0.07356170399648661,,fração das coletas,peso da faixa 6+ no mix de coletas do pedido-a-pedido da Royal Canin na descoberta (padronização de PT-D1),PT-D1,descoberta: semanas ISO ímpares
+peso_celula_checkout|1,0.1639519056261343,,fração das coletas,peso da célula tipo de onda|faixa de endereços (checkout|1) no mix de coletas do armazém na descoberta (padronização de PT-D2),PT-D2,descoberta: semanas ISO ímpares
+peso_celula_colmeia|1,0.048162431941923774,,fração das coletas,peso da célula tipo de onda|faixa de endereços (colmeia|1) no mix de coletas do armazém na descoberta (padronização de PT-D2),PT-D2,descoberta: semanas ISO ímpares
+peso_celula_colmeia|2,0.0764519056261343,,fração das coletas,peso da célula tipo de onda|faixa de endereços (colmeia|2) no mix de coletas do armazém na descoberta (padronização de PT-D2),PT-D2,descoberta: semanas ISO ímpares
+peso_celula_colmeia|3,0.0529491833030853,,fração das coletas,peso da célula tipo de onda|faixa de endereços (colmeia|3) no mix de coletas do armazém na descoberta (padronização de PT-D2),PT-D2,descoberta: semanas ISO ímpares
+peso_celula_colmeia|4-5,0.07289019963702359,,fração das coletas,peso da célula tipo de onda|faixa de endereços (colmeia|4-5) no mix de coletas do armazém na descoberta (padronização de PT-D2),PT-D2,descoberta: semanas ISO ímpares
+peso_celula_colmeia|6+,0.1344600725952813,,fração das coletas,peso da célula tipo de onda|faixa de endereços (colmeia|6+) no mix de coletas do armazém na descoberta (padronização de PT-D2),PT-D2,descoberta: semanas ISO ímpares
+peso_celula_pedido_a_pedido|1,0.10165607985480944,,fração das coletas,peso da célula tipo de onda|faixa de endereços (pedido_a_pedido|1) no mix de coletas do armazém na descoberta (padronização de PT-D2),PT-D2,descoberta: semanas ISO ímpares
+peso_celula_pedido_a_pedido|2,0.07808529945553538,,fração das coletas,peso da célula tipo de onda|faixa de endereços (pedido_a_pedido|2) no mix de coletas do armazém na descoberta (padronização de PT-D2),PT-D2,descoberta: semanas ISO ímpares
+peso_celula_pedido_a_pedido|3,0.05846188747731398,,fração das coletas,peso da célula tipo de onda|faixa de endereços (pedido_a_pedido|3) no mix de coletas do armazém na descoberta (padronização de PT-D2),PT-D2,descoberta: semanas ISO ímpares
+peso_celula_pedido_a_pedido|4-5,0.06998638838475499,,fração das coletas,peso da célula tipo de onda|faixa de endereços (pedido_a_pedido|4-5) no mix de coletas do armazém na descoberta (padronização de PT-D2),PT-D2,descoberta: semanas ISO ímpares
+peso_celula_pedido_a_pedido|6+,0.14294464609800364,,fração das coletas,peso da célula tipo de onda|faixa de endereços (pedido_a_pedido|6+) no mix de coletas do armazém na descoberta (padronização de PT-D2),PT-D2,descoberta: semanas ISO ímpares
+peso_celula_rc_cc_checkout|1,0.38313253012048193,,fração das coletas,peso da célula tipo de onda|faixa (checkout|1) no mix de coletas da Royal Canin no checkout e na colmeia na descoberta (padronização de PT-D4),PT-D4,descoberta: semanas ISO ímpares
+peso_celula_rc_cc_colmeia|1,0.09704271631982475,,fração das coletas,peso da célula tipo de onda|faixa (colmeia|1) no mix de coletas da Royal Canin no checkout e na colmeia na descoberta (padronização de PT-D4),PT-D4,descoberta: semanas ISO ímpares
+peso_celula_rc_cc_colmeia|2,0.28258488499452356,,fração das coletas,peso da célula tipo de onda|faixa (colmeia|2) no mix de coletas da Royal Canin no checkout e na colmeia na descoberta (padronização de PT-D4),PT-D4,descoberta: semanas ISO ímpares
+peso_celula_rc_cc_colmeia|3,0.1452354874041621,,fração das coletas,peso da célula tipo de onda|faixa (colmeia|3) no mix de coletas da Royal Canin no checkout e na colmeia na descoberta (padronização de PT-D4),PT-D4,descoberta: semanas ISO ímpares
+peso_celula_rc_cc_colmeia|4-5,0.08477546549835706,,fração das coletas,peso da célula tipo de onda|faixa (colmeia|4-5) no mix de coletas da Royal Canin no checkout e na colmeia na descoberta (padronização de PT-D4),PT-D4,descoberta: semanas ISO ímpares
+peso_celula_rc_cc_colmeia|6+,0.007228915662650603,,fração das coletas,peso da célula tipo de onda|faixa (colmeia|6+) no mix de coletas da Royal Canin no checkout e na colmeia na descoberta (padronização de PT-D4),PT-D4,descoberta: semanas ISO ímpares

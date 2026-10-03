@@ -1,0 +1,117 @@
+{
+  "id": "INS-058",
+  "estado": "aprovado",
+  "afirmacao": "Na ALT6, que soma o volume compatível dos outros depositantes ao escopo da Royal Canin, a frota agrupada é calculada dia a dia (o máximo horário de cada dia, p90 entre dias), porque a média de perfis de dias diferentes alisa o pico: no dia p90 a frota necessária é {{v.alt6b}} na base pós-colmeia (IC de dias: {{v.alt6b_ic}}) e {{v.alt6}} na variante do plano, contra {{v.alt3b}} na ALT3 da base. Pela banda de dias seria {{v.alt6b_banda}} na base e {{v.alt6_banda}} no plano, o que subestima o pico. Com a regra por tipo são {{v.alt6b_tipo}} na base. Pelas linhas do armazém inteiro, sem filtro de compatibilidade, o pico do dia p90 pediria {{v.arm}}, contra {{v.slide12}} do slide 12. A sobra do slide 14 (de {{v.s14i}} a {{v.s14s}}) deixa de ser sobra se a oferta incluir os outros depositantes. A frota é determinística dado PR07 e PR08 e não inclui reserva de disponibilidade do robô.",
+  "pergunta_ref": "P12",
+  "criterio_ref": "CR5",
+  "valores": {
+    "alt6": "ANA-009.frota_necessaria_alt6",
+    "arm": "ANA-009.frota_armazem_p90_so_linhas",
+    "slide12": "ANA-009.slide12_robos_armazem",
+    "s14i": "ANA-009.pr09_slide14_inferior",
+    "s14s": "ANA-009.pr09_slide14_superior",
+    "alt6b": "ANA-009.frota_necessaria_alt6_pos_colmeia",
+    "alt6b_ic": "ANA-009.frota_necessaria_alt6_mesmo_dia_ic_dias_pos_colmeia",
+    "alt3b": "ANA-009.frota_necessaria_alt3_pos_colmeia",
+    "alt6b_banda": "ANA-009.frota_necessaria_alt6_banda_pos_colmeia",
+    "alt6_banda": "ANA-009.frota_necessaria_alt6_banda",
+    "alt6b_tipo": "ANA-009.frota_necessaria_alt6_por_tipo_pos_colmeia"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "bootstrap de dias",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "o IC de dias da frota dia a dia fica ao redor da variante primária (chaves frota_necessaria_alt6_mesmo_dia_ic_dias*)"
+    },
+    {
+      "recorte": "regra por tipo",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "a regra por tipo pede mais robôs que a soma das cargas, na mesma ordem de grandeza"
+    },
+    {
+      "recorte": "PR07 abaixo e acima do valor do plano (sensibilidade da grade)",
+      "analise": "ANA-009",
+      "resultado": "parcial",
+      "nota": "a frota da ALT6 é sensível a PR07 (chaves frota_necessaria_alt6_pr07_menos25 e _mais25)"
+    },
+    {
+      "recorte": "banda contra frota dia a dia",
+      "analise": "ANA-009",
+      "resultado": "parcial",
+      "nota": "a banda dá menos robôs que o dia a dia (chaves frota_necessaria_alt6_banda*), por isso a primária é o dia a dia"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo."
+  },
+  "impacto": {
+    "modelo": "IMP-ALT4-PMIN-ALT6",
+    "modelos_relacionados": [
+      "IMP-CR2-ALT4-ALT6",
+      "IMP-ALT4-KMIN-ALT6",
+      "IMP-FOLGA-ARM-PAP-POOL",
+      "IMP-FOLGA-ARM-PAP-POOL-ALTO",
+      "IMP-MARGEM-ARM-PAP-POOL",
+      "IMP-KMIN-ARM-PAP-POOL",
+      "IMP-KMAX-ARM-PAP-POOL-ALTO",
+      "IMP-KMAX-ARM-PAP-POOL",
+      "IMP-PILOTO-FROTA",
+      "IMP-PILOTO-PRECO-MES-CUSTO-DE-SERVIR",
+      "IMP-PILOTO-INVESTIMENTO-IMPLANTACAO",
+      "IMP-PILOTO-PRECO-MES-COM-IMPLANTACAO",
+      "IMP-PILOTO-CUSTO-TOTAL-ACTA",
+      "IMP-PILOTO-DURACAO-MESES",
+      "IMP-PILOTO-META-PR05-T300",
+      "IMP-PILOTO-META-FOLGA-FISICA-T300",
+      "IMP-PILOTO-META-PR05-T900",
+      "IMP-PILOTO-META-FOLGA-FISICA-T900",
+      "IMP-PILOTO-META-PR05-T1800",
+      "IMP-PILOTO-META-FOLGA-FISICA-T1800"
+    ]
+  },
+  "acao": "Dimensionar a ALT6 pela frota agrupada dia a dia e fixar o preço mínimo no custo de servir dessa frota (IMP-ALT4-PMIN-ALT6). Não creditar o pooling literal. Mostrar a folga da janela de preço da ALT6 sem e com reserva e sem e com implementação: com a implementação a preço de tabela ela não existe (IMP-ALT4-FOLGA-ALT6-INT-COM-IMPL). A ALT6 depende de os depositantes compatíveis aderirem (CR5 inconclusivo) e do checkout conferido. Para o piloto pago, a frota correta do escopo agrupado e o preço pelo custo de servir estão em IMP-PILOTO-FROTA e IMP-PILOTO-PRECO-MES-CUSTO-DE-SERVIR, e a implantação dos robôs extras, a preço de tabela, em IMP-PILOTO-INVESTIMENTO-IMPLANTACAO (quem paga é decisão de Marcus [●]). Piloto pago: duração como premissa (IMP-PILOTO-DURACAO-MESES, alternativa do red team da decisão, a confirmar por Marcus) e meta de ritmo por teto de intervalo (IMP-PILOTO-META-PR05-T300, IMP-PILOTO-META-PR05-T900, IMP-PILOTO-META-PR05-T1800).",
+  "dono": "Matheus Correa, Comercial; decisão de Marcus Lima, CEO; Vinicius Bastos, CTO (frota)",
+  "premissas": [
+    "frota necessária dia a dia na base pós-colmeia (decisão do orquestrador, a confirmar por Marcus no G3), com capacidade do robô de confiança baixa (PR07, PR08) e sem reserva de disponibilidade",
+    "filtro de compatibilidade de ANA-010 (pedido-a-pedido de dois ou mais endereços e checkout, sem palete)",
+    "tarifas e franquia do deck (PR02, PR03, PR04) e custo de servir sem hardware informado por Marcus (PR13); custo de hardware (PR20) é [●] e o motor entrega o máximo pagável",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados",
+    "custo de implementação (implantação por robô e integração simples) a preço de tabela da Acta (perfil de Marcus, a confirmar), amortizado no prazo do contrato e usado como limite superior do custo; o custo real da Acta é [●]; mapeamento (área [●]) e desenvolvimento do checkout conferido ([●]) ficam fora da conta; o tudo incluído do deck cobre mais do que a manutenção de PR13",
+    "frota do piloto com um ou dois depositantes escolhidos: [●], a recortar em ANA-010; a frota de referência é a do armazém só no pedido-a-pedido"
+  ],
+  "red_team_decisao": {
+    "veredito": "ressalva",
+    "nota": "Ressalva. A ALT6 não pode ser a primeira fase: a receita depende do checkout (IMP-ALT6-DEP-CHECKOUT), CR5 está inconclusivo e a janela de preço exige conferência desmobilizada (RTD-INV-PR11-ALT6-REC; sem PR11, RTD-FOLGA-ALT6-SEM). Na ALT6 o rateio deixa de ser problema, porque o checkout dos outros entra no escopo, mas a desmobilização continua em aberto. Detalhes em revisoes/red-team-decisao.json."
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:30:28",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:42",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:37",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:01",
+      "por": "Marcus"
+    }
+  ]
+}

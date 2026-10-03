@@ -1,0 +1,326 @@
+{
+  "nos": {
+    "meta": {
+      "hash": "3e7ac3011393",
+      "agente": "orquestrador",
+      "em": "2026-10-03T01:15:36",
+      "entradas": {}
+    },
+    "briefing": {
+      "hash": "0f87f260079c",
+      "agente": "orquestrador",
+      "em": "2026-10-03T01:15:36",
+      "entradas": {
+        "meta": "3e7ac3011393"
+      }
+    },
+    "decisao": {
+      "hash": "cac84cf9a15c",
+      "agente": "arquiteto-da-decisao",
+      "em": "2026-10-03T02:10:38",
+      "entradas": {
+        "briefing": "0f87f260079c"
+      }
+    },
+    "contrato": {
+      "hash": "eeaae3ddd687",
+      "agente": "engenheiro-de-dados",
+      "em": "2026-10-03T03:36:34",
+      "entradas": {
+        "decisao": "cac84cf9a15c"
+      }
+    },
+    "especialista": {
+      "hash": "5c11a351fc8d",
+      "agente": "perfilador-setorial",
+      "em": "2026-10-03T03:36:48",
+      "entradas": {
+        "decisao": "cac84cf9a15c",
+        "contrato": "eeaae3ddd687"
+      }
+    },
+    "qualidade": {
+      "hash": "20c68993d4ba",
+      "agente": "qualidade-privacidade",
+      "em": "2026-10-03T03:37:42",
+      "entradas": {
+        "contrato": "eeaae3ddd687",
+        "especialista": "5c11a351fc8d"
+      }
+    },
+    "plano": {
+      "hash": "8c3214c9076c",
+      "agente": "planejador-analitico",
+      "em": "2026-10-03T19:58:52",
+      "entradas": {
+        "decisao": "cac84cf9a15c",
+        "contrato": "eeaae3ddd687",
+        "especialista": "5c11a351fc8d",
+        "qualidade": "20c68993d4ba"
+      }
+    },
+    "impacto": {
+      "hash": "c6f6548a0fa4",
+      "agente": "analista-de-impacto",
+      "em": "2026-10-03T20:44:17",
+      "entradas": {
+        "decisao": "cac84cf9a15c",
+        "plano": "8c3214c9076c"
+      }
+    }
+  },
+  "aprovacoes": [
+    {
+      "gate": "G1",
+      "por": "Marcus",
+      "em": "2026-10-03T02:10:56",
+      "obs": "Respostas de Marcus em 2026-10-03: 1) enquadramento ok (data da reunião não informada); 2) deck não apresentado; a Social quer reduzir custo de mão de obra e dificuldade de contratação; 3) aceita CR1-CR7, regra de decisão e premissas PR01-PR19; 4) seguir com WMS + agregados do robô, 9fleet numa v2; 5) regras de dados ok; 6) slides 15/18 calculados com a própria planilha; tarifa por linha = linha de produto do pedido; 7) custo de servir sem hardware ~R$1000/mês/robô, capacidade no checkout desconhecida, checkout conferido não está pronto, custo por operador e postos de conferência têm fonte na Social.",
+      "hashes": {
+        "meta": "3e7ac3011393",
+        "briefing": "0f87f260079c",
+        "decisao": "cac84cf9a15c",
+        "contrato": "3223528e5858",
+        "especialista": "70fb355d843b",
+        "qualidade": "834d61945524",
+        "plano": "11b94c628862",
+        "impacto": "cc7c2bcb9c70"
+      }
+    },
+    {
+      "gate": "G2",
+      "por": "Marcus",
+      "em": "2026-10-03T15:54:52",
+      "obs": "Aprovado por Marcus em 2026-10-03 ('Aprovo g2'), aceitando todas as respostas propostas: (1) PQ09 autorizada: etapa 00_conta_robo.py pode ler dados/privado/correspondencia_*_Usuário.parquet localmente só para obter o código da conta de sistema do robô; ratificados os 4 acessos agregados de revisoes/registro_acessos_privados.md; (2) QP5/PQ03 teto conservador = 300 s (quatro tetos 300/600/900/1800 sempre reportados; base 900 s); (3) PQ08 tarifa reduzida só sobre o excedente, retroativa como sensibilidade; (4) PQ02 linha tarifável = Qtde Produtos, CR2 também com Qtde Endereços; (5) QP6 efeito relevante 10% (CR3 = 2 linhas/h), margens ±10% slide 10 e 2% ponte; (6) QP1/QP2/PQ05 janela 31/08–25/09, mês de referência ago/2026, PR12 = jornada contratual 6x1, FTE como presença; perguntas à Social/engenharia (PQ01, PQ04, PQ06, PQ07, E1–E11, QP3, QP4, custos de contratação, validador na Social) viram premissas com as respostas propostas.",
+      "hashes": {
+        "meta": "3e7ac3011393",
+        "briefing": "0f87f260079c",
+        "decisao": "cac84cf9a15c",
+        "contrato": "eeaae3ddd687",
+        "especialista": "5c11a351fc8d",
+        "qualidade": "20c68993d4ba",
+        "plano": "eee122490462",
+        "impacto": "cc7c2bcb9c70"
+      }
+    },
+    {
+      "gate": "G3",
+      "por": "Marcus",
+      "em": "2026-10-03T21:15:57",
+      "obs": "Aprovado por Marcus em 2026-10-03 ('aprovo g3'), aceitando as propostas: (1) recomendação aprovada — não apresentar o deck como está; ALT1 como portão (perguntar à Social quantos postos de conferência saem por causa da Royal Canin, medido no Senior); se passar, ALT4 recalibrada (frota com reserva, piso = custo de servir, tarifas na janela, garantia de capacidade); se não, piloto pago ou encerrar o piloto gratuito; 20 insights acionáveis aprovados para o memorando; (2) piloto pago e encerrar aceitos como alternativas novas; quem paga a implantação do piloto fica [●] (decisão de Marcus); (3) leituras: base 'operação normal' sem a semana do incidente; pico/frota pelo regime pós-colmeia; CR8 com a leitura colaborativa como principal e a autônoma como limite superior; CR5 pela definição do plano, pedido-a-pedido inteiro como sensibilidade; critério de inversão das pistas com as três leituras declaradas; (4) ficam [●]: postos de conferência (Social), custo de hardware e custo real de implantação (Renato Correa), prazo do checkout (Vinicius Bastos), duração do piloto (proposta 90 dias).",
+      "hashes": {
+        "meta": "3e7ac3011393",
+        "briefing": "0f87f260079c",
+        "decisao": "cac84cf9a15c",
+        "contrato": "eeaae3ddd687",
+        "especialista": "5c11a351fc8d",
+        "qualidade": "20c68993d4ba",
+        "plano": "8c3214c9076c",
+        "impacto": "c6f6548a0fa4"
+      }
+    }
+  ],
+  "congelado": true,
+  "historico": [
+    {
+      "em": "2026-10-03T01:14:41",
+      "evento": "criado",
+      "modo": "completo"
+    },
+    {
+      "em": "2026-10-03T01:15:36",
+      "evento": "carimbo",
+      "no": "meta",
+      "agente": "orquestrador"
+    },
+    {
+      "em": "2026-10-03T01:15:36",
+      "evento": "carimbo",
+      "no": "briefing",
+      "agente": "orquestrador"
+    },
+    {
+      "em": "2026-10-03T01:21:18",
+      "evento": "carimbo",
+      "no": "decisao",
+      "agente": "arquiteto-da-decisao"
+    },
+    {
+      "em": "2026-10-03T01:34:12",
+      "evento": "carimbo",
+      "no": "decisao",
+      "agente": "arquiteto-da-decisao"
+    },
+    {
+      "em": "2026-10-03T02:10:38",
+      "evento": "carimbo",
+      "no": "decisao",
+      "agente": "arquiteto-da-decisao"
+    },
+    {
+      "em": "2026-10-03T02:30:53",
+      "evento": "carimbo",
+      "no": "contrato",
+      "agente": "engenheiro-de-dados"
+    },
+    {
+      "em": "2026-10-03T02:34:33",
+      "evento": "carimbo",
+      "no": "especialista",
+      "agente": "perfilador-setorial"
+    },
+    {
+      "em": "2026-10-03T02:50:02",
+      "evento": "carimbo",
+      "no": "contrato",
+      "agente": "engenheiro-de-dados"
+    },
+    {
+      "em": "2026-10-03T02:50:50",
+      "evento": "carimbo",
+      "no": "especialista",
+      "agente": "perfilador-setorial"
+    },
+    {
+      "em": "2026-10-03T03:04:15",
+      "evento": "carimbo",
+      "no": "qualidade",
+      "agente": "qualidade-privacidade"
+    },
+    {
+      "em": "2026-10-03T03:04:31",
+      "evento": "carimbo",
+      "no": "qualidade",
+      "agente": "qualidade-privacidade"
+    },
+    {
+      "em": "2026-10-03T03:09:04",
+      "evento": "carimbo",
+      "no": "contrato",
+      "agente": "engenheiro-de-dados"
+    },
+    {
+      "em": "2026-10-03T03:09:10",
+      "evento": "carimbo",
+      "no": "contrato",
+      "agente": "engenheiro-de-dados"
+    },
+    {
+      "em": "2026-10-03T03:09:57",
+      "evento": "carimbo",
+      "no": "especialista",
+      "agente": "perfilador-setorial"
+    },
+    {
+      "em": "2026-10-03T03:10:11",
+      "evento": "carimbo",
+      "no": "qualidade",
+      "agente": "qualidade-privacidade"
+    },
+    {
+      "em": "2026-10-03T03:25:40",
+      "evento": "carimbo",
+      "no": "contrato",
+      "agente": "engenheiro-de-dados"
+    },
+    {
+      "em": "2026-10-03T03:28:24",
+      "evento": "carimbo",
+      "no": "especialista",
+      "agente": "perfilador-setorial"
+    },
+    {
+      "em": "2026-10-03T03:29:00",
+      "evento": "carimbo",
+      "no": "qualidade",
+      "agente": "qualidade-privacidade"
+    },
+    {
+      "em": "2026-10-03T03:33:04",
+      "evento": "carimbo",
+      "no": "contrato",
+      "agente": "engenheiro-de-dados"
+    },
+    {
+      "em": "2026-10-03T03:33:23",
+      "evento": "carimbo",
+      "no": "especialista",
+      "agente": "perfilador-setorial"
+    },
+    {
+      "em": "2026-10-03T03:33:28",
+      "evento": "carimbo",
+      "no": "qualidade",
+      "agente": "qualidade-privacidade"
+    },
+    {
+      "em": "2026-10-03T03:33:37",
+      "evento": "carimbo",
+      "no": "qualidade",
+      "agente": "qualidade-privacidade"
+    },
+    {
+      "em": "2026-10-03T03:36:34",
+      "evento": "carimbo",
+      "no": "contrato",
+      "agente": "engenheiro-de-dados"
+    },
+    {
+      "em": "2026-10-03T03:36:48",
+      "evento": "carimbo",
+      "no": "especialista",
+      "agente": "perfilador-setorial"
+    },
+    {
+      "em": "2026-10-03T03:37:42",
+      "evento": "carimbo",
+      "no": "qualidade",
+      "agente": "qualidade-privacidade"
+    },
+    {
+      "em": "2026-10-03T03:48:56",
+      "evento": "carimbo",
+      "no": "plano",
+      "agente": "planejador-analitico"
+    },
+    {
+      "em": "2026-10-03T17:15:41",
+      "evento": "carimbo",
+      "no": "plano",
+      "agente": "planejador-analitico"
+    },
+    {
+      "em": "2026-10-03T19:13:22",
+      "evento": "carimbo",
+      "no": "impacto",
+      "agente": "analista-de-impacto"
+    },
+    {
+      "em": "2026-10-03T19:34:50",
+      "evento": "carimbo",
+      "no": "impacto",
+      "agente": "analista-de-impacto"
+    },
+    {
+      "em": "2026-10-03T19:58:52",
+      "evento": "carimbo",
+      "no": "plano",
+      "agente": "planejador-analitico"
+    },
+    {
+      "em": "2026-10-03T20:15:35",
+      "evento": "carimbo",
+      "no": "impacto",
+      "agente": "analista-de-impacto"
+    },
+    {
+      "em": "2026-10-03T20:44:17",
+      "evento": "carimbo",
+      "no": "impacto",
+      "agente": "analista-de-impacto"
+    },
+    {
+      "em": "2026-10-03T21:23:16",
+      "evento": "congelado"
+    }
+  ]
+}

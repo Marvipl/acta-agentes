@@ -1,0 +1,80 @@
+pista,recorte,valor,mesmo_sinal,conta_na_regra,ic_inferior_operador,ic_superior_operador,inversao_forte,n_operadores_rc,n_operadores_outros,nota
+PT-D1,teto conservador do G2 (ciclo_t300),-22.566886645089646,True,True,,,,,,
+PT-D1,deixar um operador de fora (mínimo),-22.05712652576642,True,True,,,,,,
+PT-D1,deixar um operador de fora (máximo),-15.910227630460739,True,True,,,,,,
+PT-D1,"faixa de endereços 1 (M14 cru, RC − outros)",-9.597998812144478,True,True,,,,18.0,25.0,
+PT-D1,"faixa de endereços 2 (M14 cru, RC − outros)",-24.34750403695942,True,True,,,,16.0,22.0,
+PT-D1,"faixa de endereços 3 (M14 cru, RC − outros)",-25.528447935486476,True,True,,,,15.0,20.0,
+PT-D1,"faixa de endereços 4-5 (M14 cru, RC − outros)",-28.701986496377515,True,True,,,,16.0,20.0,
+PT-D1,"faixa de endereços 6+ (M14 cru, RC − outros)",-24.528040783916666,True,True,,,,8.0,21.0,
+PT-D1,sem dias pós-pausa,-19.638951458484968,True,True,,,,,,
+PT-D1,"semanas pares da janela base (36 e 38), sem valor de confirmação",-25.99477400642852,True,False,,,,8.0,18.0,
+PT-D1,sem o maior depositante do grupo B (IC no mais largo),-11.117354246975395,True,True,,,,,,
+PT-D1,"entre os mesmos operadores (separam para os dois grupos), descritivo",-10.399948962202927,True,False,,,,,,"descritivo, sem peso na regra"
+PT-D1,Royal Canin contra o depositante ALFAPARF MILANO,-9.379834157656909,True,False,-13.122868761666522,-6.052779683502468,False,18.0,13.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D1,Royal Canin contra o depositante CONDOR,-1.4162179206599674,True,False,-22.35996523810927,10.5401208093035,False,18.0,10.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D1,Royal Canin contra o depositante COTY IT,-3.663449779476025,True,False,-11.310778839347355,4.089975283152472,False,18.0,15.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D1,Royal Canin contra o depositante DEPYL ACTION,-21.662938103291953,True,False,-26.245949056962086,4.795109019901879,False,18.0,6.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D1,Royal Canin contra o depositante ESTRELA,-8.199290555910217,True,False,-16.17323472957034,-0.39574872586451637,False,18.0,16.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D1,Royal Canin contra o depositante GOMES DA COSTA,5.179812214981688,False,False,-9.718280481205317,16.99322709625266,False,18.0,9.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D1,Royal Canin contra o depositante HIVE,-35.36882315472662,True,False,-40.7776120029681,-26.127818258276065,False,18.0,5.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D1,Royal Canin contra o depositante IMBERA,2.8575408808922518,False,False,-1.9528699033688055,9.369024780909669,False,18.0,9.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D1,Royal Canin contra o depositante RABBITOHS,3.6123803040576092,False,False,-7.318874472623536,16.78105871213916,False,18.0,9.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D1,Royal Canin contra o depositante SR PRECO,-0.8589126112482788,True,False,-9.533094484629856,7.486154821297988,False,18.0,17.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D1,Royal Canin contra o depositante VIC BEAUTE,-25.51238103309634,True,False,-42.61470038355043,-18.15524721105163,False,18.0,13.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D1,Royal Canin contra o depositante VIC BEAUTE AG,-14.963355635699521,True,False,-51.99351915043217,-1.1673803357267782,False,18.0,11.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,teto conservador do G2 (intervalo até 300 s),31.0,True,True,,,,,,
+PT-D3,deixar um operador de fora (mínimo),31.0,True,True,,,,,,
+PT-D3,deixar um operador de fora (máximo),49.5,True,True,,,,,,
+PT-D3,sem dias pós-pausa,38.0,True,True,,,,,,
+PT-D3,faixa de endereços 1 (mediana RC − outros),31.0,True,True,,,,17.0,24.0,
+PT-D3,faixa de endereços 2 (mediana RC − outros),41.5,True,True,,,,16.0,19.0,
+PT-D3,faixa de endereços 3 (mediana RC − outros),42.0,True,True,,,,14.0,20.0,
+PT-D3,faixa de endereços 4-5 (mediana RC − outros),62.0,True,True,,,,16.0,20.0,
+PT-D3,faixa de endereços 6+ (mediana RC − outros),49.0,True,True,,,,8.0,20.0,
+PT-D3,"semanas pares da janela base (36 e 38), sem valor de confirmação",44.0,True,False,,,,8.0,18.0,
+PT-D3,sem o maior depositante do grupo B (IC no mais largo),27.0,True,True,,,,,,
+PT-D3,"entre os mesmos operadores (separam para os dois grupos), descritivo",26.0,True,False,,,,,,"descritivo, sem peso na regra"
+PT-D3,Royal Canin contra o depositante ALFAPARF MILANO,34.0,True,False,20.0,56.0,False,18.0,12.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,Royal Canin contra o depositante CONDOR,5.0,True,False,-40.0,39.0,False,18.0,10.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,Royal Canin contra o depositante COTY IT,22.0,True,False,-20.0,52.0,False,18.0,14.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,Royal Canin contra o depositante DEPYL ACTION,47.0,True,False,-56.274999999999906,73.0,False,18.0,5.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,Royal Canin contra o depositante ESTRELA,26.0,True,False,10.487500000000047,48.0,False,18.0,15.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,Royal Canin contra o depositante GOMES DA COSTA,-1.5,False,False,-79.0,41.5,False,18.0,9.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,Royal Canin contra o depositante HIVE,45.0,True,False,34.0,69.0,False,18.0,5.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,Royal Canin contra o depositante IMBERA,-29.5,False,False,-107.0,-12.5,True,18.0,9.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,Royal Canin contra o depositante PET TREATS,30.0,True,False,-33.0,60.012500000000045,False,18.0,8.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,Royal Canin contra o depositante RABBITOHS,6.0,True,False,-56.0,34.0,False,18.0,9.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,Royal Canin contra o depositante SR PRECO,22.0,True,False,5.5,48.012500000000045,False,18.0,16.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,Royal Canin contra o depositante VIC BEAUTE,56.0,True,False,46.0,81.0,False,18.0,13.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D3,Royal Canin contra o depositante VIC BEAUTE AG,100.0,True,False,-31.0,123.0,False,18.0,11.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D4,teto conservador do G2 (ciclo_t300),-52.24162106904288,True,True,,,,,,
+PT-D4,S3 da cauda (ciclo S3 no teto base),-41.60041000471912,True,True,,,,,,
+PT-D4,deixar um operador de fora (mínimo),-39.97092874626914,True,True,,,,,,
+PT-D4,deixar um operador de fora (máximo),-29.609511069350532,True,True,,,,,,
+PT-D4,"somente checkout (M14 padronizado por faixa, RC − outros)",-48.39476002054824,True,True,,,,13.0,15.0,
+PT-D4,"somente colmeia (M14 padronizado por faixa, RC − outros)",-28.911269671565464,True,True,,,,11.0,13.0,
+PT-D4,"semanas pares da janela base (36 e 38), sem valor de confirmação",-49.4280234833098,True,False,,,,7.0,9.0,
+PT-D4,sem o maior depositante do grupo B (IC no mais largo),-44.69631077390024,True,True,,,,,,
+PT-D4,"entre os mesmos operadores (separam para os dois grupos), descritivo",-36.16881412644635,True,False,,,,,,"descritivo, sem peso na regra"
+PT-D4,Royal Canin contra o depositante ALFAPARF MILANO,-31.59717772740946,True,False,-42.679644134212744,-17.381990214492465,False,13.0,11.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D4,Royal Canin contra o depositante CONDOR,-24.024332076831676,True,False,-49.07577883217072,29.31882565200747,False,13.0,7.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D4,Royal Canin contra o depositante COTY IT,33.60477291459622,False,False,20.13518186095069,48.92130821921775,True,13.0,10.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D4,Royal Canin contra o depositante ESTRELA,-37.359541786034896,True,False,-54.14647344371571,-0.3337693595654723,False,13.0,11.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D4,Royal Canin contra o depositante GOMES DA COSTA,-91.46121577468548,True,False,-125.49029414224403,-21.533659883946733,False,13.0,6.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D4,Royal Canin contra o depositante IMBERA,-33.43379000128711,True,False,-72.17476499068789,0.9133796140996935,False,13.0,5.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D4,Royal Canin contra o depositante SR PRECO,-28.545083923238728,True,False,-44.89402483268261,-3.8044256554769476,False,13.0,14.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-D4,Royal Canin contra o depositante VIC BEAUTE,-50.8809912931314,True,False,-74.6946638540215,-36.5723831448793,False,13.0,12.0,critério: inversão forte (IC por operador inteiro do lado oposto)
+PT-H04,teto conservador do G2 (intervalo até 300 s),36.0,True,True,,,,,,
+PT-H04,deixar um operador de fora (mínimo),39.0,True,True,,,,,,
+PT-H04,deixar um operador de fora (máximo),48.0,True,True,,,,,,
+PT-H04,sem dias pós-pausa,45.0,True,True,,,,,,
+PT-H04,"semanas pares da janela base (36 e 38), sem valor de confirmação",46.5,True,False,,,,7.0,,
+PT-H10,teto conservador do G2 (jornada ativa no teto de 300 s),2.098151940624702,True,True,,,,,,
+PT-H10,corte de uma linha em vez de uma hora,2.9525074354739247,True,True,,,,,,
+PT-H10,deixar um operador de fora (mínimo),1.8659245457239857,True,True,,,,,,
+PT-H10,deixar um operador de fora (máximo),2.3833093986250233,True,True,,,,,,
+PT-H10,"semanas pares da janela base (36 e 38), sem valor de confirmação",8.567921764263373,True,False,,,,,,poucos dias; só informativo
+PT-H09,teto conservador do G2,-0.4749657925905084,False,False,,,,,,"descritivo: menos de 10 novatos, a pista é inconclusiva por desenho e a robustez não entra na regra"
+PT-H09,deixar um novato de fora (mínimo),-0.6968297287870062,False,False,,,,,,"descritivo: menos de 10 novatos, a pista é inconclusiva por desenho e a robustez não entra na regra"
+PT-H09,deixar um novato de fora (máximo),-0.11329597547568734,False,False,,,,,,"descritivo: menos de 10 novatos, a pista é inconclusiva por desenho e a robustez não entra na regra"

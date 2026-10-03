@@ -1,0 +1,10 @@
+candidato,series_com_mae_menor,series_com_maioria_das_origens,vence,variante
+media_8s,0,0,False,base
+historia,1,0,False,base
+regressao,1,0,False,base
+media_8s,1,1,False,sem_pos_pausa
+historia,1,1,False,sem_pos_pausa
+regressao,0,0,False,sem_pos_pausa
+media_8s,1,1,False,sem_origem_36
+historia,1,0,False,sem_origem_36
+regressao,1,1,False,sem_origem_36

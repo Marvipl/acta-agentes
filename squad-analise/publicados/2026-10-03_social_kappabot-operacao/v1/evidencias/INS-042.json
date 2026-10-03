@@ -1,0 +1,61 @@
+{
+  "id": "INS-042",
+  "estado": "quantificado",
+  "afirmacao": "No pedido-a-pedido manual da Royal Canin, o tempo fora do relógio até a próxima linha tem mediana de {{v.geral}} e quase não muda com o número de endereços: {{v.f1}} nas linhas de endereço único e {{v.f6}} nas da faixa mais alta. Por isso a parcela do intervalo no ciclo cai de {{v.p1}} nas linhas de endereço único para {{v.p6}} na faixa mais alta, e o tempo fora do relógio pesa mais nas linhas pequenas. Nas linhas de dois endereços a mediana do intervalo supera a da duração da linha em {{v.h04}}, o que sai positivo quase por construção (verificação do esperado da pista PT-H04, não evidência nova). Descoberta, semanas ISO ímpares; a queda da parcela com os endereços é por construção e fica descritiva.",
+  "pergunta_ref": "P10",
+  "criterio_ref": "CR3",
+  "valores": {
+    "geral": "ANA-012.intervalo_mediano_por_faixa_end",
+    "f1": "ANA-012.intervalo_mediano_faixa_1",
+    "f6": "ANA-012.intervalo_mediano_faixa_6mais",
+    "p1": "ANA-012.parcela_intervalo_ciclo_faixa_1",
+    "p6": "ANA-012.parcela_intervalo_ciclo_faixa_6mais",
+    "h04": "ANA-012.pt_h04_descoberta"
+  },
+  "nivel": "descritivo",
+  "exploratorio": true,
+  "robustez": [
+    {
+      "recorte": "quatro tetos de intervalo",
+      "analise": "ANA-012",
+      "resultado": "parcial",
+      "nota": "a mediana por faixa é quase constante nos tetos conservador, intermediário e base; no limite superior a faixa mais alta sobe por causa da cauda longa (tabela m10b_por_faixa_pap_rc)"
+    },
+    {
+      "recorte": "operador contra bloco de semana",
+      "analise": "ANA-012",
+      "resultado": "passa",
+      "nota": "os dois intervalos dão a mesma leitura (campo ics de cada chave)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "ANA-016",
+    "resultado": "confirma"
+  },
+  "red_team_analitico": {
+    "veredito": "cai",
+    "nota": "Sem mudança: só a parte de PT-H04 foi confirmada (INS-073); a afirmação própria sobre o intervalo por faixa de endereços não foi testada e não se repete nas semanas pares."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Confirmar PT-H04 em ANA-016 (já no plano) e usar o intervalo absoluto, não a parcela, ao falar de tempo fora do relógio.",
+  "dono": "estatistico (ANA-016)",
+  "premissas": [
+    "achado exploratório da descoberta (semanas ISO ímpares): estimativa sem ajuste para as muitas comparações olhadas; não vai ao memorando antes da confirmação em ANA-016",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador como robustez",
+    "incidente operacional da Royal Canin na semana ISO ímpar de fim de setembro tratado como recorte atípico e declarado (revisoes/orquestrador_decisao_semana_incidente.md)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:44",
+      "por": "analista-exploratorio"
+    }
+  ]
+}

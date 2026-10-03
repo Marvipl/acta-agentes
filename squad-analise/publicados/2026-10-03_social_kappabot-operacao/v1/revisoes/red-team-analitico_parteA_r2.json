@@ -1,0 +1,446 @@
+{
+  "agente": "dados-red-team-analitico",
+  "parte": "A",
+  "rodada": 2,
+  "em": "2026-10-03",
+  "escopo": "INS-001 a INS-039 (existem INS-001 a INS-015 e INS-020 a INS-033); ANA-001 a ANA-008 e ANA-010",
+  "aviso": "Números das verificações vêm de resultado.json re-registrado ou das variações do red team da r1 (scratchpad, só leitura). Não vão a insight nem a entregável.",
+  "metodo": "Releitura de cada insight do escopo (render de saidas/insights.json de 18:41 e evidencias/), conferência das chaves novas contra resultado.json re-registrado e contra as variações da r1, verificação das decisões novas do orquestrador e busca de problema novo (inclusive em ANA-009, que herda o perfil de ANA-008).",
+  "decisoes_do_orquestrador": {
+    "regime_colmeia": "Conferida: motivada por fato externo (entrada da colmeia, semana ISO 28, já modelada em ANA-001 antes dos resultados de pico), com as duas leituras reportadas e rótulo 'regime pré-colmeia incluído' na variante do plano; a confirmar por Marcus no G3. Implementada em ANA-003 (excedente), ANA-008 (p90, perfil, médias) e ANA-010 (frota agrupada dia a dia). Ponto em aberto: em ANA-009 a frota de ALT2 e ALT3 segue com a banda como primária e o dia a dia como ponta desfavorável (ver INS-026).",
+    "inversao_ANA-016": "Fora do escopo da parte A (ANA-016 e seus insights são da parte B). Registro só o ponto de método: o critério foi fixado depois de ver os sinais; a decisão já declara isso e manda reportar o resultado pelo critério só de sinal ao lado, o que é o mínimo necessário."
+  },
+  "correcoes_r1": {
+    "ANA-003 (INS-015)": "atendida",
+    "ANA-008 (INS-026, INS-028)": "atendida",
+    "ANA-010 (INS-031, INS-032, INS-030)": "atendida",
+    "ANA-001 (INS-003, INS-004)": "atendida (ajuste menor de texto em INS-004)",
+    "ANA-004 (INS-005, INS-006, INS-007)": "atendida (ajuste menor de texto em INS-007)",
+    "textos (INS-010, 012, 014, 022, 024, 025)": "atendidas",
+    "motor (rótulo de faixa_cenarios como IC)": "atendida: o render agora distingue 'IC bootstrap', 'IC' e 'faixa de cenários'"
+  },
+  "problemas_novos": [
+    {
+      "insights": [
+        "INS-026"
+      ],
+      "dono": "estatistico (ANA-008); analista-exploratorio (ANA-009)",
+      "problema": "A banda foi abandonada na frota agrupada por alisar o pico horário, mas continua primária na frota da Royal Canin (ANA-009, ALT2 e ALT3). No regime pós-colmeia a banda dá um robô e o dia a dia dá dois.",
+      "pedido": "No texto de INS-026 e nos insights de CR4 da parte B, ler CR4 com a frota dia a dia como ponta desfavorável (já calculada em ANA-009) e não apresentar o perfil da banda sozinho como referência de frota. Coerência de método entre ANA-009 e ANA-010 a decidir pelo orquestrador."
+    },
+    {
+      "insights": [
+        "INS-015"
+      ],
+      "dono": "estatistico (ANA-003)",
+      "problema": "Banda do p90 pós-colmeia com o mínimo de dias (PAR07); o texto cita só a faixa de cenários.",
+      "pedido": "Citar o IC de bootstrap de dias (já gravado na chave) e levá-lo ao impacto junto com a faixa."
+    },
+    {
+      "insights": [
+        "INS-004"
+      ],
+      "dono": "estatistico (ANA-001)",
+      "problema": "'não com perda de demanda' com IC da variação de cerca de -18% a +7%; degrau do nível citado sem rótulo de variante.",
+      "pedido": "Trocar por 'sem perda de demanda distinguível' e rotular o degrau como variante do plano."
+    },
+    {
+      "insights": [
+        "INS-007"
+      ],
+      "dono": "estatistico (ANA-004)",
+      "problema": "Frase sobre a primeira perna atribuída a pedidos de um endereço, que não estão na amostra do relatório.",
+      "pedido": "Reescrever: a primeira perna pesa contra o robô em todos os pedidos da amostra; a amostra cobre a minoria dos pedidos do robô."
+    },
+    {
+      "insights": [
+        "INS-005",
+        "INS-009",
+        "INS-015",
+        "INS-027",
+        "INS-031",
+        "INS-023",
+        "INS-025",
+        "INS-029"
+      ],
+      "dono": "orquestrador (motor/insights.py, _fmt)",
+      "problema": "Apresentação: contagens renderizadas com casas decimais ('18,00 células', '20,00 pedidos', '8,00 dias', '5,00 robôs', '11,00 h') e p ajustado com intervalo ('IC bootstrap 0,08 a 0,12', 'faixa de cenários de 1,00 a 1,00').",
+      "pedido": "Inteiro quando contagem = true ou unidade de contagem; p-valores sem intervalo."
+    }
+  ],
+  "resumo": {
+    "sobrevive": [
+      "INS-001",
+      "INS-002",
+      "INS-003",
+      "INS-004",
+      "INS-005",
+      "INS-006",
+      "INS-007",
+      "INS-009",
+      "INS-010",
+      "INS-011",
+      "INS-012",
+      "INS-014",
+      "INS-020",
+      "INS-022",
+      "INS-023",
+      "INS-024",
+      "INS-025",
+      "INS-027",
+      "INS-028",
+      "INS-030",
+      "INS-032",
+      "INS-033"
+    ],
+    "ressalva": [
+      "INS-008",
+      "INS-013",
+      "INS-015",
+      "INS-021",
+      "INS-026",
+      "INS-029",
+      "INS-031"
+    ],
+    "cai": [],
+    "contagem": {
+      "sobrevive": 22,
+      "ressalva": 7,
+      "cai": 0
+    }
+  },
+  "insights": [
+    {
+      "id": "INS-001",
+      "veredito_r1": "sobrevive",
+      "veredito": "sobrevive",
+      "nota": "Mantido: CR2 falha em todo o envelope e nas duas janelas; o render agora rotula o envelope como faixa de cenários.",
+      "correcao_r1": "não se aplica",
+      "verificacoes_r2": [
+        "Valores idênticos aos da r1; rótulo 'faixa de cenários' correto (motor corrigido)."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-002",
+      "veredito_r1": "sobrevive",
+      "veredito": "sobrevive",
+      "nota": "Mantido: cobertura minúscula em todo o envelope; render com o rótulo correto.",
+      "correcao_r1": "não se aplica",
+      "verificacoes_r2": [
+        "Valores idênticos aos da r1."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-003",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: o texto cita o degrau com e sem a semana do incidente, explica o peso indevido da semana e diz que tendência não comprovada é inconclusiva por poder baixo. Nenhum problema novo.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "degrau_colmeia_part_pap_rc_sem_incidente e inclinacao_part_pap_rc_semana_sem_incidente citados; p unilateral da leitura sem o incidente citado.",
+        "Roteamento para a colmeia declarado."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-004",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: linguagem descritiva, volume total antes e depois da colmeia, tendência só da leitura sem o incidente. Ajuste menor de texto: o IC da variação do volume total vai de uma queda relevante a um aumento, então 'não com perda de demanda' deve virar 'sem perda de demanda distinguível'; e o degrau citado é o da variante do plano, sem rótulo.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "variacao_coletas_rc_dia_pos_colmeia_sem_incidente = -6,6% (IC -18,2% a 7,3%): reproduz o red team (260 contra 243).",
+        "degrau_colmeia_linhas_tarif_pap_rc_dia é a variante do plano; não há versão sem o incidente para o nível (o texto não rotula)."
+      ],
+      "problema_novo": "Leve sobreafirmação: o IC da variação admite queda de até cerca de 18% no volume total."
+    },
+    {
+      "id": "INS-005",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: o texto diz que o WMS não confirma nem refuta PR06, mostra S2 com IC, a fração de tempo descartada e a cobertura incompleta do ciclo; a ação (não prometer o dobro) segue robusta. Só formatação: a contagem de células aparece com casas decimais.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "linhas_hora_pap_rc_s2_ic_t300 33,68 (IC 28,44 a 37,26) e _t900 25,96 (IC 21,60 a 29,09); classe_cr3_s2_t*: inconclusivo a 300 e 600 s, passa a 900 e 1.800 s.",
+        "celulas_da_grade_em_pr06_ou_abaixo = 18 (reproduz)."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-006",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: 'só no limite superior' ficou restrito à regra base e a razão em S2 aparece com IC; método de PR05 declarado [●].",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "razao_pr05_sobre_m14_s2_t300 1,96 (IC 1,77 a 2,32) e _t900 2,54 (IC 2,27 a 3,06): reproduz o red team."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-007",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: diferença de definição e viés contra o robô declarados, com a fração de pedidos de um endereço. Ajuste de texto: a primeira perna pesa contra o robô em todos os pedidos da amostra do relatório (que só tem pedidos de dois ou mais endereços), não 'quando o pedido tem um só endereço'; a fração de um endereço mostra que a amostra cobre a minoria dos pedidos do robô.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "fracao_pedidos_um_endereco_pap_rc_robo 68,6% e _manual 47,0%: reproduz (69% e 47%)."
+      ],
+      "problema_novo": "Frase sobre a primeira perna mal localizada (não muda a conclusão)."
+    },
+    {
+      "id": "INS-008",
+      "veredito_r1": "ressalva",
+      "veredito": "ressalva",
+      "nota": "Mantida a ressalva da primeira rodada (texto inalterado): a conclusão vale para a assinatura testada; eventos raríssimos e IC degenerado antes de PAR11; o limite pelo relatório 9fleet sustenta que o efeito é pequeno. Sugestão não atendida: declarar no texto que a ausência é pela assinatura testada.",
+      "correcao_r1": "não atendida (era sugestão de texto)",
+      "verificacoes_r2": [
+        "Texto e chaves inalterados desde a r1 (só o rótulo da incerteza mudou no render); valores conferidos em resultado.json re-registrado."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-009",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: a participação da conta do robô é declarada como piso, os pedidos de checkout da conta aparecem e a diferença de tamanho é atribuída à escolha da operação. Só formatação: contagem de pedidos com casas decimais.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "pedidos_checkout_rc_conta_robo_desde_par11 = 20 (reproduz)."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-010",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: 'FTE equivalente de horas ativas', faixa de cenários rotulada, IC de bootstrap do FTE citado, fração descartada e reconciliação do método do slide com a Social antes de falar ao cliente.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "fte_escopo_alt3_ic_dias_normal 0,30 (IC 0,26 a 0,34)."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-011",
+      "veredito_r1": "sobrevive",
+      "veredito": "sobrevive",
+      "nota": "Mantido: a conclusão (não libera vaga inteira) resiste a todos os ataques; render com o rótulo correto.",
+      "correcao_r1": "não se aplica",
+      "verificacoes_r2": [
+        "Texto e chaves inalterados desde a r1 (só o rótulo da incerteza mudou no render); valores conferidos em resultado.json re-registrado."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-012",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: a afirmação ficou restrita à exportação PROD 90DIAS e a ação pede o relatório do módulo de conferência.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "linhas_examinadas_conferencia = 43.976 = referencias_exatas.linhas da qualidade."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-013",
+      "veredito_r1": "ressalva",
+      "veredito": "ressalva",
+      "nota": "Mantida a ressalva da primeira rodada (texto inalterado): efeito no armazém resiste ao teste por dia, mas pico e retomada se confundem com a segunda-feira, a subida é em parte mecânica e no escopo da Royal Canin não se confirma; a consequência para CR1 e CR8 se apoia em evidência do armazém.",
+      "correcao_r1": "não se aplica (sem correção pedida)",
+      "verificacoes_r2": [
+        "Texto e chaves inalterados desde a r1 (só o rótulo da incerteza mudou no render); valores conferidos em resultado.json re-registrado."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-014",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: o texto mostra a elasticidade estimada e a do efeito relevante, diz que não é ausência de efeito e menciona o Holm exato.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "h13b_elasticidade -0,24 (IC -0,49 a 0,10) e h13b_efeito_relevante_elasticidade 1,05: coerentes com a r1. O texto ainda cita o limite superior de Holm como número; aceitável, porque declara que o exato é menor."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-015",
+      "veredito_r1": "cai",
+      "veredito": "ressalva",
+      "nota": "Correção atendida no essencial: base pós-colmeia com a variante do plano rotulada, excedente em fração de jornada e o teto inteiro desarmado como argumento. Ressalva nova: a banda do p90 pós-colmeia tem só o mínimo de dias e o texto cita apenas a faixa de cenários; o IC de bootstrap de dias (gravado na chave) é largo e deve acompanhar o número no impacto. A conclusão (fração de jornada, não vaga) vale nas duas incertezas.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "excedente_h_p90_escopo_poscolmeia 1,20 h: reproduz o red team (1,20).",
+        "dias_na_banda_p90_escopo_poscolmeia = 5 (= PAR07).",
+        "ic_bootstrap_dias_teto_300 do excedente: 0,56 a 2,15 h (FTE 0,08 a 0,29), não citado no texto."
+      ],
+      "problema_novo": "IC amostral não citado com banda de cinco dias."
+    },
+    {
+      "id": "INS-020",
+      "veredito_r1": "sobrevive",
+      "veredito": "sobrevive",
+      "nota": "Mantido; render com o rótulo correto.",
+      "correcao_r1": "não se aplica",
+      "verificacoes_r2": [
+        "Texto e chaves inalterados desde a r1 (só o rótulo da incerteza mudou no render); valores conferidos em resultado.json re-registrado."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-021",
+      "veredito_r1": "ressalva",
+      "veredito": "ressalva",
+      "nota": "Mantida a ressalva da primeira rodada (texto inalterado): a faixa é o ritmo do humano; o ciclo do robô (viagem ao packing, carga útil, pedidos por viagem) pode deixar a capacidade abaixo do ponto inferior. Depende de E9.",
+      "correcao_r1": "não se aplica (sem correção pedida)",
+      "verificacoes_r2": [
+        "Texto e chaves inalterados desde a r1 (só o rótulo da incerteza mudou no render); valores conferidos em resultado.json re-registrado."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-022",
+      "veredito_r1": "sobrevive",
+      "veredito": "sobrevive",
+      "nota": "Correção de texto atendida (unidade duplicada removida).",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "Texto agora diz 'concentrados em poucos depositantes'."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-023",
+      "veredito_r1": "sobrevive",
+      "veredito": "sobrevive",
+      "nota": "Mantido. Resta só apresentação: o p ajustado continua com intervalo de bootstrap no render.",
+      "correcao_r1": "não se aplica",
+      "verificacoes_r2": [
+        "Texto e chaves inalterados desde a r1 (só o rótulo da incerteza mudou no render); valores conferidos em resultado.json re-registrado."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-024",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: a vantagem fica restrita ao pedido-a-pedido, a inversão contra o checkout é declarada e a vantagem é atribuída ao método e à contagem repetida.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "dif_rel_colmeia_pap_t300 77,4% (IC 63,3% a 101,2%) citado."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-025",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: a primeira frase não afirma mais ausência de efeito e o texto explica a limitação da medida relativa. Só apresentação: o p ajustado aparece com uma faixa de cenários degenerada.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "Retomada e típico do armazém citados para a medida relativa."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-026",
+      "veredito_r1": "cai",
+      "veredito": "ressalva",
+      "nota": "Correção atendida: o p90 pós-colmeia é a base, o do período inteiro vai rotulado, o checkout não quebra e a homonímia de 'operação normal' foi resolvida. Ressalva nova: a ação usa o perfil da banda pós-colmeia como referência de frota, mas a banda alisa o pico horário (o motivo pelo qual foi abandonada na frota agrupada). Na Royal Canin pós-colmeia a banda dá um robô e a frota dia a dia dá dois (ANA-009 já reporta as duas). CR4 deve ser lido com a frota dia a dia como ponta desfavorável, e o texto deve dizer isso.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "p90_linhas_dia_pap_rc_pos_colmeia 110 (IC 89,4 a 187,7) e demanda_pico_linhas_pap_rc_p90_pos_colmeia 22,83: reproduzem o red team.",
+        "ANA-009: frota_necessaria_alt2_banda_pos_colmeia = 1, frota_necessaria_alt2_mesmo_dia_pos_colmeia = 2 (red team r1: 2 pelo mesmo dia)."
+      ],
+      "problema_novo": "Método da banda mantido como primário na frota da Royal Canin (ANA-009, PERFIL_PRIMARIO ALT2 e ALT3 = banda) depois de ter sido reconhecido como alisador de pico em ANA-010."
+    },
+    {
+      "id": "INS-027",
+      "veredito_r1": "sobrevive",
+      "veredito": "sobrevive",
+      "nota": "Mantido e reforçado: a hora de pico pós-colmeia foi acrescentada e coincide com a do período inteiro. Só formatação das horas (casas decimais).",
+      "correcao_r1": "não se aplica",
+      "verificacoes_r2": [
+        "pico_h_linhas_pap_rc_p90_pos_colmeia = 11 h (IC 9 a 16)."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-028",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: níveis pós-colmeia como base, período inteiro rotulado como mistura de regimes, e a leitura declarada como descritiva, sem teste de diferença.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "media_retomada_linhas_pap_rc_pos_colmeia 121 e media_linhas_dia_pap_rc_pos_colmeia 76,4: reproduzem o red team (121 e 76,4). Só um dia pós-pausa no regime: a retomada é quase só segunda-feira."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-029",
+      "veredito_r1": "ressalva",
+      "veredito": "ressalva",
+      "nota": "Correção atendida: a sensibilidade com todo o pedido-a-pedido está no texto, com IC e sem o maior depositante, e a pergunta a Marcus e à engenharia está na ação. A ressalva continua porque a classe de CR5 depende de uma definição ainda em aberto: pela primária fica inconclusiva; pela sensibilidade passa.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "razao_demanda_pr07_outros_todo_pap 1,13 (IC 1,02 a 1,23): reproduz o red team (1,128; IC 1,027 a 1,233)."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-030",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: fungibilidade declarada (regra por tipo como variante desfavorável), sensibilidade com todo o pedido-a-pedido e PR08 de baixa confiança nas premissas.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "razao_demanda_combinada_outros_todo_pap 1,28 (faixa 1,23 a 1,39)."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-031",
+      "veredito_r1": "cai",
+      "veredito": "ressalva",
+      "nota": "Correção atendida: frota agrupada e individual dia a dia, coerência verificada (nenhum dia com agrupada abaixo da maior individual), banda abandonada para a frota e correlação do par relevante citada. Reproduz o red team. Ressalva: o texto abre com o ganho literal, inflado pelo teto inteiro de depositantes pequenos; o memorando deve abrir com a leitura dos relevantes, a única creditável. Pooling entre áreas do armazém segue [●].",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "robos_adicionais_alt6 = 5, soma_frotas_individuais_relevantes = 6, robos_adicionais_alt6_relevantes = 4: reproduzem o red team (5; 3 + 3; 4).",
+        "dias_com_frota_agrupada_menor_que_maior_individual = 0.",
+        "correlacao_volume_dia_relevantes_janela_longa 0,36 e _periodo 0,16: reproduzem."
+      ],
+      "problema_novo": "Cabeçalho com o número literal (inflado) antes do conservador."
+    },
+    {
+      "id": "INS-032",
+      "veredito_r1": "ressalva",
+      "veredito": "sobrevive",
+      "nota": "Correção atendida: margem e hardware máximo com a frota dia a dia como ponta desfavorável, banda e relevantes como leituras alternativas, e a premissa de adesão dos outros clientes declarada [●]. O sinal da margem se mantém.",
+      "correcao_r1": "atendida",
+      "verificacoes_r2": [
+        "margem_robo_adicional_mes_normal 554 = 7.769 ÷ 5 - PR13; hardware_maximo_adicional_prazo_normal 13.260 = margem no limite inferior de M06 × PR14: reproduzem o red team (cerca de 554 e 13 mil)."
+      ],
+      "problema_novo": null
+    },
+    {
+      "id": "INS-033",
+      "veredito_r1": "sobrevive",
+      "veredito": "sobrevive",
+      "nota": "Mantido; render com o rótulo correto.",
+      "correcao_r1": "não se aplica",
+      "verificacoes_r2": [
+        "Texto e chaves inalterados desde a r1 (só o rótulo da incerteza mudou no render); valores conferidos em resultado.json re-registrado."
+      ],
+      "problema_novo": null
+    }
+  ],
+  "pendencias": [
+    "Orquestrador: consolidar parte A (r2) e parte B em revisoes/red-team-analitico.json, exigido por motor/validar.py.",
+    "Red team parte B: conferir nos insights de CR4 (ANA-009) a leitura com a frota dia a dia como ponta desfavorável, no regime pós-colmeia.",
+    "Marcus (G3): confirmar a base pós-colmeia e decidir a definição de compatível de CR5 (INS-029)."
+  ]
+}

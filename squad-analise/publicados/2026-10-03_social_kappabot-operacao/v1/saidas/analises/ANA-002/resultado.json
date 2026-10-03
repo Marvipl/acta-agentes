@@ -1,0 +1,1171 @@
+{
+  "id": "ANA-002",
+  "valores": {
+    "dias_uteis_mes_ref": {
+      "valor": 21.0,
+      "unidade": "dias úteis",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela": {
+      "valor": 18.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "taxa_pedidos_checkout_rc_dia": {
+      "valor": 44.27777777777778,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 30.11111111111111,
+        "superior": 58.388888888888886,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_linhas_tarif_pap_rc_dia": {
+      "valor": 52.0,
+      "unidade": "linhas tarifáveis por dia pleno (M06 superior)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 36.94444444444444,
+        "superior": 66.83472222222223,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_linhas_tarif_pap_rc_dia_inf": {
+      "valor": 52.0,
+      "unidade": "linhas tarifáveis por dia pleno (M06 inferior)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 36.94444444444444,
+        "superior": 66.83472222222223,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_linhas_oper_pap_rc_dia": {
+      "valor": 51.388888888888886,
+      "unidade": "linhas operacionais por dia pleno (M05)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 36.333333333333336,
+        "superior": 66.38888888888889,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_pedidos_pap_rc_dia": {
+      "valor": 25.61111111111111,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 17.833333333333332,
+        "superior": 33.166666666666664,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_pedidos_colmeia_rc_dia": {
+      "valor": 54.333333333333336,
+      "unidade": "pedidos por dia pleno (referência de ALT5, sem tarifa)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 36.888888888888886,
+        "superior": 72.11250000000001,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_linhas_tarif_colmeia_rc_dia_inf": {
+      "valor": 109.38888888888889,
+      "unidade": "linhas tarifáveis por dia pleno (M06 inferior; referência de ALT5, sem tarifa)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 74.22083333333335,
+        "superior": 144.94583333333335,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_linhas_oper_colmeia_rc_dia": {
+      "valor": 110.88888888888889,
+      "unidade": "linhas operacionais por dia pleno (M05; referência de ALT5)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 75.16666666666667,
+        "superior": 147.16805555555555,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_linhas_oper_checkout_rc_dia": {
+      "valor": 44.27777777777778,
+      "unidade": "linhas operacionais por dia pleno (M05)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 30.11111111111111,
+        "superior": 58.388888888888886,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_linhas_tarif_pap_multi_rc_dia_inf": {
+      "valor": 39.5,
+      "unidade": "linhas tarifáveis por dia pleno (M06 inferior; só pedido_multi_endereco)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 27.944444444444443,
+        "superior": 51.05555555555556,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "parcela_robo_pap_rc_janela": {
+      "valor": 0.1822125813449024,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.1152229168640081,
+        "superior": 0.2486930338121889,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "vol_mes_pedidos_checkout_rc": {
+      "valor": 929.8333333333334,
+      "unidade": "pedidos por mês",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 632.3333333333334,
+        "superior": 1226.1666666666665,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "mes_referencia": "2026-08"
+      }
+    },
+    "vol_mes_linhas_tarif_pap_rc_inf": {
+      "valor": 1092.0,
+      "unidade": "linhas tarifáveis por mês (M06 inferior)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 775.8333333333333,
+        "superior": 1403.5291666666667,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "mes_referencia": "2026-08"
+      }
+    },
+    "vol_mes_linhas_tarif_pap_rc_sup": {
+      "valor": 1092.0,
+      "unidade": "linhas tarifáveis por mês (M06 superior)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 775.8333333333333,
+        "superior": 1403.5291666666667,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "mes_referencia": "2026-08"
+      }
+    },
+    "vol_mes_linhas_oper_pap_rc": {
+      "valor": 1079.1666666666665,
+      "unidade": "linhas operacionais por mês (M05)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 763.0,
+        "superior": 1394.1666666666665,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "mes_referencia": "2026-08"
+      }
+    },
+    "vol_mes_pedidos_pap_rc": {
+      "valor": 537.8333333333334,
+      "unidade": "pedidos por mês",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 374.5,
+        "superior": 696.5,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "mes_referencia": "2026-08"
+      }
+    },
+    "vol_mes_pedidos_colmeia_rc": {
+      "valor": 1141.0,
+      "unidade": "pedidos por mês (referência de ALT5, sem tarifa)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 774.6666666666666,
+        "superior": 1514.3625000000002,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "mes_referencia": "2026-08"
+      }
+    },
+    "n_dias_janela_base": {
+      "valor": 18.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_2s": {
+      "valor": 9.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_4s": {
+      "valor": 18.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_6s": {
+      "valor": 28.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_8s": {
+      "valor": 38.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_base_sem_pos_pausa": {
+      "valor": 16.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_base_deslocada": {
+      "valor": 19.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_uteis_setembro_base": {
+      "valor": 18.0,
+      "unidade": "dias úteis",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_uteis_setembro_lacuna": {
+      "valor": 19.0,
+      "unidade": "dias úteis",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_franquia_alt3_mes_2026_06": {
+      "valor": 0.4116186440677966,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_franquia_alt2_mes_2026_06": {
+      "valor": 0.18716101694915255,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_franquia_alt3_mes_2026_07": {
+      "valor": 0.38944067796610166,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_franquia_alt2_mes_2026_07": {
+      "valor": 0.10101694915254238,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_franquia_alt3_mes_2026_08": {
+      "valor": 0.3743220338983051,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_franquia_alt2_mes_2026_08": {
+      "valor": 0.06457627118644067,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_franquia_alt3_mes_2026_09": {
+      "valor": 0.25369591226321037,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_franquia_alt2_mes_2026_09": {
+      "valor": 0.03800099700897308,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_franquia_alt2": {
+      "valor": 0.046271186440677965,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.026892655367231635,
+        "superior": 0.06758028545941124,
+        "nivel": null,
+        "descricao": "envelope de CR2: janelas do plano e IC (bootstrap de dias) da variante primária",
+        "ic_variante_primaria": [
+          0.03287429378531073,
+          0.059471574858757065
+        ]
+      }
+    },
+    "cobertura_franquia_alt3": {
+      "valor": 0.31418926553672316,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21110734463276837,
+        "superior": 0.4063270127118644,
+        "nivel": null,
+        "descricao": "envelope de CR2: janelas do plano e IC (bootstrap de dias) da variante primária",
+        "ic_variante_primaria": [
+          0.21930194209039544,
+          0.4063270127118644
+        ]
+      }
+    },
+    "receita_mes_alt2": {
+      "valor": 273.0,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 158.66666666666666,
+        "superior": 398.7236842105263,
+        "nivel": null,
+        "descricao": "envelope de CR2: janelas do plano e IC (bootstrap de dias) da variante primária",
+        "ic_variante_primaria": [
+          193.95833333333331,
+          350.8822916666667
+        ]
+      }
+    },
+    "receita_mes_alt3": {
+      "valor": 1853.7166666666667,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1245.5333333333333,
+        "superior": 2397.329375,
+        "nivel": null,
+        "descricao": "envelope de CR2: janelas do plano e IC (bootstrap de dias) da variante primária",
+        "ic_variante_primaria": [
+          1293.881458333333,
+          2397.329375
+        ]
+      }
+    },
+    "receita_mes_alt3_m06_sup": {
+      "valor": 1853.7166666666667,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1293.881458333333,
+        "superior": 2397.329375,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "receita_mes_alt2_m06_sup": {
+      "valor": 273.0,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 193.95833333333331,
+        "superior": 350.8822916666667,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "receita_mes_alt3_retroativa": {
+      "valor": 1853.7166666666667,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1293.881458333333,
+        "superior": 2397.329375,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "receita_mes_alt2_retroativa": {
+      "valor": 273.0,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 193.95833333333331,
+        "superior": 350.8822916666667,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "cobertura_franquia_alt3_m06_sup": {
+      "valor": 0.31418926553672316,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.21930194209039544,
+        "superior": 0.4063270127118644,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "cobertura_franquia_alt2_m06_sup": {
+      "valor": 0.046271186440677965,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.03287429378531073,
+        "superior": 0.059471574858757065,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "cobertura_franquia_alt3_retroativa": {
+      "valor": 0.31418926553672316,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.21930194209039544,
+        "superior": 0.4063270127118644,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "cobertura_franquia_alt3_bloco_semana": {
+      "valor": 0.31418926553672316,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.11239082751744767,
+        "superior": 0.4467367896311066,
+        "nivel": 0.95,
+        "metodo": "bootstrap por bloco de semana (sensibilidade)"
+      }
+    },
+    "cobertura_franquia_alt3_pap_multi": {
+      "valor": 0.30306638418079096,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.21051313559322032,
+        "superior": 0.3933587217514124,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "cobertura_franquia_alt2_pap_multi": {
+      "valor": 0.035148305084745764,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.024865819209039543,
+        "superior": 0.04543079096045198,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "receita_mes_alt3_pap_multi": {
+      "valor": 1788.0916666666667,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1242.0275,
+        "superior": 2320.8164583333332,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "receita_mes_alt2_pap_multi": {
+      "valor": 207.375,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 146.70833333333331,
+        "superior": 268.0416666666667,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "cobertura_franquia_alt3_m05": {
+      "valor": 0.3136454802259887,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "cobertura_franquia_alt2_m05": {
+      "valor": 0.045727401129943494,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "fator_volume_para_cobrir_franquia_alt2": {
+      "valor": 21.611721611721613,
+      "unidade": "vezes o volume corrente",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 14.797214797214798,
+        "superior": 37.18487394957984,
+        "nivel": null,
+        "descricao": "inverso das pontas do envelope"
+      }
+    },
+    "fator_volume_para_cobrir_franquia_alt3": {
+      "valor": 3.1827949255100116,
+      "unidade": "vezes o volume corrente",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.461071916744857,
+        "superior": 4.73692661778087,
+        "nivel": null,
+        "descricao": "inverso das pontas do envelope"
+      }
+    },
+    "classe_cr2_alt2": {
+      "valor": -1.0,
+      "unidade": "código: 1 passa (envelope >= 1), 0 inconclusivo, -1 falha (envelope < 1)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "classe_cr2_alt3": {
+      "valor": -1.0,
+      "unidade": "código: 1 passa (envelope >= 1), 0 inconclusivo, -1 falha (envelope < 1)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp4a_confirmada": {
+      "valor": 0.0,
+      "unidade": "1 = H-P4a confirmada (ALT3 cobre a franquia em todo o envelope)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp4b_confirmada": {
+      "valor": 1.0,
+      "unidade": "1 = H-P4b confirmada (ALT2 abaixo da franquia em todo o envelope)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "variantes_com_cobertura_alt3_abaixo_de_1": {
+      "valor": 14.0,
+      "unidade": "variantes",
+      "incerteza": null,
+      "contagem": true
+    },
+    "variantes_total": {
+      "valor": 14.0,
+      "unidade": "variantes",
+      "incerteza": null,
+      "contagem": true
+    },
+    "variantes_com_cobertura_alt2_abaixo_de_1": {
+      "valor": 14.0,
+      "unidade": "variantes",
+      "incerteza": null,
+      "contagem": true
+    },
+    "variantes_total_alt2": {
+      "valor": 14.0,
+      "unidade": "variantes",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_alt3_maior_valor_das_variantes": {
+      "valor": 0.38445361284567353,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "franquia_pr02": {
+      "valor": 5900.0,
+      "unidade": "R$ por mês",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_normal": {
+      "valor": 19.0,
+      "unidade": "dias plenos (24/08 a 18/09; semanas ISO 35 a 38)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "taxa_pedidos_checkout_rc_dia_normal": {
+      "valor": 52.36842105263158,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 44.68421052631579,
+        "superior": 61.68421052631579,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 19,
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "taxa_linhas_tarif_pap_rc_dia_normal": {
+      "valor": 75.94736842105263,
+      "unidade": "linhas tarifáveis por dia pleno (M06 superior)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 64.73684210526316,
+        "superior": 87.84210526315789,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 19,
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "taxa_linhas_tarif_pap_rc_dia_inf_normal": {
+      "valor": 75.94736842105263,
+      "unidade": "linhas tarifáveis por dia pleno (M06 inferior)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 64.73684210526316,
+        "superior": 87.84210526315789,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 19,
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "taxa_linhas_oper_pap_rc_dia_normal": {
+      "valor": 75.26315789473684,
+      "unidade": "linhas operacionais por dia pleno (M05)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 64.04868421052633,
+        "superior": 87.15789473684211,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 19,
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "taxa_pedidos_pap_rc_dia_normal": {
+      "valor": 38.10526315789474,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 31.789473684210527,
+        "superior": 44.526315789473685,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 19,
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "taxa_pedidos_colmeia_rc_dia_normal": {
+      "valor": 60.578947368421055,
+      "unidade": "pedidos por dia pleno (referência de ALT5, sem tarifa)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 49.472368421052636,
+        "superior": 73.57894736842105,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 19,
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "vol_mes_pedidos_checkout_rc_normal": {
+      "valor": 1099.7368421052631,
+      "unidade": "pedidos por mês",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 938.3684210526316,
+        "superior": 1295.3684210526314,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "mes_referencia": "2026-08",
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "vol_mes_linhas_tarif_pap_rc_inf_normal": {
+      "valor": 1594.8947368421052,
+      "unidade": "linhas tarifáveis por mês (M06 inferior)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1359.4736842105265,
+        "superior": 1844.6842105263156,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "mes_referencia": "2026-08",
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "vol_mes_linhas_tarif_pap_rc_sup_normal": {
+      "valor": 1594.8947368421052,
+      "unidade": "linhas tarifáveis por mês (M06 superior)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1359.4736842105265,
+        "superior": 1844.6842105263156,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "mes_referencia": "2026-08",
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "n_dias_janela_2s_normal": {
+      "valor": 9.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_6s_normal": {
+      "valor": 29.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_8s_normal": {
+      "valor": 39.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_base_sem_pos_pausa_normal": {
+      "valor": 18.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_franquia_alt2_normal": {
+      "valor": 0.06758028545941124,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.04864406779661017,
+        "superior": 0.07816458519179303,
+        "nivel": null,
+        "descricao": "envelope da operação normal: janelas até 18/09 e IC (bootstrap de dias) da janela 24/08 a 18/09",
+        "ic_variante_primaria": [
+          0.057604817127564684,
+          0.07816458519179303
+        ],
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "receita_mes_alt2_normal": {
+      "valor": 398.7236842105263,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 287.0,
+        "superior": 461.1710526315789,
+        "nivel": null,
+        "descricao": "envelope da operação normal, em R$",
+        "ic_variante_primaria": [
+          339.8684210526316,
+          461.1710526315789
+        ],
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "classe_cr2_alt2_normal": {
+      "valor": -1.0,
+      "unidade": "código: 1 passa (envelope >= 1), 0 inconclusivo, -1 falha (envelope < 1); janela de operação normal (24/08 a 18/09; base da oferta)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "fator_volume_para_cobrir_franquia_alt2_normal": {
+      "valor": 14.797214797214798,
+      "unidade": "vezes o volume corrente",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 12.79351764672316,
+        "superior": 20.557491289198605,
+        "nivel": null,
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "cobertura_franquia_alt3_normal": {
+      "valor": 0.38445361284567353,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.3418351806422837,
+        "superior": 0.4380312444246209,
+        "nivel": null,
+        "descricao": "envelope da operação normal: janelas até 18/09 e IC (bootstrap de dias) da janela 24/08 a 18/09",
+        "ic_variante_primaria": [
+          0.3418351806422837,
+          0.4380312444246209
+        ],
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "receita_mes_alt3_normal": {
+      "valor": 2268.2763157894738,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2016.8275657894737,
+        "superior": 2584.3843421052634,
+        "nivel": null,
+        "descricao": "envelope da operação normal, em R$",
+        "ic_variante_primaria": [
+          2016.8275657894737,
+          2584.3843421052634
+        ],
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "classe_cr2_alt3_normal": {
+      "valor": -1.0,
+      "unidade": "código: 1 passa (envelope >= 1), 0 inconclusivo, -1 falha (envelope < 1); janela de operação normal (24/08 a 18/09; base da oferta)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "fator_volume_para_cobrir_franquia_alt3_normal": {
+      "valor": 2.6010940373225666,
+      "unidade": "vezes o volume corrente",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.2829421707429964,
+        "superior": 2.925386433663943,
+        "nivel": null,
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "receita_mes_alt3_retroativa_normal": {
+      "valor": 2268.2763157894738,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2016.8275657894737,
+        "superior": 2584.384342105263,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "desvio": "operação normal: janela 24/08 a 18/09, sem o incidente operacional de 21 a 25/09 da Royal Canin (decisão em revisoes/orquestrador_decisao_semana_incidente.md); a janela do plano (31/08 a 25/09) é o cenário de estresse (chaves sem sufixo e _estresse)"
+      }
+    },
+    "hp4a_confirmada_normal": {
+      "valor": 0.0,
+      "unidade": "1 = H-P4a confirmada na janela de operação normal",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp4b_confirmada_normal": {
+      "valor": 1.0,
+      "unidade": "1 = H-P4b confirmada na janela de operação normal",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "mesma_classe_cr2_nas_duas_janelas": {
+      "valor": 1.0,
+      "unidade": "1 = a classificação de CR2 (ALT2 e ALT3) é a mesma na janela de operação normal e na de estresse (a do plano)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "n_dias_janela_estresse": {
+      "valor": 18.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "taxa_pedidos_checkout_rc_dia_estresse": {
+      "valor": 44.27777777777778,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 30.11111111111111,
+        "superior": 58.388888888888886,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_linhas_tarif_pap_rc_dia_estresse": {
+      "valor": 52.0,
+      "unidade": "linhas tarifáveis por dia pleno (M06 superior)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 36.94444444444444,
+        "superior": 66.83472222222223,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_linhas_tarif_pap_rc_dia_inf_estresse": {
+      "valor": 52.0,
+      "unidade": "linhas tarifáveis por dia pleno (M06 inferior)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 36.94444444444444,
+        "superior": 66.83472222222223,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_linhas_oper_pap_rc_dia_estresse": {
+      "valor": 51.388888888888886,
+      "unidade": "linhas operacionais por dia pleno (M05)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 36.333333333333336,
+        "superior": 66.38888888888889,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_pedidos_pap_rc_dia_estresse": {
+      "valor": 25.61111111111111,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 17.833333333333332,
+        "superior": 33.166666666666664,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "taxa_pedidos_colmeia_rc_dia_estresse": {
+      "valor": 54.333333333333336,
+      "unidade": "pedidos por dia pleno (referência de ALT5, sem tarifa)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 36.888888888888886,
+        "superior": 72.11250000000001,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 18
+      }
+    },
+    "vol_mes_pedidos_checkout_rc_estresse": {
+      "valor": 929.8333333333334,
+      "unidade": "pedidos por mês",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 632.3333333333334,
+        "superior": 1226.1666666666665,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "mes_referencia": "2026-08"
+      }
+    },
+    "vol_mes_linhas_tarif_pap_rc_inf_estresse": {
+      "valor": 1092.0,
+      "unidade": "linhas tarifáveis por mês (M06 inferior)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 775.8333333333333,
+        "superior": 1403.5291666666667,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "mes_referencia": "2026-08"
+      }
+    },
+    "vol_mes_linhas_tarif_pap_rc_sup_estresse": {
+      "valor": 1092.0,
+      "unidade": "linhas tarifáveis por mês (M06 superior)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 775.8333333333333,
+        "superior": 1403.5291666666667,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "mes_referencia": "2026-08"
+      }
+    },
+    "n_dias_janela_2s_estresse": {
+      "valor": 9.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_6s_estresse": {
+      "valor": 28.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_8s_estresse": {
+      "valor": 38.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_base_sem_pos_pausa_estresse": {
+      "valor": 16.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_franquia_alt2_estresse": {
+      "valor": 0.046271186440677965,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.026892655367231635,
+        "superior": 0.06758028545941124,
+        "nivel": null,
+        "descricao": "envelope de CR2: janelas do plano e IC (bootstrap de dias) da variante primária",
+        "ic_variante_primaria": [
+          0.03287429378531073,
+          0.059471574858757065
+        ]
+      }
+    },
+    "receita_mes_alt2_estresse": {
+      "valor": 273.0,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 158.66666666666666,
+        "superior": 398.7236842105263,
+        "nivel": null,
+        "descricao": "envelope de CR2: janelas do plano e IC (bootstrap de dias) da variante primária",
+        "ic_variante_primaria": [
+          193.95833333333331,
+          350.8822916666667
+        ]
+      }
+    },
+    "classe_cr2_alt2_estresse": {
+      "valor": -1.0,
+      "unidade": "código: 1 passa (envelope >= 1), 0 inconclusivo, -1 falha (envelope < 1)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "fator_volume_para_cobrir_franquia_alt2_estresse": {
+      "valor": 21.611721611721613,
+      "unidade": "vezes o volume corrente",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 14.797214797214798,
+        "superior": 37.18487394957984,
+        "nivel": null,
+        "descricao": "inverso das pontas do envelope"
+      }
+    },
+    "cobertura_franquia_alt3_estresse": {
+      "valor": 0.31418926553672316,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21110734463276837,
+        "superior": 0.4063270127118644,
+        "nivel": null,
+        "descricao": "envelope de CR2: janelas do plano e IC (bootstrap de dias) da variante primária",
+        "ic_variante_primaria": [
+          0.21930194209039544,
+          0.4063270127118644
+        ]
+      }
+    },
+    "receita_mes_alt3_estresse": {
+      "valor": 1853.7166666666667,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1245.5333333333333,
+        "superior": 2397.329375,
+        "nivel": null,
+        "descricao": "envelope de CR2: janelas do plano e IC (bootstrap de dias) da variante primária",
+        "ic_variante_primaria": [
+          1293.881458333333,
+          2397.329375
+        ]
+      }
+    },
+    "classe_cr2_alt3_estresse": {
+      "valor": -1.0,
+      "unidade": "código: 1 passa (envelope >= 1), 0 inconclusivo, -1 falha (envelope < 1)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "fator_volume_para_cobrir_franquia_alt3_estresse": {
+      "valor": 3.1827949255100116,
+      "unidade": "vezes o volume corrente",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.461071916744857,
+        "superior": 4.73692661778087,
+        "nivel": null,
+        "descricao": "inverso das pontas do envelope"
+      }
+    },
+    "receita_mes_alt3_retroativa_estresse": {
+      "valor": 1853.7166666666667,
+      "unidade": "R$ por mês",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1293.881458333333,
+        "superior": 2397.329375,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana"
+      }
+    },
+    "hp4a_confirmada_estresse": {
+      "valor": 0.0,
+      "unidade": "1 = H-P4a confirmada (ALT3 cobre a franquia em todo o envelope)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp4b_confirmada_estresse": {
+      "valor": 1.0,
+      "unidade": "1 = H-P4b confirmada (ALT2 abaixo da franquia em todo o envelope)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    }
+  },
+  "tabelas": {
+    "cobertura_por_mes_normalizado": "cobertura_por_mes_normalizado.csv",
+    "envelope_normal": "envelope_normal.csv",
+    "replicas_bootstrap_dias_normal": "replicas_bootstrap_dias_normal.csv",
+    "envelope_janelas_e_conferencias": "envelope_janelas_e_conferencias.csv",
+    "dias_plenos_por_dia_da_semana": "dias_plenos_por_dia_da_semana.csv",
+    "replicas_bootstrap_dias": "replicas_bootstrap_dias.csv",
+    "serie_diaria_janela_base": "serie_diaria_janela_base.csv",
+    "taxa_corrente_por_tipo_de_onda": "taxa_corrente_por_tipo_de_onda.csv"
+  },
+  "figuras": [
+    "cobertura_franquia_envelope.png",
+    "volume_tarifavel_diario.png"
+  ],
+  "notas": "Verificação por envelope (H-P4a, H-P4b), fora das famílias de Holm. Códigos: classe_cr2_* = 1 (envelope inteiro >= 1: passa), 0 (cruza 1: inconclusivo, vai a ALT4), -1 (envelope inteiro < 1: falha); hp4a_confirmada = 1 se ALT3 passa; hp4b_confirmada = 1 se ALT2 falha. Variante primária: janela base, M06 inferior, mês de referência agosto/2026 (21 dias úteis de referência; sábados observados no mês somados), faixa marginal de PAR14 (retroativa em *_retroativa), conta do robô dentro, sem linha_palete e sem tarefa_aberta_lote. IC: bootstrap de dias estratificado por dia da semana (4.000 réplicas, semente 42 derivada); com 18 dias e 3 a 4 por estrato o IC é só uma componente do envelope (plano). Envelope: ponta inferior = menor entre o limite inferior do IC da primária e as estimativas pontuais das janelas (2, 6 e 8 semanas, base sem pós-pausa, base deslocada) com M06 inferior; ponta superior = o simétrico com M06 superior; a variante só com pedido_multi_endereco, as conferências (carga inteira, agosto) e as sensibilidades de mensalização são reportadas na tabela envelope_janelas_e_conferencias e não entram nas pontas, como no plano. INCIDENTE OPERACIONAL: na semana ISO 39 (21 a 25/09) a Royal Canin teve quase nenhum pedido (os demais depositantes seguem); Marcus confirmou em 03/10/2026 que a queda é real (problemas na operação; decisão em revisoes/orquestrador_decisao_semana_incidente.md). A semana fica nos dados. Duas leituras lado a lado, sem trocar a variante primária do plano: chaves sem sufixo e _estresse = janela do plano (31/08 a 25/09), cenário de estresse (risco para a franquia PR02 e a garantia PR01 em períodos com problema operacional); chaves _normal = janela de quatro semanas terminando em 18/09 (24/08 a 18/09, semanas ISO 35 a 38, mesmo número de semanas), base da oferta em operação normal, com a mesma família de variantes de janela terminando em 18/09 (tabela envelope_normal). Marcus pode trocar a base no G3. As réplicas do bootstrap (tabelas replicas_bootstrap_dias e replicas_bootstrap_dias_normal) seguem para o analista de impacto. Dependência não coberta pelo hash do script: analises/comum.py.",
+  "em": "2026-10-03T21:20:38",
+  "segundos": 0.7
+}

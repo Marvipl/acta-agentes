@@ -1,0 +1,337 @@
+escopo,variante,hora,demanda_media_dia_tipico,demanda_dia_p90_banda,demanda_dia_real_mais_proximo_do_p90,demanda_retomada,dentro_da_janela_observada
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",0,0.0,0.0,0.0,0.0,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",1,0.0,0.0,0.0,0.0,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",2,0.0,0.0,0.0,0.0,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",3,0.0,0.0,0.0,0.0,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",4,0.0,0.0,0.0,0.0,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",5,0.0,0.0,0.0,0.0,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",6,0.0,0.0,0.0,0.0,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",7,1.5875,1.75,0.0,1.8333333333333333,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",8,189.7,304.375,307.0,252.55555555555554,True
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",9,207.75,304.75,196.0,344.1666666666667,True
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",10,139.9625,265.875,315.0,274.22222222222223,True
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",11,127.55,236.125,134.0,247.16666666666666,True
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",12,108.8625,203.0,258.0,173.88888888888889,True
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",13,51.3125,91.0,1.0,94.11111111111111,True
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",14,67.8875,84.0,90.0,119.22222222222223,True
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",15,79.325,104.125,158.0,137.88888888888889,True
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",16,76.325,97.875,82.0,112.27777777777777,True
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",17,49.4875,93.75,87.0,81.94444444444444,True
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",18,0.6625,6.5,0.0,2.888888888888889,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",19,0.0,0.0,0.0,0.0,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",20,0.0,0.0,0.0,0.0,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",21,0.0,0.0,0.0,0.0,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",22,0.0,0.0,0.0,0.0,False
+"armazém, linhas","plano (estresse): período inteiro, pré-colmeia incluído",23,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",0,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",1,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",2,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",3,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",4,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",5,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",6,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",7,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",8,6.5875,22.625,29.0,7.888888888888889,True
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",9,15.5875,44.125,45.0,14.944444444444445,True
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",10,13.6,29.75,38.0,13.38888888888889,True
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",11,17.625,45.5,26.0,18.88888888888889,True
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",12,16.6375,29.375,13.0,21.444444444444443,True
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",13,4.0125,3.125,9.0,8.333333333333334,True
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",14,9.4375,16.5,8.0,8.833333333333334,True
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",15,9.8125,20.125,16.0,12.222222222222221,True
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",16,10.675,21.875,25.0,14.88888888888889,True
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",17,8.675,18.25,21.0,10.055555555555555,True
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",18,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",19,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",20,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",21,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",22,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","plano (estresse): período inteiro, pré-colmeia incluído",23,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,0,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,1,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,2,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,3,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,4,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,5,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,6,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,7,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,8,6.934210526315789,22.625,29.0,8.875,True
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,9,16.407894736842106,44.125,45.0,16.8125,True
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,10,14.276315789473685,29.75,38.0,14.9375,True
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,11,18.55263157894737,45.5,26.0,21.25,True
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,12,17.5,29.375,13.0,24.0625,True
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,13,4.223684210526316,3.125,9.0,9.375,True
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,14,9.93421052631579,16.5,8.0,9.9375,True
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,15,10.302631578947368,20.125,16.0,13.6875,True
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,16,11.236842105263158,21.875,25.0,16.75,True
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,17,9.131578947368421,18.25,21.0,11.3125,True
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,18,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,19,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,20,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,21,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,22,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",sem o incidente,23,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",0,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",1,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",2,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",3,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",4,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",5,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",6,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",7,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",8,2.537037037037037,6.0,14.0,4.454545454545454,True
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",9,8.074074074074074,11.0,0.0,7.636363636363637,True
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",10,9.462962962962964,9.0,0.0,11.636363636363637,True
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",11,12.518518518518519,22.833333333333332,12.0,19.727272727272727,True
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",12,12.37037037037037,21.833333333333332,33.0,22.727272727272727,True
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",13,3.5185185185185186,13.833333333333334,15.0,10.636363636363637,True
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",14,6.166666666666667,9.333333333333334,3.0,7.636363636363637,True
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",15,6.925925925925926,5.0,0.0,12.545454545454545,True
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",16,8.333333333333334,15.0,18.0,13.727272727272727,True
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",17,6.537037037037037,14.5,16.0,10.363636363636363,True
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",18,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",19,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",20,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",21,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",22,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas","BASE: pós-colmeia, sem o incidente",23,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),0,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),1,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),2,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),3,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),4,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),5,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),6,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),7,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),8,2.210526315789474,3.8,0.0,2.5,True
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),9,6.631578947368421,10.2,14.0,0.75,True
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),10,8.473684210526315,11.8,39.0,10.0,True
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),11,11.263157894736842,13.0,27.0,13.5,True
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),12,11.157894736842104,15.0,4.0,22.5,True
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),13,3.263157894736842,2.6,0.0,8.25,True
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),14,5.315789473684211,4.6,13.0,6.0,True
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),15,8.526315789473685,11.6,12.0,14.75,True
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),16,10.263157894736842,14.8,0.0,18.5,True
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),17,8.157894736842104,12.8,0.0,9.0,True
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),18,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),19,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),20,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),21,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),22,0.0,0.0,0.0,0.0,False
+"Royal Canin pedido-a-pedido, linhas",janela normal de ANA-002 (24/08 a 18/09),23,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",0,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",1,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",2,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",3,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",4,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",5,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",6,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",7,0.1875,0.0,0.0,0.8333333333333334,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",8,16.55,34.375,58.0,27.5,True
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",9,5.2125,5.75,0.0,5.888888888888889,True
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",10,4.65,15.625,10.0,8.5,True
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",11,3.375,3.375,0.0,4.444444444444445,True
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",12,3.775,3.375,0.0,4.0,True
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",13,1.3,0.625,0.0,3.7222222222222223,True
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",14,1.3375,8.25,3.0,2.2777777777777777,True
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",15,2.7,6.75,0.0,3.8333333333333335,True
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",16,3.2,4.5,0.0,3.7222222222222223,True
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",17,1.9125,2.75,13.0,2.3333333333333335,True
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",18,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",19,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",20,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",21,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",22,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",23,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,0,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,1,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,2,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,3,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,4,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,5,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,6,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,7,0.19736842105263158,0.0,0.0,0.9375,False
+"Royal Canin checkout, pedidos",sem o incidente,8,17.42105263157895,34.375,58.0,30.9375,True
+"Royal Canin checkout, pedidos",sem o incidente,9,5.4868421052631575,5.75,0.0,6.625,True
+"Royal Canin checkout, pedidos",sem o incidente,10,4.894736842105263,15.625,10.0,9.5625,True
+"Royal Canin checkout, pedidos",sem o incidente,11,3.5526315789473686,3.375,0.0,5.0,True
+"Royal Canin checkout, pedidos",sem o incidente,12,3.973684210526316,3.375,0.0,4.5,True
+"Royal Canin checkout, pedidos",sem o incidente,13,1.368421052631579,0.625,0.0,4.1875,True
+"Royal Canin checkout, pedidos",sem o incidente,14,1.4078947368421053,8.25,3.0,2.5625,True
+"Royal Canin checkout, pedidos",sem o incidente,15,2.8421052631578947,6.75,0.0,4.3125,True
+"Royal Canin checkout, pedidos",sem o incidente,16,3.3684210526315788,4.5,0.0,4.1875,True
+"Royal Canin checkout, pedidos",sem o incidente,17,2.013157894736842,2.75,13.0,2.625,True
+"Royal Canin checkout, pedidos",sem o incidente,18,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,19,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,20,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,21,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,22,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",sem o incidente,23,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",0,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",1,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",2,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",3,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",4,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",5,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",6,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",7,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",8,17.61111111111111,41.666666666666664,43.0,32.18181818181818,True
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",9,5.592592592592593,5.833333333333333,0.0,9.0,True
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",10,5.518518518518518,17.166666666666668,6.0,10.818181818181818,True
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",11,4.462962962962963,4.5,27.0,6.2727272727272725,True
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",12,5.148148148148148,1.3333333333333333,6.0,6.2727272727272725,True
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",13,1.5,0.8333333333333334,0.0,4.0,True
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",14,1.5740740740740742,4.0,0.0,3.727272727272727,True
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",15,3.5185185185185186,5.166666666666667,0.0,5.818181818181818,True
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",16,2.7962962962962963,2.6666666666666665,5.0,5.454545454545454,True
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",17,2.0555555555555554,3.6666666666666665,0.0,2.0,True
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",18,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",19,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",20,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",21,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",22,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos","BASE: pós-colmeia, sem o incidente",23,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),0,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),1,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),2,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),3,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),4,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),5,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),6,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),7,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),8,16.842105263157894,28.4,42.0,25.0,True
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),9,7.052631578947368,11.4,0.0,11.0,True
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),10,6.578947368421052,15.6,34.0,18.0,True
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),11,4.684210526315789,4.8,0.0,3.75,True
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),12,5.473684210526316,6.2,2.0,12.75,True
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),13,3.0526315789473686,1.0,5.0,11.0,True
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),14,0.8947368421052632,2.2,0.0,0.0,True
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),15,2.3157894736842106,2.8,7.0,6.0,True
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),16,3.263157894736842,2.6,0.0,6.5,True
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),17,2.210526315789474,6.0,0.0,2.5,True
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),18,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),19,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),20,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),21,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),22,0.0,0.0,0.0,0.0,False
+"Royal Canin checkout, pedidos",janela normal de ANA-002 (24/08 a 18/09),23,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",0,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",1,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",2,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",3,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",4,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",5,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",6,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",7,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",8,18.224137931034484,17.666666666666668,0.0,16.076923076923077,True
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",9,24.310344827586206,53.0,103.0,44.30769230769231,True
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",10,15.448275862068966,42.833333333333336,17.0,29.846153846153847,True
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",11,10.5,5.166666666666667,0.0,15.76923076923077,True
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",12,10.344827586206897,25.833333333333332,26.0,17.307692307692307,True
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",13,3.4310344827586206,13.0,0.0,7.769230769230769,True
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",14,5.120689655172414,10.166666666666666,17.0,6.076923076923077,True
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",15,6.844827586206897,22.666666666666668,21.0,9.23076923076923,True
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",16,9.413793103448276,12.666666666666666,0.0,16.384615384615383,True
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",17,5.120689655172414,9.833333333333334,25.0,6.3076923076923075,True
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",18,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",19,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",20,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",21,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",22,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","plano (estresse): período inteiro, pré-colmeia incluído",23,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,0,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,1,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,2,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,3,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,4,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,5,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,6,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,7,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,8,19.574074074074073,17.6,7.0,19.0,True
+"Royal Canin colmeia, linhas",sem o incidente,9,26.11111111111111,52.6,19.0,52.36363636363637,True
+"Royal Canin colmeia, linhas",sem o incidente,10,16.59259259259259,43.2,23.0,35.27272727272727,True
+"Royal Canin colmeia, linhas",sem o incidente,11,11.277777777777779,6.2,14.0,18.636363636363637,True
+"Royal Canin colmeia, linhas",sem o incidente,12,11.11111111111111,28.6,66.0,20.454545454545453,True
+"Royal Canin colmeia, linhas",sem o incidente,13,3.685185185185185,15.6,31.0,9.181818181818182,True
+"Royal Canin colmeia, linhas",sem o incidente,14,5.5,12.2,0.0,7.181818181818182,True
+"Royal Canin colmeia, linhas",sem o incidente,15,7.351851851851852,20.6,42.0,10.909090909090908,True
+"Royal Canin colmeia, linhas",sem o incidente,16,10.11111111111111,15.0,1.0,19.363636363636363,True
+"Royal Canin colmeia, linhas",sem o incidente,17,5.5,11.6,12.0,7.454545454545454,True
+"Royal Canin colmeia, linhas",sem o incidente,18,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,19,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,20,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,21,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,22,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",sem o incidente,23,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",0,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",1,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",2,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",3,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",4,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",5,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",6,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",7,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",8,19.574074074074073,17.6,7.0,19.0,True
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",9,26.11111111111111,52.6,19.0,52.36363636363637,True
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",10,16.59259259259259,43.2,23.0,35.27272727272727,True
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",11,11.277777777777779,6.2,14.0,18.636363636363637,True
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",12,11.11111111111111,28.6,66.0,20.454545454545453,True
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",13,3.685185185185185,15.6,31.0,9.181818181818182,True
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",14,5.5,12.2,0.0,7.181818181818182,True
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",15,7.351851851851852,20.6,42.0,10.909090909090908,True
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",16,10.11111111111111,15.0,1.0,19.363636363636363,True
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",17,5.5,11.6,12.0,7.454545454545454,True
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",18,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",19,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",20,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",21,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",22,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas","BASE: pós-colmeia, sem o incidente",23,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),0,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),1,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),2,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),3,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),4,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),5,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),6,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),7,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),8,24.68421052631579,36.6,18.0,18.5,True
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),9,24.263157894736842,28.2,55.0,54.75,True
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),10,21.526315789473685,30.6,41.0,45.0,True
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),11,12.789473684210526,8.6,0.0,19.5,True
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),12,9.157894736842104,7.0,12.0,21.0,True
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),13,4.2631578947368425,3.2,0.0,9.5,True
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),14,4.157894736842105,3.6,0.0,4.0,True
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),15,8.31578947368421,10.8,33.0,13.5,True
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),16,10.736842105263158,13.6,1.0,23.5,True
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),17,3.526315789473684,3.2,1.0,5.25,True
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),18,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),19,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),20,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),21,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),22,0.0,0.0,0.0,0.0,False
+"Royal Canin colmeia, linhas",janela normal de ANA-002 (24/08 a 18/09),23,0.0,0.0,0.0,0.0,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",0,0.0,0.0,0.0,0.0,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",1,0.0,0.0,0.0,0.0,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",2,0.0,0.0,0.0,0.0,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",3,0.0,0.0,0.0,0.0,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",4,0.0,0.0,0.0,0.0,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",5,0.0,0.0,0.0,0.0,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",6,0.0,0.0,0.0,0.0,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",7,0.95,1.125,0.0,1.4444444444444444,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",8,123.675,216.125,232.0,191.44444444444446,True
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",9,104.25,217.75,219.0,188.55555555555554,True
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",10,63.2375,138.375,110.0,119.77777777777777,True
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",11,54.8,108.0,39.0,86.11111111111111,True
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",12,53.275,69.25,49.0,77.27777777777777,True
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",13,25.45,29.375,65.0,49.0,True
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",14,27.45,35.25,84.0,42.611111111111114,True
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",15,32.325,34.0,32.0,43.72222222222222,True
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",16,36.1875,46.75,21.0,49.111111111111114,True
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",17,23.3625,27.75,27.0,33.166666666666664,True
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",18,0.325,0.0,0.0,1.3888888888888888,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",19,0.0,0.0,0.0,0.0,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",20,0.0,0.0,0.0,0.0,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",21,0.0,0.0,0.0,0.0,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",22,0.0,0.0,0.0,0.0,False
+"armazém, pedidos","plano (estresse): período inteiro, pré-colmeia incluído",23,0.0,0.0,0.0,0.0,False

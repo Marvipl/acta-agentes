@@ -1,0 +1,1913 @@
+{
+  "em": "2026-10-03T21:23:10",
+  "modelos": {
+    "IMP-CR2-ALT3-NORMAL": {
+      "descricao": "Cobertura da franquia (PR02) pela receita por transação da Royal Canin na ALT3 (checkout mais pedido-a-pedido), taxa corrente da janela de operação normal (base da oferta), tarifas do deck. Fração: igual a um cobre a franquia.",
+      "unidade": "%",
+      "insight_ref": "INS-001",
+      "provavel": 0.38445361284567353,
+      "p10": 0.3596465235356741,
+      "p50": 0.38707259018161305,
+      "p90": 0.41719015998097164
+    },
+    "IMP-CR2-ALT3-ESTRESSE": {
+      "descricao": "Mesma cobertura na janela do plano, que inclui o incidente operacional da Royal Canin: cenário de estresse, lido como faixa junto com a base normal.",
+      "unidade": "%",
+      "insight_ref": "INS-001",
+      "provavel": 0.31418926553672316,
+      "p10": 0.2667236335779809,
+      "p50": 0.31418909768880543,
+      "p90": 0.36105181147124277
+    },
+    "IMP-CR2-ALT2-NORMAL": {
+      "descricao": "Cobertura da franquia (PR02) pela receita por transação do pedido-a-pedido da Royal Canin na ALT2 (sem checkout), operação normal. Na ALT2 a decisão pede franquia proporcional ao escopo; aqui se mede contra a franquia cheia do deck.",
+      "unidade": "%",
+      "insight_ref": "INS-002",
+      "provavel": 0.06758028545941124,
+      "p10": 0.06210244960156717,
+      "p50": 0.06776897847135,
+      "p90": 0.07349417916084293
+    },
+    "IMP-CR2-ALT2-ESTRESSE": {
+      "descricao": "Mesma cobertura da ALT2 na janela do plano (cenário de estresse).",
+      "unidade": "%",
+      "insight_ref": "INS-002",
+      "provavel": 0.046271186440677965,
+      "p10": 0.03889806574281938,
+      "p50": 0.04617963597646974,
+      "p90": 0.05358164472311826
+    },
+    "IMP-CR2-ALT6-NORMAL": {
+      "descricao": "Cobertura da franquia (PR02) pela receita por transação da ALT6 total (escopo da Royal Canin mais o volume compatível dos outros depositantes, checkout incluído), operação normal. Registra a cobertura da franquia na ALT6, pedida pelo especialista em D3. O volume total fica abaixo das faixas de tarifa reduzida, então valem as tarifas cheias.",
+      "unidade": "%",
+      "insight_ref": "INS-088",
+      "provavel": 1.7011685994647636,
+      "p10": 1.5906036109774848,
+      "p50": 1.7030373207171792,
+      "p90": 1.8157967810510782
+    },
+    "IMP-CR2-ALT6-ESTRESSE": {
+      "descricao": "Mesma cobertura da ALT6 total na janela do plano (os outros depositantes seguem normais; cai só a Royal Canin).",
+      "unidade": "%",
+      "insight_ref": "INS-088",
+      "provavel": 1.6667316384180793,
+      "p10": 1.5196652793358179,
+      "p50": 1.6710443382792555,
+      "p90": 1.8246991389522003
+    },
+    "IMP-CR2-ALT3-PROJ-MES1": {
+      "descricao": "Cobertura da franquia na ALT3 com a taxa projetada para o primeiro mês por ANA-014 (média de quatro semanas, operação normal). Usa a faixa de cenários da projeção, não o intervalo de previsão, que não contém o ponto no checkout normal. Mensalizada pelos dias úteis de referência.",
+      "unidade": "%",
+      "insight_ref": "INS-061",
+      "provavel": 0.38445361284567353,
+      "p10": 0.3729449669096877,
+      "p50": 0.3932368624979132,
+      "p90": 0.41310066168391096
+    },
+    "IMP-CR2-RECEITA-ALT3": {
+      "descricao": "Receita mensal por transação da ALT3 na taxa corrente (operação normal): é a maior franquia que o volume corrente cobre nas tarifas do deck (teto da franquia recalibrada na ALT4).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-001",
+      "provavel": 2268.2763157894738,
+      "p10": 2121.1133484186257,
+      "p50": 2285.593477614938,
+      "p90": 2462.055572590535
+    },
+    "IMP-CR2-RECEITA-ALT2": {
+      "descricao": "Receita mensal por transação da ALT2 na taxa corrente (operação normal): teto de uma franquia proporcional ao escopo sem checkout.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-002",
+      "provavel": 398.7236842105263,
+      "p10": 366.80429519127364,
+      "p50": 399.07254368488196,
+      "p90": 434.37254388359787
+    },
+    "IMP-CR2-RECEITA-ALT6": {
+      "descricao": "Receita mensal por transação da ALT6 total na taxa corrente (operação normal): teto da franquia cobrível na ALT6.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-088",
+      "provavel": 10036.894736842105,
+      "p10": 9393.152933145799,
+      "p50": 10059.919920152051,
+      "p90": 10702.800170259807
+    },
+    "IMP-CR2-ALT4-ALT3": {
+      "descricao": "Cobertura da franquia recalibrada da ALT4 sobre o escopo da ALT3 pela receita por transação nas tarifas do deck, operação normal. A franquia recalibrada é o custo de servir da frota necessária dia a dia (frota × PR13). Fração: igual a um cobre a franquia.",
+      "unidade": "%",
+      "insight_ref": "INS-054",
+      "provavel": 1.134138157894737,
+      "p10": 1.0604115965012575,
+      "p50": 1.1422537975552145,
+      "p90": 1.2334142453392307
+    },
+    "IMP-CR2-ALT4-ALT6": {
+      "descricao": "Cobertura da franquia recalibrada (custo de servir da frota agrupada dia a dia × PR13) pela receita por transação da ALT6 total nas tarifas do deck, operação normal.",
+      "unidade": "%",
+      "insight_ref": "INS-058",
+      "provavel": 2.007378947368421,
+      "p10": 1.879302548970905,
+      "p50": 2.011119240610392,
+      "p90": 2.140685694169227
+    },
+    "IMP-CR2-VOLUME-CHECKOUT-ALT3": {
+      "descricao": "Pedidos de checkout por mês que cobririam a franquia na ALT3, mantido o volume corrente de linhas do pedido-a-pedido e as tarifas do deck. Ponto de equilíbrio de volume, para comparar com o volume corrente e com o volume implícito do deck (ANA-011).",
+      "unidade": "pedidos/mês",
+      "insight_ref": "INS-080",
+      "provavel": 3236.044891640867,
+      "p10": 3216.0034653626203,
+      "p50": 3235.660813230393,
+      "p90": 3254.91288217811
+    },
+    "IMP-ALT3-DEP-CHECKOUT": {
+      "descricao": "Parte da receita por transação da ALT3 que vem do checkout conferido no robô, ainda não desenvolvido (Marcus, 2026-10-03). Fração da receita.",
+      "unidade": "%",
+      "insight_ref": "INS-001",
+      "provavel": 0.8242173224509683,
+      "p10": 0.8073555564140547,
+      "p50": 0.8249272694663117,
+      "p90": 0.8416117129890414
+    },
+    "IMP-ALT6-DEP-CHECKOUT": {
+      "descricao": "Parte da receita por transação da ALT6 total que vem do checkout conferido, ainda não desenvolvido: sem ele a receita da ALT6 cai a essa fração complementar. Fração da receita.",
+      "unidade": "%",
+      "insight_ref": "INS-032",
+      "provavel": 0.7862570201519655,
+      "p10": 0.7651460864052515,
+      "p50": 0.7855890312707787,
+      "p90": 0.8048314980999407
+    },
+    "IMP-CR1-ALT2": {
+      "descricao": "Economia mensal da Social em fração do custo atual de mão de obra no escopo = (custo atual - mão de obra residual - tarifas) ÷ custo atual. Teto de intervalo conservador do G2, volume na taxa corrente (operação normal), custo por operador PR10; residual pela leitura colaborativa (horas do WMS × ritmo manual medido ÷ PR05; o operador permanece). ALT2 (pedido-a-pedido da Royal Canin), sem franquia (a franquia do deck pressupõe o checkout), meta declarada da oferta.",
+      "unidade": "%",
+      "insight_ref": "INS-006",
+      "provavel": -0.13008672488479472,
+      "p10": -0.13380840775537767,
+      "p50": -0.0677701021453048,
+      "p90": 0.000633766912144435
+    },
+    "IMP-CR1-ALT2-ALTO": {
+      "descricao": "Economia mensal da Social em fração do custo atual de mão de obra no escopo = (custo atual - mão de obra residual - tarifas) ÷ custo atual. Teto de intervalo no limite superior da grade (horas manuais maiores, ritmo manual menor), volume na taxa corrente (operação normal), custo por operador PR10; residual pela leitura colaborativa (horas do WMS × ritmo manual medido ÷ PR05; o operador permanece). ALT2 sem franquia. Sensibilidade favorável ao robô; o ritmo manual neste teto fica perto da linha de base do deck (PR06).",
+      "unidade": "%",
+      "insight_ref": "INS-006",
+      "provavel": 0.3030851573146472,
+      "p10": 0.2895953599540237,
+      "p50": 0.3280009722242696,
+      "p90": 0.36731112796264526
+    },
+    "IMP-CR1-ALT2-AUT": {
+      "descricao": "Limite superior da economia na ALT2 (sem franquia, teto conservador) se o robô eliminasse toda a mão de obra do pedido-a-pedido (leitura autônoma de M23): custo atual - tarifas, sobre o custo atual.",
+      "unidade": "%",
+      "insight_ref": "INS-006",
+      "provavel": 0.6364466633325756,
+      "p10": 0.6373288623643133,
+      "p50": 0.6852508743938412,
+      "p90": 0.7344589080569418
+    },
+    "IMP-CR1-ALT3-DECK-INT": {
+      "descricao": "Economia mensal da Social em fração do custo atual de mão de obra no escopo = (custo atual - mão de obra residual - tarifas) ÷ custo atual. Teto de intervalo conservador do G2, volume na taxa corrente (operação normal), custo por operador PR10; residual pela leitura colaborativa (horas do WMS × ritmo manual medido ÷ PR05; o operador permanece). ALT3 nas condições do deck (tarifas cheias, franquia PR02 como piso do que a Social paga), com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados.",
+      "unidade": "%",
+      "insight_ref": "INS-089",
+      "provavel": 0.3784676848348794,
+      "p10": 0.36950451326299855,
+      "p50": 0.37525470078622547,
+      "p90": 0.3812207391253593
+    },
+    "IMP-CR1-ALT3-DECK-RAT": {
+      "descricao": "Economia mensal da Social em fração do custo atual de mão de obra no escopo = (custo atual - mão de obra residual - tarifas) ÷ custo atual. Teto de intervalo conservador do G2, volume na taxa corrente (operação normal), custo por operador PR10; residual pela leitura colaborativa (horas do WMS × ritmo manual medido ÷ PR05; o operador permanece). ALT3 nas condições do deck (tarifas cheias, franquia PR02 como piso do que a Social paga), com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15).",
+      "unidade": "%",
+      "insight_ref": "INS-089",
+      "provavel": -0.8443173382472664,
+      "p10": -0.8831402504890478,
+      "p50": -0.7664288947084823,
+      "p90": -0.6598599334601859
+    },
+    "IMP-CR1-ALT3-DECK-SEM": {
+      "descricao": "Economia mensal da Social em fração do custo atual de mão de obra no escopo = (custo atual - mão de obra residual - tarifas) ÷ custo atual. Teto de intervalo conservador do G2, volume na taxa corrente (operação normal), custo por operador PR10; residual pela leitura colaborativa (horas do WMS × ritmo manual medido ÷ PR05; o operador permanece). ALT3 nas condições do deck (tarifas cheias, franquia PR02 como piso do que a Social paga), sem a conferência (só a separação medida no WMS).",
+      "unidade": "%",
+      "insight_ref": "INS-089",
+      "provavel": -3.7384382162645267,
+      "p10": -3.5124581573257316,
+      "p50": -3.186550557127409,
+      "p90": -2.7984179830812965
+    },
+    "IMP-CR1-ALT4-ALT3-INT": {
+      "descricao": "Economia mensal da Social em fração do custo atual de mão de obra no escopo = (custo atual - mão de obra residual - tarifas) ÷ custo atual. Teto de intervalo conservador do G2, volume na taxa corrente (operação normal), custo por operador PR10; residual pela leitura colaborativa (horas do WMS × ritmo manual medido ÷ PR05; o operador permanece). ALT4 sobre o escopo da ALT3: tarifas do deck e franquia recalibrada para o custo de servir da frota necessária (frota dia a dia pós-colmeia × PR13), com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados.",
+      "unidade": "%",
+      "insight_ref": "INS-089",
+      "provavel": 0.6940033947945113,
+      "p10": 0.6653763174327753,
+      "p50": 0.682054681809503,
+      "p90": 0.6981541406904797
+    },
+    "IMP-CR1-ALT4-ALT3-RAT": {
+      "descricao": "Economia mensal da Social em fração do custo atual de mão de obra no escopo = (custo atual - mão de obra residual - tarifas) ÷ custo atual. Teto de intervalo conservador do G2, volume na taxa corrente (operação normal), custo por operador PR10; residual pela leitura colaborativa (horas do WMS × ritmo manual medido ÷ PR05; o operador permanece). ALT4 sobre o escopo da ALT3: tarifas do deck e franquia recalibrada para o custo de servir da frota necessária (frota dia a dia pós-colmeia × PR13), com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15).",
+      "unidade": "%",
+      "insight_ref": "INS-089",
+      "provavel": 0.09199436512748982,
+      "p10": 0.05804609022653662,
+      "p50": 0.10116767838907911,
+      "p90": 0.1469891170338477
+    },
+    "IMP-CR1-ALT4-ALT3-SEM": {
+      "descricao": "Economia mensal da Social em fração do custo atual de mão de obra no escopo = (custo atual - mão de obra residual - tarifas) ÷ custo atual. Teto de intervalo conservador do G2, volume na taxa corrente (operação normal), custo por operador PR10; residual pela leitura colaborativa (horas do WMS × ritmo manual medido ÷ PR05; o operador permanece). ALT4 sobre o escopo da ALT3: tarifas do deck e franquia recalibrada para o custo de servir da frota necessária (frota dia a dia pós-colmeia × PR13), sem a conferência (só a separação medida no WMS).",
+      "unidade": "%",
+      "insight_ref": "INS-083",
+      "provavel": -1.332856993554218,
+      "p10": -1.287161633200194,
+      "p50": -1.122430776220089,
+      "p90": -0.9486804022846221
+    },
+    "IMP-CR1-ALT4-ALT3-SEM-ALTO": {
+      "descricao": "Economia mensal da Social em fração do custo atual de mão de obra no escopo = (custo atual - mão de obra residual - tarifas) ÷ custo atual. Teto de intervalo no limite superior da grade, volume na taxa corrente (operação normal), custo por operador PR10; residual pela leitura colaborativa (horas do WMS × ritmo manual medido ÷ PR05; o operador permanece). ALT4 sobre o escopo da ALT3 sem a conferência. Sensibilidade favorável ao robô.",
+      "unidade": "%",
+      "insight_ref": "INS-083",
+      "provavel": -0.5347771585722976,
+      "p10": -0.5405963498239245,
+      "p50": -0.44799301884889003,
+      "p90": -0.35323375304496046
+    },
+    "IMP-CR1-ALT3-AUT-SEM": {
+      "descricao": "Limite superior da economia na ALT3 sem a conferência (tarifas do deck, franquia no custo de servir, teto conservador) se o robô eliminasse toda a mão de obra do pedido-a-pedido e mantivesse a separação do checkout (leitura autônoma).",
+      "unidade": "%",
+      "insight_ref": "INS-083",
+      "provavel": -0.7760018931862471,
+      "p10": -0.7511656875517985,
+      "p50": -0.5795542100009332,
+      "p90": -0.3930677987806521
+    },
+    "IMP-CR1-ALT6-DECK-INT": {
+      "descricao": "Economia mensal da Social em fração do custo atual de mão de obra no escopo = (custo atual - mão de obra residual - tarifas) ÷ custo atual. Teto de intervalo conservador do G2, volume na taxa corrente (operação normal), custo por operador PR10; residual pela leitura colaborativa (horas do WMS × ritmo manual medido ÷ PR05; o operador permanece). ALT6 total, tarifas do deck. Escopo de mão de obra = separação do armazém inteiro, que é o TETO do escopo compatível: o resultado é limite superior da economia. Com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados.",
+      "unidade": "%",
+      "insight_ref": "INS-088",
+      "provavel": 0.10905181227171486,
+      "p10": 0.08107854174799597,
+      "p50": 0.12188077330945146,
+      "p90": 0.16275552912687508
+    },
+    "IMP-CR1-ALT6-DECK-SEM": {
+      "descricao": "Economia mensal da Social em fração do custo atual de mão de obra no escopo = (custo atual - mão de obra residual - tarifas) ÷ custo atual. Teto de intervalo conservador do G2, volume na taxa corrente (operação normal), custo por operador PR10; residual pela leitura colaborativa (horas do WMS × ritmo manual medido ÷ PR05; o operador permanece). ALT6 total, tarifas do deck. Escopo de mão de obra = separação do armazém inteiro, que é o TETO do escopo compatível: o resultado é limite superior da economia. Sem a conferência (só a separação medida no WMS).",
+      "unidade": "%",
+      "insight_ref": "INS-088",
+      "provavel": -0.8741473699175127,
+      "p10": -0.8883104958478962,
+      "p50": -0.7385615206649334,
+      "p90": -0.5830927218419104
+    },
+    "IMP-CR1-ALT6-DECK-SEM-ALTO": {
+      "descricao": "Economia mensal da Social em fração do custo atual de mão de obra no escopo = (custo atual - mão de obra residual - tarifas) ÷ custo atual. Teto de intervalo no limite superior da grade, volume na taxa corrente (operação normal), custo por operador PR10; residual pela leitura colaborativa (horas do WMS × ritmo manual medido ÷ PR05; o operador permanece). ALT6 total sem a conferência, tarifas do deck, escopo de mão de obra = armazém inteiro (limite superior). Sensibilidade favorável ao robô.",
+      "unidade": "%",
+      "insight_ref": "INS-088",
+      "provavel": -0.2236593252704041,
+      "p10": -0.24077954171283739,
+      "p50": -0.14393514538619018,
+      "p90": -0.03842558942565665
+    },
+    "IMP-CR1-RS-ALT3-DECK-INT": {
+      "descricao": "Economia mensal da Social em reais na ALT3 nas condições do deck (franquia como piso), com PR11 integral, teto conservador, volume normal.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 4356.0522988000375,
+      "p10": 4349.728893417611,
+      "p50": 4412.493889806573,
+      "p90": 4490.291361691602
+    },
+    "IMP-CR1-RS-ALT4-ALT3-INT": {
+      "descricao": "Economia mensal da Social em reais na ALT4 sobre o escopo da ALT3 (tarifas do deck, franquia no custo de servir), com PR11 integral, teto conservador.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 7987.775983010564,
+      "p10": 7842.586017341133,
+      "p50": 8029.054805242612,
+      "p90": 8207.124764081038
+    },
+    "IMP-CR1-RS-ALT4-ALT3-RAT": {
+      "descricao": "Economia mensal da Social em reais na ALT4 sobre o escopo da ALT3 com PR11 rateado pela parte da Royal Canin no checkout do armazém, teto conservador.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": 356.8236020581853,
+      "p10": 226.4769630283238,
+      "p50": 416.99472843208287,
+      "p90": 641.3359583431011
+    },
+    "IMP-CR1-RS-ALT4-ALT3-SEM": {
+      "descricao": "Economia mensal da Social em reais na ALT4 sobre o escopo da ALT3 sem a conferência, teto conservador. Valor negativo: a Social paga mais em tarifa do que economiza em separação.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-083",
+      "provavel": -2012.224016989434,
+      "p10": -2154.6188033558874,
+      "p50": -1967.0432548774756,
+      "p90": -1794.2496871505048
+    },
+    "IMP-PR11-ATRIBUIVEL-RC": {
+      "descricao": "Custo mensal da conferência (PR11 × PR10) atribuível à Royal Canin pelo rateio do checkout do armazém (pedidos de checkout da Royal Canin sobre o total de pedidos de checkout da Royal Canin e dos outros depositantes). A conferência não aparece no WMS (INS-012); o rateio é sensibilidade, a confirmar com a Social (E15).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": 2369.0476190476193,
+      "p10": 2165.6240771886282,
+      "p50": 2391.615582901434,
+      "p90": 2643.6945182233585
+    },
+    "IMP-CR6-ALT2-SEM-PISO": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT2, só pedido-a-pedido, sem franquia (a franquia do deck é maior que a receita do escopo e cobrá-la na ALT2 contradiz CR2). Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-085",
+      "provavel": -800.6381578947369,
+      "p10": -816.807076396655,
+      "p50": -800.3250944170918,
+      "p90": -782.9968202119015
+    },
+    "IMP-CR6-ALT2-HW": {
+      "descricao": "Hardware máximo pagável por robô no prazo do contrato (PR14) na ALT2 sem franquia: margem mensal × prazo, zero se a margem é negativa. Rótulo: máximo para hardware, implantação, mapeamento e integração SOMADOS; sem custo de implementação deduzido (ver os modelos SO-HARDWARE).",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-085",
+      "provavel": 0.0,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 0.0
+    },
+    "IMP-CR6-ALT3-COM-PISO": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT3 com a franquia do deck como piso (a receita por robô é a franquia quando maior), frota necessária dia a dia. A margem vem da franquia, que a Social não cobre com o volume (CR2 falha). Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-086",
+      "provavel": 1950.0,
+      "p10": 1950.0,
+      "p50": 1950.0,
+      "p90": 1950.0
+    },
+    "IMP-CR6-ALT3-HW-COM-PISO": {
+      "descricao": "Hardware máximo pagável por robô no prazo do contrato na ALT3 com a franquia do deck e a frota necessária. Rótulo: máximo para hardware, implantação, mapeamento e integração SOMADOS; sem custo de implementação deduzido (ver os modelos SO-HARDWARE).",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-086",
+      "provavel": 46800.0,
+      "p10": 46800.0,
+      "p50": 46800.0,
+      "p90": 46800.0
+    },
+    "IMP-CR6-ALT3-SEM-PISO": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT3 (e ALT4 com franquia no custo de servir) sem depender da franquia do deck: só receita por transação, frota necessária dia a dia. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-087",
+      "provavel": 134.13815789473688,
+      "p10": 61.13061089848636,
+      "p50": 141.7033089066109,
+      "p90": 230.61730751852198
+    },
+    "IMP-CR6-ALT3-HW-SEM-PISO": {
+      "descricao": "Hardware máximo pagável por robô no prazo do contrato na ALT3 sem depender da franquia, com a frota necessária dia a dia. Rótulo: máximo para hardware, implantação, mapeamento e integração SOMADOS; sem custo de implementação deduzido (ver os modelos SO-HARDWARE).",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-087",
+      "provavel": 3219.315789473685,
+      "p10": 1482.1820551802964,
+      "p50": 3411.3790793309136,
+      "p90": 5586.639679838027
+    },
+    "IMP-CR6-ALT3-DECK5-COM-PISO": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT3 com a franquia do deck e a frota do slide 14 na ponta de mais robôs (leitura desfavorável de PR09).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-086",
+      "provavel": 180.0,
+      "p10": 180.0,
+      "p50": 180.0,
+      "p90": 180.0
+    },
+    "IMP-CR6-ALT3-DECK5-SEM-PISO": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT3 sem a franquia, com a frota do slide 14 na ponta de mais robôs: a receita por transação não paga o custo de servir (H-P16).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-085",
+      "provavel": -546.3447368421052,
+      "p10": -574.9184199651721,
+      "p50": -542.8178147079318,
+      "p90": -507.06238717197715
+    },
+    "IMP-CR6-ALT3-DECK5-HW-COM-PISO": {
+      "descricao": "Hardware máximo pagável por robô no prazo do contrato na ALT3 com franquia e a frota do slide 14 na ponta de mais robôs. Rótulo: máximo para hardware, implantação, mapeamento e integração SOMADOS; sem custo de implementação deduzido (ver os modelos SO-HARDWARE).",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-086",
+      "provavel": 4320.0,
+      "p10": 4320.0,
+      "p50": 4320.0,
+      "p90": 4320.0
+    },
+    "IMP-CR6-ALT6-TOTAL": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT6 total (escopo da Royal Canin mais outros depositantes compatíveis), frota agrupada dia a dia. A receita por transação supera a franquia, então a margem não depende dela. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-088",
+      "provavel": 1007.378947368421,
+      "p10": 877.1313080784624,
+      "p50": 1009.2632318430522,
+      "p90": 1141.8549409984612
+    },
+    "IMP-CR6-ALT6-HW": {
+      "descricao": "Hardware máximo pagável por robô no prazo do contrato na ALT6 total. Rótulo: máximo para hardware, implantação, mapeamento e integração SOMADOS; sem custo de implementação deduzido (ver os modelos SO-HARDWARE).",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-088",
+      "provavel": 24177.094736842104,
+      "p10": 21008.11583749042,
+      "p50": 24172.0734337822,
+      "p90": 27365.02939318346
+    },
+    "IMP-CR4-SOBRA-FROTA-DECK-INF": {
+      "descricao": "Custo mensal de servir, a cargo da Acta, dos robôs da ponta inferior da frota do slide 14 acima da frota necessária dia a dia da ALT3 (PR13 por robô). Sobra condicionada às premissas de capacidade, não ociosidade medida.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-055",
+      "provavel": 2000.0,
+      "p10": 2000.0,
+      "p50": 2000.0,
+      "p90": 2000.0
+    },
+    "IMP-CR4-SOBRA-FROTA-DECK-SUP": {
+      "descricao": "Idem para a ponta superior da frota do slide 14.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-055",
+      "provavel": 3000.0,
+      "p10": 3000.0,
+      "p50": 3000.0,
+      "p90": 3000.0
+    },
+    "IMP-ALT4-PMIN-ALT3": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Piso de CR6 na ALT3: menor valor mensal com margem de contribuição por robô não negativa na frota necessária dia a dia. É também a menor franquia que cobre o custo de servir. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-054",
+      "provavel": 2000.0,
+      "p10": 2000.0,
+      "p50": 2000.0,
+      "p90": 2000.0
+    },
+    "IMP-ALT4-PMIN-ALT6": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Piso de CR6 na ALT6: custo de servir da frota agrupada dia a dia. É também a menor franquia que cobre o custo de servir na ALT6. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-058",
+      "provavel": 5000.0,
+      "p10": 5000.0,
+      "p50": 5000.0,
+      "p90": 5000.0
+    },
+    "IMP-ALT4-KMIN-ALT3": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Menor multiplicador sobre as tarifas do deck (checkout e linha, mantida a proporção) com margem não negativa na ALT3, sem franquia. Abaixo de um as tarifas do deck já sobram; acima de um é preciso subir a tarifa. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "x",
+      "insight_ref": "INS-054",
+      "provavel": 0.8817267923127345,
+      "p10": 0.810585595530156,
+      "p50": 0.8750515916309984,
+      "p90": 0.9429832211753029
+    },
+    "IMP-ALT4-KMIN-ALT6": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Menor multiplicador sobre as tarifas do deck com margem não negativa na ALT6 total, sem franquia. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "x",
+      "insight_ref": "INS-058",
+      "provavel": 0.49816204424727717,
+      "p10": 0.4661569603604085,
+      "p50": 0.4974023777386968,
+      "p90": 0.532497701844935
+    },
+    "IMP-ALT4-PMAX-ALT3-INT": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Teto de CR1 na ALT3: maior valor mensal que a Social paga e ainda economiza o mínimo da garantia (PR01) no teto conservador, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 7954.110826200852,
+      "p10": 7904.950554897433,
+      "p50": 7959.663226696652,
+      "p90": 8028.672916526317
+    },
+    "IMP-ALT4-KMAX-ALT3-INT": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Maior multiplicador sobre as tarifas do deck que mantém a economia mínima de PR01 para a Social na ALT3, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados.",
+      "unidade": "x",
+      "insight_ref": "INS-089",
+      "provavel": 3.506676312243036,
+      "p10": 3.2298437337886416,
+      "p50": 3.4869977065376583,
+      "p90": 3.749195708792033
+    },
+    "IMP-ALT4-FOLGA-ALT3-INT": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Folga da janela de preço na ALT3, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados: teto de CR1 menos piso de CR6. Positiva: existe preço (franquia ou tarifa) com CR1, CR2 e CR6 juntos; negativa: não existe nesse cenário. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 5954.110826200852,
+      "p10": 5904.836002934571,
+      "p50": 5959.114127485887,
+      "p90": 6029.427815714614
+    },
+    "IMP-ALT4-PMAX-ALT3-RAT": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Teto de CR1 na ALT3: maior valor mensal que a Social paga e ainda economiza o mínimo da garantia (PR01) no teto conservador, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15). Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": 1849.3489214389474,
+      "p10": 1688.768947805353,
+      "p50": 1879.6230671069911,
+      "p90": 2094.1270789897203
+    },
+    "IMP-ALT4-KMAX-ALT3-RAT": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Maior multiplicador sobre as tarifas do deck que mantém a economia mínima de PR01 para a Social na ALT3, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15).",
+      "unidade": "x",
+      "insight_ref": "INS-012",
+      "provavel": 0.8153102461836892,
+      "p10": 0.7517078348887603,
+      "p50": 0.8196272249070713,
+      "p90": 0.8967445366159842
+    },
+    "IMP-ALT4-FOLGA-ALT3-RAT": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Folga da janela de preço na ALT3, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15): teto de CR1 menos piso de CR6. Positiva: existe preço (franquia ou tarifa) com CR1, CR2 e CR6 juntos; negativa: não existe nesse cenário. Rótulo: inconclusiva (fio da navalha), porque a faixa cruza zero; falha no provável. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": -150.6510785610526,
+      "p10": -316.9929989338805,
+      "p50": -125.11215513510501,
+      "p90": 86.91918895422205
+    },
+    "IMP-ALT4-PMAX-ALT6-INT": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Teto de CR1 na ALT6: maior valor mensal que a Social paga e ainda economiza o mínimo da garantia (PR01) no teto conservador, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados. Escopo de mão de obra = armazém inteiro (teto), então o preço máximo é limite superior. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-088",
+      "provavel": 8303.265275818767,
+      "p10": 8012.12831458902,
+      "p50": 8447.967948126796,
+      "p90": 8994.385696811474
+    },
+    "IMP-ALT4-KMAX-ALT6-INT": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Maior multiplicador sobre as tarifas do deck que mantém a economia mínima de PR01 para a Social na ALT6, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados. Escopo de mão de obra = armazém inteiro (teto), então o preço máximo é limite superior.",
+      "unidade": "x",
+      "insight_ref": "INS-088",
+      "provavel": 0.8272743207458617,
+      "p10": 0.7748432334437002,
+      "p50": 0.8447839384460079,
+      "p90": 0.9207801662582322
+    },
+    "IMP-ALT4-FOLGA-ALT6-INT": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Folga da janela de preço na ALT6, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados: teto de CR1 menos piso de CR6. Positiva: existe preço (franquia ou tarifa) com CR1, CR2 e CR6 juntos; negativa: não existe nesse cenário. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-088",
+      "provavel": 3303.265275818767,
+      "p10": 3022.892472177528,
+      "p50": 3449.940335911372,
+      "p90": 3994.310779290339
+    },
+    "IMP-ALT4-HW-ALT6-PMAX": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Hardware máximo pagável por robô na ALT6 se o preço fosse o teto de CR1 (economia mínima para a Social, PR01), PR11 integral: melhor caso da Acta dentro da janela. Rótulo: máximo para hardware, implantação, mapeamento e integração SOMADOS; sem custo de implementação deduzido (ver os modelos SO-HARDWARE).",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-088",
+      "provavel": 15855.673323930081,
+      "p10": 14528.001551269079,
+      "p50": 16558.119654993774,
+      "p90": 19199.402537897753
+    },
+    "IMP-CR8-FTE-ALT3-SEM-AUT": {
+      "descricao": "FTE liberados no escopo na taxa corrente, teto conservador de intervalo (horas ativas do WMS ÷ PR12 já em FTE). Leitura autônoma de M23 (a registrada no plano): todo o trabalho de separação do escopo é liberado; é o limite superior. ALT3 sem a conferência (PR11), pela separação do checkout e do pedido-a-pedido. Compare com uma vaga inteira.",
+      "unidade": "FTE",
+      "insight_ref": "INS-011",
+      "provavel": 0.3019414725991878,
+      "p10": 0.31986808535331124,
+      "p50": 0.35112770422358264,
+      "p90": 0.3954041042187088
+    },
+    "IMP-CR8-FTE-ALT3-SEM-COL": {
+      "descricao": "FTE liberados no escopo na taxa corrente, teto conservador de intervalo (horas ativas do WMS ÷ PR12 já em FTE). Leitura colaborativa (variante): o operador permanece e o robô libera só a diferença de ritmo (ritmo manual medido ÷ PR05); no checkout não há ganho de separação. ALT3 sem PR11.",
+      "unidade": "FTE",
+      "insight_ref": "INS-011",
+      "provavel": 0.05121045976000797,
+      "p10": 0.049795976890487786,
+      "p50": 0.06238346600432637,
+      "p90": 0.0784310414532083
+    },
+    "IMP-CR8-FTE-ALT3-RAT-AUT": {
+      "descricao": "FTE liberados no escopo na taxa corrente, teto conservador de intervalo (horas ativas do WMS ÷ PR12 já em FTE). Leitura autônoma de M23 (a registrada no plano): todo o trabalho de separação do escopo é liberado; é o limite superior. ALT3 com PR11 rateado pela parte da Royal Canin no checkout do armazém.",
+      "unidade": "FTE",
+      "insight_ref": "INS-012",
+      "provavel": 0.7757509964087117,
+      "p10": 0.7757630876158038,
+      "p50": 0.8317164115893458,
+      "p90": 0.8946976127011791
+    },
+    "IMP-CR8-FTE-ALT3-RAT-COL": {
+      "descricao": "FTE liberados no escopo na taxa corrente, teto conservador de intervalo (horas ativas do WMS ÷ PR12 já em FTE). Leitura colaborativa (variante): o operador permanece e o robô libera só a diferença de ritmo (ritmo manual medido ÷ PR05); no checkout não há ganho de separação. ALT3 com PR11 rateado.",
+      "unidade": "FTE",
+      "insight_ref": "INS-012",
+      "provavel": 0.5250199835695318,
+      "p10": 0.49302475860711076,
+      "p50": 0.5408894499872015,
+      "p90": 0.5947992203216811
+    },
+    "IMP-CR8-FTE-ALT3-INT-COL": {
+      "descricao": "FTE liberados no escopo na taxa corrente, teto conservador de intervalo (horas ativas do WMS ÷ PR12 já em FTE). Leitura colaborativa (variante): o operador permanece e o robô libera só a diferença de ritmo (ritmo manual medido ÷ PR05); no checkout não há ganho de separação. ALT3 com os postos de PR11 integralmente atribuídos e desmobilizados.",
+      "unidade": "FTE",
+      "insight_ref": "INS-089",
+      "provavel": 2.051210459760008,
+      "p10": 2.049837787169605,
+      "p50": 2.06226779650272,
+      "p90": 2.0787126097390165
+    },
+    "IMP-CR8-FTE-ALT6-SEM-AUT": {
+      "descricao": "FTE liberados no escopo na taxa corrente, teto conservador de intervalo (horas ativas do WMS ÷ PR12 já em FTE). Leitura autônoma de M23 (a registrada no plano): todo o trabalho de separação do escopo é liberado; é o limite superior. ALT6 total sem a conferência; escopo = separação do armazém inteiro, que é o teto do escopo compatível.",
+      "unidade": "FTE",
+      "insight_ref": "INS-088",
+      "provavel": 1.8123452579455306,
+      "p10": 1.8072367447834319,
+      "p50": 2.027041162618577,
+      "p90": 2.3903462788811605
+    },
+    "IMP-CR8-FTE-ALT6-SEM-COL": {
+      "descricao": "FTE liberados no escopo na taxa corrente, teto conservador de intervalo (horas ativas do WMS ÷ PR12 já em FTE). Leitura colaborativa (variante): o operador permanece e o robô libera só a diferença de ritmo (ritmo manual medido ÷ PR05); no checkout não há ganho de separação. ALT6 total sem PR11; escopo = armazém inteiro (limite superior).",
+      "unidade": "FTE",
+      "insight_ref": "INS-088",
+      "provavel": 0.42312210675285933,
+      "p10": 0.4009562175775115,
+      "p50": 0.5033882907754399,
+      "p90": 0.6293020981794123
+    },
+    "IMP-CR8-FTE-ALT6-INT-COL": {
+      "descricao": "FTE liberados no escopo na taxa corrente, teto conservador de intervalo (horas ativas do WMS ÷ PR12 já em FTE). Leitura colaborativa (variante): o operador permanece e o robô libera só a diferença de ritmo (ritmo manual medido ÷ PR05); no checkout não há ganho de separação. ALT6 total com PR11 integral; escopo = armazém inteiro (limite superior).",
+      "unidade": "FTE",
+      "insight_ref": "INS-088",
+      "provavel": 2.423122106752859,
+      "p10": 2.4000541131984092,
+      "p50": 2.502510990633439,
+      "p90": 2.6310675241483423
+    },
+    "IMP-CR8-CRESCIMENTO-ALT3-AUT": {
+      "descricao": "Quantas vezes o volume corrente da ALT3 (sem PR11) teria de crescer para a separação liberar uma vaga inteira, leitura autônoma (limite superior). Ponto de equilíbrio de volume para o argumento de contratações evitadas; o dado não sustenta crescimento (previsão validada só para o primeiro mês).",
+      "unidade": "x",
+      "insight_ref": "INS-011",
+      "provavel": 3.311900122204974,
+      "p10": 2.5320350575445647,
+      "p50": 2.84999979732755,
+      "p90": 3.129189873539823
+    },
+    "IMP-CR8-CRESCIMENTO-ALT3-COL": {
+      "descricao": "Mesmo ponto de equilíbrio de volume na ALT3 sem PR11, leitura colaborativa (variante).",
+      "unidade": "x",
+      "insight_ref": "INS-011",
+      "provavel": 19.527260733185894,
+      "p10": 12.740632743026598,
+      "p50": 16.01069761112187,
+      "p90": 20.036837787658058
+    },
+    "IMP-CR8-CRESCIMENTO-ALT6-COL": {
+      "descricao": "Mesmo ponto de equilíbrio de volume na ALT6 sem PR11, leitura colaborativa, escopo = armazém inteiro (limite superior da economia, logo limite inferior do crescimento necessário).",
+      "unidade": "x",
+      "insight_ref": "INS-088",
+      "provavel": 2.3633839594774195,
+      "p10": 1.5776976554817,
+      "p50": 1.9892457605331921,
+      "p90": 2.5063506887759393
+    },
+    "IMP-CR8-P90-RC-EXCEDENTE": {
+      "descricao": "Horas por dia de separação no dia p90 acima do dia típico no escopo da ALT3 (Royal Canin), base pós-colmeia: o trabalho a absorver. Pessoas-hora por dia.",
+      "unidade": "pessoas-hora/dia",
+      "insight_ref": "INS-015",
+      "provavel": 1.2041738683127572,
+      "p10": 1.2041738683127572,
+      "p50": 1.2041738683127572,
+      "p90": 1.2041738683127572
+    },
+    "IMP-CR8-P90-RC-POUPA-COL": {
+      "descricao": "Pessoas-hora por dia que o robô poupa no dia p90 da ALT3 (base pós-colmeia) na leitura colaborativa (variante): operador permanece e só a diferença de ritmo é poupada.",
+      "unidade": "pessoas-hora/dia",
+      "insight_ref": "INS-059",
+      "provavel": 0.04792314457227853,
+      "p10": 0.04160107767218329,
+      "p50": 0.04517799501796556,
+      "p90": 0.047431103885246614
+    },
+    "IMP-CR8-P90-RC-PCT-COL": {
+      "descricao": "Fração do excedente do dia p90 absorvida pela frota na ALT3 (base pós-colmeia), leitura colaborativa (variante). Abaixo de um sobra reforço de pessoas.",
+      "unidade": "%",
+      "insight_ref": "INS-056",
+      "provavel": 0.03979752910551582,
+      "p10": 0.034529147381254004,
+      "p50": 0.037521180507107274,
+      "p90": 0.039384800723012175
+    },
+    "IMP-CR8-P90-RC-PCT-AUT": {
+      "descricao": "Fração do excedente do dia p90 absorvida pela frota na ALT3 (base pós-colmeia), leitura autônoma de M23 (a registrada no plano; limite superior), limitada a um.",
+      "unidade": "%",
+      "insight_ref": "INS-056",
+      "provavel": 1.0,
+      "p10": 1.0,
+      "p50": 1.0,
+      "p90": 1.0
+    },
+    "IMP-CR8-PICO-ARM-PESSOAS": {
+      "descricao": "Operadores a mais em atividade no armazém nos dias de pico sobre os dias típicos: o puxão sobre outras áreas que o argumento de elasticidade quer reduzir. Pessoas; não prova contratação (pode ser remanejamento).",
+      "unidade": "pessoas",
+      "insight_ref": "INS-048",
+      "provavel": 2.825,
+      "p10": 2.825,
+      "p50": 2.825,
+      "p90": 2.825
+    },
+    "IMP-CR8-PICO-ARM-EXCEDENTE": {
+      "descricao": "Horas de separação por dia do armazém inteiro no dia p90 acima do dia típico: demanda de elasticidade do quadro no pico. Pessoas-hora por dia; sem custo (hora extra e temporário da Social são [●], E11).",
+      "unidade": "pessoas-hora/dia",
+      "insight_ref": "INS-048",
+      "provavel": 5.121184027777778,
+      "p10": 5.155115481058385,
+      "p50": 6.181336027829275,
+      "p90": 7.854253044559607
+    },
+    "IMP-CR8-PICO-ARM-ALIVIO-COL": {
+      "descricao": "Teto do que a frota alivia desse excedente do armazém na leitura colaborativa (variante): aplica a diferença de ritmo (ritmo manual medido ÷ PR05) a todo o excedente, o que supõe que todo ele seja absorvível pelo robô (limite superior). Pessoas-hora por dia; na leitura autônoma o teto seria o excedente inteiro.",
+      "unidade": "pessoas-hora/dia",
+      "insight_ref": "INS-048",
+      "provavel": 1.195625483280599,
+      "p10": 1.164286905905141,
+      "p50": 1.5303069175530695,
+      "p90": 2.0323244575129205
+    },
+    "IMP-INV-PR11-CR1-ALT4-ALT3": {
+      "descricao": "Postos de conferência atribuíveis à RC a partir dos quais a ALT4 (escopo da ALT3, franquia = custo de servir da frota necessária, tarifas do deck) passa CR1 = PR01. Inversão de ALT1 para ALT4, dado o checkout pronto, no escopo da ALT3. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "postos",
+      "insight_ref": "INS-089",
+      "provavel": 0.5785413723971554,
+      "p10": 0.5374585964873692,
+      "p50": 0.580480893250864,
+      "p90": 0.6273325313515337
+    },
+    "IMP-INV-PR11-CR1-ALT4-ALT3-FRACAO": {
+      "descricao": "A mesma inversão como fração dos postos de PR11. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "%",
+      "insight_ref": "INS-089",
+      "provavel": 0.2892706861985777,
+      "p10": 0.26886588571759196,
+      "p50": 0.29003736720726336,
+      "p90": 0.3127698559340922
+    },
+    "IMP-PR11-RATEIO-POSTOS": {
+      "descricao": "Postos atribuíveis à RC pelo rateio de pedidos de checkout (leitura RAT do analista). Compare com o limiar da ALT4: o rateio fica logo abaixo.",
+      "unidade": "postos",
+      "insight_ref": "INS-012",
+      "provavel": 0.47380952380952385,
+      "p10": 0.43361957748538144,
+      "p50": 0.47883369709388274,
+      "p90": 0.5311878710308401
+    },
+    "IMP-PR11-RATEIO-FRACAO": {
+      "descricao": "Parte da RC no checkout do armazém (fração do rateio).",
+      "unidade": "%",
+      "insight_ref": "INS-012",
+      "provavel": 0.23690476190476192,
+      "p10": 0.21674376401472345,
+      "p50": 0.23935425293673368,
+      "p90": 0.26498124821491803
+    },
+    "IMP-INV-PR11-CR1-ALT3-DECK": {
+      "descricao": "Postos atribuíveis à RC a partir dos quais a ALT3 do deck (franquia PR02) passa CR1 = PR01. A ALT3 do deck ainda falha em CR2.",
+      "unidade": "postos",
+      "insight_ref": "INS-089",
+      "provavel": 1.486472293449787,
+      "p10": 1.4679779031362763,
+      "p50": 1.4851618415432988,
+      "p90": 1.498916726791529
+    },
+    "IMP-INV-PR11-CR8-ALT3-COL": {
+      "descricao": "Postos atribuíveis à RC a partir dos quais a ALT3/ALT4 libera uma vaga inteira (CR8, leitura colaborativa). Leitura colaborativa (variante); na prática um posto inteiro tem de sair.",
+      "unidade": "postos",
+      "insight_ref": "INS-011",
+      "provavel": 0.9487895402399921,
+      "p10": 0.9217666766702467,
+      "p50": 0.9378628851624373,
+      "p90": 0.9503339928453826
+    },
+    "IMP-INV-PR11-ALT6-REC": {
+      "descricao": "Postos desmobilizados a partir dos quais a ALT6 recalibrada tem janela de preço (teto de CR1 >= custo de servir da frota agrupada). Na ALT6 o checkout dos outros entra no escopo, então o rateio deixa de ser a questão. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "postos",
+      "insight_ref": "INS-088",
+      "provavel": 1.1741836810453081,
+      "p10": 1.0012878478728116,
+      "p50": 1.1377019732745244,
+      "p90": 1.2459092476530256
+    },
+    "IMP-INV-PR11-CR8-ALT6-COL": {
+      "descricao": "Postos desmobilizados a partir dos quais a ALT6 libera uma vaga inteira (leitura colaborativa). Escopo = armazém inteiro (limite superior).",
+      "unidade": "postos",
+      "insight_ref": "INS-088",
+      "provavel": 0.5768778932471407,
+      "p10": 0.37173461064584584,
+      "p50": 0.4962796399099579,
+      "p90": 0.6014570307346477
+    },
+    "IMP-CR1-ALT4-ALT3-UM-POSTO": {
+      "descricao": "CR1 da ALT4 (escopo da ALT3) com um posto inteiro atribuível à RC. CR1 da ALT4 se um posto inteiro sai por causa da Royal Canin (hipótese de cenário, E15).",
+      "unidade": "%",
+      "insight_ref": "INS-089",
+      "provavel": 0.4589723955940644,
+      "p10": 0.4194187805167189,
+      "p50": 0.44697030266526755,
+      "p90": 0.47449120708177606
+    },
+    "IMP-INV-PR13-ALT4-RAT": {
+      "descricao": "Custo de servir por robô abaixo do qual a ALT4 (escopo da ALT3) com PR11 rateado ganha janela de preço (folga não negativa). Abaixo deste custo de servir a ALT4 com PR11 rateado ganha janela de preço. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-087",
+      "provavel": 924.6744607194737,
+      "p10": 841.0536692143033,
+      "p50": 937.5151081618046,
+      "p90": 1043.609127367421
+    },
+    "IMP-INV-PR13-ALT4-INT": {
+      "descricao": "Custo de servir por robô até o qual a ALT4 com PR11 integral mantém janela de preço. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-087",
+      "provavel": 3977.055413100426,
+      "p10": 3952.111395459093,
+      "p50": 3979.3720426544587,
+      "p90": 4013.8703555210727
+    },
+    "IMP-INV-PR13-ALT4-TARIFA-DECK": {
+      "descricao": "Custo de servir por robô acima do qual, com as tarifas do deck, o piso da ALT4 (frota × PR13) passa da receita por transação (CR2 falha) e a margem sem piso fica negativa. Acima deste custo de servir, nas tarifas do deck, a margem sem piso fica negativa.",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-087",
+      "provavel": 1134.1381578947369,
+      "p10": 1060.6760762999875,
+      "p50": 1143.2101568702642,
+      "p90": 1231.0596086640383
+    },
+    "IMP-INV-PR10-ALT4-RAT": {
+      "descricao": "Custo anual por operador a partir do qual a ALT4 com PR11 rateado ganha janela de preço. Acima deste custo anual por operador a ALT4 com PR11 rateado ganha janela de preço. Rótulo: sem custo de implementação (ver os modelos COM-IMPL) e, salvo indicação, sem reserva (ver COM-RESERVA).",
+      "unidade": "R$/ano",
+      "insight_ref": "INS-089",
+      "provavel": 64887.70107624147,
+      "p10": 57264.15575870381,
+      "p50": 63908.82245164702,
+      "p90": 71274.81363830969
+    },
+    "IMP-INV-FROTA-CR2-ALT4": {
+      "descricao": "Maior frota cujo piso (frota × PR13) cabe na receita por transação com tarifas do deck (ALT4, escopo da ALT3). Maior frota cujo piso cabe na receita nas tarifas do deck.",
+      "unidade": "robôs",
+      "insight_ref": "INS-054",
+      "provavel": 2.268276315789474,
+      "p10": 2.1237503593791747,
+      "p50": 2.2861075925007253,
+      "p90": 2.4602783080835815
+    },
+    "IMP-CR2-ALT4-ALT3-COM-RESERVA": {
+      "descricao": "Cobertura do piso pela receita por transação com um robô de reserva sobre a frota necessária (tarifas do deck). Um robô de reserva sobre a frota necessária.",
+      "unidade": "%",
+      "insight_ref": "INS-054",
+      "provavel": 0.756092105263158,
+      "p10": 0.7058977324534614,
+      "p50": 0.7606901976994196,
+      "p90": 0.8206927175102617
+    },
+    "IMP-FOLGA-ALT4-ALT3-INT-COM-RESERVA": {
+      "descricao": "Folga de preço da ALT4 com PR11 integral e um robô de reserva.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-054",
+      "provavel": 4954.110826200852,
+      "p10": 4904.674107684646,
+      "p50": 4959.180383282535,
+      "p90": 5026.731269560612
+    },
+    "IMP-FOLGA-ALT4-ALT3-RAT-FROTA-BANDA": {
+      "descricao": "Folga de preço da ALT4 com PR11 rateado e a frota pela banda (um robô, sem reserva). Frota pela banda de dias (leitura otimista, sem reserva): abre a janela, mas sem reserva.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-054",
+      "provavel": 849.3489214389474,
+      "p10": 683.4340334059162,
+      "p50": 875.4172665796217,
+      "p90": 1086.2424194313217
+    },
+    "IMP-PMAX-ALT3-SEM": {
+      "descricao": "Maior cobrança mensal compatível com CR1 = PR01 sem PR11, escopo da ALT3, teto conservador (vale para tarifa, franquia, pessoa-hora ou divisão de ganho). Teto de qualquer cobrança compatível com CR1 sem PR11 no escopo da ALT3, abaixo do custo de servir da frota.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-083",
+      "provavel": -45.88917379914801,
+      "p10": -96.2234506703546,
+      "p50": -40.8094852988371,
+      "p90": 26.425712673118333
+    },
+    "IMP-PMAX-ALT3-SEM-ALTO": {
+      "descricao": "Idem no teto de intervalo mais folgado.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-083",
+      "provavel": 438.3826325831076,
+      "p10": 412.4116303702639,
+      "p50": 491.6268173566309,
+      "p90": 588.7402760815248
+    },
+    "IMP-FOLGA-ALT6-SEM": {
+      "descricao": "Folga de preço da ALT6 sem PR11 (teto de CR1 menos custo de servir da frota agrupada), teto conservador; armazém inteiro como limite superior. Armazém inteiro como teto do escopo.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-088",
+      "provavel": -4696.734724181233,
+      "p10": -4980.612537399774,
+      "p50": -4544.630097896898,
+      "p90": -4001.895712672512
+    },
+    "IMP-FOLGA-ALT6-SEM-ALTO": {
+      "descricao": "Idem no teto mais folgado.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-088",
+      "provavel": -621.6006219814399,
+      "p10": -730.2425331567223,
+      "p50": -52.29109604919904,
+      "p90": 865.3914146293736
+    },
+    "IMP-INV-PR05-ALT6-SEM": {
+      "descricao": "PR05 (linhas/h com robô) a partir da qual a ALT6 sem PR11 ganha janela de preço, teto conservador; negativo = impossível. Valor impossível para a produtividade de um robô colaborativo.",
+      "unidade": "linhas/h",
+      "insight_ref": "INS-006",
+      "provavel": 203.80879602704275,
+      "p10": 129.76400864630367,
+      "p50": 161.51537915695357,
+      "p90": 202.75495764223803
+    },
+    "IMP-INV-PR05-ALT6-SEM-ALTO": {
+      "descricao": "Idem no teto mais folgado.",
+      "unidade": "linhas/h",
+      "insight_ref": "INS-006",
+      "provavel": 73.21648239769999,
+      "p10": 59.35198930409701,
+      "p50": 66.55941112672,
+      "p90": 74.2437268133649
+    },
+    "IMP-FOLGA-ALT2-PR05-TETO": {
+      "descricao": "Folga de preço da ALT2 (só pedido-a-pedido da RC) mesmo com PR05 no teto de manuseio do deck, teto conservador. Mesmo com PR05 no teto de manuseio do deck, a ALT2 não fecha: o teste do dobro não decide a Royal Canin.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-006",
+      "provavel": -1833.9591568898468,
+      "p10": -1844.9935852976953,
+      "p50": -1794.485678744798,
+      "p90": -1730.015349543629
+    },
+    "IMP-FOLGA-ALT2-PR05-TETO-ALTO": {
+      "descricao": "Idem no teto de intervalo mais folgado.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-006",
+      "provavel": -1289.4946190886,
+      "p10": -1288.5659761221953,
+      "p50": -1209.981462350908,
+      "p90": -1105.8854289838744
+    },
+    "IMP-FOLGA-ARM-PAP-POOL": {
+      "descricao": "Oferta só pedido-a-pedido do armazém com frota agrupada (sem checkout, sem PR11): folga de preço com a frota mínima favorável (maior entre a da RC e a dos outros). Oferta só de pedido-a-pedido do armazém com frota agrupada (sem checkout e sem PR11); frota mínima favorável e armazém inteiro: limite superior.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-058",
+      "provavel": -3696.734724181233,
+      "p10": -3977.7028211213146,
+      "p50": -3541.557641822899,
+      "p90": -3002.8823739880336
+    },
+    "IMP-FOLGA-ARM-PAP-POOL-ALTO": {
+      "descricao": "Idem no teto mais folgado.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-058",
+      "provavel": 378.3993780185601,
+      "p10": 262.416471036247,
+      "p50": 927.1784914683258,
+      "p90": 1825.555167555149
+    },
+    "IMP-MARGEM-ARM-PAP-POOL": {
+      "descricao": "Margem por robô da oferta só pedido-a-pedido do armazém com tarifa do deck e frota mínima favorável.",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-058",
+      "provavel": -463.67105263157896,
+      "p10": -508.1072125295175,
+      "p50": -461.81814274515494,
+      "p90": -413.7540002958123
+    },
+    "IMP-PILOTO-ECONOMIA-SOCIAL-RC-PAP": {
+      "descricao": "Economia mensal de separação da Social num piloto só no pedido-a-pedido da RC (leitura colaborativa, teto conservador). Economia bruta de separação da Social num piloto só no pedido-a-pedido da Royal Canin.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-006",
+      "provavel": 256.05229880003986,
+      "p10": 249.19041492203112,
+      "p50": 311.7737391327745,
+      "p90": 395.18301655266833
+    },
+    "IMP-PILOTO-ECONOMIA-SOBRE-CUSTO-ROBO": {
+      "descricao": "Economia mensal de separação no pedido-a-pedido da RC dividida pelo custo de servir de um robô. Abaixo de um, a economia da Social não paga nem um robô.",
+      "unidade": "x",
+      "insight_ref": "INS-006",
+      "provavel": 0.2560522988000399,
+      "p10": 0.25027705216216567,
+      "p50": 0.31290630303628897,
+      "p90": 0.3937160732741907
+    },
+    "IMP-CR1-ALT6-REC-PISO-INT": {
+      "descricao": "CR1 da ALT6 recalibrada cobrando só o piso (custo de servir da frota agrupada), PR11 integral. ALT6 recalibrada cobrando só o piso; armazém inteiro como teto: limite superior.",
+      "unidade": "%",
+      "insight_ref": "INS-088",
+      "provavel": 0.3732930808894729,
+      "p10": 0.34737653670921065,
+      "p50": 0.37048856220805115,
+      "p90": 0.3972120530235942
+    },
+    "IMP-FOLGA-ALT4-ALT3-RAT-COM-RESERVA": {
+      "descricao": "Folga de preço da ALT4 com PR11 rateado e um robô de reserva sobre a frota necessária.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-054",
+      "provavel": -1150.6510785610526,
+      "p10": -1321.820778575148,
+      "p50": -1121.769656647878,
+      "p90": -913.9033342161354
+    },
+    "IMP-KMIN-ALT4-ALT3-COM-RESERVA": {
+      "descricao": "Multiplicador mínimo sobre as tarifas do deck para a receita por transação cobrir o piso com um robô de reserva. Multiplicador mínimo sobre as tarifas do deck com um robô de reserva.",
+      "unidade": "x",
+      "insight_ref": "INS-054",
+      "provavel": 1.3225901884691018,
+      "p10": 1.219383824096389,
+      "p50": 1.3128741093682588,
+      "p90": 1.4133707912861104
+    },
+    "IMP-KMIN-ARM-PAP-POOL": {
+      "descricao": "Multiplicador mínimo sobre PR04 para a oferta só pedido-a-pedido do armazém cobrir o custo de servir da frota mínima favorável.",
+      "unidade": "x",
+      "insight_ref": "INS-058",
+      "provavel": 1.8645273668457594,
+      "p10": 1.7016468753591052,
+      "p50": 1.85804474676801,
+      "p90": 2.0317519623953495
+    },
+    "IMP-KMAX-ARM-PAP-POOL-ALTO": {
+      "descricao": "Multiplicador máximo sobre PR04 compatível com CR1 = PR01 na oferta só pedido-a-pedido do armazém, teto mais folgado (limite superior).",
+      "unidade": "x",
+      "insight_ref": "INS-058",
+      "provavel": 2.040911365824014,
+      "p10": 1.9373081881369008,
+      "p50": 2.3027506101774406,
+      "p90": 2.7751494212929284
+    },
+    "IMP-KMAX-ARM-PAP-POOL": {
+      "descricao": "Idem no teto conservador.",
+      "unidade": "x",
+      "insight_ref": "INS-058",
+      "provavel": 0.1413616015445296,
+      "p10": 0.013766755007545534,
+      "p50": 0.2125048214366893,
+      "p90": 0.4711089636713087
+    },
+    "IMP-HW-ALT4-INT-NO-TETO": {
+      "descricao": "Hardware máximo pagável por robô no prazo PR14 se a ALT4 (PR11 integral) cobrar o teto compatível com CR1 = PR01, frota necessária. Referência de hardware para comparar com PR20 quando PR11 estiver confirmado (melhor caso da Acta na janela). Rótulo: máximo para hardware, implantação, mapeamento e integração SOMADOS; sem custo de implementação deduzido (ver os modelos SO-HARDWARE).",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-087",
+      "provavel": 71449.32991441022,
+      "p10": 70831.8051682569,
+      "p50": 71506.72776606682,
+      "p90": 72332.79251032548
+    },
+    "IMP-HW-ALT4-INT-NO-TETO-COM-RESERVA": {
+      "descricao": "Idem com um robô de reserva. Rótulo: máximo para hardware, implantação, mapeamento e integração SOMADOS; sem custo de implementação deduzido (ver os modelos SO-HARDWARE).",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-087",
+      "provavel": 39632.88660960681,
+      "p10": 39222.74788681165,
+      "p50": 39672.7677684973,
+      "p90": 40220.51393624589
+    },
+    "IMP-IMPL-INVESTIMENTO-ALT3-SEM-RESERVA": {
+      "descricao": "Investimento de implementação a preço de tabela da Acta na ALT3/ALT4 sem reserva: implantação por robô vezes a frota mais a integração simples. Limite superior do custo; mapeamento (preço por metro quadrado vezes a área, área [●]) e desenvolvimento do checkout conferido ([●]) ficam fora da conta. O slide 18 promete tudo incluído; PR13 é só a manutenção.",
+      "unidade": "R$",
+      "insight_ref": "INS-087",
+      "provavel": 60000.0,
+      "p10": 60000.0,
+      "p50": 60000.0,
+      "p90": 60000.0
+    },
+    "IMP-IMPL-INVESTIMENTO-ALT3-COM-RESERVA": {
+      "descricao": "Investimento de implementação a preço de tabela da Acta na ALT3/ALT4 com reserva: implantação por robô vezes a frota mais a integração simples. Limite superior do custo; mapeamento (preço por metro quadrado vezes a área, área [●]) e desenvolvimento do checkout conferido ([●]) ficam fora da conta. O slide 18 promete tudo incluído; PR13 é só a manutenção.",
+      "unidade": "R$",
+      "insight_ref": "INS-087",
+      "provavel": 84000.0,
+      "p10": 84000.0,
+      "p50": 84000.0,
+      "p90": 84000.0
+    },
+    "IMP-IMPL-INVESTIMENTO-ALT6-SEM-RESERVA": {
+      "descricao": "Investimento de implementação a preço de tabela da Acta na ALT6 total sem reserva: implantação por robô vezes a frota mais a integração simples. Limite superior do custo; mapeamento (preço por metro quadrado vezes a área, área [●]) e desenvolvimento do checkout conferido ([●]) ficam fora da conta. O slide 18 promete tudo incluído; PR13 é só a manutenção.",
+      "unidade": "R$",
+      "insight_ref": "INS-088",
+      "provavel": 132000.0,
+      "p10": 132000.0,
+      "p50": 132000.0,
+      "p90": 132000.0
+    },
+    "IMP-IMPL-INVESTIMENTO-ALT6-COM-RESERVA": {
+      "descricao": "Investimento de implementação a preço de tabela da Acta na ALT6 total com reserva: implantação por robô vezes a frota mais a integração simples. Limite superior do custo; mapeamento (preço por metro quadrado vezes a área, área [●]) e desenvolvimento do checkout conferido ([●]) ficam fora da conta. O slide 18 promete tudo incluído; PR13 é só a manutenção.",
+      "unidade": "R$",
+      "insight_ref": "INS-088",
+      "provavel": 156000.0,
+      "p10": 156000.0,
+      "p50": 156000.0,
+      "p90": 156000.0
+    },
+    "IMP-INV-PR11-CR1-ALT4-ALT3-COM-RESERVA": {
+      "descricao": "Postos de conferência atribuíveis à Royal Canin a partir dos quais a ALT4 passa CR1 (piso = custo de servir). Frota necessária dia a dia mais um robô de reserva. Sem custo de implementação (preço de tabela de implantação e integração fora da conta). É o limiar coerente com a recomendação.",
+      "unidade": "postos",
+      "insight_ref": "INS-012",
+      "provavel": 0.7614722934497871,
+      "p10": 0.7433517909423022,
+      "p50": 0.7601214802773377,
+      "p90": 0.7742512332739101
+    },
+    "IMP-INV-PR11-CR1-ALT4-ALT3-COM-IMPL": {
+      "descricao": "Postos de conferência atribuíveis à Royal Canin a partir dos quais a ALT4 passa CR1 (piso = custo de servir mais implementação amortizada). Frota necessária dia a dia, sem reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "postos",
+      "insight_ref": "INS-012",
+      "provavel": 1.136472293449787,
+      "p10": 1.1182123740579333,
+      "p50": 1.1352519642655656,
+      "p90": 1.1490376576317713
+    },
+    "IMP-INV-PR11-CR1-ALT4-ALT3-COM-RESERVA-COM-IMPL": {
+      "descricao": "Postos de conferência atribuíveis à Royal Canin a partir dos quais a ALT4 passa CR1 (piso = custo de servir mais implementação amortizada). Frota necessária dia a dia mais um robô de reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]). Limiar da configuração recomendada, com o custo de implementação.",
+      "unidade": "postos",
+      "insight_ref": "INS-012",
+      "provavel": 1.636472293449787,
+      "p10": 1.6183124200075487,
+      "p50": 1.6350995571469191,
+      "p90": 1.6493091848961747
+    },
+    "IMP-ALT4-KMIN-ALT3-COM-IMPL": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Multiplicador mínimo sobre as tarifas do deck para cobrir o piso. Frota necessária dia a dia, sem reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "x",
+      "insight_ref": "INS-054",
+      "provavel": 1.9838852827036528,
+      "p10": 1.8249381116349657,
+      "p50": 1.970528813057491,
+      "p90": 2.1222788878691623
+    },
+    "IMP-ALT4-KMAX-ALT3-UM-POSTO": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Multiplicador máximo sobre as tarifas do deck compatível com CR1 se um posto inteiro de conferência sai por causa da Royal Canin (hipótese de cenário, E15 [●]). O teto não depende da reserva nem da implementação.",
+      "unidade": "x",
+      "insight_ref": "INS-089",
+      "provavel": 1.743222727617567,
+      "p10": 1.6064216191052982,
+      "p50": 1.7325338857183015,
+      "p90": 1.8704320060228332
+    },
+    "IMP-ALT4-FOLGA-ALT3-INT-COM-IMPL": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Folga da janela de preço na ALT3, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados: teto de CR1 menos piso. Frota necessária dia a dia, sem reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 3454.110826200852,
+      "p10": 3404.4441861381206,
+      "p50": 3459.2820230873663,
+      "p90": 3528.4218847307056
+    },
+    "IMP-ALT4-FOLGA-ALT3-RAT-COM-IMPL": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Folga da janela de preço na ALT3, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15): teto de CR1 menos piso. Frota necessária dia a dia, sem reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": -2650.6510785610526,
+      "p10": -2819.8068028157372,
+      "p50": -2620.861283992324,
+      "p90": -2412.139846533998
+    },
+    "IMP-CR6-ALT3-SEM-PISO-COM-IMPL": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT3/ALT4 nas tarifas do deck, sem franquia. Frota necessária dia a dia, sem reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]). Margem depois de recuperar a implementação.",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-087",
+      "provavel": -1115.8618421052631,
+      "p10": -1189.8479970472415,
+      "p50": -1109.0145020249684,
+      "p90": -1019.0327409661577
+    },
+    "IMP-CR6-ALT3-SEM-PISO-COM-RESERVA": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT3/ALT4 nas tarifas do deck, sem franquia. Frota necessária dia a dia mais um robô de reserva. Sem custo de implementação (preço de tabela de implantação e integração fora da conta).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-087",
+      "provavel": -243.90789473684208,
+      "p10": -292.3740171104304,
+      "p50": -238.93712996576522,
+      "p90": -179.93280187811217
+    },
+    "IMP-CR6-ALT3-SEM-PISO-COM-RESERVA-COM-IMPL": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT3/ALT4 nas tarifas do deck, sem franquia. Frota necessária dia a dia mais um robô de reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-087",
+      "provavel": -1410.5745614035088,
+      "p10": -1460.091602455431,
+      "p50": -1404.2010458675843,
+      "p90": -1344.255559618389
+    },
+    "IMP-CR6-ALT3-HW-SEM-PISO-SO-HARDWARE": {
+      "descricao": "Máximo pagável só de hardware por robô no prazo do contrato (PR14) na ALT4 nas tarifas do deck, depois de recuperar a implementação (zero se a margem for negativa). Frota necessária dia a dia, sem reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-087",
+      "provavel": 0.0,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 0.0
+    },
+    "IMP-CR6-ALT3-HW-SEM-PISO-COM-RESERVA-SO-HARDWARE": {
+      "descricao": "Máximo pagável só de hardware por robô no prazo do contrato na ALT4 nas tarifas do deck, depois de recuperar a implementação (zero se a margem for negativa). Frota necessária dia a dia mais um robô de reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-087",
+      "provavel": 0.0,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 0.0
+    },
+    "IMP-CR6-ALT3-NO-TETO-INT": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT4 se o preço fosse o teto de CR1 (economia mínima de PR01 para a Social), PR11 integral. Frota necessária dia a dia, sem reserva. Sem custo de implementação (preço de tabela de implantação e integração fora da conta).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-089",
+      "provavel": 2977.055413100426,
+      "p10": 2952.205042155176,
+      "p50": 2979.372418012479,
+      "p90": 3013.8221100001297
+    },
+    "IMP-CR6-ALT3-NO-TETO-INT-COM-IMPL": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT4 se o preço fosse o teto de CR1, PR11 integral. Frota necessária dia a dia, sem reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-089",
+      "provavel": 1727.055413100426,
+      "p10": 1702.0678543579513,
+      "p50": 1729.4789211309399,
+      "p90": 1764.7229739332195
+    },
+    "IMP-HW-ALT4-INT-NO-TETO-SO-HARDWARE": {
+      "descricao": "Máximo pagável só de hardware por robô no prazo do contrato se a ALT4 cobrar o teto de CR1, PR11 integral, depois de recuperar a implementação. Frota necessária dia a dia, sem reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-087",
+      "provavel": 41449.32991441022,
+      "p10": 40843.920168545956,
+      "p50": 41514.574402974955,
+      "p90": 42344.53980269551
+    },
+    "IMP-CR6-ALT6-NO-TETO-INT": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT6 total se o preço fosse o teto de CR1, PR11 integral: a margem máxima compatível com a economia da Social. Substitui, como referência, a margem nas tarifas do deck, nas quais CR1 da ALT6 falha. Armazém inteiro como teto do escopo: limite superior. Frota necessária dia a dia, sem reserva. Sem custo de implementação (preço de tabela de implantação e integração fora da conta).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-088",
+      "provavel": 660.6530551637534,
+      "p10": 606.0390343714485,
+      "p50": 689.9004499679122,
+      "p90": 800.1745950843388
+    },
+    "IMP-CR6-ALT6-NO-TETO-INT-COM-IMPL": {
+      "descricao": "Margem de contribuição mensal por robô = receita por robô - PR13 (custo de servir sem hardware). Receita da taxa corrente (operação normal), frota dia a dia na base pós-colmeia. ALT6 total no teto de CR1, PR11 integral, depois de recuperar a implementação. Frota necessária dia a dia, sem reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/robô/mês",
+      "insight_ref": "INS-088",
+      "provavel": -439.3469448362466,
+      "p10": -496.45427380124414,
+      "p50": -409.82661264173,
+      "p90": -298.8241759227425
+    },
+    "IMP-HW-ALT6-NO-TETO-INT-SO-HARDWARE": {
+      "descricao": "Máximo pagável só de hardware por robô no prazo do contrato na ALT6 total no teto de CR1, PR11 integral, depois de recuperar a implementação (zero se a margem for negativa). Frota necessária dia a dia, sem reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-088",
+      "provavel": 0.0,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 0.0
+    },
+    "IMP-ALT4-FOLGA-ALT6-INT-COM-RESERVA": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Folga da janela de preço na ALT6 total, PR11 integral: teto de CR1 menos piso. Frota necessária dia a dia mais um robô de reserva. Sem custo de implementação (preço de tabela de implantação e integração fora da conta). Armazém inteiro como teto do escopo: limite superior.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-088",
+      "provavel": 2303.265275818767,
+      "p10": 2024.0149818023235,
+      "p50": 2446.15333565094,
+      "p90": 3002.6640008780937
+    },
+    "IMP-ALT4-FOLGA-ALT6-INT-COM-IMPL": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Folga da janela de preço na ALT6 total, PR11 integral: teto de CR1 menos piso. Frota necessária dia a dia, sem reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]). Armazém inteiro como teto do escopo: limite superior da folga.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-088",
+      "provavel": -2196.734724181233,
+      "p10": -2471.757972335816,
+      "p50": -2053.4468724963817,
+      "p90": -1503.5975248298023
+    },
+    "IMP-ALT4-FOLGA-ALT6-INT-COM-RESERVA-COM-IMPL": {
+      "descricao": "Ponto de equilíbrio da recalibração (ALT4). Preço mensal total que a Social paga a Acta (tarifas ou franquia). Folga da janela de preço na ALT6 total, PR11 integral: teto de CR1 menos piso. Frota necessária dia a dia mais um robô de reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]). Armazém inteiro como teto do escopo: limite superior da folga.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-088",
+      "provavel": -4196.734724181233,
+      "p10": -4466.146607688338,
+      "p50": -4047.7897934220628,
+      "p90": -3499.3652259426526
+    },
+    "IMP-CR6-ALT3-RECEITA-ROBO-SOBRE-LOCACAO-DECK": {
+      "descricao": "Receita mensal por robô da ALT4 nas tarifas do deck dividida pela locação de tabela do K100 (referência de custo de oportunidade do robô; Marcus decide se é limite ou só informação). Frota necessária dia a dia, sem reserva.",
+      "unidade": "x",
+      "insight_ref": "INS-087",
+      "provavel": 0.16201973684210527,
+      "p10": 0.1559252186478386,
+      "p50": 0.16899546177797353,
+      "p90": 0.18300606446196951
+    },
+    "IMP-CR6-ALT3-RECEITA-ROBO-SOBRE-LOCACAO-NO-TETO": {
+      "descricao": "Receita mensal por robô da ALT4 no teto de CR1, PR11 integral, dividida pela locação de tabela do K100 (referência de custo de oportunidade). Frota necessária dia a dia, sem reserva.",
+      "unidade": "x",
+      "insight_ref": "INS-089",
+      "provavel": 0.5681507733000608,
+      "p10": 0.5712775471047602,
+      "p50": 0.5858990158019104,
+      "p90": 0.6102428414758106
+    },
+    "IMP-REC-FROTA-TOTAL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Frota total em robôs: a necessária dia a dia mais a reserva.",
+      "unidade": "robôs",
+      "insight_ref": "INS-054",
+      "provavel": 3.0,
+      "p10": 3.0,
+      "p50": 3.0,
+      "p90": 3.0
+    },
+    "IMP-REC-PISO-MES-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Piso mensal (também a franquia recalibrada). Sem custo de implementação (preço de tabela de implantação e integração fora da conta).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-054",
+      "provavel": 3000.0,
+      "p10": 3000.0,
+      "p50": 3000.0,
+      "p90": 3000.0
+    },
+    "IMP-REC-PISO-MES-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Piso mensal (também a franquia recalibrada). Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-054",
+      "provavel": 6500.0,
+      "p10": 6500.0,
+      "p50": 6500.0,
+      "p90": 6500.0
+    },
+    "IMP-REC-VOL-CHECKOUT-MES": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Volume tarifável mensal de pedidos de checkout usado (taxa corrente, operação normal). O checkout conferido ainda não está pronto.",
+      "unidade": "pedidos/mês",
+      "insight_ref": "INS-054",
+      "provavel": 1099.7368421052631,
+      "p10": 1014.8371028381162,
+      "p50": 1106.5678203314972,
+      "p90": 1209.978880238809
+    },
+    "IMP-REC-VOL-LINHAS-MES": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Volume tarifável mensal de linhas de produto do pedido-a-pedido usado (taxa corrente, operação normal, Qtde Produtos).",
+      "unidade": "linhas/mês",
+      "insight_ref": "INS-054",
+      "provavel": 1594.8947368421052,
+      "p10": 1470.1228383121804,
+      "p50": 1600.449010748764,
+      "p90": 1733.1123990309793
+    },
+    "IMP-REC-KMIN-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Multiplicador mínimo sobre as tarifas do deck (piso). Sem custo de implementação (preço de tabela de implantação e integração fora da conta).",
+      "unidade": "x",
+      "insight_ref": "INS-054",
+      "provavel": 1.3225901884691018,
+      "p10": 1.2195456526963186,
+      "p50": 1.311572940668181,
+      "p90": 1.4138075194375685
+    },
+    "IMP-REC-KMIN-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Multiplicador mínimo sobre as tarifas do deck (piso). Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "x",
+      "insight_ref": "INS-054",
+      "provavel": 2.8656120750163874,
+      "p10": 2.6399199245631744,
+      "p50": 2.8450717765757063,
+      "p90": 3.062968442211797
+    },
+    "IMP-REC-KMAX-RAT": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Multiplicador máximo sobre as tarifas do deck compatível com CR1, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15). Abaixo do mínimo: sem janela.",
+      "unidade": "x",
+      "insight_ref": "INS-012",
+      "provavel": 0.8153102461836892,
+      "p10": 0.7521046686462053,
+      "p50": 0.8192556101143802,
+      "p90": 0.8963833700694107
+    },
+    "IMP-REC-KMAX-INT": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Multiplicador máximo sobre as tarifas do deck compatível com CR1, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados.",
+      "unidade": "x",
+      "insight_ref": "INS-089",
+      "provavel": 3.506676312243036,
+      "p10": 3.2309608437810917,
+      "p50": 3.482307011034205,
+      "p90": 3.749061032762925
+    },
+    "IMP-REC-TARIFA-CHECKOUT-MIN-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Tarifa por pedido de checkout em reais no multiplicador mínimo, sem implementação.",
+      "unidade": "R$/pedido",
+      "insight_ref": "INS-054",
+      "provavel": 2.248403320397473,
+      "p10": 2.0678727624501065,
+      "p50": 2.23223243836694,
+      "p90": 2.402949854303256
+    },
+    "IMP-REC-TARIFA-LINHA-MIN-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Tarifa por linha de produto do pedido-a-pedido em reais no multiplicador mínimo, sem implementação.",
+      "unidade": "R$/linha",
+      "insight_ref": "INS-054",
+      "provavel": 0.33064754711727545,
+      "p10": 0.3052455160698352,
+      "p50": 0.32814688231232264,
+      "p90": 0.35366132762057273
+    },
+    "IMP-REC-TARIFA-CHECKOUT-MIN-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Tarifa por pedido de checkout em reais no multiplicador mínimo, com implementação.",
+      "unidade": "R$/pedido",
+      "insight_ref": "INS-054",
+      "provavel": 4.871540527527858,
+      "p10": 4.4931366667181765,
+      "p50": 4.834761771686202,
+      "p90": 5.2058243747529405
+    },
+    "IMP-REC-TARIFA-LINHA-MIN-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Tarifa por linha de produto do pedido-a-pedido em reais no multiplicador mínimo, com implementação.",
+      "unidade": "R$/linha",
+      "insight_ref": "INS-054",
+      "provavel": 0.7164030187540968,
+      "p10": 0.6595510632284247,
+      "p50": 0.7111263986079182,
+      "p90": 0.7663434147948323
+    },
+    "IMP-REC-TARIFA-CHECKOUT-MAX-RAT": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Tarifa por pedido de checkout em reais no multiplicador máximo, PR11 rateado (sem janela).",
+      "unidade": "R$/pedido",
+      "insight_ref": "INS-054",
+      "provavel": 1.3860274185122716,
+      "p10": 1.2793409097398587,
+      "p50": 1.3920132094551296,
+      "p90": 1.5243484289793752
+    },
+    "IMP-REC-TARIFA-LINHA-MAX-RAT": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Tarifa por linha de produto do pedido-a-pedido em reais no multiplicador máximo, PR11 rateado (sem janela).",
+      "unidade": "R$/linha",
+      "insight_ref": "INS-054",
+      "provavel": 0.2038275615459223,
+      "p10": 0.18835019986960708,
+      "p50": 0.20509584418203264,
+      "p90": 0.22426585407183258
+    },
+    "IMP-REC-TARIFA-CHECKOUT-MAX-INT": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Tarifa por pedido de checkout em reais no multiplicador máximo, PR11 integral.",
+      "unidade": "R$/pedido",
+      "insight_ref": "INS-054",
+      "provavel": 5.961349730813161,
+      "p10": 5.487747777053278,
+      "p50": 5.922396760113363,
+      "p90": 6.388951789837971
+    },
+    "IMP-REC-TARIFA-LINHA-MAX-INT": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Tarifa por linha de produto do pedido-a-pedido em reais no multiplicador máximo, PR11 integral.",
+      "unidade": "R$/linha",
+      "insight_ref": "INS-054",
+      "provavel": 0.876669078060759,
+      "p10": 0.8073293384521969,
+      "p50": 0.8709307633706973,
+      "p90": 0.9389740750718066
+    },
+    "IMP-REC-FOLGA-INT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Folga da janela de preço: teto de CR1 menos piso, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados; sem implementação. Sem custo de implementação (preço de tabela de implantação e integração fora da conta).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 4954.110826200852,
+      "p10": 4904.26001453575,
+      "p50": 4959.102147433747,
+      "p90": 5027.293849815922
+    },
+    "IMP-REC-PRECO-MES-INT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Preço mensal total recomendado, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados; sem implementação. Sem custo de implementação (preço de tabela de implantação e integração fora da conta).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 5477.055413100426,
+      "p10": 5451.029940261042,
+      "p50": 5480.032962700778,
+      "p90": 5513.909565608214
+    },
+    "IMP-REC-ECONOMIA-SOCIAL-MES-INT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Economia mensal da Social em reais no preço recomendado, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados; sem implementação.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 4778.996885699611,
+      "p10": 4790.231781517284,
+      "p50": 4831.347079627427,
+      "p90": 4886.863114900939
+    },
+    "IMP-REC-ECONOMIA-SOCIAL-PCT-INT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Economia da Social em fração do custo atual no preço recomendado, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados; sem implementação.",
+      "unidade": "%",
+      "insight_ref": "INS-089",
+      "provavel": 0.41521445636960613,
+      "p10": 0.4065695488634145,
+      "p50": 0.4109602975661457,
+      "p90": 0.4147809922843027
+    },
+    "IMP-REC-MARGEM-ACTA-MES-INT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Margem mensal da Acta no preço recomendado (preço menos custo de servir da frota total), com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados; sem implementação.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-087",
+      "provavel": 2477.0554131004264,
+      "p10": 2452.3702720094234,
+      "p50": 2480.0155251251977,
+      "p90": 2513.7310319204803
+    },
+    "IMP-REC-FOLGA-INT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Folga da janela de preço: teto de CR1 menos piso, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados; com implementação. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 1454.110826200852,
+      "p10": 1403.0923572083861,
+      "p50": 1458.628682087674,
+      "p90": 1526.9688370914298
+    },
+    "IMP-REC-PRECO-MES-INT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Preço mensal total recomendado, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados; com implementação. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 7227.055413100426,
+      "p10": 7201.698128763388,
+      "p50": 7230.078235199098,
+      "p90": 7263.555477867446
+    },
+    "IMP-REC-ECONOMIA-SOCIAL-MES-INT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Economia mensal da Social em reais no preço recomendado, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados; com implementação.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 3028.996885699611,
+      "p10": 3040.060424426759,
+      "p50": 3082.233724360531,
+      "p90": 3138.4639629655344
+    },
+    "IMP-REC-ECONOMIA-SOCIAL-PCT-INT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Economia da Social em fração do custo atual no preço recomendado, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados; com implementação.",
+      "unidade": "%",
+      "insight_ref": "INS-089",
+      "provavel": 0.2631688878066465,
+      "p10": 0.2594354899599897,
+      "p50": 0.2620780326550828,
+      "p90": 0.2649528123735393
+    },
+    "IMP-REC-MARGEM-ACTA-MES-INT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Margem mensal da Acta no preço recomendado (preço menos custo de servir e implementação amortizada da frota total), com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados; com implementação. Inclui a recuperação da implementação.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-087",
+      "provavel": 727.0554131004264,
+      "p10": 701.9290909184983,
+      "p50": 729.7255112325383,
+      "p90": 763.9596653375096
+    },
+    "IMP-REC-FOLGA-RAT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Folga da janela de preço: teto de CR1 menos piso, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15); sem implementação. Sem custo de implementação (preço de tabela de implantação e integração fora da conta).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": -1150.6510785610526,
+      "p10": -1314.5856802248877,
+      "p50": -1122.1915852455782,
+      "p90": -909.9578855940082
+    },
+    "IMP-REC-PRECO-MES-RAT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Preço mensal total recomendado, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15); sem implementação. Sem custo de implementação (preço de tabela de implantação e integração fora da conta).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": 3000.0,
+      "p10": 3000.0,
+      "p50": 3000.0,
+      "p90": 3000.0
+    },
+    "IMP-REC-ECONOMIA-SOCIAL-MES-RAT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Economia mensal da Social em reais no preço recomendado, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15); sem implementação.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": -374.90008215234093,
+      "p10": -530.7210233666717,
+      "p50": -295.8336750047547,
+      "p90": -31.641229271299185
+    },
+    "IMP-REC-ECONOMIA-SOCIAL-PCT-RAT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Economia da Social em fração do custo atual no preço recomendado, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15); sem implementação.",
+      "unidade": "%",
+      "insight_ref": "INS-012",
+      "provavel": -0.09665474717735878,
+      "p10": -0.13457593756381697,
+      "p50": -0.07015097658758151,
+      "p90": -0.006363217610634489
+    },
+    "IMP-REC-MARGEM-ACTA-MES-RAT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Margem mensal da Acta no preço recomendado (preço menos custo de servir da frota total), com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15); sem implementação.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-087",
+      "provavel": 0.0,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 0.0
+    },
+    "IMP-REC-FOLGA-RAT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Folga da janela de preço: teto de CR1 menos piso, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15); com implementação. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": -4650.651078561053,
+      "p10": -4814.373797338123,
+      "p50": -4623.577465660015,
+      "p90": -4409.303153287082
+    },
+    "IMP-REC-PRECO-MES-RAT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Preço mensal total recomendado, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15); com implementação. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": 6500.0,
+      "p10": 6500.0,
+      "p50": 6500.0,
+      "p90": 6500.0
+    },
+    "IMP-REC-ECONOMIA-SOCIAL-MES-RAT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Economia mensal da Social em reais no preço recomendado, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15); com implementação.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": -3874.900082152341,
+      "p10": -4028.2990835113605,
+      "p50": -3790.217199072349,
+      "p90": -3525.3671405281775
+    },
+    "IMP-REC-ECONOMIA-SOCIAL-PCT-RAT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Economia da Social em fração do custo atual no preço recomendado, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15); com implementação.",
+      "unidade": "%",
+      "insight_ref": "INS-012",
+      "provavel": -0.9990061501927646,
+      "p10": -1.0310728361263592,
+      "p50": -0.9107941794025443,
+      "p90": -0.7937931006969071
+    },
+    "IMP-REC-MARGEM-ACTA-MES-RAT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Margem mensal da Acta no preço recomendado (preço menos custo de servir e implementação amortizada da frota total), com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15); com implementação. Inclui a recuperação da implementação.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-087",
+      "provavel": 0.0,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 0.0
+    },
+    "IMP-REC-HW-MAX-INT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Máximo pagável por robô no prazo do contrato para hardware, implantação, mapeamento e integração somados, PR11 integral.",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-087",
+      "provavel": 19816.44330480341,
+      "p10": 19616.376921910083,
+      "p50": 19834.822152811925,
+      "p90": 20108.343838469442
+    },
+    "IMP-REC-TARIFA-CHECKOUT-RECOMENDADA-INT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Tarifa por pedido de checkout no preço recomendado, PR11 integral, sem implementação (multiplicador do preço sobre a receita nas tarifas do deck).",
+      "unidade": "R$/pedido",
+      "insight_ref": "INS-089",
+      "provavel": 4.1048765256053175,
+      "p10": 3.7821135499603256,
+      "p50": 4.075505573338794,
+      "p90": 4.393125395051683
+    },
+    "IMP-REC-TARIFA-LINHA-RECOMENDADA-INT-SEM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Tarifa por linha de produto no preço recomendado, PR11 integral, sem implementação (multiplicador do preço sobre a receita nas tarifas do deck).",
+      "unidade": "R$/linha",
+      "insight_ref": "INS-089",
+      "provavel": 0.6036583125890173,
+      "p10": 0.5566052751982831,
+      "p50": 0.5992475344618592,
+      "p90": 0.646175134162155
+    },
+    "IMP-REC-HW-MAX-INT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Máximo pagável só de hardware por robô no prazo do contrato, depois de recuperar a implementação, PR11 integral.",
+      "unidade": "R$/robô",
+      "insight_ref": "INS-087",
+      "provavel": 5816.443304803412,
+      "p10": 5620.171104904589,
+      "p50": 5838.251868460418,
+      "p90": 6108.528633018713
+    },
+    "IMP-REC-TARIFA-CHECKOUT-RECOMENDADA-INT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Tarifa por pedido de checkout no preço recomendado, PR11 integral, com implementação (multiplicador do preço sobre a receita nas tarifas do deck).",
+      "unidade": "R$/pedido",
+      "insight_ref": "INS-089",
+      "provavel": 5.41644512917051,
+      "p10": 5.001471046303374,
+      "p50": 5.382596331441915,
+      "p90": 5.793572727889347
+    },
+    "IMP-REC-TARIFA-LINHA-RECOMENDADA-INT-COM-IMPL": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Tarifa por linha de produto no preço recomendado, PR11 integral, com implementação (multiplicador do preço sobre a receita nas tarifas do deck).",
+      "unidade": "R$/linha",
+      "insight_ref": "INS-089",
+      "provavel": 0.796536048407428,
+      "p10": 0.7348702639183865,
+      "p50": 0.7912096093066049,
+      "p90": 0.8521216053785285
+    },
+    "IMP-PILOTO-FROTA": {
+      "descricao": "Piloto pago: pedido-a-pedido de dois ou mais endereços da Royal Canin e de depositantes compatíveis, com frota agrupada. A frota de referência é a maior entre a da Royal Canin e a dos outros depositantes só no pedido-a-pedido (armazém); a frota exata para um ou dois depositantes escolhidos é [●] e sai de um novo recorte de ANA-010. Frota correta do escopo agrupado, em robôs (a frota da Royal Canin sozinha subestima).",
+      "unidade": "robôs",
+      "insight_ref": "INS-058",
+      "provavel": 4.0,
+      "p10": 4.0,
+      "p50": 4.0,
+      "p90": 4.0
+    },
+    "IMP-PILOTO-PRECO-MES-CUSTO-DE-SERVIR": {
+      "descricao": "Piloto pago: pedido-a-pedido de dois ou mais endereços da Royal Canin e de depositantes compatíveis, com frota agrupada. A frota de referência é a maior entre a da Royal Canin e a dos outros depositantes só no pedido-a-pedido (armazém); a frota exata para um ou dois depositantes escolhidos é [●] e sai de um novo recorte de ANA-010. Preço mensal do piloto = custo de servir da frota correta (margem zero para a Acta, sem implantação).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-058",
+      "provavel": 4000.0,
+      "p10": 4000.0,
+      "p50": 4000.0,
+      "p90": 4000.0
+    },
+    "IMP-PILOTO-INVESTIMENTO-IMPLANTACAO": {
+      "descricao": "Piloto pago: pedido-a-pedido de dois ou mais endereços da Royal Canin e de depositantes compatíveis, com frota agrupada. A frota de referência é a maior entre a da Royal Canin e a dos outros depositantes só no pedido-a-pedido (armazém); a frota exata para um ou dois depositantes escolhidos é [●] e sai de um novo recorte de ANA-010. Implantação dos robôs além do atual, a preço de tabela (limite superior). Quem paga é decisão de Marcus [●]; opção: crédito no contrato se a fase seguinte for contratada.",
+      "unidade": "R$",
+      "insight_ref": "INS-058",
+      "provavel": 72000.0,
+      "p10": 72000.0,
+      "p50": 72000.0,
+      "p90": 72000.0
+    },
+    "IMP-PILOTO-PRECO-MES-COM-IMPLANTACAO": {
+      "descricao": "Piloto pago: pedido-a-pedido de dois ou mais endereços da Royal Canin e de depositantes compatíveis, com frota agrupada. A frota de referência é a maior entre a da Royal Canin e a dos outros depositantes só no pedido-a-pedido (armazém); a frota exata para um ou dois depositantes escolhidos é [●] e sai de um novo recorte de ANA-010. Preço mensal do piloto se a implantação dos robôs extras fosse recuperada dentro do próprio piloto (custo de servir mais implantação amortizada na duração do piloto, premissa de duração em dias).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-058",
+      "provavel": 28000.0,
+      "p10": 28409.59950145191,
+      "p50": 30560.88243497404,
+      "p90": 35024.96930283177
+    },
+    "IMP-PILOTO-CUSTO-TOTAL-ACTA": {
+      "descricao": "Piloto pago: pedido-a-pedido de dois ou mais endereços da Royal Canin e de depositantes compatíveis, com frota agrupada. A frota de referência é a maior entre a da Royal Canin e a dos outros depositantes só no pedido-a-pedido (armazém); a frota exata para um ou dois depositantes escolhidos é [●] e sai de um novo recorte de ANA-010. Custo total do piloto para a Acta: custo de servir durante a duração do piloto (premissa de duração em dias, convertida em meses) mais a implantação dos robôs extras (se a Acta a absorve).",
+      "unidade": "R$",
+      "insight_ref": "INS-058",
+      "provavel": 84000.0,
+      "p10": 81262.84985352088,
+      "p50": 82837.9615848804,
+      "p90": 83800.40746605888
+    },
+    "IMP-ALT1-CUSTO-MES-PILOTO-GRATUITO": {
+      "descricao": "Custo mensal para a Acta de manter o piloto gratuito atual (robôs do piloto vezes o custo de servir, sem receita). Custo do portão: multiplicar pelos meses até a resposta de E15 e do prazo do checkout [●]. Não inclui o valor de referência que se perde ao encerrar (parceria e operação de referência do slide 18, [●]).",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": 1000.0,
+      "p10": 1000.0,
+      "p50": 1000.0,
+      "p90": 1000.0
+    },
+    "IMP-PILOTO-DURACAO-MESES": {
+      "descricao": "Piloto pago: pedido-a-pedido de dois ou mais endereços da Royal Canin e de depositantes compatíveis, com frota agrupada. A frota de referência é a maior entre a da Royal Canin e a dos outros depositantes só no pedido-a-pedido (armazém); a frota exata para um ou dois depositantes escolhidos é [●] e sai de um novo recorte de ANA-010. Duração do piloto em meses (premissa de duração em dias dividida pelos dias do mês): base da amortização da implantação e do custo total do piloto. Alternativa proposta pelo red team da decisão, a confirmar por Marcus.",
+      "unidade": "meses",
+      "insight_ref": "INS-058",
+      "provavel": 3.0,
+      "p10": 2.317581059963496,
+      "p50": 2.7031604977845305,
+      "p90": 2.946391100935645
+    },
+    "IMP-INV-PR05-ALT6-SEM-BASE": {
+      "descricao": "PR05 (linhas/h com robô) a partir da qual a ALT6 sem PR11 ganha janela de preço, teto de intervalo base (o do contrato), frota da ALT6 total; completa a família com o teto conservador e o mais folgado.",
+      "unidade": "linhas/h",
+      "insight_ref": "INS-006",
+      "provavel": 104.73286987418228,
+      "p10": 77.72995898002495,
+      "p50": 90.32280092578256,
+      "p90": 104.03346006120154
+    },
+    "IMP-PILOTO-META-PR05-T300": {
+      "descricao": "Meta de ritmo do robô no piloto pago: linhas por hora com robô a partir da qual a folga de preço do escopo do piloto (pedido-a-pedido do armazém, sem checkout e sem PR11) fecha. Frota do piloto, não a da ALT6 total. Armazém inteiro como teto do escopo, então a meta real é igual ou maior (limite inferior da exigência). Lida no teto de intervalo conservador, com o ritmo manual medido no mesmo teto.",
+      "unidade": "linhas/h",
+      "insight_ref": "INS-058",
+      "provavel": 141.0864516686577,
+      "p10": 105.9953660306891,
+      "p50": 122.13222962185839,
+      "p90": 140.55516839740417
+    },
+    "IMP-PILOTO-META-FOLGA-FISICA-T300": {
+      "descricao": "Folga entre o teto de manuseio do deck (limite físico do robô, só manuseio) e a meta do piloto no teto de intervalo conservador. Negativa: a meta é inatingível e esse teto não pode ser o critério de sucesso.",
+      "unidade": "linhas/h",
+      "insight_ref": "INS-058",
+      "provavel": -63.0864516686577,
+      "p10": -62.54929793138804,
+      "p50": -44.45314951929648,
+      "p90": -27.70179330949056
+    },
+    "IMP-PILOTO-META-PR05-T900": {
+      "descricao": "Meta de ritmo do robô no piloto pago: linhas por hora com robô a partir da qual a folga de preço do escopo do piloto (pedido-a-pedido do armazém, sem checkout e sem PR11) fecha. Frota do piloto, não a da ALT6 total. Armazém inteiro como teto do escopo, então a meta real é igual ou maior (limite inferior da exigência). Lida no teto de intervalo base (o do contrato), com o ritmo manual medido no mesmo teto.",
+      "unidade": "linhas/h",
+      "insight_ref": "INS-058",
+      "provavel": 83.71251417824308,
+      "p10": 67.88655268869647,
+      "p50": 75.52621567505435,
+      "p90": 83.76207892291592
+    },
+    "IMP-PILOTO-META-FOLGA-FISICA-T900": {
+      "descricao": "Folga entre o teto de manuseio do deck (limite físico do robô, só manuseio) e a meta do piloto no teto de intervalo base (o do contrato). Negativa: a meta é inatingível e esse teto não pode ser o critério de sucesso.",
+      "unidade": "linhas/h",
+      "insight_ref": "INS-058",
+      "provavel": -5.712514178243083,
+      "p10": -5.8306137154471385,
+      "p50": 2.3663477501909256,
+      "p90": 10.095516237932356
+    },
+    "IMP-PILOTO-META-PR05-T1800": {
+      "descricao": "Meta de ritmo do robô no piloto pago: linhas por hora com robô a partir da qual a folga de preço do escopo do piloto (pedido-a-pedido do armazém, sem checkout e sem PR11) fecha. Frota do piloto, não a da ALT6 total. Armazém inteiro como teto do escopo, então a meta real é igual ou maior (limite inferior da exigência). Lida no teto de intervalo mais folgado, com o ritmo manual medido no mesmo teto.",
+      "unidade": "linhas/h",
+      "insight_ref": "INS-058",
+      "provavel": 62.264115074797346,
+      "p10": 52.926863934453806,
+      "p50": 58.16495000334524,
+      "p90": 63.46202084569003
+    },
+    "IMP-PILOTO-META-FOLGA-FISICA-T1800": {
+      "descricao": "Folga entre o teto de manuseio do deck (limite físico do robô, só manuseio) e a meta do piloto no teto de intervalo mais folgado. Negativa: a meta é inatingível e esse teto não pode ser o critério de sucesso.",
+      "unidade": "linhas/h",
+      "insight_ref": "INS-058",
+      "provavel": 15.735884925202654,
+      "p10": 14.407194096764211,
+      "p50": 19.840556653266482,
+      "p90": 25.038235068063074
+    },
+    "IMP-IMPL-INVESTIMENTO-ALT3-SEM-RESERVA-DESCONTO": {
+      "descricao": "Investimento de implementação a preço de tabela na ALT3/ALT4 sem reserva, sem a implantação do robô atual. Variante com desconto da implantação do robô que já opera na Social (a implantação desse robô já foi feita); a integração simples fica contada (conservador). A versão sem desconto é a de nome sem DESCONTO.",
+      "unidade": "R$",
+      "insight_ref": "INS-087",
+      "provavel": 36000.0,
+      "p10": 36000.0,
+      "p50": 36000.0,
+      "p90": 36000.0
+    },
+    "IMP-IMPL-INVESTIMENTO-ALT3-COM-RESERVA-DESCONTO": {
+      "descricao": "Investimento de implementação a preço de tabela na ALT3/ALT4 com reserva, sem a implantação do robô atual. Variante com desconto da implantação do robô que já opera na Social (a implantação desse robô já foi feita); a integração simples fica contada (conservador). A versão sem desconto é a de nome sem DESCONTO.",
+      "unidade": "R$",
+      "insight_ref": "INS-087",
+      "provavel": 60000.0,
+      "p10": 60000.0,
+      "p50": 60000.0,
+      "p90": 60000.0
+    },
+    "IMP-INV-PR11-CR1-ALT4-ALT3-COM-IMPL-DESCONTO": {
+      "descricao": "Postos de conferência atribuíveis à Royal Canin a partir dos quais a ALT4 passa CR1. Frota necessária dia a dia, sem reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]). Variante com desconto da implantação do robô que já opera na Social (a implantação desse robô já foi feita); a integração simples fica contada (conservador). A versão sem desconto é a de nome sem DESCONTO.",
+      "unidade": "postos",
+      "insight_ref": "INS-012",
+      "provavel": 0.8864722934497871,
+      "p10": 0.8682667774118252,
+      "p50": 0.8852843959255152,
+      "p90": 0.8991633927163958
+    },
+    "IMP-INV-PR11-CR1-ALT4-ALT3-COM-RESERVA-COM-IMPL-DESCONTO": {
+      "descricao": "Postos de conferência atribuíveis à Royal Canin a partir dos quais a ALT4 passa CR1. Frota necessária dia a dia mais um robô de reserva. Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]). Variante com desconto da implantação do robô que já opera na Social (a implantação desse robô já foi feita); a integração simples fica contada (conservador). A versão sem desconto é a de nome sem DESCONTO. Limiar da configuração recomendada com implementação, versão com desconto.",
+      "unidade": "postos",
+      "insight_ref": "INS-012",
+      "provavel": 1.386472293449787,
+      "p10": 1.3682559444117062,
+      "p50": 1.3851542352938075,
+      "p90": 1.3993121088414935
+    },
+    "IMP-REC-PISO-MES-COM-IMPL-DESCONTO": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Piso mensal (também a franquia recalibrada). Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]). Variante com desconto da implantação do robô que já opera na Social (a implantação desse robô já foi feita); a integração simples fica contada (conservador). A versão sem desconto é a de nome sem DESCONTO.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-054",
+      "provavel": 5500.0,
+      "p10": 5500.0,
+      "p50": 5500.0,
+      "p90": 5500.0
+    },
+    "IMP-REC-KMIN-COM-IMPL-DESCONTO": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Multiplicador mínimo sobre as tarifas do deck (piso). Com a implantação por robô e a integração simples a preço de tabela, amortizadas no prazo PR14 (limite superior do custo; custo real da Acta [●]). Variante com desconto da implantação do robô que já opera na Social (a implantação desse robô já foi feita); a integração simples fica contada (conservador). A versão sem desconto é a de nome sem DESCONTO.",
+      "unidade": "x",
+      "insight_ref": "INS-054",
+      "provavel": 2.42474867886002,
+      "p10": 2.2303888237596343,
+      "p50": 2.4069497168561726,
+      "p90": 2.5886353207781356
+    },
+    "IMP-REC-FOLGA-INT-COM-IMPL-DESCONTO": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Folga da janela de preço: teto de CR1 menos piso, com os postos de conferência (PR11) integralmente atribuídos ao escopo e desmobilizados; com implementação. Variante com desconto da implantação do robô que já opera na Social (a implantação desse robô já foi feita); a integração simples fica contada (conservador). A versão sem desconto é a de nome sem DESCONTO.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 2454.110826200852,
+      "p10": 2403.9924550079368,
+      "p50": 2458.896453226961,
+      "p90": 2527.2725579509747
+    },
+    "IMP-REC-FOLGA-RAT-COM-IMPL-DESCONTO": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Folga da janela de preço: teto de CR1 menos piso, com PR11 rateado pela parte da Royal Canin no checkout do armazém (sensibilidade E15); com implementação. Variante com desconto da implantação do robô que já opera na Social (a implantação desse robô já foi feita); a integração simples fica contada (conservador). A versão sem desconto é a de nome sem DESCONTO.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-012",
+      "provavel": -3650.6510785610526,
+      "p10": -3818.3541584111563,
+      "p50": -3623.0878126559737,
+      "p90": -3414.233504404348
+    },
+    "IMP-REC-PRECO-MES-INT-COM-IMPL-DESCONTO": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Preço mensal total recomendado, PR11 integral, com implementação. Variante com desconto da implantação do robô que já opera na Social (a implantação desse robô já foi feita); a integração simples fica contada (conservador). A versão sem desconto é a de nome sem DESCONTO.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 6727.055413100426,
+      "p10": 6701.687864235045,
+      "p50": 6729.450145079446,
+      "p90": 6763.573322142478
+    },
+    "IMP-REC-ECONOMIA-SOCIAL-MES-INT-COM-IMPL-DESCONTO": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Economia mensal da Social no preço recomendado, PR11 integral, com implementação. Variante com desconto da implantação do robô que já opera na Social (a implantação desse robô já foi feita); a integração simples fica contada (conservador). A versão sem desconto é a de nome sem DESCONTO.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-089",
+      "provavel": 3528.996885699611,
+      "p10": 3540.097866816622,
+      "p50": 3582.1243984802936,
+      "p90": 3637.377752946989
+    },
+    "IMP-REC-MARGEM-ACTA-MES-INT-COM-IMPL-DESCONTO": {
+      "descricao": "Configuração recomendada: ALT4 no escopo da ALT3, tarifas proporcionais às do deck, frota necessária dia a dia mais um robô de reserva, piso = custo de servir da frota total. Preço recomendado = ponto médio da janela (piso mais metade da folga) quando a folga é positiva; sem janela, é o piso (margem zero da Acta), e a economia da Social fica abaixo do limite. Margem mensal da Acta no preço recomendado, PR11 integral, com implementação amortizada. Variante com desconto da implantação do robô que já opera na Social (a implantação desse robô já foi feita); a integração simples fica contada (conservador). A versão sem desconto é a de nome sem DESCONTO.",
+      "unidade": "R$/mês",
+      "insight_ref": "INS-087",
+      "provavel": 1227.0554131004264,
+      "p10": 1201.900840404578,
+      "p50": 1229.7700139595213,
+      "p90": 1262.8362751576358
+    }
+  }
+}

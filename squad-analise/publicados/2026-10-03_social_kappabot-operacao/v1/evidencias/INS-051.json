@@ -1,0 +1,65 @@
+{
+  "id": "INS-051",
+  "estado": "validado",
+  "afirmacao": "Dos pedidos-a-pedido da Royal Canin, {{v.frac1}} têm um só endereço e, desses, {{v.fracmu}} ({{v.n_mu}}) têm mais de uma unidade, enquanto {{v.n_1un}} têm uma só unidade. Pela hipótese H08, pedidos de um endereço e uma unidade são candidatos a lote ou ao checkout sem robô, e os de mais de uma unidade não caberiam no Checkout Express. Censo do período inteiro, sem pedidos com palete; sem a semana de incidente da Royal Canin a fração de um endereço é {{v.frac1_si}}.",
+  "pergunta_ref": "P9",
+  "criterio_ref": "CR2",
+  "valores": {
+    "frac1": "ANA-013.pap_rc_frac_1end",
+    "fracmu": "ANA-013.pap_rc_frac_1end_multiunid",
+    "n_mu": "ANA-013.pap_rc_1end_multiunid",
+    "n_1un": "ANA-013.pap_rc_1end_1un",
+    "frac1_si": "ANA-013.pap_rc_frac_1end_sem_incidente"
+  },
+  "nivel": "descritivo",
+  "exploratorio": false,
+  "robustez": [
+    {
+      "recorte": "com e sem a semana de incidente",
+      "analise": "ANA-013",
+      "resultado": "passa",
+      "nota": "a fração quase não muda sem a semana"
+    },
+    {
+      "recorte": "por faixa de endereços e unidades",
+      "analise": "ANA-013",
+      "resultado": "passa",
+      "nota": "tabela pap_rc_enderecos_x_unidades: fora a faixa de um endereço, todos os pedidos têm mais de uma unidade"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Sem mudança; nenhum ataque muda a leitura."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Perguntar à Social se os pedidos de um endereço e uma unidade já vão a lote ou ao checkout; se não, há ganho de processo sem robô a mostrar na oferta.",
+  "dono": "Marcus (pergunta à Social)",
+  "premissas": [
+    "censo do período observado (carga inteira em dias plenos): estatísticas exatas do período, sem incerteza amostral",
+    "a semana de incidente operacional da Royal Canin fica nos totais; as variantes sem_incidente e janela_normal estão nas chaves de ANA-013 (revisoes/orquestrador_decisao_semana_incidente.md)",
+    "pedidos sem CANCELADO e sem linha de palete"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:53",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:35",
+      "por": "red-team-analitico"
+    }
+  ]
+}

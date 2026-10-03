@@ -1,0 +1,132 @@
+{
+  "id": "INS-070",
+  "estado": "validado",
+  "afirmacao": "Nas semanas pares, o pedido-a-pedido manual da Royal Canin roda menos coletas por hora em ciclo completo que o dos outros depositantes, com o mix de faixas de endereços igualado: diferença padronizada de {{v.dif}} (Royal Canin em {{v.rc}}, outros em {{v.outros}}). A pista PT-D1 de ANA-012 se confirma, mas a confirmação depende do critério de inversão por depositante, fixado depois dos sinais (decisão registrada em revisoes/orquestrador_decisao_inversao_ANA-016.md): pelo critério só de sinal, depositantes pequenos com sinal oposto fariam a pista falhar. Os resultados: p unilateral ajustado por Holm na F2 de {{v.padj}}, IC inteiro abaixo de zero e mesmo sinal no teto conservador, por faixa de endereços, ao deixar qualquer operador de fora e sem os dias pós-pausa. O sinal resiste, mas a magnitude cai nos recortes: sem o maior depositante do grupo de comparação, que responde por {{v.part}} das coletas desse grupo, a diferença é {{v.sem_maior}}, e entre os operadores que separam para os dois grupos é {{v.mesmos}}, os dois com IC inteiro abaixo de zero. Entre os {{v.n_dep}}, {{v.n_opostos}} mostram sinal oposto, todos com IC que contém o zero e {{v.n_fortes}} com inversão forte. Leituras do critério de inversão por depositante, lado a lado: (a) IC por operador do segmento inteiro do lado oposto, o critério adotado: confirma, com {{v.n_fortes}} com inversão forte; (b) só sinal: não confirma, com {{v.n_opostos}} de {{v.n_dep}} com sinal oposto; (c) leave-one-out, retirando um depositante por vez do grupo de comparação: confirma, com o IC por operador fora do zero em {{v.loo_fora}} do total de {{v.loo_n}}. A escolha entre as leituras é de Marcus no G3, e a confirmação de PT-D1 fica condicionada a um critério definido depois dos sinais: confiança baixa. O efeito mínimo detectável é {{v.mde}}, acima do efeito relevante de {{v.er}}: a magnitude pode estar exagerada e não deve ser citada como precisa. Associativo: não separa produto, layout e processo. A produtividade da Royal Canin não vale como base do armazém, e a oportunidade com os outros depositantes deve ser lida com a produtividade deles.",
+  "pergunta_ref": "P9",
+  "criterio_ref": "CR5",
+  "valores": {
+    "dif": "ANA-016.pt_d1_dif_m14_pad",
+    "rc": "ANA-016.pt_d1_m14_pad_rc",
+    "outros": "ANA-016.pt_d1_m14_pad_outros",
+    "padj": "ANA-016.pt_d1_p_ajustado_holm",
+    "mde": "ANA-016.pt_d1_mde",
+    "er": "ANA-016.pt_d1_efeito_relevante",
+    "part": "ANA-016.pt_d1_participacao_maior_depositante_b",
+    "sem_maior": "ANA-016.pt_d1_sem_maior_depositante",
+    "mesmos": "ANA-016.pt_d1_mesmos_operadores",
+    "n_dep": "ANA-016.n_depositantes_pt_d1",
+    "n_opostos": "ANA-016.n_depositantes_pt_d1_sinal_oposto",
+    "n_fortes": "ANA-016.n_depositantes_pt_d1_inversao_forte",
+    "loo_n": "ANA-016.n_retiradas_pt_d1_loo",
+    "loo_fora": "ANA-016.n_retiradas_pt_d1_loo_ic_fora_do_zero",
+    "leitura_a": "ANA-016.pt_d1_leitura_a_ic_oposto_confirmada",
+    "leitura_b": "ANA-016.pt_d1_leitura_b_so_sinal_confirmada",
+    "leitura_c": "ANA-016.pt_d1_leitura_c_leave_one_out_confirmada"
+  },
+  "nivel": "associativo",
+  "robustez": [
+    {
+      "recorte": "teto conservador do G2 (ciclo no teto menor)",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "mesmo sinal (tabela robustez_pistas de ANA-016)"
+    },
+    {
+      "recorte": "sinal por faixa de endereços",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "sem inversão em nenhuma faixa com operadores suficientes nos dois grupos"
+    },
+    {
+      "recorte": "deixar um operador de fora por vez",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "os extremos da retirada ficam do mesmo lado do zero"
+    },
+    {
+      "recorte": "sem dias pós-pausa",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "mesmo sinal"
+    },
+    {
+      "recorte": "semanas pares da janela base (duas semanas)",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "mesmo sinal, sem valor de confirmação (poucos dias)"
+    },
+    {
+      "recorte": "sem o maior depositante do grupo de comparação",
+      "analise": "ANA-016",
+      "resultado": "parcial",
+      "nota": "o sinal resiste e o IC fica abaixo de zero, mas a magnitude cai (chave pt_d1_sem_maior_depositante)"
+    },
+    {
+      "recorte": "entre os mesmos operadores (separam para os dois grupos)",
+      "analise": "ANA-016",
+      "resultado": "parcial",
+      "nota": "o sinal resiste e o IC fica abaixo de zero, mas a magnitude cai (chave pt_d1_mesmos_operadores); descritivo"
+    },
+    {
+      "recorte": "Royal Canin contra cada depositante com operadores suficientes",
+      "analise": "ANA-016",
+      "resultado": "parcial",
+      "nota": "sinal oposto em alguns depositantes pequenos, todos com IC que contém o zero; nenhuma inversão forte (tabela robustez_pistas)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Correções atendidas (sem o maior depositante, entre os mesmos operadores, por depositante). Ressalvas que ficam: magnitude não deve ser citada; a confirmação depende do critério de inversão fixado depois de ver os sinais (pelo critério só de sinal PT-D1 também falharia), o que o texto deve dizer, como INS-077 já diz; o grupo Royal Canin tem menos de vinte operadores. Ver revisoes/red-team-analitico_parteB_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Ler CR5 (ALT6) com a produtividade dos outros depositantes e tirar da oferta o argumento de que a linha de base da Royal Canin vale para o armazém. Levar a causa (produto, layout ou processo) ao teste controlado.",
+  "dono": "estatistico (ANA-016); analista-de-impacto (CR5 em ALT6)",
+  "premissas": [
+    "confirmação nas semanas ISO pares, com limiares, pesos e cortes de ANA-012 lidos do arquivo registrado, sem recálculo; Holm com seis testes na F2 (PT-H04, PT-H09, PT-H10, PT-D1, PT-D3, PT-D4)",
+    "o MDE de ANA-000 passa do efeito relevante (10% do valor de referência): a magnitude pode estar exagerada (poder baixo, erro tipo M) e não deve ser citada como precisa",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador do G2 como robustez",
+    "nenhuma semana par foi marcada como incidente da Royal Canin, por isso não há filtro de incidente na confirmação",
+    "critério de inversão por depositante declarado depois do desenho (o plano não fixa o tamanho do segmento): IC por operador do segmento inteiro do lado oposto; pelo critério só de sinal, depositantes pequenos com sinal oposto fariam a pista falhar"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:29:04",
+      "por": "estatistico"
+    },
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T18:24:35",
+      "por": "estatistico",
+      "nota": "revisado após as correções do red team (parte B) e a robustez por depositante"
+    },
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T18:47:36",
+      "por": "estatistico",
+      "nota": "ajuste de texto do critério de inversão (red team r2, parte B)"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:47",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T19:07:43",
+      "por": "estatistico",
+      "nota": "condições do sup-metodologia D3: três leituras do critério de inversão e leave-one-out registrado"
+    }
+  ]
+}

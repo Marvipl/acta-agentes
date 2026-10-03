@@ -1,0 +1,71 @@
+{
+  "id": "INS-044",
+  "estado": "validado",
+  "afirmacao": "Nos dias de maior volume o armazém coloca mais operadores em atividade: {{v.coef}} (descoberta, em desvios da média da semana, com dia da semana e mês controlados e corte de uma hora de jornada ativa). O sinal se mantém no teto conservador ({{v.coef300}}), com o corte de uma linha ({{v.coef1}}) e com os dias do incidente da Royal Canin dentro ({{v.coefinc}}). Associativo: a forma da flexibilização do quadro no pico (hora extra, temporário, remanejamento) não está separada. É a pista a priori PT-H10; só vira resultado depois da confirmação nas semanas pares em ANA-016.",
+  "pergunta_ref": "P15",
+  "criterio_ref": "CR8",
+  "valores": {
+    "coef": "ANA-012.coef_ativos_volume",
+    "coef300": "ANA-012.coef_ativos_volume_t300",
+    "coef1": "ANA-012.coef_ativos_volume_1linha",
+    "coefinc": "ANA-012.coef_ativos_volume_com_incidente"
+  },
+  "nivel": "associativo",
+  "exploratorio": true,
+  "robustez": [
+    {
+      "recorte": "teto conservador",
+      "analise": "ANA-012",
+      "resultado": "passa",
+      "nota": "mesmo sinal e IC inteiro acima de zero (chave coef_ativos_volume_t300)"
+    },
+    {
+      "recorte": "corte de uma linha em vez de uma hora",
+      "analise": "ANA-012",
+      "resultado": "passa",
+      "nota": "mesmo sinal e IC inteiro acima de zero (chave coef_ativos_volume_1linha)"
+    },
+    {
+      "recorte": "semana de incidente dentro",
+      "analise": "ANA-012",
+      "resultado": "passa",
+      "nota": "mesmo sinal e IC inteiro acima de zero (chave coef_ativos_volume_com_incidente)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "ANA-016",
+    "resultado": "confirma"
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Sem mudança: trilha da descoberta de PT-H10, confirmada em ANA-016 (INS-074); números da descoberta fora do memorando."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Pista PT-H10 já registrada no plano e confirmada em ANA-016 (INS-074): este insight fica como trilha da descoberta. A estimativa da descoberta (semanas ímpares) não vai ao memorando nem ao impacto; só a da confirmação em ANA-016. Se o argumento de reforço no pico for usado, precisa separar equipe fixa com hora extra de reforço por temporário (dado da Social).",
+  "dono": "estatistico (ANA-016)",
+  "premissas": [
+    "achado exploratório da descoberta (semanas ISO ímpares): estimativa sem ajuste para as muitas comparações olhadas; não vai ao memorando antes da confirmação em ANA-016",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador como robustez",
+    "incidente operacional da Royal Canin na semana ISO ímpar de fim de setembro tratado como recorte atípico e declarado (revisoes/orquestrador_decisao_semana_incidente.md)",
+    "corte de uma hora de jornada ativa sem fonte setorial ([●])"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:46",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:31",
+      "por": "red-team-analitico"
+    }
+  ]
+}

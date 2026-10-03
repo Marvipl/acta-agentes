@@ -1,0 +1,93 @@
+{
+  "id": "INS-032",
+  "estado": "aprovado",
+  "afirmacao": "Os outros depositantes compatíveis trariam receita adicional por transação de {{v.rec_n}} em operação normal e {{v.rec_e}} no cenário de estresse (janela do plano, com a semana de incidente da Royal Canin). Com a frota agrupada dia a dia (ponta desfavorável), a margem por robô adicional é {{v.marg_n}} em operação normal ({{v.marg_e}} no estresse), descontado o custo sem hardware; no limite inferior de M06 é {{v.marg_inf}}. Pelo perfil da banda, que subestimava a frota, seria {{v.marg_banda}}. O hardware máximo pagável no prazo, na leitura conservadora, é {{v.hw}}. Só com a frota dos depositantes relevantes a margem seria {{v.marg_rel}}, leitura otimista. O sinal da margem se mantém, mas a magnitude cai bastante frente à leitura pela banda. Nenhuma faixa reduzida de tarifa é atingida. A receita supõe que todo o volume compatível dos outros clientes da Social vá ao robô na tarifa da Royal Canin.",
+  "pergunta_ref": "P14",
+  "criterio_ref": "CR5",
+  "valores": {
+    "rec_n": "ANA-010.receita_adicional_mes_outros_normal",
+    "rec_e": "ANA-010.receita_adicional_mes_outros_estresse",
+    "marg_n": "ANA-010.margem_robo_adicional_mes_normal",
+    "marg_e": "ANA-010.margem_robo_adicional_mes_estresse",
+    "marg_inf": "ANA-010.margem_robo_adicional_mes_inf_normal",
+    "marg_banda": "ANA-010.margem_robo_adicional_mes_banda_normal",
+    "marg_rel": "ANA-010.margem_robo_adicional_mes_relevantes_normal",
+    "hw": "ANA-010.hardware_maximo_adicional_prazo_normal",
+    "faixa": "ANA-010.faixa_reduzida_atingida_com_outros_normal"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "limites de M06 e Qtde Endereços",
+      "analise": "ANA-010",
+      "resultado": "passa",
+      "nota": "a receita quase não muda entre o limite superior, o inferior e Qtde Endereços (chaves receita_adicional_mes_outros_inf_normal e _end_normal)"
+    },
+    {
+      "recorte": "tarifa reduzida retroativa",
+      "analise": "ANA-010",
+      "resultado": "passa",
+      "nota": "sem diferença, porque nenhuma faixa reduzida é atingida"
+    },
+    {
+      "recorte": "operação normal contra estresse",
+      "analise": "ANA-010",
+      "resultado": "passa",
+      "nota": "mesma ordem de grandeza e mesmo sinal da margem nas duas leituras"
+    },
+    {
+      "recorte": "frota: dia a dia contra banda contra relevantes",
+      "analise": "ANA-010",
+      "resultado": "parcial",
+      "nota": "a margem muda de magnitude conforme a frota (dia a dia é a ponta desfavorável; banda e relevantes superestimam); o sinal se mantém"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: margem e hardware máximo com a frota dia a dia como ponta desfavorável, banda e relevantes como leituras alternativas, e a premissa de adesão dos outros clientes declarada [●]. O sinal da margem se mantém. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": "IMP-ALT6-DEP-CHECKOUT",
+    "modelos_relacionados": []
+  },
+  "acao": "Levar à ALT6 a dependência do checkout: a maior parte da receita por transação vem do checkout conferido, que ainda não está pronto (IMP-ALT6-DEP-CHECKOUT). Sem ele a ALT6 fica só com o pedido-a-pedido, de receita muito menor. Pedir à engenharia o prazo de desenvolvimento do checkout.",
+  "dono": "Vinicius Bastos, CTO (prazo do checkout); Matheus Correa, Comercial; decisão de Marcus Lima, CEO",
+  "premissas": [
+    "todo o volume compatível dos outros depositantes vai ao robô nas tarifas da Royal Canin ([●]: adesão e tarifa por depositante)",
+    "checkout conferido pronto, o que Marcus informou que ainda não está",
+    "volumes abaixo das faixas de tarifa reduzida, então valem as tarifas cheias",
+    "base da oferta em operação normal (as quatro semanas anteriores ao incidente) para volume e receita; a janela do plano, que inclui o incidente da Royal Canin, entra como estresse (decisão do orquestrador; Marcus confirma ou troca no G3)",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "Sobrevive. Reforço: sem checkout, o pedido-a-pedido do armazém não paga a frota com as tarifas do deck (RTD-MARGEM-ARM-PAP-POOL). A adesão dos outros depositantes segue [●]. Detalhes em revisoes/red-team-decisao.json."
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:31",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:28",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:32",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:01",
+      "por": "Marcus"
+    }
+  ]
+}

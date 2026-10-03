@@ -1,0 +1,16 @@
+teto_s,motivo,ocorrencias,segundos_brutos,segundos_liquidos
+300.0,0_creditado,4507.0,647224.0,647224.0
+300.0,3_lacuna_acima_do_teto_entre_tarefas,872.0,1220271.0,1220271.0
+300.0,5_lacuna_com_segmento_invalido,160.0,17493.0,17493.0
+600.0,0_creditado,4507.0,799808.0,799808.0
+600.0,3_lacuna_acima_do_teto_entre_tarefas,475.0,1053410.0,1053410.0
+600.0,5_lacuna_com_segmento_invalido,192.0,31770.0,31770.0
+900.0,0_creditado,4507.0,891772.0,891772.0
+900.0,3_lacuna_acima_do_teto_entre_tarefas,324.0,943362.0,943362.0
+900.0,5_lacuna_com_segmento_invalido,217.0,49854.0,49854.0
+1800.0,0_creditado,4507.0,1068925.0,1068925.0
+1800.0,3_lacuna_acima_do_teto_entre_tarefas,145.0,712984.0,712984.0
+1800.0,5_lacuna_com_segmento_invalido,258.0,103079.0,103079.0
+,2_cauda_acima_do_limite,108.0,197213.0,180302.0
+,6_tarefa_aberta_em_lote,7.0,13028096.0,13028096.0
+,7_conta_do_robo,194.0,69865.0,69865.0

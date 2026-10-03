@@ -1,0 +1,73 @@
+{
+  "id": "INS-062",
+  "estado": "validado",
+  "afirmacao": "Além do mês 1 não há previsão validada: o volume dos meses 2 e 3 é uma faixa entre manter o ritmo do mês 1 e seguir a tendência. Em operação normal, o mês 3 do pedido-a-pedido da Royal Canin fica na faixa {{v.m3_pap_normal}}, com a inclinação por dia pleno, sem a semana do incidente, em {{v.incl_pap_s39}}, intervalo que inclui zero; no cenário de estresse a faixa abre para {{v.m3_pap_estresse}}, com a inclinação {{v.incl_pap}}, que só se distingue de zero por causa da semana do incidente. No checkout, a faixa do mês 3 é {{v.m3_ck_normal}} em operação normal (inclinação {{v.incl_ck_s39}}, intervalo que inclui zero) e {{v.m3_ck_estresse}} no estresse. A alta temporada (a Black Friday cai no mês 3) não está modelada.",
+  "pergunta_ref": "P4",
+  "criterio_ref": "CR2",
+  "valores": {
+    "m3_pap_normal": "ANA-014.proj_mes3_linhas_tarif_pap_rc_normal",
+    "m3_pap_estresse": "ANA-014.proj_mes3_linhas_tarif_pap_rc_estresse",
+    "incl_pap": "ANA-014.inclinacao_nivel_linhas_tarif_pap_rc",
+    "incl_pap_s39": "ANA-014.inclinacao_nivel_sem_semana39_linhas_tarif_pap_rc",
+    "m3_ck_normal": "ANA-014.proj_mes3_pedidos_checkout_rc_normal",
+    "m3_ck_estresse": "ANA-014.proj_mes3_pedidos_checkout_rc_estresse",
+    "incl_ck_s39": "ANA-014.inclinacao_nivel_sem_semana39_pedidos_checkout_rc"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "inclinação sem a semana final da carga",
+      "analise": "ANA-014",
+      "resultado": "parcial",
+      "nota": "a inclinação do pedido-a-pedido segue negativa, mas o intervalo passa a incluir zero; a do checkout muda de sinal (chaves inclinacao_nivel_sem_semana39_*)"
+    },
+    {
+      "recorte": "outra contagem de linha (Qtde Endereços)",
+      "analise": "ANA-014",
+      "resultado": "passa",
+      "nota": "a faixa dos meses 2 e 3 tem o mesmo formato com Qtde Endereços como linha tarifável (chave proj_mes2_3_linhas_tarif_end_pap_rc_normal)"
+    },
+    {
+      "recorte": "outro tipo de onda (checkout)",
+      "analise": "ANA-014",
+      "resultado": "parcial",
+      "nota": "faixa bem mais estreita que a do pedido-a-pedido e inclinação com intervalo que inclui zero em operação normal: o risco de queda no prazo está no pedido-a-pedido, não no checkout"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "O renderizador passou a rotular faixa de cenários como faixa; nenhum outro problema."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Tratar meses 2 e 3 como cenário no impacto (PR14), sem previsão pontual, e pedir à Social o pico de 2025 para tratar a alta temporada numa v2.",
+  "dono": "Analista de impacto, com Marcus",
+  "premissas": [
+    "PR02",
+    "PR14",
+    "sem sazonalidade de alta temporada (fora_do_plano)",
+    "base normal = quatro semanas até 18/09 (decisão do orquestrador, revisoes/orquestrador_decisao_semana_incidente.md)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T16:49:41",
+      "por": "cientista-de-dados"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:46",
+      "por": "red-team-analitico"
+    }
+  ]
+}

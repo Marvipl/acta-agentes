@@ -1,0 +1,162 @@
+{
+  "supervisor": "sup-negocio",
+  "agentes_revisados": ["analista-de-impacto", "especialista-setorial"],
+  "rodada": 1,
+  "fase": "D4",
+  "veredito": "revisar",
+  "rubrica": [
+    {
+      "agente": "analista-de-impacto",
+      "criterio": "[crítico] Decisão com alternativas, critérios e limites",
+      "nota": 1,
+      "evidencia": "nos/impacto.json, comparacao_limites: ALT2 a ALT6 foram classificadas contra CR1, CR2, CR6 e CR8, com viabilidade conjunta e inversões. Mas a recomendação (memo, ramo 'Se não passar') escolhe 'piloto pago' ou 'encerrar o piloto', e nenhuma das duas está em nos/decisao.json (alternativas ALT1 a ALT6, regra_decisao), nem tem critério ou limite. O red team já apontou isso (alternativas_nao_consideradas[4]: 'Opção legítima que a lista de alternativas não tem'). A ALT1 (status quo) também não tem custo modelado: não há modelo do custo do portão para a Acta (PR13 × robôs × meses) nem do valor de referência que se perde ao encerrar."
+    },
+    {
+      "agente": "analista-de-impacto",
+      "criterio": "[crítico] Premissas do impacto com fonte; impacto comparado aos limites",
+      "nota": 1,
+      "evidencia": "Todas as premissas usadas têm fonte (deck, Marcus). Os 117 modelos se reproduzem sem diferença, e as classes estão comparadas aos limites. Três falhas pesam. (1) Falta o custo de implementação: implantação, mapeamento, integração e desenvolvimento do checkout. O slide 18 diz 'Tudo incluído: robôs, implantação, manutenção, suporte e 9fleet', e PR13 (R$ 1.000 por robô por mês, 'tirando hardware') não os cobre. Nenhum modelo os inclui, e a nota 8 do nó confunde 'custo de implantação' com PR20. (2) O limiar do portão (IMP-INV-PR11-CR1-ALT4-ALT3) foi calculado sem reserva, mas a recomendação exige reserva. (3) A margem da ALT6 (IMP-CR6-ALT6-TOTAL) é citada em INS-088 com as tarifas do deck, nas quais CR1 da ALT6 falha (IMP-CR1-ALT6-DECK-INT)."
+    },
+    {
+      "agente": "analista-de-impacto",
+      "criterio": "Perfil do especialista com fontes e confiança",
+      "nota": null,
+      "evidencia": "Não se aplica: critério do especialista e do perfilador."
+    },
+    {
+      "agente": "analista-de-impacto",
+      "criterio": "Recomendações viáveis na operação",
+      "nota": 1,
+      "evidencia": "O portão é barato e tem dono (Marcus, INS-012). Mas falham três coisas. O limiar não corresponde à frota recomendada (com reserva). O piloto pago cobra R$ 2.000 por mês, que é a frota da RC (IMP-ALT4-PMIN-ALT3), e não a frota agrupada do escopo do piloto. Ele também deixa a Social no negativo (IMP-PILOTO-ECONOMIA-SOBRE-CUSTO-ROBO 0,26 x), depende do aceite de outros depositantes e não diz quem paga a implantação dos robôs extras. A resposta do portão depende também da Royal Canin (L2: conferência na coleta), que não aparece nos próximos passos do memorando."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "[crítico] Decisão com alternativas, critérios e limites",
+      "nota": null,
+      "evidencia": "Não se aplica: critério do arquiteto."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "[crítico] Premissas do impacto com fonte; impacto comparado aos limites",
+      "nota": 1,
+      "evidencia": "revisoes/especialista_D3.md (18:08) cita chaves do motor por nome, mas com valores anteriores à nova rodada das análises (ANA-009 às 19:52, ANA-015 às 19:53). Em 1.9: ANA-015.margem_robo_alt6_total_normal = 1.509 (atual: 1.007,38); hardware_max_alt6_total_normal = 36.221 (atual: 24.177,09). Em 1.8: ANA-009.frota_necessaria_alt6_normal = 4 (atual: 5). Em 1.7: ANA-010.margem_robo_adicional_mes_normal = 1.590 (atual: 553,72; 1.590 é a leitura pela banda, que INS-088 chama de superestimada). Em 1.12: ANA-003.excedente_h_p90_escopo_normal = 2,18 h (atual: 0,82). As conclusões 'a conta da Acta leva à ALT6' (1.9) e 'o que fecha a conta é volume agrupado, não preço' (3.3) se apoiam nos valores antigos."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "Perfil do especialista com fontes e confiança",
+      "nota": 2,
+      "evidencia": "Abri 3 fontes por WebFetch, e as 3 conferem. (1) GEODIS, estudo de caso: Dallas, 7 clientes, 12 AMRs, 40 mil pés², 65 → 98 UPH (+50%), −75% de hora extra, auditoria de 100% para 10% das coletas. (2) Senior WMS 8.12, Checkout Express: só pedidos de uma peça (mínimo e máximo = 1), conferência por bipe em bancada depois da separação, com etiqueta de volume. (3) Mundo Logística, 30/07/2024: Manhattan e Vanson Bourne, 2 mil profissionais em 12 países, 84% no Brasil com dificuldade de retenção. A confiança vem marcada em cada leitura, e o que não tem fonte está em [●] (peso por item, porta-palete, FEFO, causa do incidente)."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "Recomendações viáveis na operação",
+      "nota": 1,
+      "evidencia": "A seção 3.1 propõe 'ALT6 desde a primeira fase', com pedido-a-pedido do armazém e checkout depois. Os modelos atuais contrariam isso: IMP-MARGEM-ARM-PAP-POOL = −463,67 R$/robô/mês (falha), IMP-FOLGA-ARM-PAP-POOL = −3.697 R$/mês (falha) e IMP-ALT6-DEP-CHECKOUT = 0,79 da receita da ALT6 vindo do checkout. A viabilidade ficou como 'prévia para D4' (layout, ISO 3691-4, rede, treino, go-live, acordo coletivo, todos [●]), sem parecer D4 e sem esforço ou custo de implantação, mapeamento e integração. U4 ('risco de TI menor') estende ao checkout conferido a integração que já roda (importação de ondas e devolutiva), mas o 'faturamento liberado em trânsito' do slide 10 é integração nova."
+    }
+  ],
+  "checagens_executadas": [
+    "flock .../scratchpad/duckdb.lock python -m motor.impacto projetos/2026-10-03_social_kappabot-operacao/v1: 117 modelos, cerca de 3 min. Comparei com a cópia de saidas/impacto.json anterior (19:50:13 contra 19:55:12): 0 diferenças em provável, P10, P50 e P90. Reproduz.",
+    "Conferi IMP-CR2-ALT3-NORMAL à mão. Entradas: ANA-002.vol_mes_pedidos_checkout_rc_normal = 1.099,74 e vol_mes_linhas_tarif_pap_rc_sup_normal = 1.594,89. Conta: 1.099,74 × 1,70 + 1.594,89 × 0,25 = 2.268,28 R$/mês; ÷ 5.900 = 0,3845. Motor: 0,384, falha. Confere. Ressalva: a receita usa o limite superior de M06 (favorável à Acta), o que está declarado.",
+    "Conferi IMP-INV-PR11-CR1-ALT4-ALT3 à mão. Entradas: fte_chk 0,08259, fte_pap 0,21935, m14 50,59, frota 2. Conta: ((0,08259 + 0,21935 × 50,59/66) × 5.000 + máx(2.268,28; 2.000)) ÷ (0,8 × 5.000) − 0,30194 = 0,5785 posto. Motor: 0,58. Confere. Com a fórmula do mesmo modelo e frota 3 (a reserva que a recomendação exige), o limiar passa a 0,761 posto. Somando a implantação de tabela amortizada em PR14 (R$ 24.000 ÷ 24 = R$ 1.000 por robô por mês), passa a 1,01 posto sem reserva e 1,51 com reserva. São contas manuais do supervisor e precisam ser registradas no motor.",
+    "Conferi IMP-CR6-ALT6-TOTAL à mão. Receita: 2.268,28 + 3.542,37 × 1,70 + 6.986,37 × 0,25 = 10.036,90 R$/mês. Margem: ÷ 5 − 1.000 = 1.007,38 R$/robô/mês. Motor: 1.007,38. Confere. Procurei incoerência e achei uma: com essas tarifas, IMP-CR1-ALT6-DECK-INT = 0,109, abaixo de PR01 (falha). A margem compatível com CR1 é (IMP-ALT4-PMAX-ALT6-INT 8.303,27 − IMP-ALT4-PMIN-ALT6 5.000) ÷ 5 = 660,65 R$/robô/mês, e o hardware pagável é 15.855,67 R$/robô (IMP-ALT4-HW-ALT6-PMAX). Confere com o motor.",
+    "Conferi IMP-HW-ALT4-INT-NO-TETO: (7.954,11 − 2.000) ÷ 2 × 24 = 71.449,3. Com reserva: (7.954,11 − 3.000) ÷ 3 × 24 = 39.632,9. Os dois conferem. Também conferi KMAX em função dos postos: a 0,58 posto o teto é 1,00 x por construção, abaixo do KMIN com reserva (IMP-KMIN-ALT4-ALT3-COM-RESERVA, 1,32 x). A 1 posto o teto fica em torno de 1,74 x (conta manual).",
+    "Procurei custo de implementação com grep 'implanta|mapeamento|integraç|tudo inclu' em nos/impacto.json, saidas/insights.json, evidencias/INS-*.json, memo, relatório e oferta. Não há nenhum modelo, premissa ou campo premissas dos 20 insights com implantação, mapeamento ou integração. A única menção é a nota 8 do nó, que trata 'custo de implantação do hardware' como PR20. Referência de preços da Acta: squad-orcamento/conhecimento/precificacao/referencias_comerciais_acta.csv (Mapeamento R$ 30/m², Implantação R$ 24.000/robô, Integração simples R$ 12.000, com ERP/WMS caso a caso, Manutenção R$ 1.000/robô/mês e Locação K100 R$ 7.000/mês). O PR13 informado coincide com a tabela de manutenção.",
+    "Procurei 'não fazer nada / encerrar' em nos/decisao.json. A ALT1 é 'manter o piloto' (status quo). 'Encerrar' e 'piloto pago' não constam das alternativas nem da regra_decisao, cujo arquivo é das 02:10, anterior ao red team das 19:30. Não há modelo de custo do status quo.",
+    "Revisei os 20 insights acionáveis (evidencias/INS-*.json): todos têm impacto (modelo), ação, dono, premissas (de 3 a 7) e confiança. Nenhuma ação tem prazo. As premissas de INS-086, INS-087 e INS-088 citam 'sem hardware', mas não 'sem implantação, mapeamento e integração'. O modelo primário de INS-086 (IMP-CR6-ALT3-COM-PISO, 1.950, frota necessária) não é o que a afirmação descreve (frota do slide 14, 180 e 475).",
+    "Abri 3 fontes do perfil do especialista por WebFetch (GEODIS, Senior Checkout Express e Mundo Logística/Manhattan): as 3 conferem.",
+    "Comparei as chaves citadas em revisoes/especialista_D3.md com os resultado.json atuais: 5 valores desatualizados (ver rubrica).",
+    "Regenerei revisoes/orquestrador_tabela_criterios.md com python revisoes/gerar_tabela_criterios.py, como o orquestrador autorizou. A parte de critérios ficou idêntica. A parte de impacto estava vazia (só o cabeçalho) e agora tem 117 linhas.",
+    "Li o memorando, o relatório executivo e a oferta enriquecida contra nos/decisao.json e revisoes/red-team-decisao.json. A recomendação segue a regra de decisão (ALT1 enquanto CR1, CR2 e CR6 não passam juntas no cenário conservador). Os números citados conferem com saidas/impacto.json."
+  ],
+  "pontos": [
+    {
+      "severidade": "critica",
+      "local": "nos/impacto.json (todos os modelos de CR6, ALT4-PMIN, FOLGA, INV-PR11, HW; nota 8); saidas/memo_decisao.md; saidas/oferta_enriquecida.md ('Hardware máximo pagável', 'Janela de preço')",
+      "problema": "Falta o custo de implementação. O deck promete 'Tudo incluído: robôs, implantação, manutenção, suporte e 9fleet' (slide 18). PR13 (R$ 1.000 por robô por mês, sem hardware) é igual à tabela de manutenção da Acta e não cobre: implantação (R$ 24.000 por robô), mapeamento (R$ 30/m², área [●]), integração (R$ 12.000 a simples; a do checkout conferido com o Senior é caso a caso) e desenvolvimento do checkout conferido (L4 pede prazo, não custo). Isso muda a decisão. (a) O limiar do portão sobe de 0,58 para cerca de 1,0 posto sem reserva e 1,5 com reserva (conta manual na fórmula de IMP-INV-PR11-CR1-ALT4-ALT3, só com a implantação amortizada em PR14). Isso fica perto dos 2 postos totais e longe do rateio de 0,47. (b) A margem da ALT4 nas tarifas do deck (134,14 R$/robô/mês, ou 3.219,32 R$/robô em 24 meses) não paga a implantação de um robô. O mesmo vale para o robô adicional da ALT6 (13.260 R$/robô) e para a ALT6 no teto de CR1 (15.855,67 R$/robô). (c) O 'hardware máximo pagável' entregue a Renato é, na verdade, o máximo para hardware, implantação, mapeamento e integração somados.",
+      "correcao_sugerida": "Analista: registrar uma premissa nova (custo de implementação por robô e por projeto), com fonte na tabela da Acta e confirmação de Renato Correa ou Marcus sobre o que o R$ 1.000 de PR13 inclui. Somar ao piso a amortização em PR14 e refazer IMP-INV-PR11-CR1-ALT4-ALT3 (com e sem reserva), FOLGA, KMIN/KMAX e HW. Renomear os modelos HW para 'máximo pagável de hardware + implantação'. Alternativa comercial: a oferta tira 'tudo incluído' e cobra taxa de implantação e mapeamento à parte, e o analista modela os dois desenhos. Perguntar à Social a área a mapear (m²) e à engenharia o esforço do checkout conferido."
+    },
+    {
+      "severidade": "alta",
+      "local": "IMP-INV-PR11-CR1-ALT4-ALT3; saidas/memo_decisao.md (Portão; 'Se passar'); saidas/oferta_enriquecida.md ('Em uma frase', 'O que mudar: Tarifas')",
+      "problema": "O limiar do portão (0,58 posto) foi calculado com frota 2, sem reserva. O ramo 'Se passar' recomenda frota mais reserva. Com reserva (frota 3), o limiar consistente é 0,76 posto (conta manual). A faixa de tarifas '1,32 x a 3,51 x' junta o piso com reserva e o teto com PR11 integral. A 0,58 posto, o teto de CR1 é 1,00 x por construção, abaixo do mínimo de 1,32 x com reserva. Entre 0,58 e 0,76 posto, a regra manda para a ALT4 uma oferta sem janela de preço.",
+      "correcao_sugerida": "Registrar IMP-INV-PR11-CR1-ALT4-ALT3-COM-RESERVA e o KMAX da ALT4 em função dos postos confirmados (no limiar, em 1 posto e em 2). No memorando e na oferta, mostrar o limiar com reserva e a janela por faixa de postos, depois de somar o custo de implementação (ponto crítico)."
+    },
+    {
+      "severidade": "alta",
+      "local": "evidencias/INS-088.json (impacto.modelo = IMP-CR6-ALT6-TOTAL; ação 'alternativa de maior margem'); saidas/oferta_enriquecida.md V3; saidas/relatorio_executivo.md INS-088",
+      "problema": "A margem da ALT6 total (1.007,38 R$/robô/mês; hardware 24.177 R$/robô) é calculada com as tarifas do deck. Com essas tarifas, a economia da Social na ALT6 é 0,109, abaixo de PR01 (IMP-CR1-ALT6-DECK-INT, falha), mesmo com PR11 integral. A margem compatível com CR1 é no máximo 660,65 R$/robô/mês (IMP-ALT4-HW-ALT6-PMAX 15.855,67 ÷ 24). Ela só existe com PR11 integral e usa o armazém inteiro como teto. Apresentar a ALT6 como 'a de maior margem' mostra a Marcus uma margem que a Social não aceitaria pelo próprio critério de compra.",
+      "correcao_sugerida": "Trocar o modelo primário de INS-088 pela margem no teto de CR1 (por exemplo, registrar IMP-CR6-ALT6-NO-TETO-INT) e citar IMP-CR6-ALT6-TOTAL só como contraste 'nas tarifas do deck, CR1 falha'. Ajustar V3 da oferta e o relatório."
+    },
+    {
+      "severidade": "alta",
+      "local": "nos/decisao.json (alternativas, regra_decisao); saidas/memo_decisao.md ('Se não passar'); saidas/oferta_enriquecida.md ('Desenho do piloto pago')",
+      "problema": "'Encerrar o piloto' e 'piloto pago' viraram ramos da recomendação sem estarem no nó decisão, sem critério e sem limite. A ALT1 (status quo) não tem custo modelado para a Acta, e a perda da 'parceria de referência' (slide 18) não é citada. O preço do piloto (R$ 2.000 por mês) é a frota da RC, não a frota agrupada que o escopo do piloto pede (RC mais 1 ou 2 depositantes). Ninguém responde por quem paga a implantação dos robôs extras, e o aceite dos depositantes, clientes da Social, não tem dono.",
+      "correcao_sugerida": "Arquiteto: registrar ALT0 (encerrar o piloto gratuito) e ALT1b (piloto pago), com critério e limite (custo de servir coberto e critério de sucesso fixado antes), e ajustar a regra. Analista: modelar o custo do portão e do status quo (PR13 × robôs × meses) e o preço do piloto pela frota agrupada do escopo. Declarar como [●] o valor de referência e a implantação dos robôs do piloto."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/impacto.json (CR6); nos/decisao.json CR6",
+      "problema": "Falta o custo de oportunidade do robô. A tabela da Acta tem locação do K100 a R$ 7.000 por mês (contrato LATAM: R$ 6.300). Receita por robô na ALT4: 1.134 R$/mês nas tarifas do deck (2.268,28 ÷ 2) e 3.977 R$/mês no teto de CR1 com PR11 integral (7.954,11 ÷ 2). Margem ≥ 0 sem hardware não diz se a Social é o melhor uso de um robô, e a equipe de cerca de dez pessoas também é restrição.",
+      "correcao_sugerida": "Registrar um modelo de receita por robô dividida pela referência de locação (premissa com fonte na tabela da Acta). Marcus decide se é limite ou só informação."
+    },
+    {
+      "severidade": "media",
+      "local": "Modelos de CR1 (IMP-CR1-ALT4-ALT3-INT e afins); saidas/oferta_enriquecida.md V1",
+      "problema": "CR1 supõe que o custo dos postos de conferência some no primeiro mês do go-live. Ficam de fora os custos de transição da Social: realocação ou rescisão dos postos, queda de produtividade no go-live, operador dedicado no teste e estações fixas (slide 19). Também fica de fora o fato de que os postos embalam (especialista 1.5): o robô tira o bipe, não a embalagem, e nenhum cenário mede a fração do posto que é conferência.",
+      "correcao_sugerida": "Declarar esses custos como premissa [●] nas premissas de INS-089 e INS-012 e na oferta. Manter a garantia só sobre a conferência medida. Incluir na pergunta do portão quanto do tempo do posto é conferência."
+    },
+    {
+      "severidade": "media",
+      "local": "saidas/oferta_enriquecida.md, 'O que manter' contra 'O que mudar'",
+      "problema": "'Tarifa por transação na proporção do deck... já cobrem o piso (0,88 x)' só vale sem reserva. A mesma oferta pede frota mais reserva, que exige pelo menos 1,32 x. Matheus pode montar a proposta com as tarifas do deck.",
+      "correcao_sugerida": "Reescrever 'O que manter' para a estrutura (tarifa por transação), não para o nível. O nível sai da janela recalculada."
+    },
+    {
+      "severidade": "media",
+      "local": "saidas/memo_decisao.md, Próximo passo; insights acionáveis (campo acao)",
+      "problema": "A resposta do portão depende da Royal Canin aceitar conferência na coleta (L2, E15), mas o memorando só tem donos internos e a Social. Nenhuma das 20 ações tem prazo. A reunião com a Social está [●].",
+      "correcao_sugerida": "Incluir 'Social com Royal Canin (via Marcus): aceite da conferência na coleta' como passo do portão e pôr data relativa (antes da reunião, dia [●]) nas ações de INS-012, INS-054 e INS-089."
+    },
+    {
+      "severidade": "baixa",
+      "local": "evidencias/INS-086.json, impacto.modelo",
+      "problema": "O modelo primário IMP-CR6-ALT3-COM-PISO (1.950, frota necessária) não é o que a afirmação descreve (frota do slide 14: 180 e 475 R$/robô/mês).",
+      "correcao_sugerida": "Usar IMP-CR6-ALT3-DECK5-COM-PISO como modelo primário."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/impacto.json, premissas (min = provável = max)",
+      "problema": "O limite de CR1 pede premissas de custo 'no extremo desfavorável da faixa de sensibilidade'. Nenhuma premissa tem faixa. As inversões (PR10, PR13) fazem esse papel, mas isso não está dito como substituto do limite.",
+      "correcao_sugerida": "Nota no nó: 'o extremo desfavorável de CR1 é lido pelos pontos de inversão IMP-INV-PR10-* e IMP-INV-PR13-*'."
+    },
+    {
+      "severidade": "alta",
+      "local": "revisoes/especialista_D3.md, seções 1.7, 1.8, 1.9, 1.12 e 3.3",
+      "problema": "O parecer está desatualizado frente aos resultados atuais: 5 chaves com valor antigo (margem da ALT6 total 1.509 contra 1.007; hardware 36.221 contra 24.177; frota da ALT6 4 contra 5; margem do robô adicional 1.590 contra 554; excedente p90 2,18 contra 0,82). As conclusões 'a conta da Acta leva à ALT6' e 'o que fecha a conta é volume agrupado, não preço' dependem desses valores. A oferta enriquecida usa os rótulos U e N desse parecer.",
+      "correcao_sugerida": "Especialista: entregar um parecer D4 curto que refaça 1.7, 1.9, 1.12 e a seção 3 com as chaves atuais e com o custo de implementação. Revisar a força de U2."
+    },
+    {
+      "severidade": "alta",
+      "local": "revisoes/especialista_D3.md, seção 3.1",
+      "problema": "A reformulação 'ALT6 desde a primeira fase, com pedido-a-pedido do armazém primeiro e checkout depois' é contrariada pelos modelos: IMP-MARGEM-ARM-PAP-POOL −463,67 R$/robô/mês, IMP-FOLGA-ARM-PAP-POOL −3.697 R$/mês e 79% da receita da ALT6 vindo do checkout (IMP-ALT6-DEP-CHECKOUT). O memorando já a descartou (ALT6 como fase seguinte), mas o parecer continua dizendo o contrário.",
+      "correcao_sugerida": "Retirar a sequência ou condicioná-la ao teto folgado (IMP-FOLGA-ARM-PAP-POOL-ALTO) como hipótese do piloto, alinhada ao memorando."
+    },
+    {
+      "severidade": "media",
+      "local": "revisoes/especialista_D3.md, 'Viabilidade (prévia para D4)' e U4",
+      "problema": "Não há parecer de viabilidade na D4. Layout, ISO 3691-4, rede, treino, go-live e acordo coletivo seguem [●], sem esforço nem custo de implantação, mapeamento e integração. U4 ('risco de TI menor') estende ao checkout conferido a integração atual, mas o faturamento liberado em trânsito (slide 10) é integração nova com o Senior.",
+      "correcao_sugerida": "Separar a integração existente da nova. Listar perguntas com resposta proposta: à engenharia (esforço da integração do checkout), à Social (área a mapear em m², rede, layout da RC)."
+    }
+  ],
+  "lacunas": [
+    "Principal: custo de implementação (implantação por robô, mapeamento por m², integração do checkout conferido com o Senior e desenvolvimento do checkout) e o que o 'tudo incluído' do slide 18 cobre. Pode levar o limiar do portão de 0,58 para cerca de 1 a 1,5 posto e tirar a viabilidade da ALT4 e da ALT6 para a Acta.",
+    "'Encerrar o piloto' e 'piloto pago' sem lugar no nó decisão, sem critério e sem limite. Não há custo do status quo (ALT1) nem valor da operação de referência.",
+    "Custo de oportunidade do robô contra a locação de tabela da Acta (R$ 7.000 por mês; LATAM R$ 6.300).",
+    "Custos de transição da Social (realocação ou rescisão dos postos, go-live, estações fixas) e a fração do posto que é conferência e não embalagem.",
+    "Aceite da Royal Canin à conferência na coleta como condição do portão, sem dono nem data.",
+    "Parecer D4 do especialista (viabilidade operacional) não entregue. O parecer D3 está com valores desatualizados."
+  ],
+  "avaliacao_recomendacao": "A recomendação segue a regra de decisão: ALT1 como portão, depois ALT4 se PR11 passar do limiar, senão piloto pago ou encerrar. Do jeito que foi entregue, ainda não é executável. O limiar subestima o que a própria recomendação pede (reserva) e omite a implantação. O ramo 'piloto pago' tem preço da frota errada e deixa a Social no negativo sem dono para o aceite dos depositantes. 'Encerrar' não tem custo nem critério. A ordem é certa: perguntar antes de desenvolver. Os números do portão precisam ser refeitos antes de a pergunta ir à Social.",
+  "avaliacao_oferta_enriquecida": "Serve em parte ao objetivo de Marcus. Ela enriquece pelo que tira do deck (8 itens com base no WMS, V6) e por argumentos novos e honestos: elasticidade no pico do armazém em pessoas-hora e garantia de capacidade. Mas não serve ainda como base de proposta. A janela de preço e o 'hardware máximo pagável' ignoram o custo de implementação. V3 cita uma margem da ALT6 incompatível com CR1. 'O que manter' sugere as tarifas do deck, contra a reserva recomendada. E 'tudo incluído' (slide 18) não é tratado. Matheus montaria uma proposta que pode dar prejuízo à Acta.",
+  "em": "2026-10-03"
+}

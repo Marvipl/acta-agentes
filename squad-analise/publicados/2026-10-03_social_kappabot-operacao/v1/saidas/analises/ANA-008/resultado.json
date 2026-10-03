@@ -1,0 +1,3414 @@
+{
+  "id": "ANA-008",
+  "valores": {
+    "dif_primeira_hora_segunda": {
+      "valor": -0.015328714478925448,
+      "unidade": "p.p.",
+      "descricao": "p.p. (fração do volume do dia, segunda menos terça a sexta)",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.056779478785552916,
+        "superior": 0.02612204982770202,
+        "nivel": 0.95,
+        "unidade_ic": "dia (Welch)",
+        "ic_welch": [
+          -0.056779478785552916,
+          0.02612204982770202
+        ],
+        "ic_bloco": [
+          -0.053026284226612964,
+          0.019619881262723307
+        ]
+      }
+    },
+    "participacao_primeira_hora_segunda": {
+      "valor": 0.1655782697336112,
+      "unidade": "%",
+      "descricao": "fração do volume do dia",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": 0.12887685384366282,
+        "superior": 0.20227968562355958,
+        "nivel": 0.95
+      }
+    },
+    "participacao_primeira_hora_ter_sex": {
+      "valor": 0.18090698421253665,
+      "unidade": "%",
+      "descricao": "fração do volume do dia",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": 0.15955651368747906,
+        "superior": 0.20225745473759424,
+        "nivel": 0.95
+      }
+    },
+    "p_unilateral_h01": {
+      "valor": 0.7905523619095226,
+      "unidade": "p unilateral",
+      "descricao": "p unilateral (H0: segunda <= terça a sexta), o maior entre Welch e bloco de semana",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.7729642492895786,
+        "superior": 0.7905523619095226,
+        "nivel": null,
+        "nota": "faixa entre o p do Welch e o p do bloco de semana"
+      }
+    },
+    "p_holm_f1b_pior_caso": {
+      "valor": 1.0,
+      "unidade": "p ajustado",
+      "descricao": "p ajustado (pior caso de Holm na família F1b)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": null,
+        "nota": "faixa entre o p do Welch e o do bloco de semana, vezes o nº de testes da F1b"
+      }
+    },
+    "efeito_relevante_h01": {
+      "valor": 0.018090698421253666,
+      "unidade": "%",
+      "descricao": "fração do volume do dia (10% da participação média de terça a sexta)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_h01_de_ana000": {
+      "valor": 0.06998324536791158,
+      "unidade": "%",
+      "descricao": "fração do volume do dia (MDE de ANA-000)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "classe_h01": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "por_desenho_h01": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_segundas_h01": {
+      "valor": 15.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_ter_sex_h01": {
+      "valor": 62.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_fora_h01": {
+      "valor": 3.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa (fora do teste, só descritivos)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h01_variantes_testadas": {
+      "valor": 9.0,
+      "unidade": "variantes de robustez",
+      "descricao": "variantes de robustez (escopo, pedidos, metades)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h01_variantes_mesmo_sinal": {
+      "valor": 8.0,
+      "unidade": "variantes com o mesmo sinal da primária",
+      "descricao": "variantes com o mesmo sinal da primária",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h01_inversao_entre_metades": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h01_leitura_agregada_valida": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "janela_inicio_h": {
+      "valor": 8.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da primeira hora observada)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "janela_fim_h": {
+      "valor": 18.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: fim da última hora observada, exclusivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "janela_horas": {
+      "valor": 10.0,
+      "unidade": "horas na janela observada",
+      "descricao": "horas na janela observada (PAR06 do volume diário médio)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "concentracao_matinal": {
+      "valor": 0.4176510989010989,
+      "unidade": "%",
+      "descricao": "fração das linhas da tabela com início entre 8h e 9h59 (armazém, dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.38429314445229895,
+        "superior": 0.44859368309049513,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          0.3857660722003667,
+          0.44795525784931434
+        ],
+        "ic_semana": [
+          0.38429314445229895,
+          0.44859368309049513
+        ]
+      }
+    },
+    "razao_concentracao_ao_slide17": {
+      "valor": 0.9944073783359498,
+      "unidade": "x",
+      "descricao": "razão ao valor do slide 17 (verificação do deck)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.9149836772673785,
+        "superior": 1.0680801978345122,
+        "nivel": 0.95,
+        "unidade_ic": "semana"
+      }
+    },
+    "semana_primeira_colmeia": {
+      "valor": 28.0,
+      "unidade": "semana ISO da primeira colmeia da Royal Canin",
+      "descricao": "semana ISO da primeira colmeia da Royal Canin (a série da colmeia começa nela)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pre_colmeia": {
+      "valor": 22.0,
+      "unidade": "dias plenos antes da primeira semana com colmeia da Royal Canin",
+      "descricao": "dias plenos antes da primeira semana com colmeia da Royal Canin (regime pré-colmeia)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_colmeia_sem_incidente": {
+      "valor": 54.0,
+      "unidade": "dias plenos do regime pós-colmeia, sem 21 a 25/09",
+      "descricao": "dias plenos do regime pós-colmeia, sem 21 a 25/09 (base da oferta)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p90_linhas_dia_armazem": {
+      "valor": 1630.2000000000003,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1469.9450000000002,
+        "superior": 2298.600000000003,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          1469.9450000000002,
+          2298.600000000003
+        ],
+        "ic_semana": [
+          1483.830000000001,
+          2265.0
+        ]
+      }
+    },
+    "media_linhas_dia_armazem": {
+      "valor": 1100.4125,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 983.0225,
+        "superior": 1231.6328125,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          983.0225,
+          1231.6328125
+        ],
+        "ic_semana": [
+          984.3466689250226,
+          1230.2224472402597
+        ]
+      }
+    },
+    "mediana_linhas_dia_armazem": {
+      "valor": 914.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 801.0,
+        "superior": 1073.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          835.0,
+          1066.0
+        ],
+        "ic_semana": [
+          801.0,
+          1073.0
+        ]
+      }
+    },
+    "max_linhas_dia_armazem": {
+      "valor": 3408.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_armazem": {
+      "valor": 80.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_armazem_p90": {
+      "valor": 9.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 11.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_linhas_armazem_p90": {
+      "valor": 304.75,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 229.28000000000003,
+        "superior": 495.128125,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_linhas_dia_armazem_sem_pos_pausa": {
+      "valor": 1597.4000000000003,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1397.0,
+        "superior": 1996.000000000001,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          1397.0,
+          1996.000000000001
+        ],
+        "ic_semana": [
+          1439.0,
+          1936.0
+        ]
+      }
+    },
+    "media_linhas_dia_armazem_sem_pos_pausa": {
+      "valor": 1037.8051948051948,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 939.3965324675324,
+        "superior": 1146.5131539858062,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          936.9668831168831,
+          1143.8886363636364
+        ],
+        "ic_semana": [
+          939.3965324675324,
+          1146.5131539858062
+        ]
+      }
+    },
+    "mediana_linhas_dia_armazem_sem_pos_pausa": {
+      "valor": 903.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 795.0,
+        "superior": 1043.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          803.0,
+          1032.0
+        ],
+        "ic_semana": [
+          795.0,
+          1043.0
+        ]
+      }
+    },
+    "max_linhas_dia_armazem_sem_pos_pausa": {
+      "valor": 2656.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_armazem_sem_pos_pausa": {
+      "valor": 77.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_armazem_p90_sem_pos_pausa": {
+      "valor": 8.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 11.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_linhas_armazem_p90_sem_pos_pausa": {
+      "valor": 290.375,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 259.55104166666666,
+        "superior": 428.3712121212122,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "media_retomada_linhas_armazem": {
+      "valor": 1842.1666666666667,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1532.0554824561405,
+        "superior": 2199.0014705882354,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          1561.3819444444446,
+          2114.6680555555554
+        ],
+        "ic_semana": [
+          1532.0554824561405,
+          2199.0014705882354
+        ],
+        "n_dias": 18
+      }
+    },
+    "media_pos_pausa_linhas_armazem": {
+      "valor": 2707.3333333333335,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_linhas_armazem": {
+      "valor": 1669.1333333333334,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_linhas_armazem": {
+      "valor": 3.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p90_linhas_dia_pap_rc": {
+      "valor": 232.90000000000026,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 152.18999999999994,
+        "superior": 328.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          200.0,
+          330.1000000000002
+        ],
+        "ic_semana": [
+          152.18999999999994,
+          328.0
+        ]
+      }
+    },
+    "media_linhas_dia_pap_rc": {
+      "valor": 112.65,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 80.45228937728938,
+        "superior": 147.83009868421053,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          93.0,
+          134.65
+        ],
+        "ic_semana": [
+          80.45228937728938,
+          147.83009868421053
+        ]
+      }
+    },
+    "mediana_linhas_dia_pap_rc": {
+      "valor": 79.5,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 60.0,
+        "superior": 125.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          68.0,
+          93.0
+        ],
+        "ic_semana": [
+          60.0,
+          125.0
+        ]
+      }
+    },
+    "max_linhas_dia_pap_rc": {
+      "valor": 453.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_pap_rc": {
+      "valor": 80.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_pap_rc_p90": {
+      "valor": 11.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 9.0,
+        "superior": 12.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana"
+      }
+    },
+    "demanda_pico_linhas_pap_rc_p90": {
+      "valor": 45.5,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 27.399375,
+        "superior": 57.125,
+        "nivel": 0.95,
+        "unidade_ic": "semana"
+      }
+    },
+    "p90_linhas_dia_pap_rc_sem_pos_pausa": {
+      "valor": 230.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 150.0,
+        "superior": 303.40000000000043,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          193.90500000000037,
+          303.40000000000043
+        ],
+        "ic_semana": [
+          150.0,
+          303.40000000000043
+        ]
+      }
+    },
+    "media_linhas_dia_pap_rc_sem_pos_pausa": {
+      "valor": 111.74025974025975,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 80.16831409331411,
+        "superior": 146.09479746835444,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          92.44155844155844,
+          133.15584415584416
+        ],
+        "ic_semana": [
+          80.16831409331411,
+          146.09479746835444
+        ]
+      }
+    },
+    "mediana_linhas_dia_pap_rc_sem_pos_pausa": {
+      "valor": 79.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 60.0,
+        "superior": 125.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          68.0,
+          100.0
+        ],
+        "ic_semana": [
+          60.0,
+          125.0
+        ]
+      }
+    },
+    "max_linhas_dia_pap_rc_sem_pos_pausa": {
+      "valor": 453.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_pap_rc_sem_pos_pausa": {
+      "valor": 77.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_pap_rc_p90_sem_pos_pausa": {
+      "valor": 11.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 9.0,
+        "superior": 12.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana"
+      }
+    },
+    "demanda_pico_linhas_pap_rc_p90_sem_pos_pausa": {
+      "valor": 44.875,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 27.496875000000003,
+        "superior": 56.00227272727273,
+        "nivel": 0.95,
+        "unidade_ic": "semana"
+      }
+    },
+    "p90_linhas_dia_pap_rc_sem_incidente": {
+      "valor": 244.5,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 159.0,
+        "superior": 332.20000000000005,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          200.0,
+          338.5
+        ],
+        "ic_semana": [
+          159.0,
+          332.20000000000005
+        ]
+      }
+    },
+    "media_linhas_dia_pap_rc_sem_incidente": {
+      "valor": 118.5,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 86.28196202531646,
+        "superior": 154.7405938264634,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          98.55197368421052,
+          139.14473684210526
+        ],
+        "ic_semana": [
+          86.28196202531646,
+          154.7405938264634
+        ]
+      }
+    },
+    "mediana_linhas_dia_pap_rc_sem_incidente": {
+      "valor": 84.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 68.0,
+        "superior": 134.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          70.0,
+          104.5
+        ],
+        "ic_semana": [
+          68.0,
+          134.0
+        ]
+      }
+    },
+    "max_linhas_dia_pap_rc_sem_incidente": {
+      "valor": 453.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_pap_rc_sem_incidente": {
+      "valor": 76.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_pap_rc_p90_sem_incidente": {
+      "valor": 11.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 9.0,
+        "superior": 12.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana"
+      }
+    },
+    "demanda_pico_linhas_pap_rc_p90_sem_incidente": {
+      "valor": 45.5,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 30.0,
+        "superior": 57.5,
+        "nivel": 0.95,
+        "unidade_ic": "semana"
+      }
+    },
+    "p90_linhas_dia_pap_rc_pos_colmeia": {
+      "valor": 110.4,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 89.4,
+        "superior": 187.7000000000001,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          91.0,
+          159.0
+        ],
+        "ic_semana": [
+          89.4,
+          187.7000000000001
+        ]
+      }
+    },
+    "media_linhas_dia_pap_rc_pos_colmeia": {
+      "valor": 76.44444444444444,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 62.61800505050505,
+        "superior": 92.2909090909091,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          64.12962962962963,
+          92.40787037037038
+        ],
+        "ic_semana": [
+          62.61800505050505,
+          92.2909090909091
+        ]
+      }
+    },
+    "mediana_linhas_dia_pap_rc_pos_colmeia": {
+      "valor": 68.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 54.0,
+        "superior": 79.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          55.5,
+          78.0
+        ],
+        "ic_semana": [
+          54.0,
+          79.0
+        ]
+      }
+    },
+    "max_linhas_dia_pap_rc_pos_colmeia": {
+      "valor": 374.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_pap_rc_pos_colmeia": {
+      "valor": 54.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_pap_rc_p90_pos_colmeia": {
+      "valor": 11.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 9.0,
+        "superior": 16.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_linhas_pap_rc_p90_pos_colmeia": {
+      "valor": 22.833333333333332,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 17.857142857142858,
+        "superior": 40.57142857142857,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_linhas_dia_pap_rc_pos_colmeia_sem_pos_pausa": {
+      "valor": 110.60000000000001,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 90.20000000000002,
+        "superior": 200.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          91.00000000000003,
+          159.0
+        ],
+        "ic_semana": [
+          90.20000000000002,
+          200.0
+        ]
+      }
+    },
+    "media_linhas_dia_pap_rc_pos_colmeia_sem_pos_pausa": {
+      "valor": 76.37735849056604,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 61.99952830188679,
+        "superior": 91.60458833619212,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          63.39622641509434,
+          92.43396226415095
+        ],
+        "ic_semana": [
+          61.99952830188679,
+          91.60458833619212
+        ]
+      }
+    },
+    "mediana_linhas_dia_pap_rc_pos_colmeia_sem_pos_pausa": {
+      "valor": 68.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 54.0,
+        "superior": 79.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          54.0,
+          77.0
+        ],
+        "ic_semana": [
+          54.0,
+          79.0
+        ]
+      }
+    },
+    "max_linhas_dia_pap_rc_pos_colmeia_sem_pos_pausa": {
+      "valor": 374.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_pap_rc_pos_colmeia_sem_pos_pausa": {
+      "valor": 53.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_pap_rc_p90_pos_colmeia_sem_pos_pausa": {
+      "valor": 11.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 9.0,
+        "superior": 16.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_linhas_pap_rc_p90_pos_colmeia_sem_pos_pausa": {
+      "valor": 22.833333333333332,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 17.599285714285717,
+        "superior": 41.10107142857144,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_linhas_dia_pap_rc_normal": {
+      "valor": 112.19999999999999,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 82.6,
+        "superior": 159.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          82.6,
+          159.0
+        ],
+        "ic_semana": [
+          83.30000000000001,
+          159.0
+        ]
+      }
+    },
+    "media_linhas_dia_pap_rc_normal": {
+      "valor": 75.26315789473684,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 53.666666666666664,
+        "superior": 94.7,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          61.94605263157895,
+          90.26315789473684
+        ],
+        "ic_semana": [
+          53.666666666666664,
+          94.7
+        ]
+      }
+    },
+    "mediana_linhas_dia_pap_rc_normal": {
+      "valor": 75.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 48.0,
+        "superior": 81.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          54.0,
+          83.0
+        ],
+        "ic_semana": [
+          48.0,
+          81.0
+        ]
+      }
+    },
+    "max_linhas_dia_pap_rc_normal": {
+      "valor": 159.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_pap_rc_normal": {
+      "valor": 19.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_pap_rc_p90_normal": {
+      "valor": 12.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 9.0,
+        "superior": 16.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_linhas_pap_rc_p90_normal": {
+      "valor": 15.0,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 15.0,
+        "superior": 32.6,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "media_retomada_linhas_pap_rc": {
+      "valor": 130.88888888888889,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 84.62953947368422,
+        "superior": 181.11911764705883,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          89.55555555555556,
+          178.33888888888893
+        ],
+        "ic_semana": [
+          84.62953947368422,
+          181.11911764705883
+        ],
+        "n_dias": 18
+      }
+    },
+    "media_pos_pausa_linhas_pap_rc": {
+      "valor": 136.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_linhas_pap_rc": {
+      "valor": 129.86666666666667,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_linhas_pap_rc": {
+      "valor": 3.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_retomada_linhas_pap_rc_sem_incidente": {
+      "valor": 147.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 106.06093750000001,
+        "superior": 193.628125,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          105.74687500000002,
+          192.44218750000002
+        ],
+        "ic_semana": [
+          106.06093750000001,
+          193.628125
+        ],
+        "n_dias": 16
+      }
+    },
+    "media_pos_pausa_linhas_pap_rc_sem_incidente": {
+      "valor": 204.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_linhas_pap_rc_sem_incidente": {
+      "valor": 138.85714285714286,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_linhas_pap_rc_sem_incidente": {
+      "valor": 2.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_retomada_linhas_pap_rc_pos_colmeia": {
+      "valor": 121.0909090909091,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 80.0,
+        "superior": 179.45909090909095,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          81.0,
+          177.27954545454548
+        ],
+        "ic_semana": [
+          80.0,
+          179.45909090909095
+        ],
+        "n_dias": 11
+      }
+    },
+    "media_pos_pausa_linhas_pap_rc_pos_colmeia": {
+      "valor": 80.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_linhas_pap_rc_pos_colmeia": {
+      "valor": 125.2,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_linhas_pap_rc_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_retomada_linhas_pap_rc_normal": {
+      "valor": 105.75,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 83.25,
+        "superior": 142.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          88.25,
+          139.25
+        ],
+        "ic_semana": [
+          83.25,
+          142.0
+        ],
+        "n_dias": 4
+      }
+    },
+    "media_pos_pausa_linhas_pap_rc_normal": {
+      "valor": 80.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_linhas_pap_rc_normal": {
+      "valor": 114.33333333333333,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_linhas_pap_rc_normal": {
+      "valor": 1.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p90_pedidos_checkout_rc_dia": {
+      "valor": 84.20000000000002,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 68.10000000000001,
+        "superior": 90.30000000000003,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          68.10000000000001,
+          90.30000000000003
+        ],
+        "ic_semana": [
+          72.2925,
+          90.0
+        ]
+      }
+    },
+    "media_pedidos_checkout_rc_dia": {
+      "valor": 44.2,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 37.62478595890411,
+        "superior": 49.73426028481013,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          38.475,
+          49.9878125
+        ],
+        "ic_semana": [
+          37.62478595890411,
+          49.73426028481013
+        ]
+      }
+    },
+    "mediana_pedidos_checkout_rc_dia": {
+      "valor": 40.5,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 33.5,
+        "superior": 48.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          33.5,
+          48.0
+        ],
+        "ic_semana": [
+          34.0,
+          48.0
+        ]
+      }
+    },
+    "max_pedidos_checkout_rc_dia": {
+      "valor": 117.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pedidos_checkout_rc_dia": {
+      "valor": 80.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_pedidos_checkout_rc_p90": {
+      "valor": 8.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 16.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_pedidos_checkout_rc_p90": {
+      "valor": 34.375,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 19.624375,
+        "superior": 50.111111111111114,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_pedidos_checkout_rc_dia_sem_pos_pausa": {
+      "valor": 84.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 67.80000000000001,
+        "superior": 90.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          67.80000000000001,
+          90.0
+        ],
+        "ic_semana": [
+          69.0,
+          90.0
+        ]
+      }
+    },
+    "media_pedidos_checkout_rc_dia_sem_pos_pausa": {
+      "valor": 43.96103896103896,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 38.506493506493506,
+        "superior": 49.558766233766235,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          38.506493506493506,
+          49.558766233766235
+        ],
+        "ic_semana": [
+          38.53721393034826,
+          48.329314178971714
+        ]
+      }
+    },
+    "mediana_pedidos_checkout_rc_dia_sem_pos_pausa": {
+      "valor": 41.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 35.0,
+        "superior": 48.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          35.0,
+          48.0
+        ],
+        "ic_semana": [
+          35.0,
+          48.0
+        ]
+      }
+    },
+    "max_pedidos_checkout_rc_dia_sem_pos_pausa": {
+      "valor": 98.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pedidos_checkout_rc_dia_sem_pos_pausa": {
+      "valor": 77.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_pedidos_checkout_rc_p90_sem_pos_pausa": {
+      "valor": 8.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 10.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_pedidos_checkout_rc_p90_sem_pos_pausa": {
+      "valor": 36.4,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 18.498863636363637,
+        "superior": 49.22222222222222,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_pedidos_checkout_rc_dia_sem_incidente": {
+      "valor": 85.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 68.5,
+        "superior": 91.5,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          68.5,
+          91.5
+        ],
+        "ic_semana": [
+          80.0,
+          91.5
+        ]
+      }
+    },
+    "media_pedidos_checkout_rc_dia_sem_incidente": {
+      "valor": 46.526315789473685,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 41.10493421052632,
+        "superior": 52.223684210526315,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          41.10493421052632,
+          52.223684210526315
+        ],
+        "ic_semana": [
+          42.38945917096602,
+          50.71057137707282
+        ]
+      }
+    },
+    "mediana_pedidos_checkout_rc_dia_sem_incidente": {
+      "valor": 41.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 36.0,
+        "superior": 48.5,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          36.0,
+          48.5
+        ],
+        "ic_semana": [
+          38.0,
+          48.0
+        ]
+      }
+    },
+    "max_pedidos_checkout_rc_dia_sem_incidente": {
+      "valor": 117.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pedidos_checkout_rc_dia_sem_incidente": {
+      "valor": 76.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_pedidos_checkout_rc_p90_sem_incidente": {
+      "valor": 8.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 16.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_pedidos_checkout_rc_p90_sem_incidente": {
+      "valor": 34.375,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 19.624375,
+        "superior": 49.9,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_pedidos_checkout_rc_dia_pos_colmeia": {
+      "valor": 86.7,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 68.4,
+        "superior": 93.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          68.4,
+          93.0
+        ],
+        "ic_semana": [
+          83.4,
+          92.4
+        ]
+      }
+    },
+    "media_pedidos_checkout_rc_dia_pos_colmeia": {
+      "valor": 49.77777777777778,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 43.44398148148148,
+        "superior": 56.3337962962963,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          43.44398148148148,
+          56.3337962962963
+        ],
+        "ic_semana": [
+          45.59909090909091,
+          55.01924019607843
+        ]
+      }
+    },
+    "mediana_pedidos_checkout_rc_dia_pos_colmeia": {
+      "valor": 43.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 38.5,
+        "superior": 53.5,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          38.5,
+          53.5
+        ],
+        "ic_semana": [
+          39.0,
+          52.5
+        ]
+      }
+    },
+    "max_pedidos_checkout_rc_dia_pos_colmeia": {
+      "valor": 117.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pedidos_checkout_rc_dia_pos_colmeia": {
+      "valor": 54.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_pedidos_checkout_rc_p90_pos_colmeia": {
+      "valor": 8.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 10.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_pedidos_checkout_rc_p90_pos_colmeia": {
+      "valor": 41.666666666666664,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 18.6,
+        "superior": 54.448333333333345,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_pedidos_checkout_rc_dia_pos_colmeia_sem_pos_pausa": {
+      "valor": 85.60000000000001,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 67.0,
+        "superior": 90.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          67.0,
+          90.0
+        ],
+        "ic_semana": [
+          82.0,
+          90.0
+        ]
+      }
+    },
+    "media_pedidos_checkout_rc_dia_pos_colmeia_sem_pos_pausa": {
+      "valor": 48.509433962264154,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 42.339622641509436,
+        "superior": 54.924528301886795,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          42.339622641509436,
+          54.924528301886795
+        ],
+        "ic_semana": [
+          44.940828877005345,
+          52.000454545454545
+        ]
+      }
+    },
+    "mediana_pedidos_checkout_rc_dia_pos_colmeia_sem_pos_pausa": {
+      "valor": 43.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 38.0,
+        "superior": 53.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          38.0,
+          53.0
+        ],
+        "ic_semana": [
+          38.0,
+          52.0
+        ]
+      }
+    },
+    "max_pedidos_checkout_rc_dia_pos_colmeia_sem_pos_pausa": {
+      "valor": 98.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pedidos_checkout_rc_dia_pos_colmeia_sem_pos_pausa": {
+      "valor": 53.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_pedidos_checkout_rc_p90_pos_colmeia_sem_pos_pausa": {
+      "valor": 8.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 10.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_pedidos_checkout_rc_p90_pos_colmeia_sem_pos_pausa": {
+      "valor": 41.666666666666664,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 16.995,
+        "superior": 54.16964285714287,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_pedidos_checkout_rc_dia_normal": {
+      "valor": 90.6,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 65.8,
+        "superior": 117.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          65.8,
+          117.0
+        ],
+        "ic_semana": [
+          86.0,
+          117.0
+        ]
+      }
+    },
+    "media_pedidos_checkout_rc_dia_normal": {
+      "valor": 52.36842105263158,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 40.15657894736842,
+        "superior": 65.21315789473685,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          40.15657894736842,
+          65.21315789473685
+        ],
+        "ic_semana": [
+          43.4,
+          64.17647058823529
+        ]
+      }
+    },
+    "mediana_pedidos_checkout_rc_dia_normal": {
+      "valor": 43.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 33.0,
+        "superior": 67.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          33.0,
+          67.0
+        ],
+        "ic_semana": [
+          33.0,
+          67.0
+        ]
+      }
+    },
+    "max_pedidos_checkout_rc_dia_normal": {
+      "valor": 117.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pedidos_checkout_rc_dia_normal": {
+      "valor": 19.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_pedidos_checkout_rc_p90_normal": {
+      "valor": 8.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 13.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_pedidos_checkout_rc_p90_normal": {
+      "valor": 28.4,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 15.8,
+        "superior": 42.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "media_retomada_pedidos_checkout_rc": {
+      "valor": 67.05555555555556,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 48.42005012531328,
+        "superior": 83.58823529411765,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          53.054166666666674,
+          80.61111111111111
+        ],
+        "ic_semana": [
+          48.42005012531328,
+          83.58823529411765
+        ],
+        "n_dias": 18
+      }
+    },
+    "media_pos_pausa_pedidos_checkout_rc": {
+      "valor": 50.333333333333336,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_pedidos_checkout_rc": {
+      "valor": 70.4,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_pedidos_checkout_rc": {
+      "valor": 3.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_retomada_pedidos_checkout_rc_sem_incidente": {
+      "valor": 75.4375,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 64.8125,
+        "superior": 85.8125,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          64.8125,
+          85.8125
+        ],
+        "ic_semana": [
+          64.6875,
+          85.6875
+        ],
+        "n_dias": 16
+      }
+    },
+    "media_pos_pausa_pedidos_checkout_rc_sem_incidente": {
+      "valor": 75.5,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_pedidos_checkout_rc_sem_incidente": {
+      "valor": 75.42857142857143,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_pedidos_checkout_rc_sem_incidente": {
+      "valor": 2.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_retomada_pedidos_checkout_rc_pos_colmeia": {
+      "valor": 85.54545454545455,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 75.45227272727273,
+        "superior": 94.81818181818181,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          76.7227272727273,
+          92.36363636363636
+        ],
+        "ic_semana": [
+          75.45227272727273,
+          94.81818181818181
+        ],
+        "n_dias": 11
+      }
+    },
+    "media_pos_pausa_pedidos_checkout_rc_pos_colmeia": {
+      "valor": 117.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_pedidos_checkout_rc_pos_colmeia": {
+      "valor": 82.4,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_pedidos_checkout_rc_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_retomada_pedidos_checkout_rc_normal": {
+      "valor": 96.5,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 87.75,
+        "superior": 110.25,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          93.75,
+          99.0
+        ],
+        "ic_semana": [
+          87.75,
+          110.25
+        ],
+        "n_dias": 4
+      }
+    },
+    "media_pos_pausa_pedidos_checkout_rc_normal": {
+      "valor": 117.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_pedidos_checkout_rc_normal": {
+      "valor": 89.66666666666667,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_pedidos_checkout_rc_normal": {
+      "valor": 1.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p90_linhas_dia_colmeia_rc": {
+      "valor": 210.8,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 149.8,
+        "superior": 259.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          149.8,
+          259.0
+        ],
+        "ic_semana": [
+          154.0,
+          252.39999999999998
+        ]
+      }
+    },
+    "media_linhas_dia_colmeia_rc": {
+      "valor": 108.75862068965517,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 84.1375,
+        "superior": 130.18686440677965,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          90.51724137931035,
+          126.74181034482758
+        ],
+        "ic_semana": [
+          84.1375,
+          130.18686440677965
+        ]
+      }
+    },
+    "mediana_linhas_dia_colmeia_rc": {
+      "valor": 103.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 79.98750000000004,
+        "superior": 119.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          81.5,
+          119.0
+        ],
+        "ic_semana": [
+          79.98750000000004,
+          119.0
+        ]
+      }
+    },
+    "max_linhas_dia_colmeia_rc": {
+      "valor": 322.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_colmeia_rc": {
+      "valor": 58.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_colmeia_rc_p90": {
+      "valor": 9.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 12.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_linhas_colmeia_rc_p90": {
+      "valor": 53.0,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 30.714285714285715,
+        "superior": 80.5,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_linhas_dia_colmeia_rc_sem_pos_pausa": {
+      "valor": 205.5,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 143.5,
+        "superior": 248.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          143.5,
+          248.0
+        ],
+        "ic_semana": [
+          154.0,
+          243.8
+        ]
+      }
+    },
+    "media_linhas_dia_colmeia_rc_sem_pos_pausa": {
+      "valor": 106.89285714285714,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 85.26919642857143,
+        "superior": 124.8582142857143,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          90.57008928571429,
+          124.37589285714286
+        ],
+        "ic_semana": [
+          85.26919642857143,
+          124.8582142857143
+        ]
+      }
+    },
+    "mediana_linhas_dia_colmeia_rc_sem_pos_pausa": {
+      "valor": 103.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 81.0,
+        "superior": 119.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          81.0,
+          119.0
+        ],
+        "ic_semana": [
+          80.98750000000004,
+          114.5
+        ]
+      }
+    },
+    "max_linhas_dia_colmeia_rc_sem_pos_pausa": {
+      "valor": 274.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_colmeia_rc_sem_pos_pausa": {
+      "valor": 56.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_colmeia_rc_p90_sem_pos_pausa": {
+      "valor": 9.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 12.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_linhas_colmeia_rc_p90_sem_pos_pausa": {
+      "valor": 47.833333333333336,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 29.428571428571427,
+        "superior": 77.83333333333333,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_linhas_dia_colmeia_rc_sem_incidente": {
+      "valor": 213.20000000000002,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 152.20000000000002,
+        "superior": 259.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          152.20000000000002,
+          259.0
+        ],
+        "ic_semana": [
+          156.10000000000002,
+          256.8125000000001
+        ]
+      }
+    },
+    "media_linhas_dia_colmeia_rc_sem_incidente": {
+      "valor": 116.81481481481481,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 98.16227272727272,
+        "superior": 134.5679245283019,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          100.20370370370371,
+          134.9449074074074
+        ],
+        "ic_semana": [
+          98.16227272727272,
+          134.5679245283019
+        ]
+      }
+    },
+    "mediana_linhas_dia_colmeia_rc_sem_incidente": {
+      "valor": 107.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 87.0,
+        "superior": 124.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          87.0,
+          124.0
+        ],
+        "ic_semana": [
+          93.0,
+          119.0
+        ]
+      }
+    },
+    "max_linhas_dia_colmeia_rc_sem_incidente": {
+      "valor": 322.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_colmeia_rc_sem_incidente": {
+      "valor": 54.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_colmeia_rc_p90_sem_incidente": {
+      "valor": 9.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 12.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_linhas_colmeia_rc_p90_sem_incidente": {
+      "valor": 52.6,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 32.0,
+        "superior": 84.5,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_linhas_dia_colmeia_rc_pos_colmeia": {
+      "valor": 213.20000000000002,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 152.20000000000002,
+        "superior": 259.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          152.20000000000002,
+          259.0
+        ],
+        "ic_semana": [
+          156.10000000000002,
+          256.80000000000007
+        ]
+      }
+    },
+    "media_linhas_dia_colmeia_rc_pos_colmeia": {
+      "valor": 116.81481481481481,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 98.48954545454545,
+        "superior": 135.2894230769231,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          100.20277777777778,
+          135.4101851851852
+        ],
+        "ic_semana": [
+          98.48954545454545,
+          135.2894230769231
+        ]
+      }
+    },
+    "mediana_linhas_dia_colmeia_rc_pos_colmeia": {
+      "valor": 107.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 87.0,
+        "superior": 124.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          87.0,
+          124.0
+        ],
+        "ic_semana": [
+          93.0,
+          120.0
+        ]
+      }
+    },
+    "max_linhas_dia_colmeia_rc_pos_colmeia": {
+      "valor": 322.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_colmeia_rc_pos_colmeia": {
+      "valor": 54.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_colmeia_rc_p90_pos_colmeia": {
+      "valor": 9.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.975000000000009,
+        "superior": 12.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_linhas_colmeia_rc_p90_pos_colmeia": {
+      "valor": 52.6,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 32.0,
+        "superior": 84.5,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_linhas_dia_colmeia_rc_pos_colmeia_sem_pos_pausa": {
+      "valor": 207.60000000000002,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 148.0,
+        "superior": 248.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          148.0,
+          248.0
+        ],
+        "ic_semana": [
+          154.0,
+          246.8
+        ]
+      }
+    },
+    "media_linhas_dia_colmeia_rc_pos_colmeia_sem_pos_pausa": {
+      "valor": 112.94339622641509,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 97.03679245283018,
+        "superior": 129.66179245283018,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          97.03679245283018,
+          129.66179245283018
+        ],
+        "ic_semana": [
+          95.78689281413088,
+          128.07385026737967
+        ]
+      }
+    },
+    "mediana_linhas_dia_colmeia_rc_pos_colmeia_sem_pos_pausa": {
+      "valor": 107.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 85.0,
+        "superior": 121.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          85.0,
+          121.0
+        ],
+        "ic_semana": [
+          93.0,
+          119.0
+        ]
+      }
+    },
+    "max_linhas_dia_colmeia_rc_pos_colmeia_sem_pos_pausa": {
+      "valor": 274.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_colmeia_rc_pos_colmeia_sem_pos_pausa": {
+      "valor": 53.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_colmeia_rc_p90_pos_colmeia_sem_pos_pausa": {
+      "valor": 9.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 12.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_linhas_colmeia_rc_p90_pos_colmeia_sem_pos_pausa": {
+      "valor": 51.0,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 30.398333333333333,
+        "superior": 82.8,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_linhas_dia_colmeia_rc_normal": {
+      "valor": 178.39999999999995,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 131.39999999999998,
+        "superior": 322.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          131.39999999999998,
+          322.0
+        ],
+        "ic_semana": [
+          132.99999999999997,
+          322.0
+        ]
+      }
+    },
+    "media_linhas_dia_colmeia_rc_normal": {
+      "valor": 123.42105263157895,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 85.05,
+        "superior": 161.2941176470588,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          95.10526315789474,
+          155.3197368421053
+        ],
+        "ic_semana": [
+          85.05,
+          161.2941176470588
+        ]
+      }
+    },
+    "mediana_linhas_dia_colmeia_rc_normal": {
+      "valor": 119.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 93.0,
+        "superior": 133.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          98.0,
+          133.0
+        ],
+        "ic_semana": [
+          93.0,
+          133.0
+        ]
+      }
+    },
+    "max_linhas_dia_colmeia_rc_normal": {
+      "valor": 322.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_colmeia_rc_normal": {
+      "valor": 19.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_colmeia_rc_p90_normal": {
+      "valor": 8.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 10.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_linhas_colmeia_rc_p90_normal": {
+      "valor": 36.6,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 27.2,
+        "superior": 74.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "media_retomada_linhas_colmeia_rc": {
+      "valor": 169.07692307692307,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 102.59392857142859,
+        "superior": 233.91875,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          112.30576923076924,
+          223.925
+        ],
+        "ic_semana": [
+          102.59392857142859,
+          233.91875
+        ],
+        "n_dias": 13
+      }
+    },
+    "media_pos_pausa_linhas_colmeia_rc": {
+      "valor": 161.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_linhas_colmeia_rc": {
+      "valor": 170.54545454545453,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_linhas_colmeia_rc": {
+      "valor": 2.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_retomada_linhas_colmeia_rc_sem_incidente": {
+      "valor": 199.8181818181818,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 148.17954545454546,
+        "superior": 245.1886363636364,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          153.17954545454546,
+          239.37045454545458
+        ],
+        "ic_semana": [
+          148.17954545454546,
+          245.1886363636364
+        ],
+        "n_dias": 11
+      }
+    },
+    "media_pos_pausa_linhas_colmeia_rc_sem_incidente": {
+      "valor": 322.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_linhas_colmeia_rc_sem_incidente": {
+      "valor": 187.6,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_linhas_colmeia_rc_sem_incidente": {
+      "valor": 1.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_retomada_linhas_colmeia_rc_pos_colmeia": {
+      "valor": 199.8181818181818,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 146.81136363636367,
+        "superior": 245.1840909090909,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          154.36136363636365,
+          239.72954545454544
+        ],
+        "ic_semana": [
+          146.81136363636367,
+          245.1840909090909
+        ],
+        "n_dias": 11
+      }
+    },
+    "media_pos_pausa_linhas_colmeia_rc_pos_colmeia": {
+      "valor": 322.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_linhas_colmeia_rc_pos_colmeia": {
+      "valor": 187.6,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_linhas_colmeia_rc_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_retomada_linhas_colmeia_rc_normal": {
+      "valor": 214.5,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 144.0,
+        "superior": 285.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          175.75,
+          266.5
+        ],
+        "ic_semana": [
+          144.0,
+          285.0
+        ],
+        "n_dias": 4
+      }
+    },
+    "media_pos_pausa_linhas_colmeia_rc_normal": {
+      "valor": 322.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_linhas_colmeia_rc_normal": {
+      "valor": 178.66666666666666,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_linhas_colmeia_rc_normal": {
+      "valor": 1.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p90_pedidos_dia_armazem": {
+      "valor": 880.7000000000003,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 758.0,
+        "superior": 1101.8000000000006,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          758.0,
+          1101.8000000000006
+        ],
+        "ic_semana": [
+          767.0,
+          1094.0
+        ]
+      }
+    },
+    "media_pedidos_dia_armazem": {
+      "valor": 545.2875,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 491.41812500000003,
+        "superior": 603.063125,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          491.41812500000003,
+          603.063125
+        ],
+        "ic_semana": [
+          503.51130226480836,
+          591.4390625
+        ]
+      }
+    },
+    "mediana_pedidos_dia_armazem": {
+      "valor": 469.5,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 424.0,
+        "superior": 528.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          424.0,
+          528.0
+        ],
+        "ic_semana": [
+          422.0,
+          523.0
+        ]
+      }
+    },
+    "max_pedidos_dia_armazem": {
+      "valor": 1448.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pedidos_dia_armazem": {
+      "valor": 80.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_pedidos_armazem_p90": {
+      "valor": 9.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 9.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_pedidos_armazem_p90": {
+      "valor": 217.75,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 151.496875,
+        "superior": 293.878125,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "p90_pedidos_dia_armazem_sem_pos_pausa": {
+      "valor": 854.8000000000002,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 725.6000000000004,
+        "superior": 993.800000000001,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          725.6000000000004,
+          993.800000000001
+        ],
+        "ic_semana": [
+          749.0,
+          927.0
+        ]
+      }
+    },
+    "media_pedidos_dia_armazem_sem_pos_pausa": {
+      "valor": 523.4675324675325,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 475.85681818181814,
+        "superior": 573.6928571428572,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          475.85681818181814,
+          573.6928571428572
+        ],
+        "ic_semana": [
+          484.6789045069165,
+          566.2737012987013
+        ]
+      }
+    },
+    "mediana_pedidos_dia_armazem_sem_pos_pausa": {
+      "valor": 463.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 409.0,
+        "superior": 516.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          422.0,
+          523.0250000000001
+        ],
+        "ic_semana": [
+          409.0,
+          516.0
+        ]
+      }
+    },
+    "max_pedidos_dia_armazem_sem_pos_pausa": {
+      "valor": 1212.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pedidos_dia_armazem_sem_pos_pausa": {
+      "valor": 77.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_pedidos_armazem_p90_sem_pos_pausa": {
+      "valor": 9.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 9.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_pedidos_armazem_p90_sem_pos_pausa": {
+      "valor": 186.75,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 139.77395833333333,
+        "superior": 265.75125,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "media_retomada_pedidos_armazem": {
+      "valor": 883.6111111111111,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 760.3644736842106,
+        "superior": 1021.9455882352942,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          766.4916666666667,
+          994.3930555555556
+        ],
+        "ic_semana": [
+          760.3644736842106,
+          1021.9455882352942
+        ],
+        "n_dias": 18
+      }
+    },
+    "media_pos_pausa_pedidos_armazem": {
+      "valor": 1105.3333333333333,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_pedidos_armazem": {
+      "valor": 839.2666666666667,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_pedidos_armazem": {
+      "valor": 3.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p90_linhas_dia_pap_rc_estresse": {
+      "valor": 232.90000000000026,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 152.18999999999994,
+        "superior": 328.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          200.0,
+          330.1000000000002
+        ],
+        "ic_semana": [
+          152.18999999999994,
+          328.0
+        ]
+      }
+    },
+    "media_linhas_dia_pap_rc_estresse": {
+      "valor": 112.65,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 80.45228937728938,
+        "superior": 147.83009868421053,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          93.0,
+          134.65
+        ],
+        "ic_semana": [
+          80.45228937728938,
+          147.83009868421053
+        ]
+      }
+    },
+    "mediana_linhas_dia_pap_rc_estresse": {
+      "valor": 79.5,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 60.0,
+        "superior": 125.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          68.0,
+          93.0
+        ],
+        "ic_semana": [
+          60.0,
+          125.0
+        ]
+      }
+    },
+    "max_linhas_dia_pap_rc_estresse": {
+      "valor": 453.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_pap_rc_estresse": {
+      "valor": 80.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_pap_rc_p90_estresse": {
+      "valor": 11.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 9.0,
+        "superior": 12.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana"
+      }
+    },
+    "demanda_pico_linhas_pap_rc_p90_estresse": {
+      "valor": 45.5,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 27.399375,
+        "superior": 57.125,
+        "nivel": 0.95,
+        "unidade_ic": "semana"
+      }
+    },
+    "media_retomada_linhas_pap_rc_estresse": {
+      "valor": 130.88888888888889,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 84.62953947368422,
+        "superior": 181.11911764705883,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          89.55555555555556,
+          178.33888888888893
+        ],
+        "ic_semana": [
+          84.62953947368422,
+          181.11911764705883
+        ],
+        "n_dias": 18
+      }
+    },
+    "media_pos_pausa_linhas_pap_rc_estresse": {
+      "valor": 136.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_linhas_pap_rc_estresse": {
+      "valor": 129.86666666666667,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_linhas_pap_rc_estresse": {
+      "valor": 3.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p90_pedidos_checkout_rc_dia_estresse": {
+      "valor": 84.20000000000002,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 68.10000000000001,
+        "superior": 90.30000000000003,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          68.10000000000001,
+          90.30000000000003
+        ],
+        "ic_semana": [
+          72.2925,
+          90.0
+        ]
+      }
+    },
+    "media_pedidos_checkout_rc_dia_estresse": {
+      "valor": 44.2,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 37.62478595890411,
+        "superior": 49.73426028481013,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          38.475,
+          49.9878125
+        ],
+        "ic_semana": [
+          37.62478595890411,
+          49.73426028481013
+        ]
+      }
+    },
+    "mediana_pedidos_checkout_rc_dia_estresse": {
+      "valor": 40.5,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 33.5,
+        "superior": 48.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          33.5,
+          48.0
+        ],
+        "ic_semana": [
+          34.0,
+          48.0
+        ]
+      }
+    },
+    "max_pedidos_checkout_rc_dia_estresse": {
+      "valor": 117.0,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pedidos_checkout_rc_dia_estresse": {
+      "valor": 80.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_pedidos_checkout_rc_p90_estresse": {
+      "valor": 8.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 16.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_pedidos_checkout_rc_p90_estresse": {
+      "valor": 34.375,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 19.624375,
+        "superior": 50.111111111111114,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "media_retomada_pedidos_checkout_rc_estresse": {
+      "valor": 67.05555555555556,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 48.42005012531328,
+        "superior": 83.58823529411765,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          53.054166666666674,
+          80.61111111111111
+        ],
+        "ic_semana": [
+          48.42005012531328,
+          83.58823529411765
+        ],
+        "n_dias": 18
+      }
+    },
+    "media_pos_pausa_pedidos_checkout_rc_estresse": {
+      "valor": 50.333333333333336,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_pedidos_checkout_rc_estresse": {
+      "valor": 70.4,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_pedidos_checkout_rc_estresse": {
+      "valor": 3.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p90_linhas_dia_colmeia_rc_estresse": {
+      "valor": 210.8,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 do volume diário nos dias plenos, interpolação linear)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 149.8,
+        "superior": 259.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia",
+        "ic_dia": [
+          149.8,
+          259.0
+        ],
+        "ic_semana": [
+          154.0,
+          252.39999999999998
+        ]
+      }
+    },
+    "media_linhas_dia_colmeia_rc_estresse": {
+      "valor": 108.75862068965517,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: média dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 84.1375,
+        "superior": 130.18686440677965,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          90.51724137931035,
+          126.74181034482758
+        ],
+        "ic_semana": [
+          84.1375,
+          130.18686440677965
+        ]
+      }
+    },
+    "mediana_linhas_dia_colmeia_rc_estresse": {
+      "valor": 103.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (dia típico: mediana dos dias plenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 79.98750000000004,
+        "superior": 119.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          81.5,
+          119.0
+        ],
+        "ic_semana": [
+          79.98750000000004,
+          119.0
+        ]
+      }
+    },
+    "max_linhas_dia_colmeia_rc_estresse": {
+      "valor": 322.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (máximo observado: limite superior, regressão à média)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_linhas_dia_colmeia_rc_estresse": {
+      "valor": 58.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pico_h_linhas_colmeia_rc_p90_estresse": {
+      "valor": 9.0,
+      "unidade": "h",
+      "descricao": "h (hora do dia: início da hora de maior demanda no perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 8.0,
+        "superior": 12.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "demanda_pico_linhas_colmeia_rc_p90_estresse": {
+      "valor": 53.0,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (demanda no pico do perfil do dia p90)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 30.714285714285715,
+        "superior": 80.5,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "media_retomada_linhas_colmeia_rc_estresse": {
+      "valor": 169.07692307692307,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa e das segundas-feiras)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 102.59392857142859,
+        "superior": 233.91875,
+        "nivel": 0.95,
+        "unidade_ic": "semana",
+        "ic_dia": [
+          112.30576923076924,
+          223.925
+        ],
+        "ic_semana": [
+          102.59392857142859,
+          233.91875
+        ],
+        "n_dias": 13
+      }
+    },
+    "media_pos_pausa_linhas_colmeia_rc_estresse": {
+      "valor": 161.0,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média dos dias pós-pausa; poucos dias, só descritivo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_segundas_linhas_colmeia_rc_estresse": {
+      "valor": 170.54545454545453,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (média das segundas-feiras plenas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_pausa_linhas_colmeia_rc_estresse": {
+      "valor": 2.0,
+      "unidade": "dias pós-pausa",
+      "descricao": "dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_p90_armazem_ao_slide12": {
+      "valor": 0.9995095033721645,
+      "unidade": "x",
+      "descricao": "razão ao valor do slide 12 (verificação do deck)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.901253832004905,
+        "superior": 1.4093194359288799,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    }
+  },
+  "tabelas": {
+    "h01_variantes": "h01_variantes.csv",
+    "h01_robustez_metades_estat": "h01_robustez_metades_estat.csv",
+    "janela_observada": "janela_observada.csv",
+    "dia_tipico_p90_maximo": "dia_tipico_p90_maximo.csv",
+    "perfil_horario": "perfil_horario.csv",
+    "volume_por_dia_da_semana": "volume_por_dia_da_semana.csv",
+    "verificacao_deck": "verificacao_deck.csv"
+  },
+  "figuras": [
+    "perfil_horario.png",
+    "primeira_hora_por_dia_da_semana.png"
+  ],
+  "notas": "H-P11 (H01, F1b), nível associativo. Variante primária: armazém, linhas operacionais, dia pleno; segundas contra terças a sextas, sem dias pós-pausa; primeira hora = primeira hora com PAR06 do volume do dia; diferença de médias (Welch, ctx.estat) com bootstrap por bloco de semana (mesmo gerador h01|semana de ANA-000) e IC mais largo. p unilateral = o maior entre Welch e bloco de semana; p_holm_f1b_pior_caso = p × nº de testes da família F1b (pior caso de Holm). Poder: n e MDE lidos de ANA-000 (conferidos); o efeito relevante é 10% da participação média de terça a sexta; se o MDE passa dele e o IC contém o nulo, o resultado é inconclusivo por desenho e fica proibido ler como 'sem efeito'. Códigos: classe_h01 = 1 passa, 0 inconclusivo, -1 falha; por_desenho_h01 = 1 inconclusivo por desenho. Robustez (tabela h01_variantes): armazém em pedidos, Royal Canin pedido-a-pedido e checkout (com e sem 21 a 25/09), metades do período (semanas 23 a 31 e 32 a 39) com ctx.estat.robustez via comum.robustez_segmentos; h01_leitura_agregada_valida só vale 1 sem inversão de sinal entre metades e entre todas as variantes. Descritivo: janela observada (PAR06; janela_fim_h é exclusiva), concentração matinal (slide 17) e p90 do armazém (slide 12) como verificação do deck (linguagem descritiva: o WMS reproduz ou não), dia típico, p90 e máximo com e sem dias pós-pausa (IC do p90 por bootstrap de dias e de semanas, vale o mais largo; máximo é só limite superior), referência de retomada (média dos dias pós-pausa e das segundas, bootstrap estratificado), perfis horários do dia p90 pela banda PAR05 (com PAR07 dias no mínimo, completando pelos mais próximos do p90) e pelo dia real mais próximo, e pico horário (hora e demanda) com bootstrap. É curva de processamento, não de demanda (PQ06): a frota por ela copia o dimensionamento atual de pessoal. A série não cobre alta temporada. Semana do incidente (decisão do orquestrador, revisoes/orquestrador_decisao_semana_incidente.md): a Royal Canin cai para quase zero no WMS de 21 a 25/09 por problemas na operação (confirmado por Marcus; não é falha de extração). Regime da colmeia (decisão do orquestrador, revisoes/orquestrador_decisao_regime_colmeia.md, a confirmar por Marcus no G3; correção do red team analítico, parte A): os dias que formam o p90 do pedido-a-pedido da Royal Canin no período inteiro são todos anteriores à colmeia, que mudou o mix. Para a Royal Canin as chaves saem em quatro leituras: sem sufixo e *_estresse = variante do plano (período inteiro, pré-colmeia e incidente incluídos); *_sem_incidente = período inteiro sem 21 a 25/09 (antes chamada _normal); *_pos_colmeia = BASE da oferta para pico, perfil e médias (dias plenos desde a primeira semana com ondas de colmeia da Royal Canin, sem 21 a 25/09); *_normal = janela de ANA-002 (24/08 a 18/09, quatro semanas terminando em 18/09). O armazém não muda. Tabelas: dia_tipico_p90_maximo, perfil_horario (longa), volume_por_dia_da_semana, janela_observada, h01_variantes, verificacao_deck. Dependência fora do hash do script: analises/comum.py.",
+  "em": "2026-10-03T21:21:39",
+  "segundos": 33.16
+}

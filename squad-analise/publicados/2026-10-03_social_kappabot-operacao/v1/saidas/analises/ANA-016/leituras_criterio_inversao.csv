@@ -1,0 +1,10 @@
+pista,leitura,confirmada,detalhe
+PT-D1,(a) IC oposto por depositante (critério adotado),True,"0 depositantes com inversão forte, de 12 comparados"
+PT-D1,(b) só sinal,False,"3 depositantes com sinal oposto, de 12 comparados"
+PT-D1,(c) leave-one-out de depositante,True,IC fora do zero no lado esperado em 23 de 23 retiradas
+PT-D3,(a) IC oposto por depositante (critério adotado),False,"1 depositantes com inversão forte, de 13 comparados"
+PT-D3,(b) só sinal,False,"2 depositantes com sinal oposto, de 13 comparados"
+PT-D3,(c) leave-one-out de depositante,True,IC fora do zero no lado esperado em 24 de 24 retiradas
+PT-D4,(a) IC oposto por depositante (critério adotado),False,"1 depositantes com inversão forte, de 8 comparados"
+PT-D4,(b) só sinal,False,"1 depositantes com sinal oposto, de 8 comparados"
+PT-D4,(c) leave-one-out de depositante,True,IC fora do zero no lado esperado em 9 de 9 retiradas

@@ -1,0 +1,103 @@
+{
+  "em": "2026-10-03T21:20:27",
+  "etapas": [
+    {
+      "arquivo": "00_conta_robo.py",
+      "sha256": "50844ef2d6b6fa156113d2a11d841df5b3964645f6174dc6bfb93de1384a0ddf",
+      "tabelas": {
+        "prep_conta_robo": {
+          "linhas": 1,
+          "impressao": "12587332173365346419"
+        }
+      }
+    },
+    {
+      "arquivo": "01_parametros_calendario.sql",
+      "sha256": "88e4ab24e0e01de3c5cf71025bec97113b8d6c1bafe3603beb5b396b93a85770",
+      "tabelas": {
+        "prep_calendario": {
+          "linhas": 120,
+          "impressao": "16980916937087144807"
+        },
+        "prep_parametros": {
+          "linhas": 28,
+          "impressao": "3141034988995362894"
+        }
+      }
+    },
+    {
+      "arquivo": "02_linhas.sql",
+      "sha256": "9e081f715c1953d658e7eaae3bc77f63dd0aeea30dff96cc4b7d472ad11495fd",
+      "tabelas": {
+        "prep_prod_linhas": {
+          "linhas": 43976,
+          "impressao": "15591066212705507011"
+        }
+      }
+    },
+    {
+      "arquivo": "03_pedidos.sql",
+      "sha256": "1d61ab9da7aa7a0c7d7943fd7260364a0950053e6b5cf9e798673be9507016e9",
+      "tabelas": {
+        "prep_prod_pedidos": {
+          "linhas": 43918,
+          "impressao": "5202029387995504802"
+        }
+      }
+    },
+    {
+      "arquivo": "04_segmentos_ciclos.py",
+      "sha256": "64130f7c7d1727b573f3f6ddeddcc4084acf387403a6e6feb884dd889d4d928a",
+      "tabelas": {
+        "prep_prod_ciclos": {
+          "linhas": 43674,
+          "impressao": "7120881397752138994"
+        },
+        "prep_prod_descarte": {
+          "linhas": 3874,
+          "impressao": "4568900771623702935"
+        },
+        "prep_prod_operador_dia": {
+          "linhas": 642,
+          "impressao": "9536992258843670025"
+        }
+      }
+    },
+    {
+      "arquivo": "05_tarefas.sql",
+      "sha256": "dd178284ccf4f8967bdca75efe15ef4a9f95123d4e80d35d03ca70c5e7f03424",
+      "tabelas": {
+        "prep_prod_tarefas": {
+          "linhas": 19118,
+          "impressao": "9608655423148418021"
+        }
+      }
+    },
+    {
+      "arquivo": "98_invariantes.py",
+      "sha256": "b7e7cc6e9311440ee79d0847abe0c975e2e60c5139c0879799103b63de8b6049",
+      "tabelas": {
+        "prep_invariantes": {
+          "linhas": 70,
+          "impressao": "10767380634822005903"
+        }
+      }
+    },
+    {
+      "arquivo": "99_dicionario.py",
+      "sha256": "978a65238c3d0c0a02698e2a401ad1879111f2cd7c823981810e32d0f599dd47",
+      "tabelas": {
+        "prep_dicionario": {
+          "linhas": 345,
+          "impressao": "5893096838833858143"
+        }
+      }
+    }
+  ],
+  "base": {
+    "base_prod_90dias_produtividade": {
+      "linhas": 43976,
+      "impressao": "15974237510064386273"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+janela,depositante_a,depositante_b,n_dias,pearson,ic95_inferior,ic95_superior,unidade_do_ic,spearman
+periodo inteiro,COTY IT,HIVE,80,0.1581800665468887,-0.11682220304776744,0.4203054773986304,bloco de semana,0.03690179644291618
+janela longa,COTY IT,HIVE,38,0.35928180536962784,0.030645390330944624,0.669837655313245,bloco de semana,0.21524737431919616

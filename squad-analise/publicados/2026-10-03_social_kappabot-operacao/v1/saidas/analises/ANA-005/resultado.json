@@ -1,0 +1,467 @@
+{
+  "id": "ANA-005",
+  "valores": {
+    "n_semanas_pre": {
+      "valor": 7.0,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_pos": {
+      "valor": 10.0,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_rc": {
+      "valor": 21.0,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_controle": {
+      "valor": 33.0,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "efeito_relevante_h06": {
+      "valor": 0.07163323782234957,
+      "unidade": "fração de linhas (aumento da proporção que move M14 pós-PAR11 em mais que o efeito relevante de CR3)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "efeito_relevante_cr3_para_h06": {
+      "valor": 2.0,
+      "unidade": "coletas por hora (PR05 ÷ 2 − PR06)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "did_lote_humano": {
+      "valor": -0.007466173003009428,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.037984275038710345,
+        "superior": 0.0028586705068641294,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador (cluster)",
+        "ic_bloco_semana": [
+          -0.060162114370370896,
+          0.02404003995667932
+        ],
+        "p_unilateral_operador": 0.931267183204199,
+        "p_unilateral_bloco_semana": 0.7333166708322919
+      },
+      "descricao": "p.p."
+    },
+    "p_unilateral_h06": {
+      "valor": 0.931267183204199,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: diferença-em-diferenças > 0; o maior entre operador e bloco de semana)"
+    },
+    "p_unilateral_h06_operador": {
+      "valor": 0.931267183204199,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: > 0), bootstrap por operador"
+    },
+    "p_unilateral_h06_bloco_semana": {
+      "valor": 0.7333166708322919,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: > 0), bootstrap por bloco de semana"
+    },
+    "p_holm_f1b_limite_superior_h06": {
+      "valor": 1.0,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (Bonferroni da F1b: limite superior do p de Holm)"
+    },
+    "ep_h06_operador": {
+      "valor": 0.010717151334521929,
+      "unidade": "fração (réplicas, desvio-padrão)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "ep_h06_bloco_semana": {
+      "valor": 0.02254324058151499,
+      "unidade": "fração (réplicas, desvio-padrão)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "classe_h06_operador": {
+      "valor": 0.0,
+      "unidade": "código: 1 passa (IC > 0), 0 inconclusivo, -1 falha (IC < 0); pelo IC por operador",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "classe_h06_bloco_semana": {
+      "valor": 0.0,
+      "unidade": "código, pelo IC por bloco de semana (comparação)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h06_inconclusiva_por_desenho": {
+      "valor": 0.0,
+      "unidade": "1 = IC contém 0 e mde_h06 > efeito relevante (proibido ler como sem efeito)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h06_mde_acima_do_efeito_relevante": {
+      "valor": 0.0,
+      "unidade": "1 = mde_h06 (ANA-000) maior que o efeito relevante de H06; -1 = sem efeito relevante definido",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "portao_h06": {
+      "valor": 0.0,
+      "unidade": "1 = IC por operador acima de zero com pelo menos 10 operadores em cada grupo",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h06_confirmada": {
+      "valor": 0.0,
+      "unidade": "1 = portão e p ajustado (limite superior de Holm na F1b) abaixo de alfa; muda a variante primária de CR3 para o período anterior a PAR11",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "variante_primaria_cr3_pre_par11": {
+      "valor": 0.0,
+      "unidade": "1 = CR3 lê M14 do período anterior a PAR11 padronizado; 0 = período inteiro (ANA-004)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "regra_clusters_h06": {
+      "valor": 2.0,
+      "unidade": "2 = IC por cluster (>= 20), 1 = IC com aviso (10 a 19), 0 = só descritivo",
+      "incerteza": null,
+      "contagem": true
+    },
+    "placebo_did_lote": {
+      "valor": 0.020376314592405822,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.0002430555732826599,
+        "superior": 0.11850909484877982,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador (cluster)",
+        "ic_bloco_semana": [
+          -0.07631136051253973,
+          0.11582487655595435
+        ],
+        "aviso": "descritivo: 7 semanas, abaixo do mínimo de 10 clusters temporais; sem papel de portão",
+        "semanas_antes_da_data_falsa": 4,
+        "semanas_depois_da_data_falsa": 3
+      },
+      "descricao": "p.p."
+    },
+    "placebo_did_lote_classe": {
+      "valor": 0.0,
+      "unidade": "código (descritivo): 1 IC > 0, 0 contém 0, -1 IC < 0",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "inclinacao_pre_tendencia": {
+      "valor": 0.0015164254889975025,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.00019148157662658762,
+        "superior": 0.0074754438415487665,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador (descritivo; 7 semanas)",
+        "aviso": "insuficiente como portão: 7 semanas"
+      },
+      "descricao": "p.p."
+    },
+    "did_lote_humano_piso_sens": {
+      "valor": -0.007466173003009428,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.037984275038710345,
+        "superior": 0.0028586705068641294,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador (cluster)",
+        "ic_bloco_semana": [
+          -0.060162114370370896,
+          0.02404003995667932
+        ]
+      },
+      "descricao": "p.p."
+    },
+    "did_lote_humano_sem_2sem_colmeia": {
+      "valor": -0.00038474791916232504,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.018446718769311823,
+        "superior": 0.029840963593878025,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador (cluster)",
+        "ic_bloco_semana": [
+          -0.1534364764445151,
+          0.20731803322374712
+        ]
+      },
+      "descricao": "p.p."
+    },
+    "n_operadores_controle_sem_royal_canin": {
+      "valor": 16.0,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "did_lote_humano_controle_puro": {
+      "valor": -0.0009547896769119893,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.08421881224675702,
+        "superior": 0.007839905325079185,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador (cluster)",
+        "ic_bloco_semana": [
+          -0.02973918743998181,
+          0.01617532698646092
+        ]
+      },
+      "descricao": "p.p."
+    },
+    "linhas_humanas_em_horas_com_robo": {
+      "valor": 106.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_humanas_em_horas_sem_robo": {
+      "valor": 592.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dif_prop_abaixo_piso_hora_com_robo_menos_sem": {
+      "valor": 0.007744773074961754,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.0,
+        "superior": 0.041262045326327906,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador (cluster)",
+        "ic_newcombe_iid": [
+          -0.0032741057801884584,
+          0.049847341431170734
+        ]
+      }
+    },
+    "part_robo_pap_rc": {
+      "valor": 0.12316910785619174,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "% (pedidos do robô ÷ pedidos pedido-a-pedido da Royal Canin desde PAR11)"
+    },
+    "pedidos_robo_pap_rc_desde_par11": {
+      "valor": 185.0,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_pap_rc_desde_par11": {
+      "valor": 1502.0,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_conta_robo_antes_par11": {
+      "valor": 8.0,
+      "unidade": "linhas (PQ04: testes antes do início oficial)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_com_linha_robo_antes_par11": {
+      "valor": 8.0,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_robo_e_humano": {
+      "valor": 1.0,
+      "unidade": "pedidos (linha do robô e linha humana no mesmo pedido, Royal Canin, todos os tipos de onda)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "media_enderecos_por_pedido_robo": {
+      "valor": 1.6,
+      "unidade": "endereços por pedido",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.4378378378378378,
+        "superior": 1.7837837837837838,
+        "nivel": 0.95
+      },
+      "n": 185
+    },
+    "media_enderecos_por_pedido_manual": {
+      "valor": 2.064589665653495,
+      "unidade": "endereços por pedido",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.991622340425532,
+        "superior": 2.142857142857143,
+        "nivel": 0.95
+      },
+      "n": 1316
+    },
+    "media_un_por_pedido_robo": {
+      "valor": 6.832432432432433,
+      "unidade": "unidades por pedido",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 5.113378378378379,
+        "superior": 8.692702702702706,
+        "nivel": 0.95
+      },
+      "n": 185
+    },
+    "media_un_por_pedido_manual": {
+      "valor": 13.56306990881459,
+      "unidade": "unidades por pedido",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 12.648119300911853,
+        "superior": 14.463525835866262,
+        "nivel": 0.95
+      },
+      "n": 1316
+    },
+    "media_produtos_soma_por_pedido_robo": {
+      "valor": 1.572972972972973,
+      "unidade": "produtos por pedido",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.4162162162162162,
+        "superior": 1.7567567567567568,
+        "nivel": 0.95
+      },
+      "n": 185
+    },
+    "media_produtos_soma_por_pedido_manual": {
+      "valor": 2.0577507598784193,
+      "unidade": "produtos por pedido",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.9772036474164134,
+        "superior": 2.139817629179331,
+        "nivel": 0.95
+      },
+      "n": 1316
+    },
+    "fracao_linhas_abaixo_piso_rc_pos_par11": {
+      "valor": 0.0028653295128939827,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.0,
+        "superior": 0.013423948658847992,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador (cluster)"
+      }
+    },
+    "linhas_abaixo_piso_rc_pos_par11": {
+      "valor": 2.0,
+      "unidade": "linhas (Royal Canin, pedido-a-pedido, 2 ou mais endereços)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_rc_2mais_enderecos_pos_par11": {
+      "valor": 698.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_linhas_abaixo_piso_rc_pre_par11": {
+      "valor": 0.0,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador (cluster)"
+      }
+    },
+    "linhas_abaixo_piso_rc_pre_par11": {
+      "valor": 0.0,
+      "unidade": "linhas (Royal Canin, pedido-a-pedido, 2 ou mais endereços)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_rc_2mais_enderecos_pre_par11": {
+      "valor": 1801.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_abaixo_piso_controle_pos_par11": {
+      "valor": 12.0,
+      "unidade": "linhas (outros depositantes, pedido-a-pedido, 2 ou mais endereços)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_controle_2mais_enderecos_pos_par11": {
+      "valor": 2881.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_abaixo_piso_controle_pre_par11": {
+      "valor": 12.0,
+      "unidade": "linhas (outros depositantes, pedido-a-pedido, 2 ou mais endereços)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_controle_2mais_enderecos_pre_par11": {
+      "valor": 2052.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true
+    }
+  },
+  "tabelas": {
+    "evento_semanal": "evento_semanal.csv",
+    "comparacao_robo_manual_por_pedido": "comparacao_robo_manual_por_pedido.csv",
+    "robustez_h06": "robustez_h06.csv",
+    "serie_semanal_proporcao": "serie_semanal_proporcao.csv"
+  },
+  "figuras": [
+    "estudo_de_evento_h06.png"
+  ],
+  "notas": "H06 (família F1b), leitura associativa; um robô, sem teste controlado. Estatística: diferença-em-diferenças ajustada pela tendência prévia linear (comum.did_ajustado), proporção por operador-semana e grupo reponderada por faixa de endereços ao mix pré-PAR11 de cada grupo; IC95% por percentis do bootstrap por operador (cluster; portão do plano) e por bloco de semana (comparação), 4.000 réplicas, sementes e unidades de ANA-000. p unilateral (H1: > 0) = (réplicas <= 0 + 1) ÷ (réplicas + 1), o maior entre as duas unidades; p_holm_f1b_limite_superior_h06 = min(1, 4 p), limite superior do p de Holm (o p de Holm exato precisa dos p das outras três da F1b). Códigos: classe_* = 1 passa (IC > 0), 0 inconclusivo, -1 falha (IC < 0); h06_inconclusiva_por_desenho = 1 quando o IC contém 0 e o MDE de ANA-000 passa do efeito relevante (proibido ler como 'sem efeito'). efeito_relevante_h06 = menor aumento da proporção (em fração das linhas de 2 ou mais endereços) que, ao tirar essas linhas marcadas, muda M14 pós-PAR11 (teto conservador, 300 s) em mais que PR05 ÷ 2 − PR06 (referência de coleta e ciclo: as linhas marcadas da Royal Canin; sem linha marcada, as dos outros depositantes). ACHADO: a proporção de linhas humanas sem tempo mensurável é muito pequena nos dois grupos, antes e depois de PAR11, e são poucas as ocorrências na Royal Canin (ver linhas_abaixo_piso_*): qualquer IC por reamostragem com tão poucos eventos é frágil e não deve ser lido além do que a regra de leitura permite. Placebo (data falsa 2026-06-29) e tendência prévia usam 7 semanas: descritivos, insuficientes como portão (plano). Robô × manual (M26): comparação descritiva em Qtde Endereços, Qtde Un e Qtde Produtos por pedido (Tempo do robô não é comparável). Dependência não coberta pelo hash do script: analises/comum.py.",
+  "em": "2026-10-03T21:21:02",
+  "segundos": 1.31
+}

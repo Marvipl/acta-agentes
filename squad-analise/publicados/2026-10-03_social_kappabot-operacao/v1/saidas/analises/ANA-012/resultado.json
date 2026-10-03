@@ -1,0 +1,2065 @@
+{
+  "id": "ANA-012",
+  "valores": {
+    "n_dias_incidente_rc": {
+      "valor": 4,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias plenos (21 a 25/09) do incidente da Royal Canin, fora das variáveis de volume e hora do dia"
+    },
+    "linhas_rc_por_dia_incidente": {
+      "valor": 2,
+      "unidade": "linhas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "linhas da Royal Canin por dia pleno, semana ISO 39"
+    },
+    "linhas_rc_por_dia_outras_impares": {
+      "valor": 149,
+      "unidade": "linhas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "linhas da Royal Canin por dia pleno, outras semanas ímpares"
+    },
+    "n_dias_descoberta": {
+      "valor": 37,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias plenos"
+    },
+    "n_semanas_descoberta": {
+      "valor": 8,
+      "unidade": "semanas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "semanas ISO ímpares"
+    },
+    "n_operadores_descoberta": {
+      "valor": 35,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores (logins manuais)"
+    },
+    "limiar_volume_q1": {
+      "valor": 801.0,
+      "unidade": "linhas operacionais por dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "primeiro quartil do volume diário (M05) nos dias plenos das semanas ímpares"
+      },
+      "descricao": "linhas operacionais por dia pleno"
+    },
+    "limiar_volume_q3": {
+      "valor": 1133.0,
+      "unidade": "linhas operacionais por dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "terceiro quartil do volume diário (M05)"
+      },
+      "descricao": "linhas operacionais por dia pleno"
+    },
+    "limiar_volume_p90": {
+      "valor": 1636.8,
+      "unidade": "linhas operacionais por dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "percentil PAR04 do volume diário (M05, interpolação linear)"
+      },
+      "descricao": "linhas operacionais por dia pleno"
+    },
+    "n_dias_pico_descoberta": {
+      "valor": 4,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias plenos"
+    },
+    "n_dias_tipicos_descoberta": {
+      "valor": 19,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias plenos"
+    },
+    "janela_hora_inicial": {
+      "valor": 8.0,
+      "unidade": "hora do dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "primeira hora da janela de operação observada (PAR06)"
+      },
+      "descricao": "hora do dia"
+    },
+    "janela_hora_final": {
+      "valor": 17.0,
+      "unidade": "hora do dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "última hora da janela de operação observada (PAR06)"
+      },
+      "descricao": "hora do dia"
+    },
+    "faixa_refeicao_hora_inicial_t300": {
+      "valor": 15.0,
+      "unidade": "hora do dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "hora de maior fração de intervalos acima do teto de 300 s; a faixa tem esta hora e a seguinte"
+      },
+      "descricao": "hora do dia"
+    },
+    "faixa_refeicao_hora_inicial_t600": {
+      "valor": 15.0,
+      "unidade": "hora do dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "hora de maior fração de intervalos acima do teto de 600 s; a faixa tem esta hora e a seguinte"
+      },
+      "descricao": "hora do dia"
+    },
+    "faixa_refeicao_hora_inicial_t900": {
+      "valor": 15.0,
+      "unidade": "hora do dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "hora de maior fração de intervalos acima do teto de 900 s; a faixa tem esta hora e a seguinte"
+      },
+      "descricao": "hora do dia"
+    },
+    "faixa_refeicao_hora_inicial_t1800": {
+      "valor": 13.0,
+      "unidade": "hora do dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "hora de maior fração de intervalos acima do teto de 1800 s; a faixa tem esta hora e a seguinte"
+      },
+      "descricao": "hora do dia"
+    },
+    "corte_ativo_jornada_s": {
+      "valor": 3600.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "M24: corte de uma hora de jornada ativa ([●] sem fonte setorial)"
+      },
+      "descricao": "s de jornada ativa"
+    },
+    "intervalo_mediano_descoberta": {
+      "valor": 83.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 65.98750000000004,
+        "superior": 109.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            65.98750000000004,
+            109.0
+          ],
+          "semana": [
+            77.0,
+            89.0
+          ]
+        }
+      },
+      "n_linhas": 8632,
+      "n_operadores": 34,
+      "descricao": "s"
+    },
+    "intervalo_mediano_descoberta_t300": {
+      "valor": 70.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 59.0,
+        "superior": 84.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            59.0,
+            84.0
+          ],
+          "semana": [
+            64.0,
+            75.0
+          ]
+        }
+      },
+      "n_linhas": 7342,
+      "n_operadores": 34,
+      "descricao": "s"
+    },
+    "intervalo_mediano_por_faixa_end": {
+      "valor": 104.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 92.0,
+        "superior": 131.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            92.0,
+            131.0
+          ],
+          "semana": [
+            96.0,
+            116.0
+          ]
+        }
+      },
+      "n_linhas": 1928,
+      "n_operadores": 16,
+      "descricao": "s"
+    },
+    "intervalo_mediano_faixa_1": {
+      "valor": 101.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 90.0,
+        "superior": 115.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            90.0,
+            115.0
+          ],
+          "semana": [
+            88.5,
+            111.0
+          ]
+        }
+      },
+      "n_linhas": 863,
+      "n_operadores": 15,
+      "descricao": "s"
+    },
+    "parcela_intervalo_ciclo_faixa_1": {
+      "valor": 0.924114537571838,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.840483454216255,
+        "superior": 0.9469376370816855,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            0.840483454216255,
+            0.9469376370816855
+          ],
+          "semana": [
+            0.8950985790317122,
+            0.941681098621141
+          ]
+        }
+      },
+      "n_linhas": 863,
+      "n_operadores": 15,
+      "descricao": "fração do ciclo (duração da linha + intervalo)"
+    },
+    "intervalo_mediano_faixa_2": {
+      "valor": 105.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 92.0,
+        "superior": 137.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            92.0,
+            137.0
+          ],
+          "semana": [
+            96.0,
+            122.0
+          ]
+        }
+      },
+      "n_linhas": 600,
+      "n_operadores": 16,
+      "descricao": "s"
+    },
+    "intervalo_mediano_faixa_3": {
+      "valor": 110.5,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 92.98750000000004,
+        "superior": 167.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            92.98750000000004,
+            167.0
+          ],
+          "semana": [
+            102.0,
+            127.0
+          ]
+        }
+      },
+      "n_linhas": 260,
+      "n_operadores": 15,
+      "descricao": "s"
+    },
+    "intervalo_mediano_faixa_4a5": {
+      "valor": 115.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 89.5,
+        "superior": 159.51250000000005,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            89.5,
+            159.51250000000005
+          ],
+          "semana": [
+            100.5,
+            133.0
+          ]
+        }
+      },
+      "n_linhas": 164,
+      "n_operadores": 14,
+      "descricao": "s"
+    },
+    "intervalo_mediano_faixa_6mais": {
+      "valor": 103.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 82.0,
+        "superior": 238.5,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            82.0,
+            238.5
+          ],
+          "semana": [
+            84.0,
+            183.0
+          ]
+        }
+      },
+      "n_linhas": 41,
+      "n_operadores": 9,
+      "descricao": "s"
+    },
+    "parcela_intervalo_ciclo_faixa_6mais": {
+      "valor": 0.31778872977496747,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.22692038093164782,
+        "superior": 0.4057243856548264,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            0.22692038093164782,
+            0.4057243856548264
+          ],
+          "semana": [
+            0.2497749309100416,
+            0.3902093607326892
+          ]
+        }
+      },
+      "n_linhas": 41,
+      "n_operadores": 9,
+      "descricao": "fração do ciclo (duração da linha + intervalo)"
+    },
+    "pt_h04_descoberta": {
+      "valor": 54.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 29.0,
+        "superior": 80.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            29.0,
+            80.0
+          ],
+          "semana": [
+            39.0,
+            69.0
+          ]
+        }
+      },
+      "n_operadores": 16,
+      "n_linhas": 678,
+      "descricao": "s"
+    },
+    "dif_intervalo_rc_outros": {
+      "valor": 43.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 27.0,
+        "superior": 67.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            27.0,
+            67.0
+          ],
+          "semana": [
+            29.0,
+            59.0
+          ],
+          "dia": [
+            33.5,
+            53.0
+          ]
+        }
+      },
+      "n_operadores_rc": 18,
+      "n_operadores_outros": 31,
+      "descricao": "s"
+    },
+    "intervalo_mediano_pap_rc": {
+      "valor": 105.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 92.0,
+        "superior": 128.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            92.0,
+            128.0
+          ],
+          "semana": [
+            96.0,
+            118.0
+          ]
+        }
+      },
+      "n_linhas": 2042,
+      "n_operadores": 18,
+      "descricao": "s"
+    },
+    "intervalo_mediano_pap_outros": {
+      "valor": 62.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 54.0,
+        "superior": 76.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            54.0,
+            76.0
+          ],
+          "semana": [
+            57.0,
+            67.0
+          ]
+        }
+      },
+      "n_linhas": 5572,
+      "n_operadores": 31,
+      "descricao": "s"
+    },
+    "dif_intervalo_rc_outros_dia_incidente_fora": {
+      "valor": 42.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 26.0,
+        "superior": 67.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            26.0,
+            67.0
+          ],
+          "semana": [
+            28.0,
+            57.0
+          ],
+          "dia": [
+            32.0,
+            52.0
+          ]
+        }
+      },
+      "descricao": "s"
+    },
+    "dif_intervalo_rc_outros_t300": {
+      "valor": 36.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 25.987500000000047,
+        "superior": 60.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            25.987500000000047,
+            60.0
+          ],
+          "semana": [
+            26.0,
+            49.012500000000045
+          ],
+          "dia": [
+            29.0,
+            46.0
+          ]
+        }
+      },
+      "n_operadores_rc": 18,
+      "n_operadores_outros": 31,
+      "descricao": "s"
+    },
+    "intervalo_mediano_pap_rc_t300": {
+      "valor": 92.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 83.0,
+        "superior": 114.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            83.0,
+            114.0
+          ],
+          "semana": [
+            87.0,
+            101.0
+          ]
+        }
+      },
+      "n_linhas": 1757,
+      "n_operadores": 18,
+      "descricao": "s"
+    },
+    "intervalo_mediano_pap_outros_t300": {
+      "valor": 56.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 48.0,
+        "superior": 65.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            48.0,
+            65.0
+          ],
+          "semana": [
+            51.0,
+            61.0
+          ]
+        }
+      },
+      "n_linhas": 5041,
+      "n_operadores": 31,
+      "descricao": "s"
+    },
+    "linhas_hora_por_tipo_t300": {
+      "valor": 94.5687114202589,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 80.65706406885157,
+        "superior": 105.71378569431664,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            80.65706406885157,
+            105.71378569431664
+          ],
+          "semana": [
+            85.83400928992266,
+            104.35435661165425
+          ]
+        }
+      },
+      "n_operadores": 35,
+      "n_linhas": 21518,
+      "descricao": "coletas por hora"
+    },
+    "linhas_hora_pap_t300": {
+      "valor": 65.71367988566361,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 59.07384762105951,
+        "superior": 71.28577776082044,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            59.07384762105951,
+            71.28577776082044
+          ],
+          "semana": [
+            61.590745269293485,
+            71.0371109734159
+          ]
+        }
+      },
+      "n_operadores": 35,
+      "n_linhas": 8327,
+      "descricao": "coletas por hora"
+    },
+    "linhas_hora_checkout_t300": {
+      "valor": 125.92420502395818,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 116.36863139215636,
+        "superior": 137.39198303974933,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "semana",
+        "ics": {
+          "operador": [
+            114.93436096128906,
+            133.3297477792549
+          ],
+          "semana": [
+            116.36863139215636,
+            137.39198303974933
+          ]
+        }
+      },
+      "n_operadores": 14,
+      "n_linhas": 7227,
+      "descricao": "coletas por hora"
+    },
+    "linhas_hora_colmeia_t300": {
+      "valor": 159.90219664861212,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 124.51914567795012,
+        "superior": 188.19354783178642,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            124.51914567795012,
+            188.19354783178642
+          ],
+          "semana": [
+            144.72927499594113,
+            176.08696565794267
+          ]
+        }
+      },
+      "n_operadores": 15,
+      "n_linhas": 5964,
+      "descricao": "coletas por hora"
+    },
+    "linhas_hora_por_tipo": {
+      "valor": 70.1342817277762,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 60.5918394859442,
+        "superior": 78.87324642686428,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            60.5918394859442,
+            78.87324642686428
+          ],
+          "semana": [
+            62.61068690911067,
+            79.0544334227052
+          ]
+        }
+      },
+      "n_operadores": 35,
+      "n_linhas": 21518,
+      "descricao": "coletas por hora"
+    },
+    "linhas_hora_pap": {
+      "valor": 49.2565040415466,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 43.42822240911105,
+        "superior": 57.37733675757795,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            43.42822240911105,
+            57.37733675757795
+          ],
+          "semana": [
+            45.24950089859645,
+            53.97801147302038
+          ]
+        }
+      },
+      "n_operadores": 35,
+      "n_linhas": 8327,
+      "descricao": "coletas por hora"
+    },
+    "unidades_hora_pap": {
+      "valor": 348.15178711493843,
+      "unidade": "unidades por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 242.1926314534537,
+        "superior": 549.0086341145511,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            242.1926314534537,
+            549.0086341145511
+          ],
+          "semana": [
+            241.4387841257545,
+            497.63249147954605
+          ]
+        }
+      },
+      "n_operadores": 35,
+      "n_linhas": 8327,
+      "descricao": "unidades por hora"
+    },
+    "linhas_hora_checkout": {
+      "valor": 82.06050168901338,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 70.71893073918207,
+        "superior": 90.85799493727905,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            70.71893073918207,
+            90.85799493727905
+          ],
+          "semana": [
+            77.48963153923096,
+            87.65063809173542
+          ]
+        }
+      },
+      "n_operadores": 14,
+      "n_linhas": 7227,
+      "descricao": "coletas por hora"
+    },
+    "unidades_hora_checkout": {
+      "valor": 82.12862995940691,
+      "unidade": "unidades por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 70.9415031265534,
+        "superior": 91.07860832350687,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            70.9415031265534,
+            91.07860832350687
+          ],
+          "semana": [
+            77.53868824335784,
+            87.49136154174698
+          ]
+        }
+      },
+      "n_operadores": 14,
+      "n_linhas": 7227,
+      "descricao": "unidades por hora"
+    },
+    "linhas_hora_colmeia": {
+      "valor": 124.10388111618155,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 97.36589855923657,
+        "superior": 145.56771608092828,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            97.36589855923657,
+            145.56771608092828
+          ],
+          "semana": [
+            113.96409096613617,
+            132.7271219584697
+          ]
+        }
+      },
+      "n_operadores": 15,
+      "n_linhas": 5964,
+      "descricao": "coletas por hora"
+    },
+    "unidades_hora_colmeia": {
+      "valor": 218.93542580123452,
+      "unidade": "unidades por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 195.07329728620113,
+        "superior": 237.68738348639903,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            195.07329728620113,
+            237.68738348639903
+          ],
+          "semana": [
+            205.03770417046468,
+            235.41066454634148
+          ]
+        }
+      },
+      "n_operadores": 15,
+      "n_linhas": 5964,
+      "descricao": "unidades por hora"
+    },
+    "dif_m14_rc_outros_pad": {
+      "valor": -15.78171696436295,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -27.08632117587577,
+        "superior": -7.668345091160659,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -27.08632117587577,
+            -7.668345091160659
+          ],
+          "semana": [
+            -20.372456275603046,
+            -11.945978773264407
+          ],
+          "dia": [
+            -19.47707292215129,
+            -12.188745139173632
+          ]
+        }
+      },
+      "n_operadores": 35,
+      "loo_min": -19.77986891887982,
+      "loo_max": -11.481929384639848,
+      "descricao": "coletas por hora"
+    },
+    "m14_pap_rc_pad": {
+      "valor": 36.3368781279229,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 30.666089796889057,
+        "superior": 39.43439168902027,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            30.666089796889057,
+            39.43439168902027
+          ],
+          "semana": [
+            33.045406789576155,
+            39.40266797177122
+          ],
+          "dia": [
+            33.999341847962086,
+            39.12415765596545
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "m14_pap_outros_pad": {
+      "valor": 52.11859509228585,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 44.12333774555212,
+        "superior": 61.32562546365662,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            44.12333774555212,
+            61.32562546365662
+          ],
+          "semana": [
+            49.10955635664401,
+            55.312862680922606
+          ],
+          "dia": [
+            49.69666467818013,
+            54.84236066163413
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "dif_m14_rc_outros_pad_t300": {
+      "valor": -21.346483207647942,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -32.07088279271258,
+        "superior": -13.491894287310542,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -32.07088279271258,
+            -13.491894287310542
+          ],
+          "semana": [
+            -28.88673397164263,
+            -15.935060657975336
+          ],
+          "dia": [
+            -26.630571203830065,
+            -16.531103366267086
+          ]
+        }
+      },
+      "n_operadores": 35,
+      "loo_min": -27.273383292771037,
+      "loo_max": -18.743633946433995,
+      "descricao": "coletas por hora"
+    },
+    "m14_pap_rc_pad_t300": {
+      "valor": 49.600638977635775,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 40.18785295331158,
+        "superior": 55.36284961954592,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            40.18785295331158,
+            55.36284961954592
+          ],
+          "semana": [
+            45.13388727302814,
+            52.47332567965108
+          ],
+          "dia": [
+            46.70278461131463,
+            52.97766876883932
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "m14_pap_outros_pad_t300": {
+      "valor": 70.94712218528372,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 62.95838437593374,
+        "superior": 76.55507137844634,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            62.95838437593374,
+            76.55507137844634
+          ],
+          "semana": [
+            66.45741613796866,
+            76.71838643538968
+          ],
+          "dia": [
+            66.81595879247487,
+            75.48667254236116
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "dif_m14_rc_outros_pad_dia_incidente_fora": {
+      "valor": -16.281681522996934,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -27.227152461902712,
+        "superior": -9.020327045030136,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -27.227152461902712,
+            -9.020327045030136
+          ],
+          "semana": [
+            -21.171078267747696,
+            -12.33009283966604
+          ],
+          "dia": [
+            -20.138956815096847,
+            -12.70842533435691
+          ]
+        }
+      },
+      "n_operadores": 33,
+      "descricao": "coletas por hora"
+    },
+    "consistencia_sinal_faixas_rc_outros": {
+      "valor": 1,
+      "unidade": "indicador (1 = sem inversão)",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "1 = sem inversão de sinal entre faixas"
+    },
+    "dif_m14_pico_tipico_pad": {
+      "valor": 7.102097560868671,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -1.210801079741592,
+        "superior": 15.646653544364161,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -1.210801079741592,
+            15.646653544364161
+          ],
+          "semana": [
+            0.2729147056381862,
+            14.19046916292656
+          ],
+          "dia": [
+            1.2590335798785495,
+            13.582697519701302
+          ]
+        }
+      },
+      "n_operadores": 27,
+      "loo_min": 5.143057357478241,
+      "loo_max": 9.103446493011901,
+      "descricao": "coletas por hora"
+    },
+    "m14_pico_pad": {
+      "valor": 76.55270366927779,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 65.9250025652672,
+        "superior": 86.65911584160244,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            65.9250025652672,
+            86.65911584160244
+          ],
+          "semana": [
+            70.401600581939,
+            83.17916760168718
+          ],
+          "dia": [
+            71.75683350708347,
+            82.04328539146019
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "m14_tipico_pad": {
+      "valor": 69.45060610840912,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 62.29937576922175,
+        "superior": 76.85689333657206,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            62.29937576922175,
+            76.85689333657206
+          ],
+          "semana": [
+            66.45190717641522,
+            72.86252840831938
+          ],
+          "dia": [
+            66.86507862748901,
+            71.99724445174684
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "dif_m14_pico_tipico_pad_t300": {
+      "valor": 5.843681935706073,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -4.323537920508406,
+        "superior": 20.071366604256195,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -4.323537920508406,
+            20.071366604256195
+          ],
+          "semana": [
+            -0.27725472913391513,
+            14.252637124058293
+          ],
+          "dia": [
+            -2.03595547566648,
+            15.490540461424624
+          ]
+        }
+      },
+      "n_operadores": 27,
+      "loo_min": 1.9074642354872111,
+      "loo_max": 8.78622028671785,
+      "descricao": "coletas por hora"
+    },
+    "m14_pico_pad_t300": {
+      "valor": 100.84662442620954,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 87.4089130332244,
+        "superior": 113.99772976357897,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            87.4089130332244,
+            113.99772976357897
+          ],
+          "semana": [
+            93.85312653368585,
+            109.83867106119006
+          ],
+          "dia": [
+            94.45812527901501,
+            109.50044431866031
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "m14_tipico_pad_t300": {
+      "valor": 95.00294249050347,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 86.35275426821258,
+        "superior": 101.01944443252923,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            86.35275426821258,
+            101.01944443252923
+          ],
+          "semana": [
+            88.61661714913951,
+            101.55334582324015
+          ],
+          "dia": [
+            90.25799991988534,
+            99.58187220217378
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "consistencia_sinal_tipos_pico_tipico": {
+      "valor": 1,
+      "unidade": "indicador (1 = sem inversão)",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "1 = sem inversão de sinal entre tipos de onda"
+    },
+    "dif_m14_antes_depois_refeicao_pad": {
+      "valor": 2.2554185688097874,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -4.691295272290883,
+        "superior": 15.51783003840722,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -4.691295272290883,
+            15.51783003840722
+          ],
+          "semana": [
+            -6.6976842602403535,
+            12.549807373413932
+          ],
+          "dia": [
+            -5.822175079331788,
+            11.32168422512756
+          ]
+        }
+      },
+      "n_operadores": 34,
+      "loo_min": -0.019641789317518032,
+      "loo_max": 5.891416888477011,
+      "descricao": "coletas por hora"
+    },
+    "m14_antes_refeicao_pad": {
+      "valor": 71.1646179277374,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 63.510798483901674,
+        "superior": 79.05352344339394,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            63.510798483901674,
+            79.05352344339394
+          ],
+          "semana": [
+            68.15512696771708,
+            75.07777278641599
+          ],
+          "dia": [
+            67.98119856038751,
+            74.45861290334685
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "m14_depois_refeicao_pad": {
+      "valor": 68.90919935892761,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 58.76765141483798,
+        "superior": 77.26230242434407,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "semana",
+        "ics": {
+          "operador": [
+            58.22734268113102,
+            75.17549683126451
+          ],
+          "semana": [
+            58.76765141483798,
+            77.26230242434407
+          ],
+          "dia": [
+            60.12390220027935,
+            77.15949333418416
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "dif_m14_antes_depois_refeicao_pad_t300": {
+      "valor": 1.7548222860406497,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -13.67111044400196,
+        "superior": 15.889475015358128,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "semana",
+        "ics": {
+          "operador": [
+            -5.781911802673065,
+            14.352215800759959
+          ],
+          "semana": [
+            -13.67111044400196,
+            15.889475015358128
+          ],
+          "dia": [
+            -9.668468402017485,
+            12.505258675656778
+          ]
+        }
+      },
+      "n_operadores": 34,
+      "loo_min": -0.23020574494866253,
+      "loo_max": 5.862903093808569,
+      "descricao": "coletas por hora"
+    },
+    "m14_antes_refeicao_pad_t300": {
+      "valor": 95.04542438241019,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 85.70210335017525,
+        "superior": 101.66785593239608,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            85.70210335017525,
+            101.66785593239608
+          ],
+          "semana": [
+            90.68740873094336,
+            100.46352259065348
+          ],
+          "dia": [
+            90.85002354954054,
+            99.25667117704702
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "m14_depois_refeicao_pad_t300": {
+      "valor": 93.29060209636954,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 78.9356895186955,
+        "superior": 107.85803189374755,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "semana",
+        "ics": {
+          "operador": [
+            79.13028079226066,
+            101.41518399542744
+          ],
+          "semana": [
+            78.9356895186955,
+            107.85803189374755
+          ],
+          "dia": [
+            82.25232127112115,
+            104.58899013168109
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "dif_m14_antes_depois_refeicao_pad_dia_incidente_fora": {
+      "valor": 1.8532584783299058,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -5.756525114103354,
+        "superior": 16.98774709448163,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -5.756525114103354,
+            16.98774709448163
+          ],
+          "semana": [
+            -7.9338224529025965,
+            13.003561254127966
+          ],
+          "dia": [
+            -6.364934076433391,
+            11.892272140001333
+          ]
+        }
+      },
+      "n_operadores": 32,
+      "descricao": "coletas por hora"
+    },
+    "horas_antes_da_refeicao": {
+      "valor": 7,
+      "unidade": "horas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas da janela"
+    },
+    "horas_depois_da_refeicao": {
+      "valor": 1,
+      "unidade": "horas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas da janela"
+    },
+    "dif_m14_rc_outros_cc_pad": {
+      "valor": -28.1810954507053,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -38.66654602117019,
+        "superior": -17.99162769948853,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "semana",
+        "ics": {
+          "operador": [
+            -40.542608614371055,
+            -20.246443283164222
+          ],
+          "semana": [
+            -38.66654602117019,
+            -17.99162769948853
+          ],
+          "dia": [
+            -35.91679422493686,
+            -19.33272604020257
+          ]
+        }
+      },
+      "n_operadores": 15,
+      "loo_min": -31.889845158965528,
+      "loo_max": -25.396941679644044,
+      "descricao": "coletas por hora"
+    },
+    "m14_cc_rc_pad": {
+      "valor": 66.13971683153972,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 53.83021312999681,
+        "superior": 70.81672754966115,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            53.83021312999681,
+            70.81672754966115
+          ],
+          "semana": [
+            63.767174134502625,
+            68.65698159694949
+          ],
+          "dia": [
+            61.72157591183067,
+            70.53691137980141
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "m14_cc_outros_pad": {
+      "valor": 94.32081228224502,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 85.96704695330611,
+        "superior": 103.1990818607208,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "semana",
+        "ics": {
+          "operador": [
+            87.9723950729612,
+            99.53896380337163
+          ],
+          "semana": [
+            85.96704695330611,
+            103.1990818607208
+          ],
+          "dia": [
+            86.08225605767939,
+            102.03116021672959
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "dif_m14_rc_outros_cc_pad_t300": {
+      "valor": -37.0243789627183,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -59.75650618516194,
+        "superior": -19.241684562558248,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "semana",
+        "ics": {
+          "operador": [
+            -59.15963152317875,
+            -23.583247246932093
+          ],
+          "semana": [
+            -59.75650618516194,
+            -19.241684562558248
+          ],
+          "dia": [
+            -50.309875701901326,
+            -24.039495304306676
+          ]
+        }
+      },
+      "n_operadores": 15,
+      "loo_min": -42.68513365862826,
+      "loo_max": -32.56555739659139,
+      "descricao": "coletas por hora"
+    },
+    "m14_cc_rc_pad_t300": {
+      "valor": 95.03541997976002,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 74.59853597170377,
+        "superior": 100.69927808919068,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            74.59853597170377,
+            100.69927808919068
+          ],
+          "semana": [
+            88.47192409424173,
+            102.09671332441788
+          ],
+          "dia": [
+            89.0642991781821,
+            101.28307762929266
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "m14_cc_outros_pad_t300": {
+      "valor": 132.05979894247832,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 116.73331362467148,
+        "superior": 153.98972442317904,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "semana",
+        "ics": {
+          "operador": [
+            119.95148184861081,
+            142.54815991515622
+          ],
+          "semana": [
+            116.73331362467148,
+            153.98972442317904
+          ],
+          "dia": [
+            119.99033368661996,
+            145.42746350629892
+          ]
+        }
+      },
+      "descricao": "coletas por hora"
+    },
+    "dif_m14_rc_outros_cc_pad_dia_incidente_fora": {
+      "valor": -28.82154227204788,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -40.318571562085914,
+        "superior": -17.321649104561068,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "semana",
+        "ics": {
+          "operador": [
+            -40.39356451569909,
+            -19.358792814656972
+          ],
+          "semana": [
+            -40.318571562085914,
+            -17.321649104561068
+          ],
+          "dia": [
+            -37.42033403449726,
+            -19.13944122764044
+          ]
+        }
+      },
+      "n_operadores": 12,
+      "descricao": "coletas por hora"
+    },
+    "consistencia_sinal_tipos_rc_outros_cc": {
+      "valor": 1,
+      "unidade": "indicador (1 = sem inversão)",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "1 = sem inversão de sinal entre checkout e colmeia"
+    },
+    "dif_m14_rc_outros_pad_com_incidente": {
+      "valor": -15.816526522453735,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -27.365089548549335,
+        "superior": -7.793774221954278,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -27.365089548549335,
+            -7.793774221954278
+          ],
+          "semana": [
+            -20.43008825271062,
+            -11.919457065787832
+          ],
+          "dia": [
+            -19.388883805961143,
+            -12.292401136078643
+          ]
+        }
+      },
+      "n_operadores": 35,
+      "descricao": "coletas por hora"
+    },
+    "dif_m14_rc_outros_cc_pad_com_incidente": {
+      "valor": -28.1810954507053,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -38.85213606202081,
+        "superior": -17.950993388580944,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "semana",
+        "ics": {
+          "operador": [
+            -39.95736946132505,
+            -19.98858544173624
+          ],
+          "semana": [
+            -38.85213606202081,
+            -17.950993388580944
+          ],
+          "dia": [
+            -36.19884869982934,
+            -19.280899728836225
+          ]
+        }
+      },
+      "n_operadores": 15,
+      "descricao": "coletas por hora"
+    },
+    "dif_m14_pico_tipico_pad_com_incidente": {
+      "valor": 9.679063729098004,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.4992989856964245,
+        "superior": 16.8213096703578,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            0.4992989856964245,
+            16.8213096703578
+          ],
+          "semana": [
+            3.3008522000010334,
+            17.288200254714823
+          ],
+          "dia": [
+            3.5520537504343324,
+            16.62191000881492
+          ]
+        }
+      },
+      "n_operadores": 31,
+      "descricao": "coletas por hora"
+    },
+    "limiar_volume_q1_com_incidente": {
+      "valor": 777.0,
+      "unidade": "linhas operacionais por dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "primeiro quartil com os dias do incidente (sensibilidade)"
+      },
+      "descricao": "linhas operacionais por dia pleno"
+    },
+    "limiar_volume_q3_com_incidente": {
+      "valor": 1318.0,
+      "unidade": "linhas operacionais por dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "terceiro quartil com os dias do incidente (sensibilidade)"
+      },
+      "descricao": "linhas operacionais por dia pleno"
+    },
+    "limiar_volume_p90_com_incidente": {
+      "valor": 1628.0,
+      "unidade": "linhas operacionais por dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "p90 com os dias do incidente (sensibilidade)"
+      },
+      "descricao": "linhas operacionais por dia pleno"
+    },
+    "dif_intervalo_rc_outros_com_incidente": {
+      "valor": 43.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 26.0,
+        "superior": 68.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            26.0,
+            68.0
+          ],
+          "semana": [
+            29.0,
+            59.0
+          ],
+          "dia": [
+            34.0,
+            53.0
+          ]
+        }
+      },
+      "descricao": "s"
+    },
+    "tempo_coleta_m08_rc": {
+      "valor": 62.34982014388489,
+      "unidade": "s por coleta",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 53.45969703434043,
+        "superior": 87.39039559661846,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            53.45969703434043,
+            87.39039559661846
+          ],
+          "semana": [
+            56.096971881759195,
+            74.55779569892474
+          ]
+        }
+      },
+      "n_linhas": 1228,
+      "n_operadores": 17,
+      "descricao": "s por coleta"
+    },
+    "tempo_coleta_m08_outros": {
+      "valor": 48.75307805263753,
+      "unidade": "s por coleta",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 44.03099441948663,
+        "superior": 57.6352253127418,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            44.03099441948663,
+            57.6352253127418
+          ],
+          "semana": [
+            44.787723911269985,
+            52.10255630383228
+          ]
+        }
+      },
+      "n_linhas": 2507,
+      "n_operadores": 26,
+      "descricao": "s por coleta"
+    },
+    "coef_ativos_volume": {
+      "valor": 1.694442192216392,
+      "unidade": "operadores ativos por mil linhas",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.778127886930821,
+        "superior": 4.201256144987208,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "bloco de semana",
+        "ics": {
+          "hac_dia": [
+            0.7896222928780303,
+            2.5992620915547535
+          ],
+          "semana": [
+            0.778127886930821,
+            4.201256144987208
+          ]
+        }
+      },
+      "n_dias": 37,
+      "n_semanas": 8,
+      "descricao": "operadores ativos por mil linhas operacionais"
+    },
+    "ativos_dia_media_descoberta": {
+      "valor": 4.675675675675675,
+      "unidade": "operadores por dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "média dos dias plenos da descoberta (descritivo)"
+      },
+      "descricao": "operadores ativos por dia (jornada ativa de uma hora)"
+    },
+    "coef_ativos_volume_t300": {
+      "valor": 1.6691650813927583,
+      "unidade": "operadores ativos por mil linhas",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.7926468154725091,
+        "superior": 4.3043114684775485,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "bloco de semana",
+        "ics": {
+          "hac_dia": [
+            0.9498818084842295,
+            2.388448354301287
+          ],
+          "semana": [
+            0.7926468154725091,
+            4.3043114684775485
+          ]
+        }
+      },
+      "n_dias": 37,
+      "n_semanas": 8,
+      "descricao": "operadores ativos por mil linhas operacionais"
+    },
+    "coef_ativos_volume_1linha": {
+      "valor": 2.66004886183327,
+      "unidade": "operadores ativos por mil linhas",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.6643688057053618,
+        "superior": 5.976052964721828,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "bloco de semana",
+        "ics": {
+          "hac_dia": [
+            0.24747978586486505,
+            5.072617937801675
+          ],
+          "semana": [
+            0.6643688057053618,
+            5.976052964721828
+          ]
+        }
+      },
+      "n_dias": 37,
+      "n_semanas": 8,
+      "descricao": "operadores ativos por mil linhas operacionais"
+    },
+    "coef_ativos_volume_com_incidente": {
+      "valor": 1.9091293810261456,
+      "unidade": "operadores ativos por mil linhas",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.067912425450005,
+        "superior": 3.948826531350055,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "bloco de semana",
+        "ics": {
+          "hac_dia": [
+            1.0700534846884526,
+            2.7482052773638386
+          ],
+          "semana": [
+            1.067912425450005,
+            3.948826531350055
+          ]
+        }
+      },
+      "n_dias": 41,
+      "n_semanas": 9,
+      "descricao": "operadores ativos por mil linhas operacionais"
+    },
+    "n_novatos_descoberta": {
+      "valor": 10,
+      "unidade": "novatos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "novatos (logins novos com K semanas completas)"
+    },
+    "razao_novato_experiente_semana": {
+      "valor": -1.9225210825471286,
+      "unidade": "razão por semana",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -8.146404748670836,
+        "superior": 2.3406016306142288,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -8.146404748670836,
+            2.3406016306142288
+          ],
+          "semana": [
+            -5.600834777334552,
+            2.113784225292811
+          ]
+        }
+      },
+      "n_novatos": 10,
+      "n_celulas": 22,
+      "descricao": "razão novato÷experiente por semana desde a entrada"
+    },
+    "razao_novato_experiente_semana_log": {
+      "valor": -0.12597414675739105,
+      "unidade": "log da razão por semana desde a entrada",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.7312486780201276,
+        "superior": 0.38681144355069114,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -0.7312486780201276,
+            0.38681144355069114
+          ],
+          "semana": [
+            -0.7374838607343362,
+            0.3166563707779138
+          ]
+        }
+      },
+      "n_novatos": 10,
+      "descricao": "log da razão por semana desde a entrada"
+    },
+    "razao_novato_experiente_semana_t300": {
+      "valor": -1.4837419962747125,
+      "unidade": "razão por semana",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -6.3427329593103785,
+        "superior": 1.6860127844328383,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -6.3427329593103785,
+            1.6860127844328383
+          ],
+          "semana": [
+            -4.2036723977289085,
+            1.5692709401418892
+          ]
+        }
+      },
+      "descricao": "razão novato÷experiente por semana desde a entrada"
+    },
+    "razao_novato_mediana_sem01": {
+      "valor": 0.6750148908382598,
+      "unidade": "razão",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.6289991882836644,
+        "superior": 1.9502981371060333,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "semana",
+        "ics": {
+          "operador": [
+            0.6453587655873454,
+            1.3317289376354593
+          ],
+          "semana": [
+            0.6289991882836644,
+            1.9502981371060333
+          ]
+        }
+      },
+      "n_novatos": 10,
+      "descricao": "razão novato÷experiente (mediana)"
+    },
+    "razao_novato_mediana_sem23": {
+      "valor": 0.6674326418259308,
+      "unidade": "razão",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.6176129549753361,
+        "superior": 9.344186004105712,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            0.6176129549753361,
+            9.344186004105712
+          ],
+          "semana": [
+            0.6149098134989234,
+            0.684677949190477
+          ]
+        }
+      },
+      "n_novatos": 5,
+      "descricao": "razão novato÷experiente (mediana)"
+    },
+    "n_pistas_propostas": {
+      "valor": 4,
+      "unidade": "pistas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pistas"
+    }
+  },
+  "tabelas": {
+    "incidente_rc_por_semana_impar": "incidente_rc_por_semana_impar.csv",
+    "limiares_descoberta": "limiares_descoberta.csv",
+    "m10a_por_tipo_hora_depositante": "m10a_por_tipo_hora_depositante.csv",
+    "m10b_por_faixa_pap_rc": "m10b_por_faixa_pap_rc.csv",
+    "m14_por_tipo_e_teto": "m14_por_tipo_e_teto.csv",
+    "m14_por_faixa_e_grupo": "m14_por_faixa_e_grupo.csv",
+    "m14_por_tipo_e_depositante": "m14_por_tipo_e_depositante.csv",
+    "m14_por_tipo_e_hora": "m14_por_tipo_e_hora.csv",
+    "robustez_rc_outros_por_faixa": "robustez_rc_outros_por_faixa.csv",
+    "robustez_pico_tipico_por_tipo": "robustez_pico_tipico_por_tipo.csv",
+    "robustez_rc_outros_cc_por_tipo": "robustez_rc_outros_cc_por_tipo.csv",
+    "m08_por_grupo_e_faixa": "m08_por_grupo_e_faixa.csv",
+    "razao_novato_experiente_por_grupo_de_semanas": "razao_novato_experiente_por_grupo_de_semanas.csv",
+    "poder_pistas_a_priori": "poder_pistas_a_priori.csv",
+    "pistas_propostas": "pistas_propostas.csv"
+  },
+  "figuras": [
+    "fig_ativos_contra_volume.png",
+    "fig_intervalo_por_faixa.png",
+    "fig_m14_por_hora.png",
+    "fig_m14_por_tipo_e_teto.png",
+    "fig_m14_rc_contra_outros.png",
+    "fig_novatos.png"
+  ],
+  "notas": "INCIDENTE OPERACIONAL DA ROYAL CANIN (recorte atípico, declarado): de 21 a 25/09 (semana ISO 39, ímpar, portanto na descoberta) a Royal Canin cai para quase zero linhas por dia com o armazém normal; Marcus confirmou que a queda é real (problemas na operação), não falha da extração (revisoes/orquestrador_decisao_semana_incidente.md; evidência na tabela incidente_rc_por_semana_impar). Tratamento primário, de operação normal: as poucas linhas da Royal Canin desses dias saem dos conjuntos de linhas e de tempo, e os dias saem inteiros das variáveis de volume e hora do dia do armazém (quartis e p90, janela observada, faixa de refeição, H10), porque o volume deles não representa a operação normal; nada é apagado dos dados. Sensibilidades: chaves *_com_incidente (tudo como extraído, limiares recalculados com a semana) e *_dia_incidente_fora (dias inteiros fora do conjunto de linhas). O painel de novatos não usa a semana (nenhum novato com K semanas chega nela). Unidades: \"%\" significa fração de 0 a 1 (o motor mostra como percentual); cada valor traz a descrição longa no campo descricao. Exploratória, só semanas ISO ímpares (consulta com filtro semana_impar e assert de paridade; única exceção declarada: painel de novatos por operador, excecao_P13). Estimativas de descoberta com IC de percentis por bootstrap por operador e por bloco de semana (vale o mais largo), sem ajuste para as muitas comparações olhadas; nenhuma delas vai ao memorando antes da confirmação em ANA-016 (semanas pares). Limiares fixos na tabela limiares_descoberta (aplicados em ANA-016 sem recálculo); pistas propostas na tabela pistas_propostas (no máximo cinco, em ordem de valor comercial), a registrar no plano e em ANA-016 com o recarimbo; ANA-000 precisa ser estendida para as pistas novas (hoje levanta erro para pista sem EP). M10: a estatística principal de H04 é o intervalo absoluto (M10 b) por faixa; a parcela do intervalo no ciclo cai com os endereços por construção e fica descritiva. M14: padronizado por faixa de endereços (pesos fixos na tabela de limiares); comparações entre tipos de onda e entre depositantes não são ajustadas por produto nem layout. H10: coeficiente em operadores ativos por mil linhas operacionais (a unidade de ANA-000 é por linha; multiplique o MDE por mil), com dia da semana e mês controlados, em desvios da média da semana; IC vale o mais largo entre erro HAC por dia e bloco de semana. P13: painel balanceado com K semanas, razão do M14 do novato sobre o dos experientes na mesma semana-calendário e tipo de onda; a razão tem valores extremos (ciclo creditado pequeno), então a inclinação em log vai ao lado; o painel condiciona à sobrevivência até K e a contagem de quem saiu antes fica abaixo de PAR07 e não é reportada. Poder: n e MDE das pistas a priori vêm de ANA-000 (confirmação, sem efeito); as pistas novas não têm EP ainda ([●] até a extensão de ANA-000). Linhas de grupos com menos de PAR07 operadores ou registros foram omitidas das tabelas. ",
+  "em": "2026-10-03T21:22:26",
+  "segundos": 22.34
+}

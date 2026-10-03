@@ -1,0 +1,5729 @@
+{
+  "id": "ANA-003",
+  "valores": {
+    "operador_dias_turnos_fundidos": {
+      "valor": 0.0,
+      "unidade": "operador-dias (com e sem turnos fundidos dão o mesmo resultado quando zero)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_base": {
+      "valor": 18.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_normal": {
+      "valor": 19.0,
+      "unidade": "dias plenos (24/08 a 18/09)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_dia_pap_rc": {
+      "valor": 1.0574845679012346,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0574845679012346,
+        "superior": 2.5516358024691357,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.7346535493827162,
+          1.3861577932098768
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_t300": {
+      "valor": 1.0574845679012346,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0574845679012346,
+        "superior": 1.6952006172839504,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.7346535493827162,
+          1.3861577932098768
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_t600": {
+      "valor": 1.2714351851851853,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.2714351851851853,
+        "superior": 2.0295987654320986,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.8961882716049383,
+          1.655040509259259
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_t900": {
+      "valor": 1.4439506172839505,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.4439506172839505,
+        "superior": 2.2254938271604936,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.021780478395062,
+          1.8726585648148149
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_t1800": {
+      "valor": 1.797145061728395,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.797145061728395,
+        "superior": 2.5516358024691357,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.271671682098766,
+          2.3141153549382714
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_pap_rc": {
+      "valor": 0.1442680174490088,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1442680174490088,
+        "superior": 0.3481085678675492,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.10022558654607315,
+          0.18910747519916463
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_pap_rc_t300": {
+      "valor": 0.1442680174490088,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1442680174490088,
+        "superior": 0.23126884273996595,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.10022558654607315,
+          0.18910747519916463
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_pap_rc_t600": {
+      "valor": 0.1734563690566419,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1734563690566419,
+        "superior": 0.27688932679837636,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.1222630657032658,
+          0.22578997397807082
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_pap_rc_t900": {
+      "valor": 0.19699189867448164,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.19699189867448164,
+        "superior": 0.3036144375389486,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.13939706390109985,
+          0.2554786582284877
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_pap_rc_t1800": {
+      "valor": 0.24517667963552456,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.24517667963552456,
+        "superior": 0.3481085678675492,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.17348863330133232,
+          0.3157046868947164
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc": {
+      "valor": 0.5096913580246913,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.5096913580246913,
+        "superior": 1.1521913580246914,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.3608024691358025,
+          0.6568036265432099
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_t300": {
+      "valor": 0.5096913580246913,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.5096913580246913,
+        "superior": 0.7897067901234568,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.3608024691358025,
+          0.6568036265432099
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_t600": {
+      "valor": 0.6347222222222223,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.6347222222222223,
+        "superior": 0.9233950617283951,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.4508070987654321,
+          0.8120131172839506
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_t900": {
+      "valor": 0.6704938271604939,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.6704938271604939,
+        "superior": 1.0147222222222223,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.46621141975308655,
+          0.8771261574074074
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_t1800": {
+      "valor": 0.8710802469135802,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.8710802469135802,
+        "superior": 1.1521913580246914,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.5946898148148148,
+          1.144199074074074
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_checkout_rc": {
+      "valor": 0.06953497380964412,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.06953497380964412,
+        "superior": 0.15718845266366868,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.04922271065972749,
+          0.0896048603742442
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_checkout_rc_t300": {
+      "valor": 0.06953497380964412,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.06953497380964412,
+        "superior": 0.1077362605898304,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.04922271065972749,
+          0.0896048603742442
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_checkout_rc_t600": {
+      "valor": 0.08659239048052146,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.08659239048052146,
+        "superior": 0.12597476967645227,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.06150165058191434,
+          0.11077941572768768
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_checkout_rc_t900": {
+      "valor": 0.09147255486500598,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.09147255486500598,
+        "superior": 0.13843413672881613,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.06360319505499135,
+          0.11966250442120156
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_checkout_rc_t1800": {
+      "valor": 0.11883768716419921,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.11883768716419921,
+        "superior": 0.15718845266366868,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.08113094335809205,
+          0.15609810014653122
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc": {
+      "valor": 1.3520987654320988,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.007932098765432,
+        "superior": 2.594907407407407,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.8961890432098769,
+          1.8559467592592593
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_t300": {
+      "valor": 1.3520987654320988,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.007932098765432,
+        "superior": 2.0091203703703706,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.8961890432098769,
+          1.8559467592592593
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_t600": {
+      "valor": 1.5530092592592593,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.1684722222222221,
+        "superior": 2.256929012345679,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.04729012345679,
+          2.111377314814815
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_t900": {
+      "valor": 1.6985185185185185,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.2913425925925925,
+        "superior": 2.4174382716049383,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.1605671296296296,
+          2.2743765432098764
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_t1800": {
+      "valor": 1.9550154320987656,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.4378240740740742,
+        "superior": 2.594907407407407,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.3312175925925926,
+          2.630109182098765
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_colmeia_rc": {
+      "valor": 0.18446095026358783,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.13750778973607533,
+        "superior": 0.3540119246121974,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.12226317096996955,
+          0.25319873932595627
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_colmeia_rc_t300": {
+      "valor": 0.18446095026358783,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.13750778973607533,
+        "superior": 0.2740955484816331,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.12226317096996955,
+          0.25319873932595627
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_colmeia_rc_t600": {
+      "valor": 0.2118702945783437,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.15940958011217218,
+        "superior": 0.30790300304852375,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.14287723375945294,
+          0.28804601839219857
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_colmeia_rc_t900": {
+      "valor": 0.23172148956596433,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.176172250012632,
+        "superior": 0.3298005827564718,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.1583311227325552,
+          0.3102832937530527
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_colmeia_rc_t1800": {
+      "valor": 0.26671424721674836,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.19615608104694054,
+        "superior": 0.3540119246121974,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.1816122227275024,
+          0.3588143495359843
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2": {
+      "valor": 1.0574845679012346,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0574845679012346,
+        "superior": 2.5516358024691357,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.7346535493827162,
+          1.3861577932098768
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_t300": {
+      "valor": 1.0574845679012346,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0574845679012346,
+        "superior": 1.6952006172839504,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.7346535493827162,
+          1.3861577932098768
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_t600": {
+      "valor": 1.2714351851851853,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.2714351851851853,
+        "superior": 2.0295987654320986,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.8961882716049383,
+          1.655040509259259
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_t900": {
+      "valor": 1.4439506172839505,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.4439506172839505,
+        "superior": 2.2254938271604936,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.021780478395062,
+          1.8726585648148149
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_t1800": {
+      "valor": 1.797145061728395,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.797145061728395,
+        "superior": 2.5516358024691357,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.271671682098766,
+          2.3141153549382714
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt2": {
+      "valor": 0.1442680174490088,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1442680174490088,
+        "superior": 0.3481085678675492,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.10022558654607315,
+          0.18910747519916463
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt2_t300": {
+      "valor": 0.1442680174490088,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1442680174490088,
+        "superior": 0.23126884273996595,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.10022558654607315,
+          0.18910747519916463
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt2_t600": {
+      "valor": 0.1734563690566419,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1734563690566419,
+        "superior": 0.27688932679837636,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.1222630657032658,
+          0.22578997397807082
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt2_t900": {
+      "valor": 0.19699189867448164,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.19699189867448164,
+        "superior": 0.3036144375389486,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.13939706390109985,
+          0.2554786582284877
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt2_t1800": {
+      "valor": 0.24517667963552456,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.24517667963552456,
+        "superior": 0.3481085678675492,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.17348863330133232,
+          0.3157046868947164
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3": {
+      "valor": 1.567175925925926,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.567175925925926,
+        "superior": 3.703827160493827,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          1.1297480709876546,
+          1.9932430555555554
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_ic_dias": {
+      "valor": 1.567175925925926,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.1297480709876546,
+        "superior": 1.9932430555555554,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "n_dias": 18,
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_t300": {
+      "valor": 1.567175925925926,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.567175925925926,
+        "superior": 2.484907407407407,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.1297480709876546,
+          1.9932430555555554
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_t600": {
+      "valor": 1.9061574074074075,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.9061574074074075,
+        "superior": 2.952993827160494,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.3886404320987655,
+          2.4024745370370373
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_t900": {
+      "valor": 2.1144444444444446,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.1144444444444446,
+        "superior": 3.240216049382716,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.5305023148148151,
+          2.678890432098765
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_t1800": {
+      "valor": 2.668225308641975,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.668225308641975,
+        "superior": 3.703827160493827,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.930435185185185,
+          3.379511959876544
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt3": {
+      "valor": 0.21380299125865293,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21380299125865293,
+        "superior": 0.5052970205312178,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.15412661268590103,
+          0.2719294755191754
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt3_ic_dias": {
+      "valor": 0.21380299125865293,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.15412661268590103,
+        "superior": 0.2719294755191754,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "n_dias": 18,
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt3_t300": {
+      "valor": 0.21380299125865293,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21380299125865293,
+        "superior": 0.33900510332979633,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.15412661268590103,
+          0.2719294755191754
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt3_t600": {
+      "valor": 0.2600487595371634,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.2600487595371634,
+        "superior": 0.4028640964748287,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.18944617081838547,
+          0.32775914557121927
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt3_t900": {
+      "valor": 0.2884644535394877,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.2884644535394877,
+        "superior": 0.4420485742677648,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.20879977009751913,
+          0.36546936317854917
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt3_t1800": {
+      "valor": 0.36401436679972377,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.36401436679972377,
+        "superior": 0.5052970205312178,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.26336087110302664,
+          0.46105210912367584
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5": {
+      "valor": 2.9192746913580248,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.575108024691358,
+        "superior": 6.298734567901235,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          2.058989583333333,
+          3.804040895061729
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_t300": {
+      "valor": 2.9192746913580248,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.575108024691358,
+        "superior": 4.494027777777777,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          2.058989583333333,
+          3.804040895061729
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_t600": {
+      "valor": 3.4591666666666665,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.0746296296296296,
+        "superior": 5.209922839506173,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          2.4690000000000003,
+          4.458419753086419
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_t900": {
+      "valor": 3.8129629629629624,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.4057870370370367,
+        "superior": 5.657654320987655,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          2.731797839506173,
+          4.894501543209877
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_t1800": {
+      "valor": 4.623240740740742,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4.10604938271605,
+        "superior": 6.298734567901235,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          3.3320019290123457,
+          5.904344521604939
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt5": {
+      "valor": 0.39826394152224076,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.35131078099472823,
+        "superior": 0.8593089451434154,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.28089898817644376,
+          0.5189687442103313
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt5_t300": {
+      "valor": 0.39826394152224076,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.35131078099472823,
+        "superior": 0.6131006518114294,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.28089898817644376,
+          0.5189687442103313
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt5_t600": {
+      "valor": 0.471919054115507,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.41945833964933554,
+        "superior": 0.7107670995233524,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.3368349249658936,
+          0.6082428039681337
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt5_t900": {
+      "valor": 0.5201859431054519,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.4646367035521196,
+        "superior": 0.7718491570242367,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.37268729051925964,
+          0.6677355447762451
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt5_t1800": {
+      "valor": 0.6307286140164723,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.5601704478466644,
+        "superior": 0.8593089451434154,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.45457052237549056,
+          0.8055040275040845
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_armazem": {
+      "valor": 13.28449074074074,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 12.537608024691359,
+        "superior": 28.44199074074074,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          11.613249228395059,
+          15.03333140432099
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_armazem_t300": {
+      "valor": 13.28449074074074,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 12.537608024691359,
+        "superior": 19.554753086419755,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          11.613249228395059,
+          15.03333140432099
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_armazem_t600": {
+      "valor": 15.2575,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 14.442978395061727,
+        "superior": 22.589552469135803,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          13.551192901234568,
+          17.028296682098762
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_armazem_t900": {
+      "valor": 16.460339506172843,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 15.600293209876542,
+        "superior": 24.664506172839506,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          14.749577546296297,
+          18.22425771604938
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_armazem_t1800": {
+      "valor": 19.580246913580247,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 18.47399691358025,
+        "superior": 28.44199074074074,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          17.423115354938275,
+          21.778616512345682
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_armazem": {
+      "valor": 1.8123452579455306,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.7104512994121908,
+        "superior": 3.88021701783639,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          1.5843450516227913,
+          2.0509319787613904
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_armazem_t300": {
+      "valor": 1.8123452579455306,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.7104512994121908,
+        "superior": 2.6677698617216583,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.5843450516227913,
+          2.0509319787613904
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_armazem_t600": {
+      "valor": 2.081514324693042,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.9703926869115589,
+        "superior": 3.081794334124939,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.8487302730197228,
+          2.323096409563269
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_armazem_t900": {
+      "valor": 2.245612483788928,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.128280110487932,
+        "superior": 3.364871237768009,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          2.0122206748016778,
+          2.4862561686288376
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_armazem_t1800": {
+      "valor": 2.6712478736125846,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.520327000488438,
+        "superior": 3.88021701783639,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          2.3769598028565175,
+          2.9711618707156457
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_normal": {
+      "valor": 1.6078216374269005,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.6078216374269005,
+        "superior": 3.4963888888888897,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          1.2941926169590643,
+          1.932884868421053
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_t300_normal": {
+      "valor": 1.6078216374269005,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.6078216374269005,
+        "superior": 2.427733918128655,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.2941926169590643,
+          1.932884868421053
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_t600_normal": {
+      "valor": 1.9525584795321633,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.9525584795321633,
+        "superior": 2.860190058479532,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.5573940058479534,
+          2.366048976608187
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_t900_normal": {
+      "valor": 2.1637573099415204,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.1637573099415204,
+        "superior": 3.0979239766081874,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.7555347222222224,
+          2.5853698830409355
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_t1800_normal": {
+      "valor": 2.6010087719298243,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.6010087719298243,
+        "superior": 3.4963888888888897,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          2.1495603070175435,
+          3.0611666666666664
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_pap_rc_normal": {
+      "valor": 0.21934810878948166,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21934810878948166,
+        "superior": 0.4769971199029863,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.1765610664337059,
+          0.26369507072592807
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_pap_rc_t300_normal": {
+      "valor": 0.21934810878948166,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21934810878948166,
+        "superior": 0.3312051730052735,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.1765610664337059,
+          0.26369507072592807
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_pap_rc_t600_normal": {
+      "valor": 0.2663790558706908,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.2663790558706908,
+        "superior": 0.39020328219366057,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.2124684864731178,
+          0.32278976488515515
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_pap_rc_t900_normal": {
+      "valor": 0.29519199317073946,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.29519199317073946,
+        "superior": 0.4226362860311306,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.23949996210398666,
+          0.35271076166997756
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_pap_rc_t1800_normal": {
+      "valor": 0.3548443072209856,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.3548443072209856,
+        "superior": 0.4769971199029863,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.2932551578468682,
+          0.41762164620281944
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_normal": {
+      "valor": 0.6054093567251462,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.6054093567251462,
+        "superior": 1.4083479532163743,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.5247792397660819,
+          0.6940091374269006
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_t300_normal": {
+      "valor": 0.6054093567251462,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.6054093567251462,
+        "superior": 0.9408625730994152,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.5247792397660819,
+          0.6940091374269006
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_t600_normal": {
+      "valor": 0.751593567251462,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.751593567251462,
+        "superior": 1.1084064327485381,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.647389619883041,
+          0.862421418128655
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_t900_normal": {
+      "valor": 0.8167397660818714,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.8167397660818714,
+        "superior": 1.2217982456140348,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.6935098684210528,
+          0.9530815058479533
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_t1800_normal": {
+      "valor": 1.0499269005847953,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0499269005847953,
+        "superior": 1.4083479532163743,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.8624846491228069,
+          1.2335116959064327
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_checkout_rc_normal": {
+      "valor": 0.08259336380970617,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.08259336380970617,
+        "superior": 0.19213478215775912,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.07159334785349003,
+          0.09468064630653487
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_checkout_rc_t300_normal": {
+      "valor": 0.08259336380970617,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.08259336380970617,
+        "superior": 0.12835778623457234,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.07159334785349003,
+          0.09468064630653487
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_checkout_rc_t600_normal": {
+      "valor": 0.10253663946131814,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.10253663946131814,
+        "superior": 0.15121506585928216,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.08832054841514884,
+          0.11765640083610575
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_checkout_rc_t900_normal": {
+      "valor": 0.1114242518529156,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1114242518529156,
+        "superior": 0.1666846174098274,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.09461253320887487,
+          0.1300247620529268
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_checkout_rc_t1800_normal": {
+      "valor": 0.1432369577878302,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1432369577878302,
+        "superior": 0.19213478215775912,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.11766502716545797,
+          0.16828263245653927
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_normal": {
+      "valor": 1.5021929824561404,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.1170760233918129,
+        "superior": 2.885497076023392,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          1.1760358187134505,
+          1.8858541666666668
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_t300_normal": {
+      "valor": 1.5021929824561404,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.1170760233918129,
+        "superior": 2.2308479532163745,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.1760358187134505,
+          1.8858541666666668
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_t600_normal": {
+      "valor": 1.732719298245614,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.2996491228070175,
+        "superior": 2.5003070175438595,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.378111111111111,
+          2.1389784356725143
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_t900_normal": {
+      "valor": 1.8705701754385964,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.4160526315789475,
+        "superior": 2.6742982456140347,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.4791297514619883,
+          2.2962989766081874
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_t1800_normal": {
+      "valor": 2.1697953216374266,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.5942251461988304,
+        "superior": 2.885497076023392,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.706273757309942,
+          2.676125
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_colmeia_rc_normal": {
+      "valor": 0.2049376510854216,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.15239782038087488,
+        "superior": 0.39365580846158144,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.16044144866486365,
+          0.25727887676216465
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_colmeia_rc_t300_normal": {
+      "valor": 0.2049376510854216,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.15239782038087488,
+        "superior": 0.3043448776557128,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.16044144866486365,
+          0.25727887676216465
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_colmeia_rc_t600_normal": {
+      "valor": 0.23638735310308515,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.17730547377994782,
+        "superior": 0.3411060051219454,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.1880097013794149,
+          0.29181151919133896
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_colmeia_rc_t900_normal": {
+      "valor": 0.2551937483545152,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1931858978961729,
+        "superior": 0.3648428711615327,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.2017912348515673,
+          0.31327407593563267
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_colmeia_rc_t1800_normal": {
+      "valor": 0.29601573282911686,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.2174931986628691,
+        "superior": 0.39365580846158144,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.23277950304364828,
+          0.36509208731241477
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_normal": {
+      "valor": 1.6078216374269005,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.6078216374269005,
+        "superior": 3.4963888888888897,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          1.2941926169590643,
+          1.932884868421053
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_t300_normal": {
+      "valor": 1.6078216374269005,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.6078216374269005,
+        "superior": 2.427733918128655,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.2941926169590643,
+          1.932884868421053
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_t600_normal": {
+      "valor": 1.9525584795321633,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.9525584795321633,
+        "superior": 2.860190058479532,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.5573940058479534,
+          2.366048976608187
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_t900_normal": {
+      "valor": 2.1637573099415204,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.1637573099415204,
+        "superior": 3.0979239766081874,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.7555347222222224,
+          2.5853698830409355
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_t1800_normal": {
+      "valor": 2.6010087719298243,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.6010087719298243,
+        "superior": 3.4963888888888897,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          2.1495603070175435,
+          3.0611666666666664
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt2_normal": {
+      "valor": 0.21934810878948166,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21934810878948166,
+        "superior": 0.4769971199029863,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.1765610664337059,
+          0.26369507072592807
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt2_t300_normal": {
+      "valor": 0.21934810878948166,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21934810878948166,
+        "superior": 0.3312051730052735,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.1765610664337059,
+          0.26369507072592807
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt2_t600_normal": {
+      "valor": 0.2663790558706908,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.2663790558706908,
+        "superior": 0.39020328219366057,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.2124684864731178,
+          0.32278976488515515
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt2_t900_normal": {
+      "valor": 0.29519199317073946,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.29519199317073946,
+        "superior": 0.4226362860311306,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.23949996210398666,
+          0.35271076166997756
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt2_t1800_normal": {
+      "valor": 0.3548443072209856,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.3548443072209856,
+        "superior": 0.4769971199029863,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.2932551578468682,
+          0.41762164620281944
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_normal": {
+      "valor": 2.2132309941520463,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.2132309941520463,
+        "superior": 4.9047368421052635,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          1.8952116228070175,
+          2.517585526315789
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_ic_dias_normal": {
+      "valor": 2.2132309941520463,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.8952116228070175,
+        "superior": 2.517585526315789,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "n_dias": 19,
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_t300_normal": {
+      "valor": 2.2132309941520463,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.2132309941520463,
+        "superior": 3.36859649122807,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.8952116228070175,
+          2.517585526315789
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_t600_normal": {
+      "valor": 2.704152046783626,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.704152046783626,
+        "superior": 3.9685964912280705,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          2.3223110380116965,
+          3.0834067982456146
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_t900_normal": {
+      "valor": 2.9804970760233918,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.9804970760233918,
+        "superior": 4.3197222222222225,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          2.5784038742690054,
+          3.3796341374269003
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_t1800_normal": {
+      "valor": 3.6509356725146196,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.6509356725146196,
+        "superior": 4.9047368421052635,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          3.166502923976608,
+          4.1152207602339175
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt3_normal": {
+      "valor": 0.30194147259918774,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.30194147259918774,
+        "superior": 0.6691319020607454,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.2585554737799478,
+          0.34346323687800673
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt3_ic_dias_normal": {
+      "valor": 0.30194147259918774,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.2585554737799478,
+        "superior": 0.34346323687800673,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "n_dias": 19,
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt3_t300_normal": {
+      "valor": 0.30194147259918774,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.30194147259918774,
+        "superior": 0.4595629592398458,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.2585554737799478,
+          0.34346323687800673
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt3_t600_normal": {
+      "valor": 0.368915695332009,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.368915695332009,
+        "superior": 0.5414183480529428,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.31682278826898996,
+          0.4206557705655682
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt3_t900_normal": {
+      "valor": 0.40661624502365507,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.40661624502365507,
+        "superior": 0.589320903440958,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.35176041940914127,
+          0.46106877727515694
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt3_t1800_normal": {
+      "valor": 0.4980812650088158,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.4980812650088158,
+        "superior": 0.6691319020607454,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.43199221336652227,
+          0.5614216589677924
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_normal": {
+      "valor": 3.715423976608187,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.33030701754386,
+        "superior": 7.7902339181286555,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          3.221383406432749,
+          4.2481180555555556
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_t300_normal": {
+      "valor": 3.715423976608187,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.33030701754386,
+        "superior": 5.599444444444445,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          3.221383406432749,
+          4.2481180555555556
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_t600_normal": {
+      "valor": 4.43687134502924,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4.003801169590643,
+        "superior": 6.4689035087719295,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          3.8726385233918124,
+          5.019771929824563
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_t900_normal": {
+      "valor": 4.851067251461988,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4.39654970760234,
+        "superior": 6.9940204678362585,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          4.266578947368421,
+          5.4590204678362575
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_t1800_normal": {
+      "valor": 5.820730994152046,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 5.24516081871345,
+        "superior": 7.7902339181286555,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          5.130771564327485,
+          6.550658260233918
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt5_normal": {
+      "valor": 0.5068791236846094,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.45433929298006276,
+        "superior": 1.062787710522327,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.4394793187493518,
+          0.5795522586023951
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt5_t300_normal": {
+      "valor": 0.5068791236846094,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.45433929298006276,
+        "superior": 0.7639078368955586,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.4394793187493518,
+          0.5795522586023951
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt5_t600_normal": {
+      "valor": 0.6053030484350941,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.5462211691119567,
+        "superior": 0.8825243531748881,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.5283272201080235,
+          0.6848256384480986
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt5_t900_normal": {
+      "valor": 0.6618099933781703,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.599802142919828,
+        "superior": 0.9541637746024909,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.5820707977310261,
+          0.7447504048889847
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_escopo_alt5_t1800_normal": {
+      "valor": 0.7940969978379326,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.7155744636716849,
+        "superior": 1.062787710522327,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.6999688355153459,
+          0.8936777981219534
+        ],
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_semana_escopo_alt2_t300": {
+      "valor": 0.12491192685788712,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "FTE semanal (horas da semana com sábado ÷ (PR12 × 6 dias); hipótese de PQ05)"
+    },
+    "fte_semana_escopo_alt2_t600": {
+      "valor": 0.14955661664392902,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "FTE semanal (horas da semana com sábado ÷ (PR12 × 6 dias); hipótese de PQ05)"
+    },
+    "fte_semana_escopo_alt2_t900": {
+      "valor": 0.1694155311898225,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "FTE semanal (horas da semana com sábado ÷ (PR12 × 6 dias); hipótese de PQ05)"
+    },
+    "fte_semana_escopo_alt2_t1800": {
+      "valor": 0.21042182473514895,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "FTE semanal (horas da semana com sábado ÷ (PR12 × 6 dias); hipótese de PQ05)"
+    },
+    "fte_semana_escopo_alt3_t300": {
+      "valor": 0.1830538853238565,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "FTE semanal (horas da semana com sábado ÷ (PR12 × 6 dias); hipótese de PQ05)"
+    },
+    "fte_semana_escopo_alt3_t600": {
+      "valor": 0.22202923326540122,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "FTE semanal (horas da semana com sábado ÷ (PR12 × 6 dias); hipótese de PQ05)"
+    },
+    "fte_semana_escopo_alt3_t900": {
+      "valor": 0.2459549514650318,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "FTE semanal (horas da semana com sábado ÷ (PR12 × 6 dias); hipótese de PQ05)"
+    },
+    "fte_semana_escopo_alt3_t1800": {
+      "valor": 0.3097655219263526,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "FTE semanal (horas da semana com sábado ÷ (PR12 × 6 dias); hipótese de PQ05)"
+    },
+    "fte_semana_escopo_alt3": {
+      "valor": 0.1830538853238565,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1830538853238565,
+        "superior": 0.3097655219263526,
+        "nivel": null,
+        "descricao": "quatro tetos; valor = 300 s"
+      },
+      "descricao": "FTE semanal (horas da semana com sábado ÷ (PR12 × 6 dias); hipótese de PQ05)"
+    },
+    "hp1_dentro_da_faixa_checkout": {
+      "valor": 0.0,
+      "unidade": "código: 1 = FTE do slide 14 dentro da faixa de M13 (4 tetos × S1 a S3); 0 = não reproduz",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "fte_deck_slide14_checkout": {
+      "valor": 0.34,
+      "unidade": "FTE (deck, slide 14)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp1_razao_deck_sobre_fte_medido_checkout": {
+      "valor": 4.889625772072182,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.1630087594760385,
+        "superior": 4.889625772072182,
+        "nivel": null,
+        "descricao": "razão do deck ao maior e ao menor FTE da grade; valor = teto conservador de 300 s"
+      }
+    },
+    "hp1_dentro_da_faixa_pap": {
+      "valor": 0.0,
+      "unidade": "código: 1 = FTE do slide 14 dentro da faixa de M13 (4 tetos × S1 a S3); 0 = não reproduz",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "fte_deck_slide14_pap": {
+      "valor": 1.52,
+      "unidade": "FTE (deck, slide 14)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp1_razao_deck_sobre_fte_medido_pap": {
+      "valor": 10.535945713243343,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4.366453860389729,
+        "superior": 10.535945713243343,
+        "nivel": null,
+        "descricao": "razão do deck ao maior e ao menor FTE da grade; valor = teto conservador de 300 s"
+      }
+    },
+    "hp1_dentro_da_faixa_total": {
+      "valor": 0.0,
+      "unidade": "código: 1 = FTE do slide 14 dentro da faixa de M13 (4 tetos × S1 a S3); 0 = não reproduz",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "fte_deck_slide14_total": {
+      "valor": 1.86,
+      "unidade": "FTE (deck, slide 14)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp1_razao_deck_sobre_fte_medido_total": {
+      "valor": 8.699597648518507,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.6810032998900044,
+        "superior": 8.699597648518507,
+        "nivel": null,
+        "descricao": "razão do deck ao maior e ao menor FTE da grade; valor = teto conservador de 300 s"
+      }
+    },
+    "hp1_dentro_da_faixa_checkout_normal": {
+      "valor": 0.0,
+      "unidade": "código: 1 = FTE do slide 14 dentro da faixa de M13 (4 tetos × S1 a S3); 0 = não reproduz",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp1_razao_deck_sobre_fte_medido_checkout_normal": {
+      "valor": 4.116553489495291,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.76959109736222,
+        "superior": 4.116553489495291,
+        "nivel": null,
+        "descricao": "razão do deck ao maior e ao menor FTE da grade; valor = teto conservador de 300 s"
+      }
+    },
+    "hp1_dentro_da_faixa_pap_normal": {
+      "valor": 0.0,
+      "unidade": "código: 1 = FTE do slide 14 dentro da faixa de M13 (4 tetos × S1 a S3); 0 = não reproduz",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp1_razao_deck_sobre_fte_medido_pap_normal": {
+      "valor": 6.929624369174813,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.186602049733852,
+        "superior": 6.929624369174813,
+        "nivel": null,
+        "descricao": "razão do deck ao maior e ao menor FTE da grade; valor = teto conservador de 300 s"
+      }
+    },
+    "hp1_dentro_da_faixa_total_normal": {
+      "valor": 0.0,
+      "unidade": "código: 1 = FTE do slide 14 dentro da faixa de M13 (4 tetos × S1 a S3); 0 = não reproduz",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp1_razao_deck_sobre_fte_medido_total_normal": {
+      "valor": 6.160134227301254,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.779721000107308,
+        "superior": 6.160134227301254,
+        "nivel": null,
+        "descricao": "razão do deck ao maior e ao menor FTE da grade; valor = teto conservador de 300 s"
+      }
+    },
+    "hp1_meses_tipos_dentro_da_faixa": {
+      "valor": 0.0,
+      "unidade": "combinações mês × tipo de onda dentro da faixa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hp1_meses_tipos_avaliados": {
+      "valor": 8.0,
+      "unidade": "combinações mês × tipo de onda",
+      "incerteza": null,
+      "contagem": true
+    },
+    "registros_conferencia": {
+      "valor": 0.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "linhas com região ou área de conferência (se zero, PR11 segue como sensibilidade)"
+    },
+    "registros_conferencia_regiao_origem": {
+      "valor": 0.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "linhas com conferência em regiao_origem"
+    },
+    "registros_conferencia_regiao_destino": {
+      "valor": 0.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "linhas com conferência em regiao_destino"
+    },
+    "registros_conferencia_area_origem": {
+      "valor": 0.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "linhas com conferência em area_origem"
+    },
+    "linhas_examinadas_conferencia": {
+      "valor": 43976.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "linhas da exportação PROD 90DIAS examinadas (todas, contagem completa)"
+    },
+    "regioes_destino_distintas": {
+      "valor": 14.0,
+      "unidade": "regiões de destino distintas no WMS",
+      "incerteza": null,
+      "contagem": true
+    },
+    "areas_origem_distintas": {
+      "valor": 7.0,
+      "unidade": "áreas de origem distintas no WMS",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_descartada_escopo_t300": {
+      "valor": 0.6885771223083351,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "razão (descartado líquido ÷ (creditado + descartado líquido); motivos 1 a 5; escopo da ALT3)"
+    },
+    "fracao_descartada_escopo_t600": {
+      "valor": 0.6095749465488555,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "razão (descartado líquido ÷ (creditado + descartado líquido); motivos 1 a 5; escopo da ALT3)"
+    },
+    "fracao_descartada_escopo_t900": {
+      "valor": 0.5590722911433389,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "razão (descartado líquido ÷ (creditado + descartado líquido); motivos 1 a 5; escopo da ALT3)"
+    },
+    "fracao_descartada_escopo_t1800": {
+      "valor": 0.47043386401322707,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "razão (descartado líquido ÷ (creditado + descartado líquido); motivos 1 a 5; escopo da ALT3)"
+    },
+    "fracao_descartada_escopo": {
+      "valor": 0.6885771223083351,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "razão (teto conservador de 300 s; escopo da ALT3)"
+    },
+    "horas_sem_robo_equiv_pap_rc_t300": {
+      "valor": 0.9542534992878038,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.6762242723247139,
+        "superior": 1.3492599501910605,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "vies_robo_horas_dia_pap_rc_t300": {
+      "valor": -0.10323106861343079,
+      "unidade": "horas por dia pleno (equivalentes sem robô − horas manuais observadas)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.22474617269482655,
+        "superior": 0.12415094697159199,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias e de operadores, independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_t300_normal": {
+      "valor": 1.397580942911412,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.1728648745243995,
+        "superior": 1.7997083105531821,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "vies_robo_horas_dia_pap_rc_t300_normal": {
+      "valor": -0.21024069451548844,
+      "unidade": "horas por dia pleno (equivalentes sem robô − horas manuais observadas)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.3957909182907953,
+        "superior": 0.11922762681131793,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias e de operadores, independentes",
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc": {
+      "valor": 0.9542534992878038,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.6762242723247139,
+        "superior": 1.3492599501910605,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_sem_robo_equiv_pap_rc": {
+      "valor": 0.1301846520174357,
+      "unidade": "FTE (horas sem robô equivalentes ÷ PR12)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.09225433455998826,
+        "superior": 0.18407366305471493,
+        "nivel": 0.95,
+        "metodo": "mesma incerteza das horas, ÷ PR12"
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_normal": {
+      "valor": 1.397580942911412,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.1728648745243995,
+        "superior": 1.7997083105531821,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "fte_sem_robo_equiv_pap_rc_normal": {
+      "valor": 0.19066588579964694,
+      "unidade": "FTE (horas sem robô equivalentes ÷ PR12)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.1600088505490313,
+        "superior": 0.24552637251748732,
+        "nivel": 0.95,
+        "metodo": "mesma incerteza das horas, ÷ PR12"
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_t600": {
+      "valor": 1.1803222111869183,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.8282537459999675,
+        "superior": 1.6783702389263961,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "vies_robo_horas_dia_pap_rc_t600": {
+      "valor": -0.09111297399826701,
+      "unidade": "horas por dia pleno (equivalentes sem robô − horas manuais observadas)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.24073415226975678,
+        "superior": 0.2109303896264188,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias e de operadores, independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_t600_normal": {
+      "valor": 1.7286767405946672,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.4340481451966607,
+        "superior": 2.260190613105261,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "vies_robo_horas_dia_pap_rc_t600_normal": {
+      "valor": -0.22388173893749608,
+      "unidade": "horas por dia pleno (equivalentes sem robô − horas manuais observadas)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.4817890417626185,
+        "superior": 0.22375645435686536,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias e de operadores, independentes",
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_t900": {
+      "valor": 1.3032639939801358,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.9229876605825726,
+        "superior": 1.8149273256908396,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "vies_robo_horas_dia_pap_rc_t900": {
+      "valor": -0.14068662330381465,
+      "unidade": "horas por dia pleno (equivalentes sem robô − horas manuais observadas)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.30892846232015597,
+        "superior": 0.15244195385390333,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias e de operadores, independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_t900_normal": {
+      "valor": 1.9087348623071803,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.5761802873460729,
+        "superior": 2.4356779685515595,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "vies_robo_horas_dia_pap_rc_t900_normal": {
+      "valor": -0.2550224476343401,
+      "unidade": "horas por dia pleno (equivalentes sem robô − horas manuais observadas)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.5128794619973245,
+        "superior": 0.18590309823806656,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias e de operadores, independentes",
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_t1800": {
+      "valor": 1.5456951047552918,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.078802766755148,
+        "superior": 2.123164918665648,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "vies_robo_horas_dia_pap_rc_t1800": {
+      "valor": -0.25144995697310324,
+      "unidade": "horas por dia pleno (equivalentes sem robô − horas manuais observadas)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.5040997763438877,
+        "superior": 0.1070430076311895,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias e de operadores, independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_t1800_normal": {
+      "valor": 2.2637947081878353,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.866723087214294,
+        "superior": 2.86316924851204,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "vies_robo_horas_dia_pap_rc_t1800_normal": {
+      "valor": -0.3372140637419889,
+      "unidade": "horas por dia pleno (equivalentes sem robô − horas manuais observadas)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.6815647003912116,
+        "superior": 0.16957627617664725,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias e de operadores, independentes",
+        "janela": [
+          "2026-08-24",
+          "2026-09-18"
+        ]
+      }
+    },
+    "semana_iso_primeira_colmeia_rc": {
+      "valor": 28.0,
+      "unidade": "semana ISO (primeira com ondas de colmeia da Royal Canin, definida pelo dado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_h_p90_escopo": {
+      "valor": 2.3183368055555555,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.317829861111111,
+        "superior": 5.145236111111109,
+        "nivel": null,
+        "descricao": "grade: quatro tetos × (base, S1, S2, S3)",
+        "ic_bootstrap_dias_teto_300": [
+          1.4485652146464647,
+          3.6760295814043205
+        ]
+      },
+      "leitura": "regime pré-colmeia incluído (variante do plano)",
+      "descricao": "horas por dia"
+    },
+    "excedente_h_p90_escopo_ic_dias": {
+      "valor": 2.3183368055555555,
+      "unidade": "horas por dia",
+      "leitura": "regime pré-colmeia incluído (variante do plano)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.4485652146464647,
+        "superior": 3.6760295814043205,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "dias_na_banda_p90": 8
+      },
+      "descricao": "horas por dia"
+    },
+    "excedente_fte_p90_escopo_ic_dias": {
+      "valor": 0.31628060103077155,
+      "unidade": "FTE",
+      "leitura": "regime pré-colmeia incluído (variante do plano)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.19762144811002247,
+        "superior": 0.5015047177904939,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base; excedente ÷ PR12",
+        "dias_na_banda_p90": 8
+      }
+    },
+    "excedente_fte_p90_escopo": {
+      "valor": 0.31628060103077155,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.31621144080642716,
+        "superior": 0.7019421706836438,
+        "nivel": null,
+        "descricao": "excedente em horas ÷ PR12: fração de uma jornada, não vaga inteira",
+        "ic_bootstrap_dias_teto_300": [
+          0.19762144811002247,
+          0.5015047177904939
+        ]
+      },
+      "leitura": "regime pré-colmeia incluído (variante do plano)"
+    },
+    "excedente_h_retomada_escopo": {
+      "valor": 0.6668051697530868,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.6662982253086422,
+        "superior": 1.2252322530864204,
+        "nivel": null,
+        "descricao": "grade: quatro tetos × (base, S1, S2, S3)",
+        "ic_bootstrap_dias_teto_300": [
+          -0.11549200148809492,
+          1.4928124999999999
+        ]
+      },
+      "leitura": "regime pré-colmeia incluído (variante do plano)",
+      "descricao": "horas por dia"
+    },
+    "excedente_h_retomada_escopo_ic_dias": {
+      "valor": 0.6668051697530868,
+      "unidade": "horas por dia",
+      "leitura": "regime pré-colmeia incluído (variante do plano)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.11549200148809492,
+        "superior": 1.4928124999999999,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "dias_na_banda_p90": 8
+      },
+      "descricao": "horas por dia"
+    },
+    "excedente_fte_retomada_escopo_ic_dias": {
+      "valor": 0.09096932738786996,
+      "unidade": "FTE",
+      "leitura": "regime pré-colmeia incluído (variante do plano)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.015756071144351284,
+        "superior": 0.20365791268758524,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base; excedente ÷ PR12",
+        "dias_na_banda_p90": 8
+      }
+    },
+    "excedente_fte_retomada_escopo": {
+      "valor": 0.09096932738786996,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.09090016716352554,
+        "superior": 0.16715310410455939,
+        "nivel": null,
+        "descricao": "excedente em horas ÷ PR12: fração de uma jornada, não vaga inteira",
+        "ic_bootstrap_dias_teto_300": [
+          -0.015756071144351284,
+          0.20365791268758524
+        ]
+      },
+      "leitura": "regime pré-colmeia incluído (variante do plano)"
+    },
+    "excedente_h_dia_maximo_escopo_limite_superior": {
+      "valor": 7.2784409722222225,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 7.2779340277777775,
+        "superior": 14.331451388888887,
+        "nivel": null
+      },
+      "descricao": "horas por dia"
+    },
+    "operadores_adicionais_p90_escopo": {
+      "valor": 1.0,
+      "unidade": "operadores adicionais",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": null
+      },
+      "leitura": "regra de M23 (teto inteiro): qualquer fração de jornada vira um operador; ler junto de excedente_fte_p90_* (fração de FTE)",
+      "descricao": "operadores (teto inteiro do excedente ÷ PR12, sem robôs)"
+    },
+    "horas_dia_tipico_escopo": {
+      "valor": 2.6468368055555556,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "leitura": "regime pré-colmeia incluído (variante do plano)"
+    },
+    "dias_na_banda_p90_escopo": {
+      "valor": 8.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias plenos na banda PAR05 do volume diário"
+    },
+    "dias_da_leitura_escopo": {
+      "valor": 80.0,
+      "unidade": "dias plenos da leitura",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_h_p90_armazem": {
+      "valor": 5.121184027777778,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4.766701388888887,
+        "superior": 9.157479166666665,
+        "nivel": null,
+        "descricao": "grade: quatro tetos × (base, S1, S2, S3)",
+        "ic_bootstrap_dias_teto_300": [
+          2.160626494984567,
+          9.092984712577158
+        ]
+      },
+      "leitura": "armazém, período inteiro",
+      "descricao": "horas por dia"
+    },
+    "excedente_h_p90_armazem_ic_dias": {
+      "valor": 5.121184027777778,
+      "unidade": "horas por dia",
+      "leitura": "armazém, período inteiro",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2.160626494984567,
+        "superior": 9.092984712577158,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "dias_na_banda_p90": 8
+      },
+      "descricao": "horas por dia"
+    },
+    "excedente_fte_p90_armazem_ic_dias": {
+      "valor": 0.6986608496286191,
+      "unidade": "FTE",
+      "leitura": "armazém, período inteiro",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.29476486971140065,
+        "superior": 1.2405163318659151,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base; excedente ÷ PR12",
+        "dias_na_banda_p90": 8
+      }
+    },
+    "excedente_fte_p90_armazem": {
+      "valor": 0.6986608496286191,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.6503003259057144,
+        "superior": 1.2493150295588902,
+        "nivel": null,
+        "descricao": "excedente em horas ÷ PR12: fração de uma jornada, não vaga inteira",
+        "ic_bootstrap_dias_teto_300": [
+          0.29476486971140065,
+          1.2405163318659151
+        ]
+      },
+      "leitura": "armazém, período inteiro"
+    },
+    "excedente_h_retomada_armazem": {
+      "valor": 5.000952546296295,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4.433406635802468,
+        "superior": 6.3820588348765455,
+        "nivel": null,
+        "descricao": "grade: quatro tetos × (base, S1, S2, S3)",
+        "ic_bootstrap_dias_teto_300": [
+          2.9710426398026293,
+          6.875609918676899
+        ]
+      },
+      "leitura": "armazém, período inteiro",
+      "descricao": "horas por dia"
+    },
+    "excedente_h_retomada_armazem_ic_dias": {
+      "valor": 5.000952546296295,
+      "unidade": "horas por dia",
+      "leitura": "armazém, período inteiro",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2.9710426398026293,
+        "superior": 6.875609918676899,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "dias_na_banda_p90": 8
+      },
+      "descricao": "horas por dia"
+    },
+    "excedente_fte_retomada_armazem_ic_dias": {
+      "valor": 0.6822581918548833,
+      "unidade": "FTE",
+      "leitura": "armazém, período inteiro",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.40532641743555653,
+        "superior": 0.9380095387008047,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base; excedente ÷ PR12",
+        "dias_na_banda_p90": 8
+      }
+    },
+    "excedente_fte_retomada_armazem": {
+      "valor": 0.6822581918548833,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.6048303732336245,
+        "superior": 0.8706765122614659,
+        "nivel": null,
+        "descricao": "excedente em horas ÷ PR12: fração de uma jornada, não vaga inteira",
+        "ic_bootstrap_dias_teto_300": [
+          0.40532641743555653,
+          0.9380095387008047
+        ]
+      },
+      "leitura": "armazém, período inteiro"
+    },
+    "excedente_h_dia_maximo_armazem_limite_superior": {
+      "valor": 12.640350694444445,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 8.926256944444443,
+        "superior": 14.894821180555557,
+        "nivel": null
+      },
+      "descricao": "horas por dia"
+    },
+    "operadores_adicionais_p90_armazem": {
+      "valor": 1.0,
+      "unidade": "operadores adicionais",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": null
+      },
+      "leitura": "regra de M23 (teto inteiro): qualquer fração de jornada vira um operador; ler junto de excedente_fte_p90_* (fração de FTE)",
+      "descricao": "operadores (teto inteiro do excedente ÷ PR12, sem robôs)"
+    },
+    "horas_dia_tipico_armazem": {
+      "valor": 11.55159375,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "leitura": "armazém, período inteiro"
+    },
+    "dias_na_banda_p90_armazem": {
+      "valor": 8.0,
+      "unidade": "dias plenos na banda PAR05 do volume diário",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_da_leitura_armazem": {
+      "valor": 80.0,
+      "unidade": "dias plenos da leitura",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_h_p90_escopo_sem_incidente": {
+      "valor": 2.180926535087719,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.180392909356725,
+        "superior": 4.825235745614034,
+        "nivel": null,
+        "descricao": "grade: quatro tetos × (base, S1, S2, S3)",
+        "ic_bootstrap_dias_teto_300": [
+          1.300997167397661,
+          3.545867461622807
+        ]
+      },
+      "leitura": "sem o incidente de 21 a 25/09, regime pré-colmeia incluído",
+      "descricao": "horas por dia"
+    },
+    "excedente_h_p90_escopo_sem_incidente_ic_dias": {
+      "valor": 2.180926535087719,
+      "unidade": "horas por dia",
+      "leitura": "sem o incidente de 21 a 25/09, regime pré-colmeia incluído",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.300997167397661,
+        "superior": 3.545867461622807,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "dias_na_banda_p90": 8
+      },
+      "descricao": "horas por dia"
+    },
+    "excedente_fte_p90_escopo_sem_incidente_ic_dias": {
+      "valor": 0.2975343158373423,
+      "unidade": "FTE",
+      "leitura": "sem o incidente de 21 a 25/09, regime pré-colmeia incluído",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.17748938163678868,
+        "superior": 0.4837472662514061,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base; excedente ÷ PR12",
+        "dias_na_banda_p90": 8
+      }
+    },
+    "excedente_fte_p90_escopo_sem_incidente": {
+      "valor": 0.2975343158373423,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.2974615156011903,
+        "superior": 0.6582859134534834,
+        "nivel": null,
+        "descricao": "excedente em horas ÷ PR12: fração de uma jornada, não vaga inteira",
+        "ic_bootstrap_dias_teto_300": [
+          0.17748938163678868,
+          0.4837472662514061
+        ]
+      },
+      "leitura": "sem o incidente de 21 a 25/09, regime pré-colmeia incluído"
+    },
+    "excedente_h_retomada_escopo_sem_incidente": {
+      "valor": 0.9396070906432747,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.9390734649122807,
+        "superior": 1.8229961622807025,
+        "nivel": null,
+        "descricao": "grade: quatro tetos × (base, S1, S2, S3)",
+        "ic_bootstrap_dias_teto_300": [
+          0.19150211988304144,
+          1.717913601059941
+        ]
+      },
+      "leitura": "sem o incidente de 21 a 25/09, regime pré-colmeia incluído",
+      "descricao": "horas por dia"
+    },
+    "excedente_h_retomada_escopo_sem_incidente_ic_dias": {
+      "valor": 0.9396070906432747,
+      "unidade": "horas por dia",
+      "leitura": "sem o incidente de 21 a 25/09, regime pré-colmeia incluído",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.19150211988304144,
+        "superior": 1.717913601059941,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "dias_na_banda_p90": 8
+      },
+      "descricao": "horas por dia"
+    },
+    "excedente_fte_retomada_escopo_sem_incidente_ic_dias": {
+      "valor": 0.12818650622691333,
+      "unidade": "FTE",
+      "leitura": "sem o incidente de 21 a 25/09, regime pré-colmeia incluído",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.02612580080259774,
+        "superior": 0.23436747627011473,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base; excedente ÷ PR12",
+        "dias_na_banda_p90": 8
+      }
+    },
+    "excedente_fte_retomada_escopo_sem_incidente": {
+      "valor": 0.12818650622691333,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.12811370599076136,
+        "superior": 0.24870343278045054,
+        "nivel": null,
+        "descricao": "excedente em horas ÷ PR12: fração de uma jornada, não vaga inteira",
+        "ic_bootstrap_dias_teto_300": [
+          0.02612580080259774,
+          0.23436747627011473
+        ]
+      },
+      "leitura": "sem o incidente de 21 a 25/09, regime pré-colmeia incluído"
+    },
+    "excedente_h_dia_maximo_escopo_sem_incidente_limite_superior": {
+      "valor": 7.141030701754385,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 7.140497076023392,
+        "superior": 14.01145102339181,
+        "nivel": null
+      },
+      "descricao": "horas por dia"
+    },
+    "operadores_adicionais_p90_escopo_sem_incidente": {
+      "valor": 1.0,
+      "unidade": "operadores adicionais",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": null
+      },
+      "leitura": "regra de M23 (teto inteiro): qualquer fração de jornada vira um operador; ler junto de excedente_fte_p90_* (fração de FTE)",
+      "descricao": "operadores (teto inteiro do excedente ÷ PR12, sem robôs)"
+    },
+    "horas_dia_tipico_escopo_sem_incidente": {
+      "valor": 2.784247076023392,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "leitura": "sem o incidente de 21 a 25/09, regime pré-colmeia incluído"
+    },
+    "dias_na_banda_p90_escopo_sem_incidente": {
+      "valor": 8.0,
+      "unidade": "dias plenos na banda PAR05 do volume diário",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_da_leitura_escopo_sem_incidente": {
+      "valor": 76.0,
+      "unidade": "dias plenos da leitura",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_h_p90_escopo_poscolmeia": {
+      "valor": 1.2041738683127572,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.2034228395061728,
+        "superior": 2.3449207818930047,
+        "nivel": null,
+        "descricao": "grade: quatro tetos × (base, S1, S2, S3)",
+        "ic_bootstrap_dias_teto_300": [
+          0.5638881172839514,
+          2.1478766718107
+        ]
+      },
+      "leitura": "regime pós-colmeia, sem o incidente (base da oferta)",
+      "descricao": "horas por dia"
+    },
+    "excedente_h_p90_escopo_poscolmeia_ic_dias": {
+      "valor": 1.2041738683127572,
+      "unidade": "horas por dia",
+      "leitura": "regime pós-colmeia, sem o incidente (base da oferta)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.5638881172839514,
+        "superior": 2.1478766718107,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "dias_na_banda_p90": 5
+      },
+      "descricao": "horas por dia"
+    },
+    "excedente_fte_p90_escopo_poscolmeia_ic_dias": {
+      "valor": 0.1642802003155194,
+      "unidade": "FTE",
+      "leitura": "regime pós-colmeia, sem o incidente (base da oferta)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.07692880181227167,
+        "superior": 0.29302546682274216,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base; excedente ÷ PR12",
+        "dias_na_banda_p90": 5
+      }
+    },
+    "excedente_fte_p90_escopo_poscolmeia": {
+      "valor": 0.1642802003155194,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.16417774072389807,
+        "superior": 0.319907337229605,
+        "nivel": null,
+        "descricao": "excedente em horas ÷ PR12: fração de uma jornada, não vaga inteira",
+        "ic_bootstrap_dias_teto_300": [
+          0.07692880181227167,
+          0.29302546682274216
+        ]
+      },
+      "leitura": "regime pós-colmeia, sem o incidente (base da oferta)"
+    },
+    "excedente_h_retomada_escopo_poscolmeia": {
+      "valor": 1.2692344743733637,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.2684834455667793,
+        "superior": 2.6755419940142184,
+        "nivel": null,
+        "descricao": "grade: quatro tetos × (base, S1, S2, S3)",
+        "ic_bootstrap_dias_teto_300": [
+          0.5548334853161244,
+          2.1952979681069964
+        ]
+      },
+      "leitura": "regime pós-colmeia, sem o incidente (base da oferta)",
+      "descricao": "horas por dia"
+    },
+    "excedente_h_retomada_escopo_poscolmeia_ic_dias": {
+      "valor": 1.2692344743733637,
+      "unidade": "horas por dia",
+      "leitura": "regime pós-colmeia, sem o incidente (base da oferta)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.5548334853161244,
+        "superior": 2.1952979681069964,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "dias_na_banda_p90": 5
+      },
+      "descricao": "horas por dia"
+    },
+    "excedente_fte_retomada_escopo_poscolmeia_ic_dias": {
+      "valor": 0.1731561356580305,
+      "unidade": "FTE",
+      "leitura": "regime pós-colmeia, sem o incidente (base da oferta)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.07569351777846173,
+        "superior": 0.29949494789999953,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base; excedente ÷ PR12",
+        "dias_na_banda_p90": 5
+      }
+    },
+    "excedente_fte_retomada_escopo_poscolmeia": {
+      "valor": 0.1731561356580305,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.17305367606640917,
+        "superior": 0.3650125503430039,
+        "nivel": null,
+        "descricao": "excedente em horas ÷ PR12: fração de uma jornada, não vaga inteira",
+        "ic_bootstrap_dias_teto_300": [
+          0.07569351777846173,
+          0.29949494789999953
+        ]
+      },
+      "leitura": "regime pós-colmeia, sem o incidente (base da oferta)"
+    },
+    "excedente_h_dia_maximo_escopo_poscolmeia_limite_superior": {
+      "valor": 6.15400720164609,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 6.153256172839506,
+        "superior": 18.100087448559673,
+        "nivel": null
+      },
+      "descricao": "horas por dia"
+    },
+    "operadores_adicionais_p90_escopo_poscolmeia": {
+      "valor": 1.0,
+      "unidade": "operadores adicionais",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": null
+      },
+      "leitura": "regra de M23 (teto inteiro): qualquer fração de jornada vira um operador; ler junto de excedente_fte_p90_* (fração de FTE)",
+      "descricao": "operadores (teto inteiro do excedente ÷ PR12, sem robôs)"
+    },
+    "horas_dia_tipico_escopo_poscolmeia": {
+      "valor": 2.058215020576131,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "leitura": "regime pós-colmeia, sem o incidente (base da oferta)"
+    },
+    "dias_na_banda_p90_escopo_poscolmeia": {
+      "valor": 5.0,
+      "unidade": "dias plenos na banda PAR05 do volume diário",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_da_leitura_escopo_poscolmeia": {
+      "valor": 54.0,
+      "unidade": "dias plenos da leitura",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_h_p90_escopo_normal": {
+      "valor": 0.8162134502923983,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.5997331871345031,
+        "superior": 0.8701535087719297,
+        "nivel": null,
+        "descricao": "grade: quatro tetos × (base, S1, S2, S3)",
+        "aviso": "descritivo: 2 dias na banda do p90 (menos que PAR07); sem IC de bootstrap"
+      },
+      "leitura": "janela normal de quatro semanas até 18/09 (descritiva)",
+      "descricao": "horas por dia"
+    },
+    "excedente_fte_p90_escopo_normal": {
+      "valor": 0.11135244888027263,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.08181898869502088,
+        "superior": 0.11871125631267798,
+        "nivel": null,
+        "descricao": "excedente em horas ÷ PR12: fração de uma jornada, não vaga inteira"
+      },
+      "leitura": "janela normal de quatro semanas até 18/09 (descritiva)"
+    },
+    "excedente_h_retomada_escopo_normal": {
+      "valor": 1.2199634502923984,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.2199634502923984,
+        "superior": 2.2876937134502926,
+        "nivel": null,
+        "descricao": "grade: quatro tetos × (base, S1, S2, S3)",
+        "aviso": "descritivo: 2 dias na banda do p90 (menos que PAR07); sem IC de bootstrap"
+      },
+      "leitura": "janela normal de quatro semanas até 18/09 (descritiva)",
+      "descricao": "horas por dia"
+    },
+    "excedente_fte_retomada_escopo_normal": {
+      "valor": 0.16643430426908573,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.16643430426908573,
+        "superior": 0.3121000973329185,
+        "nivel": null,
+        "descricao": "excedente em horas ÷ PR12: fração de uma jornada, não vaga inteira"
+      },
+      "leitura": "janela normal de quatro semanas até 18/09 (descritiva)"
+    },
+    "excedente_h_dia_maximo_escopo_normal_limite_superior": {
+      "valor": 2.6009356725146207,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.6009356725146207,
+        "superior": 5.726374269005847,
+        "nivel": null
+      },
+      "descricao": "horas por dia"
+    },
+    "operadores_adicionais_p90_escopo_normal": {
+      "valor": 1.0,
+      "unidade": "operadores adicionais",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": null
+      },
+      "leitura": "regra de M23 (teto inteiro): qualquer fração de jornada vira um operador; ler junto de excedente_fte_p90_* (fração de FTE)",
+      "descricao": "operadores (teto inteiro do excedente ÷ PR12, sem robôs)"
+    },
+    "horas_dia_tipico_escopo_normal": {
+      "valor": 2.2132309941520463,
+      "unidade": "horas por dia",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "leitura": "janela normal de quatro semanas até 18/09 (descritiva)"
+    },
+    "dias_na_banda_p90_escopo_normal": {
+      "valor": 2.0,
+      "unidade": "dias plenos na banda PAR05 do volume diário",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_da_leitura_escopo_normal": {
+      "valor": 19.0,
+      "unidade": "dias plenos da leitura",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_banda_p90_escopo_pre_colmeia": {
+      "valor": 8.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias plenos da banda do p90 do período inteiro anteriores à primeira semana com colmeia"
+    },
+    "dias_pos_pausa_ou_segunda": {
+      "valor": 18.0,
+      "unidade": "dias plenos (pós-pausa ou segunda-feira)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h13a_dif_jornada_operador_h": {
+      "valor": 0.8718164363397223,
+      "unidade": "horas",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.4686321169391837,
+        "superior": 1.3138604046625764,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          0.4686321169391837,
+          1.3138604046625764
+        ],
+        "ic_dia": [
+          0.5079001725290487,
+          1.3148821225832346
+        ],
+        "n_operadores": 23,
+        "dias_pico": 8,
+        "dias_tipicos": 40
+      },
+      "descricao": "horas por operador-dia (pico − típico, dentro do operador)"
+    },
+    "h13a_dif_amplitude_operador_h": {
+      "valor": 0.16165323733667117,
+      "unidade": "horas",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.6973424189041264,
+        "superior": 0.9732544913871367,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          -0.6973424189041264,
+          0.9732544913871367
+        ],
+        "ic_dia": [
+          -0.6409499421374898,
+          0.8135104929714833
+        ],
+        "n_operadores": 23
+      },
+      "descricao": "horas por operador-dia (amplitude: primeiro início ao último fim; pico − típico)"
+    },
+    "h13a_p_unilateral": {
+      "valor": 0.00024993751562109475,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: pico > típico; o maior entre operador e dia)"
+    },
+    "h13a_p_unilateral_operador": {
+      "valor": 0.00024993751562109475,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: pico > típico), bootstrap por operador"
+    },
+    "h13a_p_unilateral_dia": {
+      "valor": 0.00024993751562109475,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: pico > típico), bootstrap de dias"
+    },
+    "h13a_p_holm_f1b_limite_superior": {
+      "valor": 0.000999750062484379,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (Bonferroni da F1b, limite superior do p de Holm)"
+    },
+    "h13a_classe": {
+      "valor": 1.0,
+      "unidade": "código: 1 passa (IC > 0), 0 inconclusivo, -1 falha",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13a_inconclusivo_por_desenho": {
+      "valor": 0.0,
+      "unidade": "1 = IC contém 0 e mde_h13a (ANA-000) > efeito relevante",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13a_aviso_magnitude": {
+      "valor": 1.0,
+      "unidade": "1 = magnitude possivelmente exagerada (poder baixo, erro tipo M)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13a_efeito_relevante_h": {
+      "valor": 0.20797561950439647,
+      "unidade": "horas",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "horas por operador-dia (10% da jornada ativa média dos dias típicos)"
+    },
+    "h13a_media_jornada_tipicos_h": {
+      "valor": 2.0797561950439647,
+      "unidade": "horas",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "horas por operador-dia"
+    },
+    "h13a_mde_de_ana000_h": {
+      "valor": 0.9099956100349138,
+      "unidade": "horas",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "horas por operador-dia (de ANA-000)"
+    },
+    "n_operadores_h13a": {
+      "valor": 23.0,
+      "unidade": "operadores com os dois tipos de dia",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pico_h13a": {
+      "valor": 8.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_tipicos_h13a": {
+      "valor": 40.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h13a_confirmada": {
+      "valor": 1.0,
+      "unidade": "1 = jornada ativa sobe no pico (IC > 0) e p ajustado (limite superior de Holm) < alfa",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13a_amplitude_sobe_junto": {
+      "valor": 0.0,
+      "unidade": "1 = o IC da diferença de amplitude fica acima de 0: leitura de hora extra (alternativa de H10)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13a_amplitude_ic_contem_zero_abaixo_do_efeito_relevante": {
+      "valor": 0.0,
+      "unidade": "1 = IC da amplitude contém 0 e fica abaixo do efeito relevante",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13a_folga_sustentada": {
+      "valor": 0.0,
+      "unidade": "1 = folga nos dias típicos sustentada (jornada sobe, amplitude não)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13a_leitura_hora_extra": {
+      "valor": 0.0,
+      "unidade": "1 = jornada e amplitude sobem juntas: leitura de hora extra; H13a não confirma folga",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13a_leitura_folga_indeterminada": {
+      "valor": 1.0,
+      "unidade": "1 = a jornada sobe no pico, mas o IC da amplitude é largo demais para sustentar folga (contém 0 sem ficar abaixo do efeito relevante) e não mostra hora extra",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13a_dif_jornada_sem_pos_pausa_h": {
+      "valor": 0.769319315008509,
+      "unidade": "horas",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.3221148147606496,
+        "superior": 1.2555095057735235,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "n_operadores": 21
+      },
+      "descricao": "horas por operador-dia"
+    },
+    "h13a_dif_jornada_metade1_h": {
+      "valor": 0.6471085866936561,
+      "unidade": "horas",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.14384620170371057,
+        "superior": 1.176560879024204,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "n_operadores": 18
+      },
+      "descricao": "horas por operador-dia"
+    },
+    "h13a_dif_jornada_metade2_h": {
+      "valor": 0.8826087967943896,
+      "unidade": "horas",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.37173283114443467,
+        "superior": 1.4826364507340883,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "n_operadores": 14
+      },
+      "descricao": "horas por operador-dia"
+    },
+    "h13a_dif_jornada_escopo_rc_h": {
+      "valor": 0.10623779245445913,
+      "unidade": "horas",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.44612943432364854,
+        "superior": 0.406948442068798,
+        "nivel": 0.95,
+        "unidade_mais_larga": "dia",
+        "n_operadores": 9
+      },
+      "descricao": "horas por operador-dia"
+    },
+    "h13b_coef_volume": {
+      "valor": -0.02685302914020245,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.05516592379039546,
+        "superior": 0.011114458931778481,
+        "nivel": 0.95,
+        "unidade_mais_larga": "semana",
+        "ic_dia": [
+          -0.04723808678045267,
+          0.0022790878098872666
+        ],
+        "ic_bloco_semana": [
+          -0.05516592379039546,
+          0.011114458931778481
+        ],
+        "semanas": 17,
+        "dias": 80
+      },
+      "descricao": "fração de intervalos acima do teto por unidade de log do volume do dia"
+    },
+    "h13b_p_unilateral": {
+      "valor": 0.07423144213946513,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: coeficiente < 0; o maior entre dia e bloco de semana)"
+    },
+    "h13b_p_unilateral_dia": {
+      "valor": 0.03424143964008998,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: coeficiente < 0), bootstrap de dias"
+    },
+    "h13b_p_unilateral_bloco_semana": {
+      "valor": 0.07423144213946513,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: coeficiente < 0), bootstrap por bloco de semana"
+    },
+    "h13b_p_holm_f1b_limite_superior": {
+      "valor": 0.2969257685578605,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (Bonferroni da F1b, limite superior do p de Holm)"
+    },
+    "h13b_classe": {
+      "valor": 0.0,
+      "unidade": "código: 1 passa (IC < 0), 0 inconclusivo, -1 falha (IC > 0)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13b_inconclusivo_por_desenho": {
+      "valor": 0.0,
+      "unidade": "1 = IC contém 0 e mde_h13b (ANA-000) > efeito relevante",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13b_aviso_magnitude": {
+      "valor": 0.0,
+      "unidade": "1 = magnitude possivelmente exagerada (poder baixo, erro tipo M)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13b_efeito_relevante_coef": {
+      "valor": 0.11887644277593411,
+      "unidade": "fração por unidade de log do volume (10% da fração média por 10% de volume)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13b_mde_de_ana000": {
+      "valor": 0.052362775226750265,
+      "unidade": "fração por unidade de log do volume (de ANA-000)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13b_fracao_media_acima_do_teto": {
+      "valor": 0.11330135135472823,
+      "unidade": "fração média de intervalos acima do teto nas células",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13b_elasticidade": {
+      "valor": -0.23700537389117235,
+      "unidade": "elasticidade",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.4868955500599447,
+        "superior": 0.09809643749950436,
+        "nivel": 0.95,
+        "unidade_mais_larga": "semana",
+        "metodo": "IC do coeficiente ÷ fração média"
+      },
+      "descricao": "elasticidade (variação relativa da fração de intervalos acima do teto por variação relativa do volume; aproximação: coeficiente ÷ fração média)"
+    },
+    "h13b_efeito_relevante_elasticidade": {
+      "valor": 1.0492058687257062,
+      "unidade": "elasticidade",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "elasticidade equivalente à convenção de efeito relevante (10% da fração média por 10% de volume)"
+    },
+    "h13b_faixa_refeicao_hora_inicial": {
+      "valor": 13.0,
+      "unidade": "hora do dia",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h13b_faixa_refeicao_hora_final": {
+      "valor": 14.0,
+      "unidade": "hora do dia",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h13b_confirmada": {
+      "valor": 0.0,
+      "unidade": "1 = coeficiente < 0 (IC < 0) e p ajustado (limite superior de Holm) < alfa",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13_confirmada": {
+      "valor": 1.0,
+      "unidade": "1 = H13a ou H13b confirmada: o impacto lê CR1 e CR8 em horas ativas como limite superior (plano)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "h13b_coef_volume_refeicao_ampliada": {
+      "valor": -0.025249022016623344,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.0592400166343062,
+        "superior": 0.016844870721878007,
+        "nivel": 0.95,
+        "unidade_mais_larga": "semana"
+      },
+      "descricao": "fração por unidade de log do volume do dia"
+    },
+    "h13b_coef_volume_escopo_rc": {
+      "valor": -0.053306181906736506,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.148877625181541,
+        "superior": 0.0029702037260738723,
+        "nivel": 0.95,
+        "unidade_mais_larga": "semana"
+      },
+      "descricao": "fração por unidade de log do volume do dia"
+    },
+    "h13b_coef_volume_metade1": {
+      "valor": -0.0469546998899976,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.07449374756876374,
+        "superior": -0.0031917988578836027,
+        "nivel": 0.95,
+        "unidade_mais_larga": "semana"
+      },
+      "descricao": "fração por unidade de log do volume do dia"
+    },
+    "h13b_coef_volume_metade2": {
+      "valor": -0.006414335440871725,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.07383217011959468,
+        "superior": 0.04433478409665749,
+        "nivel": 0.95,
+        "unidade_mais_larga": "semana"
+      },
+      "descricao": "fração por unidade de log do volume do dia"
+    },
+    "horas_dia_pap_rc_estresse": {
+      "valor": 1.0574845679012346,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0574845679012346,
+        "superior": 2.5516358024691357,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.7346535493827162,
+          1.3861577932098768
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_t300_estresse": {
+      "valor": 1.0574845679012346,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0574845679012346,
+        "superior": 1.6952006172839504,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.7346535493827162,
+          1.3861577932098768
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_t600_estresse": {
+      "valor": 1.2714351851851853,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.2714351851851853,
+        "superior": 2.0295987654320986,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.8961882716049383,
+          1.655040509259259
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_t900_estresse": {
+      "valor": 1.4439506172839505,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.4439506172839505,
+        "superior": 2.2254938271604936,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.021780478395062,
+          1.8726585648148149
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_pap_rc_t1800_estresse": {
+      "valor": 1.797145061728395,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.797145061728395,
+        "superior": 2.5516358024691357,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.271671682098766,
+          2.3141153549382714
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_pap_rc_estresse": {
+      "valor": 0.1442680174490088,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1442680174490088,
+        "superior": 0.3481085678675492,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.10022558654607315,
+          0.18910747519916463
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_pap_rc_t300_estresse": {
+      "valor": 0.1442680174490088,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1442680174490088,
+        "superior": 0.23126884273996595,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.10022558654607315,
+          0.18910747519916463
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_pap_rc_t600_estresse": {
+      "valor": 0.1734563690566419,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1734563690566419,
+        "superior": 0.27688932679837636,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.1222630657032658,
+          0.22578997397807082
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_pap_rc_t900_estresse": {
+      "valor": 0.19699189867448164,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.19699189867448164,
+        "superior": 0.3036144375389486,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.13939706390109985,
+          0.2554786582284877
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_pap_rc_t1800_estresse": {
+      "valor": 0.24517667963552456,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.24517667963552456,
+        "superior": 0.3481085678675492,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.17348863330133232,
+          0.3157046868947164
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_estresse": {
+      "valor": 0.5096913580246913,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.5096913580246913,
+        "superior": 1.1521913580246914,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.3608024691358025,
+          0.6568036265432099
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_t300_estresse": {
+      "valor": 0.5096913580246913,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.5096913580246913,
+        "superior": 0.7897067901234568,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.3608024691358025,
+          0.6568036265432099
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_t600_estresse": {
+      "valor": 0.6347222222222223,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.6347222222222223,
+        "superior": 0.9233950617283951,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.4508070987654321,
+          0.8120131172839506
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_t900_estresse": {
+      "valor": 0.6704938271604939,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.6704938271604939,
+        "superior": 1.0147222222222223,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.46621141975308655,
+          0.8771261574074074
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_checkout_rc_t1800_estresse": {
+      "valor": 0.8710802469135802,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.8710802469135802,
+        "superior": 1.1521913580246914,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.5946898148148148,
+          1.144199074074074
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_checkout_rc_estresse": {
+      "valor": 0.06953497380964412,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.06953497380964412,
+        "superior": 0.15718845266366868,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.04922271065972749,
+          0.0896048603742442
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_checkout_rc_t300_estresse": {
+      "valor": 0.06953497380964412,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.06953497380964412,
+        "superior": 0.1077362605898304,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.04922271065972749,
+          0.0896048603742442
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_checkout_rc_t600_estresse": {
+      "valor": 0.08659239048052146,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.08659239048052146,
+        "superior": 0.12597476967645227,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.06150165058191434,
+          0.11077941572768768
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_checkout_rc_t900_estresse": {
+      "valor": 0.09147255486500598,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.09147255486500598,
+        "superior": 0.13843413672881613,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.06360319505499135,
+          0.11966250442120156
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_checkout_rc_t1800_estresse": {
+      "valor": 0.11883768716419921,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.11883768716419921,
+        "superior": 0.15718845266366868,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.08113094335809205,
+          0.15609810014653122
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_estresse": {
+      "valor": 1.3520987654320988,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.007932098765432,
+        "superior": 2.594907407407407,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.8961890432098769,
+          1.8559467592592593
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_t300_estresse": {
+      "valor": 1.3520987654320988,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.007932098765432,
+        "superior": 2.0091203703703706,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.8961890432098769,
+          1.8559467592592593
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_t600_estresse": {
+      "valor": 1.5530092592592593,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.1684722222222221,
+        "superior": 2.256929012345679,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.04729012345679,
+          2.111377314814815
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_t900_estresse": {
+      "valor": 1.6985185185185185,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.2913425925925925,
+        "superior": 2.4174382716049383,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.1605671296296296,
+          2.2743765432098764
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_colmeia_rc_t1800_estresse": {
+      "valor": 1.9550154320987656,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.4378240740740742,
+        "superior": 2.594907407407407,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.3312175925925926,
+          2.630109182098765
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_colmeia_rc_estresse": {
+      "valor": 0.18446095026358783,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.13750778973607533,
+        "superior": 0.3540119246121974,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.12226317096996955,
+          0.25319873932595627
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_colmeia_rc_t300_estresse": {
+      "valor": 0.18446095026358783,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.13750778973607533,
+        "superior": 0.2740955484816331,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.12226317096996955,
+          0.25319873932595627
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_colmeia_rc_t600_estresse": {
+      "valor": 0.2118702945783437,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.15940958011217218,
+        "superior": 0.30790300304852375,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.14287723375945294,
+          0.28804601839219857
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_colmeia_rc_t900_estresse": {
+      "valor": 0.23172148956596433,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.176172250012632,
+        "superior": 0.3298005827564718,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.1583311227325552,
+          0.3102832937530527
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_colmeia_rc_t1800_estresse": {
+      "valor": 0.26671424721674836,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.19615608104694054,
+        "superior": 0.3540119246121974,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.1816122227275024,
+          0.3588143495359843
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_estresse": {
+      "valor": 1.0574845679012346,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0574845679012346,
+        "superior": 2.5516358024691357,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.7346535493827162,
+          1.3861577932098768
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_t300_estresse": {
+      "valor": 1.0574845679012346,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0574845679012346,
+        "superior": 1.6952006172839504,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.7346535493827162,
+          1.3861577932098768
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_t600_estresse": {
+      "valor": 1.2714351851851853,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.2714351851851853,
+        "superior": 2.0295987654320986,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.8961882716049383,
+          1.655040509259259
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_t900_estresse": {
+      "valor": 1.4439506172839505,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.4439506172839505,
+        "superior": 2.2254938271604936,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.021780478395062,
+          1.8726585648148149
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt2_t1800_estresse": {
+      "valor": 1.797145061728395,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.797145061728395,
+        "superior": 2.5516358024691357,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.271671682098766,
+          2.3141153549382714
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt2_estresse": {
+      "valor": 0.1442680174490088,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1442680174490088,
+        "superior": 0.3481085678675492,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.10022558654607315,
+          0.18910747519916463
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt2_t300_estresse": {
+      "valor": 0.1442680174490088,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1442680174490088,
+        "superior": 0.23126884273996595,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.10022558654607315,
+          0.18910747519916463
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt2_t600_estresse": {
+      "valor": 0.1734563690566419,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1734563690566419,
+        "superior": 0.27688932679837636,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.1222630657032658,
+          0.22578997397807082
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt2_t900_estresse": {
+      "valor": 0.19699189867448164,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.19699189867448164,
+        "superior": 0.3036144375389486,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.13939706390109985,
+          0.2554786582284877
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt2_t1800_estresse": {
+      "valor": 0.24517667963552456,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.24517667963552456,
+        "superior": 0.3481085678675492,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.17348863330133232,
+          0.3157046868947164
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_estresse": {
+      "valor": 1.567175925925926,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.567175925925926,
+        "superior": 3.703827160493827,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          1.1297480709876546,
+          1.9932430555555554
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_ic_dias_estresse": {
+      "valor": 1.567175925925926,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.1297480709876546,
+        "superior": 1.9932430555555554,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "n_dias": 18,
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_t300_estresse": {
+      "valor": 1.567175925925926,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.567175925925926,
+        "superior": 2.484907407407407,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.1297480709876546,
+          1.9932430555555554
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_t600_estresse": {
+      "valor": 1.9061574074074075,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.9061574074074075,
+        "superior": 2.952993827160494,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.3886404320987655,
+          2.4024745370370373
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_t900_estresse": {
+      "valor": 2.1144444444444446,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.1144444444444446,
+        "superior": 3.240216049382716,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.5305023148148151,
+          2.678890432098765
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt3_t1800_estresse": {
+      "valor": 2.668225308641975,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.668225308641975,
+        "superior": 3.703827160493827,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          1.930435185185185,
+          3.379511959876544
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt3_estresse": {
+      "valor": 0.21380299125865293,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21380299125865293,
+        "superior": 0.5052970205312178,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.15412661268590103,
+          0.2719294755191754
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt3_ic_dias_estresse": {
+      "valor": 0.21380299125865293,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.15412661268590103,
+        "superior": 0.2719294755191754,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana, teto de 300 s, regra base",
+        "n_dias": 18,
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt3_t300_estresse": {
+      "valor": 0.21380299125865293,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21380299125865293,
+        "superior": 0.33900510332979633,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.15412661268590103,
+          0.2719294755191754
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt3_t600_estresse": {
+      "valor": 0.2600487595371634,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.2600487595371634,
+        "superior": 0.4028640964748287,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.18944617081838547,
+          0.32775914557121927
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt3_t900_estresse": {
+      "valor": 0.2884644535394877,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.2884644535394877,
+        "superior": 0.4420485742677648,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.20879977009751913,
+          0.36546936317854917
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt3_t1800_estresse": {
+      "valor": 0.36401436679972377,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.36401436679972377,
+        "superior": 0.5052970205312178,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.26336087110302664,
+          0.46105210912367584
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_estresse": {
+      "valor": 2.9192746913580248,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.575108024691358,
+        "superior": 6.298734567901235,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          2.058989583333333,
+          3.804040895061729
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_t300_estresse": {
+      "valor": 2.9192746913580248,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.575108024691358,
+        "superior": 4.494027777777777,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          2.058989583333333,
+          3.804040895061729
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_t600_estresse": {
+      "valor": 3.4591666666666665,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.0746296296296296,
+        "superior": 5.209922839506173,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          2.4690000000000003,
+          4.458419753086419
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_t900_estresse": {
+      "valor": 3.8129629629629624,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.4057870370370367,
+        "superior": 5.657654320987655,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          2.731797839506173,
+          4.894501543209877
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_dia_escopo_alt5_t1800_estresse": {
+      "valor": 4.623240740740742,
+      "unidade": "horas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4.10604938271605,
+        "superior": 6.298734567901235,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          3.3320019290123457,
+          5.904344521604939
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt5_estresse": {
+      "valor": 0.39826394152224076,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.35131078099472823,
+        "superior": 0.8593089451434154,
+        "nivel": null,
+        "descricao": "grade inteira: quatro tetos × (base, S1, S2, S3) × com e sem turnos fundidos; valor = teto conservador de 300 s (G2)",
+        "ic_bootstrap_dias_teto_300": [
+          0.28089898817644376,
+          0.5189687442103313
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt5_t300_estresse": {
+      "valor": 0.39826394152224076,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.35131078099472823,
+        "superior": 0.6131006518114294,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.28089898817644376,
+          0.5189687442103313
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt5_t600_estresse": {
+      "valor": 0.471919054115507,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.41945833964933554,
+        "superior": 0.7107670995233524,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.3368349249658936,
+          0.6082428039681337
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt5_t900_estresse": {
+      "valor": 0.5201859431054519,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.4646367035521196,
+        "superior": 0.7718491570242367,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.37268729051925964,
+          0.6677355447762451
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_escopo_alt5_t1800_estresse": {
+      "valor": 0.6307286140164723,
+      "unidade": "FTE",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.5601704478466644,
+        "superior": 0.8593089451434154,
+        "nivel": null,
+        "descricao": "faixa de base, S1, S2 e S3 no teto",
+        "ic_bootstrap_dias_base": [
+          0.45457052237549056,
+          0.8055040275040845
+        ],
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "hp1_dentro_da_faixa_checkout_estresse": {
+      "valor": 0.0,
+      "unidade": "código: 1 = FTE do slide 14 dentro da faixa de M13 (4 tetos × S1 a S3); 0 = não reproduz",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp1_razao_deck_sobre_fte_medido_checkout_estresse": {
+      "valor": 4.889625772072182,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.1630087594760385,
+        "superior": 4.889625772072182,
+        "nivel": null,
+        "descricao": "razão do deck ao maior e ao menor FTE da grade; valor = teto conservador de 300 s"
+      }
+    },
+    "hp1_dentro_da_faixa_pap_estresse": {
+      "valor": 0.0,
+      "unidade": "código: 1 = FTE do slide 14 dentro da faixa de M13 (4 tetos × S1 a S3); 0 = não reproduz",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp1_razao_deck_sobre_fte_medido_pap_estresse": {
+      "valor": 10.535945713243343,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4.366453860389729,
+        "superior": 10.535945713243343,
+        "nivel": null,
+        "descricao": "razão do deck ao maior e ao menor FTE da grade; valor = teto conservador de 300 s"
+      }
+    },
+    "hp1_dentro_da_faixa_total_estresse": {
+      "valor": 0.0,
+      "unidade": "código: 1 = FTE do slide 14 dentro da faixa de M13 (4 tetos × S1 a S3); 0 = não reproduz",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "hp1_razao_deck_sobre_fte_medido_total_estresse": {
+      "valor": 8.699597648518507,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.6810032998900044,
+        "superior": 8.699597648518507,
+        "nivel": null,
+        "descricao": "razão do deck ao maior e ao menor FTE da grade; valor = teto conservador de 300 s"
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_t300_estresse": {
+      "valor": 0.9542534992878038,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.6762242723247139,
+        "superior": 1.3492599501910605,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "vies_robo_horas_dia_pap_rc_t300_estresse": {
+      "valor": -0.10323106861343079,
+      "unidade": "horas por dia pleno (equivalentes sem robô − horas manuais observadas)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.22474617269482655,
+        "superior": 0.12415094697159199,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias e de operadores, independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_estresse": {
+      "valor": 0.9542534992878038,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.6762242723247139,
+        "superior": 1.3492599501910605,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "fte_sem_robo_equiv_pap_rc_estresse": {
+      "valor": 0.1301846520174357,
+      "unidade": "FTE (horas sem robô equivalentes ÷ PR12)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.09225433455998826,
+        "superior": 0.18407366305471493,
+        "nivel": 0.95,
+        "metodo": "mesma incerteza das horas, ÷ PR12"
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_t600_estresse": {
+      "valor": 1.1803222111869183,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.8282537459999675,
+        "superior": 1.6783702389263961,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "vies_robo_horas_dia_pap_rc_t600_estresse": {
+      "valor": -0.09111297399826701,
+      "unidade": "horas por dia pleno (equivalentes sem robô − horas manuais observadas)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.24073415226975678,
+        "superior": 0.2109303896264188,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias e de operadores, independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_t900_estresse": {
+      "valor": 1.3032639939801358,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.9229876605825726,
+        "superior": 1.8149273256908396,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "vies_robo_horas_dia_pap_rc_t900_estresse": {
+      "valor": -0.14068662330381465,
+      "unidade": "horas por dia pleno (equivalentes sem robô − horas manuais observadas)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.30892846232015597,
+        "superior": 0.15244195385390333,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias e de operadores, independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "horas_sem_robo_equiv_pap_rc_t1800_estresse": {
+      "valor": 1.5456951047552918,
+      "unidade": "horas por dia pleno (volume do escopo com robô ÷ M14 pré-PAR11 padronizado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.078802766755148,
+        "superior": 2.123164918665648,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias (volume) × bootstrap por operador (M14 pré-PAR11), independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    },
+    "vies_robo_horas_dia_pap_rc_t1800_estresse": {
+      "valor": -0.25144995697310324,
+      "unidade": "horas por dia pleno (equivalentes sem robô − horas manuais observadas)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.5040997763438877,
+        "superior": 0.1070430076311895,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias e de operadores, independentes",
+        "janela": [
+          "2026-08-31",
+          "2026-09-25"
+        ]
+      }
+    }
+  },
+  "tabelas": {
+    "horas_fte_grade": "horas_fte_grade.csv",
+    "horas_fte_por_mes": "horas_fte_por_mes.csv",
+    "hp1_slide14_contra_m13": "hp1_slide14_contra_m13.csv",
+    "hp1_por_mes_e_tipo_de_onda": "hp1_por_mes_e_tipo_de_onda.csv",
+    "m29_descarte_escopo": "m29_descarte_escopo.csv",
+    "excedente_p90_e_retomada": "excedente_p90_e_retomada.csv",
+    "robustez_h13a": "robustez_h13a.csv",
+    "robustez_h13b": "robustez_h13b.csv",
+    "perfil_fracao_acima_do_teto_por_hora": "perfil_fracao_acima_do_teto_por_hora.csv"
+  },
+  "figuras": [
+    "fracao_acima_do_teto_por_hora.png",
+    "fte_slide14_e_h13a.png"
+  ],
+  "notas": "Horas ativas (M11, M12) por dia pleno na janela base (31/08 a 25/09) e por mês; FTE equivalente de horas ativas = horas por dia pleno ÷ PR12 (jornada de PR12, G2); é piso do tempo dedicado, não quadro nem alocação; FTE semanal com sábado = (5 × horas por dia pleno + horas de sábado observadas por semana) ÷ (PR12 × 6). Sem sufixo = teto conservador de 300 s com a faixa da grade inteira (quatro tetos × base, S1, S2, S3, com e sem turnos fundidos; não há operador-dia com turnos fundidos, as duas leituras coincidem); _t300, _t600, _t900, _t1800 = um teto com a faixa de base e S1 a S3; ic_bootstrap_dias_* = IC de bootstrap de dias estratificado por dia da semana da célula de base. H-P1: o FTE do slide 14 (constantes com fonte) contra a faixa de M13; vide hp1_* e hp1_slide14_contra_m13. H13a e H13b: IC95% por percentis de 4.000 réplicas, o mais largo entre as unidades (operador e dia; dia e bloco de semana); p unilateral pelo maior das unidades; p_holm_*_limite_superior = min(1, 4 p) (o p de Holm exato precisa de ANA-005 e ANA-008); classificação pela regra de leitura com o MDE de ANA-000 e o efeito relevante da convenção (10%). Os dias de pico (p90 do volume diário do armazém) caem em segundas-feiras e dias pós-pausa: pico e retomada se misturam (limitação declarada). Viés do robô: horas sem robô equivalentes = volume do pedido-a-pedido da Royal Canin (M05, robô incluído) ÷ M14 padronizado pré-PAR11 do mesmo teto, IC combinando bootstrap de dias e de operadores (independentes). M23: excedente do dia p90 = horas médias dos dias com volume na banda PAR05 menos a média dos dias plenos; retomada = dias pós-pausa ou segundas; o dia máximo só como limite superior. REGIME DA COLMEIA (revisoes/orquestrador_decisao_regime_colmeia.md): os dias da banda do p90 do escopo do período inteiro são todos anteriores à entrada da colmeia; por isso o excedente do escopo vem em quatro leituras: sem sufixo = período inteiro (variante do plano, com o regime pré-colmeia incluído), _sem_incidente = período inteiro sem 21 a 25/09, _poscolmeia = dias plenos desde a primeira semana ISO com ondas de colmeia da Royal Canin (semana_iso_primeira_colmeia_rc, definida pelo dado) sem o incidente (BASE DA OFERTA, a confirmar por Marcus no G3), e _normal = janela de 24/08 a 18/09 (a mesma de ANA-002), descritiva (poucos dias na banda do p90, sem IC). excedente_fte_* é o mesmo excedente em fração de FTE (÷ PR12); operadores_adicionais_* segue a regra de teto inteiro de M23 e não deve ser lido sem a fração de FTE. A tabela excedente_p90_e_retomada mantém os rótulos de janela anteriores (ANA-009 os lê) e ganha as colunas leitura e *_fte. Horas e FTE: FTE equivalente de horas ativas (horas por dia pleno ÷ PR12): piso do tempo dedicado, não quadro nem alocação; o método do deck pode ter contado alocação ou presença, e a reconciliação é com a Social. As chaves *_ic_dias trazem o IC de bootstrap de dias do teto conservador; as chaves sem esse sufixo trazem a faixa de cenários dos tetos e de S1 a S3 (não é intervalo de confiança). h13b_elasticidade = coeficiente ÷ fração média (aproximação) e h13b_efeito_relevante_elasticidade = o efeito relevante da convenção na mesma escala. INCIDENTE OPERACIONAL: a Royal Canin quase não tem linhas de 21 a 25/09; Marcus confirmou em 03/10/2026 que a queda é real (problemas na operação; decisão em revisoes/orquestrador_decisao_semana_incidente.md). A semana fica nos dados. Duas leituras lado a lado, sem trocar a janela do plano: chaves sem sufixo e _estresse = janela base do plano (31/08 a 25/09; cenário de estresse); chaves _normal = janela de 24/08 a 18/09 (mesmo número de semanas; base da oferta em operação normal) e, no excedente do escopo, os dias plenos fora de 21 a 25/09. Marcus pode trocar a base no G3. Dependência não coberta pelo hash do script: analises/comum.py.",
+  "em": "2026-10-03T21:20:56",
+  "segundos": 17.85
+}

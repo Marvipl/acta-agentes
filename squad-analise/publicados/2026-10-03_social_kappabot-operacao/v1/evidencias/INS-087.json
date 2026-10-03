@@ -1,0 +1,126 @@
+{
+  "id": "INS-087",
+  "estado": "aprovado",
+  "afirmacao": "Com a frota necessária de ANA-009 a margem por robô da ALT3 é maior que com a frota do slide 14, com e sem o piso, e a segunda parte da H-P16 se sustenta; isso é quase aritmético, porque menos robôs dividem a mesma receita. O sinal da margem sem o piso, porém, depende da frota e da janela. Na leitura desfavorável, com a frota dia a dia do regime pós-colmeia ({{v.fnec_b}}) e a receita da janela normal (base da oferta), a margem sem o piso é {{v.mnec_b}}, positiva e pequena; com a regra por tipo (robôs não fungíveis) ela é {{v.mpt_b}}, e a ponta alta da faixa de frota a deixa negativa (as faixas de cenários são as da grade de frota de ANA-009). Na variante do plano (receita com a semana do incidente, frota do período inteiro, {{v.fnec}}) a margem sem o piso é {{v.mnec}}, contra {{v.m5s}} com a frota do slide 14 na ponta de mais robôs. A leitura otimista, pelo perfil médio da banda de dias, daria {{v.fnec_banda_b}} na base e margem de {{v.mbanda_b}}; essa frota não tem reserva de disponibilidade, porque qualquer parada do robô interrompe o serviço, e a média de dias alisa o pico. A maior frota que a receita por transação sustenta é {{v.fmax_n}} na base e {{v.fmax}} no plano. A fração das réplicas de dias com margem sem o piso não negativa é {{v.fr_b}} na base com a frota dia a dia ({{v.fr_b_banda}} pela banda) e {{v.fr_p}} no plano. Com o piso, a margem com a frota necessária da base é {{v.mnec_piso_b}} e o hardware máximo pagável é {{v.hw_nec_b}}.",
+  "pergunta_ref": "P16",
+  "criterio_ref": "CR6",
+  "valores": {
+    "m5s": "ANA-015.margem_robo_alt3_pr09_5_sem_piso",
+    "mnec": "ANA-015.margem_robo_alt3_frota_nec_sem_piso",
+    "fnec": "ANA-009.frota_necessaria_alt3",
+    "fmax": "ANA-015.frota_maxima_sem_piso_alt3",
+    "fmax_n": "ANA-015.frota_maxima_sem_piso_alt3_normal",
+    "mnec_b": "ANA-015.margem_robo_alt3_frota_nec_sem_piso_normal",
+    "mpt_b": "ANA-015.margem_robo_alt3_frota_por_tipo_sem_piso_normal",
+    "fnec_b": "ANA-009.frota_necessaria_alt3_pos_colmeia",
+    "fr_b": "ANA-015.fracao_replicas_margem_sem_piso_nao_negativa_frota_nec_normal",
+    "fr_p": "ANA-015.fracao_replicas_margem_sem_piso_nao_negativa_frota_nec",
+    "mnec_piso_b": "ANA-015.margem_robo_alt3_frota_nec_normal",
+    "hw_nec_b": "ANA-015.hardware_max_alt3_frota_nec_normal",
+    "mbanda_b": "ANA-015.margem_robo_alt3_frota_nec_banda_sem_piso_normal",
+    "fnec_banda_b": "ANA-009.frota_necessaria_alt3_banda_pos_colmeia",
+    "fr_b_banda": "ANA-015.fracao_replicas_margem_sem_piso_nao_negativa_frota_nec_banda_normal"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "bootstrap de dias da receita de ANA-002",
+      "analise": "ANA-015",
+      "resultado": "parcial",
+      "nota": "com a frota dia a dia da base quase todas as réplicas dão margem sem o piso não negativa, mas a margem é pequena; no plano a maior parte das réplicas dá margem negativa: o sinal sem o piso não é estável entre as janelas"
+    },
+    {
+      "recorte": "frota dia a dia, banda e regra por tipo",
+      "analise": "ANA-015",
+      "resultado": "parcial",
+      "nota": "pela banda a margem sem o piso é bem maior (ponta otimista, sem reserva) e com a regra por tipo a ponta alta da faixa fica negativa (chaves margem_robo_alt3_frota_nec_banda_sem_piso e margem_robo_alt3_frota_por_tipo_sem_piso)"
+    },
+    {
+      "recorte": "leitura do slide 12 da frota",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "com a menor frota do slide 12 a margem sem o piso é maior ainda (chaves margem_robo_alt3_slide12_*_sem_piso)"
+    },
+    {
+      "recorte": "base pós-colmeia contra período inteiro",
+      "analise": "ANA-015",
+      "resultado": "parcial",
+      "nota": "com a frota do período inteiro e a receita do plano a margem sem o piso é negativa; com a frota pós-colmeia e a receita normal ela é positiva e pequena"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Correção atendida (o sinal depende da frota e da janela). Problema novo: a margem citada primeiro na base usa a frota de um robô pela banda de dias, método que o analista rejeitou na ALT6 por alisar o pico; com a frota dia a dia a margem sem piso cai muito e, com a regra por tipo, fica negativa na ponta alta. Uma frota de um robô não tem reserva de disponibilidade. Citar primeiro a frota dia a dia, ou declarar a margem de um robô como ponta otimista."
+  },
+  "impacto": {
+    "modelo": "IMP-CR6-ALT3-SEM-PISO",
+    "modelos_relacionados": [
+      "IMP-CR6-ALT3-HW-SEM-PISO",
+      "IMP-INV-PR13-ALT4-RAT",
+      "IMP-INV-PR13-ALT4-INT",
+      "IMP-INV-PR13-ALT4-TARIFA-DECK",
+      "IMP-HW-ALT4-INT-NO-TETO",
+      "IMP-HW-ALT4-INT-NO-TETO-COM-RESERVA",
+      "IMP-IMPL-INVESTIMENTO-ALT3-SEM-RESERVA",
+      "IMP-IMPL-INVESTIMENTO-ALT3-COM-RESERVA",
+      "IMP-CR6-ALT3-SEM-PISO-COM-IMPL",
+      "IMP-CR6-ALT3-SEM-PISO-COM-RESERVA",
+      "IMP-CR6-ALT3-SEM-PISO-COM-RESERVA-COM-IMPL",
+      "IMP-CR6-ALT3-HW-SEM-PISO-SO-HARDWARE",
+      "IMP-CR6-ALT3-HW-SEM-PISO-COM-RESERVA-SO-HARDWARE",
+      "IMP-HW-ALT4-INT-NO-TETO-SO-HARDWARE",
+      "IMP-CR6-ALT3-RECEITA-ROBO-SOBRE-LOCACAO-DECK",
+      "IMP-REC-MARGEM-ACTA-MES-INT-SEM-IMPL",
+      "IMP-REC-MARGEM-ACTA-MES-INT-COM-IMPL",
+      "IMP-REC-MARGEM-ACTA-MES-RAT-SEM-IMPL",
+      "IMP-REC-MARGEM-ACTA-MES-RAT-COM-IMPL",
+      "IMP-REC-HW-MAX-INT-SEM-IMPL",
+      "IMP-REC-HW-MAX-INT-COM-IMPL",
+      "IMP-IMPL-INVESTIMENTO-ALT3-SEM-RESERVA-DESCONTO",
+      "IMP-IMPL-INVESTIMENTO-ALT3-COM-RESERVA-DESCONTO",
+      "IMP-REC-MARGEM-ACTA-MES-INT-COM-IMPL-DESCONTO"
+    ]
+  },
+  "acao": "Tratar a margem pequena das tarifas do deck como insuficiente: ela fica negativa com um robô de reserva (IMP-CR6-ALT3-SEM-PISO-COM-RESERVA) e com a implementação a preço de tabela (IMP-CR6-ALT3-SEM-PISO-COM-IMPL, IMP-CR6-ALT3-SEM-PISO-COM-RESERVA-COM-IMPL), e o hardware máximo pagável só de hardware vira zero (IMP-CR6-ALT3-HW-SEM-PISO-SO-HARDWARE). Os modelos de hardware sem esse sufixo pagam, somados, hardware, implantação, mapeamento e integração. Com PR11 integral a saída é subir as tarifas dentro da janela de cada cenário (IMP-REC-KMIN-SEM-IMPL, IMP-REC-KMIN-COM-IMPL, IMP-REC-KMAX-INT), nunca aceitar a margem das tarifas do deck. Referência de hardware para o CFO, com PR11 confirmado: IMP-REC-HW-MAX-INT-COM-IMPL e IMP-HW-ALT4-INT-NO-TETO-SO-HARDWARE, a comparar com PR20 [●] e com a locação de tabela (IMP-CR6-ALT3-RECEITA-ROBO-SOBRE-LOCACAO-DECK).",
+  "dono": "Renato Correa, CFO (custo real e PR20); Vinicius Bastos, CTO (frota)",
+  "premissas": [
+    "frota necessária dia a dia na base pós-colmeia (decisão do orquestrador, a confirmar por Marcus no G3), com capacidade do robô de confiança baixa (PR07, PR08) e sem reserva de disponibilidade",
+    "tarifas e franquia do deck (PR02, PR03, PR04) e custo de servir sem hardware informado por Marcus (PR13); custo de hardware (PR20) é [●] e o motor entrega o máximo pagável",
+    "base da oferta em operação normal (as quatro semanas anteriores ao incidente) para volume e receita; a janela do plano, que inclui o incidente da Royal Canin, entra como estresse (decisão do orquestrador; Marcus confirma ou troca no G3)",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados",
+    "custo de implementação (implantação por robô e integração simples) a preço de tabela da Acta (perfil de Marcus, a confirmar), amortizado no prazo do contrato e usado como limite superior do custo; o custo real da Acta é [●]; mapeamento (área [●]) e desenvolvimento do checkout conferido ([●]) ficam fora da conta; o tudo incluído do deck cobre mais do que a manutenção de PR13",
+    "um robô de reserva sobre a frota necessária: hipótese de configuração a confirmar com a engenharia (Vinicius Bastos), porque sem reserva uma parada devolve a conferência à bancada e desfaz PR11",
+    "o custo de oportunidade do robô é a locação de tabela do K100, referência e não limite; Marcus decide se vira limite"
+  ],
+  "red_team_decisao": {
+    "veredito": "ressalva",
+    "nota": "Ressalva. A margem sem piso fica negativa com custo de servir pouco acima de PR13 ou com um robô de reserva (RTD-INV-PR13-ALT4-TARIFA-DECK, RTD-CR2-ALT4-ALT3-COM-RESERVA). Com PR11 integral, a resposta é subir as tarifas dentro da janela (IMP-ALT4-KMAX-ALT3-INT), não aceitar a margem das tarifas do deck. Mantém-se a ressalva do red team analítico sobre a frota. Detalhes em revisoes/red-team-decisao.json."
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:52:10",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:55:03",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:42",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:02",
+      "por": "Marcus"
+    }
+  ]
+}

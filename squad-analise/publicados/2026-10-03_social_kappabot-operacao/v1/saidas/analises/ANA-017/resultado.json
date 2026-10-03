@@ -1,0 +1,217 @@
+{
+  "id": "ANA-017",
+  "valores": {
+    "n_semanas_pares_marcadas_rc": {
+      "valor": 0,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d1": {
+      "valor": 30,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d1_rc": {
+      "valor": 18,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d1_outros": {
+      "valor": 26,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_pt_d1": {
+      "valor": 8,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pt_d1": {
+      "valor": 40,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d1_permutacao": {
+      "valor": 2.7820561009069733,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d1_operador": {
+      "valor": 4.913396970375719,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d1_semana": {
+      "valor": 2.577860105015531,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d1_dia": {
+      "valor": 2.0100532570307807,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d1": {
+      "valor": 4.913396970375719,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_pt_d1": {
+      "valor": 15.897792314809971,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d3": {
+      "valor": 30,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d3_rc": {
+      "valor": 18,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d3_outros": {
+      "valor": 25,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_pt_d3": {
+      "valor": 8,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pt_d3": {
+      "valor": 39,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d3_permutacao": {
+      "valor": 5.013691425778838,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d3_operador": {
+      "valor": 10.364737234705283,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d3_semana": {
+      "valor": 7.4811376711843645,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d3_dia": {
+      "valor": 5.4588641892851,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d3": {
+      "valor": 10.364737234705283,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_pt_d3": {
+      "valor": 33.53615450744299,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d4": {
+      "valor": 18,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d4_rc": {
+      "valor": 13,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d4_outros": {
+      "valor": 15,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_pt_d4": {
+      "valor": 8,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pt_d4": {
+      "valor": 39,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d4_permutacao": {
+      "valor": 6.462008213755436,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d4_operador": {
+      "valor": 7.561635113264154,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d4_semana": {
+      "valor": 5.626306104375159,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d4_dia": {
+      "valor": 5.154007873101888,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_d4": {
+      "valor": 7.561635113264154,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_pt_d4": {
+      "valor": 24.46643438660638,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    }
+  },
+  "tabelas": {
+    "poder_por_teste": "poder_por_teste.csv",
+    "parametros_do_poder": "parametros_do_poder.csv"
+  },
+  "figuras": [],
+  "notas": "Só poder das pistas de ANA-012 (PT-D1, PT-D3, PT-D4): n_*, ep_* e mde_*, sem nenhuma estimativa de efeito. MDE = (z(1 − alfa÷6) + z(0,80)) × EP, unilateral. EP = o maior entre a permutação dos rótulos Royal Canin/outros (unidade operador-dia-grupo, dentro do dia) e o bootstrap por operador, por semana e por dia, com pesos e teto lidos de limiares_descoberta (ANA-012, sem recálculo); regra_clusters pela união de operadores (convenção do plano) e, à parte, pelo menor grupo. n_semanas_pares_marcadas_rc: conferência de incidente da Royal Canin nas semanas pares (abaixo da metade da mediana das semanas ímpares sem o incidente). Separada de ANA-000 para não criar ciclo com ANA-012; as chaves e os valores são os que ANA-000 gravava para estas pistas.",
+  "em": "2026-10-03T21:22:35",
+  "segundos": 3.51
+}

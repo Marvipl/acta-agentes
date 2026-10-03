@@ -1,0 +1,1688 @@
+{
+  "id": "ANA-015",
+  "valores": {
+    "margem_robo_alt3_pr09_4": {
+      "valor": 475.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_pr09_4": {
+      "valor": 11400.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; zero quando a margem não é positiva)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_alt3_pr09_4": {
+      "valor": 1475.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, com o piso da franquia; ALT3; frota PR09 do slide 14; é também o PR13 máximo que a receita paga)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_pr09_5": {
+      "valor": 180.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_pr09_5": {
+      "valor": 4320.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; zero quando a margem não é positiva)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_alt3_pr09_5": {
+      "valor": 1180.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, com o piso da franquia; ALT3; frota PR09 do slide 14; é também o PR13 máximo que a receita paga)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_slide12_min": {
+      "valor": 4900.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota da leitura do slide 12)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_slide12_max": {
+      "valor": 1950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota da leitura do slide 12)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_frota_nec_banda": {
+      "valor": 1950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota pela banda de dias de ANA-009, variante otimista: a média de dias alisa o pico)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_frota_nec_banda": {
+      "valor": 46800.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável com a frota pela banda de dias, variante otimista)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_frota_por_tipo": {
+      "valor": 966.6666666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota por tipo de ANA-009, robôs não fungíveis; faixa da grade por tipo)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 475.0,
+        "superior": 1950.0,
+        "nivel": null,
+        "nota": "frota por tipo do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "margem_robo_alt3_frota_nec": {
+      "valor": 1950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota necessária dia a dia de ANA-009 (período inteiro), leitura desfavorável; faixa da grade de ANA-009, que inclui a banda)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 966.6666666666667,
+        "superior": 4900.0,
+        "nivel": null,
+        "nota": "frota necessária do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "receita_por_robo_alt3_frota_nec": {
+      "valor": 2950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, com o piso da franquia; ALT3; frota necessária de ANA-009)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_frota_nec": {
+      "valor": 46800.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável com a frota necessária)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 23200.0,
+        "superior": 117600.0,
+        "nivel": null,
+        "nota": "mínimo e máximo da grade de cenários"
+      }
+    },
+    "margem_robo_alt2_slide14_pap": {
+      "valor": 966.6666666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_alt2_slide14_pap": {
+      "valor": 1966.6666666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, com o piso da franquia; ALT2; frota do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt2_slide12_min": {
+      "valor": 4900.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt2_slide12_max": {
+      "valor": 1950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt2_frota_nec": {
+      "valor": 1950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2; frota necessária de ANA-009)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1950.0,
+        "superior": 4900.0,
+        "nivel": null,
+        "nota": "frota necessária do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "margem_robo_alt3_pr09_4_sem_piso": {
+      "valor": -536.5708333333333,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_pr09_4_sem_piso": {
+      "valor": 0.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; zero quando a margem não é positiva)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_alt3_pr09_4_sem_piso": {
+      "valor": 463.4291666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, só a receita por transação; ALT3; frota PR09 do slide 14; é também o PR13 máximo que a receita paga)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_pr09_5_sem_piso": {
+      "valor": -629.2566666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_pr09_5_sem_piso": {
+      "valor": 0.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; zero quando a margem não é positiva)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_alt3_pr09_5_sem_piso": {
+      "valor": 370.74333333333334,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, só a receita por transação; ALT3; frota PR09 do slide 14; é também o PR13 máximo que a receita paga)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_slide12_min_sem_piso": {
+      "valor": 853.7166666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota da leitura do slide 12)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_slide12_max_sem_piso": {
+      "valor": -73.14166666666665,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota da leitura do slide 12)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_frota_nec_banda_sem_piso": {
+      "valor": -73.14166666666665,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota pela banda de dias de ANA-009, variante otimista: a média de dias alisa o pico)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_frota_nec_banda_sem_piso": {
+      "valor": 0.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável com a frota pela banda de dias, variante otimista)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_frota_por_tipo_sem_piso": {
+      "valor": -382.09444444444443,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota por tipo de ANA-009, robôs não fungíveis; faixa da grade por tipo)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -536.5708333333333,
+        "superior": -73.14166666666665,
+        "nivel": null,
+        "nota": "frota por tipo do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "margem_robo_alt3_frota_nec_sem_piso": {
+      "valor": -73.14166666666665,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota necessária dia a dia de ANA-009 (período inteiro), leitura desfavorável; faixa da grade de ANA-009, que inclui a banda)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -382.09444444444443,
+        "superior": 853.7166666666667,
+        "nivel": null,
+        "nota": "frota necessária do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "receita_por_robo_alt3_frota_nec_sem_piso": {
+      "valor": 926.8583333333333,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, só a receita por transação; ALT3; frota necessária de ANA-009)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_frota_nec_sem_piso": {
+      "valor": 0.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável com a frota necessária)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 20489.2,
+        "nivel": null,
+        "nota": "mínimo e máximo da grade de cenários"
+      }
+    },
+    "margem_robo_alt2_slide14_pap_sem_piso": {
+      "valor": -909.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_alt2_slide14_pap_sem_piso": {
+      "valor": 91.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, só a receita por transação; ALT2; frota do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt2_slide12_min_sem_piso": {
+      "valor": -727.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt2_slide12_max_sem_piso": {
+      "valor": -863.5,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt2_frota_nec_sem_piso": {
+      "valor": -863.5,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2; frota necessária de ANA-009)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -863.5,
+        "superior": -727.0,
+        "nivel": null,
+        "nota": "frota necessária do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "margem_robo_alt3_pr09": {
+      "valor": 180.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14, ponta desfavorável; faixa até a ponta favorável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 180.0,
+        "superior": 475.0,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    },
+    "hardware_max_alt3": {
+      "valor": 4320.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; ALT3; frota PR09 do slide 14, ponta desfavorável; zero quando a margem não é positiva)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4320.0,
+        "superior": 11400.0,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    },
+    "margem_robo_alt3_pr09_sem_piso": {
+      "valor": -629.2566666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14, ponta desfavorável; faixa até a ponta favorável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -629.2566666666667,
+        "superior": -536.5708333333333,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    },
+    "hardware_max_alt3_sem_piso": {
+      "valor": 0.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; ALT3; frota PR09 do slide 14, ponta desfavorável; zero quando a margem não é positiva)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    },
+    "margem_robo_alt2": {
+      "valor": 966.6666666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2; frota do slide 14, 3 robôs de pedido-a-pedido; faixa até a frota necessária)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 966.6666666666667,
+        "superior": 1950.0,
+        "nivel": null,
+        "nota": "frota do slide 14 e frota necessária de ANA-009"
+      }
+    },
+    "margem_robo_alt2_sem_piso": {
+      "valor": -909.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem sem o piso da franquia; ALT2; frota do slide 14)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -909.0,
+        "superior": -863.5,
+        "nivel": null,
+        "nota": "frota do slide 14 e frota necessária de ANA-009"
+      }
+    },
+    "h_p16_alt3_sem_piso_paga_pr13_nas_duas_pontas": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p16_margem_com_frota_necessaria_maior": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p16_alt3_com_piso_paga_pr13_nas_duas_pontas": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_mes_alt3_taxa_corrente": {
+      "valor": 1853.7166666666667,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (receita por transação da ALT3 na taxa corrente, de ANA-002)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_mes_alt2_taxa_corrente": {
+      "valor": 273.0,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (receita por transação da ALT2 na taxa corrente, de ANA-002)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "franquia_pr02": {
+      "valor": 5900.0,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (franquia mínima, PR02)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_alt3_abaixo_da_franquia": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_equilibrio_com_piso_alt3": {
+      "valor": 5.9,
+      "unidade": "robôs",
+      "descricao": "robôs (frota em que a franquia dividida pela frota iguala PR13; acima dela a margem com o piso é negativa)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_maxima_com_piso_alt3": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (maior frota inteira com margem não negativa com o piso da franquia)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_equilibrio_sem_piso_alt3": {
+      "valor": 1.8537166666666667,
+      "unidade": "robôs",
+      "descricao": "robôs (frota em que a receita por transação dividida pela frota iguala PR13)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_maxima_sem_piso_alt3": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (maior frota inteira com margem não negativa só com a receita por transação)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_sem_piso_ic_dias_pr09_4": {
+      "valor": -535.9269317708333,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem sem o piso, média das réplicas; IC de percentis do bootstrap de dias de ANA-002)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -676.5296354166667,
+        "superior": -400.66765625000005,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (réplicas de ANA-002)"
+      }
+    },
+    "fracao_replicas_margem_sem_piso_nao_negativa_pr09_4": {
+      "valor": 0.0,
+      "unidade": "%",
+      "descricao": "fração (das 4.000 réplicas de dias com margem sem o piso maior ou igual a zero)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_sem_piso_ic_dias_pr09_5": {
+      "valor": -628.7415454166667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem sem o piso, média das réplicas; IC de percentis do bootstrap de dias de ANA-002)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -741.2237083333333,
+        "superior": -520.5341250000001,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (réplicas de ANA-002)"
+      }
+    },
+    "fracao_replicas_margem_sem_piso_nao_negativa_pr09_5": {
+      "valor": 0.0,
+      "unidade": "%",
+      "descricao": "fração (das 4.000 réplicas de dias com margem sem o piso maior ou igual a zero)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_replicas_margem_sem_piso_nao_negativa_frota_nec_banda": {
+      "valor": 0.31325,
+      "unidade": "%",
+      "descricao": "fração (das 4.000 réplicas de dias com margem sem o piso maior ou igual a zero. frota pela banda de dias. variante otimista)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_replicas_margem_sem_piso_nao_negativa_frota_nec": {
+      "valor": 0.31325,
+      "unidade": "%",
+      "descricao": "fração (das 4.000 réplicas de dias com margem sem o piso maior ou igual a zero. frota necessária)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_sem_piso_envelope": {
+      "valor": -629.2566666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem sem o piso, ponta desfavorável de PR09; faixa entre as variantes do envelope de ANA-002)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -750.8933333333333,
+        "superior": -546.3447368421052,
+        "nivel": null,
+        "nota": "variantes do envelope de ANA-002 (janelas e conferências), uma de cada vez"
+      }
+    },
+    "margem_robo_alt3_pr09_4_normal": {
+      "valor": 475.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_pr09_4_normal": {
+      "valor": 11400.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; zero quando a margem não é positiva)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_alt3_pr09_4_normal": {
+      "valor": 1475.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, com o piso da franquia; ALT3; frota PR09 do slide 14; é também o PR13 máximo que a receita paga)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_pr09_5_normal": {
+      "valor": 180.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_pr09_5_normal": {
+      "valor": 4320.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; zero quando a margem não é positiva)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_alt3_pr09_5_normal": {
+      "valor": 1180.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, com o piso da franquia; ALT3; frota PR09 do slide 14; é também o PR13 máximo que a receita paga)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_slide12_min_normal": {
+      "valor": 4900.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota da leitura do slide 12)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_slide12_max_normal": {
+      "valor": 1950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota da leitura do slide 12)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_frota_nec_banda_normal": {
+      "valor": 4900.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota pela banda de dias de ANA-009, variante otimista: a média de dias alisa o pico)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_frota_nec_banda_normal": {
+      "valor": 117600.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável com a frota pela banda de dias, variante otimista)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_frota_por_tipo_normal": {
+      "valor": 1950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota por tipo de ANA-009, robôs não fungíveis; faixa da grade por tipo)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 966.6666666666667,
+        "superior": 1950.0,
+        "nivel": null,
+        "nota": "frota por tipo do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "margem_robo_alt3_frota_nec_normal": {
+      "valor": 1950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota necessária dia a dia de ANA-009 (regime pós-colmeia, base da oferta), leitura desfavorável; faixa da grade de ANA-009, que inclui a banda)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1950.0,
+        "superior": 4900.0,
+        "nivel": null,
+        "nota": "frota necessária do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "receita_por_robo_alt3_frota_nec_normal": {
+      "valor": 2950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, com o piso da franquia; ALT3; frota necessária de ANA-009)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_frota_nec_normal": {
+      "valor": 46800.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável com a frota necessária)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 46800.0,
+        "superior": 117600.0,
+        "nivel": null,
+        "nota": "mínimo e máximo da grade de cenários"
+      }
+    },
+    "margem_robo_alt2_slide14_pap_normal": {
+      "valor": 966.6666666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_alt2_slide14_pap_normal": {
+      "valor": 1966.6666666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, com o piso da franquia; ALT2; frota do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt2_slide12_min_normal": {
+      "valor": 4900.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt2_slide12_max_normal": {
+      "valor": 1950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt2_frota_nec_normal": {
+      "valor": 1950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2; frota necessária de ANA-009)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1950.0,
+        "superior": 4900.0,
+        "nivel": null,
+        "nota": "frota necessária do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "margem_robo_alt3_pr09_4_sem_piso_normal": {
+      "valor": -432.93092105263156,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_pr09_4_sem_piso_normal": {
+      "valor": 0.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; zero quando a margem não é positiva)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_alt3_pr09_4_sem_piso_normal": {
+      "valor": 567.0690789473684,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, só a receita por transação; ALT3; frota PR09 do slide 14; é também o PR13 máximo que a receita paga)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_pr09_5_sem_piso_normal": {
+      "valor": -546.3447368421052,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_pr09_5_sem_piso_normal": {
+      "valor": 0.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; zero quando a margem não é positiva)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_alt3_pr09_5_sem_piso_normal": {
+      "valor": 453.65526315789475,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, só a receita por transação; ALT3; frota PR09 do slide 14; é também o PR13 máximo que a receita paga)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_slide12_min_sem_piso_normal": {
+      "valor": 1268.2763157894738,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota da leitura do slide 12)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_slide12_max_sem_piso_normal": {
+      "valor": 134.13815789473688,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota da leitura do slide 12)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_frota_nec_banda_sem_piso_normal": {
+      "valor": 1268.2763157894738,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota pela banda de dias de ANA-009, variante otimista: a média de dias alisa o pico)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_frota_nec_banda_sem_piso_normal": {
+      "valor": 30438.63157894737,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável com a frota pela banda de dias, variante otimista)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_frota_por_tipo_sem_piso_normal": {
+      "valor": 134.13815789473688,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota por tipo de ANA-009, robôs não fungíveis; faixa da grade por tipo)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -243.90789473684208,
+        "superior": 134.13815789473688,
+        "nivel": null,
+        "nota": "frota por tipo do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "margem_robo_alt3_frota_nec_sem_piso_normal": {
+      "valor": 134.13815789473688,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota necessária dia a dia de ANA-009 (regime pós-colmeia, base da oferta), leitura desfavorável; faixa da grade de ANA-009, que inclui a banda)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 134.13815789473688,
+        "superior": 1268.2763157894738,
+        "nivel": null,
+        "nota": "frota necessária do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "receita_por_robo_alt3_frota_nec_sem_piso_normal": {
+      "valor": 1134.1381578947369,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, só a receita por transação; ALT3; frota necessária de ANA-009)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hardware_max_alt3_frota_nec_sem_piso_normal": {
+      "valor": 3219.315789473685,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável com a frota necessária)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3219.315789473685,
+        "superior": 30438.63157894737,
+        "nivel": null,
+        "nota": "mínimo e máximo da grade de cenários"
+      }
+    },
+    "margem_robo_alt2_slide14_pap_sem_piso_normal": {
+      "valor": -867.0921052631579,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_alt2_slide14_pap_sem_piso_normal": {
+      "valor": 132.9078947368421,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô, só a receita por transação; ALT2; frota do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt2_slide12_min_sem_piso_normal": {
+      "valor": -601.2763157894738,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt2_slide12_max_sem_piso_normal": {
+      "valor": -800.6381578947369,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt2_frota_nec_sem_piso_normal": {
+      "valor": -800.6381578947369,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2; frota necessária de ANA-009)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -800.6381578947369,
+        "superior": -601.2763157894738,
+        "nivel": null,
+        "nota": "frota necessária do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "margem_robo_alt3_pr09_normal": {
+      "valor": 180.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14, ponta desfavorável; faixa até a ponta favorável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 180.0,
+        "superior": 475.0,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    },
+    "hardware_max_alt3_normal": {
+      "valor": 4320.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; ALT3; frota PR09 do slide 14, ponta desfavorável; zero quando a margem não é positiva)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4320.0,
+        "superior": 11400.0,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    },
+    "margem_robo_alt3_pr09_sem_piso_normal": {
+      "valor": -546.3447368421052,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14, ponta desfavorável; faixa até a ponta favorável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -546.3447368421052,
+        "superior": -432.93092105263156,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    },
+    "hardware_max_alt3_sem_piso_normal": {
+      "valor": 0.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; ALT3; frota PR09 do slide 14, ponta desfavorável; zero quando a margem não é positiva)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    },
+    "margem_robo_alt2_normal": {
+      "valor": 966.6666666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2; frota do slide 14, 3 robôs de pedido-a-pedido; faixa até a frota necessária)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 966.6666666666667,
+        "superior": 1950.0,
+        "nivel": null,
+        "nota": "frota do slide 14 e frota necessária de ANA-009"
+      }
+    },
+    "margem_robo_alt2_sem_piso_normal": {
+      "valor": -867.0921052631579,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem sem o piso da franquia; ALT2; frota do slide 14)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -867.0921052631579,
+        "superior": -800.6381578947369,
+        "nivel": null,
+        "nota": "frota do slide 14 e frota necessária de ANA-009"
+      }
+    },
+    "h_p16_alt3_sem_piso_paga_pr13_nas_duas_pontas_normal": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p16_margem_com_frota_necessaria_maior_normal": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p16_alt3_com_piso_paga_pr13_nas_duas_pontas_normal": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_mes_alt3_taxa_corrente_normal": {
+      "valor": 2268.2763157894738,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (receita por transação da ALT3 na taxa corrente, de ANA-002)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_mes_alt2_taxa_corrente_normal": {
+      "valor": 398.7236842105263,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (receita por transação da ALT2 na taxa corrente, de ANA-002)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_alt3_abaixo_da_franquia_normal": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_equilibrio_sem_piso_alt3_normal": {
+      "valor": 2.268276315789474,
+      "unidade": "robôs",
+      "descricao": "robôs (frota em que a receita por transação dividida pela frota iguala PR13)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_maxima_sem_piso_alt3_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (maior frota inteira com margem não negativa só com a receita por transação)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_sem_piso_ic_dias_pr09_4_normal": {
+      "valor": -432.7108942434211,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem sem o piso, média das réplicas; IC de percentis do bootstrap de dias de ANA-002)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -495.79310855263157,
+        "superior": -353.9039144736842,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (réplicas de ANA-002)"
+      }
+    },
+    "fracao_replicas_margem_sem_piso_nao_negativa_pr09_4_normal": {
+      "valor": 0.0,
+      "unidade": "%",
+      "descricao": "fração (das 4.000 réplicas de dias com margem sem o piso maior ou igual a zero)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_sem_piso_ic_dias_pr09_5_normal": {
+      "valor": -546.1687153947369,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem sem o piso, média das réplicas; IC de percentis do bootstrap de dias de ANA-002)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -596.6344868421053,
+        "superior": -483.1231315789474,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (réplicas de ANA-002)"
+      }
+    },
+    "fracao_replicas_margem_sem_piso_nao_negativa_pr09_5_normal": {
+      "valor": 0.0,
+      "unidade": "%",
+      "descricao": "fração (das 4.000 réplicas de dias com margem sem o piso maior ou igual a zero)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_replicas_margem_sem_piso_nao_negativa_frota_nec_banda_normal": {
+      "valor": 1.0,
+      "unidade": "%",
+      "descricao": "fração (das 4.000 réplicas de dias com margem sem o piso maior ou igual a zero. frota pela banda de dias. variante otimista)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_replicas_margem_sem_piso_nao_negativa_frota_nec_normal": {
+      "valor": 0.98175,
+      "unidade": "%",
+      "descricao": "fração (das 4.000 réplicas de dias com margem sem o piso maior ou igual a zero. frota necessária)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_sem_piso_envelope_normal": {
+      "valor": -546.3447368421052,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem sem o piso, ponta desfavorável de PR09; faixa entre as variantes do envelope de ANA-002)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -572.2766666666666,
+        "superior": -499.91999999999996,
+        "nivel": null,
+        "nota": "variantes do envelope de ANA-002 (janelas e conferências), uma de cada vez"
+      }
+    },
+    "margem_robo_adicional_alt6": {
+      "valor": 596.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem do robô adicional do depositante compatível, sem franquia adicional, pela frota agrupada dia a dia; de ANA-010)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 225.38529166666646,
+        "superior": 1325.9720312499996,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "hardware_max_adicional_alt6": {
+      "valor": 14292.8,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável do robô adicional, pela frota agrupada dia a dia; de ANA-010)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 5399.867,
+        "superior": 31818.81375,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_alt6_banda": {
+      "valor": 1660.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem do robô adicional pela frota agrupada pela banda de dias: superestimada, porque o perfil médio alisa o pico; sensibilidade; de ANA-010)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 744.3522395833337,
+        "superior": 2451.3976388888896,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_alt6_relevantes": {
+      "valor": 995.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem do robô adicional só com os depositantes relevantes na frota e toda a receita: otimista; sensibilidade; de ANA-010)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 498.2147395833332,
+        "superior": 1630.947083333333,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "robos_adicionais_alt6": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota agrupada dia a dia dos outros depositantes compatíveis; de ANA-010)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 4.0,
+        "superior": 6.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "receita_adicional_alt6": {
+      "valor": 7980.0,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (receita adicional dos outros depositantes compatíveis; de ANA-010)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt6_total": {
+      "valor": 966.7433333333333,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem do escopo da ALT3 mais os outros depositantes sobre a frota necessária da ALT6 de ANA-009; com o piso da franquia)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 404.81666666666683,
+        "superior": 1458.4291666666668,
+        "nivel": null,
+        "nota": "frota da ALT6 do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "hardware_max_alt6_total": {
+      "valor": 23201.84,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável da ALT6 total)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 9715.600000000004,
+        "superior": 35002.3,
+        "nivel": null,
+        "nota": "mínimo e máximo da grade de cenários"
+      }
+    },
+    "frota_necessaria_alt6": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota necessária da ALT6, de ANA-009)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_adicional_alt6_normal": {
+      "valor": 553.723684210526,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem do robô adicional do depositante compatível, sem franquia adicional, pela frota agrupada dia a dia; de ANA-010)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 253.85105263157914,
+        "superior": 1184.6044407894742,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "hardware_max_adicional_alt6_normal": {
+      "valor": 13260.189473684208,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável do robô adicional, pela frota agrupada dia a dia; de ANA-010)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6081.693157894738,
+        "superior": 28391.76986842105,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_alt6_banda_normal": {
+      "valor": 1589.53947368421,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem do robô adicional pela frota agrupada pela banda de dias: superestimada, porque o perfil médio alisa o pico; sensibilidade; de ANA-010)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 747.4842598684212,
+        "superior": 2267.39782894737,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_alt6_relevantes_normal": {
+      "valor": 942.1546052631575,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem do robô adicional só com os depositantes relevantes na frota e toda a receita: otimista; sensibilidade; de ANA-010)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 509.82850328947353,
+        "superior": 1536.3855263157898,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "robos_adicionais_alt6_normal": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota agrupada dia a dia dos outros depositantes compatíveis; de ANA-010)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 4.0,
+        "superior": 6.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "receita_adicional_alt6_normal": {
+      "valor": 7768.61842105263,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (receita adicional dos outros depositantes compatíveis; de ANA-010)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt6_total_normal": {
+      "valor": 1007.3789473684205,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem do escopo da ALT3 mais os outros depositantes sobre a frota necessária da ALT6 de ANA-009; com o piso da franquia)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1007.3789473684205,
+        "superior": 2345.631578947368,
+        "nivel": null,
+        "nota": "frota da ALT6 do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "hardware_max_alt6_total_normal": {
+      "valor": 24177.094736842093,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável da ALT6 total)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 24177.094736842093,
+        "superior": 56295.157894736825,
+        "nivel": null,
+        "nota": "mínimo e máximo da grade de cenários"
+      }
+    },
+    "frota_necessaria_alt6_normal": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota necessária da ALT6, de ANA-009)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fte_separacao_alt3": {
+      "valor": 0.21380299125865293,
+      "unidade": "FTE",
+      "descricao": "FTE (separação do escopo pelas horas ativas do WMS, M13; teto conservador do G2; faixa dos quatro tetos e S1 a S3)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21380299125865293,
+        "superior": 0.5052970205312178,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "fte_atual_alt3": {
+      "valor": 2.2138029912586528,
+      "unidade": "FTE",
+      "descricao": "FTE (FTE atual da alternativa: separação do WMS mais os postos de conferência PR11; teto conservador do G2)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.2138029912586528,
+        "superior": 2.5052970205312177,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "custo_atual_mes_alt3": {
+      "valor": 11069.014956293264,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo: (FTE de separação + PR11) × PR10 ÷ 12; teto conservador do G2)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 11069.014956293264,
+        "superior": 12526.485102656088,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "custo_atual_mes_alt3_t300": {
+      "valor": 11069.014956293264,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_alt3_t600": {
+      "valor": 11300.243797685816,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_alt3_t900": {
+      "valor": 11442.322267697438,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_alt3_t1800": {
+      "valor": 11820.07183399862,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fte_separacao_alt2": {
+      "valor": 0.1442680174490088,
+      "unidade": "FTE",
+      "descricao": "FTE (separação do escopo pelas horas ativas do WMS, M13; teto conservador do G2; faixa dos quatro tetos e S1 a S3)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1442680174490088,
+        "superior": 0.3481085678675492,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "fte_atual_alt2": {
+      "valor": 0.1442680174490088,
+      "unidade": "FTE",
+      "descricao": "FTE (FTE atual da alternativa: separação do WMS; teto conservador do G2)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1442680174490088,
+        "superior": 0.3481085678675492,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "custo_atual_mes_alt2": {
+      "valor": 721.3400872450441,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo: (FTE de separação) × PR10 ÷ 12; teto conservador do G2)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 721.3400872450441,
+        "superior": 1740.5428393377458,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "custo_atual_mes_alt2_t300": {
+      "valor": 721.3400872450441,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_alt2_t600": {
+      "valor": 867.2818452832096,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_alt2_t900": {
+      "valor": 984.9594933724081,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_alt2_t1800": {
+      "valor": 1225.883398177623,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_deck_slide15": {
+      "valor": 19307.0,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no deck, slide 15; referência)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_custo_atual_alt3_sobre_deck": {
+      "valor": 0.5733161524987447,
+      "unidade": "x",
+      "descricao": "x (razão: custo atual da ALT3 pelo WMS e PR11 dividido pelo custo atual do slide 15)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_custo_atual_alt3_vinda_de_pr11": {
+      "valor": 0.9034227561789067,
+      "unidade": "%",
+      "descricao": "fração (do custo atual da ALT3 que vem dos postos de conferência de PR11, premissa e não medida do WMS)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fte_separacao_alt3_normal": {
+      "valor": 0.30194147259918774,
+      "unidade": "FTE",
+      "descricao": "FTE (separação do escopo pelas horas ativas do WMS, M13; teto conservador do G2; faixa dos quatro tetos e S1 a S3)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.30194147259918774,
+        "superior": 0.6691319020607454,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "fte_atual_alt3_normal": {
+      "valor": 2.3019414725991876,
+      "unidade": "FTE",
+      "descricao": "FTE (FTE atual da alternativa: separação do WMS mais os postos de conferência PR11; teto conservador do G2)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.3019414725991876,
+        "superior": 2.6691319020607454,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "custo_atual_mes_alt3_normal": {
+      "valor": 11509.707362995938,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo: (FTE de separação + PR11) × PR10 ÷ 12; teto conservador do G2)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 11509.707362995938,
+        "superior": 13345.659510303727,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "custo_atual_mes_alt3_t300_normal": {
+      "valor": 11509.707362995938,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_alt3_t600_normal": {
+      "valor": 11844.578476660046,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_alt3_t900_normal": {
+      "valor": 12033.081225118276,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_alt3_t1800_normal": {
+      "valor": 12490.40632504408,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fte_separacao_alt2_normal": {
+      "valor": 0.21934810878948166,
+      "unidade": "FTE",
+      "descricao": "FTE (separação do escopo pelas horas ativas do WMS, M13; teto conservador do G2; faixa dos quatro tetos e S1 a S3)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21934810878948166,
+        "superior": 0.4769971199029863,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "fte_atual_alt2_normal": {
+      "valor": 0.21934810878948166,
+      "unidade": "FTE",
+      "descricao": "FTE (FTE atual da alternativa: separação do WMS; teto conservador do G2)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.21934810878948166,
+        "superior": 0.4769971199029863,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "custo_atual_mes_alt2_normal": {
+      "valor": 1096.7405439474082,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo: (FTE de separação) × PR10 ÷ 12; teto conservador do G2)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1096.7405439474082,
+        "superior": 2384.9855995149314,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "custo_atual_mes_alt2_t300_normal": {
+      "valor": 1096.7405439474082,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_alt2_t600_normal": {
+      "valor": 1331.8952793534538,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_alt2_t900_normal": {
+      "valor": 1475.9599658536972,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_atual_mes_alt2_t1800_normal": {
+      "valor": 1774.221536104928,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo no teto de intervalo indicado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_custo_atual_alt3_sobre_deck_normal": {
+      "valor": 0.596141677267102,
+      "unidade": "x",
+      "descricao": "x (razão: custo atual da ALT3 pelo WMS e PR11 dividido pelo custo atual do slide 15)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_custo_atual_alt3_vinda_de_pr11_normal": {
+      "valor": 0.8688318203597692,
+      "unidade": "%",
+      "descricao": "fração (do custo atual da ALT3 que vem dos postos de conferência de PR11, premissa e não medida do WMS)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pr13_custo_servir_robo_mes": {
+      "valor": 1000.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (PR13: custo de servir o robô, sem hardware; confiança média, informado por Marcus)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "postos_conferencia_pr11": {
+      "valor": 2.0,
+      "unidade": "postos",
+      "descricao": "postos (PR11: conferência do checkout, premissa confirmada por Marcus; o WMS pode não registrar)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "custo_por_fte_mes": {
+      "valor": 5000.0,
+      "unidade": "R$ por mês por FTE",
+      "descricao": "R$ por mês por FTE (PR10 ÷ 12)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "margem_robo_alt3_pr09_estresse": {
+      "valor": 180.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14, ponta desfavorável; faixa até a ponta favorável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 180.0,
+        "superior": 475.0,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    },
+    "margem_robo_alt3_sem_piso_estresse": {
+      "valor": -629.2566666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14, ponta desfavorável; faixa até a ponta favorável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -629.2566666666667,
+        "superior": -536.5708333333333,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    },
+    "margem_robo_alt3_frota_nec_estresse": {
+      "valor": 1950.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota necessária dia a dia de ANA-009 (período inteiro), leitura desfavorável; faixa da grade de ANA-009, que inclui a banda)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 966.6666666666667,
+        "superior": 4900.0,
+        "nivel": null,
+        "nota": "frota necessária do mínimo ao máximo da grade de ANA-009"
+      }
+    },
+    "margem_robo_alt2_estresse": {
+      "valor": 966.6666666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT2; frota do slide 14, 3 robôs de pedido-a-pedido; faixa até a frota necessária)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 966.6666666666667,
+        "superior": 1950.0,
+        "nivel": null,
+        "nota": "frota do slide 14 e frota necessária de ANA-009"
+      }
+    },
+    "margem_robo_adicional_alt6_estresse": {
+      "valor": 596.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem do robô adicional do depositante compatível, sem franquia adicional, pela frota agrupada dia a dia; de ANA-010)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 225.38529166666646,
+        "superior": 1325.9720312499996,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "hardware_max_alt3_estresse": {
+      "valor": 4320.0,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (hardware máximo pagável no prazo do contrato; ALT3; frota PR09 do slide 14, ponta desfavorável; zero quando a margem não é positiva)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4320.0,
+        "superior": 11400.0,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    },
+    "custo_atual_mes_alt3_estresse": {
+      "valor": 11069.014956293264,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo: (FTE de separação + PR11) × PR10 ÷ 12; teto conservador do G2)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 11069.014956293264,
+        "superior": 12526.485102656088,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "custo_atual_mes_alt2_estresse": {
+      "valor": 721.3400872450441,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo atual de mão de obra no escopo: (FTE de separação) × PR10 ÷ 12; teto conservador do G2)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 721.3400872450441,
+        "superior": 1740.5428393377458,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "fte_atual_alt3_estresse": {
+      "valor": 2.2138029912586528,
+      "unidade": "FTE",
+      "descricao": "FTE (FTE atual da alternativa: separação do WMS mais os postos de conferência PR11; teto conservador do G2)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.2138029912586528,
+        "superior": 2.5052970205312177,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "fte_atual_alt2_estresse": {
+      "valor": 0.1442680174490088,
+      "unidade": "FTE",
+      "descricao": "FTE (FTE atual da alternativa: separação do WMS; teto conservador do G2)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.1442680174490088,
+        "superior": 0.3481085678675492,
+        "nivel": null,
+        "nota": "quatro tetos e S1 a S3 de ANA-003"
+      }
+    },
+    "margem_robo_alt3_sem_piso": {
+      "valor": -629.2566666666667,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14, ponta desfavorável; faixa até a ponta favorável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -629.2566666666667,
+        "superior": -536.5708333333333,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    },
+    "margem_robo_alt3_sem_piso_normal": {
+      "valor": -546.3447368421052,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (margem de contribuição sem hardware; ALT3; frota PR09 do slide 14, ponta desfavorável; faixa até a ponta favorável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": -546.3447368421052,
+        "superior": -432.93092105263156,
+        "nivel": null,
+        "nota": "as duas pontas de PR09 do slide 14"
+      }
+    }
+  },
+  "tabelas": {
+    "grade_margem_por_robo": "grade_margem_por_robo.csv",
+    "replicas_margem": "replicas_margem.csv",
+    "replicas_margem_normal": "replicas_margem_normal.csv",
+    "custo_atual_e_fte": "custo_atual_e_fte.csv"
+  },
+  "figuras": [
+    "fig_custo_atual_por_alternativa.png",
+    "fig_margem_por_robo_alt3.png",
+    "fig_margem_sem_piso_replicas.png"
+  ],
+  "notas": "Grade determinística de insumos para o analista de impacto (sem simulação). M27: receita por robô = max(receita por transação, PR02) ÷ frota; margem = receita por robô − PR13; hardware máximo = margem × PR14 quando positiva (PR20 não existe: [●]). Com a franquia (piso) a receita por robô é PR02 ÷ frota, porque a receita por transação da ALT3 fica abaixo da franquia em todas as variantes de ANA-002; sem o piso, a receita por transação sozinha não paga PR13 com a frota do slide 14. Frota proposta: PR09 do slide 14 (4 e 5 robôs na ALT3; 3 de pedido-a-pedido na ALT2), leitura do slide 12 (1 e 2) e a frota necessária de ANA-009 (valor primário e faixa da grade). A chave principal de margem lê a ponta desfavorável (5 robôs); as pontas estão em chaves _pr09_<n>. Receita: a taxa corrente de ANA-002 (variante do plano e operação normal); variantes do envelope e réplicas do bootstrap de dias passadas como tabela (grade_margem_por_robo e replicas_margem), sem combinar extremos de vários IC. A margem do robô adicional do depositante compatível (CR5) é a de ANA-010, sem franquia adicional; a ALT6 total soma a receita do escopo à adicional e divide pela frota necessária da ALT6 de ANA-009. P18 e M28 (dados): custo atual = (FTE de separação de ANA-003 + PR11 nas alternativas com checkout) × PR10 ÷ 12, no teto conservador do G2 com a faixa dos quatro tetos e S1 a S3; o método do deck para o FTE é desconhecido (ANA-011), então o custo atual do WMS é bem menor que o do slide 15. FTE residual, FTE liberado, vagas inteiras e economia trimestral ficam no modelo de impacto (PR05, PR06). Convenção: sem sufixo = variante do plano (com a semana do incidente); _normal = operação normal; _estresse = a variante do plano. Dependências fora do hash do script: analises/comum.py e as saídas de ANA-002, ANA-003, ANA-009 e ANA-010.",
+  "em": "2026-10-03T21:22:31",
+  "segundos": 1.29
+}

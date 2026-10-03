@@ -1,0 +1,81 @@
+{
+  "id": "INS-026",
+  "estado": "validado",
+  "afirmacao": "O dia de pico (p90) do armazém reproduz o slide 12: {{v.p90_arm}}; razão ao valor do deck: {{v.razao}} (verificação, não evidência nova). Na Royal Canin o pico do pedido-a-pedido depende do regime da colmeia: o p90 do período inteiro ({{v.p90_pap}}) vem todo de dias anteriores à entrada da colmeia, que mudou o mix. No regime pós-colmeia, base da oferta (sem a semana de incidente), o p90 é {{v.p90_pap_pc}}, e na janela normal de ANA-002 é {{v.p90_pap_n}}. O pico do perfil do dia p90 cai de {{v.pico_plano}} para {{v.pico_pc}}. No checkout não há quebra relevante: o p90 é {{v.p90_chk}} no período inteiro e {{v.p90_chk_pc}} no regime pós-colmeia. O máximo diário vem logo depois de dias sem registro: é fila acumulada, não dia típico. As duas leituras (período inteiro, com o regime pré-colmeia incluído, e pós-colmeia) vão ao memorando; Marcus confirma a base no G3.",
+  "pergunta_ref": "P11",
+  "criterio_ref": "CR4",
+  "valores": {
+    "p90_arm": "ANA-008.p90_linhas_dia_armazem",
+    "razao": "ANA-008.razao_p90_armazem_ao_slide12",
+    "p90_pap": "ANA-008.p90_linhas_dia_pap_rc",
+    "p90_pap_pc": "ANA-008.p90_linhas_dia_pap_rc_pos_colmeia",
+    "p90_pap_n": "ANA-008.p90_linhas_dia_pap_rc_normal",
+    "pico_plano": "ANA-008.demanda_pico_linhas_pap_rc_p90",
+    "pico_pc": "ANA-008.demanda_pico_linhas_pap_rc_p90_pos_colmeia",
+    "p90_chk": "ANA-008.p90_pedidos_checkout_rc_dia",
+    "p90_chk_pc": "ANA-008.p90_pedidos_checkout_rc_dia_pos_colmeia",
+    "p90_arm_sem_pp": "ANA-008.p90_linhas_dia_armazem_sem_pos_pausa"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "com e sem dias pós-pausa (armazém)",
+      "analise": "ANA-008",
+      "resultado": "passa",
+      "nota": "o p90 do armazém cai um pouco sem os dias pós-pausa e o IC continua cobrindo o valor do deck (chave p90_linhas_dia_armazem_sem_pos_pausa)"
+    },
+    {
+      "recorte": "regime pré-colmeia incluído contra pós-colmeia (pedido-a-pedido da Royal Canin)",
+      "analise": "ANA-008",
+      "resultado": "falha",
+      "nota": "o p90 do período inteiro é mais que o dobro do pós-colmeia: a leitura do plano não serve de referência de frota, vale a pós-colmeia (decisão do regime da colmeia)"
+    },
+    {
+      "recorte": "pós-colmeia contra janela normal de ANA-002",
+      "analise": "ANA-008",
+      "resultado": "passa",
+      "nota": "as duas leituras pós-colmeia dão p90 do mesmo tamanho (chaves p90_linhas_dia_pap_rc_pos_colmeia e _normal); os ICs são largos, com poucos dias"
+    },
+    {
+      "recorte": "checkout: período inteiro contra pós-colmeia",
+      "analise": "ANA-008",
+      "resultado": "passa",
+      "nota": "sem quebra relevante no checkout (chaves p90_pedidos_checkout_rc_dia e _pos_colmeia)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Rodada dois. Correção atendida: o p90 pós-colmeia é a base, o do período inteiro vai rotulado, o checkout não quebra e a homonímia de 'operação normal' foi resolvida. Ressalva nova: a ação usa o perfil da banda pós-colmeia como referência de frota, mas a banda alisa o pico horário (o motivo pelo qual foi abandonada na frota agrupada). Na Royal Canin pós-colmeia a banda dá um robô e a frota dia a dia dá dois (ANA-009 já reporta as duas). CR4 deve ser lido com a frota dia a dia como ponta desfavorável, e o texto deve dizer isso. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Usar o p90 e o perfil pós-colmeia da Royal Canin como referência de frota (CR4) e o do período inteiro como variante do plano; o máximo só como limite superior.",
+  "dono": "estatistico (ANA-008); cientista de dados (ANA-009)",
+  "premissas": [
+    "p90 por interpolação linear nos dias plenos (M18); a série não cobre alta temporada",
+    "base da oferta para o pico da Royal Canin: regime pós-colmeia, sem a semana do incidente (revisoes/orquestrador_decisao_regime_colmeia.md, a confirmar por Marcus no G3); período inteiro = variante do plano com o regime pré-colmeia incluído",
+    "a janela normal de ANA-002 (24/08 a 18/09) vem de revisoes/orquestrador_decisao_semana_incidente.md; 'sem o incidente' (período inteiro sem 21 a 25/09) tem chaves próprias _sem_incidente"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:25",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:22",
+      "por": "red-team-analitico"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "INS-040",
+  "estado": "validado",
+  "afirmacao": "No pedido-a-pedido manual, a Royal Canin roda menos coletas por hora em ciclo completo que os outros depositantes, mesmo com o mix de faixas de endereços igualado: diferença padronizada de {{v.dif}}, com a Royal Canin em {{v.rc}} e os outros em {{v.outros}} (descoberta, semanas ISO ímpares, teto base). No teto conservador a diferença é {{v.dif300}} e, com a semana de incidente da Royal Canin dentro, {{v.difinc}}. O sinal é o mesmo em todas as faixas de endereços e ao retirar qualquer operador. Achado exploratório e associativo: não separa produto, layout e processo, e só vira resultado depois da confirmação nas semanas pares (pista PT-D1 em ANA-016).",
+  "pergunta_ref": "P9",
+  "criterio_ref": "CR3",
+  "valores": {
+    "dif": "ANA-012.dif_m14_rc_outros_pad",
+    "rc": "ANA-012.m14_pap_rc_pad",
+    "outros": "ANA-012.m14_pap_outros_pad",
+    "dif300": "ANA-012.dif_m14_rc_outros_pad_t300",
+    "difinc": "ANA-012.dif_m14_rc_outros_pad_com_incidente"
+  },
+  "nivel": "associativo",
+  "exploratorio": true,
+  "robustez": [
+    {
+      "recorte": "teto conservador (ciclo no teto menor)",
+      "analise": "ANA-012",
+      "resultado": "passa",
+      "nota": "mesmo sinal e IC inteiro abaixo de zero (chave dif_m14_rc_outros_pad_t300)"
+    },
+    {
+      "recorte": "por faixa de endereços",
+      "analise": "ANA-012",
+      "resultado": "passa",
+      "nota": "sem inversão de sinal em nenhuma faixa (tabela robustez_rc_outros_por_faixa; chave consistencia_sinal_faixas_rc_outros)"
+    },
+    {
+      "recorte": "retirar um operador por vez",
+      "analise": "ANA-012",
+      "resultado": "passa",
+      "nota": "os extremos da retirada ficam do mesmo lado do zero (campos loo_min e loo_max de dif_m14_rc_outros_pad)"
+    },
+    {
+      "recorte": "semana de incidente dentro ou fora",
+      "analise": "ANA-012",
+      "resultado": "passa",
+      "nota": "mesmo sinal com a semana dentro (com_incidente) e com os dias inteiros fora (dia_incidente_fora)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "ANA-016",
+    "resultado": "confirma"
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Trilha da descoberta de PT-D1, confirmada em ANA-016 (INS-070); números da descoberta fora do memorando, ação atualizada. A confirmação de PT-D1 depende do critério de inversão por depositante fixado depois de ver os sinais (ver revisoes/red-team-analitico_parteB_r2.json)."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Pista PT-D1 já registrada no plano e confirmada em ANA-016 (INS-070): este insight fica como trilha da descoberta. A estimativa da descoberta (semanas ímpares) não vai ao memorando nem ao impacto; só a da confirmação em ANA-016. Até a replicação por depositante, a base de produtividade da Royal Canin não é estendida aos outros depositantes na oferta (CR5, ALT6).",
+  "dono": "estatistico (ANA-016); planejador-analitico (registro da pista)",
+  "premissas": [
+    "achado exploratório da descoberta (semanas ISO ímpares): estimativa sem ajuste para as muitas comparações olhadas; não vai ao memorando antes da confirmação em ANA-016",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador como robustez",
+    "incidente operacional da Royal Canin na semana ISO ímpar de fim de setembro tratado como recorte atípico e declarado (revisoes/orquestrador_decisao_semana_incidente.md)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:42",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:30",
+      "por": "red-team-analitico"
+    }
+  ]
+}

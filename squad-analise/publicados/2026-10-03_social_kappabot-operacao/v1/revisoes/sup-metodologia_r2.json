@@ -1,0 +1,132 @@
+{
+  "supervisor": "sup-metodologia",
+  "agentes_revisados": ["planejador-analitico"],
+  "rodada": 2,
+  "fase": "D2 (plano corrigido, ainda não carimbado; sem scripts nem resultados)",
+  "veredito": "aprovado_com_ressalvas",
+  "condicoes_para_o_carimbo": [
+    "Corrigir o alcance de definicoes.regra_leitura_limites.sem_poder (ponto alto 1).",
+    "Corrigir a direção da leitura de CR7 em ANA-007 e na linha de H-P17 em familias_holm.F1a (ponto alto 2).",
+    "As duas correções são textuais e estão especificadas abaixo. O orquestrador confere antes do carimbo; não há rodada 3."
+  ],
+  "rubrica": [
+    {
+      "agente": "planejador-analitico",
+      "criterio": "[crítico] Teste igual ao registrado; exploratórios marcados e confirmados",
+      "nota": 2,
+      "evidencia": "F1a e F1b trazem uma linha por teste, com recorte, métrica, variante, direção e unidade. ANA-016 confirma só nas semanas pares (24 a 38) e lê os limiares de limiares_descoberta sem recalcular. Um assert no SQL barra semana par nos scripts exploratórios. O memorando usa só a estimativa da confirmação. Três pistas a priori estão registradas em pistas e em F2. A troca da variante primária de CR3 quando H06 confirma foi registrada antes dos dados. Resta: as pistas de ANA-012 entram depois, com recarimbo, e PT-H04 tem pouca informação (ponto baixo)."
+    },
+    {
+      "agente": "planejador-analitico",
+      "criterio": "[crítico] Incerteza e nível coerentes com o método",
+      "nota": 1,
+      "evidencia": "Foram corrigidos: H13 dentro do operador e com efeitos fixos; DiD como estudo de evento; CR2 lido por envelope; ANA-006 por equivalência; ANA-001 com HAC; módulo comum de bootstrap; incerteza por chave. Problemas novos: (1) definicoes.regra_leitura_limites.sem_poder declara inconclusivo 'qualquer que seja o p', o que anula IC conclusivos. (2) A tendência prévia e o placebo de ANA-005 rodam com 7 semanas, abaixo do mínimo de 10 clusters do próprio plano, e servem de portão para H06. (3) PT-H10 não tem unidade válida pelas regras do plano. (4) O IP de ANA-014 usa os percentis 5 e 95 de cerca de 6 erros agregados."
+    },
+    {
+      "agente": "planejador-analitico",
+      "criterio": "Correção para múltiplos testes",
+      "nota": 2,
+      "evidencia": "F1a (critérios: H-P7, H-P17 e H-P14a), F1b (apoio: H06, H13a, H13b e H01) e F2 (pistas). Holm em cada família. Os papéis estão declarados: o IC sem ajuste classifica o critério; o p ajustado sustenta o insight; 'passam juntos' é teste de interseção. As verificações do deck, os envelopes e as checagens determinísticas ficam fora das famílias e usam linguagem descritiva. O MDE usa alfa ÷ número de testes da família."
+    },
+    {
+      "agente": "planejador-analitico",
+      "criterio": "Robustez por segmento e período",
+      "nota": 1,
+      "evidencia": "Há regra transversal de padronização por faixa de endereços e tipo de onda, com ctx.estat.robustez. ANA-008 tem recorte por metades. ANA-016 tem recortes por segmento e deixa um operador de fora por vez. Mas a regra de H11 para CR7 exige 'passa' só em S3 e no teto conservador. As duas variantes aumentam as coletas por hora, então a exigência não protege contra o viés declarado. Isso contradiz contrato M14.exclusoes, que manda ler CR7 na base, em S3 e em S2. H13a não usa a amplitude para separar folga de hora extra."
+    },
+    {
+      "agente": "planejador-analitico",
+      "criterio": "Modelos validados fora da amostra contra referência simples",
+      "nota": 2,
+      "evidencia": "ANA-014 tem origem móvel nas semanas 31 a 36, com o número de origens gravado. Os quatro candidatos estão fixados. A regra de vitória está escrita: menor MAE em todas as séries e na maioria das origens, e nenhuma troca com menos de 5 origens. O IP vai só até o mês 1, e os meses 2 e 3 viram faixa_cenarios. A marca especial cobre só feriados de calendário. A calibração do IP está no critério de incerteza."
+    }
+  ],
+  "verificacao_dos_pontos_r1": {
+    "altos": {
+      "1_vazamento_ANA-016": "resolvido (semanas pares, limiares fixos, assert, estimativa da confirmação, pistas a priori em F2)",
+      "2_H13": "resolvido em parte: composição e circularidade tratadas; resta separar folga de hora extra em H13a (ponto médio 3)",
+      "3_DiD_ANA-005": "resolvido em parte: o desenho existe, mas a tendência prévia e o placebo têm poder baixo e ficam abaixo do mínimo de clusters (ponto médio 1)",
+      "4_variante_primaria_e_familias": "resolvido",
+      "5_IC_de_CR2": "resolvido (envelope, fora do Holm, réplicas ao impacto)",
+      "6_ANA-014": "resolvido; resta a calibração do IP (ponto médio 4)",
+      "7_P13_e_PAR07": "resolvido (divisão por operador, painel balanceado, PAR07 em operadores); resta declarar o viés de sobrevivência (ponto baixo 2)"
+    },
+    "medios_e_baixos": "Os pontos 8 a 22 foram resolvidos como sugerido ou com alternativa equivalente. No ponto 14, o destino do inconclusivo de CR7 está certo, mas a regra de 'passa' de CR7 introduziu o erro de direção do ponto alto 2.",
+    "lacunas_r1": "Resolvidas: campo poder, padronização por mix, consequência de H05, H06, H11 e H13, M29 e S3, proxy de rotatividade (ANA-013), entradas de PR14 e de H06. A regra de poder introduziu o problema do ponto alto 1."
+  },
+  "checagens_executadas": [
+    "python -m motor.validar projetos/2026-10-03_social_kappabot-operacao/v1 --fase D2 → BLOQUEADO, só com 'nó plano: nao_carimbado' (esperado). Especialista e qualidade não bloqueiam mais.",
+    "Li revisoes/planejador-analitico_resposta_r1.md e nos/plano.json inteiro e conferi cada um dos 22 pontos e das 8 lacunas da r1.",
+    "Conferi o plano contra o contrato recarimbado. M14.exclusoes manda ler CR7 contra PR05 na base, em S3 e em S2; o plano exige só S3 e o teto conservador. M23 (absorção em horas pelo M14 manual) bate com ANA-009.",
+    "Calendário (sem ler dados): janela longa = semanas ISO 32 a 39, com 38 dias plenos; semanas pares = 8, com 39 dias; antes de PAR11 = 7 semanas (23 a 29); o placebo de 2026-06-29 cai na semana 27 e divide o período pré em 4 semanas antes e 3 depois.",
+    "Aritmética das premissas de nos/decisao.json: o efeito relevante de CR3 é PR05 ÷ 2 − PR06 = 2 linhas por hora. Com alfa ÷ 3 na F1a e poder de 80%, z soma 2,97. Para o MDE ficar abaixo do efeito relevante, o EP do bootstrap precisa ser menor que 0,67 linha por hora.",
+    "Busca de erro 1: a direção da regra de 'passa' de CR7 contra o viés declarado. Encontrado erro: S3 e 300 s são as variantes que mais favorecem o 'passa'.",
+    "Busca de erro 2: a interação da regra sem_poder com a classificação por IC. Encontrado: a regra anula IC conclusivos e torna CR3 (logo ALT3) provavelmente inalcançável antes dos dados.",
+    "Busca de erro 3: as regras de mínimo de clusters contra os testes com poucas semanas. Encontrado: a tendência prévia e o placebo de ANA-005 têm 7 semanas; PT-H10 tem 8 blocos e uma unidade 'operador' que não se aplica a uma contagem diária.",
+    "Busca de erro 4: vazamento na divisão por operador de P13. Os experientes, referência comum aos dois lados, são lidos nas duas paridades. Isso está declarado e não é vazamento de novatos.",
+    "Busca sem achado: a confirmação de ANA-016 não usa nenhuma semana ímpar; todo teste da F1a e da F1b tem uma variante única; os testes de critério da F1a rodam no teto conservador do G2, e o teste de CR3 acompanha a variante de H06 por regra prévia."
+  ],
+  "pontos": [
+    {
+      "severidade": "alta",
+      "local": "nos/plano.json: definicoes.regra_leitura_limites.sem_poder; definicoes.poder.efeito_relevante (CR3 = PR05 ÷ 2 − PR06)",
+      "problema": "A regra declara 'inconclusivo por desenho, qualquer que seja o p' sempre que o MDE passa do efeito relevante. Isso contradiz a classificação por IC: quando o IC inteiro fica de um lado do limite, a leitura vale no nível nominal, seja qual for o poder. O poder baixo exagera a magnitude de um efeito detectado (erro tipo M), mas não invalida o sinal. Em CR3, o efeito relevante é 2 linhas por hora. O MDE só fica abaixo disso com EP menor que 0,67 linha por hora, o que é improvável com até 39 operadores. CR3 sairia inconclusivo antes de qualquer dado, e ALT3, que exige CR3 passando, ficaria inalcançável. O mesmo vale para CR7, H06 e H13.",
+      "correcao_sugerida": "Aplicar 'inconclusivo por desenho' só quando o IC cruza o limite ou contém o nulo, isto é, na não rejeição, para proibir a leitura 'sem efeito'. Quando o IC inteiro está de um lado, manter a classificação e gravar o MDE como aviso de que a magnitude pode estar exagerada. Mostrar a Marcus no G2, junto da QP6, que o efeito relevante de CR3 é de 2 linhas por hora."
+    },
+    {
+      "severidade": "alta",
+      "local": "nos/plano.json: ANA-007 (metodo: 'Consequência registrada de H11'; variante_primaria); familias_holm.F1a (H-P17); nos/contrato.json M14.exclusoes",
+      "problema": "Para proteger contra o viés que favorece a exclusão (M05 conta a mesma visita várias vezes, o put wall fica fora do WMS, a cauda), a regra exige que o 'passa' de CR7 também passe em S3 e no teto conservador. Mas S3 é o limite superior de coletas por hora, e 300 s gera menos horas: as duas variantes são as que mais favorecem o 'passa'. Se a variante primária passa, elas passam automaticamente, e a regra não protege nada. A variante primária de H-P17 também está no 'teto conservador do G2', que é conservador para CR1, CR3 e CR8, mas é o mais favorável ao 'passa' em CR7. O contrato (M14.exclusoes) manda ler CR7 na base, em S3 e em S2.",
+      "correcao_sugerida": "H-P17 com variante primária no teto base de 900 s e cauda base. CR7 só 'passa' se o IC inteiro ficar em PR05 ou acima também em S2 e no teto de 1.800 s (mais horas, menos coletas por hora). S3 e 300 s ficam como limite favorável, só reportados. Atualizar a linha de H-P17 em F1a e o uso_nos_testes de cenarios_teto, com uma exceção para CR7."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: ANA-005 (metodo: tendência prévia e placebo em 2026-06-29); definicoes.poder.minimo_clusters; ANA-004 (troca para o período anterior a PAR11)",
+      "problema": "Os portões de H06 têm pouco poder e ficam abaixo do mínimo do próprio plano. A tendência prévia usa 7 pontos semanais. O placebo divide o período pré em 4 semanas e 3. Pela regra de menos de 10 clusters, esses IC são só descritivos. E 'o IC contém zero' passa quase sempre: ausência de evidência lida como tendências paralelas. Há também um efeito em cadeia não escrito: se H06 confirmar, CR3 passa ao período anterior a PAR11, com 7 semanas, e não está dito qual IC vale ali.",
+      "correcao_sugerida": "Trocar o portão: o DiD ajustado pela tendência prévia (descontando a extrapolação linear do pré) precisa continuar com IC acima de zero; ou a tendência prévia extrapolada ao pós precisa ficar abaixo do efeito relevante de H06. O placebo vira descritivo. Em ANA-004, declarar que no período anterior a PAR11 o IC primário é por operador se houver 20 ou mais, com o bloco de semana só como comparação."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: ANA-016 (variante_primaria, poder); pistas PT-H10",
+      "problema": "PT-H10 é uma regressão de contagem diária: os operadores ativos contra o volume do dia, em 39 dias pares. A variante manda usar bootstrap por operador, que não se aplica a uma contagem diária, e por bloco de semana, que dá 8 blocos, abaixo do mínimo de 10. Pelas regras do próprio plano, a pista fica inconclusiva por desenho sem que isso esteja escrito.",
+      "correcao_sugerida": "Unidade de PT-H10 = dia pleno, com erro HAC (Newey-West) nos 39 dias. O bloco de semana fica como comparação, declarado como exceção ao mínimo de clusters."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: ANA-003 (H13a, variante_primaria)",
+      "problema": "Mais jornada ativa do mesmo operador nos dias de pico também é compatível com hora extra, a alternativa de H10 ('equipe fixa que estica a jornada'), e não só com folga nos dias típicos. Sem medir a presença, a jornada ativa sozinha não separa as duas.",
+      "correcao_sugerida": "Acrescentar a amplitude dentro do operador (primeiro início ao último fim). A folga só é sustentada se a jornada ativa sobe e a amplitude fica estável; se a amplitude sobe junto, ler como hora extra."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: ANA-014 (metodo: 'quantil empírico dos erros, percentis 5 e 95')",
+      "problema": "A projeção é mensal, então o erro relevante é o agregado de quatro semanas: um valor por origem, cerca de 6, com horizontes sobrepostos. Os percentis 5 e 95 de 6 valores são na prática o mínimo e o máximo, e a cobertura real fica bem abaixo de 90%. Juntar erros diários ignora que o viés de nível persiste dentro de cada origem.",
+      "correcao_sugerida": "IP pelo erro agregado de quatro semanas, como faixa entre o mínimo e o máximo das origens, com a cobertura nominal declarada ((n − 1) ÷ (n + 1)) ou ampliada. Dizer no script qual dos dois."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/plano.json: ANA-008 (variante_primaria: 'primeira hora = a hora da primeira linha do dia')",
+      "problema": "Uma linha isolada cedo (supervisor, teste) desloca a primeira hora e derruba a participação dela no dia.",
+      "correcao_sugerida": "Primeira hora = a primeira hora do dia cujo volume alcança PAR06 do volume do dia."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/plano.json: definicoes.recorte_descoberta_confirmacao.excecao_P13",
+      "problema": "O painel balanceado (K = 4) condiciona à sobrevivência até K: a curva descreve quem ficou. A referência de experientes é comum aos dois lados.",
+      "correcao_sugerida": "Declarar as duas coisas no insight e gravar quantos novatos saíram antes de completar K."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/plano.json: ANA-016.pistas PT-H04",
+      "problema": "Num pedido de dois endereços, o intervalo até a próxima tarefa inclui a ida ao packing, e a duração da linha é um único intervalo N−1. A diferença sai positiva quase por construção: a pista confirma o esperado e traz pouca informação.",
+      "correcao_sugerida": "Testar a afirmação de H04 entre faixas (intervalo absoluto de 2 endereços contra 3 ou mais), ou manter PT-H04 e tratá-la no insight como verificação, não como evidência nova."
+    }
+  ],
+  "lacunas": [
+    "Principal: o plano manda calcular o MDE antes do efeito, mas no mesmo script e na mesma execução, então não há como auditar a ordem. Correção: rodar em duas etapas. A etapa 1 grava só n_* e mde_* (EP sob dados centrados ou permutados) em saidas/analises/<ANA>/; o orquestrador registra esses valores. Só depois a etapa 2 calcula os efeitos. O red team confere os horários em saidas/registro.json.",
+    "Antes da D3, no G2: QP5 (teto conservador, escolhido sem olhar CR3) e QP6 (efeito relevante e margens). Com a correção do ponto alto 1, a QP6 deve dizer que o efeito relevante de CR3 é de 2 linhas por hora.",
+    "As pistas de ANA-012 precisam de recarimbo do plano antes de ANA-016 rodar, como está em pendencias.",
+    "A revisão de estatistico, cientista-de-dados e analista-exploratorio fica para a D3, com os scripts."
+  ],
+  "em": "2026-10-03"
+}

@@ -1,0 +1,1316 @@
+{
+  "tabelas": [
+    {
+      "nome": "base_prod_90dias_produtividade",
+      "origem": "raw_prod_90dias_produtividade (importação de PROD_90DIAS.xlsx, aba PRODUTIVIDADE): planilha de produtividade do WMS Senior da Social S.A., com as tarefas de separação de todos os depositantes. Baixada do Google Drive Acta > Social ('PROD. 90DIAS.xlsx') em 2026-10-03. A tabela base_* é a raw_* com a coluna Usuário pseudonimizada (motor.privacidade).",
+      "versao": "Arquivo PROD. 90DIAS.xlsx, modificado (upload) no Drive em 2026-10-02, sha256 62c917fc1f76a5d02d670e1f423620279be9dd4497edde6f36dd22b38598ca94, importado em 2026-10-03. Versão do WMS Senior: [●]. Data de extração do WMS inferida em 2026-09-28 (manhã), pelo último carimbo da carga (PQ01).",
+      "data_extracao": "2026-09-28",
+      "granularidade": "uma linha por pedido dentro de uma tarefa de separação (Tarefa × Pedido), com início, fim, endereços e unidades próprios. Pedido-a-pedido: em quase todos os casos uma linha por tarefa; poucas tarefas têm duas ou mais linhas (o mesmo pedido confirmado em segmentos, às vezes por usuários diferentes). Checkout e colmeia: uma linha por pedido da tarefa. Em poucos casos o mesmo pedido da mesma tarefa aparece em mais de um segmento, com Início e Fim diferentes. Em M11 cada linha do pedido-a-pedido é um bloco próprio; a cadência só vale em blocos de linhas com o mesmo Fim.",
+      "chave": [
+        "Tarefa",
+        "Pedido",
+        "Data/Hora Início",
+        "Data/Hora Fim"
+      ],
+      "fuso_horario": "America/Sao_Paulo",
+      "colunas": [
+        {
+          "nome": "Id Onda",
+          "tipo": "BIGINT",
+          "unidade": "identificador",
+          "significado": "Identificador da onda (conjunto de pedidos que o WMS libera junto para separação). É a chave canônica da onda neste contrato: é o prefixo de Tarefa (Tarefa = Id Onda × 10.000 + sequência) e identifica as mesmas ondas que Onda, uma a uma. Constante dentro da tarefa.",
+          "pessoal": false
+        },
+        {
+          "nome": "Onda",
+          "tipo": "BIGINT",
+          "unidade": "identificador",
+          "significado": "Número da onda. Corresponde um a um a Id Onda (mesmo agrupamento), com valor numérico diferente (a diferença entre os dois varia devagar ao longo do tempo, o que sugere contadores distintos). Não define a onda neste contrato: fica como alias de Id Onda. A origem da numeração é [●] (sem dicionário do WMS).",
+          "pessoal": false
+        },
+        {
+          "nome": "Usuário",
+          "tipo": "VARCHAR",
+          "unidade": "texto",
+          "significado": "Login do usuário do WMS que confirmou a linha. Operadores humanos e uma conta de integração do robô (ver notas da tabela, P8). Dado pessoal: será pseudonimizado. Nenhum resultado sai por operador individual.",
+          "pessoal": true
+        },
+        {
+          "nome": "Tarefa",
+          "tipo": "BIGINT",
+          "unidade": "identificador",
+          "significado": "Tarefa de separação do WMS: Id Onda × 10.000 + sequência de quatro dígitos (0000, 0001, 0002). Quase toda onda tem uma só tarefa. Uma tarefa agrupa um pedido (pedido-a-pedido) ou vários (checkout, colmeia). Atenção: no deck e no relatório 9fleet v1, 'tarefa' designa cada linha desta tabela (um pedido dentro de uma tarefa), não esta coluna.",
+          "pessoal": false
+        },
+        {
+          "nome": "Região Origem",
+          "tipo": "VARCHAR",
+          "unidade": "texto",
+          "significado": "Região de estoque de onde a linha foi separada, no formato '<DEPOSITANTE> - <ÁREA>' (áreas vistas: PICKING, AVARIA, PALLET ALTO, PORTA PALET ALTO, VENCIDOS). Pode listar várias regiões separadas por vírgula e conter o token CANCELADO (linha cancelada). Define o depositante (M01).",
+          "pessoal": false
+        },
+        {
+          "nome": "Região Destino",
+          "tipo": "VARCHAR",
+          "unidade": "texto",
+          "significado": "Destino da separação: PACKING (geral), PACKING ESPIRITO SANTO (usado por um só depositante), PACKING ARMAZEM GERAL, COLMEIA <cor> e COLMEIAS NUMERADAS. Constante dentro da onda. Separa colmeia de packing (M02).",
+          "pessoal": false
+        },
+        {
+          "nome": "Pedido",
+          "tipo": "VARCHAR",
+          "unidade": "identificador",
+          "significado": "Número do pedido do depositante (o formato varia por depositante). O pedido é identificado por (depositante, Pedido): em poucos casos o mesmo número aparece em mais de um depositante (M04). Em geral um pedido ocupa uma linha. Poucos pedidos aparecem em mais de uma linha (segmentos da mesma tarefa, ou duas ondas).",
+          "pessoal": false
+        },
+        {
+          "nome": "Data",
+          "tipo": "TIMESTAMP",
+          "unidade": "data (hora 00:00)",
+          "significado": "Dia de conclusão da linha: é a data de Data/Hora Fim em todas as linhas. É o dia de referência do volume (M15, M20). Difere da data do Início nas tarefas que cruzam a meia-noite ou ficaram abertas por dias.",
+          "pessoal": false
+        },
+        {
+          "nome": "Mês/Ano",
+          "tipo": "TIMESTAMP",
+          "unidade": "mês (primeiro dia, hora 00:00)",
+          "significado": "Primeiro dia do mês de Data. O mês de referência do volume.",
+          "pessoal": false
+        },
+        {
+          "nome": "Data/Hora Início",
+          "tipo": "TIMESTAMP",
+          "unidade": "data e hora locais",
+          "significado": "Momento da primeira confirmação (primeiro bipe no coletor) do pedido na tarefa. Sem fuso gravado (horário local do armazém). Em linha de um único endereço é praticamente igual ao Fim. É a base do perfil horário (M16).",
+          "pessoal": false
+        },
+        {
+          "nome": "Data/Hora Fim",
+          "tipo": "TIMESTAMP",
+          "unidade": "data e hora locais",
+          "significado": "Momento da última confirmação da linha (finalização do pedido no coletor). Em checkout e colmeia, as linhas da mesma tarefa e do mesmo usuário repetem o mesmo Fim (finalização comum da tarefa no coletor): fim_em_bloco. O WMS não registra o deslocamento até o packing, a etiqueta nem a conferência.",
+          "pessoal": false
+        },
+        {
+          "nome": "Tempo em Segundos",
+          "tipo": "BIGINT",
+          "unidade": "segundos",
+          "significado": "Data/Hora Fim − Data/Hora Início da linha (diferença de até 1 s em algumas linhas). Mede o intervalo entre confirmações, não a duração de cada coleta (relatório 9fleet v1, p. 5). Linha de um único endereço costuma ter tempo próximo de zero (só o instante da confirmação): sem coleta mensurável. Há exceções com tempo alto (colmeia, tarefas abertas por dias). Em checkout e colmeia o Tempo da linha vai do primeiro bipe do pedido ao Fim comum da tarefa, então as linhas da tarefa se sobrepõem: não somar nem tirar a média de Tempo por linha nesses tipos; o tempo é da tarefa e do operador (M09, QD03). Com n endereços há n−1 intervalos mensuráveis (correção N−1, M08). Valores negativos e muito altos são anomalias (notas para a qualidade).",
+          "pessoal": false
+        },
+        {
+          "nome": "Tempo",
+          "tipo": "VARCHAR",
+          "unidade": "texto",
+          "significado": "Tempo em Segundos escrito por extenso no formato do WMS ('N minutos N segundos'; '-' quando zero). Redundante: não usar.",
+          "pessoal": false
+        },
+        {
+          "nome": "Qtde Endereços",
+          "tipo": "BIGINT",
+          "unidade": "endereços (posições de estoque)",
+          "significado": "Número de endereços (posições de estoque) visitados e confirmados na linha. Equivale ao número de coletas (pickings) e é a linha operacional (M05). Base da correção N−1. Não é dado pessoal: o perfil marcou 'PESSOAL?' por causa do nome da coluna ('endereço' aqui é posição de estoque).",
+          "pessoal": false
+        },
+        {
+          "nome": "Qtde Un",
+          "tipo": "BIGINT",
+          "unidade": "unidades",
+          "significado": "Unidades soltas separadas na linha (itens). Medida de unidades (M07).",
+          "pessoal": false
+        },
+        {
+          "nome": "Qtde CxP",
+          "tipo": "BIGINT",
+          "unidade": "caixas pequenas",
+          "significado": "Caixas pequenas separadas. Sem variação nesta carga (sempre zero): sem informação.",
+          "pessoal": false
+        },
+        {
+          "nome": "Qtde CxG",
+          "tipo": "BIGINT",
+          "unidade": "caixas grandes",
+          "significado": "Caixas grandes separadas. Positiva em pouquíssimas linhas.",
+          "pessoal": false
+        },
+        {
+          "nome": "Qtde Produtos",
+          "tipo": "BIGINT",
+          "unidade": "produtos distintos",
+          "significado": "Número de produtos (SKUs) distintos da linha. Adotada como a linha de produto do pedido, a linha tarifável (M06; definição de Marcus, Q06). Interpretação inferida do perfil (no checkout vale um por linha; coincide com Qtde Endereços na quase totalidade das linhas e difere nos dois sentidos nas demais): a confirmar com a Social, porque não há dicionário do WMS.",
+          "pessoal": false
+        },
+        {
+          "nome": "Qtde Embalagens",
+          "tipo": "BIGINT",
+          "unidade": "embalagens",
+          "significado": "Unidades soltas mais caixas (cada caixa conta uma embalagem). Igual a Qtde Un quando não há caixa.",
+          "pessoal": false
+        },
+        {
+          "nome": "Peças",
+          "tipo": "BIGINT",
+          "unidade": "peças",
+          "significado": "Total de peças físicas (unidades soltas mais o conteúdo das caixas). Igual a Qtde Un quando não há caixa.",
+          "pessoal": false
+        },
+        {
+          "nome": "Embalagens / Hora",
+          "tipo": "DOUBLE",
+          "unidade": "embalagens por hora",
+          "significado": "Taxa calculada pelo WMS: Qtde Embalagens × 3.600 ÷ tempo da linha. Para tempo zero o WMS usa um denominador fixo; fica negativa quando o tempo é −1 e explode quando o tempo é de 1 s. Não mede produtividade, porque o tempo é intervalo entre confirmações. Não usar: a produtividade vem de M08, M09 e M14.",
+          "pessoal": false
+        }
+      ],
+      "colunas_derivadas": [
+        {
+          "nome": "id_onda",
+          "regra": "alias de Id Onda (chave canônica da onda)"
+        },
+        {
+          "nome": "depositante",
+          "regra": "M01"
+        },
+        {
+          "nome": "area_origem",
+          "regra": "área (texto após ' - ') da Região Origem: PICKING, AVARIA, PALLET ALTO etc.; 'MISTA' se houver mais de uma área; sufixos como '(B2C)' e espaços duplos são normalizados antes. Além disso, uma lista de áreas por token, usada por linha_palete"
+        },
+        {
+          "nome": "pedido_id",
+          "regra": "M04: (depositante, Pedido); marca pedido_em_mais_de_um_depositante quando o mesmo número de Pedido aparece em mais de um depositante"
+        },
+        {
+          "nome": "fim_em_bloco",
+          "regra": "linha de checkout ou colmeia, de tarefa e usuário com 2 ou mais linhas, que repete o Fim de outra linha da mesma tarefa e usuário (qualidade, QD03)"
+        },
+        {
+          "nome": "tarefa_aberta_lote",
+          "regra": "Tempo em Segundos acima do máximo de F1 ou Início anterior ao primeiro dia da carga (qualidade, QD01): fora do tempo manual e do crédito de jornada; no volume físico"
+        },
+        {
+          "nome": "un_extremas",
+          "regra": "Qtde Un acima do limiar de revisão PAR13. Marca separada de linha_palete, só marcação: sem corte por valor"
+        },
+        {
+          "nome": "cancelado",
+          "regra": "verdadeiro se a Região Origem contém o token CANCELADO"
+        },
+        {
+          "nome": "pedidos_na_onda",
+          "regra": "count(distinct Pedido) por Id Onda, sobre todas as linhas da onda"
+        },
+        {
+          "nome": "tipo_onda",
+          "regra": "M02: colmeia | pedido_a_pedido | checkout | outro"
+        },
+        {
+          "nome": "executor",
+          "regra": "M03: 'robo' se o Usuário é a conta de integração do robô, 'manual' nos demais"
+        },
+        {
+          "nome": "dia_atividade, hora_inicio, dia_semana",
+          "regra": "date, hour e dia da semana de Data/Hora Início (perfil horário e jornada); Data e Mês/Ano continuam sendo o dia e o mês do volume"
+        },
+        {
+          "nome": "dia_pleno",
+          "regra": "M15: dia de segunda a sexta com registro, que não seja feriado ou ponte conhecidos (PAR10) nem o dia parcial da carga (PAR08)"
+        },
+        {
+          "nome": "dia_pos_pausa",
+          "regra": "M18: dia pleno logo depois de pelo menos um dia útil de segunda a sexta sem registro"
+        },
+        {
+          "nome": "linha_longa",
+          "regra": "M08: linha com duração (Tempo em Segundos) acima de PAR02 que passa no corte de PAR01 por coleta (pausa dentro da média)"
+        },
+        {
+          "nome": "linha_palete",
+          "regra": "M05: qualquer token de área da Região Origem igual a PALLET ALTO, PORTA PALET ALTO ou PORTA PALLET ALTO (grafias com uma e duas letras L, normalizadas), inclusive em linha de região mista, ou Qtde CxG maior que zero (palete ou caixa fechada: fora da produtividade e da demanda de robô)"
+        },
+        {
+          "nome": "checkout_multiunidade",
+          "regra": "M02: onda de checkout com alguma linha de Qtde Un maior que 1"
+        },
+        {
+          "nome": "pre_robo",
+          "regra": "Data anterior a PAR11 (período sem pedidos do robô)"
+        },
+        {
+          "nome": "bloco_fim",
+          "regra": "M11, passo 1: identificador do bloco (Usuário, Tarefa, fim_corrigido); linhas do bloco repetem o Fim"
+        },
+        {
+          "nome": "pedido_multi_endereco",
+          "regra": "verdadeiro se sum(Qtde Endereços) das linhas do pedido >= PAR03 (perfil compatível com o Kappabot no pedido-a-pedido, CR5; recorte do relatório 9fleet v1)"
+        },
+        {
+          "nome": "segmento_inicio, segmento_fim, segmento_valido",
+          "regra": "M11, passo 1: segmentos de atividade (cadência e cauda) de cada unidade (Usuário, Tarefa), com início, fim e validade pelo limite de PAR01; vivem em prep_prod_ciclos"
+        }
+      ],
+      "notas": [
+        "Período: Data de 2026-06-01 a 2026-09-28, quatro meses de calendário apesar do nome '90 dias'. O último dia da carga é parcial (PAR08): o último carimbo é do começo da manhã de 28/09, momento provável da extração. Setembro é mês parcial (faltam o resto de 28/09 e os dias 29 e 30). Não há dados de março a maio de 2026: as datas de início anteriores a junho vêm de tarefas abertas e fechadas muito depois (notas para a qualidade, NQ02).",
+        "Calendário (PAR10): dias úteis sem registro são 2026-06-04 (Corpus Christi), 2026-06-05 (ponte), 2026-09-07 (Independência), e dois sem explicação de calendário, 2026-06-08 e 2026-09-24 (parada, inventário ou lacuna de extração: PQ01). Com o fim de semana, junho tem cinco dias corridos sem registro. Dias pós-pausa: 2026-06-09, 2026-09-08 e 2026-09-25, este último o último dia pleno da carga. O maior volume diário da carga vem logo depois de dias sem registro: é fila acumulada que precisa ser separada de fato (M18). Feriados e pontes saem dos dias úteis de referência da mensalização (M15, M20).",
+        "Sábados: há registro em poucos sábados, de volume de recuperação. Ficam fora do dia pleno e das taxas (M15, M17, M18) e dentro dos totais mensais. Se a Social trabalha em escala de seis dias (PQ05), as horas de sábado existem e o dia de operação, a mensalização e o FTE semanal (M13) precisam incluí-los.",
+        "Terminologia: no deck e no relatório 9fleet v1, 'tarefa' é cada linha desta tabela (um pedido numa tarefa). A coluna Tarefa é a tarefa do WMS. Neste contrato: 'linha' = linha da tabela; 'tarefa' = coluna Tarefa; 'linha operacional' e 'linha tarifável' = M05 e M06.",
+        "Contagens de distintos do perfil (saidas/perfil.md) são aproximadas e não servem de cardeal: Id Onda, Onda, Tarefa e Pedido aparecem com valores diferentes dos exatos. Usar contagens exatas (count(distinct ...)) nas análises.",
+        "Onda: Id Onda e Onda identificam as mesmas ondas, uma a uma (consulta agregada sobre os pares distintos). Fixada Id Onda como chave da onda: é o prefixo de Tarefa (Tarefa = Id Onda × 10.000 + sequência) e o agrupamento por ela reproduz o slide 8 do deck.",
+        "Granularidade verificada por consultas agregadas: Tarefa não é única por linha; (Tarefa, Pedido) repete em poucos pares e é única em quase todas as linhas; (Tarefa, Pedido, Data/Hora Início, Data/Hora Fim) é única em todas as linhas. Dentro da tarefa variam por linha o Início, o Fim, o Tempo, os endereços, as unidades e os produtos; Região Destino e Id Onda são constantes; a Região Origem varia em poucas tarefas. Um pedido aparece em mais de uma tarefa em pouquíssimos casos.",
+        "Robô no WMS (P8, premissa de Q04): existe no WMS uma única conta cujo login contém 'acta' e 'robo' (nenhuma com 'kappa' ou 'fleet'), compatível com a conta de integração que devolve os pedidos do robô. Responde por uma pequena fração das linhas, todas da Royal Canin, com destino packing, a maioria em ondas de um pedido. O tempo dessas linhas é próximo de zero mesmo com vários endereços, porque a devolutiva automática confirma o pedido de uma vez: o WMS não mede o tempo do robô. A conta aparece antes da data de início da operação citada nos documentos (testes, a confirmar: PQ04). A devolutiva não automática do robô aparece sob logins humanos e não se distingue. Resultado de consulta exploratória, a registrar em análise do plano.",
+        "Identificação do robô na pseudonimização: em base_* o Usuário vira código (hash com chave local) e o nome não existe mais. A marcação da conta do robô (M03) é feita na D3 pela etapa etapas/00_conta_robo.py, que lê a correspondência código → original em dados/privado por SQL no DuckDB (caminho obtido por pragma database_list), cria prep_conta_robo só com o código e aborta se não houver exatamente uma conta. A regra completa está em M03 e em conta_robo de nos/qualidade.json. A conta de integração não é pessoa.",
+        "Conferência (P2): a planilha é de separação. Nenhuma coluna indica pré-conferência ou conferência; Região Destino só distingue packing e colmeias. O WMS (nesta tabela) não permite medir PR11: segue como sensibilidade.",
+        "Lado robô: a tabela não traz dados do robô além dos pedidos devolvidos pela conta de integração. O banco 9fleet fica para a v2 (Q04); o Pedido poderá servir de chave de cruzamento então (não testado).",
+        "Fuso: os horários são locais, sem fuso gravado. Assumido America/Sao_Paulo porque a atividade se concentra no horário comercial local. A confirmar com a Social (PQ01). Os horários são de processamento (hora da confirmação no coletor): a planilha não traz a hora de criação nem de liberação do pedido (M16, PQ06).",
+        "Data de extração: inferida em 2026-09-28 (manhã), pelo último carimbo da carga e pelo dia parcial (parecer D1 do especialista, seção 2). A data de 2026-10-02 é a de modificação do arquivo no Drive (upload). A confirmar em PQ01. Censura à direita: tarefas em andamento na extração não aparecem, e os últimos dias podem ter volume levemente menor.",
+        "Tabelas derivadas previstas para a D3 (ainda não existem): prep_conta_robo (só o código da conta do robô), prep_prod_linhas (uma linha por linha de base_* com as colunas derivadas), prep_calendario (um dia por linha), prep_prod_pedidos (uma linha por pedido_id), prep_prod_tarefas (uma linha por tarefa e usuário), prep_prod_ciclos (uma linha por linha manual fora da sequência de lote, com o segmento, novo_k, gap_k e ciclo_k de M11) e prep_prod_descarte (M29). Tabela única de origem: não há relações com outras tabelas. Invariantes e contagens de referência por prep_*: bloco invariantes_prep."
+      ],
+      "notas_para_qualidade": [
+        {
+          "id": "NQ01",
+          "coluna": "Tempo em Segundos; Embalagens / Hora; Tempo",
+          "descricao": "Valor −1 em algumas linhas: o Fim vem um segundo antes do Início. O texto de Tempo mostra '-1 dias 23 horas 59 minutos 59 segundos' e Embalagens / Hora fica negativa."
+        },
+        {
+          "id": "NQ02",
+          "coluna": "Tempo em Segundos; Data/Hora Início",
+          "descricao": "Tempos acima de um dia, até a ordem de centenas de dias (máximo na casa de 19 milhões de segundos). São as mesmas linhas cujo Início cai antes de junho de 2026 (dezembro de 2025, março e maio de 2026): tarefas deixadas abertas e fechadas muito depois, várias no mesmo dia (provável limpeza em lote). Data é o dia do fechamento. Não é erro de período nem de carga; é abandono. Infla média de Tempo, jornada ativa e horas."
+        },
+        {
+          "id": "NQ03",
+          "coluna": "Tempo em Segundos",
+          "descricao": "Tempo zero (texto '-') em grande parte das linhas: são linhas de um único endereço, em que Início e Fim coincidem. Não é dado faltante; é falta de intervalo mensurável. Tempos de 1 a 3 segundos em linhas de um endereço são só o instante da confirmação. Em consulta preliminar, no pedido-a-pedido da Royal Canin o tempo dessas linhas não cresce com as unidades (sem sinal de bipe por unidade), mas em colmeia as linhas de um endereço têm tempo próprio alto (distribuição no put wall ou outro motivo: investigar na D3, parecer E3 e E7)."
+        },
+        {
+          "id": "NQ04",
+          "coluna": "Tempo em Segundos; Qtde Endereços; Usuário",
+          "descricao": "Linhas com dois ou mais endereços confirmadas em poucos segundos: da conta do robô (devolutiva automática) e, em número parecido, de poucas contas humanas (provável confirmação em lote). Para M08 e M09 essas linhas não têm tempo mensurável."
+        },
+        {
+          "id": "NQ05",
+          "coluna": "Embalagens / Hora",
+          "descricao": "Coluna derivada pelo WMS. Para tempo zero usa um denominador fixo (razão constante por embalagem); com tempo de 1 s chega a milhões por hora. Recomenda-se excluir a coluna da análise ou recalcular a partir de M08 e M14."
+        },
+        {
+          "id": "NQ06",
+          "coluna": "Pedido; Região Origem; Região Destino; Tempo; Usuário",
+          "descricao": "O 'nan' do perfil na coluna Mediana das colunas de texto é marcador do próprio perfil (mediana não se aplica ao tipo). Consulta agregada: não há 'nan', vazio nem nulo nas colunas de texto, nem nulos nas demais. Não há valor 'nan' a limpar."
+        },
+        {
+          "id": "NQ07",
+          "coluna": "Região Origem",
+          "descricao": "Várias regiões na mesma linha, separadas por vírgula (algumas misturam depositantes; nenhuma é da Royal Canin), linhas com CANCELADO (inclusive 'CANCELADO' junto a Royal Canin), token 'INSUMOS -GERAL' fora do padrão '<depositante> - <área>', sufixo '(B2C)' precedido de espaços duplos na região de um depositante. Regras de tratamento em M01 e M04."
+        },
+        {
+          "id": "NQ08",
+          "coluna": "Tarefa; Pedido",
+          "descricao": "Poucos pares (Tarefa, Pedido) repetidos, com Início e Fim diferentes e, às vezes, usuários, endereços e unidades diferentes (pedido confirmado em segmentos); pouquíssimos pedidos em mais de uma tarefa. Decidir se somam (M06) ou se há duplicidade de produto. O mesmo número de Pedido aparece em mais de um depositante em alguns casos: o pedido é (depositante, Pedido) (M04, PQ07)."
+        },
+        {
+          "id": "NQ09",
+          "coluna": "Data; Data/Hora Início",
+          "descricao": "Poucas linhas com Início em dia anterior à Data (cruzam a meia-noite ou ficaram abertas). Dias úteis sem registro, sábados com registro e último dia parcial: ver notas da tabela e PAR08."
+        },
+        {
+          "id": "NQ10",
+          "coluna": "Qtde Un; Peças; Qtde Embalagens",
+          "descricao": "Valores extremos de unidades (ordem de milhares em uma linha, provável palete) e uma linha com Qtde Un zero. As colunas Qtde Un, Qtde Embalagens e Peças são iguais em quase todas as linhas e divergem só onde há caixa grande. Faixas plausíveis: nó especialista. Linhas de milhares de unidades fora das marcas de palete e de caixa fechada têm marca à parte, un_extremas (PAR13): só marcação, sem corte."
+        },
+        {
+          "id": "NQ11",
+          "coluna": "Qtde Endereços",
+          "descricao": "Falso positivo do perfil: a coluna foi marcada 'PESSOAL?' pelo nome (regex 'endere'). 'Endereço' é posição de estoque, não endereço residencial. Pode ir para nao_pessoal em qualidade.json."
+        },
+        {
+          "id": "NQ12",
+          "coluna": "Usuário",
+          "descricao": "Dado pessoal (login do operador). Contém uma conta de integração do robô, que não é pessoa (M03), e contas com pouquíssimas linhas, que podem reidentificar pelo volume baixo: respeitar PAR07 em qualquer agregado. Pseudonimização deve preservar a possibilidade de marcar a conta do robô (D3)."
+        },
+        {
+          "id": "NQ13",
+          "coluna": "Pedido; Tarefa; Id Onda; Onda",
+          "descricao": "Contagens de distintos do perfil são aproximadas (ver nota da tabela). O perfil não deve ser usado como cardeal."
+        }
+      ]
+    }
+  ],
+  "parametros": [
+    {
+      "id": "PAR01",
+      "nome": "corte_abandono_coleta_s",
+      "valor": 300,
+      "unidade": "segundos por coleta",
+      "fonte": "relatório 9fleet v1, seções 3.4 e 8.1.3 (p. 6 e 16); deck, slide 3",
+      "uso": "M08, M09, M11",
+      "confianca": "alta",
+      "nota": "Tempo por coleta acima disso é tarefa abandonada (operador deixou a tarefa aberta) e sai da média. Também é o teto do intervalo entre linhas da mesma tarefa em M09 e M11 (ali o intervalo é uma coleta); entre tarefas diferentes vale PAR02."
+    },
+    {
+      "id": "PAR02",
+      "nome": "teto_intervalo_s",
+      "valor": 900,
+      "unidade": "segundos",
+      "fonte": "escolha do engenheiro de dados (D1) como base, a partir de consulta agregada sobre os intervalos entre atividades consecutivas do mesmo operador-dia. O teto não é identificado pelos dados: a mediana e os quartis do intervalo humano do slide 6 do deck (101 s; 69 a 167 s) ficam abaixo de 300 s, então qualquer teto de 300 s para cima reproduz a mediana. A escolha é de Marcus no G2 (PQ03).",
+      "uso": "M10, M11, M12, M13, M14, M23, M28",
+      "confianca": "baixa",
+      "sensibilidade": [
+        300,
+        600,
+        1800
+      ],
+      "cenario_base": 900,
+      "cenario_intermediario": 600,
+      "cenario_conservador_provisorio": 300,
+      "limite_superior": 1800,
+      "nota": "Intervalo entre atividades de tarefas diferentes do mesmo operador acima do teto é pausa: sai da jornada (M10 e M11 usam a mesma regra). O teto muda muito as horas e as linhas por hora, e os dados não o identificam (ver fonte). Quatro tetos, todos reportados: 900 s (base), 600 s (intermediário), 300 s (conservador provisório) e 1.800 s (limite superior). O conservador provisório é 300 s porque teto menor significa menos horas manuais, logo menos economia e menos FTE em CR1 e CR8, e mais linhas por hora, o que torna o dobro de CR3 mais difícil de provar. Fica provisório porque a escolha final é de Marcus no G2, com validação da operação da Social (A08, PQ03)."
+    },
+    {
+      "id": "PAR03",
+      "nome": "min_enderecos_n1",
+      "valor": 2,
+      "unidade": "endereços",
+      "fonte": "relatório 9fleet v1, seção 3.2 (p. 5)",
+      "uso": "M08, M09",
+      "confianca": "alta",
+      "nota": "Linha com menos endereços não tem intervalo mensurável."
+    },
+    {
+      "id": "PAR04",
+      "nome": "percentil_dia_pico",
+      "valor": 0.9,
+      "unidade": "fração",
+      "fonte": "deck, slide 12 (dia de pico p90); decisao.json, CR4 e CR8",
+      "uso": "M18, M19, M22, M23",
+      "confianca": "alta",
+      "nota": ""
+    },
+    {
+      "id": "PAR05",
+      "nome": "banda_perfil_dia_p90",
+      "valor": [
+        0.85,
+        0.95
+      ],
+      "unidade": "faixa de percentis do volume diário",
+      "fonte": "proposta do engenheiro de dados",
+      "uso": "M18",
+      "confianca": "media",
+      "nota": "O perfil horário do dia p90 é a média dos perfis dos dias plenos cujo volume diário cai nessa faixa, para não depender de um único dia. Respeita o mínimo de registros por grupo (PAR07); o dia real mais próximo do p90 serve de conferência."
+    },
+    {
+      "id": "PAR06",
+      "nome": "limiar_janela_operacao",
+      "valor": 0.01,
+      "unidade": "fração do volume diário médio",
+      "fonte": "proposta do engenheiro de dados (PR15 é [●] e deve ser medida no WMS)",
+      "uso": "M16",
+      "confianca": "media",
+      "nota": "Uma hora entra na janela de operação observada se concentrar pelo menos esta fração do volume diário médio."
+    },
+    {
+      "id": "PAR07",
+      "nome": "min_registros_grupo",
+      "valor": 5,
+      "unidade": "registros por grupo",
+      "fonte": "config/config.json, minimo_registros_por_grupo",
+      "uso": "todas as métricas agregadas",
+      "confianca": "alta",
+      "nota": "Grupo menor não é reportado (privacidade; vale para P13 e para qualquer corte por operador)."
+    },
+    {
+      "id": "PAR08",
+      "nome": "dia_parcial_carga",
+      "valor": "2026-09-28",
+      "unidade": "data",
+      "fonte": "consulta agregada sobre a última data da carga",
+      "uso": "M15 a M20, M24",
+      "confianca": "alta",
+      "nota": "Último dia da carga, com registros só no início da manhã: a extração foi feita nesse momento (data de extração inferida, PQ01). Fica fora das taxas por dia e do p90, e dentro dos totais mensais. Tarefas em andamento na hora da extração não aparecem (censura à direita): os últimos dias podem ter volume levemente menor."
+    },
+    {
+      "id": "PAR09",
+      "nome": "jornada_fte_h",
+      "valor": null,
+      "unidade": "horas por dia",
+      "fonte": "PR12 em nos/decisao.json (não duplicada aqui)",
+      "uso": "M13, M23",
+      "confianca": "baixa",
+      "nota": "Parâmetro de conversão de horas em FTE. Origem do valor ('medidas no WMS' no deck, ou jornada contratual): pergunta aberta PQ05. Hipótese do especialista (parecer D1, seção 3.1): é a jornada semanal da CLT dividida por seis dias, isto é, jornada contratual de escala de seis dias, coerente com os sábados com registro. Se for isso, FTE = presença necessária num dia útil, não quadro."
+    },
+    {
+      "id": "PAR10",
+      "nome": "calendario_dias_sem_registro",
+      "unidade": "datas",
+      "valor": [
+        {
+          "data": "2026-06-04",
+          "classe": "feriado",
+          "fonte": "Corpus Christi (calendário; parecer D1 do especialista)",
+          "confianca": "alta para a data; média para o fechamento da Social"
+        },
+        {
+          "data": "2026-06-05",
+          "classe": "ponte",
+          "fonte": "ponte do feriado (parecer D1)",
+          "confianca": "média"
+        },
+        {
+          "data": "2026-06-08",
+          "classe": "sem_explicacao",
+          "fonte": "segunda-feira sem explicação de calendário; com o fim de semana são cinco dias corridos sem registro (parada, inventário ou lacuna de extração: [●], PQ01)",
+          "confianca": "baixa"
+        },
+        {
+          "data": "2026-09-07",
+          "classe": "feriado",
+          "fonte": "Independência, feriado nacional",
+          "confianca": "alta"
+        },
+        {
+          "data": "2026-09-24",
+          "classe": "sem_explicacao",
+          "fonte": "quinta-feira sem explicação de calendário nacional (feriado municipal, parada ou lacuna de extração: [●], PQ01)",
+          "confianca": "baixa"
+        }
+      ],
+      "fonte": "consulta agregada sobre as datas da carga e calendário de 2026",
+      "uso": "M15, M18, M20",
+      "confianca": "media",
+      "nota": "Datas de segunda a sexta sem registro. Feriado e ponte saem dos dias úteis de referência. Os dois dias sem explicação são tratados como sem operação no cenário base e como lacuna de extração no cenário alternativo (M15). Dias pós-pausa (logo depois de data desta lista): 2026-06-09, 2026-09-08 e 2026-09-25; o último é o último dia pleno da carga."
+    },
+    {
+      "id": "PAR11",
+      "nome": "inicio_operacao_robo",
+      "valor": "2026-07-20",
+      "unidade": "data",
+      "fonte": "nos/briefing.json e relatório 9fleet v1, seção 1.1; deck, slide 1",
+      "uso": "M08, M12, M14, M26",
+      "confianca": "media",
+      "nota": "Data de início da operação do robô nos documentos. A conta do robô tem poucas linhas antes dela (testes a confirmar, PQ04). O período anterior é a linha de base manual sem contaminação por pedidos do robô com devolutiva não automática (A3 do parecer)."
+    },
+    {
+      "id": "PAR12",
+      "nome": "limites_jornada_ativa",
+      "valor": {
+        "jornada_ativa_max_h": 12,
+        "amplitude_max_h": 14,
+        "descanso_entre_jornadas_h": 11
+      },
+      "unidade": "horas",
+      "fonte": "parecer D1 do especialista, F11 (CLT, arts. 58, 59, 59-A, 66 e 71)",
+      "uso": "M11, M13",
+      "confianca": "alta",
+      "nota": "Operador-dia acima do limite de jornada ativa ou de amplitude é marcado como turnos fundidos ou login compartilhado (FTE com e sem esses dias). Atividade de madrugada: separar o operador-dia por intervalo mínimo de descanso entre jornadas, não pela meia-noite."
+    },
+    {
+      "id": "PAR13",
+      "nome": "limiar_un_extremas",
+      "valor": 1000,
+      "unidade": "unidades por linha",
+      "sensibilidade": [
+        100
+      ],
+      "fonte": "proposta da qualidade-privacidade (nos/qualidade.json, limiares.un_extremas), escolhida pela distribuição observada; sem fonte setorial: [●]",
+      "uso": "M07, M14, M22",
+      "confianca": "baixa",
+      "nota": "Limiar de revisão, só marcação (un_extremas): linhas de milhares de unidades, quase todas fora das marcas de palete e de caixa fechada, de pedido-a-pedido de outros depositantes. Sem corte por valor, porque o especialista não define máximo. A Social confirma se são caixa fechada ou palete; se confirmar, linha_palete pode absorver a marca."
+    },
+    {
+      "id": "PAR14",
+      "nome": "faixas_tarifa",
+      "unidade": "R$ por pedido; R$ por linha; volume por mês",
+      "valor": {
+        "checkout": {
+          "tarifa": "PR03",
+          "limite_pedidos_mes": 6000,
+          "tarifa_reduzida_acima_do_limite": 1.5
+        },
+        "pedido_a_pedido": {
+          "tarifa": "PR04",
+          "limite_linhas_mes": 15000,
+          "tarifa_reduzida_acima_do_limite": 0.22
+        }
+      },
+      "fonte": "deck, slide 18; notas de PR03 e PR04 em nos/decisao.json",
+      "uso": "M21, M27, M28",
+      "confianca": "alta para os valores; baixa para a regra de aplicação",
+      "nota": "O deck diz 'acima de' o limite mensal. Leitura base: a tarifa reduzida vale só para o volume acima do limite (marginal). Sensibilidade: vale para todo o volume do mês (retroativa). O deck não esclarece: [●], PQ08."
+    }
+  ],
+  "metricas": [
+    {
+      "id": "M01",
+      "nome": "Depositante da linha",
+      "definicao": "Dono do estoque da linha: prefixo da Região Origem antes de ' - ' (A05, confirmada por Marcus). A região pode listar várias regiões separadas por vírgula e o token CANCELADO.",
+      "formula": "tokens = split(Região Origem, ',') com trim; descartar o token CANCELADO e tokens fora do padrão '<depositante> - <área>' (ex.: 'INSUMOS -GERAL'); depositante_do_token = trim(split_part(token, ' - ', 1)); conjunto distinto dos depositantes dos tokens: um elemento = esse depositante; dois ou mais = 'MULTI'; nenhum = 'CANCELADO'. A área é o texto após ' - ' (PICKING, AVARIA, PALLET ALTO...).",
+      "unidade": "categoria",
+      "exclusoes": "'MULTI' fica fora das métricas por depositante e dentro dos totais do armazém. 'CANCELADO' puro sai do volume (M04). Depositantes com nomes parecidos (VIC BEAUTE e VIC BEAUTE AG; as três contas Philips) ficam separados como no WMS. Nenhuma linha 'MULTI' é da Royal Canin. Linhas de área diferente de PICKING (AVARIA, PALLET ALTO, VENCIDOS) entram no depositante e vêm marcadas por area_origem, para o analista decidir se entram no escopo.",
+      "tabela": "prep_prod_linhas",
+      "criterios_ref": [
+        "CR2",
+        "CR5",
+        "CR7"
+      ],
+      "perguntas_ref": [
+        "P4",
+        "P14"
+      ],
+      "nota": "Validação: a participação por depositante dos pedidos reproduz a do slide 12 do deck."
+    },
+    {
+      "id": "M02",
+      "nome": "Onda e tipo de onda",
+      "definicao": "Onda = Id Onda (chave canônica; Onda é 1:1 e dá o mesmo agrupamento). Tipo de onda por linha, a partir de Região Destino e da composição da onda (A05, relatório 9fleet v1, seção 2.2). Colmeia pelo destino; pedido-a-pedido = onda com um pedido; checkout = onda com vários pedidos e uma coleta por pedido. O checkout do WMS (Checkout Express) pressupõe uma peça por pedido: a subclasse com mais de uma unidade por linha é marcada à parte (A7 do parecer do especialista).",
+      "formula": "pedidos_na_onda = count(distinct Pedido) por Id Onda, pelo número do pedido (não por pedido_id de M04, para que um mesmo pedido com regiões de depositantes diferentes não vire dois pedidos e mude o tipo da onda), sobre todas as linhas (inclusive CANCELADO). tipo_onda = 'colmeia' se Região Destino começa com 'COLMEIA' (inclui 'COLMEIAS NUMERADAS'); senão 'pedido_a_pedido' se pedidos_na_onda = 1; senão 'checkout' se max(Qtde Endereços) das linhas da onda = 1; senão 'outro'. O tipo vale para todas as linhas da onda, mesmo de depositantes diferentes. Subclasse: checkout_multiunidade = verdadeiro em onda de checkout com alguma linha de Qtde Un maior que 1 (marcação, não erro).",
+      "unidade": "categoria",
+      "exclusoes": "A classe 'outro' (mais de um pedido, destino packing e alguma linha com mais de um endereço) não ocorre nesta carga e deve ser monitorada na D3. Precedência da colmeia: ondas com destino de colmeia e um só pedido, ou só com linhas de uma coleta, ficam colmeia (regra do destino, A05), embora o relatório 9fleet v1 defina colmeia por 'várias coletas por pedido'. checkout_multiunidade fica no volume e é reportado à parte em M09 (P3), M21 (PR03 cobra por pedido de uma peça) e M22 (PR08); não ocorre na Royal Canin nesta carga e é raro nos demais depositantes. O pedido-a-pedido pode misturar pedido de consumidor e pedido B2B grande (caixa fechada): segmentar por distribuição de endereços e unidades por pedido (H07).",
+      "tabela": "prep_prod_linhas",
+      "criterios_ref": [
+        "CR2",
+        "CR3",
+        "CR4",
+        "CR5",
+        "CR7"
+      ],
+      "perguntas_ref": [
+        "P3",
+        "P6",
+        "P14",
+        "P17"
+      ],
+      "nota": "Validação: a regra reproduz, mês a mês, os pedidos Royal Canin e a participação do pedido-a-pedido do slide 8 do deck, desde que as linhas CANCELADO saiam da contagem (M04). Em toda a carga, a regra classifica todas as ondas sem sobrar 'outro': as ondas de destino packing com mais de um pedido têm sempre uma coleta por pedido, e as de pedido único são pedido-a-pedido."
+    },
+    {
+      "id": "M03",
+      "nome": "Executor da linha (robô ou manual)",
+      "definicao": "Quem confirmou a linha no WMS. 'robo' é a conta de integração que devolve ao WMS os pedidos feitos pelo robô (devolutiva automática); 'manual' são os demais usuários. A devolutiva automática confirma o pedido de uma vez, por isso o tempo do robô na planilha não mede coleta. A conta de integração é de sistema, não é pessoa.",
+      "formula": "executor = 'robo' se o Usuário em base_* (já pseudonimizado) é igual ao código da tabela prep_conta_robo; senão 'manual'. robo_pre_inicio = Data anterior a PAR11 (pre_robo). Regra da conta (campo conta_robo de nos/qualidade.json): o login original, sem acento e em minúsculas, contém 'acta' e 'robo'. A etapa etapas/00_conta_robo.py roda antes de qualquer etapa que marque executor e só recebe con, pd e np. Ela obtém o caminho de dados/privado a partir do arquivo do banco (pragma database_list), sem caminho fixo; lê dados/privado/correspondencia_raw_prod_90dias_produtividade_Usuário.parquet pelo próprio DuckDB, em SQL (create table prep_conta_robo as select codigo from read_parquet(...) where strip_accents(lower(original)) like '%acta%' and strip_accents(lower(original)) like '%robo%'); exige que prep_conta_robo tenha uma coluna (codigo) e exatamente uma linha (zero ou mais de uma: aborta com mensagem sem nomes); e confere que a contagem agregada de linhas de base_* com esse código é igual à de raw_ com o padrão (diferença: aborta). Proibido: imprimir, registrar em log ou gravar o login original ou qualquer valor da coluna original; carregar a coluna original em pandas ou numpy (o filtro roda em SQL e só o código sai); gravar a correspondência fora de dados/privado (prep_*, saidas/ etc.). Fora do padrão: a etapa lê dados/privado e raw_, e estado/README.md prevê etapas que criam prep_* a partir de base_*. A autorização registrada (Marcus, 2026-10-03, nos/briefing.json) é de uso dos dados na nuvem, não de leitura da correspondência: a autorização específica para a etapa 00 será pedida a Marcus no G2 e registrada em conta_robo.autorizacao (nos/qualidade.json) ou em controle.json antes de rodar o pipeline (PQ09). Tratamento de erro: a etapa envolve todo o acesso em try/except e levanta um erro de mensagem fixa e genérica, sem o texto da exceção (o motor imprime a exceção para quem roda o pipeline, que pode ser um agente), e nenhuma mensagem inclui valor da coluna original. Conferência: uma única consulta SQL agregada devolve só um booleano (contagem de linhas de base_ com o código de prep_conta_robo igual à contagem de linhas de raw_ cujo Usuário, sem acento e em minúsculas, contém os dois termos); sem selecionar nem materializar valores de raw_. Essa é a única leitura de raw_ da etapa. Alternativa a registrar para o motor: marcador de conta de sistema gerado na pseudonimização.",
+      "unidade": "categoria",
+      "exclusoes": "Linhas 'robo' entram nos volumes (pedidos, linhas) e saem de todas as métricas de tempo manual (M08 a M14, M23, M25) e de todo piso físico. Pedidos do robô com devolutiva não automática aparecem sob logins humanos e não se distinguem no WMS: o tempo manual do escopo fica contaminado por eles (viés a declarar). Pedido com linha do robô e linha humana fica marcado (H06).",
+      "tabela": "prep_conta_robo; prep_prod_linhas",
+      "criterios_ref": [
+        "CR3"
+      ],
+      "perguntas_ref": [
+        "P8",
+        "P7"
+      ],
+      "nota": "Verificação de P8 e da premissa de Q04: existe uma única conta com 'acta' e 'robo' no login; nenhuma com 'kappa' ou 'fleet'. Todas as linhas dela são da Royal Canin, com destino packing, em ondas de poucos pedidos, e com tempo próximo de zero mesmo quando há vários endereços. Os agentes não leem nomes: a etapa é script local (autorização de Marcus para os dados na nuvem, nos/briefing.json)."
+    },
+    {
+      "id": "M04",
+      "nome": "Pedidos",
+      "definicao": "Quantidade de pedidos distintos no recorte (depositante, tipo de onda, período). O pedido é identificado por (depositante, Pedido): alguns números de pedido aparecem em mais de um depositante e Pedido sozinho subconta (PQ07).",
+      "formula": "pedido_id = (depositante, Pedido), com depositante conforme M01. Pedidos = count(distinct pedido_id) sobre as linhas do recorte. Tipo de onda e mês do pedido vêm da linha de menor Data/Hora Início do pedido_id; o dia do pedido é a menor Data. Marca pedido_em_mais_de_um_depositante para o mesmo número de Pedido.",
+      "unidade": "pedidos",
+      "exclusoes": "Excluir linhas com cancelado = verdadeiro (token CANCELADO na Região Origem): sem essa exclusão os totais do slide 8 não fecham. A conta 'robo' entra no volume. Pedido que aparece em duas ondas conta uma vez (poucos casos). Dia parcial (PAR08) só entra em totais mensais. A mesma chave vale em M06, M20 e M26. No total do armazém, um número de pedido com linhas de depositantes diferentes (inclusive MULTI) conta uma vez por depositante: efeito mínimo, e por depositante nenhum pedido se duplica.",
+      "tabela": "prep_prod_pedidos",
+      "criterios_ref": [
+        "CR2",
+        "CR5"
+      ],
+      "perguntas_ref": [
+        "P4",
+        "P5",
+        "P6",
+        "P14"
+      ]
+    },
+    {
+      "id": "M05",
+      "nome": "Linha operacional (coleta ou endereço visitado)",
+      "definicao": "Coleta em um endereço de estoque. Usada em produtividade, frota e oportunidade (CR3, CR4, CR5, CR7). Distinta da linha tarifável (M06).",
+      "formula": "sum(Qtde Endereços) sobre as linhas do recorte.",
+      "unidade": "linhas operacionais (coletas)",
+      "exclusoes": "Mesmas exclusões de M04 (linhas CANCELADO). Conta 'robo' entra no volume e sai do tempo. Linhas de palete ou caixa fechada (linha_palete) vêm marcadas: saem da produtividade (M14) e da demanda compatível com o robô (M22, CR4, CR5), porque separação de palete não é picking fracionado (A6 do parecer; carga útil do Kappabot: [●], engenharia da Acta). linha_palete = qualquer token de área da Região Origem igual a PALLET ALTO, PORTA PALET ALTO ou PORTA PALLET ALTO (as duas grafias com uma ou duas letras L, normalizadas), inclusive em linha de região mista, ou Qtde CxG maior que zero. Linhas de milhares de unidades fora dessas marcas têm marca à parte, un_extremas (PAR13): só marcação, sem corte. Viés declarado: na colmeia e no checkout o operador visita um endereço uma vez para vários pedidos, e somar Qtde Endereços por pedido pode contar várias vezes a mesma visita física. As coletas por hora da colmeia saem infladas frente às do pedido-a-pedido, e a comparação de CR7 com PR05 fica enviesada a favor da exclusão da colmeia. A tabela não traz o código do endereço, então a visita distinta não é calculável.",
+      "tabela": "prep_prod_linhas",
+      "criterios_ref": [
+        "CR3",
+        "CR4",
+        "CR5",
+        "CR7"
+      ],
+      "perguntas_ref": [
+        "P3",
+        "P7",
+        "P9",
+        "P11",
+        "P12",
+        "P14"
+      ],
+      "nota": "Validação: as 'linhas por dia útil' do slide 12 (armazém e Royal Canin) reproduzem-se com esta coluna (Qtde Endereços), com diferença residual pequena no armazém, e não com Qtde Produtos."
+    },
+    {
+      "id": "M06",
+      "nome": "Linha tarifável (linha de produto do pedido)",
+      "definicao": "Linha de produto do pedido, como definida por Marcus (Q06, 2026-10-03): cada produto distinto do pedido vale uma linha, qualquer que seja o número de unidades e de endereços. Base da tarifa do pedido-a-pedido (PR04) e de CR2.",
+      "formula": "Coluna: Qtde Produtos. Por pedido (pedido_id = (depositante, Pedido), M04), limite superior (base): linhas_tarifaveis_pedido = sum(Qtde Produtos) das linhas do pedido (todas as tarefas e segmentos). Limite inferior: max(Qtde Produtos) entre as linhas do pedido (supõe que os segmentos repetem os mesmos produtos). Por recorte: soma sobre os pedidos. Reportar a base e o intervalo entre os dois limites; o limite inferior é o conservador para a receita (CR2).",
+      "unidade": "linhas tarifáveis",
+      "exclusoes": "Exclui linhas CANCELADO e, até a Social confirmar que houve coleta, linhas de tarefas abertas por meses e encerradas em lote (NQ02, A8 do parecer): ficam marcadas no volume físico. Linhas de palete ou caixa fechada (linha_palete) saem da base tarifável do robô (A6). Não é possível deduplicar por pedido e produto: a tabela não traz o código do produto (A9 do parecer), por isso o intervalo acima declara o viés. Variantes que o plano deve mostrar: todos os pedidos-a-pedido da Royal Canin, e só os com pedido_multi_endereco (recorte do relatório 9fleet v1). Sensibilidade pedida em Q06: a mesma conta com Qtde Endereços (linha operacional). Risco: a interpretação de Qtde Produtos como SKU distinto é inferida (pergunta PQ02).",
+      "tabela": "prep_prod_pedidos",
+      "criterios_ref": [
+        "CR2"
+      ],
+      "perguntas_ref": [
+        "P4",
+        "P5"
+      ],
+      "nota": "Os volumes do deck em 'linhas' vêm de Qtde Endereços (M05), não de Qtde Produtos: a tarifa por linha precisa da mesma coluna do cálculo da franquia e da economia do deck, ou o volume não reconcilia."
+    },
+    {
+      "id": "M07",
+      "nome": "Unidades",
+      "definicao": "Unidades separadas no recorte.",
+      "formula": "sum(Qtde Un) (principal). Peças = sum(Peças) como alternativa quando há caixas (diferem de Qtde Un em pouquíssimas linhas). Para esforço de separação usar Qtde Un, nunca Peças (infla o trabalho com caixa fechada).",
+      "unidade": "unidades",
+      "exclusoes": "Linhas CANCELADO. Linhas un_extremas (Qtde Un acima do limiar de revisão PAR13, só pedido-a-pedido de outros depositantes, nenhuma da Royal Canin no escopo) ficam no volume e saem das comparações de unidades por hora com referências de picking fracionado; reportar por depositante e tipo de onda. Não há corte por valor: o especialista não define máximo.",
+      "tabela": "prep_prod_linhas",
+      "criterios_ref": [
+        "CR3",
+        "CR7"
+      ],
+      "perguntas_ref": [
+        "P3",
+        "P9",
+        "P14",
+        "P17"
+      ]
+    },
+    {
+      "id": "M08",
+      "nome": "Tempo por coleta manual (correção N−1, pedido-a-pedido)",
+      "definicao": "Tempo médio de uma coleta feita por operador, no recorte do relatório 9fleet v1 (seção 3.2): como o WMS mede o intervalo entre confirmações, divide-se o tempo da linha pelos n−1 intervalos mensuráveis. Médias, não medianas, para manter a base do relatório.",
+      "formula": "Recorte padrão: depositante Royal Canin, tipo_onda = 'pedido_a_pedido', Qtde Endereços >= PAR03, executor = 'manual'. Por linha: t_coleta = Tempo em Segundos ÷ (Qtde Endereços − 1). Entram só as linhas com 0 <= t_coleta <= PAR01. Agregado principal = média simples de t_coleta entre as linhas (com desvio padrão e n). Variantes e sensibilidades: (1) razão ponderada sum(Tempo em Segundos) ÷ sum(Qtde Endereços − 1), a usar na comparação com benchmark, e mediana; (2) com e sem as linhas longas (linha_longa: duração acima de PAR02 que passa no corte de PAR01, onde uma pausa cabe dentro da média); (3) só o período anterior ao início da operação do robô (PAR11), sem contaminação por pedidos do robô com devolutiva não automática (A3 do parecer); (4) só linhas sem sobreposição com outra linha do mesmo operador-dia (pedido-a-pedido levado em carrinho com vários pedidos faria o manual parecer mais lento: H05).",
+      "unidade": "segundos por coleta",
+      "exclusoes": "Exclui linhas CANCELADO, linhas da conta 'robo', Tempo −1 (t_coleta negativo), abandono (t_coleta acima de PAR01) e tarefas encerradas em lote (NQ02). Linhas humanas de dois ou mais endereços confirmadas em poucos segundos (NQ04) saem pelo piso físico definido pela qualidade (não é intervalo mensurável) e ficam no volume. Reportar a participação de linhas excluídas por abandono, por tipo de onda e por hora do dia (corte concentrado na hora do almoço é tarefa aberta na refeição, não operador lento). O valor do relatório 9fleet v1 (seção 4.2) reproduz-se, em consulta preliminar, só quando as linhas da conta 'robo' (tempo próximo de zero) ficam dentro da amostra; sem elas a média sobe. A reconciliação fica para uma análise registrada. A média simples pesa demais pedidos de dois endereços (um só intervalo, ruidoso): para benchmark, usar a razão ponderada.",
+      "tabela": "prep_prod_linhas",
+      "criterios_ref": [
+        "CR3"
+      ],
+      "perguntas_ref": [
+        "P7",
+        "P9"
+      ],
+      "nota": "Compara-se com PR17 (robô produtivo) apenas de forma descritiva (restrição de Q04: sem o 9fleet). Em consulta preliminar, o tempo das linhas de um endereço da Royal Canin pedido-a-pedido não cresce com as unidades: não há sinal de bipe por unidade (A1 do parecer)."
+    },
+    {
+      "id": "M09",
+      "nome": "Tempo por coleta, por unidade e por pedido em tarefas de checkout e de colmeia",
+      "definicao": "Tempo entre confirmações consecutivas dentro da tarefa, medido de Início a Início, com o corte de abandono em cada intervalo (A2 do parecer). Em checkout e colmeia as linhas da mesma tarefa e do mesmo usuário repetem o Fim (finalização comum da tarefa no coletor) e o Início de cada linha é o primeiro bipe do pedido: o Tempo da linha vai até o Fim comum e as linhas se sobrepõem. Por isso 'Início da próxima menos Fim da anterior' é negativo na quase totalidade dos casos da colmeia e subestima o tempo, e somar ou tirar a média de Tempo por linha conta o mesmo tempo várias vezes. O tempo é da tarefa e do operador.",
+      "formula": "Unidade = (Tarefa, Usuário), tipo_onda checkout ou colmeia, com 2 ou mais linhas. Segmentos de cadência de M11 (passo 1): ordenar as linhas por Início (fim_corrigido onde Tempo = −1; linhas com tarefa_aberta_lote saem da sequência) e cadência_i = Início_(i+1) − Início_i, para i < n, sempre >= 0. Para linhas de bloco (Fim repetido), a cadência é o próprio segmento de M11; para linhas com Fim próprio, é o segmento da linha mais a lacuna até a próxima linha da unidade. Válida se cada intervalo que a compõe é válido em M11 (PAR01 por intervalo entre confirmações, A2); acima disso é pausa ou abandono e sai (a linha fica no volume), e o tempo sai registrado em M29. Tempo por pedido (base) = média das cadências válidas. Tempo por coleta = sum(cadências válidas) ÷ sum(Qtde Endereços das linhas i dessas cadências); em checkout, uma coleta por pedido, igual ao tempo por pedido. Tempo por unidade = sum(cadências válidas) ÷ sum(Qtde Un dessas linhas). Unidades por onda = sum(Qtde Un) ÷ ondas. Cada valor também por hora de início da tarefa e por onda. Variante pela extensão da tarefa: união dos intervalos [Início, Fim] das linhas da unidade, que é [min(Início), Fim comum], com os trechos entre primeiros bipes acima de PAR01 descontados, dividida por (sum(Qtde Endereços) − 1). Checkout reportado com e sem checkout_multiunidade.",
+      "unidade": "segundos por coleta; segundos por unidade; segundos por pedido; unidades por onda",
+      "exclusoes": "Exclui executor 'robo', CANCELADO, cadências de abandono (acima de PAR01) e unidades com Tempo negativo. A cauda (do último primeiro bipe ao Fim comum) não entra em M09, só no crédito de M11. Considera só a Royal Canin no escopo; os demais depositantes servem para CR5. O piso físico por coleta vale para a média da linha ou da tarefa, nunca para uma cadência isolada de checkout ou colmeia (que pode ser rápida de verdade). Na colmeia a distribuição no put wall pode ser feita por outra pessoa e não aparece na planilha: o ciclo medido sai otimista para o manual (E3 do parecer, CR7). Tempo por coleta e por unidade na colmeia são aproximações: o WMS não traz o endereço de cada bipe.",
+      "tabela": "prep_prod_tarefas",
+      "criterios_ref": [
+        "CR1",
+        "CR4",
+        "CR7"
+      ],
+      "perguntas_ref": [
+        "P3",
+        "P17"
+      ],
+      "nota": "Em consulta preliminar, a cadência de Início a Início não é negativa em nenhuma unidade de checkout ou colmeia, e o tempo por unidade do checkout da Royal Canin fica na ordem de grandeza do slide 10. Dado para estimar PR08 com faixa (baixa confiança)."
+    },
+    {
+      "id": "M10",
+      "nome": "Intervalo entre tarefas consecutivas do mesmo operador (tempo fora do relógio)",
+      "definicao": "Tempo entre o fim de uma atividade e o início da próxima do mesmo operador no mesmo dia, em tarefas diferentes. Inclui a ida ao packing, a etiqueta e a primeira coleta, que o WMS não registra (deck, slide 6). A lacuna entre segmentos da mesma tarefa e do mesmo usuário é coleta (M09), não tempo fora do relógio.",
+      "formula": "Mesma linha do tempo de M11 (passos 1 a 3): segmentos válidos das unidades (Usuário, Tarefa) do operador-dia (dia_atividade), executor 'manual', ordenados por início, com M_k = fim máximo acumulado. intervalo_k = início do segmento k+1 − M_k, só quando o segmento k+1 é de outra tarefa. Intervalo negativo (tarefas sobrepostas, inclusive colmeia e checkout em que o Fim é comum às linhas) = 0 e a tarefa fica marcada sobreposicao_tarefa. Entram os intervalos com 0 <= intervalo <= PAR02; os maiores são pausa e vão para a contagem de excluídos (mesma regra de M11). Duas variantes: (a) sequência completa do operador, qualquer depositante e tipo; (b) sequência só das linhas pedido-a-pedido da Royal Canin do operador (replica o slide 6; cada linha pedido-a-pedido é um bloco próprio, com segmento [Início, fim_corrigido]). Estatísticas: mediana, quartis e média, por hora do dia, tipo de onda e depositante; fração de intervalos acima do teto por hora do dia (leitura de espera por onda, H13).",
+      "unidade": "segundos",
+      "exclusoes": "Exclui executor 'robo', CANCELADO, tarefa_aberta_lote e o último registro de cada operador-dia. Respeita PAR07 em qualquer corte. Nunca por operador individual. No pedido-a-pedido (um pedido por vez) intervalo negativo não deveria ocorrer: medir a fração de linhas sobrepostas (H05).",
+      "tabela": "prep_prod_ciclos",
+      "criterios_ref": [
+        "CR3"
+      ],
+      "perguntas_ref": [
+        "P7",
+        "P10"
+      ],
+      "nota": "Com qualquer teto de 300 s para cima, a variante (b) reproduz a mediana do slide 6 e aproxima a faixa interquartil: esse dado não identifica o teto (PAR02)."
+    },
+    {
+      "id": "M11",
+      "nome": "Jornada ativa por operador-dia",
+      "definicao": "Tempo de separação ativo de um operador num dia (Q05): a união dos intervalos de atividade do operador-dia, do primeiro início ao último fim, com as lacunas acima do teto excluídas. Lacuna acima do teto é pausa e sai da jornada, pela mesma regra de M10. Linhas sobrepostas (checkout e colmeia, em que o Fim é comum às linhas da tarefa) não contam duas vezes. Não é presença: o WMS não registra reabastecimento, apoio ao packing e outras atividades, nem distingue espera por onda de pausa. É um limite inferior do tempo dedicado à separação, e por isso o relatório 9fleet v1 (p. 12) a considera injusta como medida de produtividade.",
+      "formula": "Passo 1, segmentos de atividade. Bloco = linhas da mesma unidade (Usuário, Tarefa) com o mesmo fim_corrigido, onde fim_corrigido = max(Fim, Início); a linha com Fim próprio é um bloco de uma linha. Linhas com tarefa_aberta_lote e do executor 'robo' saem da sequência (registradas em M29). Em cada bloco, ordenar por Início (s_1 a s_m) e seja F o Fim do bloco (o Fim comum em checkout e colmeia). Segmentos do bloco: cadência_i = [s_i, s_(i+1)] para i < m e cauda = [s_m, F]. No pedido-a-pedido cada linha é um bloco próprio e seu segmento é [Início, fim_corrigido]; a cadência só existe em blocos de 2 ou mais linhas (fim_em_bloco). Limite do segmento: PAR01 na cadência; na cauda, max(1, sum(Qtde Endereços do bloco) − m) × PAR01, isto é, as coletas que ainda faltam no bloco depois do último primeiro bipe (as m−1 anteriores já foram medidas pelas cadências), e não só as do último pedido. Para m = 1 vale max(1, Qtde Endereços − 1) × PAR01. Segmento acima do limite é pausa ou abandono e não conta. Passo 2: por operador-dia (Usuário, dia_atividade), juntar os segmentos válidos de todas as unidades e ordenar por início (empate: fim e depois Pedido); M_k = fim máximo acumulado até o segmento k. Passo 3: novo_k = max(0, fim_k − max(M_(k−1), início_k)); intervalo_bruto_k = max(0, início_(k+1) − M_k); teto_k = PAR01 se o segmento k+1 é da mesma unidade e PAR02 se é de outra tarefa; gap_k = intervalo_bruto_k se for menor ou igual a teto_k e nenhum segmento inválido do mesmo operador-dia se sobrepõe à lacuna [M_k, início_(k+1)], isto é, tem início < início_(k+1) e fim > M_k (o tempo de um segmento inválido não volta como lacuna); senão 0 (pausa, fora da jornada). Precedência do motivo registrado em M29: lacuna acima do teto (motivo 3 ou 4) antes de lacuna com segmento inválido (motivo 5). Sensibilidade declarada: a leitura 'começa dentro' (segmento inválido com M_k <= início < início_(k+1)), que credita um pouco mais de horas no pedido-a-pedido e na colmeia. gap = 0 no último segmento. Passo 4: ciclo_k = novo_k + gap_k, atribuído à linha dona do segmento (linha i na cadência_i, linha m do bloco na cauda); jornada_ativa(operador, dia) = sum(ciclo_k) ÷ 3600. Base: pausas fora. Sensibilidades obrigatórias: S1, o intervalo ou segmento inválido recebe a mediana dos válidos do recorte (depois de uma pausa só é trabalho o trecho típico fora do relógio, A5 do parecer); S2, o intervalo ou segmento inválido é truncado no limite (limite superior; a redação anterior contava cada pausa longa como teto inteiro de trabalho e inflava horas e FTE; reportar só como limite superior); S3, o limite da cauda conta só os endereços da última linha do bloco, max(1, Qtde Endereços da última linha − 1) × PAR01 (redação anterior; dá limite inferior de horas na colmeia e no checkout em lote, e enviesava CR7 e ALT5 a favor de manter a exclusão da colmeia). Tetos de PAR02, todos reportados: base 900 s, intermediário 600 s, conservador provisório 300 s (menos horas manuais, menos economia) e limite superior 1.800 s.",
+      "unidade": "horas por operador-dia",
+      "exclusoes": "Exclui executor 'robo'. Linhas CANCELADO ficam na linha do tempo (consumiram tempo do operador) mas não no volume. Tarefas abertas em lote (tarefa_aberta_lote) ficam fora do crédito. Dia = data do Início; as poucas linhas que cruzam a meia-noite ou ficaram abertas por dias ficam no dia do Início. Operador-dia com jornada ativa ou amplitude (primeiro início ao último fim) acima dos limites de PAR12 é marcado como turnos fundidos (turnos_fundidos) ou login compartilhado; reportar o FTE com e sem esses dias. Se houver atividade de madrugada, separar o operador-dia pelo descanso mínimo entre jornadas de PAR12, não pela meia-noite. Todo tempo não creditado sai registrado em M29. Reportar sempre com a sensibilidade de PAR02 e com S1, S2 e S3. A regra do limite da cauda decide horas e linhas por hora da colmeia (CR7): reportar a colmeia com a base, S3 (limite inferior de horas) e S2 (truncar no limite, limite superior de horas) e ler CR7 contra PR05 nos três; validar com a pessoa do setor (A2, E3: a cauda longa da colmeia é coleta ou distribuição no put wall).",
+      "tabela": "prep_prod_ciclos",
+      "criterios_ref": [
+        "CR1",
+        "CR3",
+        "CR7",
+        "CR8"
+      ],
+      "perguntas_ref": [
+        "P1",
+        "P10",
+        "P15",
+        "P17"
+      ],
+      "nota": "Coerência: M09, M10, M11, M12 e M29 usam os mesmos segmentos (passo 1). M09 usa as cadências; M10, as lacunas entre tarefas diferentes (passo 3, teto PAR02); M11, a união com lacunas acima do teto fora; M12, o ciclo desses segmentos; M29, o que ficou de fora. Em consulta preliminar, na colmeia 'Início da próxima menos Fim da anterior' é negativo na quase totalidade dos casos (Fim comum), e a cadência Início a Início nunca é negativa. Passar de truncar para excluir as pausas reduz as horas totais de forma relevante; S1 fica perto da base. O limite da cauda pelas coletas restantes eleva as horas da colmeia da Royal Canin de forma relevante frente ao limite só do último pedido; checkout e pedido-a-pedido quase não mudam."
+    },
+    {
+      "id": "M12",
+      "nome": "Horas de separação no escopo (ciclo completo atribuído)",
+      "definicao": "Horas ativas atribuídas a um recorte (depositante, tipo de onda, mês). Cada segundo ativo do operador é atribuído à linha dona do segmento de atividade (M11, passo 1) que o contém ou o precede: a duração do segmento mais a lacuna até o próximo, quando esta não passa do teto (pausas ficam fora, como em M10 e M11). A soma de todos os recortes de um operador-dia é a jornada ativa (M11), sem dupla contagem, mesmo com linhas sobrepostas em checkout e colmeia.",
+      "formula": "horas_escopo(mês) = sum(ciclo_k dos segmentos cuja linha dona está no recorte, com dia_atividade no mês) ÷ 3600, com ciclo_k da regra base de M11 (pausas fora). Por dia: ÷ número de dias plenos do mês (taxa corrente: janela de dias plenos definida no plano, [●]). Reportar também com S1, S2 e S3 de M11 e nos quatro tetos de PAR02 (900, 600, 300 e 1.800 s); a colmeia (CR7) obrigatoriamente com a base, S3 e S2.",
+      "unidade": "horas por mês; horas por dia pleno",
+      "exclusoes": "Mesmas de M11, com o tempo não creditado registrado em M29 e a sensibilidade S3 (limite da cauda) reportada junto, porque pesa na colmeia. Na colmeia e no checkout a atribuição reparte o tempo da tarefa entre os pedidos pela cadência dos primeiros bipes. Viés a declarar: pedidos que o robô fez aparecem como linhas 'robo' sem tempo humano, então as horas manuais do escopo desde o início do robô subestimam o custo sem robô. O analista usa a produtividade manual (M14) vezes o volume total, ou o período anterior ao robô (PAR11), como sensibilidade. Horas ativas podem incluir espera por onda que o robô não elimina (H13): economia em horas ativas pode exagerar a redução de quadro.",
+      "tabela": "prep_prod_ciclos",
+      "criterios_ref": [
+        "CR1",
+        "CR8"
+      ],
+      "perguntas_ref": [
+        "P1",
+        "P18"
+      ],
+      "nota": "Os FTE do slide 14 não se reproduzem em consulta preliminar nem pela soma de Tempo em Segundos nem por esta conta: o método do deck é desconhecido e a reconciliação é uma análise registrada (P1, P5)."
+    },
+    {
+      "id": "M13",
+      "nome": "FTE no escopo",
+      "definicao": "Horas de separação do escopo expressas em operadores equivalentes: presença necessária num dia útil, não quadro de pessoal (o quadro precisa de cobertura de férias e absenteísmo: [●]). Vaga inteira liberada = parte inteira do FTE liberado (CR8: FTE fracionário não evita contratação).",
+      "formula": "FTE = horas_escopo por dia pleno (M12) ÷ PR12 (PAR09). FTE liberado da alternativa = FTE atual − FTE residual (com robô). Vagas inteiras = floor(FTE liberado). Contratações evitadas com o crescimento: floor da diferença entre FTE sem robô e com robô no volume maior (slide 16). Sensibilidade semanal: FTE_semana = horas ativas da semana, sábado incluído, ÷ jornada semanal contratual (hipótese do especialista: PR12 é a jornada semanal da CLT dividida por seis dias; a confirmar, PQ05).",
+      "unidade": "FTE (operadores equivalentes)",
+      "exclusoes": "As de M12. A conversão usa PR12 (confiança baixa): reportar o FTE nos quatro tetos de PAR02 (base 900, intermediário 600, conservador provisório 300 e limite superior 1.800 s), com S1, S2 e S3 de M11, e com e sem os operador-dias marcados como turnos fundidos.",
+      "tabela": "prep_prod_ciclos",
+      "criterios_ref": [
+        "CR1",
+        "CR8"
+      ],
+      "perguntas_ref": [
+        "P1",
+        "P18"
+      ]
+    },
+    {
+      "id": "M14",
+      "nome": "Linhas por hora por operador em ciclo completo",
+      "definicao": "Produtividade manual com o intervalo até a próxima atividade incluído (CR3, CR7): coletas por hora de ciclo completo no recorte.",
+      "formula": "linhas_por_hora = sum(Qtde Endereços do recorte) ÷ (sum(ciclo_k do recorte) ÷ 3600), com ciclo_k da regra base de M11 (pausas fora), executor 'manual'. Em unidades por hora: sum(Qtde Un) no lugar. Recortes: Royal Canin pedido-a-pedido (CR3), Royal Canin colmeia (CR7) e Royal Canin checkout; por tipo de onda, número de endereços, depositante e hora (P9). Referências do deck: PR06 e PR05. Sensibilidades: tetos de PAR02 (base, intermediário, conservador provisório, limite superior); S1, S2 e S3 de M11; com e sem linhas longas (M08); só o período anterior ao início da operação do robô (PAR11).",
+      "unidade": "coletas por hora (linhas operacionais por hora por operador)",
+      "exclusoes": "Exclui executor 'robo', CANCELADO, linhas de palete ou caixa fechada (linha_palete), dias parciais e tarefas abertas em lote. Em unidades por hora, as linhas un_extremas saem das comparações com referências de picking fracionado (M07). Sensível ao teto: reportar com PAR02 e a sensibilidade. Nunca por operador individual. Viés da colmeia e do checkout: ver M05 (visita contada várias vezes). O limite da cauda de M11 também move as coletas por hora da colmeia: reportar a colmeia (CR7) com a base, S3 (limite inferior de horas, logo limite superior de coletas por hora) e S2 (truncar no limite, limite superior de horas), e ler CR7 contra PR05 nos três.",
+      "tabela": "prep_prod_ciclos",
+      "criterios_ref": [
+        "CR3",
+        "CR7"
+      ],
+      "perguntas_ref": [
+        "P7",
+        "P9",
+        "P17"
+      ],
+      "nota": "Em consulta preliminar, a base manual cai no mesmo intervalo da PR06 e varia bastante com o teto: é a medida mais sensível a PAR02."
+    },
+    {
+      "id": "M15",
+      "nome": "Volume por dia útil (taxa corrente)",
+      "definicao": "Volume médio por dia pleno de pedidos, linhas tarifáveis e linhas operacionais, por depositante e tipo de onda. Dia pleno = dia de segunda a sexta com registro, que não seja o dia parcial da carga. Feriados e pontes (PAR10), sábados e dias sem registro não são dias plenos. O deck dividiu por todas as datas distintas da carga, sábados e dia parcial incluídos.",
+      "formula": "taxa(recorte) = sum(volume nos dias plenos da janela) ÷ número de dias plenos da janela. Janela: últimas semanas, definida no plano ([●]). Conferências: mês completo mais recente e a carga inteira. Reportar a taxa corrente com e sem os dias pós-pausa (M18) e com e sem a última semana incompleta: o último dia pleno da carga é pós-pausa, e a taxa corrente não pode depender só dele. Mensalização: volume_mes = taxa × dias úteis de referência do mês + volume de sábados observado no mês. Dias úteis de referência = dias de segunda a sexta do calendário do mês, menos feriados e pontes (PAR10); o plano fixa o mês de referência ([●]). Dias sem registro sem explicação de calendário (PAR10) saem dos dias úteis de referência no cenário base (sem operação) e entram no cenário de lacuna de extração; a taxa por dia com registro não muda entre os dois, só o volume mensal.",
+      "unidade": "pedidos por dia; linhas por dia",
+      "exclusoes": "Volumes sem CANCELADO (M04). Sábados: a carga tem poucos, com volume de recuperação; entram nos totais mensais e fora das taxas por dia útil. Se a Social confirmar escala de seis dias (PQ05), o sábado passa a dia de operação com taxa própria, e a mensalização e o FTE semanal (M13) o incluem. Reportar também a taxa com a conta 'robo' dentro (é volume) e a sensibilidade ao tamanho da janela. Perfil compatível com o Kappabot (CR5): pedido-a-pedido com pedido_multi_endereco e checkout.",
+      "tabela": "prep_prod_pedidos",
+      "criterios_ref": [
+        "CR2",
+        "CR5"
+      ],
+      "perguntas_ref": [
+        "P4",
+        "P5",
+        "P14"
+      ]
+    },
+    {
+      "id": "M16",
+      "nome": "Volume por hora do dia",
+      "definicao": "Demanda horária média em dias plenos: linhas operacionais, pedidos e linhas da tabela por hora de Data/Hora Início, por depositante e tipo de onda. Inclui a janela de operação observada (PR15) e a concentração matinal (slide 17). Mede processamento (hora da confirmação), não a chegada do pedido: a planilha não traz a hora de criação nem de liberação do pedido (pergunta PQ06).",
+      "formula": "demanda(h) = média, entre os dias plenos, de sum(Qtde Endereços) das linhas com hora de início h (e de pedidos distintos pela hora da primeira linha do pedido). Janela observada = horas com demanda média >= PAR06 × volume diário médio. Concentração matinal = linhas com início entre 8h e 9h59 ÷ total de linhas (no deck, chamada de 'tarefas').",
+      "unidade": "linhas por hora; pedidos por hora",
+      "exclusoes": "Dias plenos. Sem CANCELADO. Atribuição à hora do início: linhas longas podem cruzar a hora seguinte (aceito, declarado). Viés para CR4: a concentração matinal pode ser fila da noite processada quando a equipe chega, e dimensionar a frota por essa curva copia o dimensionamento atual de pessoal. Comparar a primeira hora de segunda e de dia pós-pausa com a de terça a sexta (H01).",
+      "tabela": "prep_prod_linhas",
+      "criterios_ref": [
+        "CR4"
+      ],
+      "perguntas_ref": [
+        "P11",
+        "P12"
+      ],
+      "nota": "Em consulta preliminar, a concentração matinal do slide 17 (tarefas entre 8h e 10h) reproduz-se contando linhas da tabela por hora de início, não a coluna Tarefa distinta."
+    },
+    {
+      "id": "M17",
+      "nome": "Volume por dia da semana",
+      "definicao": "Pedidos e linhas por dia pleno, por dia da semana, por depositante e tipo de onda.",
+      "formula": "média, por dia da semana, do volume diário (M15) nos dias plenos.",
+      "unidade": "pedidos por dia; linhas por dia",
+      "exclusoes": "Sem sábados (por definição de dia pleno), sem dia parcial e sem CANCELADO. Dia depois de feriado ou pausa vem marcado (M18).",
+      "tabela": "prep_prod_pedidos",
+      "criterios_ref": [
+        "CR4"
+      ],
+      "perguntas_ref": [
+        "P11"
+      ]
+    },
+    {
+      "id": "M18",
+      "nome": "Dia típico e dia de pico (p90 e máximo)",
+      "definicao": "Dia típico = média e mediana do volume diário nos dias plenos. Dia p90 = o percentil PAR04 do volume diário (interpolação linear), com perfil horário dado pela média dos perfis dos dias com volume entre os percentis de PAR05. Máximo = maior volume diário observado.",
+      "formula": "p90 = quantile_cont(volume_diario, PAR04) sobre os dias plenos (volume em linhas operacionais; também em pedidos). Perfil horário do dia p90(h) = média de demanda(h) (M16) nos dias com volume diário dentro de PAR05, mínimo PAR07 dias; conferência com o dia real mais próximo do p90. dia_pos_pausa = dia pleno logo depois de pelo menos um dia útil de segunda a sexta sem registro (feriado, ponte ou pausa); nesta carga o último dia pleno é pós-pausa. Reportar p90 e máximo com e sem os dias pós-pausa.",
+      "unidade": "linhas por dia; pedidos por dia; linhas por hora",
+      "exclusoes": "Dias plenos. O máximo absoluto da carga vem logo depois de dias sem registro: é fila acumulada que precisa ser separada de fato (pico de retomada, que se repete após feriados e, em menor grau, às segundas), não necessariamente pico de demanda. O p90 segue como referência de frota; o máximo pós-pausa entra em H02, que mede robôs e pessoas-hora na janela estendida: o Kappabot é colaborativo e cada hora de robô exige separador na mesma hora, então não é argumento automático de mais robôs nem de dispensar temporário. A série não cobre alta temporada (Black Friday, Natal): o p90 desta carga não responde pelo pico do slide 17.",
+      "tabela": "prep_prod_pedidos",
+      "criterios_ref": [
+        "CR4",
+        "CR8"
+      ],
+      "perguntas_ref": [
+        "P11",
+        "P12",
+        "P19"
+      ],
+      "nota": "Validação: o p90 diário de linhas do slide 12 reproduz-se, com diferença residual pequena, por interpolação linear sobre as datas da carga."
+    },
+    {
+      "id": "M19",
+      "nome": "Pico horário",
+      "definicao": "Hora de maior demanda: no perfil médio dos dias plenos e no perfil do dia p90.",
+      "formula": "pico_medio = argmax_h demanda(h) (M16); pico_p90 = max_h perfil_p90(h) (M18), em linhas operacionais por hora e em pedidos de checkout por hora; participação do pico no volume diário.",
+      "unidade": "linhas por hora; pedidos por hora; hora do dia",
+      "exclusoes": "Mesmas de M16 e M18.",
+      "tabela": "prep_prod_linhas",
+      "criterios_ref": [
+        "CR4"
+      ],
+      "perguntas_ref": [
+        "P11",
+        "P12"
+      ]
+    },
+    {
+      "id": "M20",
+      "nome": "Pedidos e linhas por mês, depositante e tipo de onda",
+      "definicao": "Volume mensal de pedidos (M04), linhas tarifáveis (M06) e linhas operacionais (M05), por depositante e tipo de onda, com a participação de cada tipo dentro do depositante (slide 8).",
+      "formula": "volume(mês, depositante, tipo) = soma do recorte no mês (mês = Mês/Ano), com pedidos contados por pedido_id (M04). Participação = volume do tipo ÷ volume do depositante no mês. Mês parcial normalizado por dia pleno: valor_normalizado = (volume dos dias plenos do mês ÷ dias plenos com registro no mês) × dias úteis de referência do mês (M15, calendário sem feriados e pontes) + volume de sábados observado.",
+      "unidade": "pedidos por mês; linhas por mês; percentual",
+      "exclusoes": "Sem CANCELADO; 'MULTI' fora das linhas por depositante e dentro do total do armazém. O último mês da carga é parcial (extração na manhã de 28/09, sem o fim do mês): sempre sinalizado e normalizado, nunca comparado cru. Junho tem um bloco de dias sem registro (PAR10) e setembro tem dias sem registro; o volume mensal cru desses meses está subestimado se houver lacuna de extração.",
+      "tabela": "prep_prod_pedidos",
+      "criterios_ref": [
+        "CR2",
+        "CR5"
+      ],
+      "perguntas_ref": [
+        "P4",
+        "P5",
+        "P6",
+        "P14"
+      ],
+      "nota": "Validação: os pedidos mensais e a participação do pedido-a-pedido da Royal Canin reproduzem o slide 8. O volume do relatório 9fleet v1, p. 10, é de outra fonte (9fleet) e só se compara depois de definir a janela."
+    },
+    {
+      "id": "M21",
+      "nome": "Receita por transação (CR2) e franquia",
+      "definicao": "Receita mensal da Acta por transação no escopo: pedidos de checkout vezes a tarifa do checkout mais linhas tarifáveis do pedido-a-pedido vezes a tarifa por linha, com as faixas de volume do deck (slide 18). Compara-se com a franquia (PR02).",
+      "formula": "Faixas (PAR14): receita_checkout(P) = PR03 × min(P, L_chk) + T_chk_red × max(0, P − L_chk), com P = pedidos de checkout do mês. receita_pap(Q) = PR04 × min(Q, L_pap) + T_pap_red × max(0, Q − L_pap), com Q = linhas tarifáveis do pedido-a-pedido no mês (M06). Leitura base (marginal): a tarifa reduzida vale só para o volume acima do limite mensal, e a cheia até o limite. Sensibilidade (retroativa): a tarifa reduzida vale para todo o volume do mês quando o limite é ultrapassado. O deck diz 'acima de' e não esclarece: [●], PQ08. receita_mes = receita_checkout(P) + receita_pap(Q). Por alternativa: ALT2 sem o termo do checkout (P = 0). Cobertura da franquia = receita_mes ÷ PR02. Volumes mensalizados de M15 e M20. Variante 'depositante adicional' (CR5): para o depositante d com perfil compatível, receita_adicional_d = receita_mes(volume do escopo + volume compatível de d) − receita_mes(volume do escopo), pelas mesmas faixas (o volume de d soma ao volume mensal do contrato e entra na faixa reduzida se a ultrapassar).",
+      "unidade": "R$ por mês; razão",
+      "exclusoes": "Pedidos sem CANCELADO. Executor 'robo' entra (é volume). Reconciliar com PR19 e PR02 (volume implícito do deck). Volume de d: pedido-a-pedido com pedido_multi_endereco e checkout, sem linha_palete.",
+      "tabela": "prep_prod_pedidos",
+      "criterios_ref": [
+        "CR2",
+        "CR5",
+        "CR6"
+      ],
+      "perguntas_ref": [
+        "P4",
+        "P5",
+        "P14",
+        "P16"
+      ]
+    },
+    {
+      "id": "M22",
+      "nome": "Frota necessária",
+      "definicao": "Menor número de robôs que cobre a demanda horária do escopo em cada hora da janela, no dia p90 (CR4).",
+      "formula": "frota(h) = ceil(demanda(h) ÷ capacidade_por_robô). Pedido-a-pedido: demanda em linhas operacionais por hora (perfil do dia p90, M18) e capacidade PR07. Checkout: demanda em pedidos por hora e capacidade PR08 (faixa; sem valor). frota_necessaria = max sobre h da janela PR15 (M16). Comparar com PR09 nas duas leituras (slides 12 e 14); sobra no dia típico = PR09 − frota(h) no perfil médio. Para CR5, a mesma regra aplicada à demanda dos outros depositantes em perfil compatível (pedido-a-pedido com pedido_multi_endereco e checkout) dá os robôs adicionais. Pooling (H03): comparar o p90 da soma dos depositantes compatíveis com a soma dos p90 individuais.",
+      "unidade": "robôs",
+      "exclusoes": "Linhas e pedidos sem CANCELADO e sem linha_palete (palete e caixa fechada não são demanda de robô, A6); linhas un_extremas são reportadas à parte por depositante (CR5), sem corte. Capacidades são premissas (PR07, PR08): reportar com a faixa de PR08. A curva horária é de processamento (M16): a frota por ela copia o dimensionamento atual de pessoal; declarar.",
+      "tabela": "prep_prod_pedidos",
+      "criterios_ref": [
+        "CR4"
+      ],
+      "perguntas_ref": [
+        "P12"
+      ]
+    },
+    {
+      "id": "M23",
+      "nome": "Horas excedentes no dia de pico e absorção pela frota",
+      "definicao": "Horas de separação do dia p90 e do máximo que passam do dia típico, operadores a mais que isso exigiria sem robôs, e quanto da frota proposta absorve desse excedente (CR8, P19).",
+      "formula": "excedente_h = horas_ativas(dia p90) − horas_ativas(dia típico), no escopo e no armazém, pelo método M11 e M12. Operadores adicionais sem robôs = ceil(excedente_h ÷ PR12). Absorção: excedente_linhas(h) = max(0, perfil_p90(h) − perfil_típico(h)) em linhas operacionais por hora (M16, M18; no checkout, pedidos por hora). capacidade_frota(h) = frota proposta (PR09, nas duas leituras) × capacidade por robô (PR07 no pedido-a-pedido; PR08 no checkout, com faixa). absorvido(h) = min(excedente_linhas(h), capacidade_frota(h)). horas_absorvidas = sum sobre h da janela PR15 de absorvido(h) ÷ M14 do mesmo tipo de onda e do mesmo depositante do recorte (linhas por hora de um operador manual em ciclo completo), isto é, linhas convertidas em horas humanas equivalentes. horas_residuais = max(0, excedente_h − horas_absorvidas). Reforço sem robô além da equipe com robô = ceil(horas_residuais ÷ PR12). CR8 passa se o reforço for zero no dia p90.",
+      "unidade": "horas por dia; operadores; linhas por hora",
+      "exclusoes": "As de M11 a M13 e M22. Não cobre alta temporada. M14 e as horas de M12 saem de recortes diferentes: reportar a absorção com M14 em ciclo completo e com S3. Capacidades são premissas (PR07, PR08).",
+      "tabela": "prep_prod_ciclos",
+      "criterios_ref": [
+        "CR8"
+      ],
+      "perguntas_ref": [
+        "P19"
+      ]
+    },
+    {
+      "id": "M24",
+      "nome": "Operadores ativos por dia",
+      "definicao": "Quantidade de operadores distintos com atividade de separação por dia pleno, no armazém e por escopo (P15). Só agregado.",
+      "formula": "ativos(dia) = count(distinct Usuário pseudonimizado) com pelo menos uma linha do executor 'manual' no dia pleno. Reportar média e p90 entre dias. Sensibilidade: ativo = jornada ativa (M11) de pelo menos uma hora (limite sem fonte setorial: [●]); o corte de uma linha por dia conta supervisor e apoio como separador.",
+      "unidade": "operadores",
+      "exclusoes": "Exclui a conta 'robo'. Nunca lista nem ranqueia operadores. Respeita PAR07.",
+      "tabela": "prep_prod_ciclos",
+      "criterios_ref": [
+        "CR5",
+        "CR8"
+      ],
+      "perguntas_ref": [
+        "P15"
+      ],
+      "nota": "Validação: a ordem de grandeza dos 'separadores ativos' do slide 12 reproduz-se com o corte de uma linha por dia."
+    },
+    {
+      "id": "M25",
+      "nome": "Curva de aprendizado por coorte",
+      "definicao": "Produtividade (M14) por semana desde a primeira atividade observada do operador, agregada por coorte de entrada (P13). Só agregado, sem operador individual.",
+      "formula": "coorte = semana ISO da primeira atividade do operador pseudonimizado na carga. semana_desde_entrada = semanas entre a atividade e a primeira. Produtividade da coorte-semana = M14 do conjunto de operadores da coorte naquela semana, controlada por tipo de onda. Só entram operadores cuja primeira atividade ocorre depois da primeira semana da carga, e grupos com PAR07 ou mais registros.",
+      "unidade": "coletas por hora por semana desde a entrada",
+      "exclusoes": "Operadores já ativos no início da carga não têm primeira atividade observada (censura à esquerda) e ficam fora. Exclui 'robo'. A carga é curta: a coorte é pequena e a incerteza, grande. Login novo não é necessariamente pessoa nova (veterano de outra área, recontratação, troca de login); há viés de sobrevivência (o temporário que sai cedo some) e de alocação (o novato recebe ondas mais fáceis).",
+      "tabela": "prep_prod_ciclos",
+      "criterios_ref": [
+        "CR8"
+      ],
+      "perguntas_ref": [
+        "P13"
+      ]
+    },
+    {
+      "id": "M26",
+      "nome": "Participação do robô no WMS (P8)",
+      "definicao": "Peso da conta do robô nos pedidos pedido-a-pedido da Royal Canin e o que o WMS registra para eles, em comparação descritiva com o manual nos mesmos campos.",
+      "formula": "participacao_robo = pedidos com executor 'robo' ÷ pedidos pedido-a-pedido da Royal Canin, por mês e desde o início da operação do robô (PAR11). Comparação nos mesmos campos: Qtde Endereços, Qtde Un e Qtde Produtos por pedido. Tempo em Segundos do robô não é comparável (devolutiva automática confirma de uma vez).",
+      "unidade": "percentual; pedidos",
+      "exclusoes": "Sem CANCELADO. Pedidos do robô com devolutiva não automática não se distinguem do manual (a taxa de devolutiva automática vem do relatório 9fleet v1, p. 7). Comparação só descritiva (restrição de Q04).",
+      "tabela": "prep_prod_pedidos",
+      "criterios_ref": [
+        "CR3"
+      ],
+      "perguntas_ref": [
+        "P8"
+      ]
+    },
+    {
+      "id": "M27",
+      "nome": "Margem de contribuição por robô e hardware máximo pagável (CR6)",
+      "definicao": "Margem mensal da Acta por robô da frota proposta, sem hardware, e o custo máximo de hardware por robô que se paga no prazo do contrato. Variante para o depositante adicional (CR5).",
+      "formula": "receita_por_robo = max(receita_mes (M21), PR02) ÷ frota proposta (PR09 ou M22, por alternativa). margem_robo = receita_por_robo − PR13. hardware_maximo_por_robo = margem_robo × PR14 (se a margem for positiva). Compara-se depois com PR20 ([●]). Variante 'depositante adicional' (CR5): robos_adicionais_d = M22 aplicado à demanda compatível de d; receita_por_robo_adicional_d = receita_adicional_d (M21) ÷ robos_adicionais_d; margem_robo_adicional_d = receita_por_robo_adicional_d − PR13; hardware_maximo_adicional_d = margem_robo_adicional_d × PR14. Sem franquia adicional: a franquia (PR02) já é coberta pelo escopo, e a receita de d é incremental. CR5 passa se a demanda média de d na janela cobre pelo menos a capacidade de um robô (PR07 ou PR08) e margem_robo_adicional_d >= 0.",
+      "unidade": "R$ por robô por mês; R$ por robô",
+      "exclusoes": "Sem CANCELADO. Não inclui custo de hardware (PR20 é [●]). Frota proposta nas duas leituras de PR09. Depositantes abaixo de PAR07 registros por grupo não são reportados.",
+      "tabela": "prep_prod_pedidos",
+      "criterios_ref": [
+        "CR5",
+        "CR6"
+      ],
+      "perguntas_ref": [
+        "P14",
+        "P16"
+      ]
+    },
+    {
+      "id": "M28",
+      "nome": "Economia da Social no escopo (CR1)",
+      "definicao": "Economia da Social em % do custo atual de mão de obra no escopo, por alternativa: (custo atual − mão de obra residual − tarifas) ÷ custo atual. O WMS fornece as horas e os volumes; o modelo do residual (premissas PR05, PR06 e PR11) é do analista de impacto. A garantia PR01 é por trimestre: a comparação com PR01 usa a economia do trimestre, não a do mês isolado.",
+      "formula": "custo_atual_mes = (FTE de separação do escopo (M13) + postos de conferência PR11, nas alternativas com checkout) × PR10 ÷ 12. mo_residual_mes = FTE residual × PR10 ÷ 12, com o FTE residual do modelo de impacto. tarifas_mes = max(receita_mes (M21), PR02). economia_mes_pct = (custo_atual_mes − mo_residual_mes − tarifas_mes) ÷ custo_atual_mes (referência mensal). Trimestre: economia_trim_pct = sum sobre três meses consecutivos de (custo_atual − mo_residual − tarifas) ÷ sum sobre os mesmos meses de custo_atual; base: três vezes o mês na taxa corrente (volume constante); sensibilidade: três meses consecutivos reais da série, normalizados (o mix de ondas muda: slide 8). Crédito da garantia = max(0, PR01 × sum(custo_atual do trimestre) − sum(economia em R$ do trimestre)). CR1 compara economia_trim_pct com PR01. Cenário conservador: teto de 300 s de PAR02 (provisório, a confirmar por Marcus no G2; intermediário 600 s, base 900 s, limite superior 1.800 s) e premissas no extremo desfavorável.",
+      "unidade": "percentual; R$ por mês; R$ por trimestre",
+      "exclusoes": "Sem CANCELADO. Reconciliar com PR19 e com os slides 14 e 15 (P1, P5).",
+      "tabela": "prep_prod_ciclos",
+      "criterios_ref": [
+        "CR1",
+        "CR8"
+      ],
+      "perguntas_ref": [
+        "P1",
+        "P18"
+      ]
+    },
+    {
+      "id": "M29",
+      "nome": "Tempo descartado pelas regras de segmento e de lacuna",
+      "definicao": "Registro do tempo que M09, M10, M11 e M12 não creditam, para que nenhuma exclusão fique sem registro, por motivo, tipo de onda e depositante. Mostra onde o viés pode estar (por exemplo, a cauda da colmeia, CR7).",
+      "formula": "Motivos: (1) cadência_acima_PAR01; (2) cauda_acima_do_limite (e, na sensibilidade S3, a diferença de limite); (3) lacuna_acima_do_teto entre tarefas (PAR02); (4) lacuna_acima_de_PAR01 dentro da mesma tarefa; (5) lacuna_com_segmento_invalido (segmento inválido que se sobrepõe à lacuna, como em M11; só quando a lacuna não saiu já pelos motivos 3 ou 4); (6) linha_fora_da_sequencia por tarefa_aberta_lote; (7) linha_fora_da_sequencia por executor 'robo'. Para cada motivo, tipo de onda, depositante e mês: n (segmentos, lacunas ou linhas), segundos brutos (comprimento do segmento ou da lacuna; para as linhas fora da sequência, Tempo em Segundos positivo) e, para os motivos 1 a 5, segundos descartados líquidos (a parte que não está coberta pelos segmentos válidos do mesmo operador-dia). Também: horas creditadas (M11) e a razão descartado líquido ÷ (creditado + descartado líquido). Invariante dentro da sequência de cada operador-dia: sum(ciclo_k) + sum(lacunas excluídas) = amplitude do operador-dia (primeiro início ao último fim da sequência). Operador-dia sem nenhum segmento válido tem jornada zero e todo o seu tempo vai para M29; o invariante vale para os operador-dias com segmento válido, e a D3 informa quantos operador-dias ficam sem segmento válido, para fechar o total de operador-dias humanos fora do lote. Saída: tabela prep_prod_descarte (motivo, tipo_onda, depositante, mês, n, segundos_brutos, segundos_liquidos).",
+      "unidade": "segmentos, lacunas ou linhas; segundos; horas; razão",
+      "exclusoes": "Respeita PAR07 por grupo (sem operador individual). Linhas CANCELADO não são motivo de descarte (ficam na linha do tempo). M10 continua contando os intervalos excluídos; M29 os consolida com os segmentos.",
+      "tabela": "prep_prod_descarte",
+      "criterios_ref": [
+        "CR1",
+        "CR3",
+        "CR7",
+        "CR8"
+      ],
+      "perguntas_ref": [
+        "P1",
+        "P10",
+        "P17"
+      ]
+    }
+  ],
+  "relacoes": [],
+  "verificacoes": [
+    {
+      "tema": "Onda",
+      "consulta": "count(distinct Id Onda), count(distinct Onda), count(distinct (Id Onda, Onda)); Tarefa // 10000 = Id Onda",
+      "resultado": "Id Onda e Onda são um a um; Tarefa // 10000 = Id Onda em todas as linhas. Adotada Id Onda."
+    },
+    {
+      "tema": "Tipo de onda",
+      "consulta": "classificação por onda (M02) × mês, Royal Canin, sem linhas CANCELADO",
+      "resultado": "Reproduz os pedidos mensais e a participação do pedido-a-pedido do slide 8 (jun a set); nenhuma onda cai em 'outro'; Região Destino é constante dentro da onda."
+    },
+    {
+      "tema": "Depositante",
+      "consulta": "M01 sobre todos os pedidos; participação por depositante",
+      "resultado": "Reproduz a participação por depositante do slide 12."
+    },
+    {
+      "tema": "Linha operacional",
+      "consulta": "sum(Qtde Endereços) ÷ datas distintas, por depositante",
+      "resultado": "Reproduz as linhas por dia útil do slide 12 (armazém e Royal Canin) com Qtde Endereços; com Qtde Produtos a conta fica um pouco diferente."
+    },
+    {
+      "tema": "Tempo por coleta manual",
+      "consulta": "M08 com PAR01 sobre a Royal Canin pedido-a-pedido, com 2 ou mais endereços",
+      "resultado": "Reproduz a média e o n do relatório (a menos de uma linha) quando as linhas do robô entram; sem elas a média sobe. A estabilidade entre 2 e 5 endereços do relatório também se confirma."
+    },
+    {
+      "tema": "Intervalo entre tarefas",
+      "consulta": "M10, variante (b), por teto",
+      "resultado": "Qualquer teto de 300 s para cima reproduz a mediana do slide 6, então esse dado não identifica o teto (PAR02, PQ03); teto menor reduz o número de pares."
+    },
+    {
+      "tema": "Checkout",
+      "consulta": "M09 sobre o checkout da Royal Canin",
+      "resultado": "O tempo por unidade e as unidades por onda ficam na ordem de grandeza do slide 10."
+    },
+    {
+      "tema": "Jornada e FTE",
+      "consulta": "M11 a M13 por teto; soma de Tempo em Segundos por recorte",
+      "resultado": "Os FTE do slide 14 (separação do checkout e do pedido-a-pedido) não se reproduzem por nenhum dos dois métodos; as horas ativas por operador-dia ficam muito abaixo de PR12 e crescem muito com o teto. O método do deck é desconhecido."
+    },
+    {
+      "tema": "Linha de um endereço (A1)",
+      "consulta": "Tempo em Segundos por faixa de Qtde Un, linhas de um endereço, executor manual, Royal Canin pedido-a-pedido",
+      "resultado": "O tempo não cresce com as unidades: sem sinal de bipe por unidade; o Fim parece a última coleta. Na colmeia, linhas de um endereço têm tempo alto."
+    },
+    {
+      "tema": "Checkout com mais de uma unidade (A7)",
+      "consulta": "linhas de checkout com Qtde Un maior que 1, por depositante",
+      "resultado": "Existem em pouquíssimas linhas e ondas, fora da Royal Canin. Subclasse checkout_multiunidade marcada em M02."
+    },
+    {
+      "tema": "Soma contra máximo de Qtde Produtos por pedido (A9)",
+      "consulta": "sum contra max de Qtde Produtos por Pedido, pedidos com mais de uma linha",
+      "resultado": "Poucos pedidos têm mais de uma linha e a diferença entre os limites é pequena na carga e na Royal Canin pedido-a-pedido: M06 reporta os dois limites."
+    },
+    {
+      "tema": "Jornada: truncar contra excluir pausas (A5)",
+      "consulta": "M11 nos tetos 300, 600 e 900, com pausas truncadas, excluídas e com mediana",
+      "resultado": "Truncar o intervalo no teto infla as horas de forma relevante frente a excluir as pausas; a mediana fica perto de excluir. Base passou a excluir (coerente com M10)."
+    },
+    {
+      "tema": "Checkout e colmeia: Fim em bloco (QD03)",
+      "consulta": "Início da próxima linha − Fim da anterior contra Início − Início anterior, por tarefa e usuário, por tipo de onda",
+      "resultado": "Na colmeia, Início − Fim anterior é negativo na quase totalidade dos casos (Fim comum às linhas) e Início − Início anterior nunca é negativo. M09, M10, M11 e M12 passam a usar segmentos Início a Início (cadência) e a cauda até o Fim comum."
+    },
+    {
+      "tema": "Cauda de M11 na colmeia (sup-dados)",
+      "consulta": "M11 em blocos (Usuário, Tarefa, fim_corrigido), limite da cauda pelas coletas restantes do bloco contra só as da última linha",
+      "resultado": "Em simulação agregada, as horas da colmeia da Royal Canin sobem de forma relevante (ordem de uma sexta parte) com o limite pelas coletas restantes; checkout e pedido-a-pedido não mudam. A redação anterior favorecia manter a exclusão da colmeia (CR7, ALT5). Validar com a pessoa do setor (A2, E3)."
+    },
+    {
+      "tema": "Pedido em mais de um depositante",
+      "consulta": "count(distinct Pedido) contra count(distinct (depositante, Pedido))",
+      "resultado": "Poucos números de pedido aparecem em mais de um depositante (alguns com linha MULTI). A chave de M04 é (depositante, Pedido); pedidos_na_onda de M02 segue o número do Pedido para não mudar o tipo de poucas ondas."
+    },
+    {
+      "tema": "Dia de pico",
+      "consulta": "volume diário por data; p90 por interpolação linear",
+      "resultado": "O p90 do slide 12 se reproduz; o máximo diário vem logo depois de dias úteis sem registro."
+    },
+    {
+      "tema": "Concentração matinal",
+      "consulta": "participação de linhas por hora de início",
+      "resultado": "Reproduz o dado do slide 17 contando linhas da tabela."
+    }
+  ],
+  "invariantes_prep": {
+    "origem": "Contagens de referência de consulta agregada do engenheiro de dados em 2026-10-03, sobre raw_prod_90dias_produtividade com as regras deste contrato. Não são resultado de análise registrada. Na D3, cada etapa as confere (assert) e saidas/pipeline.json passa a ser a fonte.",
+    "sha256_bruto": "62c917fc1f76a5d02d670e1f423620279be9dd4497edde6f36dd22b38598ca94",
+    "nota_sha256": "As contagens valem para este arquivo bruto: o assert da D3 só compara se o sha256 de dados/brutos for o mesmo; com outro arquivo, as contagens se refazem.",
+    "regras_sem_numero": [
+      "prep_prod_linhas: count(*) = count(*) de base_prod_90dias_produtividade; soma de Qtde Endereços, Qtde Produtos e Qtde Un igual à da base (nada é apagado).",
+      "prep_prod_pedidos: count(*) = count(distinct pedido_id); a tabela guarda os pedidos cancelados, com a marca cancelado; as somas de Qtde Endereços e de Qtde Produtos sem CANCELADO filtram essa marca e são iguais às das linhas sem CANCELADO (M06 reporta o limite superior, a soma).",
+      "prep_prod_tarefas: count(*) = count(distinct (Tarefa, Usuário)).",
+      "prep_prod_ciclos: count(*) = linhas de prep_prod_linhas com executor manual e sem tarefa_aberta_lote; sum(ciclo_k) por operador-dia = jornada ativa de M11; sum(ciclo_k) + sum(lacunas excluídas) = amplitude do operador-dia.",
+      "prep_calendario: uma linha por data de min(Data) a max(Data); classes somam o total de dias.",
+      "prep_conta_robo: exatamente uma linha; linhas de base_ com o código = linhas de raw_ com o padrão (M03).",
+      "Contagem de linhas inalterada depois de cada join de atributos de onda e de pedido (join n:1 sobre a chave do contrato)."
+    ],
+    "contagens_esperadas": [
+      {
+        "tabela": "prep_conta_robo",
+        "total": 1,
+        "detalhe": {
+          "linhas_de_base_com_o_codigo": 214
+        }
+      },
+      {
+        "tabela": "prep_prod_linhas",
+        "total": 43976,
+        "por_tipo_onda": {
+          "checkout": 15102,
+          "colmeia": 12188,
+          "pedido_a_pedido": 16686
+        },
+        "somas": {
+          "qtde_enderecos": 88763,
+          "qtde_produtos": 89282,
+          "qtde_un": 468979
+        }
+      },
+      {
+        "tabela": "prep_prod_pedidos",
+        "total": 43918,
+        "por_tipo_onda": {
+          "checkout": 15101,
+          "colmeia": 12188,
+          "pedido_a_pedido": 16629
+        },
+        "sem_cancelado": {
+          "total": 43909,
+          "por_tipo_onda": {
+            "checkout": 15100,
+            "colmeia": 12188,
+            "pedido_a_pedido": 16621
+          }
+        },
+        "somas_sem_cancelado": {
+          "qtde_enderecos": 88741,
+          "qtde_produtos": 89242,
+          "qtde_un": 467897
+        },
+        "nota": "pedidos distintos por número de Pedido: 43914; a diferença é pedido_em_mais_de_um_depositante"
+      },
+      {
+        "tabela": "prep_prod_tarefas",
+        "total": 19118,
+        "por_tipo_onda": {
+          "checkout": 1223,
+          "colmeia": 1249,
+          "pedido_a_pedido": 16646
+        },
+        "nota": "tarefas distintas: 19103; a diferença são tarefas com dois usuários"
+      },
+      {
+        "tabela": "prep_prod_ciclos",
+        "total": 43674,
+        "por_tipo_onda": {
+          "checkout": 15082,
+          "colmeia": 12131,
+          "pedido_a_pedido": 16461
+        },
+        "nota": "43976 menos 214 do robô e 89 em lote, mais 1 linha que é das duas marcas"
+      },
+      {
+        "tabela": "prep_calendario",
+        "total": 120,
+        "detalhe": {
+          "dias_com_registro": 83,
+          "dias_uteis_sem_registro": 5
+        }
+      },
+      {
+        "tabela": "prep_prod_descarte",
+        "total": null,
+        "nota": "sem contagem de referência; confere o invariante de M29"
+      }
+    ],
+    "ondas_por_tipo": {
+      "checkout": 1217,
+      "colmeia": 1249,
+      "pedido_a_pedido": 16631
+    }
+  },
+  "perguntas_abertas": [
+    {
+      "id": "PQ01",
+      "pergunta": "A extração do WMS foi na manhã de 2026-09-28 (a data de 2026-10-02 é só o upload ao Drive)? O que houve em 2026-06-08 e 2026-09-24 (parada, inventário ou falha de extração)? Os horários são locais (America/Sao_Paulo)?",
+      "resposta_proposta": "Registrar a extração como 2026-09-28 (manhã), inferida, e o último dia como parcial (PAR08). 2026-06-04, 2026-06-05 e 2026-09-07 são feriado e ponte. 2026-06-08 e 2026-09-24 viram dias sem operação no cenário base e lacuna de extração no alternativo (M15), com taxas com e sem dias pós-pausa. Horários locais. A Social confirma.",
+      "destinatario": "marcus"
+    },
+    {
+      "id": "PQ02",
+      "pergunta": "No WMS da Social, Qtde Produtos é o número de produtos distintos do pedido (a linha tarifável de Q06)? O deck contou 'linhas' pela coluna Qtde Endereços (slide 12).",
+      "resposta_proposta": "Adotar Qtde Produtos como linha tarifável (M06) e mostrar CR2 também com Qtde Endereços. Marcus fixa no contrato comercial qual coluna vale, e a Social confirma o significado da coluna.",
+      "destinatario": "marcus"
+    },
+    {
+      "id": "PQ03",
+      "pergunta": "Qual o teto de intervalo entre atividades do mesmo operador que a operação da Social considera ainda trabalho (e não pausa)?",
+      "resposta_proposta": "Reportar os quatro tetos: base de 900 s, intermediário de 600 s, conservador provisório de 300 s (menos horas manuais, menos economia, mais linhas por hora; parecer D1 corrigido) e limite superior de 1.800 s. A escolha final do conservador é de Marcus no G2, com validação da pessoa da operação da Social indicada por ele (A08).",
+      "destinatario": "marcus"
+    },
+    {
+      "id": "PQ04",
+      "pergunta": "A engenharia da Acta confirma que a conta única com 'acta' e 'robo' no login é a de integração do 9fleet com o WMS, e por que ela tem linhas antes da data de início da operação do robô citada nos documentos?",
+      "resposta_proposta": "Assumir que é a conta de devolutiva automática e que as linhas anteriores são testes; M03 exclui a conta do tempo manual e a mantém no volume.",
+      "destinatario": "engenharia da Acta"
+    },
+    {
+      "id": "PQ05",
+      "pergunta": "PR12 (jornada de FTE) foi medida no WMS ou é a jornada contratual? As horas ativas do WMS ficam bem abaixo dela por operador-dia.",
+      "resposta_proposta": "Tratar PR12 como jornada contratual de escala de seis dias (hipótese do especialista: jornada semanal da CLT dividida por seis), com FTE em presença necessária num dia útil e a sensibilidade semanal com sábado (M13). Reportar o FTE nos quatro tetos de PAR02. O autor do deck e a Social confirmam, inclusive se os separadores trabalham aos sábados.",
+      "destinatario": "marcus"
+    },
+    {
+      "id": "PQ06",
+      "pergunta": "O WMS Senior da Social exporta a hora de criação ou de liberação do pedido? Qual o horário de corte de cada depositante?",
+      "resposta_proposta": "Sem o dado, a curva horária (M16, M19) é de processamento e não de demanda, e a frota dimensionada por ela copia o dimensionamento atual de pessoal: declarar no memorando.",
+      "destinatario": "Social, via Marcus"
+    },
+    {
+      "id": "PQ07",
+      "pergunta": "O mesmo número de pedido aparece em mais de um depositante em poucos casos (inclusive em linha com regiões de dois depositantes). São pedidos distintos?",
+      "resposta_proposta": "Tratar como distintos: pedido = (depositante, Pedido) (M04), e perguntar à Social. Se forem o mesmo pedido, o total do armazém superconta alguns pedidos e as métricas por depositante não mudam.",
+      "destinatario": "Social, via Marcus"
+    },
+    {
+      "id": "PQ08",
+      "pergunta": "A tarifa reduzida do slide 18 (acima de 6 mil pedidos por mês no checkout; acima de 15 mil linhas por mês no pedido-a-pedido) vale só para o volume acima do limite, ou para todo o volume do mês quando o limite é ultrapassado?",
+      "resposta_proposta": "Base marginal (só o excedente), pela leitura literal de 'acima de', e a leitura retroativa como sensibilidade em M21. Marcus fixa a cláusula.",
+      "destinatario": "Marcus"
+    },
+    {
+      "id": "PQ09",
+      "pergunta": "Marcus autoriza a etapa 00_conta_robo.py a ler a correspondência de Usuário em dados/privado, só para achar o código da conta de sistema do robô (leitura local, sai apenas o código)?",
+      "resposta_proposta": "Sim, no G2, registrada em conta_robo.autorizacao ou em controle.json. A etapa captura exceções e levanta erro genérico sem texto de dados, e a conferência com raw_ devolve só um booleano. Alternativa: marcador de conta de sistema gerado pelo motor na pseudonimização.",
+      "destinatario": "Marcus (G2)"
+    }
+  ],
+  "pendencias": [
+    "Qualidade-privacidade: tratar NQ01 a NQ13; em especial NQ11 (Qtde Endereços não é pessoal) e NQ12 (marcar a conta do robô).",
+    "D3: criar prep_prod_linhas, prep_prod_pedidos, prep_prod_tarefas e prep_prod_ciclos conforme M01 a M26; M03 depende da correspondência código → original em dados/privado.",
+    "Decisão (arquiteto): PR12 e PR19 não reproduzem em consulta preliminar (M12, M18); o analista de impacto reconcilia. Cenário conservador provisório de teto em 300 s (intermediário 600 s) depende de Marcus no G2 (PQ03).",
+    "Planejador: registrar a taxa corrente com e sem dias pós-pausa e última semana incompleta (M15), a linha de base manual sem robô (M08, M14, PAR11) e as sensibilidades S1 e S2 de M11.",
+    "Qualidade-privacidade: marcar linha_longa, linha_palete (definição ampla), un_extremas, checkout_multiunidade, fim_em_bloco e tarefas encerradas em lote (NQ02), sem apagar do volume.",
+    "D3: etapas/00_conta_robo.py (prep_conta_robo) antes das demais, com try/except de mensagem fixa e conferência booleana; etapas 03 e 04 usam os segmentos de M11 (passo 1) para M09, M10, M11, M12 e M29, e conferem invariantes_prep.",
+    "Marcus (G2): autorização específica para a etapa 00 ler dados/privado (PQ09); cláusula de faixa da tarifa (PQ08). Até essa autorização, nenhum agente consulta raw_.Usuário nem dados/privado, nem por contagem; a conta do robô fica a cargo da etapa 00 depois da autorização, e executor (robô ou manual) não é marcado antes dela.",
+    "Qualidade-privacidade: acrescentar ao detalhe de QD03 as unidades e os segundos de cauda acima do limite (e a sensibilidade S3) e perguntar ao especialista se a cauda longa da colmeia é coleta ou distribuição no put wall (E3)."
+  ]
+}

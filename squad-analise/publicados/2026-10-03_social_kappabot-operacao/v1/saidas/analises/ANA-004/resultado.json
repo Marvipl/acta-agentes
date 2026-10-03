@@ -1,0 +1,1068 @@
+{
+  "id": "ANA-004",
+  "valores": {
+    "n_operadores_cr3": {
+      "valor": 22.0,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_cr3": {
+      "valor": 17.0,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_linhas_cr3": {
+      "valor": 4503.0,
+      "unidade": "linhas manuais (Royal Canin, pedido-a-pedido, sem CANCELADO, lote e palete)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pre_par11": {
+      "valor": 17.0,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_cr3_de_ana000": {
+      "valor": 9.522285099425224,
+      "unidade": "coletas/h (de ANA-000)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "efeito_relevante_cr3": {
+      "valor": 2.0,
+      "unidade": "coletas/h (PR05 ÷ 2 − PR06)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "variante_primaria_pre_par11": {
+      "valor": 0.0,
+      "unidade": "1 = H06 confirmou e a primária é o período anterior a PAR11; 0 = período inteiro",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_t300": {
+      "valor": 50.591203622346434,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 43.626984846415056,
+        "superior": 54.8190165836463,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          43.626984846415056,
+          54.8190165836463
+        ],
+        "ic_bloco_semana": [
+          47.276103830025704,
+          53.07049978530229
+        ],
+        "n_operadores": 22
+      }
+    },
+    "classe_cr3_t300": {
+      "valor": -1.0,
+      "unidade": "código: 1 passa (M14 <= PR06), 0 inconclusivo, -1 falha",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_t600": {
+      "valor": 41.30138992748126,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 35.42360060808907,
+        "superior": 45.03939819831996,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          35.42360060808907,
+          45.03939819831996
+        ],
+        "ic_bloco_semana": [
+          38.48460014292992,
+          43.705597969769514
+        ],
+        "n_operadores": 22
+      }
+    },
+    "classe_cr3_t600": {
+      "valor": -1.0,
+      "unidade": "código: 1 passa (M14 <= PR06), 0 inconclusivo, -1 falha",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_t900": {
+      "valor": 37.147407564760655,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 32.4343906627087,
+        "superior": 40.326904802532454,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          32.4343906627087,
+          40.326904802532454
+        ],
+        "ic_bloco_semana": [
+          34.185292011344636,
+          39.80756817790397
+        ],
+        "n_operadores": 22
+      }
+    },
+    "classe_cr3_t900": {
+      "valor": -1.0,
+      "unidade": "código: 1 passa (M14 <= PR06), 0 inconclusivo, -1 falha",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_t1800": {
+      "valor": 31.164092542380413,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 27.080538163551395,
+        "superior": 34.544266313449604,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          27.080538163551395,
+          34.544266313449604
+        ],
+        "ic_bloco_semana": [
+          28.15049361720564,
+          33.767462574004135
+        ],
+        "n_operadores": 22
+      }
+    },
+    "classe_cr3_t1800": {
+      "valor": 0.0,
+      "unidade": "código: 1 passa (M14 <= PR06), 0 inconclusivo, -1 falha",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_pre_robo": {
+      "valor": 53.85245003266155,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 44.5871223127509,
+        "superior": 58.028462980416506,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          44.5871223127509,
+          58.028462980416506
+        ],
+        "ic_bloco_semana": [
+          51.85781483441445,
+          55.67475085293905
+        ],
+        "n_operadores": 17,
+        "aviso": "entre 10 e 19 operadores: IC com aviso; as 7 semanas só comparação"
+      }
+    },
+    "linhas_hora_pap_rc_pos_robo": {
+      "valor": 44.69126365402417,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 40.83724061273636,
+        "superior": 46.783606111555926,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          40.83724061273636,
+          46.783606111555926
+        ],
+        "ic_bloco_semana": [
+          42.547621410567025,
+          47.18454122683442
+        ],
+        "n_operadores": 17
+      }
+    },
+    "linhas_hora_pap_rc": {
+      "valor": 50.591203622346434,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 43.626984846415056,
+        "superior": 54.8190165836463,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          43.626984846415056,
+          54.8190165836463
+        ],
+        "ic_bloco_semana": [
+          47.276103830025704,
+          53.07049978530229
+        ],
+        "n_operadores": 22,
+        "descricao": "período inteiro"
+      }
+    },
+    "diferenca_m14_pr06": {
+      "valor": 19.591203622346434,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 12.626984846415056,
+        "superior": 23.819016583646302,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador"
+      },
+      "descricao": "coletas/h (M14 − PR06)"
+    },
+    "classe_cr3": {
+      "valor": -1.0,
+      "unidade": "código: 1 passa (IC <= PR06), 0 inconclusivo, -1 falha (IC > PR06)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "cr3_inconclusivo_por_desenho": {
+      "valor": 0.0,
+      "unidade": "1 = inconclusivo por desenho (sem poder)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "cr3_aviso_magnitude": {
+      "valor": 1.0,
+      "unidade": "1 = magnitude possivelmente exagerada (poder baixo, erro tipo M)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "cr3_ler_como_sem_efeito_proibido": {
+      "valor": 0.0,
+      "unidade": "1 = proibido ler como sem efeito",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "p_unilateral_cr3": {
+      "valor": 1.0,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: M14 <= PR06; maior entre operador e bloco de semana)"
+    },
+    "p_unilateral_cr3_operador": {
+      "valor": 1.0,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: M14 <= PR06), bootstrap por operador"
+    },
+    "p_unilateral_cr3_bloco_semana": {
+      "valor": 1.0,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: M14 <= PR06), bootstrap por bloco de semana"
+    },
+    "p_unilateral_cr3_direcao_oposta": {
+      "valor": 0.00024993751562109475,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1': M14 > PR06; maior entre operador e bloco de semana)"
+    },
+    "p_holm_f1a_limite_superior_cr3": {
+      "valor": 1.0,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (Bonferroni da F1a, limite superior do p de Holm; H1: M14 <= PR06)"
+    },
+    "ep_cr3_operador": {
+      "valor": 3.206516692298635,
+      "unidade": "coletas/h (réplicas, desvio-padrão)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "ep_cr3_bloco_semana": {
+      "valor": 1.469599666197441,
+      "unidade": "coletas/h (réplicas, desvio-padrão)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "limite_pr06": {
+      "valor": 31.0,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "coletas/h (deck, slides 6 e 9)"
+    },
+    "referencia_pr05": {
+      "valor": 66.0,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "coletas/h (deck, slide 9; produtividade em zona, premissa)"
+    },
+    "razao_pr05_sobre_m14_t300": {
+      "valor": 1.3045746152370135,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.2039617667823872,
+        "superior": 1.5128251525076157,
+        "nivel": 0.95,
+        "metodo": "envelope dos IC por operador e por bloco de semana"
+      },
+      "descricao": "vezes (PR05 ÷ M14 padronizado)"
+    },
+    "razao_pr05_sobre_m14_t600": {
+      "valor": 1.5980091739257591,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.4653837007783355,
+        "superior": 1.8631646791593852,
+        "nivel": 0.95,
+        "metodo": "envelope dos IC por operador e por bloco de semana"
+      },
+      "descricao": "vezes (PR05 ÷ M14 padronizado)"
+    },
+    "razao_pr05_sobre_m14_t900": {
+      "valor": 1.7767054103288202,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.6366244924125086,
+        "superior": 2.0348771370697563,
+        "nivel": 0.95,
+        "metodo": "envelope dos IC por operador e por bloco de semana"
+      },
+      "descricao": "vezes (PR05 ÷ M14 padronizado)"
+    },
+    "razao_pr05_sobre_m14_t1800": {
+      "valor": 2.1178219744485043,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.9105920502412894,
+        "superior": 2.4371746128684855,
+        "nivel": 0.95,
+        "metodo": "envelope dos IC por operador e por bloco de semana"
+      },
+      "descricao": "vezes (PR05 ÷ M14 padronizado)"
+    },
+    "linhas_hora_pap_rc_t300_mix_normal": {
+      "valor": 50.25051825891964,
+      "unidade": "coletas/h (pesos do mix de 24/08 a 18/09, operação normal; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_t900_mix_normal": {
+      "valor": 36.74121125105795,
+      "unidade": "coletas/h (pesos do mix de 24/08 a 18/09, operação normal; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_pap_rc_21_a_25_set": {
+      "valor": 4.0,
+      "unidade": "linhas manuais da Royal Canin de 21 a 25/09 (incidente operacional real, confirmado por Marcus)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_hora_pap_rc_cru_t300": {
+      "valor": 50.07776242494841,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 43.46992800531811,
+        "superior": 54.116525126187625,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador (cru)"
+      }
+    },
+    "linhas_hora_pap_rc_cru_t900": {
+      "valor": 36.31935144657254,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 31.919386042701067,
+        "superior": 39.33146045122533,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador (cru)"
+      }
+    },
+    "linhas_sobrepostas_pap_rc": {
+      "valor": 35.0,
+      "unidade": "linhas (Royal Canin, pedido-a-pedido, manuais)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_pap_rc": {
+      "valor": 4503.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_sobreposicao_pap_rc": {
+      "valor": 0.007772596047079724,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "%"
+    },
+    "linhas_hora_pap_rc_sem_sobreposicao": {
+      "valor": 50.20822416986055,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 43.2845629290919,
+        "superior": 54.541924660734146,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          43.2845629290919,
+          54.541924660734146
+        ],
+        "ic_bloco_semana": [
+          47.124450096866134,
+          52.440191349472165
+        ],
+        "n_operadores": 22
+      }
+    },
+    "classe_cr3_sem_sobreposicao": {
+      "valor": -1.0,
+      "unidade": "código: 1 passa, 0 inconclusivo, -1 falha",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "cr3_sensivel_h05": {
+      "valor": 0.0,
+      "unidade": "1 = a classificação de CR3 muda sem as linhas sobrepostas (vai à operação da Social, E1)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s1_t300": {
+      "valor": 45.353124275997004,
+      "unidade": "coletas/h (estimativa pontual; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s2_t300": {
+      "valor": 33.676609170441914,
+      "unidade": "coletas/h (estimativa pontual; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s3_t300": {
+      "valor": 50.5761878509372,
+      "unidade": "coletas/h (estimativa pontual; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s1_t600": {
+      "valor": 38.75044225169874,
+      "unidade": "coletas/h (estimativa pontual; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s2_t600": {
+      "valor": 28.385307191437462,
+      "unidade": "coletas/h (estimativa pontual; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s3_t600": {
+      "valor": 41.29138185068409,
+      "unidade": "coletas/h (estimativa pontual; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s1_t900": {
+      "valor": 35.37522975887704,
+      "unidade": "coletas/h (estimativa pontual; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s2_t900": {
+      "valor": 25.962364469959013,
+      "unidade": "coletas/h (estimativa pontual; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s3_t900": {
+      "valor": 37.13931122172454,
+      "unidade": "coletas/h (estimativa pontual; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s1_t1800": {
+      "valor": 30.183662546648662,
+      "unidade": "coletas/h (estimativa pontual; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s2_t1800": {
+      "valor": 22.72824076155732,
+      "unidade": "coletas/h (estimativa pontual; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s3_t1800": {
+      "valor": 31.158394100853833,
+      "unidade": "coletas/h (estimativa pontual; sem IC)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "linhas_hora_pap_rc_s2_ic_t300": {
+      "valor": 33.676609170441914,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 28.437078462328763,
+        "superior": 37.25840993737226,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          28.437078462328763,
+          37.25840993737226
+        ],
+        "ic_bloco_semana": [
+          30.603987110656835,
+          36.41976444326757
+        ],
+        "sensibilidade": "S2 (truncar pausas no limite)"
+      }
+    },
+    "classe_cr3_s2_t300": {
+      "valor": 0.0,
+      "unidade": "código (S2): 1 passa (IC <= PR06), 0 inconclusivo, -1 falha (IC > PR06)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "razao_pr05_sobre_m14_s2_t300": {
+      "valor": 1.9598172626574426,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.7714121560407787,
+        "superior": 2.3209135245080152,
+        "nivel": 0.95,
+        "metodo": "envelope dos IC por operador e por bloco de semana"
+      },
+      "descricao": "vezes (PR05 ÷ M14 padronizado, S2)"
+    },
+    "linhas_hora_pap_rc_s2_ic_t600": {
+      "valor": 28.385307191437462,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 23.80022955128313,
+        "superior": 31.566815908157317,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          23.80022955128313,
+          31.566815908157317
+        ],
+        "ic_bloco_semana": [
+          25.40224386778271,
+          31.153233138088023
+        ],
+        "sensibilidade": "S2 (truncar pausas no limite)"
+      }
+    },
+    "classe_cr3_s2_t600": {
+      "valor": 0.0,
+      "unidade": "código (S2): 1 passa (IC <= PR06), 0 inconclusivo, -1 falha (IC > PR06)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "razao_pr05_sobre_m14_s2_t600": {
+      "valor": 2.3251465821694244,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2.090803209041941,
+        "superior": 2.773082553873449,
+        "nivel": 0.95,
+        "metodo": "envelope dos IC por operador e por bloco de semana"
+      },
+      "descricao": "vezes (PR05 ÷ M14 padronizado, S2)"
+    },
+    "linhas_hora_pap_rc_s2_ic_t900": {
+      "valor": 25.962364469959013,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 21.59607532616541,
+        "superior": 29.08664422011879,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          21.59607532616541,
+          29.08664422011879
+        ],
+        "ic_bloco_semana": [
+          22.95519847971581,
+          28.585201292672195
+        ],
+        "sensibilidade": "S2 (truncar pausas no limite)"
+      }
+    },
+    "classe_cr3_s2_t900": {
+      "valor": 1.0,
+      "unidade": "código (S2): 1 passa (IC <= PR06), 0 inconclusivo, -1 falha (IC > PR06)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "razao_pr05_sobre_m14_s2_t900": {
+      "valor": 2.5421413398755894,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2.2690826594302367,
+        "superior": 3.056110844368994,
+        "nivel": 0.95,
+        "metodo": "envelope dos IC por operador e por bloco de semana"
+      },
+      "descricao": "vezes (PR05 ÷ M14 padronizado, S2)"
+    },
+    "linhas_hora_pap_rc_s2_ic_t1800": {
+      "valor": 22.72824076155732,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 18.39318176820783,
+        "superior": 25.833586506668425,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador",
+        "ic_operador": [
+          18.39318176820783,
+          25.833586506668425
+        ],
+        "ic_bloco_semana": [
+          19.84556884489472,
+          25.3565284599712
+        ],
+        "sensibilidade": "S2 (truncar pausas no limite)"
+      }
+    },
+    "classe_cr3_s2_t1800": {
+      "valor": 1.0,
+      "unidade": "código (S2): 1 passa (IC <= PR06), 0 inconclusivo, -1 falha (IC > PR06)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "razao_pr05_sobre_m14_s2_t1800": {
+      "valor": 2.9038763137194845,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2.554813682124846,
+        "superior": 3.588286183508759,
+        "nivel": 0.95,
+        "metodo": "envelope dos IC por operador e por bloco de semana"
+      },
+      "descricao": "vezes (PR05 ÷ M14 padronizado, S2)"
+    },
+    "m14_grade_minimo": {
+      "valor": 22.56760807534789,
+      "unidade": "coletas/h (menor valor da grade teto × S1-S3 × linha_longa × sobreposição, padronizado)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "m14_grade_maximo": {
+      "valor": 51.00107601120982,
+      "unidade": "coletas/h (maior valor da grade, padronizado)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "celulas_da_grade_acima_de_pr06": {
+      "valor": 46.0,
+      "unidade": "células",
+      "incerteza": null,
+      "contagem": true
+    },
+    "celulas_da_grade": {
+      "valor": 64.0,
+      "unidade": "células",
+      "incerteza": null,
+      "contagem": true
+    },
+    "celulas_da_grade_em_pr06_ou_abaixo": {
+      "valor": 18.0,
+      "unidade": "células",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "células (M14 padronizado <= PR06)"
+    },
+    "n_operadores_mes_2026_06": {
+      "valor": 17.0,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_hora_pap_rc_mes_2026_06": {
+      "valor": 54.67551776911627,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 43.04688284188266,
+        "superior": 59.681442758389785,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador"
+      }
+    },
+    "n_operadores_mes_2026_07": {
+      "valor": 7.0,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_hora_pap_rc_mes_2026_07": {
+      "valor": 51.484078056416124,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "n_operadores_mes_2026_08": {
+      "valor": 17.0,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_hora_pap_rc_mes_2026_08": {
+      "valor": 44.29904220909627,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 40.5930326126991,
+        "superior": 47.429008012636885,
+        "nivel": 0.95,
+        "unidade_mais_larga": "operador"
+      }
+    },
+    "n_operadores_mes_2026_09": {
+      "valor": 7.0,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_hora_pap_rc_mes_2026_09": {
+      "valor": 41.8445495395121,
+      "unidade": "coletas/h",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "leitura_agregada_valida_faixas": {
+      "valor": 1.0,
+      "unidade": "1 = sem inversão de sinal entre faixas de endereços",
+      "incerteza": null,
+      "contagem": true
+    },
+    "faixas_de_enderecos_acima_de_pr06": {
+      "valor": 5.0,
+      "unidade": "faixas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "faixas_de_enderecos_avaliadas": {
+      "valor": 5.0,
+      "unidade": "faixas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "leitura_agregada_valida_meses": {
+      "valor": 1.0,
+      "unidade": "1 = sem inversão de sinal entre meses",
+      "incerteza": null,
+      "contagem": true
+    },
+    "m14_deixa_um_operador_de_fora_minimo": {
+      "valor": 46.04061121261599,
+      "unidade": "coletas/h (menor valor ao deixar um operador de fora por vez; operador não identificado)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "m14_deixa_um_operador_de_fora_maximo": {
+      "valor": 51.6589070008089,
+      "unidade": "coletas/h (maior valor ao deixar um operador de fora por vez)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "t_coleta_manual_media_s": {
+      "valor": 63.6700445460001,
+      "unidade": "segundos por coleta",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 56.06460599639371,
+        "superior": 82.16197103769264,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador",
+        "linhas": 2407
+      }
+    },
+    "t_coleta_manual_ponderada_s": {
+      "valor": 63.005308100623125,
+      "unidade": "segundos por coleta",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 55.07682378651036,
+        "superior": 81.00062834308487,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador"
+      }
+    },
+    "t_coleta_manual_mediana_s": {
+      "valor": 51.0,
+      "unidade": "segundos por coleta",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 46.0,
+        "superior": 70.0,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador"
+      }
+    },
+    "linhas_m08": {
+      "valor": 2407.0,
+      "unidade": "linhas elegíveis a M08",
+      "incerteza": null,
+      "contagem": true
+    },
+    "t_coleta_manual_ponderada_s_pre_par11": {
+      "valor": 55.985289200936144,
+      "unidade": "segundos por coleta",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 50.52503045558768,
+        "superior": 74.24029282765738,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador (com aviso: poucos operadores)"
+      }
+    },
+    "t_coleta_manual_ponderada_s_sem_sobreposicao": {
+      "valor": 63.11437908496732,
+      "unidade": "segundos por coleta",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 55.065003850796806,
+        "superior": 81.55391460837747,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador"
+      }
+    },
+    "razao_robo_pr17_sobre_tempo_manual_ponderado": {
+      "valor": 0.8253272869795826,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.6419703286713986,
+        "superior": 0.9441357802614618,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador do tempo manual (PR do deck fixo)"
+      },
+      "descricao": "vezes"
+    },
+    "razao_robo_pr18_sobre_tempo_manual_ponderado": {
+      "valor": 1.71414128834221,
+      "unidade": "vezes",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.33332299031752,
+        "superior": 1.9608973897738053,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador do tempo manual (PR do deck fixo)"
+      },
+      "descricao": "vezes"
+    },
+    "intervalo_mediano_pap_rc_s": {
+      "valor": 92.0,
+      "unidade": "segundos (M10 b, teto conservador)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 84.0,
+        "superior": 113.0,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador",
+        "intervalos": 3440
+      }
+    },
+    "intervalo_q1_pap_rc_s": {
+      "valor": 66.0,
+      "unidade": "segundos (1º quartil, teto conservador)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "intervalo_q3_pap_rc_s": {
+      "valor": 134.0,
+      "unidade": "segundos (3º quartil, teto conservador)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "slide6_mediana_s": {
+      "valor": 101.0,
+      "unidade": "segundos (deck, slide 6; referência)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "ciclo_pedido_pap_rc_s": {
+      "valor": 143.58451957295372,
+      "unidade": "segundos por pedido (ciclo completo, teto conservador)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 132.3593365271041,
+        "superior": 167.18639264264266,
+        "nivel": 0.95,
+        "metodo": "bootstrap por operador",
+        "pedidos": 4496
+      }
+    },
+    "ciclo_pedido_pap_rc_s_t600": {
+      "valor": 177.52224199288256,
+      "unidade": "segundos por pedido (ciclo completo)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "ciclo_pedido_pap_rc_s_t900": {
+      "valor": 197.97686832740214,
+      "unidade": "segundos por pedido (ciclo completo)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "ciclo_pedido_pap_rc_s_t1800": {
+      "valor": 237.00622775800713,
+      "unidade": "segundos por pedido (ciclo completo)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "pedidos_pap_rc_manuais": {
+      "valor": 4496.0,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_um_endereco_a1": {
+      "valor": 1986.0,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "a1_mediana_primeira_faixa_s": {
+      "valor": 4.0,
+      "unidade": "segundos (faixa de menor Qtde Un)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "a1_mediana_ultima_faixa_s": {
+      "valor": 4.0,
+      "unidade": "segundos (faixa de maior Qtde Un com 5 ou mais linhas)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "fracao_tempo_descartado_pap_rc_t300": {
+      "valor": 0.6866183441550582,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "razão (descartado líquido ÷ (creditado + descartado líquido); motivos 1 a 5)"
+    },
+    "fracao_tempo_descartado_pap_rc_t600": {
+      "valor": 0.6127381626793331,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "razão (descartado líquido ÷ (creditado + descartado líquido); motivos 1 a 5)"
+    },
+    "fracao_tempo_descartado_pap_rc_t900": {
+      "valor": 0.5682097913610196,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "razão (descartado líquido ÷ (creditado + descartado líquido); motivos 1 a 5)"
+    },
+    "fracao_tempo_descartado_pap_rc_t1800": {
+      "valor": 0.48243345970783763,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "razão (descartado líquido ÷ (creditado + descartado líquido); motivos 1 a 5)"
+    }
+  },
+  "tabelas": {
+    "m14_grade": "m14_grade.csv",
+    "robustez_m14": "robustez_m14.csv",
+    "robustez_por_faixa_enderecos": "robustez_por_faixa_enderecos.csv",
+    "m08_tempo_por_coleta": "m08_tempo_por_coleta.csv",
+    "m10_intervalo_entre_pedidos": "m10_intervalo_entre_pedidos.csv",
+    "ciclo_por_pedido_por_faixa": "ciclo_por_pedido_por_faixa.csv",
+    "a1_tempo_linha_um_endereco_por_qtde_un": "a1_tempo_linha_um_endereco_por_qtde_un.csv",
+    "m29_tempo_descartado": "m29_tempo_descartado.csv",
+    "comparacao_com_o_deck": "comparacao_com_o_deck.csv",
+    "classificacao_por_teto": "classificacao_por_teto.csv"
+  },
+  "figuras": [
+    "m14_pap_rc_tetos_e_recortes.png"
+  ],
+  "notas": "H-P7 (CR3, F1a). M14 = Σ coletas ÷ (Σ ciclo ÷ 3600), padronizado por faixa de endereços (1, 2, 3, 4-5, 6+) ao mix de coletas da janela base (média harmônica ponderada por faixa), regra base de M11 (pausas fora), executor manual, sem CANCELADO, lote, palete e dia parcial. A variante primária segue a regra ligada a H06: h06_confirmada de ANA-005 define se a primária é o período inteiro ou o anterior a PAR11 (variante_primaria_pre_par11). IC95% por percentis de 4.000 réplicas (semente 42 derivada por teste; as mesmas réplicas de ANA-000: o script confere ep_cr3_operador e ep_cr3_semana): bootstrap por operador e por bloco de semana, vale o mais largo; no período anterior a PAR11 o IC primário é por operador (com aviso, menos de 20 operadores) e as 7 semanas só comparam. p unilateral na direção do critério (M14 <= PR06) por distribuição deslocada à fronteira, o maior entre as duas unidades; p_holm_f1a_limite_superior_cr3 = min(1, 3 p); o p de Holm exato precisa de ANA-007 e ANA-010. Classificação pela regra de leitura (códigos: 1 passa, 0 inconclusivo, -1 falha) com o MDE de ANA-000 e o efeito relevante PR05 ÷ 2 − PR06: com MDE acima do efeito relevante, a classificação nominal leva o aviso de magnitude (cr3_aviso_magnitude) e não se cita a magnitude como precisa. Os quatro tetos (300, 600, 900 e 1.800 s) e S1 a S3 vão na grade (m14_grade) e em classificacao_por_teto; razao_pr05_sobre_m14_* mostra quanto o deck promete sobre o medido. Comparações com PR17, PR18 e PR05 são descritivas, sem teste (Q04). LEITURA DE CR3: a classificação 'falha' vale na regra base de pausas (lacunas acima do teto fora da jornada); com S2 (truncar no limite), registrada no plano, M14 cai para perto ou abaixo de PR06 em parte da grade (linhas_hora_pap_rc_s2_ic_t*, classe_cr3_s2_t*, celulas_da_grade_em_pr06_ou_abaixo) e PR05 ÷ M14 chega ao dobro ou passa dele (razao_pr05_sobre_m14_s2_t*); no teto conservador a maior parte do tempo do recorte é descartada (fracao_tempo_descartado_pap_rc_t300), então M14 mede o ritmo enquanto o operador trabalha. O WMS não vê a primeira coleta nem a ida ao packing, que a linha de base do deck pode incluir ([●]: o método de PR06 e de PR05 não está no deck); portanto o WMS não confirma nem refuta PR06, e o que se sustenta nas duas leituras é a ação: não prometer o dobro com base no WMS e levar a promessa ao teste controlado. A razão PR05 ÷ M14 trata PR05 como constante (a incerteza da premissa, de amostra pequena, não está no IC). Definição de coleta: no manual (M08) o tempo da linha ÷ (endereços − 1) exclui o deslocamento até o primeiro endereço; a missão do robô (PR17, PR18) inclui a navegação, inclusive a primeira perna, o que pesa contra o robô quando o pedido tem um endereço (fracao_pedidos_um_endereco_* em ANA-001). A1: bandas de Qtde Un definidas aqui (1, 2, 3 a 5, 6 a 10, 11 ou mais), descritivo. M08 considera as linhas elegíveis de prep_prod_linhas.m08_valida. INCIDENTE OPERACIONAL: a Royal Canin tem quase nenhuma linha de 21 a 25/09 (queda real, confirmada por Marcus em 03/10/2026; revisoes/orquestrador_decisao_semana_incidente.md); como M14 é razão de somas, as linhas ausentes não o enviesam, e o único ponto sensível é o mix da janela base, testado em linhas_hora_pap_rc_t*_mix_normal (pesos de 24/08 a 18/09, operação normal). Dependência não coberta pelo hash do script: analises/comum.py e analises/ANA-005.py (executado dentro de ANA-004 para obter h06_confirmada, sem depender da ordem de registro).",
+  "em": "2026-10-03T21:21:01",
+  "segundos": 4.79
+}

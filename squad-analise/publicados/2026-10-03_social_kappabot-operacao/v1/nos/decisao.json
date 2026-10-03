@@ -1,0 +1,671 @@
+{
+  "tipo": "decisao",
+  "decisao": "Que oferta a Acta apresenta à Social para a próxima fase do Kappabot: escopo (tipos de onda e depositantes), tamanho da frota e condições comerciais (preço por transação, franquia mínima e economia garantida), de modo que reduza o custo de mão de obra e a dependência de contratação da Social e seja viável para a Acta?",
+  "alternativas": [
+    "ALT1 · Adiar a oferta: manter o piloto atual (um robô, só pedido-a-pedido da Royal Canin, sem cobrança por transação) e rodar antes o teste controlado com operador dedicado (deck, slide 19).",
+    "ALT2 · Começar sem checkout conferido: pedido-a-pedido da Royal Canin em zona (deck, slide 9), cobrado por linha de produto (PR04), sem garantia atrelada à desmobilização da conferência; checkout conferido como fase posterior, quando o desenvolvimento estiver pronto.",
+    "ALT3 · Oferta do deck como está: checkout conferido no robô e depois pedido-a-pedido em zona, Royal Canin, frota e condições do deck (slides 13 a 19; PR01 a PR04, PR09, PR14). Exige concluir o desenvolvimento do checkout conferido (ainda não pronto).",
+    "ALT4 · Oferta do deck recalibrada: escopo da ALT3 com franquia, garantia, faixas de preço, frota ou promessa de produtividade ajustadas ao volume corrente, ao mix de ondas e aos picos medidos no WMS. Com checkout, também exige o desenvolvimento.",
+    "ALT5 · Colmeia como teste da fase seguinte: uma de ALT2 a ALT4 mais a colmeia da Royal Canin como candidata a teste com robô (o deck aponta isso no slide 8 e a exclui no slide 14), sem preço nem frota nesta versão, porque o deck não tem tarifa nem capacidade de robô para colmeia.",
+    "ALT6 · Oferta ampliada: uma de ALT2 a ALT4 mais outros depositantes com perfil compatível ou o armazém inteiro, com frota dimensionada para o pico (deck, slide 12), como fase seguinte."
+  ],
+  "premissas": [
+    {
+      "id": "PR01",
+      "nome": "garantia_economia",
+      "valor": 0.2,
+      "unidade": "fração do custo atual no escopo, por trimestre",
+      "fonte": "deck, slide 18",
+      "confianca": "alta",
+      "nota": "Parâmetro comercial da Acta. Garantia condicionada à desmobilização da conferência (slide 18, rodapé)."
+    },
+    {
+      "id": "PR02",
+      "nome": "franquia_mensal",
+      "valor": 5900,
+      "unidade": "R$ por mês",
+      "fonte": "deck, slide 18",
+      "confianca": "alta",
+      "nota": "O deck a descreve como cerca de dois terços do volume atual. Segundo Marcus (2026-10-03), foi calculada com a própria planilha do WMS; a base aparente não fecha com os slides 8 e 12, e o motor recalcula e reconcilia."
+    },
+    {
+      "id": "PR03",
+      "nome": "tarifa_checkout",
+      "valor": 1.7,
+      "unidade": "R$ por pedido",
+      "fonte": "deck, slide 18",
+      "confianca": "alta",
+      "nota": "R$ 1,50 por pedido acima de 6 mil pedidos por mês."
+    },
+    {
+      "id": "PR04",
+      "nome": "tarifa_pap",
+      "valor": 0.25,
+      "unidade": "R$ por linha de produto do pedido",
+      "fonte": "deck, slide 18; definição de linha: Marcus, 2026-10-03",
+      "confianca": "alta",
+      "nota": "R$ 0,22 por linha acima de 15 mil linhas por mês. Linha tarifável = linha de produto do pedido (Marcus, 2026-10-03); a coluna é definida pelo engenheiro no contrato (provavelmente Qtde Produtos por tarefa e pedido). Distinta da linha operacional (coleta ou endereço visitado), usada em produtividade e frota (CR3, CR4, CR5, CR7)."
+    },
+    {
+      "id": "PR05",
+      "nome": "linhas_hora_operador_zona",
+      "valor": 66,
+      "unidade": "linhas por hora por operador",
+      "fonte": "deck, slide 9",
+      "confianca": "baixa",
+      "nota": "Premissa de modelo, com 85% de ocupação e teto de 78 (só manuseio). O manuseio de 46 s foi estimado a partir de 10 pedidos e 28 coletas (slide 5, rodapé; slide 7). Não é medido nesta análise."
+    },
+    {
+      "id": "PR06",
+      "nome": "linhas_hora_manual_deck",
+      "valor": 31,
+      "unidade": "linhas por hora por operador, ciclo completo",
+      "fonte": "deck, slides 6 e 9",
+      "confianca": "media",
+      "nota": "Linha de base manual que o deck usa; esta análise a remede no WMS (CR3)."
+    },
+    {
+      "id": "PR07",
+      "nome": "capacidade_robo_pap",
+      "valor": 35,
+      "unidade": "linhas por hora por robô",
+      "fonte": "deck, slide 12",
+      "confianca": "baixa",
+      "nota": "Com 3 pedidos por viagem; vale para pedido-a-pedido. Em linhas operacionais (coletas), não em linhas tarifáveis."
+    },
+    {
+      "id": "PR08",
+      "nome": "capacidade_robo_checkout",
+      "valor": null,
+      "unidade": "pedidos por hora por robô",
+      "fonte": "desconhecida: Marcus, 2026-10-03 ('não sabemos exatamente')",
+      "confianca": "baixa",
+      "nota": "O analista estima com faixa a partir dos tempos de checkout medidos no WMS (P3); baixa confiança, reportada como sensibilidade em CR4 e CR6."
+    },
+    {
+      "id": "PR09",
+      "nome": "frota_escopo_royal_canin",
+      "valor": null,
+      "min": 4,
+      "max": 5,
+      "unidade": "robôs",
+      "fonte": "deck, slide 14",
+      "confianca": "media",
+      "nota": "O slide 12 indica 1 a 2 robôs para a Royal Canin e cerca de 7 no armazém no dia p90: o deck se contradiz e CR4 testa as duas leituras."
+    },
+    {
+      "id": "PR10",
+      "nome": "custo_operador_ano",
+      "valor": 60000,
+      "unidade": "R$ por ano por operador",
+      "fonte": "deck, slide 15; Social, confirmado por Marcus em 2026-10-03",
+      "confianca": "alta",
+      "nota": ""
+    },
+    {
+      "id": "PR11",
+      "nome": "postos_conferencia_checkout",
+      "valor": 2,
+      "unidade": "postos",
+      "fonte": "deck, slide 14; Social, confirmado por Marcus em 2026-10-03",
+      "confianca": "alta",
+      "nota": "O WMS pode não registrar a conferência (P2)."
+    },
+    {
+      "id": "PR12",
+      "nome": "jornada_fte",
+      "valor": 7.33,
+      "unidade": "horas por dia",
+      "fonte": "deck, slide 14",
+      "confianca": "baixa",
+      "nota": "O deck diz 'medidas no WMS', mas o relatório 9fleet v1 (p. 12) considera injusta a métrica de horas por operador no WMS. Método de horas a definir (Q05)."
+    },
+    {
+      "id": "PR13",
+      "nome": "custo_servir_robo_mes",
+      "valor": 1000,
+      "unidade": "R$ por robô por mês, sem hardware",
+      "fonte": "Marcus, 2026-10-03 ('cerca de R$ 1000/mês/robô, tirando custo de hardware')",
+      "confianca": "media",
+      "nota": "Custo de hardware fora deste valor (PR20, [●]). A referência de RaaS da Base de Conhecimento (seção 1.3) deixa de ser usada."
+    },
+    {
+      "id": "PR14",
+      "nome": "prazo_contrato",
+      "valor": 24,
+      "unidade": "meses",
+      "fonte": "deck, slide 18",
+      "confianca": "alta",
+      "nota": ""
+    },
+    {
+      "id": "PR15",
+      "nome": "janela_operacao",
+      "valor": null,
+      "unidade": "horas do dia",
+      "fonte": "[●] a medir no WMS (janela observada das tarefas)",
+      "confianca": "media",
+      "nota": "Cenário de um turno do deck (slide 16); horário estendido como sensibilidade (slide 17)."
+    },
+    {
+      "id": "PR16",
+      "nome": "trajeto_packing",
+      "valor": null,
+      "min": 2,
+      "max": 3,
+      "unidade": "minutos por pedido",
+      "fonte": "deck, slides 6 e 9; relatório 9fleet v1, p. 13",
+      "confianca": "media",
+      "nota": "Medido do lado do robô no 9fleet; não existe no WMS."
+    },
+    {
+      "id": "PR17",
+      "nome": "robo_tempo_produtivo",
+      "valor": 52,
+      "unidade": "segundos por coleta",
+      "fonte": "relatório 9fleet v1, p. 6 e 8; deck, slide 5",
+      "confianca": "baixa",
+      "nota": "Amostra preliminar, marcos desde 28/08/2026 (relatório, p. 12). Não reprodutível sem o banco 9fleet."
+    },
+    {
+      "id": "PR18",
+      "nome": "robo_ciclo_com_espera",
+      "valor": 108,
+      "unidade": "segundos por coleta",
+      "fonte": "relatório 9fleet v1, p. 6 e 8; deck, slide 5",
+      "confianca": "baixa",
+      "nota": "Mesma amostra de PR17."
+    },
+    {
+      "id": "PR19",
+      "nome": "economia_deck_referencia",
+      "valor": 5065,
+      "unidade": "R$ por mês",
+      "fonte": "deck, slide 15",
+      "confianca": "baixa",
+      "nota": "Calculada pela Acta com a própria planilha do WMS (Marcus, 2026-10-03). A base de volume implícita parece não fechar com os slides 8 e 12 (revisoes/sup-negocio_r1.json). É referência a reconciliar: o motor recalcula."
+    },
+    {
+      "id": "PR20",
+      "nome": "custo_hardware_robo",
+      "valor": null,
+      "unidade": "R$ por robô",
+      "fonte": "[●] não informado (Marcus, 2026-10-03, informou só o custo sem hardware)",
+      "confianca": "baixa",
+      "nota": "Não entra no limite de CR6. O motor reporta o custo máximo de hardware por robô que se paga dentro de PR14, e Marcus compara com o custo real."
+    }
+  ],
+  "criterios": [
+    {
+      "id": "CR1",
+      "criterio": "Economia de mão de obra para a Social no escopo da oferta (critério de compra da Social)",
+      "metrica": "Economia mensal da Social em % do custo atual no escopo = (custo atual de mão de obra − mão de obra residual − tarifas) ÷ custo atual, por alternativa. Medido no WMS: horas de separação no escopo, pelo método de jornada ativa (Q05), e volume tarifável na taxa corrente (CR2). Premissas: PR03, PR04, PR10, PR11 e PR12.",
+      "limite": "Pelo menos PR01 (a garantia do deck) no cenário conservador, com volume na taxa corrente e premissas de custo no extremo desfavorável da faixa de sensibilidade do analista de impacto. Em ALT2, sem garantia ligada à conferência, o mesmo limite vale como meta declarada da oferta. Abaixo disso, a garantia não se sustenta: ALT4 (recalibrar).",
+      "sentido": "maior_melhor"
+    },
+    {
+      "id": "CR2",
+      "criterio": "Volume tarifável corrente cobre a franquia mínima",
+      "metrica": "Receita mensal por transação no escopo = pedidos de checkout × PR03 + linhas de produto do pedido-a-pedido × PR04, na taxa corrente por dia útil das últimas semanas do WMS (janela definida no plano), mensalizada e calculada por alternativa (ALT2 sem checkout). Linha tarifável = linha de produto do pedido (Marcus, 2026-10-03), com a coluna definida no contrato. Conferências: o mês completo mais recente, com meses parciais normalizados por dia útil, e o volume implícito no deck (PR19, PR02), reconciliado. A tendência do mix (slide 8) entra como sensibilidade no prazo PR14.",
+      "limite": "Pelo menos PR02 (a franquia) na taxa corrente, na alternativa avaliada. Abaixo disso, a franquia vira custo extra para a Social e conflita com PR01: ALT4 (franquia ou escopo); em ALT2, uma franquia proporcional ao escopo sem checkout.",
+      "sentido": "maior_melhor"
+    },
+    {
+      "id": "CR3",
+      "criterio": "Linha de base manual compatível com o ganho prometido",
+      "metrica": "Medido no WMS: linhas operacionais (coletas) por hora por operador em ciclo completo no pedido-a-pedido da Royal Canin, isto é, tempo por coleta com correção N−1 mais o intervalo até a próxima tarefa do mesmo operador, com teto de intervalo (Q05). Não é medido: a produtividade em zona (PR05), premissa do deck com sensibilidade no manuseio.",
+      "limite": "No máximo PR06, a linha de base usada no deck. Se passar, o dobro continua plausível, mas a oferta só pode afirmá-lo depois do teste controlado (slide 19), porque PR05 vem de amostra pequena. Se falhar, a oferta não promete o dobro e vai para ALT4 (refazer FTE e garantia sem essa promessa). Se não puder ser medido, ALT1.",
+      "sentido": "menor_melhor"
+    },
+    {
+      "id": "CR4",
+      "criterio": "Frota do tamanho do pico, sem falta nem sobra",
+      "metrica": "Frota necessária = menor número de robôs cuja capacidade horária (PR07 no pedido-a-pedido; PR08 estimada com faixa no checkout) cobre a demanda horária do escopo em cada hora da janela PR15 no dia p90. A demanda é medida no WMS em linhas operacionais (coletas) e em pedidos de checkout. Comparada à frota proposta (PR09, nas leituras dos slides 12 e 14), por alternativa.",
+      "limite": "Mão dupla. Falta: frota necessária maior que a proposta, o que faz a promessa 'frota acompanha o pico sem custo fixo' (slide 18) virar custo da Acta, levando a ALT4 (frota, horário estendido ou preço de pico). Sobra: frota proposta maior que a necessária no pico do dia p90; os robôs a mais só se justificam se CR6 passar.",
+      "sentido": "faixa"
+    },
+    {
+      "id": "CR5",
+      "criterio": "Oportunidade além da Royal Canin",
+      "metrica": "Demanda horária e diária (pedidos e linhas operacionais) dos outros depositantes em perfil compatível com o Kappabot (pedido-a-pedido com 2 ou mais endereços e checkout), medida no WMS e convertida em robôs adicionais pela regra de CR4.",
+      "limite": "A demanda média na janela PR15 do dia típico é de pelo menos uma capacidade de robô (PR07 ou PR08), e a receita desse volume dá margem de contribuição não negativa ao robô adicional (CR6). Se passar, a expansão por depositante entra como fase seguinte (ALT6); se não, a oferta fica na Royal Canin.",
+      "sentido": "maior_melhor"
+    },
+    {
+      "id": "CR6",
+      "criterio": "Viabilidade da oferta para a Acta (margem de contribuição por robô)",
+      "metrica": "Margem de contribuição mensal por robô = receita mensal por robô − PR13 (custo sem hardware), por alternativa. A receita por robô é a receita por transação no escopo (CR2, taxa corrente), ou a franquia se esta for maior, dividida pelos robôs da frota proposta. O motor também reporta o custo máximo de hardware por robô que se paga dentro do prazo do contrato (margem mensal × PR14), para Marcus comparar com o custo real (PR20).",
+      "limite": "Margem de contribuição mensal por robô de pelo menos zero em cada alternativa. Se falhar, ALT4 (preço, franquia ou frota). A cobertura do hardware não é limite desta análise: o custo máximo pagável é entregue para a decisão de Marcus.",
+      "sentido": "maior_melhor"
+    },
+    {
+      "id": "CR7",
+      "criterio": "Espaço para ganho na colmeia",
+      "metrica": "Medido no WMS: linhas operacionais (coletas) por hora por operador na colmeia da Royal Canin, em ciclo completo, pelo método de CR3. PR05 é premissa de pedido-a-pedido em zona e serve só de referência de ordem de grandeza, não de equivalência operacional.",
+      "limite": "Abaixo de PR05: a colmeia entra como candidata a teste na fase seguinte (ALT5), e a exclusão do slide 14 não se sustenta. Igual ou acima: a exclusão se sustenta.",
+      "sentido": "menor_melhor"
+    },
+    {
+      "id": "CR8",
+      "criterio": "Menor dependência de contratação (critério de compra da Social, Marcus 2026-10-03)",
+      "metrica": "FTE liberados no escopo de cada alternativa, na taxa corrente (horas do WMS pelo método de jornada ativa, ÷ PR12), e contratações evitadas com o crescimento de volume (slide 16). No dia p90, horas de separação acima do dia típico (necessidade de reforço ou temporário) absorvidas pela frota proposta.",
+      "limite": "Pelo menos uma vaga inteira liberada ou evitada no escopo na taxa corrente, porque FTE fracionário não evita contratação (slide 14). E, no dia p90, a frota absorve o excedente sobre o dia típico sem reforço de operadores além da equipe com robô. Se falhar, o argumento 'crescer contratando menos' (slides 16 e 17) sai da oferta ou vira argumento de volume futuro.",
+      "sentido": "maior_melhor"
+    }
+  ],
+  "regra_decisao": [
+    {
+      "alternativa": "ALT1",
+      "quando": "CR3 não pode ser medido no WMS, ou nenhuma alternativa entre ALT2 e ALT4 faz CR1, CR2 e CR6 passarem juntos."
+    },
+    {
+      "alternativa": "ALT2",
+      "quando": "Enquanto o checkout conferido no robô não estiver pronto (confirmado por Marcus em 2026-10-03), ou se a Social não aceitar desmobilizar a conferência, e se o pedido-a-pedido em zona passar CR1 (como meta declarada), CR2 e CR6 sozinho. O checkout entra como fase posterior, com prazo de desenvolvimento."
+    },
+    {
+      "alternativa": "ALT3",
+      "quando": "CR1, CR2, CR3, CR4 e CR6 passam com as condições do deck, a desmobilização da conferência é aceita e há prazo de desenvolvimento do checkout conferido compatível com a fase. A cobrança começa no go-live do checkout (slide 18)."
+    },
+    {
+      "alternativa": "ALT4",
+      "quando": "CR1, CR2, CR3, CR4 ou CR6 falham com as condições do deck, mas o analista de impacto encontra franquia, garantia, faixas, frota ou retirada da promessa de dobro com que CR1, CR2, CR4 e CR6 passam. Com checkout, também exige prazo de desenvolvimento."
+    },
+    {
+      "alternativa": "ALT5",
+      "quando": "Uma de ALT2 a ALT4 é viável e CR7 indica espaço para ganho na colmeia: a colmeia entra como teste da fase seguinte, sem preço nesta versão."
+    },
+    {
+      "alternativa": "ALT6",
+      "quando": "Uma de ALT2 a ALT4 é viável e CR5 passa: a expansão entra como fase seguinte."
+    },
+    {
+      "alternativa": "desempate",
+      "quando": "Entre alternativas viáveis, preferir a que mais atende ao critério de compra da Social (CR8 e depois CR1) e, em seguida, a de maior margem de contribuição para a Acta (CR6)."
+    }
+  ],
+  "perguntas": [
+    {
+      "id": "P1",
+      "pergunta": "Quantas horas de separação por mês o escopo da oferta (checkout e pedido-a-pedido da Royal Canin) consome no WMS, pelo método de jornada ativa, e quantos FTE isso representa? Os FTE do deck (slide 14) se confirmam?",
+      "criterio_ref": "CR1",
+      "trilha": "limite"
+    },
+    {
+      "id": "P2",
+      "pergunta": "O WMS registra pré-conferência e conferência do checkout (por exemplo, como destino ou tarefa própria)? Se sim, quanto tempo consomem; se não, PR11 segue sem medição e entra como sensibilidade.",
+      "criterio_ref": "CR1",
+      "trilha": "limite"
+    },
+    {
+      "id": "P3",
+      "pergunta": "No checkout da Royal Canin, quantas unidades por onda e quanto tempo por unidade e por pedido a separação consome, e como isso varia por onda e por hora? Os valores do deck (slide 10) se confirmam, e que faixa de capacidade de robô no checkout (PR08) eles sugerem?",
+      "criterio_ref": "CR1",
+      "trilha": "limite"
+    },
+    {
+      "id": "P4",
+      "pergunta": "Qual o volume tarifável no escopo (pedidos de checkout e linhas de produto do pedido-a-pedido da Royal Canin), na taxa corrente por dia útil e por alternativa, e a receita resultante cobre a franquia?",
+      "criterio_ref": "CR2",
+      "trilha": "limite"
+    },
+    {
+      "id": "P5",
+      "pergunta": "A economia do slide 15 e a franquia do slide 18 foram calculadas com a própria planilha do WMS (Marcus). Que volume elas implicam, esse volume aparece no WMS na taxa corrente ou em algum mês, e como se reconcilia com os slides 8 e 12?",
+      "criterio_ref": "CR2",
+      "trilha": "limite"
+    },
+    {
+      "id": "P6",
+      "pergunta": "Como evoluiu o mix de tipos de onda da Royal Canin no período? A queda do pedido-a-pedido (slide 8) se confirma no WMS? Os volumes citados em fontes diferentes (deck, slides 8 e 12; relatório 9fleet v1, p. 10) se reconciliam?",
+      "criterio_ref": "CR2",
+      "trilha": "limite"
+    },
+    {
+      "id": "P7",
+      "pergunta": "Qual o tempo por coleta manual (correção N−1) e o ciclo completo por pedido no pedido-a-pedido da Royal Canin, incluindo o intervalo até a próxima tarefa do mesmo operador? A linha de base do deck (slides 5, 6 e 9) se confirma?",
+      "criterio_ref": "CR3",
+      "trilha": "limite"
+    },
+    {
+      "id": "P8",
+      "pergunta": "Os pedidos feitos pelo robô aparecem na planilha do WMS (por exemplo, com usuário próprio)? Premissa a verificar pelo engenheiro de dados no perfil e no contrato. Se aparecem, o que o WMS registra para eles nos mesmos campos do manual, numa comparação descritiva?",
+      "criterio_ref": "CR3",
+      "trilha": "limite"
+    },
+    {
+      "id": "P9",
+      "pergunta": "Como a produtividade manual (linhas e unidades por hora) varia por tipo de tarefa, tipo de onda, número de endereços, depositante e hora do dia? Onde o operador é mais lento e o robô renderia mais?",
+      "criterio_ref": "CR3",
+      "trilha": "exploratoria"
+    },
+    {
+      "id": "P10",
+      "pergunta": "Quanto tempo fica fora do relógio entre tarefas consecutivas do mesmo operador, por hora do dia, tipo de onda e depositante? Onde o trajeto ao packing e a troca de etiqueta pesam mais?",
+      "criterio_ref": "CR3",
+      "trilha": "exploratoria"
+    },
+    {
+      "id": "P11",
+      "pergunta": "Como o volume se distribui por hora do dia e dia da semana, e quais são o pico horário e o dia de pico (p90 e máximo), no escopo e no armazém? A concentração matinal (slide 17) e o pico diário (slide 12) se confirmam?",
+      "criterio_ref": "CR4",
+      "trilha": "ambas"
+    },
+    {
+      "id": "P12",
+      "pergunta": "Quantos robôs cada alternativa exige em cada hora do dia p90 e quantos sobram no dia típico, nas duas leituras de frota do deck (slides 12 e 14)?",
+      "criterio_ref": "CR4",
+      "trilha": "limite"
+    },
+    {
+      "id": "P13",
+      "pergunta": "Operadores novos levam quanto tempo para atingir a produtividade dos experientes? A pergunta é medida por coorte de semanas desde a primeira tarefa, só em agregado e sem operador individual, como evidência para o argumento do temporário guiado pelo robô (slide 17).",
+      "criterio_ref": "CR8",
+      "trilha": "exploratoria"
+    },
+    {
+      "id": "P14",
+      "pergunta": "Qual o volume e o perfil de cada depositante (tipo de onda, endereços por pedido, unidades por linha, picos) e quanto dele é compatível com o Kappabot? A participação por depositante do deck (slide 12) se confirma?",
+      "criterio_ref": "CR5",
+      "trilha": "ambas"
+    },
+    {
+      "id": "P15",
+      "pergunta": "Quantos separadores ativos e quantas horas de separação o armazém inteiro consome por dia, em agregado (slide 12)?",
+      "criterio_ref": "CR5",
+      "trilha": "exploratoria"
+    },
+    {
+      "id": "P16",
+      "pergunta": "Qual a margem de contribuição mensal por robô em cada alternativa (receita por robô na taxa corrente menos PR13), e qual o custo máximo de hardware por robô que se paga no prazo do contrato (PR14)?",
+      "criterio_ref": "CR6",
+      "trilha": "limite"
+    },
+    {
+      "id": "P17",
+      "pergunta": "Qual a produtividade da colmeia da Royal Canin (linhas e unidades por hora em ciclo completo), comparada ao pedido-a-pedido e ao checkout? O 'fluxo manual em lote já é eficiente' do slide 14 se sustenta?",
+      "criterio_ref": "CR7",
+      "trilha": "limite"
+    },
+    {
+      "id": "P18",
+      "pergunta": "Quantos FTE inteiros o escopo de cada alternativa libera na taxa corrente, e quantas contratações evitaria com o crescimento de volume (slide 16)?",
+      "criterio_ref": "CR8",
+      "trilha": "limite"
+    },
+    {
+      "id": "P19",
+      "pergunta": "Nos dias de pico (p90 e máximo), quantas horas de separação excedem o dia típico, no escopo e no armazém? Quantos operadores a mais isso exigiria sem robôs, e quanto a frota proposta absorve?",
+      "criterio_ref": "CR8",
+      "trilha": "ambas"
+    }
+  ],
+  "trilha_exploratoria": {
+    "perguntas": [
+      "P9",
+      "P10",
+      "P11",
+      "P13",
+      "P14",
+      "P15",
+      "P19"
+    ],
+    "objetivo": "Gerar argumentos de venda novos, além de validar o deck: onde o operador perde tempo, picos e horário estendido, curva de aprendizado de temporários, perfil por depositante, tamanho do armazém.",
+    "regras": "Análises exploratórias: só sobem a insight aprovado com confirmação (regra 7 do squad). Sempre agregadas, sem resultado por operador individual e com o mínimo de registros por grupo do config."
+  },
+  "impacto_esperado": "[●] até o motor recalcular com os volumes e horas do WMS. Para a Social, que quer reduzir o custo de mão de obra e a dificuldade de contratação (Q02), estão em jogo a economia no escopo (CR1) e os FTE liberados ou contratações evitadas (CR8). O valor do deck (PR19, slide 15) foi calculado com a própria planilha do WMS, mas é só referência a reconciliar. Para a Acta estão em jogo um contrato de PR14 meses com piso de receita PR02, uma operação de referência (slide 18) e a margem de contribuição por robô sobre PR13. O custo de hardware (PR20) é [●], e o motor reporta o máximo pagável.",
+  "restricoes": [
+    "A economia do slide 15 e a franquia do slide 18 foram calculadas pela Acta com a própria planilha do WMS (Marcus, 2026-10-03), mas a base de volume implícita parece não fechar com os volumes Royal Canin dos slides 8 e 12 (revisoes/sup-negocio_r1.json). O motor recalcula e reconcilia, e os valores do deck são referência.",
+    "O checkout conferido no robô NÃO está pronto (Marcus, 2026-10-03). ALT3 e ALT4 com checkout exigem prazo de desenvolvimento [●]. A cobrança do deck começa no go-live do checkout (slide 18) e precisa ser revista se a fase começar sem checkout (ALT2).",
+    "Duas definições de linha. Tarifável = linha de produto do pedido (Marcus, 2026-10-03), usada em PR04 e CR2. Operacional = coleta ou endereço visitado, usada em produtividade e frota (CR3, CR4, CR5, CR7). O contrato define as duas métricas e as colunas.",
+    "Dados brutos do robô (banco 9fleet) indisponíveis; seguir com WMS e agregados foi decisão de Marcus em 2026-10-03. O lado robô entra só pelos agregados documentados (PR16 a PR18), como premissa declarada, sem reprocessamento; o 9fleet fica para uma v2. Não está confirmado se os pedidos do robô aparecem no WMS: o engenheiro de dados verifica no perfil e no contrato, sem bloquear (P8).",
+    "A amostra do robô é preliminar: marcos de tempo só desde 28/08/2026 (relatório 9fleet v1, p. 12). Com um único robô e sem teste controlado, comparações robô x manual são descritivas, e nenhuma afirmação causal sobre o ganho em zona é feita.",
+    "A coluna Usuário é dado pessoal (operador). Ela é pseudonimizada, nenhum resultado sai por operador individual e os agregados respeitam o mínimo de registros por grupo do config. O uso na nuvem foi autorizado por Marcus em 2026-10-03 (briefing).",
+    "O WMS mede intervalos entre confirmações. Tarefa de um endereço não tem tempo mensurável, e o tempo por coleta exige correção N−1 (relatório 9fleet v1, p. 5). O perfil mostra Tempo em Segundos com valores negativos e extremos. Horas e FTE vêm de jornada ativa por operador-dia com teto de intervalo, não da soma de Tempo em Segundos (Q05).",
+    "O WMS não registra etiqueta, ida ao packing nem trajeto ao faturamento. O tempo fora do relógio só é inferível pelo intervalo entre tarefas consecutivas do mesmo operador (deck, slide 6).",
+    "Depositante e tipo de onda não têm coluna própria: a regra confirmada por Marcus está em A05. O engenheiro fixa no contrato qual coluna define a onda (Onda ou Id Onda, com contagens diferentes no perfil), validando contra os totais por tipo de onda do slide 8. Há linhas com várias regiões de origem e linhas de cancelamento (revisoes/orquestrador_verificacao_regioes.md).",
+    "Granularidade da planilha: o perfil mostra menos tarefas distintas que linhas e mais pedidos que tarefas, logo não é uma linha por tarefa. O contrato define a granularidade antes de qualquer métrica.",
+    "Período do WMS pelo perfil: junho a setembro de 2026, com setembro parcial e Data/Hora Início anômala antes do período. A série não cobre Black Friday nem Natal: P11 e P19 não respondem pelo pico de alta temporada citado no slide 17.",
+    "Os FTE fracionários do slide 14 só viram economia com realocação. A análise mede horas liberadas e vagas inteiras (CR8), não reduções de quadro.",
+    "A garantia é condicionada à desmobilização da conferência (slide 18, rodapé). A aceitação pela Social e pela Royal Canin não é conhecida: o deck ainda não foi apresentado (Marcus, 2026-10-03).",
+    "Custos: PR10 e PR11 vêm da Social, confirmados por Marcus; PR12 vem do deck, com baixa confiança. O custo de servir sem hardware (PR13) foi informado por Marcus; o custo de hardware (PR20) é [●].",
+    "Disciplina de nomes no entregável: 9fleet (nunca o nome interno do orquestrador de frota)."
+  ],
+  "prazo": null,
+  "quem_decide": "Marcus (CEO da Acta Robotics) decide qual oferta apresentar. A contratação é decidida pela Social S.A. (decisor na Social: [●]); o deck ainda não foi apresentado (Marcus, 2026-10-03).",
+  "dimensoes": [
+    {
+      "id": "A01",
+      "status": "completo",
+      "evidencias": [
+        "Enquadramento e alternativas confirmados por Marcus em 2026-10-03 (Q01: 'ok').",
+        "O que a Social quer: reduzir custo de mão de obra e dificuldade de contratação; deck não apresentado (Q02). Registrado em criterios_de_compra_cliente e CR8.",
+        "Alternativas ALT1 a ALT6 com regra de decisão e desempate em regra_decisao."
+      ],
+      "lacunas": [
+        "Prazo (data da reunião com a Social) não informado: [●].",
+        "Decisor na Social: [●]."
+      ],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "A02",
+      "status": "completo",
+      "evidencias": [
+        "CR1 a CR7, regra de decisão e PR01 a PR19 aceitos por Marcus em 2026-10-03 (Q03: 'aceito').",
+        "Ajustes posteriores, conforme as respostas de Marcus: CR2 com linha tarifável = linha de produto (Q06); CR6 reformulado como margem de contribuição sem hardware com PR13 informado (Q07); CR8 criado a partir do critério de compra da Social (Q02); PR20 (hardware) como [●]."
+      ],
+      "lacunas": [
+        "PR08 (capacidade no checkout) sem valor: estimada com faixa pelo analista.",
+        "PR15 (janela de operação) a medir no WMS."
+      ],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "A03",
+      "status": "completo",
+      "evidencias": [
+        "Perguntas P1 a P19, cada uma ligada a um critério (CR1 a CR8), separadas em trilha de limite e trilha exploratória (trilha_exploratoria)."
+      ],
+      "lacunas": [],
+      "premissa_adotada": "",
+      "premissa_aceita_por": ""
+    },
+    {
+      "id": "A04",
+      "status": "premissa",
+      "evidencias": [
+        "Fonte única de dados: planilha de produtividade do WMS Senior PROD_90DIAS.xlsx, aba PRODUTIVIDADE; origem Google Drive Acta > Social, modificada em 2026-10-02 (briefing.json).",
+        "Perfil do motor (saidas/perfil.md): datas de junho a setembro de 2026, com setembro parcial.",
+        "Lado robô: só agregados do relatório 9fleet v1 (p. 6 a 10), do deck (slides 4 a 8) e do relatório HTML de performance."
+      ],
+      "lacunas": [
+        "Agregados do robô divergem entre documentos: a devolutiva automática difere entre o relatório 9fleet v1 (p. 7) e o relatório HTML; a demanda diária do relatório (p. 10) não bate à primeira vista com os volumes Royal Canin do deck (slides 8 e 12).",
+        "A série não cobre a alta temporada.",
+        "Pedidos do robô no WMS: a verificar pelo engenheiro de dados (P8)."
+      ],
+      "premissa_adotada": "Seguir com a planilha do WMS e os agregados do robô documentados como premissa (Q04: 'seguir', Marcus, 2026-10-03); exportação do banco 9fleet numa v2. Se os pedidos do robô aparecem no WMS é premissa a verificar pelo engenheiro de dados, sem bloquear.",
+      "premissa_aceita_por": "Marcus"
+    },
+    {
+      "id": "A05",
+      "status": "premissa",
+      "evidencias": [
+        "Relatório 9fleet v1, seções 3.1 a 3.4, p. 4 e glossário p. 17: tipos de onda, recorte, correção N−1, corte de outliers.",
+        "Verificação agregada do orquestrador sobre Região Origem e Região Destino: revisoes/orquestrador_verificacao_regioes.md.",
+        "Regras confirmadas por Marcus em 2026-10-03 (Q05: 'ok'); linha tarifável definida por Marcus (Q06)."
+      ],
+      "lacunas": [
+        "Coluna que define a onda (Onda ou Id Onda): o engenheiro fixa no contrato e valida contra o slide 8.",
+        "Teto do intervalo entre tarefas: calibrado no perfil e declarado no contrato.",
+        "Coluna da linha tarifável (provavelmente Qtde Produtos): o engenheiro define no contrato."
+      ],
+      "premissa_adotada": "Regras de dados confirmadas por Marcus em 2026-10-03, com base em revisoes/orquestrador_verificacao_regioes.md. Depositante = prefixo de Região Origem antes de ' - PICKING', ' - AVARIA' etc. Colmeia = Região Destino COLMEIA. Pedido-a-pedido = onda com um pedido. Checkout = onda com vários pedidos e uma coleta cada; a coluna de onda (Onda ou Id Onda) é fixada pelo engenheiro no contrato. Linhas com várias regiões e de cancelamento são tratadas na qualidade. Horas = jornada ativa por operador-dia com teto de intervalo. Linha tarifável = linha de produto do pedido; linha operacional = coleta ou endereço.",
+      "premissa_aceita_por": "Marcus"
+    },
+    {
+      "id": "A06",
+      "status": "premissa",
+      "evidencias": [
+        "Autorização de uso na nuvem registrada por Marcus em 2026-10-03 (briefing.json).",
+        "Coluna Usuário identificada como dado pessoal (briefing.json); pseudonimização ligada por padrão (config).",
+        "Premissa de privacidade aceita por Marcus em 2026-10-03 (Q03)."
+      ],
+      "lacunas": [
+        "Prazo e esforço disponíveis não informados: [●] (Q01)."
+      ],
+      "premissa_adotada": "Usuário pseudonimizado. Nenhum resultado por operador individual, inclusive na curva de aprendizado (P13), que é agregada por coorte. Volumes e perfis por depositante podem aparecer na oferta porque ela vai para a própria Social, sem circular fora dela e sem citar outros clientes da Acta.",
+      "premissa_aceita_por": "Marcus"
+    },
+    {
+      "id": "A07",
+      "status": "premissa",
+      "evidencias": [
+        "Deck, slides 15, 16 e 18, calculados pela Acta com a planilha do WMS (Marcus, Q06): PR01 a PR04, PR14 e PR19.",
+        "Custo de servir sem hardware informado por Marcus (PR13); PR10 e PR11 com fonte na Social (Q07)."
+      ],
+      "lacunas": [
+        "Custo de hardware (PR20): [●]. O motor reporta o máximo pagável no contrato.",
+        "Prazo de desenvolvimento do checkout conferido: [●]."
+      ],
+      "premissa_adotada": "Ordem de grandeza: referência do deck (PR19), calculada com a própria planilha do WMS, até o analista de impacto recalcular e reconciliar com as premissas PR01 a PR20.",
+      "premissa_aceita_por": "Marcus"
+    },
+    {
+      "id": "A08",
+      "status": "premissa",
+      "evidencias": [
+        "Relatório 9fleet v1, p. 3: produzido para a equipe de engenharia da Acta e para a gestão de operação da Social."
+      ],
+      "lacunas": [
+        "Pessoa da operação da Social que possa validar interpretações não identificada: [●] (Q02)."
+      ],
+      "premissa_adotada": "Interpretações operacionais decisivas são validadas pela equipe de engenharia da Acta responsável pelo relatório 9fleet v1 e por Marcus. O que entrar na oferta é validado por uma pessoa da operação da Social, a indicar por Marcus.",
+      "premissa_aceita_por": "Marcus"
+    }
+  ],
+  "perguntas_chave": [
+    {
+      "id": "Q01",
+      "rodada": 1,
+      "dimensao": "A01",
+      "pergunta": "Confirma o enquadramento? A análise apoia a escolha da oferta da próxima fase entre ALT1 (adiar e testar), ALT2 (sem desmobilizar a conferência), ALT3 (deck), ALT4 (deck recalibrado), ALT5 (com colmeia) e ALT6 (ampliada), decidida por você pela regra de decisão do nó, mais uma trilha exploratória de argumentos de venda. Qual a data da apresentação à Social?",
+      "por_que_importa": "As alternativas e a regra definem quais recortes o plano calcula: tipo de onda, depositante, frota e preço. A data define o esforço possível.",
+      "impacto": "alto",
+      "formato": "escolha",
+      "opcoes": [
+        "confirmo",
+        "confirmo com ajustes nas alternativas ou na regra",
+        "prefiro análise exploratória"
+      ],
+      "resposta_proposta": "Confirmo. Decide Marcus; prazo = antes da próxima reunião com a Social (data a informar).",
+      "destinatario": "marcus",
+      "status": "respondida",
+      "resposta": "ok (Marcus, 2026-10-03). Enquadramento e alternativas confirmados; data da reunião não informada (prazo [●])."
+    },
+    {
+      "id": "Q02",
+      "rodada": 1,
+      "dimensao": "A01",
+      "pergunta": "O que a Social quer? O deck já foi apresentado? Que objeções ou interesses a Social e a Royal Canin já mostraram, em especial sobre desmobilizar a conferência, condição da garantia (slide 18)? Quem decide na Social e quem da operação pode validar as interpretações?",
+      "por_que_importa": "Sem os critérios de compra do cliente, 'enriquecer a oferta' mira hipóteses da Acta. A aceitação da desmobilização decide entre ALT2 e ALT3. O decisor e o validador na Social estão como [●].",
+      "impacto": "alto",
+      "formato": "texto",
+      "opcoes": [],
+      "resposta_proposta": "Marcus informa o status do deck, o decisor na Social e as objeções já ouvidas. Se o deck ainda não foi discutido em detalhe, a análise prioriza o que a Social mais tende a contestar (economia, franquia, desmobilização da conferência), e a aceitação da desmobilização fica como condição de ALT3, a confirmar na reunião.",
+      "destinatario": "marcus",
+      "status": "respondida",
+      "resposta": "\"Não foi apresentado. A Social quer reduzir seus custos com mão de obra e dificuldades em contratação.\" (Marcus, 2026-10-03). Registrado em criterios_de_compra_cliente e CR8. Decisor e validador na Social seguem [●]."
+    },
+    {
+      "id": "Q03",
+      "rodada": 1,
+      "dimensao": "A02",
+      "pergunta": "Aceita os limites de CR1 a CR7, a regra de decisão por alternativa e as premissas nomeadas PR01 a PR19, incluindo as premissas de privacidade (A06) e de validação humana (A08)?",
+      "por_que_importa": "Os limites transformam cada achado em uma escolha entre ALT1 e ALT6. Sem aceite, as dimensões críticas não passam no modo completo.",
+      "impacto": "alto",
+      "formato": "escolha",
+      "opcoes": [
+        "aceito todos",
+        "aceito com ajustes",
+        "quero outros limites"
+      ],
+      "resposta_proposta": "Aceito todos. As condições do deck entram como premissas, e a análise mede no WMS se elas passam nos limites.",
+      "destinatario": "marcus",
+      "status": "respondida",
+      "resposta": "aceito (Marcus, 2026-10-03): CR1 a CR7, regra de decisão e PR01 a PR19, inclusive as premissas de A06 e A08."
+    },
+    {
+      "id": "Q04",
+      "rodada": 1,
+      "dimensao": "A04",
+      "pergunta": "Os dados brutos do robô (banco 9fleet) não estão na pasta. Seguimos com a planilha do WMS e os agregados do robô documentados? E os pedidos do robô aparecem no WMS, com usuário próprio?",
+      "por_que_importa": "Sem os brutos não dá para reproduzir tempo produtivo, espera e devolutiva, nem cruzar pedido a pedido; o auditor não refaz esses números, e os documentos divergem na devolutiva automática. Se os pedidos do robô estiverem no WMS, há uma medição do lado robô sem o 9fleet.",
+      "impacto": "alto",
+      "formato": "escolha",
+      "opcoes": [
+        "seguir com WMS e agregados do robô como premissa, e anexar o 9fleet numa v2",
+        "esperar a exportação do 9fleet"
+      ],
+      "resposta_proposta": "Seguir com a planilha do WMS e os agregados do robô documentados (PR16 a PR18) como premissa declarada, sem recalculá-los, e recomendar a exportação do banco 9fleet (missões e marcos por coleta) como próximo passo, para uma v2. A engenharia da Acta confirma se os pedidos do robô aparecem no WMS e com que usuário; se aparecem, comparamos robô e manual nos mesmos campos, de forma descritiva.",
+      "destinatario": "marcus",
+      "status": "respondida",
+      "resposta": "seguir (Marcus, 2026-10-03): WMS e agregados do robô como premissa; 9fleet numa v2. Não respondeu se os pedidos do robô aparecem no WMS: premissa a verificar pelo engenheiro de dados, sem bloquear."
+    },
+    {
+      "id": "Q05",
+      "rodada": 1,
+      "dimensao": "A05",
+      "pergunta": "Confirma as regras de dados? Depositante = prefixo de Região Origem antes de ' - PICKING', ' - AVARIA' etc. Colmeia = Região Destino COLMEIA. Pedido-a-pedido = onda com um pedido. Checkout = onda com vários pedidos e uma coleta cada (relatório 9fleet v1, p. 4). Horas e FTE = jornada ativa por operador-dia, do primeiro início ao último fim com teto de intervalo, e não a soma de Tempo em Segundos.",
+      "por_que_importa": "Todo o escopo (CR1, CR2), a colmeia (CR7) e os outros depositantes (CR5) dependem do recorte. O método de horas decide os FTE e a linha de base (CR1, CR3), e o relatório 9fleet v1 (p. 12) aponta que a soma de horas do WMS é injusta.",
+      "impacto": "alto",
+      "formato": "escolha",
+      "opcoes": [
+        "confirmo",
+        "confirmo com ajustes"
+      ],
+      "resposta_proposta": "Confirmo. Linhas com várias regiões e de cancelamento são tratadas pela qualidade. A regra é validada reproduzindo os totais do deck por mês e tipo de onda (slide 8) e a participação por depositante (slide 12). O teto de intervalo é calibrado no perfil e declarado no contrato.",
+      "destinatario": "marcus",
+      "status": "respondida",
+      "resposta": "ok (Marcus, 2026-10-03): regras de dados confirmadas. A coluna de onda (Onda ou Id Onda) é fixada pelo engenheiro no contrato."
+    },
+    {
+      "id": "Q06",
+      "rodada": 1,
+      "dimensao": "A07",
+      "pergunta": "Termos comerciais do deck: (a) que base de volume foi usada na economia do slide 15 e na franquia do slide 18 (última semana mensalizada, média de junho a setembro ou outra)? (b) Na tarifa por linha, linha é endereço visitado ou linha de produto do pedido?",
+      "por_que_importa": "Se a base for maior que o volume corrente, a receita fica abaixo da franquia, a Social paga a franquia e a garantia conflita (CR1, CR2). Contar endereços ou produtos muda o volume tarifável e a fatura da Social.",
+      "impacto": "alto",
+      "formato": "texto",
+      "opcoes": [],
+      "resposta_proposta": "(a) Recalcular tudo com o volume medido no WMS e tratar os valores do slide 15 (PR19) como referência a reconciliar. (b) É uma cláusula comercial: Marcus decide. Até lá, a premissa é linha = endereço, e CR2 é mostrado nas duas contagens.",
+      "destinatario": "marcus",
+      "status": "respondida",
+      "resposta": "\"foi usado a base de dados da planilha. linha de produto do pedido.\" (Marcus, 2026-10-03). (a) A economia do slide 15 e a franquia do slide 18 vêm da própria planilha do WMS; o motor recalcula e reconcilia. (b) Linha tarifável = linha de produto do pedido."
+    },
+    {
+      "id": "Q07",
+      "rodada": 1,
+      "dimensao": "A07",
+      "pergunta": "Lado da Acta: (a) qual o custo mensal de servir por robô, tudo incluído (robô, implantação, manutenção, suporte, 9fleet)? (b) Qual a capacidade de um robô no checkout? (c) O checkout conferido no robô está pronto ou tem prazo de desenvolvimento? (d) O custo por operador (PR10) e os postos de conferência (PR11) do deck têm fonte na Social?",
+      "por_que_importa": "Sem custo de servir não se avalia CR6 nem se escolhe entre ALT3, ALT4 e ALT6. Sem capacidade no checkout, CR4 fica incompleto. A maior parte da economia do deck vem de eliminar a conferência (slide 14).",
+      "impacto": "alto",
+      "formato": "texto",
+      "opcoes": [],
+      "resposta_proposta": "(a) Marcus informa o custo mensal por robô ou uma faixa. Sem resposta, CR6 fica [●], com a referência de RaaS da Base de Conhecimento (seção 1.3) só como sensibilidade de baixa confiança. (b) e (c) A engenharia da Acta informa. (d) Manter PR10 e PR11 como premissas do deck, com faixa de sensibilidade no analista de impacto, e confirmar com a Social se possível.",
+      "destinatario": "marcus",
+      "status": "respondida",
+      "resposta": "\"O custo (tirando custo de hardware) é cerca de R$1000/mês/robo. b) não sabemos exatamente c) não d) tem\" (Marcus, 2026-10-03). PR13 informado (sem hardware; hardware PR20 [●]). Capacidade no checkout desconhecida (PR08 estimada com faixa). O checkout conferido não está pronto. PR10 e PR11 têm fonte na Social."
+    }
+  ],
+  "rodada_atual": 1,
+  "criterios_de_compra_cliente": {
+    "fonte": "Marcus, 2026-10-03, resposta a Q02",
+    "itens": [
+      "Reduzir o custo com mão de obra (CR1).",
+      "Reduzir a dificuldade de contratação: FTE liberados, contratações evitadas, picos sem temporários (CR8; P13, P18, P19)."
+    ],
+    "status_deck": "Não apresentado à Social até 2026-10-03."
+  }
+}

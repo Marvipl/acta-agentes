@@ -1,0 +1,2465 @@
+{
+  "id": "ANA-014",
+  "valores": {
+    "n_origens": {
+      "valor": 6.0,
+      "unidade": "origens semanais",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_nominal_intervalo": {
+      "valor": 0.7142857142857143,
+      "unidade": "proporção",
+      "incerteza": null,
+      "contagem": true,
+      "nota": "(n − 1) ÷ (n + 1) com n = número de origens; origens com horizontes sobrepostos tornam a cobertura real menos certa que a nominal"
+    },
+    "n_candidatos_que_vencem_a_base": {
+      "valor": 0.0,
+      "unidade": "candidatos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "troca_referencia_base": {
+      "valor": 0.0,
+      "unidade": "1 = a regra de vitória trocou a referência base; 0 = a média de quatro semanas fica",
+      "incerteza": null,
+      "contagem": true
+    },
+    "troca_referencia_base_sem_pos_pausa": {
+      "valor": 0.0,
+      "unidade": "mesma leitura, sem os dias pós-pausa (robustez)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "troca_referencia_base_sem_origem36": {
+      "valor": 0.0,
+      "unidade": "mesma leitura, sem a origem 36 (acréscimo: o horizonte dela contém a semana ISO 39)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mae_janela_4s_pedidos_checkout_rc": {
+      "valor": 3.2778265107212454,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.04999999999999005,
+        "superior": 5.700000000000003,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_8s_pedidos_checkout_rc": {
+      "valor": 5.548460606355342,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.99722222222222,
+        "superior": 7.889189189189182,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_historia_pedidos_checkout_rc": {
+      "valor": 5.681515861949705,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.10035842293907393,
+        "superior": 7.889189189189182,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_modelo_pedidos_checkout_rc": {
+      "valor": 3.0567781334875903,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.1005328193348944,
+        "superior": 5.48977016859444,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_2s_pedidos_checkout_rc": {
+      "valor": 2.6199805068226083,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.14999999999999147,
+        "superior": 7.6499999999999915,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_6s_pedidos_checkout_rc": {
+      "valor": 4.147270955165695,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.0596491228070093,
+        "superior": 7.300000000000011,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_4s_linhas_tarif_pap_rc": {
+      "valor": 21.692105263157902,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.5500000000000114,
+        "superior": 67.05000000000003,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_4s": {
+      "valor": 21.692105263157902,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.5500000000000114,
+        "superior": 67.05000000000003,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_8s_linhas_tarif_pap_rc": {
+      "valor": 53.45067020461756,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 15.57763157894739,
+        "superior": 111.72972972972971,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_8s": {
+      "valor": 53.45067020461756,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 15.57763157894739,
+        "superior": 111.72972972972971,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_historia_linhas_tarif_pap_rc": {
+      "valor": 76.95515524493779,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 54.57894736842104,
+        "superior": 111.72972972972971,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_historia": {
+      "valor": 76.95515524493779,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 54.57894736842104,
+        "superior": 111.72972972972971,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_modelo_linhas_tarif_pap_rc": {
+      "valor": 56.837707625468255,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 27.419873366011046,
+        "superior": 72.63487350918054,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_modelo": {
+      "valor": 56.837707625468255,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 27.419873366011046,
+        "superior": 72.63487350918054,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_2s_linhas_tarif_pap_rc": {
+      "valor": 17.04210526315789,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 7.905263157894737,
+        "superior": 27.200000000000017,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_2s": {
+      "valor": 17.04210526315789,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 7.905263157894737,
+        "superior": 27.200000000000017,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_6s_linhas_tarif_pap_rc": {
+      "valor": 34.24590643274854,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 5.094736842105263,
+        "superior": 94.69999999999996,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_6s": {
+      "valor": 34.24590643274854,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 5.094736842105263,
+        "superior": 94.69999999999996,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_4s_linhas_op_pap_rc": {
+      "valor": 21.565886939571154,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.05000000000001137,
+        "superior": 67.89999999999998,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_8s_linhas_op_pap_rc": {
+      "valor": 55.210223786539565,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 18.136842105263185,
+        "superior": 113.17162162162161,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_historia_linhas_op_pap_rc": {
+      "valor": 79.19976561534737,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 57.64912280701755,
+        "superior": 113.17162162162161,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_modelo_linhas_op_pap_rc": {
+      "valor": 56.97024777420956,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 29.05427170868132,
+        "superior": 71.71249605670369,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_2s_linhas_op_pap_rc": {
+      "valor": 16.407553606237816,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 7.121052631578948,
+        "superior": 25.811111111111117,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_6s_linhas_op_pap_rc": {
+      "valor": 35.00053606237816,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 5.812280701754389,
+        "superior": 95.58333333333333,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_4s_linhas_armazem": {
+      "valor": 152.8813840155946,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 18.2736842105262,
+        "superior": 268.55000000000007,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_8s_linhas_armazem": {
+      "valor": 166.77786703707764,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 10.275000000000205,
+        "superior": 319.6777777777779,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_historia_linhas_armazem": {
+      "valor": 140.6579018841074,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 61.70445344129553,
+        "superior": 279.82616487455175,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_modelo_linhas_armazem": {
+      "valor": 344.1885819853483,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 19.478423164136984,
+        "superior": 635.202057072791,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_2s_linhas_armazem": {
+      "valor": 267.5901559454191,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 143.2263157894738,
+        "superior": 401.07777777777767,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "mae_janela_6s_linhas_armazem": {
+      "valor": 179.79249512670563,
+      "unidade": "linhas por dia pleno",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.816666666666606,
+        "superior": 275.7444444444445,
+        "cenarios": "menor e maior erro absoluto entre as origens (erro agregado de quatro semanas, por dia pleno)"
+      }
+    },
+    "h_p4c_series_com_janela_4s_melhor": {
+      "valor": 3.0,
+      "unidade": "séries (de 4)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p4c_confirmada": {
+      "valor": 0.0,
+      "unidade": "1 = erro absoluto médio da média de quatro semanas menor que o da história nas quatro séries",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p4c_series_com_janela_4s_melhor_sem_pos_pausa": {
+      "valor": 3.0,
+      "unidade": "séries (de 4), sem os dias pós-pausa",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p4c_series_com_janela_4s_melhor_sem_origem36": {
+      "valor": 3.0,
+      "unidade": "séries (de 4), sem a origem 36 (acréscimo)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ganho_janela_4s_vs_historia_linhas_tarif_pap_rc": {
+      "valor": 0.718120180589398,
+      "unidade": "fração do erro da história evitada pela média de quatro semanas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "erro_rel_medio_janela_4s_pedidos_checkout_rc": {
+      "valor": 0.07011759117512174,
+      "unidade": "fração do previsto",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0010504201680670178,
+        "superior": 0.1295454545454546,
+        "cenarios": "menor e maior erro relativo absoluto entre as origens"
+      }
+    },
+    "erro_rel_medio_janela_4s_linhas_tarif_pap_rc": {
+      "valor": 0.24211528405989155,
+      "unidade": "fração do previsto",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.007452574525745413,
+        "superior": 0.5361855257896843,
+        "cenarios": "menor e maior erro relativo absoluto entre as origens"
+      }
+    },
+    "erro_rel_medio_janela_4s_linhas_op_pap_rc": {
+      "valor": 0.23415699107457813,
+      "unidade": "fração do previsto",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0006693440428381708,
+        "superior": 0.5331762858264624,
+        "cenarios": "menor e maior erro relativo absoluto entre as origens"
+      }
+    },
+    "erro_rel_medio_janela_4s_linhas_armazem": {
+      "valor": 0.1571788766204927,
+      "unidade": "fração do previsto",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.01654925213777051,
+        "superior": 0.3153290671050315,
+        "cenarios": "menor e maior erro relativo absoluto entre as origens"
+      }
+    },
+    "dias_uteis_mes1": {
+      "valor": 19.0,
+      "unidade": "dias úteis (segunda a sexta menos feriados de calendário)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_uteis_mes2": {
+      "valor": 18.0,
+      "unidade": "dias úteis (segunda a sexta menos feriados de calendário)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_uteis_mes3": {
+      "valor": 20.0,
+      "unidade": "dias úteis (segunda a sexta menos feriados de calendário)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_origens_normal": {
+      "valor": 5.0,
+      "unidade": "origens semanais (31 a 35, sem o horizonte com o incidente)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cobertura_nominal_intervalo_normal": {
+      "valor": 0.6666666666666666,
+      "unidade": "proporção",
+      "incerteza": null,
+      "contagem": true,
+      "nota": "(n − 1) ÷ (n + 1) com n = origens 31 a 35; o cenário estresse usa as seis origens (cobertura_nominal_intervalo)"
+    },
+    "proj_mes1_pedidos_checkout_rc_normal": {
+      "valor": 995.0000000000001,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 996.0451680672268,
+        "superior": 1123.8977272727275,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 5 origens"
+    },
+    "taxa_proj_mes1_pedidos_checkout_rc_normal": {
+      "valor": 52.36842105263158,
+      "unidade": "pedidos por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 52.42342989827509,
+        "superior": 59.152511961722496,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_pedidos_checkout_rc_normal_faixa": {
+      "valor": 995.0000000000001,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 995.0000000000001,
+        "superior": 1123.8977272727275,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_pedidos_checkout_rc_normal_faixa": {
+      "valor": 52.36842105263158,
+      "unidade": "pedidos por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 52.36842105263158,
+        "superior": 59.152511961722496,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_pedidos_checkout_rc_normal": {
+      "valor": 942.6315789473684,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 942.6315789473684,
+        "superior": 979.5947963812949,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_pedidos_checkout_rc_normal": {
+      "valor": 1047.3684210526317,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1047.3684210526317,
+        "superior": 1129.5089042391348,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_pedidos_checkout_rc_normal": {
+      "valor": 995.0,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 942.6315789473684,
+        "superior": 1129.5089042391348,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_pedidos_checkout_rc_estresse": {
+      "valor": 841.2777777777779,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 756.3433602807546,
+        "superior": 950.2614898989901,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 6 origens"
+    },
+    "taxa_proj_mes1_pedidos_checkout_rc_estresse": {
+      "valor": 44.277777777777786,
+      "unidade": "pedidos por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 39.80754527793445,
+        "superior": 50.01376262626264,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_pedidos_checkout_rc_estresse_faixa": {
+      "valor": 841.2777777777779,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 756.3433602807546,
+        "superior": 950.2614898989901,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_pedidos_checkout_rc_estresse_faixa": {
+      "valor": 44.277777777777786,
+      "unidade": "pedidos por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 39.80754527793445,
+        "superior": 50.01376262626264,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_pedidos_checkout_rc_estresse": {
+      "valor": 797.0000000000001,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 714.4624741317288,
+        "superior": 797.0000000000001,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_pedidos_checkout_rc_estresse": {
+      "valor": 885.5555555555557,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 702.1388314038416,
+        "superior": 885.5555555555557,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_pedidos_checkout_rc_estresse": {
+      "valor": 841.2777777777778,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 702.1388314038416,
+        "superior": 885.5555555555557,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_tarif_pap_rc_normal": {
+      "valor": 1443.0000000000002,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 669.2842862854857,
+        "superior": 1889.518148820327,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 5 origens"
+    },
+    "taxa_proj_mes1_linhas_tarif_pap_rc_normal": {
+      "valor": 75.94736842105264,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 35.22548875186767,
+        "superior": 99.44832362212247,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_tarif_pap_rc_normal_faixa": {
+      "valor": 1443.0000000000002,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 669.2842862854857,
+        "superior": 1889.518148820327,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_tarif_pap_rc_normal_faixa": {
+      "valor": 75.94736842105264,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 35.22548875186767,
+        "superior": 99.44832362212247,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_tarif_pap_rc_normal": {
+      "valor": 1367.0526315789475,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1023.3591078719982,
+        "superior": 1367.0526315789475,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_tarif_pap_rc_normal": {
+      "valor": 1518.947368421053,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 755.1839824056096,
+        "superior": 1518.947368421053,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_tarif_pap_rc_normal": {
+      "valor": 1443.0000000000002,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 755.1839824056096,
+        "superior": 1518.947368421053,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_tarif_pap_rc_estresse": {
+      "valor": 988.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 458.24870051979195,
+        "superior": 1293.7241379310344,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 6 origens"
+    },
+    "taxa_proj_mes1_linhas_tarif_pap_rc_estresse": {
+      "valor": 52.0,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 24.11835265893642,
+        "superior": 68.09074410163339,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_tarif_pap_rc_estresse_faixa": {
+      "valor": 988.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 458.24870051979195,
+        "superior": 1293.7241379310344,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_tarif_pap_rc_estresse_faixa": {
+      "valor": 52.0,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 24.11835265893642,
+        "superior": 68.09074410163339,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_tarif_pap_rc_estresse": {
+      "valor": 936.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 489.21460507045975,
+        "superior": 936.0,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_tarif_pap_rc_estresse": {
+      "valor": 1040.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 47.14356682324393,
+        "superior": 1040.0,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_tarif_pap_rc_estresse": {
+      "valor": 988.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 47.14356682324393,
+        "superior": 1040.0,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_op_pap_rc_normal": {
+      "valor": 1429.9999999999998,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 667.5579112681587,
+        "superior": 1810.3669602939217,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 5 origens"
+    },
+    "taxa_proj_mes1_linhas_op_pap_rc_normal": {
+      "valor": 75.26315789473684,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 35.13462690885046,
+        "superior": 95.28247159441693,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_op_pap_rc_normal_faixa": {
+      "valor": 1429.9999999999998,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 667.5579112681587,
+        "superior": 1810.3669602939217,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_op_pap_rc_normal_faixa": {
+      "valor": 75.26315789473684,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 35.13462690885046,
+        "superior": 95.28247159441693,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_op_pap_rc_normal": {
+      "valor": 1354.7368421052631,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 992.4203698467144,
+        "superior": 1354.7368421052631,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_op_pap_rc_normal": {
+      "valor": 1505.2631578947367,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 700.1154417646285,
+        "superior": 1505.2631578947367,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_op_pap_rc_normal": {
+      "valor": 1430.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 700.1154417646285,
+        "superior": 1505.2631578947367,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_op_pap_rc_estresse": {
+      "valor": 976.3888888888889,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 455.8014875888847,
+        "superior": 1236.0994299598167,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 6 origens"
+    },
+    "taxa_proj_mes1_linhas_op_pap_rc_estresse": {
+      "valor": 51.38888888888889,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 23.989551978362353,
+        "superior": 65.05786473472719,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_op_pap_rc_estresse_faixa": {
+      "valor": 976.3888888888889,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 455.8014875888847,
+        "superior": 1236.0994299598167,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_op_pap_rc_estresse_faixa": {
+      "valor": 51.38888888888889,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 23.989551978362353,
+        "superior": 65.05786473472719,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_op_pap_rc_estresse": {
+      "valor": 925.0000000000001,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 461.9091342709351,
+        "superior": 925.0000000000001,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_op_pap_rc_estresse": {
+      "valor": 1027.7777777777778,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 1027.7777777777778,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_op_pap_rc_estresse": {
+      "valor": 976.3888888888889,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 1027.7777777777778,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_armazem_normal": {
+      "valor": 24391.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 23140.29848261427,
+        "superior": 32082.19127575882,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 5 origens"
+    },
+    "taxa_proj_mes1_linhas_armazem_normal": {
+      "valor": 1283.7368421052631,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 1217.9104464533827,
+        "superior": 1688.536382934675,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_armazem_normal_faixa": {
+      "valor": 24391.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 23140.29848261427,
+        "superior": 32082.19127575882,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_armazem_normal_faixa": {
+      "valor": 1283.7368421052631,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1217.9104464533827,
+        "superior": 1688.536382934675,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_armazem_normal": {
+      "valor": 23107.263157894737,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 23107.263157894737,
+        "superior": 25193.065394892998,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_armazem_normal": {
+      "valor": 25674.736842105263,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 25674.736842105263,
+        "superior": 30309.85292432362,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_armazem_normal": {
+      "valor": 24391.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 23107.263157894737,
+        "superior": 30309.85292432362,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_armazem_estresse": {
+      "valor": 25028.277777777777,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 23744.898457773754,
+        "superior": 32920.42126069003,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 6 origens"
+    },
+    "taxa_proj_mes1_linhas_armazem_estresse": {
+      "valor": 1317.2777777777778,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 1249.7314977775661,
+        "superior": 1732.6537505626336,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_armazem_estresse_faixa": {
+      "valor": 25028.277777777777,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 23744.898457773754,
+        "superior": 32920.42126069003,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_armazem_estresse_faixa": {
+      "valor": 1317.2777777777778,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1249.7314977775661,
+        "superior": 1732.6537505626336,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_armazem_estresse": {
+      "valor": 23711.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 23711.0,
+        "superior": 25286.76638708162,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_armazem_estresse": {
+      "valor": 26345.555555555555,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 26345.555555555555,
+        "superior": 29847.258637959163,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_armazem_estresse": {
+      "valor": 25028.277777777777,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 23711.0,
+        "superior": 29847.258637959163,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_pedidos_pap_rc_normal": {
+      "valor": 724.0000000000002,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 312.01213960546283,
+        "superior": 971.4158636026692,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 5 origens"
+    },
+    "taxa_proj_mes1_pedidos_pap_rc_normal": {
+      "valor": 38.10526315789475,
+      "unidade": "pedidos por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 16.421691558182253,
+        "superior": 51.12715071592996,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_pedidos_pap_rc_normal_faixa": {
+      "valor": 724.0000000000002,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 312.01213960546283,
+        "superior": 971.4158636026692,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_pedidos_pap_rc_normal_faixa": {
+      "valor": 38.10526315789475,
+      "unidade": "pedidos por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 16.421691558182253,
+        "superior": 51.12715071592996,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_pedidos_pap_rc_normal": {
+      "valor": 685.8947368421054,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 521.5627468385479,
+        "superior": 685.8947368421054,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_pedidos_pap_rc_normal": {
+      "valor": 762.1052631578949,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 396.9230631499893,
+        "superior": 762.1052631578949,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_pedidos_pap_rc_normal": {
+      "valor": 724.0000000000002,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 396.9230631499893,
+        "superior": 762.1052631578949,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_pedidos_pap_rc_estresse": {
+      "valor": 486.61111111111103,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 209.70797504636644,
+        "superior": 652.9029733959312,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 6 origens"
+    },
+    "taxa_proj_mes1_pedidos_pap_rc_estresse": {
+      "valor": 25.611111111111107,
+      "unidade": "pedidos por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 11.037261844545602,
+        "superior": 34.36331438925954,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_pedidos_pap_rc_estresse_faixa": {
+      "valor": 486.61111111111103,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 209.70797504636644,
+        "superior": 652.9029733959312,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_pedidos_pap_rc_estresse_faixa": {
+      "valor": 25.611111111111107,
+      "unidade": "pedidos por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 11.037261844545602,
+        "superior": 34.36331438925954,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_pedidos_pap_rc_estresse": {
+      "valor": 460.99999999999994,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 245.40099483950536,
+        "superior": 460.99999999999994,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_pedidos_pap_rc_estresse": {
+      "valor": 512.2222222222222,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 33.11332186556754,
+        "superior": 512.2222222222222,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_pedidos_pap_rc_estresse": {
+      "valor": 486.6111111111111,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 33.11332186556754,
+        "superior": 512.2222222222222,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_tarif_end_pap_rc_normal": {
+      "valor": 1429.9999999999998,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 668.8346456692913,
+        "superior": 1811.8908382066272,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 5 origens"
+    },
+    "taxa_proj_mes1_linhas_tarif_end_pap_rc_normal": {
+      "valor": 75.26315789473684,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 35.20182345627849,
+        "superior": 95.36267569508564,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_tarif_end_pap_rc_normal_faixa": {
+      "valor": 1429.9999999999998,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 668.8346456692913,
+        "superior": 1811.8908382066272,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_tarif_end_pap_rc_normal_faixa": {
+      "valor": 75.26315789473684,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 35.20182345627849,
+        "superior": 95.36267569508564,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_tarif_end_pap_rc_normal": {
+      "valor": 1354.7368421052631,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 992.7521229453713,
+        "superior": 1354.7368421052631,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_tarif_end_pap_rc_normal": {
+      "valor": 1505.2631578947367,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 700.852670872755,
+        "superior": 1505.2631578947367,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_tarif_end_pap_rc_normal": {
+      "valor": 1430.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 700.852670872755,
+        "superior": 1505.2631578947367,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_tarif_end_pap_rc_estresse": {
+      "valor": 976.3888888888889,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 456.67322834645677,
+        "superior": 1237.139917695473,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 6 origens"
+    },
+    "taxa_proj_mes1_linhas_tarif_end_pap_rc_estresse": {
+      "valor": 51.38888888888889,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 24.035433070866144,
+        "superior": 65.11262724713016,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_tarif_end_pap_rc_estresse_faixa": {
+      "valor": 976.3888888888889,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 456.67322834645677,
+        "superior": 1237.139917695473,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_tarif_end_pap_rc_estresse_faixa": {
+      "valor": 51.38888888888889,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 24.035433070866144,
+        "superior": 65.11262724713016,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_tarif_end_pap_rc_estresse": {
+      "valor": 925.0000000000001,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 462.34538221721414,
+        "superior": 925.0000000000001,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_tarif_end_pap_rc_estresse": {
+      "valor": 1027.7777777777778,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 1027.7777777777778,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_tarif_end_pap_rc_estresse": {
+      "valor": 976.3888888888889,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 1027.7777777777778,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_tarif_checkout_rc_normal": {
+      "valor": 995.0000000000001,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 996.0451680672268,
+        "superior": 1123.8977272727275,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 5 origens"
+    },
+    "taxa_proj_mes1_linhas_tarif_checkout_rc_normal": {
+      "valor": 52.36842105263158,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 52.42342989827509,
+        "superior": 59.152511961722496,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_tarif_checkout_rc_normal_faixa": {
+      "valor": 995.0000000000001,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 995.0000000000001,
+        "superior": 1123.8977272727275,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_tarif_checkout_rc_normal_faixa": {
+      "valor": 52.36842105263158,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 52.36842105263158,
+        "superior": 59.152511961722496,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_tarif_checkout_rc_normal": {
+      "valor": 942.6315789473684,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 942.6315789473684,
+        "superior": 979.5947963812949,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_tarif_checkout_rc_normal": {
+      "valor": 1047.3684210526317,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1047.3684210526317,
+        "superior": 1129.5089042391348,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_tarif_checkout_rc_normal": {
+      "valor": 995.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 942.6315789473684,
+        "superior": 1129.5089042391348,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_tarif_checkout_rc_estresse": {
+      "valor": 841.2777777777779,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 756.3433602807546,
+        "superior": 950.2614898989901,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 6 origens"
+    },
+    "taxa_proj_mes1_linhas_tarif_checkout_rc_estresse": {
+      "valor": 44.277777777777786,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 39.80754527793445,
+        "superior": 50.01376262626264,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_tarif_checkout_rc_estresse_faixa": {
+      "valor": 841.2777777777779,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 756.3433602807546,
+        "superior": 950.2614898989901,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_tarif_checkout_rc_estresse_faixa": {
+      "valor": 44.277777777777786,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 39.80754527793445,
+        "superior": 50.01376262626264,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_tarif_checkout_rc_estresse": {
+      "valor": 797.0000000000001,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 714.4624741317288,
+        "superior": 797.0000000000001,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_tarif_checkout_rc_estresse": {
+      "valor": 885.5555555555557,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 702.1388314038416,
+        "superior": 885.5555555555557,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_tarif_checkout_rc_estresse": {
+      "valor": 841.2777777777778,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 702.1388314038416,
+        "superior": 885.5555555555557,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_tarif_end_checkout_rc_normal": {
+      "valor": 995.0000000000001,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 996.0451680672268,
+        "superior": 1123.8977272727275,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 5 origens"
+    },
+    "taxa_proj_mes1_linhas_tarif_end_checkout_rc_normal": {
+      "valor": 52.36842105263158,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 52.42342989827509,
+        "superior": 59.152511961722496,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_tarif_end_checkout_rc_normal_faixa": {
+      "valor": 995.0000000000001,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 995.0000000000001,
+        "superior": 1123.8977272727275,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_tarif_end_checkout_rc_normal_faixa": {
+      "valor": 52.36842105263158,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 52.36842105263158,
+        "superior": 59.152511961722496,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_tarif_end_checkout_rc_normal": {
+      "valor": 942.6315789473684,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 942.6315789473684,
+        "superior": 979.5947963812949,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_tarif_end_checkout_rc_normal": {
+      "valor": 1047.3684210526317,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1047.3684210526317,
+        "superior": 1129.5089042391348,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_tarif_end_checkout_rc_normal": {
+      "valor": 995.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 942.6315789473684,
+        "superior": 1129.5089042391348,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_tarif_end_checkout_rc_estresse": {
+      "valor": 841.2777777777779,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 756.3433602807546,
+        "superior": 950.2614898989901,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 6 origens"
+    },
+    "taxa_proj_mes1_linhas_tarif_end_checkout_rc_estresse": {
+      "valor": 44.277777777777786,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 39.80754527793445,
+        "superior": 50.01376262626264,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_tarif_end_checkout_rc_estresse_faixa": {
+      "valor": 841.2777777777779,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 756.3433602807546,
+        "superior": 950.2614898989901,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_tarif_end_checkout_rc_estresse_faixa": {
+      "valor": 44.277777777777786,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 39.80754527793445,
+        "superior": 50.01376262626264,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_tarif_end_checkout_rc_estresse": {
+      "valor": 797.0000000000001,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 714.4624741317288,
+        "superior": 797.0000000000001,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_tarif_end_checkout_rc_estresse": {
+      "valor": 885.5555555555557,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 702.1388314038416,
+        "superior": 885.5555555555557,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_tarif_end_checkout_rc_estresse": {
+      "valor": 841.2777777777778,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 702.1388314038416,
+        "superior": 885.5555555555557,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_pedidos_colmeia_rc_normal": {
+      "valor": 1151.0,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 1076.3352990732942,
+        "superior": 1997.4178272980507,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 5 origens"
+    },
+    "taxa_proj_mes1_pedidos_colmeia_rc_normal": {
+      "valor": 60.578947368421055,
+      "unidade": "pedidos por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 56.649226267015486,
+        "superior": 105.12725406831846,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_pedidos_colmeia_rc_normal_faixa": {
+      "valor": 1151.0,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1076.3352990732942,
+        "superior": 1997.4178272980507,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_pedidos_colmeia_rc_normal_faixa": {
+      "valor": 60.578947368421055,
+      "unidade": "pedidos por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 56.649226267015486,
+        "superior": 105.12725406831846,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_pedidos_colmeia_rc_normal": {
+      "valor": 1090.421052631579,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1090.421052631579,
+        "superior": 1217.3001655079984,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_pedidos_colmeia_rc_normal": {
+      "valor": 1211.578947368421,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1211.578947368421,
+        "superior": 1493.5325315382415,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_pedidos_colmeia_rc_normal": {
+      "valor": 1151.0,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1090.421052631579,
+        "superior": 1493.5325315382415,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_pedidos_colmeia_rc_estresse": {
+      "valor": 1032.3333333333335,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 953.1029925422451,
+        "superior": 1791.4865366759525,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 6 origens"
+    },
+    "taxa_proj_mes1_pedidos_colmeia_rc_estresse": {
+      "valor": 54.33333333333334,
+      "unidade": "pedidos por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 50.16331539696027,
+        "superior": 94.28876508820802,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_pedidos_colmeia_rc_estresse_faixa": {
+      "valor": 1032.3333333333335,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 953.1029925422451,
+        "superior": 1791.4865366759525,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_pedidos_colmeia_rc_estresse_faixa": {
+      "valor": 54.33333333333334,
+      "unidade": "pedidos por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 50.16331539696027,
+        "superior": 94.28876508820802,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_pedidos_colmeia_rc_estresse": {
+      "valor": 978.0000000000002,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 950.4594667070751,
+        "superior": 978.0000000000002,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_pedidos_colmeia_rc_estresse": {
+      "valor": 1086.666666666667,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1025.465481571278,
+        "superior": 1086.666666666667,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_pedidos_colmeia_rc_estresse": {
+      "valor": 1032.3333333333335,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 950.4594667070751,
+        "superior": 1086.666666666667,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_tarif_colmeia_rc_normal": {
+      "valor": 2313.0000000000005,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 2211.3953488372103,
+        "superior": 3997.9992947813816,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 5 origens"
+    },
+    "taxa_proj_mes1_linhas_tarif_colmeia_rc_normal": {
+      "valor": 121.73684210526318,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 116.38922888616895,
+        "superior": 210.42101551480957,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_tarif_colmeia_rc_normal_faixa": {
+      "valor": 2313.0000000000005,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2211.3953488372103,
+        "superior": 3997.9992947813816,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_tarif_colmeia_rc_normal_faixa": {
+      "valor": 121.73684210526318,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 116.38922888616895,
+        "superior": 210.42101551480957,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_tarif_colmeia_rc_normal": {
+      "valor": 2191.263157894737,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2191.263157894737,
+        "superior": 2456.7218145539055,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_tarif_colmeia_rc_normal": {
+      "valor": 2434.7368421052633,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2434.7368421052633,
+        "superior": 3024.644968014525,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_tarif_colmeia_rc_normal": {
+      "valor": 2313.0,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2191.263157894737,
+        "superior": 3024.644968014525,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_tarif_colmeia_rc_estresse": {
+      "valor": 2078.3888888888887,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 1949.8512112741673,
+        "superior": 3592.4761401034307,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 6 origens"
+    },
+    "taxa_proj_mes1_linhas_tarif_colmeia_rc_estresse": {
+      "valor": 109.38888888888887,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 102.62374796179827,
+        "superior": 189.07769158439106,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_tarif_colmeia_rc_estresse_faixa": {
+      "valor": 2078.3888888888887,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1949.8512112741673,
+        "superior": 3592.4761401034307,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_tarif_colmeia_rc_estresse_faixa": {
+      "valor": 109.38888888888887,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 102.62374796179827,
+        "superior": 189.07769158439106,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_tarif_colmeia_rc_estresse": {
+      "valor": 1968.9999999999998,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1925.409618736165,
+        "superior": 1968.9999999999998,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_tarif_colmeia_rc_estresse": {
+      "valor": 2187.7777777777774,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2090.9102638581444,
+        "superior": 2187.7777777777774,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_tarif_colmeia_rc_estresse": {
+      "valor": 2078.3888888888887,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1925.409618736165,
+        "superior": 2187.7777777777774,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_tarif_end_colmeia_rc_normal": {
+      "valor": 2344.9999999999995,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 2240.9759188846638,
+        "superior": 4048.2446440912236,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 5 origens"
+    },
+    "taxa_proj_mes1_linhas_tarif_end_colmeia_rc_normal": {
+      "valor": 123.42105263157892,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 117.94610099392968,
+        "superior": 213.0655075837486,
+        "nivel": 0.6666666666666666,
+        "n_origens": 5,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_tarif_end_colmeia_rc_normal_faixa": {
+      "valor": 2344.9999999999995,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2240.9759188846638,
+        "superior": 4048.2446440912236,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_tarif_end_colmeia_rc_normal_faixa": {
+      "valor": 123.42105263157892,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 117.94610099392968,
+        "superior": 213.0655075837486,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.6666666666666666
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_tarif_end_colmeia_rc_normal": {
+      "valor": 2221.5789473684204,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2221.5789473684204,
+        "superior": 2486.523407619682,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_tarif_end_colmeia_rc_normal": {
+      "valor": 2468.4210526315783,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2468.4210526315783,
+        "superior": 3057.1865198566047,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (sem a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_tarif_end_colmeia_rc_normal": {
+      "valor": 2344.999999999999,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2221.5789473684204,
+        "superior": 3057.1865198566047,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário operação normal (quatro semanas até 18/09, sem o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "proj_mes1_linhas_tarif_end_colmeia_rc_estresse": {
+      "valor": 2106.8888888888887,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 1963.2820832036516,
+        "superior": 3637.1862090148206,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1 = semanas ISO 40 a 43 (28/09 a 23/10): taxa da média de quatro semanas × dias úteis do calendário; intervalo = mínimo e máximo dos erros relativos de 6 origens"
+    },
+    "taxa_proj_mes1_linhas_tarif_end_colmeia_rc_estresse": {
+      "valor": 110.88888888888887,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "intervalo_previsao",
+        "inferior": 103.33063595808693,
+        "superior": 191.43085310604317,
+        "nivel": 0.7142857142857143,
+        "n_origens": 6,
+        "regra": "mínimo e máximo dos erros relativos das origens aplicados à projeção"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 1: taxa por dia útil e o mesmo intervalo relativo"
+    },
+    "proj_mes1_linhas_tarif_end_colmeia_rc_estresse_faixa": {
+      "valor": 2106.8888888888887,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1963.2820832036516,
+        "superior": 3637.1862090148206,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Faixa do mês 1 que contém a projeção pontual e as bordas do intervalo de previsão; use no lugar do intervalo_previsao (principalmente quando intervalo_mes1_contem_ponto_* = 0)"
+    },
+    "taxa_proj_mes1_linhas_tarif_end_colmeia_rc_estresse_faixa": {
+      "valor": 110.88888888888887,
+      "unidade": "linhas por dia útil",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 103.33063595808693,
+        "superior": 191.43085310604317,
+        "cenarios": "união da projeção pontual com o mínimo e o máximo dos erros relativos das origens; sem cobertura nominal (o nível do intervalo original está em nivel_intervalo_original)",
+        "nivel_intervalo_original": 0.7142857142857143
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Taxa por dia útil do mês 1 com a faixa que contém a projeção pontual e as bordas do intervalo"
+    },
+    "proj_mes2_linhas_tarif_end_colmeia_rc_estresse": {
+      "valor": 1995.9999999999998,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1947.4731477835005,
+        "superior": 1995.9999999999998,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 2: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes3_linhas_tarif_end_colmeia_rc_estresse": {
+      "valor": 2217.7777777777774,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2109.9403284077794,
+        "superior": 2217.7777777777774,
+        "cenarios": "entre o volume constante (taxa do mês 1) e a tendência de ANA-001 (inclinação do nível por dia pleno)"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Mês 3: valor = volume constante; a faixa vai até o cenário de tendência (com a semana do incidente na inclinação); sem validação"
+    },
+    "proj_mes2_3_linhas_tarif_end_colmeia_rc_estresse": {
+      "valor": 2106.8888888888887,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1947.4731477835005,
+        "superior": 2217.7777777777774,
+        "cenarios": "menor e maior volume entre os meses 2 e 3 e entre o volume constante e a tendência de ANA-001"
+      },
+      "nota": "cenário estresse (variante do plano: quatro semanas até 25/09, com o incidente da semana ISO 39). Meses 2 e 3: valor = média dos dois blocos no volume constante; faixa = menor e maior volume entre os dois meses e os dois cenários (sem validação)"
+    },
+    "inclinacao_nivel_linhas_tarif_pap_rc": {
+      "valor": -6.205352707354725,
+      "unidade": "linhas por dia pleno, por semana",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -11.973361946678505,
+        "superior": -0.4373434680309458,
+        "nivel": 0.95,
+        "metodo": "HAC (Newey-West), especificação de ANA-001 em nível, com a semana ISO 39"
+      },
+      "nota": "inclinação usada no cenário estresse"
+    },
+    "inclinacao_nivel_sem_semana39_linhas_tarif_pap_rc": {
+      "valor": -4.77352116259652,
+      "unidade": "linhas por dia pleno, por semana",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -11.096172727124664,
+        "superior": 1.549130401931623,
+        "nivel": 0.95,
+        "metodo": "HAC, sem a semana ISO 39 (operação normal)"
+      },
+      "nota": "inclinação usada no cenário normal"
+    },
+    "inclinacao_nivel_pedidos_checkout_rc": {
+      "valor": -1.1463545259482135,
+      "unidade": "pedidos por dia pleno, por semana",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -3.9102410912484147,
+        "superior": 1.6175320393519876,
+        "nivel": 0.95,
+        "metodo": "HAC (Newey-West), especificação de ANA-001 em nível, com a semana ISO 39"
+      },
+      "nota": "inclinação usada no cenário estresse"
+    },
+    "inclinacao_nivel_sem_semana39_pedidos_checkout_rc": {
+      "valor": 0.5133780199156449,
+      "unidade": "pedidos por dia pleno, por semana",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -1.2095605503726148,
+        "superior": 2.2363165902039044,
+        "nivel": 0.95,
+        "metodo": "HAC, sem a semana ISO 39 (operação normal)"
+      },
+      "nota": "inclinação usada no cenário normal"
+    },
+    "intervalo_mes1_contem_ponto_linhas_tarif_pap_rc_normal": {
+      "valor": 1.0,
+      "unidade": "1 = o intervalo contém a projeção pontual; 0 = os erros das origens têm o mesmo sinal (viés)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "intervalo_mes1_contem_ponto_linhas_tarif_pap_rc_estresse": {
+      "valor": 1.0,
+      "unidade": "1 = o intervalo contém a projeção pontual; 0 = os erros das origens têm o mesmo sinal (viés)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "intervalo_mes1_contem_ponto_pedidos_checkout_rc_normal": {
+      "valor": 0.0,
+      "unidade": "1 = o intervalo contém a projeção pontual; 0 = os erros das origens têm o mesmo sinal (viés)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "intervalo_mes1_contem_ponto_pedidos_checkout_rc_estresse": {
+      "valor": 1.0,
+      "unidade": "1 = o intervalo contém a projeção pontual; 0 = os erros das origens têm o mesmo sinal (viés)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "proj_mes1_se_semana39_persistir_linhas_tarif_pap_rc": {
+      "valor": 28.5,
+      "unidade": "linhas em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 28.5,
+        "superior": 1443.0000000000002,
+        "cenarios": "do ritmo do incidente (persiste por quatro semanas) ao ritmo de operação normal"
+      },
+      "nota": "sensibilidade extrema (acréscimo): mês 1 se o ritmo da semana do incidente persistir; a faixa vai até a projeção de operação normal"
+    },
+    "proj_mes1_se_semana39_persistir_pedidos_checkout_rc": {
+      "valor": 0.0,
+      "unidade": "pedidos em quatro semanas",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 995.0000000000001,
+        "cenarios": "do ritmo do incidente (persiste por quatro semanas) ao ritmo de operação normal"
+      },
+      "nota": "sensibilidade extrema (acréscimo): mês 1 se o ritmo da semana do incidente persistir; a faixa vai até a projeção de operação normal"
+    },
+    "dias_plenos_semana39": {
+      "valor": 4.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_plenos_semanas_35_a_38": {
+      "valor": 19.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "variacao_pedidos_dia_rc_semana39_vs_35a38": {
+      "valor": -0.9900696864111498,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "nota": "pedidos por dia pleno da Royal Canin, semana ISO 39 contra a média das semanas 35 a 38 (contagem completa)"
+    },
+    "variacao_pedidos_dia_outros_semana39_vs_35a38": {
+      "valor": -0.07326396872844332,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "nota": "mesma conta nos demais depositantes (controle de lacuna geral de extração)"
+    },
+    "pedidos_rc_por_dia_semana39": {
+      "valor": 1.5,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_rc_por_dia_semanas_35_a_38": {
+      "valor": 151.05263157894737,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_outros_por_dia_semana39": {
+      "valor": 424.25,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_outros_por_dia_semanas_35_a_38": {
+      "valor": 457.7894736842105,
+      "unidade": "pedidos por dia pleno",
+      "incerteza": null,
+      "contagem": true
+    },
+    "variacao_dia_semana39_vs_35a38_pedidos_checkout_rc": {
+      "valor": -1.0,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "nota": "média por dia pleno da semana ISO 39 contra a média das semanas 35 a 38 (contagem completa)"
+    },
+    "variacao_dia_semana39_vs_35a38_linhas_tarif_pap_rc": {
+      "valor": -0.9802494802494802,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "nota": "média por dia pleno da semana ISO 39 contra a média das semanas 35 a 38 (contagem completa)"
+    },
+    "variacao_dia_semana39_vs_35a38_linhas_tarif_colmeia_rc": {
+      "valor": -1.0,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "nota": "média por dia pleno da semana ISO 39 contra a média das semanas 35 a 38 (contagem completa)"
+    },
+    "tipos_de_onda_rc_com_queda_na_semana39": {
+      "valor": 3.0,
+      "unidade": "tipos de onda (de 3) com queda de mais da metade",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_da_semana39_com_pedidos_rc_abaixo_de_10": {
+      "valor": 4.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    }
+  },
+  "tabelas": {
+    "backtest_origens": "backtest_origens.csv",
+    "resumo_candidatos": "resumo_candidatos.csv",
+    "verificacao_regra_vitoria": "verificacao_regra_vitoria.csv",
+    "h_p4c_janela_4s_contra_historia": "h_p4c_janela_4s_contra_historia.csv",
+    "calendario_projecao": "calendario_projecao.csv",
+    "tendencia_e_erros_por_serie": "tendencia_e_erros_por_serie.csv",
+    "projecao": "projecao.csv",
+    "sensibilidade_projecao_mes1": "sensibilidade_projecao_mes1.csv",
+    "queda_semana39": "queda_semana39.csv"
+  },
+  "figuras": [
+    "erro_por_origem.png",
+    "projecao_linhas_tarif_pap_rc.png",
+    "projecao_pedidos_checkout_rc.png"
+  ],
+  "notas": "Previsão fora da amostra por origem móvel semanal (semanas 31 a 36; horizonte de quatro semanas que fecha dentro da carga), sem vazamento: cada previsão usa só dias plenos anteriores à origem (conferido no código). Candidatos do plano: média de quatro semanas (referência base), média de oito semanas, média de toda a história e regressão com tendência, dia da semana e marca de feriado de calendário; média de duas e de seis semanas só como informação. A marca de feriado é o dia útil seguinte a feriado ou ponte conhecido (PAR10 e calendário nacional); os dias sem explicação não entram. Nenhum feriado ou ponte seguido de dia pleno aparece no treino de nenhuma origem (o único é o dia 08/09, depois das origens), então a marca fica sem efeito estimado no backtest (marcas_feriado_treino = 0 na tabela). Leitura do plano para 'erro absoluto médio': erro agregado de quatro semanas (taxa média por dia prevista contra a realizada no horizonte), a mesma unidade do intervalo de previsão; o erro diário não é a métrica. Regra de vitória lida como: menor erro absoluto médio nas quatro séries E melhor que a base na maioria das origens em cada série; com menos de cinco origens não há troca. A tabela verificacao_regra_vitoria traz o resultado e a tabela resumo_candidatos traz cada série (robustez por série), a variante sem dias pós-pausa e, como acréscimo, a variante sem a origem 36; a regra de vitória e a leitura de H-P4c não mudam em nenhuma das três. Intervalo de previsão do mês 1: faixa entre o mínimo e o máximo dos erros relativos das origens (do candidato em uso, por série), aplicada à projeção; a cobertura nominal é (n − 1) ÷ (n + 1) com n origens. Os horizontes das origens se sobrepõem em três quartos (semanas consecutivas), então os erros não são independentes e a cobertura real pode ser menor que a nominal; quando os erros têm o mesmo sinal o intervalo não contém a projeção pontual (viés), o que a chave intervalo_mes1_contem_ponto_* sinaliza. Mês 1 = as quatro semanas depois da carga (semanas ISO 40 a 43, de 28/09 a 23/10); mês 2 = semanas 44 a 47; mês 3 = semanas 48 a 51; volume do bloco = taxa por dia útil × dias úteis do calendário (segunda a sexta, menos feriados nacionais de calendário); sábados ficam fora (a carga tem poucos, de recuperação). Dias sem explicação (como 24/09) não são previsíveis e não estão cobertos pelo intervalo. Meses 2 e 3, sem validação: faixa de cenários entre o volume constante (taxa do mês 1) e a tendência de ANA-001 em nível (inclinação por dia pleno com degrau da primeira semana com colmeia, HAC, especificação replicada aqui; para as séries que ANA-001 não calcula, a mesma especificação aplicada à própria série); a tendência não desce de zero. Sem sazonalidade de alta temporada: a série vai de junho a setembro, não há pico sazonal nos dados e não há multiplicador setorial confiável ([●]); o mês 3 inclui a Black Friday e o pré-Natal, que esta projeção não captura (fora_do_plano; a Social pode enviar o pico de 2025 para uma v2). Prazo PR14: não há previsão além do mês 3; o prazo entra como cenário do analista de impacto. DECISÃO SOBRE A SEMANA ISO 39 (revisoes/orquestrador_decisao_semana_incidente.md; fato externo, não resultado): na semana ISO 39 (21 a 25/09) a Royal Canin cai a quase zero nos três tipos de onda enquanto os demais depositantes seguem (tabela queda_semana39, contagens completas). Marcus confirmou em 2026-10-03 que é incidente operacional da Royal Canin, não lacuna de extração. A semana fica nos dados e todas as chaves de projeção saem em dois cenários, sufixos _normal e _estresse (não há mais chave de projeção sem sufixo; a lista chaves_principais do plano fala das chaves sem sufixo): _normal = operação normal, a base da oferta: média das quatro semanas terminando em 18/09 (janela deslocada de ANA-002, de 24/08 a 18/09), intervalo de previsão com os erros das origens 31 a 35 (as de horizonte sem o incidente; cobertura nominal em cobertura_nominal_intervalo_normal) e tendência dos meses 2 e 3 sem a semana do incidente (chaves inclinacao_nivel_sem_semana39_*); _estresse = variante registrada no plano (quatro semanas até 25/09, com a semana do incidente), as seis origens e a tendência com a semana (chaves inclinacao_nivel_*): mostra o risco para a franquia e a garantia em períodos com problemas operacionais. Marcus pode trocar a base no G3. A origem 36 é a única cujo horizonte contém o incidente (erro negativo); o erro mais negativo do pedido-a-pedido vem da origem 31, cujo treino ainda tinha o volume anterior à entrada da colmeia. A projeção do mês 1 no ritmo do incidente, se persistisse, está em proj_mes1_se_semana39_persistir_* (sensibilidade extrema) e as demais janelas em sensibilidade_projecao_mes1. A tendência dos meses 2 e 3 parte da taxa do mês 1 de cada cenário e soma a inclinação por semana: é uma extrapolação mecânica do período de transição (entrada da colmeia e do robô; no estresse, também o incidente), não uma previsão; sem a semana do incidente o IC da inclinação do pedido-a-pedido cruza zero e a do checkout muda de sinal. Determinístico: sem reamostragem, semente 42 fixada por convenção. Dependência não coberta pelo hash do script: analises/comum.py.",
+  "em": "2026-10-03T21:22:30",
+  "segundos": 2.75
+}

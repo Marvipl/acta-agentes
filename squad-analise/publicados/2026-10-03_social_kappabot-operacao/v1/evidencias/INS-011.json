@@ -1,0 +1,83 @@
+{
+  "id": "INS-011",
+  "estado": "aprovado",
+  "afirmacao": "Pelas horas ativas do WMS, o escopo da ALT3 equivale a {{v.fte}} em toda a grade de tetos e sensibilidades: menos de uma vaga inteira. Como a jornada ativa sobe nos dias de pico (H13a), o plano manda ler esse FTE como limite superior da liberação. Só pela separação, a ALT3 não libera vaga inteira; o argumento de CR8 muda de vagas liberadas para absorver crescimento e pico sem contratar. Os postos de conferência de PR11 não estão no WMS.",
+  "pergunta_ref": "P18",
+  "criterio_ref": "CR8",
+  "valores": {
+    "fte": "ANA-003.fte_escopo_alt3_normal"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "janela de operação normal e janela do plano",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "o limite superior da grade fica abaixo de uma vaga nas duas janelas (chaves fte_escopo_alt3_normal e fte_escopo_alt3_estresse)"
+    },
+    {
+      "recorte": "por mês",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "mesmo em junho, de maior volume, o FTE do escopo fica abaixo de uma vaga nos tetos de 300 e 900 s (tabela horas_fte_por_mes)"
+    },
+    {
+      "recorte": "FTE semanal com sábado",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "o FTE semanal fica ainda menor (chave fte_semana_escopo_alt3)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Mantido: a conclusão (não libera vaga inteira) resiste a todos os ataques; render com o rótulo correto. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": "IMP-CR8-FTE-ALT3-SEM-AUT",
+    "modelos_relacionados": [
+      "IMP-CR8-FTE-ALT3-SEM-COL",
+      "IMP-CR8-CRESCIMENTO-ALT3-AUT",
+      "IMP-CR8-CRESCIMENTO-ALT3-COL",
+      "IMP-INV-PR11-CR8-ALT3-COL"
+    ]
+  },
+  "acao": "No memorando, trocar vagas liberadas por absorver crescimento e pico sem contratar, e mostrar a conferência (PR11) à parte, com a fonte na Social. A separação sozinha fica abaixo de uma vaga inteira nas duas leituras de M23 (IMP-CR8-FTE-ALT3-SEM-AUT e IMP-CR8-FTE-ALT3-SEM-COL); só com PR11 integral o limite de CR8 passa (IMP-CR8-FTE-ALT3-INT-COL).",
+  "dono": "Marcus Lima, CEO (pergunta à Social sobre PR11)",
+  "premissas": [
+    "FTE equivalente de horas ativas do WMS pela jornada contratual (PR12), no teto conservador e na operação normal",
+    "M23 em duas leituras: a autônoma é a registrada no plano e é limite superior; a colaborativa é variante e é a coerente com o Kappabot colaborativo; as duas são apresentadas",
+    "conferência (PR11) lida de três formas, integral, rateada entre depositantes pela parte da Royal Canin no checkout e fora, porque o WMS não a registra (E15)",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "Sobrevive. O limite de CR8 na ALT3 e na ALT4 depende só da conferência. Passa a partir de cerca de um posto inteiro atribuível à RC (RTD-INV-PR11-CR8-ALT3-COL), acima do rateio por pedidos (RTD-PR11-RATEIO-POSTOS). Perguntar à Social, diretamente, se um posto sai. Detalhes em revisoes/red-team-decisao.json."
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:17:03",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:11",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:29",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:01",
+      "por": "Marcus"
+    }
+  ]
+}

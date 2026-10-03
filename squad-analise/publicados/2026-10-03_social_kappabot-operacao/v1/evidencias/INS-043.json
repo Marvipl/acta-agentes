@@ -1,0 +1,66 @@
+{
+  "id": "INS-043",
+  "estado": "quantificado",
+  "afirmacao": "No pedido-a-pedido, a mediana do tempo fora do relógio entre tarefas do mesmo operador é maior na Royal Canin ({{v.rc}}) que nos outros depositantes ({{v.outros}}): diferença de {{v.dif}} (descoberta, teto base). No teto conservador a diferença é {{v.dif300}}. Exploratório e associativo: a causa (distância ao packing, etiqueta, processo) não está separada. A pista PT-D3 não foi confirmada nas semanas pares em ANA-016 (o sinal se inverte contra um depositante), então segue como trilha da descoberta, fora do memorando.",
+  "pergunta_ref": "P10",
+  "criterio_ref": "CR3",
+  "valores": {
+    "rc": "ANA-012.intervalo_mediano_pap_rc",
+    "outros": "ANA-012.intervalo_mediano_pap_outros",
+    "dif": "ANA-012.dif_intervalo_rc_outros",
+    "dif300": "ANA-012.dif_intervalo_rc_outros_t300"
+  },
+  "nivel": "associativo",
+  "exploratorio": true,
+  "robustez": [
+    {
+      "recorte": "teto conservador",
+      "analise": "ANA-012",
+      "resultado": "passa",
+      "nota": "mesmo sinal e IC inteiro acima de zero (chave dif_intervalo_rc_outros_t300)"
+    },
+    {
+      "recorte": "semana de incidente dentro ou fora",
+      "analise": "ANA-012",
+      "resultado": "passa",
+      "nota": "mesma leitura com a semana dentro (com_incidente) e com os dias inteiros fora (dia_incidente_fora)"
+    },
+    {
+      "recorte": "operador, bloco de semana e dia",
+      "analise": "ANA-012",
+      "resultado": "passa",
+      "nota": "os três intervalos ficam acima de zero (campo ics de dif_intervalo_rc_outros)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "ANA-016",
+    "resultado": "nao_confirma",
+    "nota": "PT-D3 não confirmada em ANA-016: o sinal se inverte contra um depositante (IC por operador inteiro do lado oposto)"
+  },
+  "red_team_analitico": {
+    "veredito": "cai",
+    "nota": "Exploratório agora sem confirmação: ANA-016 classificou PT-D3 como não confirmada pelo critério de inversão adotado. A ação continua desatualizada ('registrar PT-D3 no plano e confirmar'). Se no G3 Marcus adotar a leitura agregada (retirar um depositante por vez mantém o IC acima de zero, ver revisoes/red-team-analitico_parteB_r2.json), revisar."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Pista PT-D3 já registrada no plano e NÃO confirmada em ANA-016 (o sinal se inverte contra um depositante): este insight fica como trilha da descoberta, sem números no memorando. Não afirmar na oferta quanto do tempo fora do relógio o robô elimina; se Marcus adotar no G3 outro critério de inversão por depositante, revisar.",
+  "dono": "estatistico (ANA-016); planejador-analitico (registro da pista)",
+  "premissas": [
+    "achado exploratório da descoberta (semanas ISO ímpares): estimativa sem ajuste para as muitas comparações olhadas; não vai ao memorando antes da confirmação em ANA-016",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador como robustez",
+    "incidente operacional da Royal Canin na semana ISO ímpar de fim de setembro tratado como recorte atípico e declarado (revisoes/orquestrador_decisao_semana_incidente.md)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:45",
+      "por": "analista-exploratorio"
+    }
+  ]
+}

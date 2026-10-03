@@ -1,0 +1,81 @@
+{
+  "id": "INS-003",
+  "estado": "validado",
+  "afirmacao": "O WMS reproduz a queda do pedido-a-pedido nos pedidos da Royal Canin do slide 8: a participação passou de {{v.part_jun}} em junho para {{v.part_ago}} em agosto. O degrau da entrada da colmeia é {{v.degrau_plano}} na variante do plano, que inclui a semana do incidente de 21 a 25/09 (quase sem pedidos, pesando como semana cheia), e {{v.degrau_sem}} sem essa semana. Além do degrau, a tendência semanal é {{v.incl_plano}} na variante do plano e {{v.incl_sem}} sem a semana do incidente (p unilateral {{v.p_sem}}): o IC contém zero nas duas, então a tendência contínua não está comprovada, o que é inconclusivo e não ausência de tendência, porque o poder é baixo. A participação do pedido-a-pedido depende do roteamento da Social para a colmeia. Verificação do deck, em linguagem descritiva.",
+  "pergunta_ref": "P6",
+  "criterio_ref": "CR2",
+  "valores": {
+    "part_jun": "ANA-001.part_pap_rc_mes_2026_06",
+    "part_ago": "ANA-001.part_pap_rc_mes_2026_08",
+    "degrau_plano": "ANA-001.degrau_colmeia_part_pap_rc",
+    "degrau_sem": "ANA-001.degrau_colmeia_part_pap_rc_sem_incidente",
+    "incl_plano": "ANA-001.inclinacao_part_pap_rc_semana_estresse",
+    "incl_sem": "ANA-001.inclinacao_part_pap_rc_semana_sem_incidente",
+    "p_sem": "ANA-001.p_unilateral_inclinacao_part_sem_incidente"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "unidade de volume: pedidos, M05 e M06",
+      "analise": "ANA-001",
+      "resultado": "passa",
+      "nota": "o degrau é negativo e a tendência além dele não exclui zero nas três unidades (chaves inclinacao_part_pap_rc_semana_m05 e _m06)"
+    },
+    {
+      "recorte": "sem as três primeiras semanas (bloco sem registro de junho)",
+      "analise": "ANA-001",
+      "resultado": "passa",
+      "nota": "mesma leitura (chave inclinacao_part_pap_rc_semana_sem3semanas)"
+    },
+    {
+      "recorte": "com e sem os dias pós-pausa",
+      "analise": "ANA-001",
+      "resultado": "passa",
+      "nota": "mesma leitura (chave inclinacao_part_pap_rc_semana_sem_pos_pausa)"
+    },
+    {
+      "recorte": "sem a semana do incidente operacional da Royal Canin (21 a 25/09)",
+      "analise": "ANA-001",
+      "resultado": "parcial",
+      "nota": "o degrau se mantém e fica menor em módulo; o sinal da inclinação muda de positivo para negativo e o IC contém zero nas duas leituras (chaves degrau_colmeia_part_pap_rc_sem_incidente e inclinacao_part_pap_rc_semana_sem_incidente)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: o texto cita o degrau com e sem a semana do incidente, explica o peso indevido da semana e diz que tendência não comprovada é inconclusiva por poder baixo. Nenhum problema novo. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "No memorando, tratar a queda do pedido-a-pedido como mudança de mix na entrada da colmeia, citando o degrau com e sem a semana do incidente; não extrapolar tendência contínua do mix no prazo do contrato sem cenário.",
+  "dono": "analista de impacto",
+  "premissas": [
+    "PAR07",
+    "PAR08",
+    "PAR10",
+    "PAR11",
+    "degrau na primeira semana com colmeia na Royal Canin",
+    "janela de operação normal (24/08 a 18/09) como base da oferta e janela do plano (31/08 a 25/09, com o incidente operacional de 21 a 25/09) como cenário de estresse: revisoes/orquestrador_decisao_semana_incidente.md; Marcus pode trocar a base no G3"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:56",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:03",
+      "por": "red-team-analitico"
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "supervisor": "sup-metodologia",
+  "agentes_revisados": ["planejador-analitico"],
+  "rodada": 1,
+  "fase": "D2 (plano ainda não carimbado; sem scripts nem resultados)",
+  "veredito": "revisar",
+  "rubrica": [
+    {
+      "agente": "planejador-analitico",
+      "criterio": "[crítico] Teste igual ao registrado; exploratórios marcados e confirmados",
+      "nota": 1,
+      "evidencia": "ANA-012 e ANA-013 estão marcadas como exploratórias, com confirmação em ANA-016. Falhas: ANA-016.pistas, ANA-016.chaves_principais e familias_holm.F2.testes estão vazios. O segundo recorte de confirmação (janela base, semanas ISO 36 a 39) contém as semanas ímpares 37 e 39, que são da descoberta. A estimativa 'no período inteiro' que vai ao memorando reusa a descoberta. Nove dos onze testes da F1 não têm variante primária única (ANA-001; ANA-002 H-P4a e H-P4b; ANA-003 H13a e H13b; ANA-005; ANA-007; ANA-008; ANA-010 H-P14a). As hipóteses de ANA-001, ANA-004 e ANA-008 foram formadas com os mesmos dados: o deck usou a mesma planilha, e o contrato já fez consultas preliminares (campo indicacao_preliminar_do_contrato)."
+    },
+    {
+      "agente": "planejador-analitico",
+      "criterio": "[crítico] Incerteza e nível coerentes com o método",
+      "nota": 1,
+      "evidencia": "Nenhuma análise afirma causa. Falhas: ANA-005 faz diferença-em-diferenças sem checar tendências paralelas e sem placebo; a colmeia entra só no grupo tratado; o IC de Newcomb trata linhas dependentes como independentes; o campo incerteza diz intervalo_confianca, mas o método usa bootstrap. H13b usa como 'demanda' o processamento (M16, PQ06), o que torna a correlação negativa por construção. ANA-002 calcula o IC de 18 dias plenos, com 3 ou 4 por estrato de dia da semana. ANA-001 usa OLS com erro iid em 17 semanas, e ctx.estat.tendencia devolve p bilateral. ANA-006 reamostra por tarefa e trata 'valor dentro do IC' como compatibilidade. ANA-014 dá IP de 3 meses com validação de só 4 semanas. ANA-010 H-P14a dá um p-valor condicionado a PR08, premissa de baixa confiança."
+    },
+    {
+      "agente": "planejador-analitico",
+      "criterio": "Correção para múltiplos testes",
+      "nota": 1,
+      "evidencia": "Holm (alfa 0,05) com as famílias F1 (11 testes) e F2. A F2 está vazia. Falta uma variante primária por teste. ANA-004 faz o teste de Holm no teto de 900 s, mas CR3 é lido no teto escolhido no G2. Os CR são classificados por IC 95% sem ajuste, enquanto o insight usa o p de Holm. ANA-014 escolhe entre 7 candidatos em 4 séries sem margem definida."
+    },
+    {
+      "agente": "planejador-analitico",
+      "criterio": "Robustez por segmento e período",
+      "nota": 1,
+      "evidencia": "A maioria das análises tem 2 ou mais recortes. Falhas: ANA-008 não tem recorte de período, e ANA-016 não tem recorte de segmento. M14 em ANA-004, ANA-005 e ANA-013 não é padronizado por faixa de endereços entre períodos: há risco de Simpson com a entrada da colmeia e do robô. H13a não compara o mesmo operador em dias diferentes. ANA-007 (CR7) não cita os quatro tetos, S1 a S3 nem M29."
+    },
+    {
+      "agente": "planejador-analitico",
+      "criterio": "Modelos validados fora da amostra contra referência simples",
+      "nota": 1,
+      "evidencia": "ANA-014 usa origem móvel semanal e seis referências simples. Falhas: com 17 semanas e referência de 8, sobram cerca de 6 origens com horizontes sobrepostos. O horizonte validado é de 4 semanas e a projeção vai a 3 meses. A regra de vitória e o método do intervalo de previsão não estão definidos. A marca de pós-pausa usa paradas sem explicação (2026-06-08 e 2026-09-24), que não se conhecem com antecedência."
+    }
+  ],
+  "checagens_executadas": [
+    "python -m motor.validar projetos/2026-10-03_social_kappabot-operacao/v1 --fase D2 → BLOQUEADO. Três bloqueios: nó especialista desatualizado ['contrato']; nó qualidade desatualizado ['contrato']; nó plano nao_carimbado. O plano não tem bloqueio estrutural: perguntas, métricas, tipos, nível, incerteza e equipe passam. Na D2 o validador não cobra o G2, só a partir da D3. Os dois nós desatualizados não estavam entre os bloqueios esperados: o contrato foi recarimbado às 03:25.",
+    "python -m motor.validar ... --fase D3 → BLOQUEADO, como esperado: falta o G2, a preparação não rodou, os 16 scripts não existem, não há insight nem red team analítico, e seguem os 3 bloqueios acima.",
+    "python -m motor.insights checar ... → nenhum insight. O comando gravou saidas/insights.json vazio.",
+    "Os scripts de análise ainda não existem, porque a D3 não começou. No lugar de abrir 2 scripts, conferi os métodos do plano contra motor/estatistica.py: tendencia = OLS com erro iid e p bilateral; diferenca_medias = Welch com unidades independentes; diferenca_proporcoes = Newcomb com unidades independentes; bootstrap = reamostragem iid, sem estrato nem cluster; avaliar_previsao = MAE contra uma referência.",
+    "Calendário montado a partir das definições do plano e de PAR10, sem ler dados: 80 dias plenos; 17 semanas ISO (41 dias nas ímpares, 39 nas pares); janela base = semanas 36 a 39 (37 e 39 são ímpares), com 18 dias plenos e 3 a 4 por dia da semana; 32 dias plenos antes de PAR11 e 48 depois; cerca de 8 dias no p90 ou acima; 15 segundas plenas e 3 dias pós-pausa (duas terças e uma sexta). Operadores: 40 a 44 logins distintos em toda a carga (qualidade.referencias_exatas; saidas/perfil.md). Conta do robô: 214 linhas (qualidade.conta_robo).",
+    "Busca de erro 1: sobreposição entre os recortes de descoberta e de confirmação. Encontrada: as semanas 37 e 39 estão dentro da janela base.",
+    "Busca de erro 2: variante primária única em cada teste da F1. Ausente em 9 dos 11.",
+    "Busca de erro 3: choque contemporâneo a PAR11 só no grupo tratado de ANA-005. Encontrado: colmeia da Royal Canin a partir de julho (qualidade.vies_de_amostra) e seleção de pedidos pelo robô.",
+    "Busca de erro 4: horizonte validado contra horizonte projetado em ANA-014. Validado: 4 semanas. Projetado: 3 meses.",
+    "Busca de erro 5: uso do contrato recarimbado. O plano não cita M29 (tempo descartado) nem a sensibilidade S3 da cauda de M11.",
+    "Busca de erro 6: unidade de PAR07 nos grupos por operador (P13). PAR07 conta registros, o que deixa passar um grupo de um só operador.",
+    "Busca sem achado: nenhuma análise com nível causal; P1 a P19 e H01 a H13 têm análise; as métricas citadas existem no contrato; a equipe tem estatistico, cientista-de-dados e analista-de-impacto, como os tipos de pergunta exigem.",
+    "entradas_impacto conferido contra CR1 a CR8. Ver a lacuna sobre CR2 no prazo PR14."
+  ],
+  "pontos": [
+    {
+      "severidade": "alta",
+      "local": "nos/plano.json: definicoes.recorte_descoberta_confirmacao; ANA-016 (metodo, pistas, chaves_principais); familias_holm.F2",
+      "problema": "A confirmação das exploratórias vaza e infla o efeito. (1) O segundo recorte é a janela base, de 2026-08-31 a 2026-09-25, que cobre as semanas ISO 36 a 39. As semanas 37 e 39 são ímpares, isto é, da descoberta. (2) Dias de pico (PAR04), dias típicos (quartis), janela observada (PAR06) e faixas de endereços são calculados no período inteiro e entram nos dois lados. (3) Os mesmos 40 a 44 logins aparecem nas semanas ímpares e nas pares. Semanas vizinhas não são amostras independentes. (4) O memorando usa a estimativa do período inteiro, que inclui a descoberta, onde se escolheu 'onde o manual é mais lento'. Assim o efeito do vencedor e a regressão à média viram efeito. (5) pistas, F2 e chaves_principais estão vazios, e nada no motor impede registrar as pistas depois de rodar ANA-016.",
+      "correcao_sugerida": "Segundo recorte = semanas pares dentro da janela base, ou rebaixá-lo a robustez, sem valor de confirmação. Fixar limiares e cortes na descoberta e aplicá-los na confirmação sem recalcular. Exigir robustez por operador (deixar um operador de fora por vez) e por segmento (tipo de onda, depositante) com ctx.estat.robustez. O memorando usa só a estimativa do recorte de confirmação. Registrar pistas, F2 e chaves de ANA-016 com recarimbo do plano antes de rodar. O red team confere a data do carimbo contra o campo 'em' de saidas/registro.json."
+    },
+    {
+      "severidade": "alta",
+      "local": "nos/plano.json: ANA-003 (hipotese H13a e H13b; metodo); cobertura_hipoteses_setor.H13 (pré-requisito de CR1 e CR8)",
+      "problema": "H13 não separa a espera por onda das outras explicações. H13b correlaciona a 'demanda da hora' com a fração de intervalos acima do teto. Só que M16 mede processamento, não demanda (PQ06): quando o operador pausa, o processamento da hora cai. A correlação sai negativa por construção, e a hora da refeição confunde as duas medidas. H13a compara médias por operador-dia em cerca de 8 dias de pico contra os dias típicos. Nos picos entram outros operadores (H10, temporários), o que muda a composição (Simpson). E mais volume gera mais tempo ativo mesmo sem espera. O plano também não diz o que muda em CR1 e CR8 se H13 for confirmada.",
+      "correcao_sugerida": "H13b: medir a variação dentro da mesma hora entre dias, com efeito fixo de hora do dia e de dia da semana, sem a faixa de refeição, e usar o volume do dia como exposição, não o processamento da hora. Se não der, rebaixar H13b a exploratória. H13a: comparar dentro do operador (o mesmo operador em dia de pico contra dia típico), com bootstrap por operador, com e sem dias pós-pausa. Escrever a consequência: se H13 confirmar, o impacto lê a economia em horas ativas de CR1 e CR8 como limite superior."
+    },
+    {
+      "severidade": "alta",
+      "local": "nos/plano.json: ANA-005 (metodo, incerteza, robustez); familias_holm.F1 (ANA-005 H-P8)",
+      "problema": "A diferença-em-diferenças não checa tendências paralelas nem tem placebo. Há choques ao mesmo tempo só no grupo tratado. A colmeia da Royal Canin começa em julho (qualidade.vies_de_amostra). E o robô tira pedidos do pedido-a-pedido manual desde PAR11, o que muda a composição das linhas humanas por faixa de endereços. O controle pode estar contaminado, porque os mesmos operadores separam outros depositantes. diferenca_proporcoes (Newcomb) trata linhas como independentes, mas elas se agrupam por operador e dia. O campo incerteza diz intervalo_confianca e o DiD usa bootstrap. O período pré tem 32 dias plenos e o pós tem 48. O plano não diz como o resultado muda CR3.",
+      "correcao_sugerida": "Fazer um estudo de evento semanal, com antecipações e defasagens em torno de PAR11, e um placebo numa data falsa do período pré. Estratificar ou reponderar por faixa de endereços e, como robustez, excluir as semanas de entrada da colmeia. Inferência por bloco de semana ou por operador, com incerteza = bootstrap. Como sensibilidade, usar no controle só operadores que não separam Royal Canin. Escrever a regra: se H06 se sustentar, CR3 lê M14 do período anterior a PAR11, padronizado ao mix da janela base."
+    },
+    {
+      "severidade": "alta",
+      "local": "nos/plano.json: familias_holm.F1; definicoes.regra_leitura_limites; ANA-001, ANA-002, ANA-003 (H13), ANA-004, ANA-005, ANA-007, ANA-008, ANA-010",
+      "problema": "Vários testes da F1 não têm uma variante primária única. ANA-001: participação ou nível? ANA-002: M06 superior ou inferior? ANA-003 H13: escopo ou armazém? ANA-005: DiD ou diferença por grupo? ANA-007: coletas ou unidades? ANA-008: escopo ou armazém, linhas ou pedidos? ANA-010 H-P14a: PR07 ou PR08? Com 4 tetos, S1 a S3, várias janelas e contagens, sobram caminhos para escolher o p depois de ver o resultado. ANA-004 testa por Holm no teto de 900 s, mas CR3 é lido no teto escolhido no G2. Os critérios são classificados pelo IC 95% sem ajuste e o insight usa o p de Holm: dois padrões para a mesma afirmação.",
+      "correcao_sugerida": "Em F1, uma linha por teste, com recorte, métrica, variante, teto, direção e unidade de reamostragem. O resto vira robustez. O teste de CR3 na F1 deve ser o do teto conservador escolhido no G2. Separar F1 em testes de critério (H-P4a, H-P4b, H-P7, H-P17, H-P14a) e testes de apoio, ou declarar uma ordem hierárquica. Declarar que cada CR é lido pelo próprio IC 95%, que 'passam juntos' é teste de interseção (sem ajuste) e que o insight cita o p ajustado."
+    },
+    {
+      "severidade": "alta",
+      "local": "nos/plano.json: ANA-002 (metodo, incerteza); definicoes.janela_taxa_corrente; definicoes.reamostragem",
+      "problema": "O IC de CR2 vem de 18 dias plenos, com 3 ou 4 por dia da semana. Bootstrap estratificado com estratos tão pequenos subestima a variância. O método ignora a dependência entre dias da mesma semana e a tendência de queda do pedido-a-pedido (ANA-001). Além disso, é o IC da média da janela, não do volume de um mês futuro do contrato (PR14). Um IC estreito demais classifica CR2 como passa ou falha com falsa segurança, e CR2 decide entre ALT2, ALT3 e ALT4.",
+      "correcao_sugerida": "Ler CR2 pelo envelope das variantes de janela (2, 4, 6 e 8 semanas; sem pós-pausa; sem a última semana) e pelo M06 inferior, com o IC de bootstrap como uma componente. Usar bootstrap por bloco de semana como sensibilidade e pôr no resultado o número de dias por estrato. Levar a inclinação de ANA-001 em nível de M06 e o IP de ANA-014 a entradas_impacto, como cenário de PR14."
+    },
+    {
+      "severidade": "alta",
+      "local": "nos/plano.json: ANA-014 (hipotese, metodo, incerteza, chaves proj_mes3_*)",
+      "problema": "A validação cobre 4 semanas à frente, mas a projeção vai a 3 meses: os meses 2 e 3 ficam sem validação. Com 17 semanas e referência de até 8, sobram cerca de 6 origens semanais com horizontes sobrepostos. É pouca informação para escolher entre 7 candidatos em 4 séries: o menor erro tende a ser sorte. Não há margem definida para 'ganhar' nem método do intervalo de previsão. A marca de pós-pausa inclui paradas sem explicação (2026-06-08 e 2026-09-24), que não se conhecem com antecedência. Isso é vazamento.",
+      "correcao_sugerida": "Dar intervalo_previsao só no horizonte validado e tratar os meses 2 e 3 como faixa_cenarios. Calcular o IP pelos quantis dos erros fora da amostra em cada horizonte. Fixar agora a regra de vitória (por exemplo, menor MAE em todas as séries e na maioria das origens). Usar a marca de pós-pausa só para feriados de calendário. Reportar o número de origens."
+    },
+    {
+      "severidade": "alta",
+      "local": "nos/plano.json: ANA-013 (P13, H09); definicoes.recorte_descoberta_confirmacao.excecao_P13; definicoes.privacidade; contrato PAR07",
+      "problema": "Descoberta com as coortes de junho e julho e confirmação com as de agosto e setembro não medem a mesma coisa. A coorte de setembro tem no máximo 4 semanas de acompanhamento e a de agosto cerca de 8 (censura à direita). Essas coortes entram depois do robô e da colmeia. A curva sofre viés de sobrevivência, e a referência 'experientes' são os que ficaram desde a primeira semana. PAR07 conta registros: um grupo de um só operador com 5 linhas passa, o que é resultado individual (A06) e inferência com n = 1.",
+      "correcao_sugerida": "Usar painel balanceado: só operadores observados em todas as semanas até K, com o mesmo K nos dois lados. Exigir um mínimo de operadores distintos por coorte-semana (PAR07 contado em operadores, não em linhas) e pôr o n de operadores no resultado. Sem isso, P13 fica descritiva, como o próprio plano prevê."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: ANA-004 (metodo, robustez); definicoes.cenarios_teto",
+      "problema": "M14 agregado mistura faixas de endereços. A entrada da colmeia (julho) e a seleção de pedidos pelo robô (desde 2026-07-20) mudam a composição do pedido-a-pedido manual. Por isso a comparação antes e depois de PAR11, e mês a mês, pode inverter só por composição. Além disso, o teto conservador será escolhido no G2 depois que o contrato viu que M14 fica perto de PR06 e varia com o teto.",
+      "correcao_sugerida": "Padronizar M14 por faixa de endereços ao mix da janela base, com ctx.estat.robustez por faixa (inversão invalida a leitura). Ajustar com o perfil robô contra manual de ANA-005. Registrar no G2 que a escolha do teto segue a validação operacional (A4, PQ03), e não o resultado de CR3."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: ANA-006 (hipotese, metodo); definicoes.reamostragem (checkout e colmeia por tarefa e usuário)",
+      "problema": "'O valor do slide fica dentro do IC 95%' é ausência de evidência, não compatibilidade. Com IC largo, a hipótese passa sempre. Com reamostragem por tarefa, as tarefas do mesmo operador são correlacionadas e o IC sai estreito demais. ANA-007 reamostra a colmeia por operador, o que contradiz a regra geral de reamostragem.",
+      "correcao_sugerida": "Fixar agora uma margem de equivalência para o slide 10 e testar se o IC inteiro cabe nela. Reamostrar por operador, com tarefa e usuário como sensibilidade, e harmonizar com ANA-007."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: ANA-010 (H-P14a, H-P14b)",
+      "problema": "H-P14b testa se o p90 da soma é menor que a soma dos p90. Isso vale quase sempre, salvo séries perfeitamente sincronizadas, e o teste é na escala diária, enquanto a frota é dimensionada por hora (M22). Rejeitar 'razão = 1' não informa a decisão. H-P14a dá um p-valor sobre uma razão cujo denominador é PR08, premissa de baixa confiança e sem valor: a incerteza dominante é de premissa, não de amostra.",
+      "correcao_sugerida": "Em H-P14b, testar o que decide: robôs poupados pelo pooling pela regra de M22 no perfil horário do p90 (pelo menos 1). Em H-P14a, reportar a razão em toda a grade de PR08 (faixa_cenarios), com bootstrap só no numerador, e testar com p só a parte de linhas (PR07)."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: ANA-001 (metodo, robustez); motor/estatistica.py tendencia",
+      "problema": "ctx.estat.tendencia é OLS com erro iid e p bilateral, aplicado a 17 pontos semanais com autocorrelação. A queda da participação inclui um degrau (a entrada da colmeia), não só uma tendência linear. As primeiras semanas são atípicas (bloco sem registro em junho), o que cria risco de regressão à média. A hipótese já se sabe verdadeira pelo slide 8 e pelo contrato: o teste confirma o que já se viu.",
+      "correcao_sugerida": "Usar erro HAC (Newey-West) ou bootstrap por bloco, um modelo com degrau na primeira semana de colmeia e pesos por dias plenos da semana. O p unilateral deve ser calculado com checagem de sinal. Rotular o teste como verificação do deck, com linguagem descritiva. Para PR14, a chave útil é a inclinação em nível de M06."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: ANA-008 (hipotese H-P11, metodo, incerteza, robustez)",
+      "problema": "O teste de Welch trata os dias como independentes. O grupo junta 15 segundas e 3 dias pós-pausa, dois mecanismos diferentes. A incerteza declarada é bootstrap, mas o teste usa diferenca_medias. Não há recorte de período. A 'primeira hora da janela observada' vem da janela média: em dias de horário estendido, a primeira hora real muda.",
+      "correcao_sugerida": "Testar só as segundas contra terça a sexta e deixar os pós-pausa descritivos (n = 3). Fixar a primeira hora como a primeira hora com atividade no dia. Acrescentar robustez por mês ou por metade do período e alinhar o campo incerteza."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: definicoes.reamostragem; ANA-004, ANA-007, ANA-012, ANA-013, ANA-016; motor/estatistica.py bootstrap",
+      "problema": "A inferência por cluster tem poucos clusters: 40 a 44 logins na carga inteira, e menos em cada recorte (pedido-a-pedido e colmeia da Royal Canin, coortes). A dependência é dupla, por operador e por dia (choques de volume e de mix), e reamostrar só por operador ignora os choques de dia. ctx.estat.bootstrap é iid, sem estrato nem cluster, então cada script reimplementaria a reamostragem.",
+      "correcao_sugerida": "Criar um módulo comum em analises/ com bootstrap estratificado, por cluster e por bloco de semana. Pôr no resultado o número de clusters de cada estimativa. Com poucos clusters, reportar a estimativa como descritiva. Comparar o IC por operador com o IC por bloco de semana e usar o mais largo."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: definicoes.regra_leitura_limites; ANA-007; nos/contrato.json M11 (S3) e M29",
+      "problema": "A regra para resultado inconclusivo só define o cenário conservador de CR1, CR2, CR3 e CR8. CR4, CR5, CR6 e CR7 ficam sem regra. A colmeia (CR7) tem amostra pequena e tende ao inconclusivo. ANA-007 não cita os quatro tetos, S1 a S3, nem M29. O contrato recarimbado criou M29 (tempo descartado) e S3 (cauda antiga, limite inferior de horas na colmeia), e o plano não usa nenhum dos dois em ANA-003, ANA-004 e ANA-007.",
+      "correcao_sugerida": "Definir o que o inconclusivo faz em CR5 e CR7 (proposta: CR7 inconclusivo mantém a colmeia como candidata a teste, porque o viés declarado favorece a exclusão). Em ANA-003, ANA-004 e ANA-007, incluir os quatro tetos, S1 a S3 e a parcela descartada de M29 por tipo de onda como robustez."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: ANA-012 (H08, fração cortada por abandono); ANA-013 (P15 ativos média e p90); entradas_impacto",
+      "problema": "Contagens de censo usadas como argumento de venda e no impacto (tabela de H08, operadores ativos por dia, fração cortada por abandono) ficam presas em análises exploratórias só das semanas ímpares. Pelas regras de motor/insights.py, elas só sobem com confirmação em ANA-016. Isso perde metade dos dados sem ganho inferencial.",
+      "correcao_sugerida": "Mover as contagens completas para uma análise confirmatória descritiva no período inteiro (contagem: true). A exploração por semanas fica só para associações e comparações."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: ANA-011 (metodo)",
+      "problema": "São cerca de 28 bases candidatas (meses, agosto normalizado, média, taxa corrente, com e sem CANCELADO, Produtos e Endereços), e o plano não define o que conta como 'reproduzir'. Com tolerância frouxa, alguma base casa com dois números por acaso.",
+      "correcao_sugerida": "Registrar agora a tolerância de reprodução (diferença relativa máxima) e a ordem de preferência entre bases empatadas."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/plano.json: ANA-001, ANA-004, ANA-008, ANA-011 (indicacao_preliminar_do_contrato)",
+      "problema": "Hipóteses 'confirmatórias' formadas sobre os mesmos dados: o deck foi calculado com a mesma planilha e o contrato já consultou os resultados. O plano declara isso, mas a confirmação não traz informação nova.",
+      "correcao_sugerida": "Rotular esses testes como verificação do deck, com linguagem descritiva no insight. Não usar 'significativo' como evidência nova."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/plano.json: ANA-003 (incerteza faixa_cenarios com H13 por bootstrap); ANA-005; ANA-008",
+      "problema": "O campo incerteza não corresponde ao método de algumas chaves.",
+      "correcao_sugerida": "Declarar a incerteza por chave no método ou separar as chaves por tipo."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/plano.json: ANA-012 (H04)",
+      "problema": "A parcela do intervalo no ciclo cai quando os endereços sobem quase por construção, porque o denominador cresce com os endereços.",
+      "correcao_sugerida": "Usar o intervalo absoluto por faixa de endereços como estatística principal; a parcela fica descritiva."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/plano.json: ANA-013 (correlação entre ativos e volume)",
+      "problema": "Tendência comum e dia da semana confundem a correlação. Ativos com pelo menos uma linha cresce com o volume mecanicamente.",
+      "correcao_sugerida": "Usar desvios em relação à média da semana ou correlação parcial por dia da semana e mês, com o corte de uma hora de jornada ativa como base."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/plano.json: ANA-003 e ANA-009 (dia máximo pós-pausa, H02, P19)",
+      "problema": "O excedente do dia máximo usa um único dia extremo, escolhido por ser extremo: regressão à média. A próxima retomada tende a ser menor.",
+      "correcao_sugerida": "Usar a média dos dias pós-pausa e das segundas como referência, com o máximo só como limite superior."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/plano.json: ANA-015 (extremos do IC como cenário); ANA-009 (p90 de ANA-008)",
+      "problema": "Combinar os extremos de vários IC na grade exagera a faixa. O IC do p90 não entra na grade de frota, e o arredondamento para cima (teto inteiro) torna a frota sensível a pequenas variações do p90.",
+      "correcao_sugerida": "Passar as réplicas de bootstrap ao impacto e incluir os limites do IC do p90 na grade de ANA-009."
+    }
+  ],
+  "lacunas": [
+    "Principal: o plano não tem regra de poder nem de tamanho mínimo. Nenhum teste da F1 diz quantas unidades independentes tem (dias, semanas, operadores) nem o efeito mínimo detectável. Com 18 dias na janela base, cerca de 8 dias de pico, 3 dias pós-pausa, 17 semanas e 40 a 44 logins, muitos testes vão dar inconclusivo, e só CR1, CR2, CR3 e CR8 dizem o que fazer nesse caso. Correção: acrescentar a cada análise confirmatória o n esperado de unidades independentes, o mínimo de clusters para reportar IC e o efeito mínimo detectável calculado sem ver o resultado. Definir o destino do inconclusivo em CR4 a CR7 e nos argumentos de venda.",
+    "Falta uma regra transversal de padronização por mix (faixa de endereços e tipo de onda) para toda comparação entre períodos (pré e pós robô, meses, coortes). A colmeia e o robô mudam o mix ao mesmo tempo.",
+    "Os pré-requisitos H06, H11 e H13 não dizem o que muda no critério se forem confirmados (H05 diz). Sem isso, o resultado não altera a decisão.",
+    "M29 e a sensibilidade S3 do contrato recarimbado ficam fora do plano.",
+    "Para o critério de compra 'dificuldade de contratação' (CR8), falta um proxy de rotatividade: entradas e saídas de logins por mês, em agregado, com pelo menos PAR07 operadores (sugestão da sup-negocio D1). É o dado do WMS mais direto para enriquecer a oferta nesse ponto.",
+    "entradas_impacto não leva a tendência do mix (ANA-001) ao impacto, mas CR2 exige 'a tendência do mix como sensibilidade no prazo PR14'. ANA-005 (H06) também não aparece ligada a CR3.",
+    "A revisão de estatistico, cientista-de-dados e analista-exploratorio fica para a D3: ainda não há scripts nem resultados.",
+    "O validador acusa os nós especialista e qualidade como desatualizados frente ao contrato de 03:25. É preciso recarimbá-los ou registrar que não mudam antes do G2."
+  ],
+  "em": "2026-10-03"
+}

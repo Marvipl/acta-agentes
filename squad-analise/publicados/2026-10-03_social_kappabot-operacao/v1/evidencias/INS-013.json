@@ -1,0 +1,68 @@
+{
+  "id": "INS-013",
+  "estado": "validado",
+  "afirmacao": "No armazém, a jornada ativa do mesmo operador é maior nos dias de pico do que nos típicos em {{v.dif}} (H13a; p ajustado, limite superior de Holm: {{v.p}}). A amplitude do dia muda {{v.amp}}, com IC largo demais para separar folga de hora extra: a leitura de folga fica indeterminada. Os dias de pico caem em segundas-feiras e dias pós-pausa, então pico e retomada se misturam. O poder é baixo para o efeito relevante: a magnitude vem com aviso. Consequência do plano: as horas ativas valem como limite superior em CR1 e CR8.",
+  "pergunta_ref": "P19",
+  "criterio_ref": "CR8",
+  "valores": {
+    "dif": "ANA-003.h13a_dif_jornada_operador_h",
+    "amp": "ANA-003.h13a_dif_amplitude_operador_h",
+    "p": "ANA-003.h13a_p_holm_f1b_limite_superior"
+  },
+  "nivel": "associativo",
+  "robustez": [
+    {
+      "recorte": "sem dias pós-pausa",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "a jornada ativa continua maior nos dias de pico (chave h13a_dif_jornada_sem_pos_pausa_h)"
+    },
+    {
+      "recorte": "primeira e segunda metades do período",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "o IC fica acima de zero nas duas metades (chaves h13a_dif_jornada_metade1_h e _metade2_h)"
+    },
+    {
+      "recorte": "escopo Royal Canin contra armazém",
+      "analise": "ANA-003",
+      "resultado": "falha",
+      "nota": "no escopo da Royal Canin a diferença não se distingue de zero (chave h13a_dif_jornada_escopo_rc_h): os dias de pico do armazém não são picos da Royal Canin"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Rodada dois. Mantida a ressalva da primeira rodada (texto inalterado): efeito no armazém resiste ao teste por dia, mas pico e retomada se confundem com a segunda-feira, a subida é em parte mecânica e no escopo da Royal Canin não se confirma; a consequência para CR1 e CR8 se apoia em evidência do armazém. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Ler as horas ativas como limite superior da economia e da liberação de FTE; tratar o argumento de pico sem temporário com o dia p90 do escopo, não com o do armazém.",
+  "dono": "analista de impacto",
+  "premissas": [
+    "limite de PAR04 para dia de pico",
+    "dias típicos entre os quartis",
+    "M11 e M12: horas ativas, não presença"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:17:05",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:13",
+      "por": "red-team-analitico"
+    }
+  ]
+}

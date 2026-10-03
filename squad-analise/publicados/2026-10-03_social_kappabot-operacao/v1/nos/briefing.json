@@ -1,0 +1,45 @@
+{
+  "texto": "Pedido de Marcus (03/10/2026, /analisar completo): 'Quero encontrar padrões, insights e informações sobre a operação do Kappabot na Social para enriquecer a oferta de venda para a Social'. Dados na pasta do Google Drive Acta > Social, baixados pelo conector. Marcus autorizou o uso desses dados na nuvem. Contexto dos insumos: a Acta opera 1 Kappabot na Social S.A. (operador logístico) para o depositante Royal Canin desde 20/07/2026, em ondas pedido-a-pedido; já existe um deck de proposta (Kappabot na Social — Resultados e Potencial de Escala) com cenários de frota em zona, checkout conferido no robô, precificação por transação (R$/pedido e R$/linha), economia garantida e franquia mínima, e um relatório de performance 9fleet v1 (robô 52 s produtivo vs manual 62 s por coleta, espera de 56 s). A planilha PROD. 90DIAS.xlsx é a produtividade do WMS Senior (tarefas de separação dos operadores, todos os depositantes, ~90 dias). Os dados brutos do robô (banco 9fleet) NÃO estão na pasta: do robô só há agregados nos documentos de apoio.",
+  "documentos": [
+    {
+      "arquivo": "Analise de Performance - Versao 1.0.pdf",
+      "texto": "insumos/texto/Analise de Performance - Versao 1.0.pdf.md",
+      "status": "extraido",
+      "hash": "8d4a6cceeaab"
+    },
+    {
+      "arquivo": "Base de Conhecimento - ROI e Proporcoes Operacionais de AMRs para Armazens.docx",
+      "texto": "insumos/texto/Base de Conhecimento - ROI e Proporcoes Operacionais de AMRs para Armazens.docx.md",
+      "status": "extraido",
+      "hash": "cfd03e6f07b1"
+    },
+    {
+      "arquivo": "Kappabot na Social - Resultados e Potencial de Escala.pptx",
+      "texto": "insumos/texto/Kappabot na Social - Resultados e Potencial de Escala.pptx.md",
+      "status": "extraido",
+      "hash": "8e7d79c8993e"
+    },
+    {
+      "arquivo": "performance-report.html",
+      "texto": "",
+      "status": "nao_extraido",
+      "hash": "e939f3e5ac06"
+    },
+    {
+      "arquivo": "performance-report_texto.md",
+      "texto": "insumos/texto/performance-report_texto.md.md",
+      "status": "extraido",
+      "hash": "2447f2e55920"
+    }
+  ],
+  "fontes_de_dados": [
+    {
+      "arquivo": "PROD_90DIAS.xlsx",
+      "origem_drive": "Acta > Social > PROD. 90DIAS.xlsx (id 1rjY0ParUwkxgce0yR02an687oOxFM_1c, modificado 2026-10-02)",
+      "pasta_local": "entrada/social-kappabot/dados/",
+      "descricao": "Planilha de produtividade do WMS Senior (aba PRODUTIVIDADE, 21 colunas, ~44 mil linhas): tarefas de separação por onda, usuário, pedido, início/fim, tempo, endereços, unidades.",
+      "contem_dado_pessoal": "sim (coluna Usuário = operador)",
+      "autorizacao_nuvem": "Marcus, 2026-10-03, no pedido do /analisar"
+    }
+  ]
+}

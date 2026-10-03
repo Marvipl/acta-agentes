@@ -1,0 +1,6 @@
+recorte,n_dias,razao,ic95_inferior,ic95_superior,classe,p_unilateral,nota
+janela longa (primária),38,0.8713533834586465,0.7707462406015037,0.9818063909774437,falha,0.9892526868282929,bootstrap de dias estratificado por dia da semana
+mês 2026-08,21,0.7523809523809524,0.6658469387755102,0.8440816326530612,falha,1.0,bootstrap de dias estratificado por dia da semana
+mês 2026-09,17,1.0183193277310925,0.8702268907563026,1.175294117647059,inconclusivo,0.42389402649337665,bootstrap de dias estratificado por dia da semana
+janela base (2026-08-31 a 2026-09-25),18,1.0231746031746032,0.8718928571428572,1.1912857142857143,inconclusivo,0.3926518370407398,bootstrap de dias estratificado por dia da semana
+sem o maior depositante compatível (COTY IT),38,0.5538345864661655,0.48586278195488725,0.6343627819548873,falha,1.0,bootstrap de dias estratificado por dia da semana

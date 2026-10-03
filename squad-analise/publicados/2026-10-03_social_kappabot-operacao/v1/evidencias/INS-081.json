@@ -1,0 +1,63 @@
+{
+  "id": "INS-081",
+  "estado": "validado",
+  "afirmacao": "O WMS reproduz a maior parte dos números dos slides 8, 12 e 17 pelo método que o deck descreve (pedidos por mês sem CANCELADO, linhas e pedidos por data distinta, participação por depositante, p90 e concentração matinal). Entre os {{v.n_dois}} que têm valor pelos dois métodos, o método aparente da fonte reproduz {{v.ap}} e o método do contrato, que usa dias plenos, reproduz {{v.ct}}, e a diferença está em alguns volumes diários. O que não reproduz é o que vem do 9fleet (última semana, taxas diárias de pedidos de checkout e de pedido-a-pedido), a quantidade de separadores ativos, os FTE do slide 14 e o volume implícito no slide 15. Na semana de 21 a 25/09 o WMS tem {{v.inc}} da Royal Canin, contra a última semana do deck por 9fleet: a queda é o incidente operacional, não falha do deck.",
+  "pergunta_ref": "P6",
+  "criterio_ref": "CR2",
+  "valores": {
+    "n_dois": "ANA-011.n_numeros_com_os_dois_metodos",
+    "ap": "ANA-011.n_numeros_reproduzidos_pelo_aparente",
+    "ct": "ANA-011.n_numeros_reproduzidos_pelo_contrato",
+    "inc": "ANA-011.pedidos_rc_por_dia_semana_incidente"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "método aparente contra método do contrato",
+      "analise": "ANA-011",
+      "resultado": "passa",
+      "nota": "o método por datas distintas reproduz os volumes diários do slide 12 e o dos dias plenos fica um pouco acima da tolerância"
+    },
+    {
+      "recorte": "com e sem CANCELADO nos pedidos por mês",
+      "analise": "ANA-011",
+      "resultado": "passa",
+      "nota": "a diferença é de uma unidade por mês, dentro da tolerância"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Sem mudança; nenhum ataque muda a leitura."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Usar o método do contrato na oferta e declarar a diferença de método (datas distintas contra dias plenos) na ponte do memorando.",
+  "dono": "analista-de-impacto",
+  "premissas": [
+    "censo de verificação com a tolerância fixada no plano antes dos resultados: percentual fixo para números exatos e o arredondamento do próprio número para os aproximados",
+    "a confirmação final de qual método é o do deck é do autor (Marcus); a linguagem é descritiva: o WMS reproduz ou não reproduz",
+    "a semana de incidente operacional da Royal Canin (21 a 25/09) está na variante do plano; a variante de operação normal está nas chaves com sufixo _normal"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:41:55",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:57",
+      "por": "red-team-analitico"
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "supervisor": "sup-negocio",
+  "agentes_revisados": [
+    "arquiteto-da-decisao"
+  ],
+  "rodada": 1,
+  "veredito": "revisar",
+  "rubrica": [
+    {
+      "agente": "arquiteto-da-decisao",
+      "criterio": "[crítico] Decisão com alternativas, critérios e limites",
+      "nota": 1,
+      "evidencia": "nos/decisao.json tem decisão, ALT1 a ALT5 (ALT1 = manter piloto) e CR1 a CR5 com métrica e limite; validar D0 não acusa falha estrutural. Mas: colmeia não aparece em nenhuma alternativa, critério ou pergunta (só em Q04); nenhum critério do lado da Acta (custo de servir, margem); CR3 é circular (numerador é premissa do deck, slide 9); CR4 mistura hora de pico com limite dimensionado por dia e só testa falta de robô; CR5 sem fonte; nenhum critério leva a ALT1 ou ALT2."
+    },
+    {
+      "agente": "arquiteto-da-decisao",
+      "criterio": "[crítico] Premissas do impacto com fonte; impacto comparado aos limites",
+      "nota": 1,
+      "evidencia": "impacto_esperado cita deck (slides 12, 15, 18) e marca custo da Acta como [●]. Mas repete a economia do slide 15 como ordem de grandeza sem notar que a base de volume implícita nas tarifas não fecha com os slides 8 e 12 (ver ponto 1); FTE 'medidos no WMS' (slide 14) adotados sem registrar o alerta do relatório 9fleet v1, p. 12, de que horas por operador no WMS são enviesadas."
+    },
+    {
+      "agente": "arquiteto-da-decisao",
+      "criterio": "Perfil do especialista com fontes e confiança",
+      "nota": null,
+      "evidencia": "Não se aplica nesta fase: nos/especialista.json ainda é template (_template: true)."
+    },
+    {
+      "agente": "arquiteto-da-decisao",
+      "criterio": "Recomendações viáveis na operação",
+      "nota": 1,
+      "evidencia": "Alternativas não testam as condições operacionais de que dependem: garantia 'condicionada à desmobilização da conferência' (slide 18, rodapé) sem pergunta sobre aceitação da Social e da Royal Canin; FTE fracionários (0,34 e 0,71, slide 14) só viram economia com realocação; checkout conferido no robô não consta da lista de software 'já em produção' (slide 19 e relatório 9fleet v1, p. 11)."
+    }
+  ],
+  "checagens_executadas": [
+    "python -m motor.prontidao <dv>: 75% (mínimo 80%), 7 perguntas abertas; bloqueios A01, A02, A04, A05, A06 por premissa não aceita (esperado nesta etapa, não contado como falha).",
+    "python -m motor.validar <dv> --fase D0: BLOQUEADO só por prontidão, premissas e 7 perguntas-chave abertas; nenhum bloqueio estrutural (>= 2 alternativas, todo critério com métrica e limite, toda pergunta P1 a P11 ligada a CR1 a CR5).",
+    "python -m motor.impacto <dv>: 'ERRO impacto: IMP-001: premissa nome sem fonte'. nos/impacto.json ainda é template; analista de impacto não rodou. Não imputado ao arquiteto.",
+    "'Abrir 3 fontes do perfil do especialista': não aplicável (especialista.json é template). Em substituição, conferi as fontes citadas pelo arquiteto no texto dos insumos: deck slide 18 (garantia de 20%, franquia de R$ 5.900, tarifas), slides 12 e 14 (frota, 35 linhas/h por robô, 3 pedidos por viagem), slide 9 (31, 66 e 78 linhas/h), Base de Conhecimento seção 6.1 (picking assistido 2X), relatório 9fleet v1 p. 5, 7, 10 e 12. Todas batem com o texto citado.",
+    "Anti-complacência 1: procurei a alternativa 'não fazer nada'. ALT1 existe, mas é 'adiar e testar' e nenhum critério leva a ela.",
+    "Anti-complacência 2: conta do supervisor sobre os números do próprio deck (a recalcular pelo motor). Tarifa implícita do checkout = R$ 8.187 − 0,34 FTE × R$ 5.000 = R$ 6.487, ou cerca de 3.816 pedidos/mês a R$ 1,70. Isso equivale a 127 pedidos/dia × 30 dias e supera o total de pedidos Royal Canin em todos os meses do slide 8 (máximo de 3.209). No PaP: R$ 6.055 − 0,71 × R$ 5.000 = R$ 2.505, ou cerca de 10.020 linhas/mês (334/dia em 30 dias), contra 231 linhas/dia Royal Canin no slide 12. A franquia de R$ 5.900 é cerca de 2/3 desse total implícito, como diz o slide 18. Já o rodapé do slide 15 diz 'volumes médios jun–set/2026'.",
+    "Anti-complacência 3: cruzei Q04 e as perguntas P1 a P11 com saidas/perfil.md (gerado às 01:18, antes do nó decisao às 01:21). Onda é BIGINT, sem nome. Região Origem traz o nome do depositante (ex.: 'ALFAPARF MILANO - PICKING'). Região Destino traz fluxo (ex.: 'COLMEIA AMARELA'). Qtde Endereços está mascarada como PESSOAL pelo nome da coluna. Tempo em Segundos tem q25 = 0 e mediana de 16 s. A planilha tem 43.976 linhas, cerca de 19.124 tarefas e 41.181 pedidos.",
+    "Anti-complacência 4: grep de disciplina de nomes em decisao.json e perguntas_marcus.md ([nome interno do orquestrador], [nome interno de produto], [não parceiro], [não parceiro]): nada encontrado.",
+    "Anti-complacência 5: procurei custo de implementação ou de servir. Só aparece como [●] em impacto_esperado e em A07; não há critério, e a resposta proposta em Q06 deixa a margem da Acta fora da análise."
+  ],
+  "pontos": [
+    {
+      "severidade": "alta",
+      "local": "nos/decisao.json: impacto_esperado, A07, CR2; deck slides 8, 12, 15 e 18",
+      "problema": "O nó adota a economia do slide 15 como ordem de grandeza sem registrar que a base de volume implícita nas tarifas (cerca de 3,8 mil pedidos de checkout e 10 mil linhas PaP por mês, pela conta do supervisor) não fecha com os volumes Royal Canin dos slides 8 e 12. A franquia 'cerca de 2/3 do volume atual' depende dessa base. Se a base real for menor, a receita por transação fica abaixo da franquia, a Social paga a franquia, a economia cai e a garantia conflita. É o maior risco da oferta, e o nó não o nomeia.",
+      "correcao_sugerida": "Registrar a inconsistência em restricoes e nas lacunas de A07. Incluir uma pergunta ligada a CR2: 'que volume mensal sustenta as tarifas implícitas do slide 15 e a franquia do slide 18, e esse volume aparece no WMS?'. Perguntar a Marcus qual base foi usada no slide 15 (última semana × 30 dias ou média jun–set) e trocar a ordem de grandeza por [●] até o motor recalcular."
+    },
+    {
+      "severidade": "alta",
+      "local": "nos/decisao.json: alternativas, A02 (premissa_adotada), perguntas; deck slides 8 e 14",
+      "problema": "O enquadramento serve para validar o deck, não para enriquecê-lo. A02 fixa as condições do deck e CR1 a CR5 só testam se elas se sustentam. A colmeia (89 de 248 pedidos Royal Canin por dia útil na última semana, slide 8) fica fora de toda alternativa e pergunta. O próprio deck se contradiz: o slide 8 diz que o robô 'precisa entrar no checkout e na colmeia'; o slide 14 a exclui com uma afirmação sem dado ('fluxo manual em lote já é eficiente'). Falta uma trilha para argumentos novos: curva de aprendizado de operadores novos, pelo argumento do temporário do slide 17; tempo ocioso entre tarefas; concentração por hora.",
+      "correcao_sugerida": "Incluir uma alternativa com colmeia no escopo (ou uma fase 3) e uma pergunta: 'qual a produtividade da colmeia (linhas e unidades por hora em ciclo completo) comparada a PaP e checkout?'. Declarar P7, P8, P10 e P11 mais as novas perguntas como trilha exploratória, gerando argumentos de venda que precisam de confirmação (regra 7), em vez de deixá-las só como apoio aos limites."
+    },
+    {
+      "severidade": "alta",
+      "local": "nos/decisao.json: criterios (falta), CR4, Q06 (resposta_proposta)",
+      "problema": "A decisão é 'que oferta a Acta apresenta', mas não há critério de viabilidade para a Acta. O deck oferece 'tudo incluído' (robôs, implantação, manutenção, suporte) e 'robôs extras no pico sem custo fixo adicional'. Q06 propõe deixar a margem fora. CR4 é 'menor_melhor' e só pega falta de robô, não excesso: o slide 12 diz 1 a 2 robôs para a Royal Canin, e o slide 14 propõe 4 a 5. Sem custo por robô não se escolhe entre ALT3, ALT4 e ALT5 nem se calibra a franquia. A Base de Conhecimento (seção 1.3) traz uma referência de RaaS mensal que o arquiteto não usou nem como sensibilidade.",
+      "correcao_sugerida": "Criar o critério CR6 'receita mensal por robô ≥ custo mensal de servir por robô' (custo [●], a informar por Marcus; RaaS da Base de Conhecimento 1.3 como sensibilidade de baixa confiança). Tornar CR4 bilateral, com teto e piso de ocupação da frota. Mudar a resposta proposta de Q06 para 'Marcus informa o custo mensal por robô, tudo incluído, ou uma faixa'."
+    },
+    {
+      "severidade": "alta",
+      "local": "nos/decisao.json: Q04 (resposta_proposta), restricoes[6], A05; saidas/perfil.md",
+      "problema": "A resposta proposta parte de 'nome ou descrição da onda', mas no perfil Onda é um número (BIGINT). O depositante aparece em Região Origem ('ALFAPARF MILANO - PICKING', 'ZERO FURO - PICKING') e o fluxo aparece em Região Destino ('COLMEIA AMARELA'). A premissa 'não tem coluna de depositante' está parcialmente errada.",
+      "correcao_sugerida": "Reescrever Q04: depositante por Região Origem; tipo de onda pelo número de pedidos por Onda e de coletas por pedido (definições do relatório 9fleet v1, p. 4 e glossário, p. 17), com Região Destino como reforço. Validar contra os totais por mês e tipo do slide 8."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/decisao.json: CR3; deck slides 5, 7 e 9",
+      "problema": "CR3 é circular. O numerador (66 linhas/h em zona) é premissa do deck, baseada em manuseio de 46 s estimado a partir de 10 pedidos e 28 coletas (slide 5, rodapé; slide 7). O WMS só mede o denominador. O critério não testa o 'dobro', só a linha de base manual.",
+      "correcao_sugerida": "Reescrever CR3 como 'linha de base manual em ciclo completo ≤ valor implícito no slide 9', com sensibilidade no manuseio. Declarar que o dobro só pode ser afirmado após o teste controlado e ligar a falha de CR3 a ALT1 ou ao teste do slide 19."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/decisao.json: CR4 (metrica e limite)",
+      "problema": "A métrica usa linhas na hora de pico, mas os limites (slides 12 e 14) foram dimensionados com volume diário. Com 42% das tarefas entre 8h e 10h (slide 17), o critério falha por construção. A capacidade de 35 linhas/h e 3 pedidos por viagem vale para PaP; para checkout não há capacidade por robô definida.",
+      "correcao_sugerida": "Fixar o horário de operação na premissa, medir no dia p90 com perfil horário e definir a capacidade de checkout em pedidos/h por robô ([●] e pergunta)."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/decisao.json: CR2 (limite)",
+      "problema": "'Todos os meses, inclusive o mais fraco' aplica a franquia a um mix que não existe mais (PaP caiu de 75% para 20%, slide 8). Junho tende a falhar por construção. Setembro está parcial (WMS até 28/09; deck até 23/09).",
+      "correcao_sugerida": "Testar pela taxa corrente por dia útil (últimas 4 a 6 semanas) e pela tendência projetada nos 24 meses do contrato, normalizando meses parciais."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/decisao.json: alternativas e criterios (falta tabela de decisão)",
+      "problema": "Só CR1, CR2 e CR5 apontam para alguma alternativa. Nada leva a ALT1, ALT2 ou ALT3. ALT2 parece inviável no próprio deck: cobrança só com checkout em operação (slide 18) e PaP em 20%.",
+      "correcao_sugerida": "Acrescentar uma regra por alternativa. Exemplos: ALT3 se CR1 a CR4 e CR6 passam; ALT4 se CR1, CR2 ou CR4 falham, mas a recalibração fecha; ALT2 se a conferência não puder ser desmobilizada; ALT1 se CR3 ou CR6 não forem avaliáveis; ALT5 se CR5 passa."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/decisao.json: Q05 (resposta_proposta), A05",
+      "problema": "'Linha = endereço também na tarifa' é uma cláusula comercial apresentada como definição técnica. Contar endereços em vez de linhas de produto pode aumentar o volume tarifável e a fatura da Social. Além disso, 'horas medidas no WMS' é ambíguo (Tempo em Segundos tem q25 = 0; o relatório 9fleet v1, p. 12, chama a métrica de 'injusta').",
+      "correcao_sugerida": "Separar em duas perguntas: (a) a definição comercial de linha, decidida por Marcus, com efeito em CR2 mostrado nas duas contagens; (b) o método de horas e FTE, por exemplo jornada ativa por operador-dia com teto de intervalo."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/decisao.json: Q03, A04",
+      "problema": "Ninguém perguntou se os pedidos feitos pelo robô aparecem na planilha do WMS. A devolutiva automática vai ao WMS, possivelmente com usuário próprio. Seria a única medição do lado robô sem o banco 9fleet.",
+      "correcao_sugerida": "Incluir em Q03 ou em P: 'os 253 pedidos do robô aparecem no WMS e com que usuário?'. Resposta proposta: a engenharia confirma; se sim, comparar robô e manual nos mesmos campos do WMS (descritivo)."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/decisao.json: CR5 (limite)",
+      "problema": "O limite '≥ volume da Royal Canin' não tem fonte e a lógica é arbitrária. A expansão se justifica quando o volume adicional ocupa ao menos mais um robô ou paga o custo dele, não por comparação com a Royal Canin.",
+      "correcao_sugerida": "Ligar o limite à capacidade de um robô adicional (premissa do slide 12) ou a CR6 (receita ≥ custo por robô [●])."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/decisao.json: restricoes; deck slide 17",
+      "problema": "O slide 17 usa o pico de 2,7x de jun–set para falar de Black Friday e Natal. A série do WMS não cobre a alta temporada.",
+      "correcao_sugerida": "Registrar em restricoes que a série não cobre BF e Natal e que P8 não responde por eles."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/decisao.json: Q03 (opcoes), Q07",
+      "problema": "As opções 1 e 3 de Q03 são quase iguais. Q07(a) já é regra do squad. Ocupa uma vaga das 7 que falta à pergunta sobre a Social (ver lacunas).",
+      "correcao_sugerida": "Juntar as opções de Q03. Levar Q07 para premissa em A06 e usar a vaga para a pergunta sobre o status do deck e as objeções da Social."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/decisao.json: criterios (limites), impacto_esperado",
+      "problema": "Os parâmetros do deck (tarifas, franquia, garantia, frota, capacidade, custo por operador) estão digitados no texto. Isso dificulta a passagem para o impacto.json, que exige premissa com fonte.",
+      "correcao_sugerida": "Listar os parâmetros como premissas nomeadas com fonte (slide) e fazer os limites referenciarem esses nomes."
+    },
+    {
+      "severidade": "media",
+      "local": "saidas/perfil.md: Qtde Endereços (encaminhar a qualidade-privacidade, não ao arquiteto)",
+      "problema": "A coluna está mascarada como PESSOAL só pelo nome. Ela é central para N−1, para a definição de linha e para CR2 e CR3.",
+      "correcao_sugerida": "Desmarcar no qualidade.json, com justificativa, e regenerar o perfil."
+    }
+  ],
+  "lacunas": [
+    "PRINCIPAL: o que a Social quer. Não há pergunta sobre o status do deck (já apresentado?), as objeções ou interesses da Social e da Royal Canin, nem sobre quem decide na Social (quem_decide tem [●] sem pergunta). Sem isso, 'enriquecer a oferta' mira hipóteses da Acta, não os critérios de compra do cliente.",
+    "Custo da Acta para servir a oferta (robôs, implantação, manutenção, suporte, 9fleet) e margem por alternativa.",
+    "Colmeia: produtividade não medida; fora de alternativas e perguntas, apesar de o deck se contradizer (slides 8 e 14).",
+    "Viabilidade de desmobilizar a conferência (aceitação da Social e da Royal Canin; postos compartilhados com outros depositantes) e prontidão técnica do checkout conferido no robô.",
+    "Se os pedidos do robô aparecem no WMS (usuário próprio), o que mitigaria a falta do banco 9fleet.",
+    "Granularidade da planilha (43.976 linhas para cerca de 19.124 tarefas e 41.181 pedidos): Q05 supõe uma linha por tarefa. Levar ao contrato.",
+    "Série jun–set não cobre a alta temporada (BF e Natal)."
+  ],
+  "em": "2026-10-03"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "INS-028",
+  "estado": "validado",
+  "afirmacao": "Nos dias de retomada (pós-pausa e segundas-feiras) o armazém processa {{v.ret_arm}} contra {{v.tip_arm}} no dia típico. Na Royal Canin, no regime pós-colmeia (base da oferta, sem a semana de incidente), a retomada do pedido-a-pedido é {{v.ret_pap_pc}} contra {{v.tip_pap_pc}} no dia típico; no período inteiro, que mistura o regime anterior à colmeia, os números são {{v.ret_pap}} e {{v.tip_pap}} e escondem o efeito de retomada. O pico de retomada é fila acumulada que precisa ser separada, mas o máximo diário é só limite superior e não dimensiona a frota. Não há teste de diferença registrado entre retomada e dia típico: a leitura é descritiva.",
+  "pergunta_ref": "P11",
+  "criterio_ref": "CR4",
+  "valores": {
+    "ret_arm": "ANA-008.media_retomada_linhas_armazem",
+    "tip_arm": "ANA-008.media_linhas_dia_armazem",
+    "ret_pap_pc": "ANA-008.media_retomada_linhas_pap_rc_pos_colmeia",
+    "tip_pap_pc": "ANA-008.media_linhas_dia_pap_rc_pos_colmeia",
+    "ret_pap": "ANA-008.media_retomada_linhas_pap_rc",
+    "tip_pap": "ANA-008.media_linhas_dia_pap_rc"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "armazém contra Royal Canin (pedido-a-pedido e checkout)",
+      "analise": "ANA-008",
+      "resultado": "parcial",
+      "nota": "a retomada fica acima do dia típico em todos os escopos; na Royal Canin os ICs são largos e não há teste de diferença registrado (chaves media_retomada_pedidos_checkout_rc e media_pedidos_checkout_rc_dia)"
+    },
+    {
+      "recorte": "período inteiro contra regime pós-colmeia (Royal Canin)",
+      "analise": "ANA-008",
+      "resultado": "parcial",
+      "nota": "no regime pós-colmeia a retomada fica bem acima do dia típico; no período inteiro a diferença é pequena porque o dia típico mistura o regime anterior"
+    },
+    {
+      "recorte": "dias pós-pausa contra segundas-feiras",
+      "analise": "ANA-008",
+      "resultado": "parcial",
+      "nota": "poucos dias pós-pausa: só descritivos (chaves media_pos_pausa_* e media_segundas_*)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: níveis pós-colmeia como base, período inteiro rotulado como mistura de regimes, e a leitura declarada como descritiva, sem teste de diferença. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Tratar a retomada pós-colmeia como cenário de horário estendido (H02) em ANA-009, com o máximo só como limite superior.",
+  "dono": "estatistico (ANA-008); cientista de dados (ANA-009)",
+  "premissas": [
+    "retomada = média dos dias pós-pausa e das segundas-feiras plenas (M18)",
+    "poucos dias pós-pausa: bootstrap estratificado"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:27",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:24",
+      "por": "red-team-analitico"
+    }
+  ]
+}

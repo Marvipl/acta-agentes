@@ -1,0 +1,7 @@
+recorte,n_dias,razao,ic95_inferior,ic95_superior,classe,p_unilateral,nota
+janela longa (sensibilidade: todo o pedido-a-pedido),38,1.1282706766917292,1.0249586466165415,1.23390977443609,passa,0.005498625343664084,bootstrap de dias estratificado por dia da semana
+mês 2026-08,21,1.0289795918367348,0.9311462585034015,1.1236836734693878,inconclusivo,0.2696825793551612,bootstrap de dias estratificado por dia da semana
+mês 2026-09,17,1.2509243697478991,1.1063655462184876,1.405218487394958,passa,0.00024993751562109475,bootstrap de dias estratificado por dia da semana
+janela base (2026-08-31 a 2026-09-25),18,1.2671428571428571,1.1217420634920632,1.4217499999999998,passa,0.00024993751562109475,bootstrap de dias estratificado por dia da semana
+sem o maior depositante (HIVE),38,0.7648120300751879,0.6926259398496242,0.8387274436090225,falha,1.0,bootstrap de dias estratificado por dia da semana
+sem o maior depositante compatível da primária (COTY IT),38,0.8059398496240601,0.7348834586466165,0.8823308270676692,falha,1.0,bootstrap de dias estratificado por dia da semana

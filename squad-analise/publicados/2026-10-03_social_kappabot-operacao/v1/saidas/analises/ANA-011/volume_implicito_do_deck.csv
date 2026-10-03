@@ -1,0 +1,12 @@
+passo,valor,unidade
+custo do checkout com o Kappabot (slide 15),8187.0,R$/mês
+"mão de obra do checkout com robô (0,34 FTE × PR10 ÷ 12)",1700.0000000000002,R$/mês
+serviço do checkout (diferença),6487.0,R$/mês
+pedidos de checkout por mês (serviço ÷ PR03),3815.8823529411766,pedidos/mês
+custo do pedido-a-pedido com o Kappabot (slide 15),6055.0,R$/mês
+"mão de obra do pedido-a-pedido com robô (0,71 FTE × PR10 ÷ 12)",3550.0,R$/mês
+serviço do pedido-a-pedido (diferença),2505.0,R$/mês
+linhas tarifáveis por mês (serviço ÷ PR04),10020.0,linhas/mês
+receita mensal implícita na franquia (PR02 ÷ 2/3),8850.0,R$/mês
+linhas tarifáveis implícitas na franquia,9452.0,linhas/mês
+franquia ÷ receita implícita na economia,0.6561387900355872,fração

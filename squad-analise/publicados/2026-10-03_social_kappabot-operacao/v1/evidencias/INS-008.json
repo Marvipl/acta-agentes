@@ -1,0 +1,69 @@
+{
+  "id": "INS-008",
+  "estado": "validado",
+  "afirmacao": "A contaminação do tempo manual por pedidos do robô com devolutiva não automática (H06) não aparece no WMS: a proporção de linhas humanas da Royal Canin com dois ou mais endereços e sem tempo mensurável é {{v.frac_pos}} depois do início do robô e {{v.frac_pre}} antes. A diferença-em-diferenças contra os outros depositantes é {{v.did}} e H06 não se confirma (p ajustado, limite superior de Holm: {{v.p_holm}}). Leitura associativa, com um robô e sem teste controlado; CR3 segue com o período inteiro como primário.",
+  "pergunta_ref": "P8",
+  "criterio_ref": "CR3",
+  "valores": {
+    "frac_pos": "ANA-005.fracao_linhas_abaixo_piso_rc_pos_par11",
+    "frac_pre": "ANA-005.fracao_linhas_abaixo_piso_rc_pre_par11",
+    "did": "ANA-005.did_lote_humano",
+    "p_holm": "ANA-005.p_holm_f1b_limite_superior_h06"
+  },
+  "nivel": "associativo",
+  "robustez": [
+    {
+      "recorte": "piso de sensibilidade da qualidade",
+      "analise": "ANA-005",
+      "resultado": "passa",
+      "nota": "mesma leitura: IC contém zero (chave did_lote_humano_piso_sens)"
+    },
+    {
+      "recorte": "sem as duas primeiras semanas com colmeia na Royal Canin",
+      "analise": "ANA-005",
+      "resultado": "passa",
+      "nota": "mesma leitura (chave did_lote_humano_sem_2sem_colmeia)"
+    },
+    {
+      "recorte": "controle só com operadores que não separam Royal Canin",
+      "analise": "ANA-005",
+      "resultado": "passa",
+      "nota": "mesma leitura (chave did_lote_humano_controle_puro)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Rodada dois. Mantida a ressalva da primeira rodada (texto inalterado): a conclusão vale para a assinatura testada; eventos raríssimos e IC degenerado antes de PAR11; o limite pelo relatório 9fleet sustenta que o efeito é pequeno. Sugestão não atendida: declarar no texto que a ausência é pela assinatura testada. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Manter o período inteiro como primário de CR3 e usar o período anterior a PAR11 como sensibilidade; declarar que há poucas linhas marcadas na Royal Canin e que o IC por reamostragem com tão poucos eventos é frágil.",
+  "dono": "analista de impacto",
+  "premissas": [
+    "PAR11",
+    "piso físico por coleta da qualidade",
+    "um robô, sem teste controlado (slide 19)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:17:00",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:08",
+      "por": "red-team-analitico"
+    }
+  ]
+}

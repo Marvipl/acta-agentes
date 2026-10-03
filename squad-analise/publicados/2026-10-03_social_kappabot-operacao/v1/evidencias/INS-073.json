@@ -1,0 +1,84 @@
+{
+  "id": "INS-073",
+  "estado": "validado",
+  "afirmacao": "Nas linhas de dois endereços do pedido-a-pedido da Royal Canin, nas semanas pares, a mediana do intervalo até a próxima linha ({{v.int}}) supera a mediana da duração da linha ({{v.dur}}) em {{v.efeito}}. A pista PT-H04 se confirma (p unilateral ajustado por Holm na F2 de {{v.padj}}, IC inteiro acima de zero, mesmo sinal em todas as verificações), mas o resultado é uma verificação do esperado e não evidência nova: o intervalo inclui a ida ao packing e a linha tem um só intervalo. O efeito mínimo detectável é {{v.mde}}, acima do efeito relevante de {{v.er}}: a magnitude pode estar exagerada. Há menos de vinte operadores: o IC sai com aviso e é o do cluster mais largo entre operador e bloco de semana. Descritivo.",
+  "pergunta_ref": "P10",
+  "criterio_ref": "CR3",
+  "valores": {
+    "efeito": "ANA-016.pt_h04_efeito",
+    "int": "ANA-016.pt_h04_mediana_intervalo_s",
+    "dur": "ANA-016.pt_h04_mediana_duracao_s",
+    "padj": "ANA-016.pt_h04_p_ajustado_holm",
+    "mde": "ANA-016.pt_h04_mde",
+    "er": "ANA-016.pt_h04_efeito_relevante"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "teto conservador do G2 (intervalo no teto menor)",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "mesmo sinal"
+    },
+    {
+      "recorte": "deixar um operador de fora por vez",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "os extremos da retirada ficam do mesmo lado do zero"
+    },
+    {
+      "recorte": "sem dias pós-pausa",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "mesmo sinal"
+    },
+    {
+      "recorte": "semanas pares da janela base (duas semanas)",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "mesmo sinal, sem valor de confirmação (poucos dias)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Tratar como confirmação do esperado: usar o intervalo absoluto ao falar de tempo fora do relógio, sem atribuir ao robô a eliminação desse tempo.",
+  "dono": "estatistico (ANA-016)",
+  "premissas": [
+    "confirmação nas semanas ISO pares, com limiares, pesos e cortes de ANA-012 lidos do arquivo registrado, sem recálculo; Holm com seis testes na F2 (PT-H04, PT-H09, PT-H10, PT-D1, PT-D3, PT-D4)",
+    "o MDE de ANA-000 passa do efeito relevante (10% do valor de referência): a magnitude pode estar exagerada (poder baixo, erro tipo M) e não deve ser citada como precisa",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador do G2 como robustez",
+    "nenhuma semana par foi marcada como incidente da Royal Canin, por isso não há filtro de incidente na confirmação"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:29:04",
+      "por": "estatistico"
+    },
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T18:24:35",
+      "por": "estatistico",
+      "nota": "revisado após as correções do red team (parte B) e a robustez por depositante"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:50",
+      "por": "red-team-analitico"
+    }
+  ]
+}

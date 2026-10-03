@@ -1,0 +1,193 @@
+teto_s,sensibilidade,periodo,linha_longa,sobreposicao,m14_cru,m14_padronizado,linhas
+300,base,inteiro,com linha_longa,com sobrepostas,50.07776242494841,50.591203622346434,4503
+300,base,inteiro,com linha_longa,sem sobrepostas,49.673810875452524,50.20822416986055,4468
+300,base,inteiro,sem linha_longa,com sobrepostas,50.32473209602078,51.00107601120982,4499
+300,base,inteiro,sem linha_longa,sem sobrepostas,49.91792899685785,50.614085354767646,4464
+300,base,antes de PAR11,com linha_longa,com sobrepostas,52.964933920704844,53.85245003266155,3186
+300,base,antes de PAR11,com linha_longa,sem sobrepostas,52.47119295074559,53.42249055688256,3156
+300,base,antes de PAR11,sem linha_longa,com sobrepostas,52.964933920704844,53.85245003266155,3186
+300,base,antes de PAR11,sem linha_longa,sem sobrepostas,52.47119295074559,53.42249055688256,3156
+300,base,depois de PAR11,com linha_longa,com sobrepostas,44.49031741773556,44.69126365402417,1317
+300,base,depois de PAR11,com linha_longa,sem sobrepostas,44.26672489559735,44.473400990881146,1312
+300,base,depois de PAR11,sem linha_longa,com sobrepostas,45.09569433651462,45.44595708984493,1313
+300,base,depois de PAR11,sem linha_longa,sem sobrepostas,44.86717506075589,45.22723967486804,1308
+300,S1,inteiro,com linha_longa,com sobrepostas,44.68464483668984,45.353124275997004,4503
+300,S1,inteiro,com linha_longa,sem sobrepostas,44.345239743667854,45.03452962742687,4468
+300,S1,inteiro,sem linha_longa,com sobrepostas,44.867087391884105,45.672928503354214,4499
+300,S1,inteiro,sem linha_longa,sem sobrepostas,44.52562886942942,45.351442661465775,4464
+300,S1,antes de PAR11,com linha_longa,com sobrepostas,47.00564029317013,48.06982894844088,3186
+300,S1,antes de PAR11,com linha_longa,sem sobrepostas,46.594466713759644,47.71549076863621,3156
+300,S1,antes de PAR11,sem linha_longa,com sobrepostas,47.00564029317013,48.06982894844088,3186
+300,S1,antes de PAR11,sem linha_longa,sem sobrepostas,46.594466713759644,47.71549076863621,3156
+300,S1,depois de PAR11,com linha_longa,com sobrepostas,40.12054861922627,40.386211776061955,1317
+300,S1,depois de PAR11,com linha_longa,sem sobrepostas,39.92909372922668,40.20374363462598,1312
+300,S1,depois de PAR11,sem linha_longa,com sobrepostas,40.573230007912684,40.98186351516267,1313
+300,S1,depois de PAR11,sem linha_longa,sem sobrepostas,40.378088941401245,40.79854884117546,1308
+300,S2,inteiro,com linha_longa,com sobrepostas,32.89645066753501,33.676609170441914,4503
+300,S2,inteiro,com linha_longa,sem sobrepostas,32.64620434459067,33.443690915943215,4468
+300,S2,inteiro,sem linha_longa,com sobrepostas,32.96989235873875,33.83460487506732,4499
+300,S2,inteiro,sem linha_longa,sem sobrepostas,32.71848699027216,33.600045711753374,4464
+300,S2,antes de PAR11,com linha_longa,com sobrepostas,34.86777184185209,36.14717218050613,3186
+300,S2,antes de PAR11,com linha_longa,sem sobrepostas,34.558830368021134,35.876230741444516,3156
+300,S2,antes de PAR11,sem linha_longa,com sobrepostas,34.86777184185209,36.14717218050613,3186
+300,S2,antes de PAR11,sem linha_longa,sem sobrepostas,34.558830368021134,35.876230741444516,3156
+300,S2,depois de PAR11,com linha_longa,com sobrepostas,29.105316699684103,29.31443644830541,1317
+300,S2,depois de PAR11,com linha_longa,sem sobrepostas,28.97244122621061,29.195834084378227,1312
+300,S2,depois de PAR11,sem linha_longa,com sobrepostas,29.26458065334372,29.57801174695283,1313
+300,S2,depois de PAR11,sem linha_longa,sem sobrepostas,29.12984076702656,29.45778464024609,1308
+300,S3,inteiro,com linha_longa,com sobrepostas,50.06643931720824,50.5761878509372,4503
+300,S3,inteiro,com linha_longa,sem sobrepostas,49.673810875452524,50.20822416986055,4468
+300,S3,inteiro,sem linha_longa,com sobrepostas,50.31326384401427,50.98577188426304,4499
+300,S3,inteiro,sem linha_longa,sem sobrepostas,49.91792899685785,50.614085354767646,4464
+300,S3,antes de PAR11,com linha_longa,com sobrepostas,52.964933920704844,53.85245003266155,3186
+300,S3,antes de PAR11,com linha_longa,sem sobrepostas,52.47119295074559,53.42249055688256,3156
+300,S3,antes de PAR11,sem linha_longa,com sobrepostas,52.964933920704844,53.85245003266155,3186
+300,S3,antes de PAR11,sem linha_longa,sem sobrepostas,52.47119295074559,53.42249055688256,3156
+300,S3,depois de PAR11,com linha_longa,com sobrepostas,44.4608023555392,44.658636402071906,1317
+300,S3,depois de PAR11,com linha_longa,sem sobrepostas,44.26672489559735,44.473400990881146,1312
+300,S3,depois de PAR11,sem linha_longa,com sobrepostas,45.065078191481945,45.411947424243486,1313
+300,S3,depois de PAR11,sem linha_longa,sem sobrepostas,44.86717506075589,45.22723967486804,1308
+600,base,inteiro,com linha_longa,com sobrepostas,40.50417220036585,41.30138992748126,4503
+600,base,inteiro,com linha_longa,sem sobrepostas,40.16746477495353,40.98602306706028,4468
+600,base,inteiro,sem linha_longa,com sobrepostas,40.64293567617184,41.55871023746483,4499
+600,base,inteiro,sem linha_longa,sem sobrepostas,40.304238180225525,41.240576876967815,4464
+600,base,antes de PAR11,com linha_longa,com sobrepostas,42.40632054176073,43.53801733275257,3186
+600,base,antes de PAR11,com linha_longa,sem sobrepostas,41.996643252315536,43.18096172231412,3156
+600,base,antes de PAR11,sem linha_longa,com sobrepostas,42.40632054176073,43.53801733275257,3186
+600,base,antes de PAR11,sem linha_longa,sem sobrepostas,41.996643252315536,43.18096172231412,3156
+600,base,depois de PAR11,com linha_longa,com sobrepostas,36.71043745779245,37.01403830185108,1317
+600,base,depois de PAR11,com linha_longa,sem sobrepostas,36.52277700417744,36.839835642689366,1312
+600,base,depois de PAR11,sem linha_longa,com sobrepostas,37.05833766710514,37.49380955698288,1313
+600,base,depois de PAR11,sem linha_longa,sem sobrepostas,36.867212694575045,37.317950458613424,1308
+600,S1,inteiro,com linha_longa,com sobrepostas,37.92701325943776,38.75044225169874,4503
+600,S1,inteiro,com linha_longa,sem sobrepostas,37.630160904845944,38.47438602596474,4468
+600,S1,inteiro,sem linha_longa,com sobrepostas,38.04160283992607,38.97223288639321,4499
+600,S1,inteiro,sem linha_longa,sem sobrepostas,37.743163986317334,38.69396531594092,4464
+600,S1,antes de PAR11,com linha_longa,com sobrepostas,39.619676971475776,40.7903177115288,3186
+600,S1,antes de PAR11,com linha_longa,sem sobrepostas,39.26067065117475,40.480404433278714,3156
+600,S1,antes de PAR11,sem linha_longa,com sobrepostas,39.619676971475776,40.7903177115288,3186
+600,S1,antes de PAR11,sem linha_longa,sem sobrepostas,39.26067065117475,40.480404433278714,3156
+600,S1,depois de PAR11,com linha_longa,com sobrepostas,34.52841374248369,34.85185343899679,1317
+600,S1,depois de PAR11,com linha_longa,sem sobrepostas,34.36065481150864,34.69793511924172,1312
+600,S1,depois de PAR11,sem linha_longa,com sobrepostas,34.81584733219331,35.267456039770856,1313
+600,S1,depois de PAR11,sem linha_longa,sem sobrepostas,34.64525035230508,35.11205900000544,1308
+600,S2,inteiro,com linha_longa,com sobrepostas,27.607220507635365,28.385307191437462,4503
+600,S2,inteiro,com linha_longa,sem sobrepostas,27.39647278625249,28.190534086568796,4468
+600,S2,inteiro,sem linha_longa,com sobrepostas,27.645994322323904,28.488662184215894,4499
+600,S2,inteiro,sem linha_longa,sem sobrepostas,27.43440383524924,28.292687687468682,4464
+600,S2,antes de PAR11,com linha_longa,com sobrepostas,29.42281262521519,30.662224163939666,3186
+600,S2,antes de PAR11,com linha_longa,sem sobrepostas,29.16361990547737,30.434234543874872,3156
+600,S2,antes de PAR11,sem linha_longa,com sobrepostas,29.42281262521519,30.662224163939666,3186
+600,S2,antes de PAR11,sem linha_longa,sem sobrepostas,29.16361990547737,30.434234543874872,3156
+600,S2,depois de PAR11,com linha_longa,com sobrepostas,24.17092167572014,24.402356253818876,1317
+600,S2,depois de PAR11,com linha_longa,sem sobrepostas,24.056663246764487,24.30373576107605,1312
+600,S2,depois de PAR11,sem linha_longa,com sobrepostas,24.24078701515049,24.563877100302516,1313
+600,S2,depois de PAR11,sem linha_longa,sem sobrepostas,24.12514675805511,24.463500119931382,1308
+600,S3,inteiro,com linha_longa,com sobrepostas,40.49676431755035,41.29138185068409,4503
+600,S3,inteiro,com linha_longa,sem sobrepostas,40.16746477495353,40.98602306706028,4468
+600,S3,inteiro,sem linha_longa,com sobrepostas,40.635455299536844,41.548547794250396,4499
+600,S3,inteiro,sem linha_longa,sem sobrepostas,40.304238180225525,41.240576876967815,4464
+600,S3,antes de PAR11,com linha_longa,com sobrepostas,42.40632054176073,43.53801733275257,3186
+600,S3,antes de PAR11,com linha_longa,sem sobrepostas,41.996643252315536,43.18096172231412,3156
+600,S3,antes de PAR11,sem linha_longa,com sobrepostas,42.40632054176073,43.53801733275257,3186
+600,S3,antes de PAR11,sem linha_longa,sem sobrepostas,41.996643252315536,43.18096172231412,3156
+600,S3,depois de PAR11,com linha_longa,com sobrepostas,36.6903399503536,36.99165507806761,1317
+600,S3,depois de PAR11,com linha_longa,sem sobrepostas,36.52277700417744,36.839835642689366,1312
+600,S3,depois de PAR11,sem linha_longa,com sobrepostas,37.037659846058595,37.47065759155441,1313
+600,S3,depois de PAR11,sem linha_longa,sem sobrepostas,36.867212694575045,37.317950458613424,1308
+900,base,inteiro,com linha_longa,com sobrepostas,36.31935144657254,37.147407564760655,4503
+900,base,inteiro,com linha_longa,sem sobrepostas,36.04193277925644,36.890340503283966,4468
+900,base,inteiro,sem linha_longa,com sobrepostas,36.41992326082732,37.34959977535335,4499
+900,base,inteiro,sem linha_longa,sem sobrepostas,36.141101051795225,37.0905627886969,4464
+900,base,antes de PAR11,com linha_longa,com sobrepostas,38.22896475939012,39.43091278993176,3186
+900,base,antes de PAR11,com linha_longa,sem sobrepostas,37.89963264480441,39.14668028363233,3156
+900,base,antes de PAR11,sem linha_longa,com sobrepostas,38.22896475939012,39.43091278993176,3186
+900,base,antes de PAR11,sem linha_longa,sem sobrepostas,37.89963264480441,39.14668028363233,3156
+900,base,depois de PAR11,com linha_longa,com sobrepostas,32.570943528119436,32.90090647342628,1317
+900,base,depois de PAR11,com linha_longa,sem sobrepostas,32.40294899202813,32.747676905522226,1312
+900,base,depois de PAR11,sem linha_longa,com sobrepostas,32.80848513983351,33.25735652672799,1313
+900,base,depois de PAR11,sem linha_longa,sem sobrepostas,32.637717676223765,33.102172263147786,1308
+900,S1,inteiro,com linha_longa,com sobrepostas,34.53831393882932,35.37522975887704,4503
+900,S1,inteiro,com linha_longa,sem sobrepostas,34.286631943515104,35.1435853460588,4468
+900,S1,inteiro,sem linha_longa,com sobrepostas,34.62430825284433,35.55507107780867,4499
+900,S1,inteiro,sem linha_longa,sem sobrepostas,34.371444532828434,35.321767980778205,4464
+900,S1,antes de PAR11,com linha_longa,com sobrepostas,36.24419395447771,37.45717990790462,3186
+900,S1,antes de PAR11,com linha_longa,sem sobrepostas,35.94642572107129,37.20275481136447,3156
+900,S1,antes de PAR11,sem linha_longa,com sobrepostas,36.24419395447771,37.45717990790462,3186
+900,S1,antes de PAR11,sem linha_longa,sem sobrepostas,35.94642572107129,37.20275481136447,3156
+900,S1,depois de PAR11,com linha_longa,com sobrepostas,31.15950105565516,31.497935128544636,1317
+900,S1,depois de PAR11,com linha_longa,sem sobrepostas,31.00639832776772,31.35950039429546,1312
+900,S1,depois de PAR11,sem linha_longa,com sobrepostas,31.363614297965984,31.81848976204514,1313
+900,S1,depois de PAR11,sem linha_longa,sem sobrepostas,31.208144972215386,31.6782775485631,1308
+900,S2,inteiro,com linha_longa,com sobrepostas,25.20925836682559,25.962364469959013,4503
+900,S2,inteiro,com linha_longa,sem sobrepostas,25.015016539673738,25.78345726683013,4468
+900,S2,inteiro,sem linha_longa,com sobrepostas,25.23521205488203,26.043655907321074,4499
+900,S2,inteiro,sem linha_longa,sem sobrepostas,25.040247736285384,25.86371063741222,4464
+900,S2,antes de PAR11,com linha_longa,com sobrepostas,27.012531364358587,28.222574215124084,3186
+900,S2,antes de PAR11,com linha_longa,sem sobrepostas,26.772918700622167,28.011631263416433,3156
+900,S2,antes de PAR11,sem linha_longa,com sobrepostas,27.012531364358587,28.222574215124084,3186
+900,S2,antes de PAR11,sem linha_longa,sem sobrepostas,26.772918700622167,28.011631263416433,3156
+900,S2,depois de PAR11,com linha_longa,com sobrepostas,21.84887459807074,22.07671879797578,1317
+900,S2,depois de PAR11,com linha_longa,sem sobrepostas,21.74392985310088,21.987158055400943,1312
+900,S2,depois de PAR11,sem linha_longa,com sobrepostas,21.885585756483565,22.196968916495553,1313
+900,S2,depois de PAR11,sem linha_longa,sem sobrepostas,21.779475242378357,22.105610637193724,1308
+900,S3,inteiro,com linha_longa,com sobrepostas,36.3133951137321,37.13931122172454,4503
+900,S3,inteiro,com linha_longa,sem sobrepostas,36.04193277925644,36.890340503283966,4468
+900,S3,inteiro,sem linha_longa,com sobrepostas,36.41391650907908,37.34139141014288,4499
+900,S3,inteiro,sem linha_longa,sem sobrepostas,36.141101051795225,37.0905627886969,4464
+900,S3,antes de PAR11,com linha_longa,com sobrepostas,38.22896475939012,39.43091278993176,3186
+900,S3,antes de PAR11,com linha_longa,sem sobrepostas,37.89963264480441,39.14668028363233,3156
+900,S3,antes de PAR11,sem linha_longa,com sobrepostas,38.22896475939012,39.43091278993176,3186
+900,S3,antes de PAR11,sem linha_longa,sem sobrepostas,37.89963264480441,39.14668028363233,3156
+900,S3,depois de PAR11,com linha_longa,com sobrepostas,32.55512192200585,32.88322027028173,1317
+900,S3,depois de PAR11,com linha_longa,sem sobrepostas,32.40294899202813,32.747676905522226,1312
+900,S3,depois de PAR11,sem linha_longa,com sobrepostas,32.79227700459847,33.23913962643322,1313
+900,S3,depois de PAR11,sem linha_longa,sem sobrepostas,32.637717676223765,33.102172263147786,1308
+1800,base,inteiro,com linha_longa,com sobrepostas,30.338407252388368,31.164092542380413,4503
+1800,base,inteiro,com linha_longa,sem sobrepostas,30.098088325543845,30.944737019803465,4468
+1800,base,inteiro,sem linha_longa,com sobrepostas,30.39398351047379,31.297074792447997,4499
+1800,base,inteiro,sem linha_longa,sem sobrepostas,30.152604358964435,31.076252923993316,4464
+1800,base,antes de PAR11,com linha_longa,com sobrepostas,32.05309764711904,33.24645897550705,3186
+1800,base,antes de PAR11,com linha_longa,sem sobrepostas,31.76449468426137,32.998188401736485,3156
+1800,base,antes de PAR11,sem linha_longa,com sobrepostas,32.05309764711904,33.24645897550705,3186
+1800,base,antes de PAR11,sem linha_longa,sem sobrepostas,31.76449468426137,32.998188401736485,3156
+1800,base,depois de PAR11,com linha_longa,com sobrepostas,27.00953979330448,27.37845064490168,1317
+1800,base,depois de PAR11,com linha_longa,sem sobrepostas,26.8685647070518,27.25452585193148,1312
+1800,base,depois de PAR11,sem linha_longa,com sobrepostas,27.127677441748496,27.60894785986507,1313
+1800,base,depois de PAR11,sem linha_longa,sem sobrepostas,26.98475366458062,27.48336080761644,1308
+1800,S1,inteiro,com linha_longa,com sobrepostas,29.36101110574251,30.183662546648662,4503
+1800,S1,inteiro,com linha_longa,sem sobrepostas,29.138207594807717,29.981348222041202,4468
+1800,S1,inteiro,sem linha_longa,com sobrepostas,29.41030488383466,30.306322070258318,4499
+1800,S1,inteiro,sem linha_longa,sem sobrepostas,29.186565697650508,30.102713100224097,4464
+1800,S1,antes de PAR11,com linha_longa,com sobrepostas,30.93185803551582,32.11927288158585,3186
+1800,S1,antes de PAR11,com linha_longa,sem sobrepostas,30.665331565424545,31.89200973744154,3156
+1800,S1,antes de PAR11,sem linha_longa,com sobrepostas,30.93185803551582,32.11927288158585,3186
+1800,S1,antes de PAR11,sem linha_longa,sem sobrepostas,30.665331565424545,31.89200973744154,3156
+1800,S1,depois de PAR11,com linha_longa,com sobrepostas,26.285560779046342,26.65298734597729,1317
+1800,S1,depois de PAR11,com linha_longa,sem sobrepostas,26.154057039647153,26.53807961976827,1312
+1800,S1,depois de PAR11,sem linha_longa,com sobrepostas,26.390575728033724,26.86795088597531,1313
+1800,S1,depois de PAR11,sem linha_longa,sem sobrepostas,26.257325715406683,26.751468734907974,1308
+1800,S2,inteiro,com linha_longa,com sobrepostas,22.030142206448765,22.72824076155732,4503
+1800,S2,inteiro,com linha_longa,sem sobrepostas,21.85580828123411,22.56760807534789,4468
+1800,S2,inteiro,sem linha_longa,com sobrepostas,22.04188137985361,22.78314719197856,4499
+1800,S2,inteiro,sem linha_longa,sem sobrepostas,21.86696432545702,22.62165938371478,4464
+1800,S2,antes de PAR11,com linha_longa,com sobrepostas,24.039566880013307,25.1782591801607,3186
+1800,S2,antes de PAR11,com linha_longa,sem sobrepostas,23.820630485765722,24.984762319143652,3156
+1800,S2,antes de PAR11,sem linha_longa,com sobrepostas,24.039566880013307,25.1782591801607,3186
+1800,S2,antes de PAR11,sem linha_longa,sem sobrepostas,23.820630485765722,24.984762319143652,3156
+1800,S2,depois de PAR11,com linha_longa,com sobrepostas,18.472691574317054,18.681241047123496,1317
+1800,S2,depois de PAR11,com linha_longa,sem sobrepostas,18.381919572017956,18.605375243753294,1312
+1800,S2,depois de PAR11,sem linha_longa,com sobrepostas,18.47132058353759,18.752733825876632,1313
+1800,S2,depois de PAR11,sem linha_longa,sem sobrepostas,18.379677308616547,18.67517087149921,1308
+1800,S3,inteiro,com linha_longa,com sobrepostas,30.334251017616157,31.158394100853833,4503
+1800,S3,inteiro,com linha_longa,sem sobrepostas,30.098088325543845,30.944737019803465,4468
+1800,S3,inteiro,sem linha_longa,com sobrepostas,30.389799924200858,31.29131100802581,4499
+1800,S3,inteiro,sem linha_longa,sem sobrepostas,30.152604358964435,31.076252923993316,4464
+1800,S3,antes de PAR11,com linha_longa,com sobrepostas,32.05309764711904,33.24645897550705,3186
+1800,S3,antes de PAR11,com linha_longa,sem sobrepostas,31.76449468426137,32.998188401736485,3156
+1800,S3,antes de PAR11,sem linha_longa,com sobrepostas,32.05309764711904,33.24645897550705,3186
+1800,S3,antes de PAR11,sem linha_longa,sem sobrepostas,31.76449468426137,32.998188401736485,3156
+1800,S3,depois de PAR11,com linha_longa,com sobrepostas,26.998659007002964,27.366202345180106,1317
+1800,S3,depois de PAR11,com linha_longa,sem sobrepostas,26.8685647070518,27.25452585193148,1312
+1800,S3,depois de PAR11,sem linha_longa,com sobrepostas,27.1165953160413,27.596392211433958,1313
+1800,S3,depois de PAR11,sem linha_longa,sem sobrepostas,26.98475366458062,27.48336080761644,1308

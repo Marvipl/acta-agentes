@@ -1,0 +1,3648 @@
+{
+  "id": "ANA-009",
+  "valores": {
+    "semana_iso_primeira_colmeia": {
+      "valor": 28.0,
+      "unidade": "semana ISO",
+      "descricao": "semana ISO (primeira com ondas de colmeia da Royal Canin, definida pelo dado em ANA-008)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pos_colmeia": {
+      "valor": 54.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos (regime pós-colmeia, sem 21 a 25/09: base da oferta)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_normal": {
+      "valor": 19.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos (janela normal de ANA-002, 24/08 a 18/09)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_periodo_inteiro": {
+      "valor": 80.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos (período inteiro, variante do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "confere_perfil_ana008": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90: teto inteiro da carga em robôs-equivalentes por hora, máximo na janela observada; PR07 e PR08 provável); frota dia a dia (p90 entre dias da frota diária); variante do plano (período inteiro, regime pré-colmeia incluído)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": null,
+        "nota": "grade do plano: PR08 inferior a superior, p90 no ponto e nos limites do IC de ANA-008, com e sem pós-pausa, perfil pela banda, pelo dia real e frota dia a dia"
+      }
+    },
+    "frota_necessaria_alt2_estresse": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90: teto inteiro da carga em robôs-equivalentes por hora, máximo na janela observada; PR07 e PR08 provável); frota dia a dia (p90 entre dias da frota diária); variante do plano (período inteiro, regime pré-colmeia incluído)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": null,
+        "nota": "grade do plano: PR08 inferior a superior, p90 no ponto e nos limites do IC de ANA-008, com e sem pós-pausa, perfil pela banda, pelo dia real e frota dia a dia"
+      }
+    },
+    "frota_necessaria_alt2_banda": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pelo perfil da banda de dias do p90, que alisa o pico horário; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_mesmo_dia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia: p90 entre dias do máximo horário diário do teto inteiro da carga; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_pr07_menos25": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_pr07_mais25": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_grade_minima": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (menor frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_grade_maxima": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (maior frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_mesmo_dia_ic_dias": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2.0,
+        "superior": 3.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt2_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90: teto inteiro da carga em robôs-equivalentes por hora, máximo na janela observada; PR07 e PR08 provável); frota dia a dia (p90 entre dias da frota diária); BASE da oferta (regime pós-colmeia, sem 21 a 25/09)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": null,
+        "nota": "grade do plano: PR08 inferior a superior, p90 no ponto e nos limites do IC de ANA-008, com e sem pós-pausa, perfil pela banda, pelo dia real e frota dia a dia"
+      }
+    },
+    "frota_necessaria_alt2_banda_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pelo perfil da banda de dias do p90, que alisa o pico horário; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_mesmo_dia_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia: p90 entre dias do máximo horário diário do teto inteiro da carga; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_pr07_menos25_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_pr07_mais25_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_grade_minima_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (menor frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_grade_maxima_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (maior frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_mesmo_dia_ic_dias_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt2_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90: teto inteiro da carga em robôs-equivalentes por hora, máximo na janela observada; PR07 e PR08 provável); frota dia a dia (p90 entre dias da frota diária); janela normal de ANA-002 (24/08 a 18/09)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": null,
+        "nota": "grade do plano: PR08 inferior a superior, p90 no ponto e nos limites do IC de ANA-008, com e sem pós-pausa, perfil pela banda, pelo dia real e frota dia a dia"
+      }
+    },
+    "frota_necessaria_alt2_banda_normal": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pelo perfil da banda de dias do p90, que alisa o pico horário; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_mesmo_dia_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia: p90 entre dias do máximo horário diário do teto inteiro da carga; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_pr07_menos25_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_pr07_mais25_normal": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_grade_minima_normal": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (menor frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_grade_maxima_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (maior frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt2_mesmo_dia_ic_dias_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt3": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90: teto inteiro da carga em robôs-equivalentes por hora, máximo na janela observada; PR07 e PR08 provável); frota dia a dia (p90 entre dias da frota diária); variante do plano (período inteiro, regime pré-colmeia incluído)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 3.0,
+        "nivel": null,
+        "nota": "grade do plano: PR08 inferior a superior, p90 no ponto e nos limites do IC de ANA-008, com e sem pós-pausa, perfil pela banda, pelo dia real e frota dia a dia"
+      }
+    },
+    "frota_necessaria_alt3_estresse": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90: teto inteiro da carga em robôs-equivalentes por hora, máximo na janela observada; PR07 e PR08 provável); frota dia a dia (p90 entre dias da frota diária); variante do plano (período inteiro, regime pré-colmeia incluído)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 3.0,
+        "nivel": null,
+        "nota": "grade do plano: PR08 inferior a superior, p90 no ponto e nos limites do IC de ANA-008, com e sem pós-pausa, perfil pela banda, pelo dia real e frota dia a dia"
+      }
+    },
+    "frota_necessaria_alt3_banda": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pelo perfil da banda de dias do p90, que alisa o pico horário; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_mesmo_dia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia: p90 entre dias do máximo horário diário do teto inteiro da carga; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_por_tipo": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (teto inteiro de cada tipo, somado por hora; PR07 e PR08 provável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.0,
+        "superior": 4.0,
+        "nivel": null,
+        "nota": "grade do plano com a regra por tipo"
+      }
+    },
+    "frota_necessaria_alt3_pr07_menos25": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_pr07_mais25": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_grade_minima": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (menor frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_grade_maxima": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (maior frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_mesmo_dia_ic_dias": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2.0,
+        "superior": 3.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt3_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90: teto inteiro da carga em robôs-equivalentes por hora, máximo na janela observada; PR07 e PR08 provável); frota dia a dia (p90 entre dias da frota diária); BASE da oferta (regime pós-colmeia, sem 21 a 25/09)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": null,
+        "nota": "grade do plano: PR08 inferior a superior, p90 no ponto e nos limites do IC de ANA-008, com e sem pós-pausa, perfil pela banda, pelo dia real e frota dia a dia"
+      }
+    },
+    "frota_necessaria_alt3_banda_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pelo perfil da banda de dias do p90, que alisa o pico horário; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_mesmo_dia_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia: p90 entre dias do máximo horário diário do teto inteiro da carga; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_por_tipo_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (teto inteiro de cada tipo, somado por hora; PR07 e PR08 provável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.0,
+        "superior": 3.0,
+        "nivel": null,
+        "nota": "grade do plano com a regra por tipo"
+      }
+    },
+    "frota_necessaria_alt3_pr07_menos25_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_pr07_mais25_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_grade_minima_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (menor frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_grade_maxima_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (maior frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_mesmo_dia_ic_dias_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt3_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90: teto inteiro da carga em robôs-equivalentes por hora, máximo na janela observada; PR07 e PR08 provável); frota dia a dia (p90 entre dias da frota diária); janela normal de ANA-002 (24/08 a 18/09)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 3.0,
+        "nivel": null,
+        "nota": "grade do plano: PR08 inferior a superior, p90 no ponto e nos limites do IC de ANA-008, com e sem pós-pausa, perfil pela banda, pelo dia real e frota dia a dia"
+      }
+    },
+    "frota_necessaria_alt3_banda_normal": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pelo perfil da banda de dias do p90, que alisa o pico horário; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_mesmo_dia_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia: p90 entre dias do máximo horário diário do teto inteiro da carga; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_por_tipo_normal": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (teto inteiro de cada tipo, somado por hora; PR07 e PR08 provável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.0,
+        "superior": 3.0,
+        "nivel": null,
+        "nota": "grade do plano com a regra por tipo"
+      }
+    },
+    "frota_necessaria_alt3_pr07_menos25_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_pr07_mais25_normal": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_grade_minima_normal": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (menor frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_grade_maxima_normal": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (maior frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt3_mesmo_dia_ic_dias_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt6": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90: teto inteiro da carga em robôs-equivalentes por hora, máximo na janela observada; PR07 e PR08 provável); frota dia a dia (p90 entre dias da frota diária); variante do plano (período inteiro, regime pré-colmeia incluído)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4.0,
+        "superior": 7.0,
+        "nivel": null,
+        "nota": "grade do plano: PR08 inferior a superior, p90 no ponto e nos limites do IC de ANA-008, com e sem pós-pausa, perfil pela banda, pelo dia real e frota dia a dia"
+      }
+    },
+    "frota_necessaria_alt6_estresse": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90: teto inteiro da carga em robôs-equivalentes por hora, máximo na janela observada; PR07 e PR08 provável); frota dia a dia (p90 entre dias da frota diária); variante do plano (período inteiro, regime pré-colmeia incluído)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4.0,
+        "superior": 7.0,
+        "nivel": null,
+        "nota": "grade do plano: PR08 inferior a superior, p90 no ponto e nos limites do IC de ANA-008, com e sem pós-pausa, perfil pela banda, pelo dia real e frota dia a dia"
+      }
+    },
+    "frota_necessaria_alt6_banda": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pelo perfil da banda de dias do p90, que alisa o pico horário; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_mesmo_dia": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia: p90 entre dias do máximo horário diário do teto inteiro da carga; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_por_tipo": {
+      "valor": 6.0,
+      "unidade": "robôs",
+      "descricao": "robôs (teto inteiro de cada tipo, somado por hora; PR07 e PR08 provável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 5.0,
+        "superior": 7.0,
+        "nivel": null,
+        "nota": "grade do plano com a regra por tipo"
+      }
+    },
+    "frota_necessaria_alt6_pr07_menos25": {
+      "valor": 7.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_pr07_mais25": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_grade_minima": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (menor frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_grade_maxima": {
+      "valor": 7.0,
+      "unidade": "robôs",
+      "descricao": "robôs (maior frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_mesmo_dia_ic_dias": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 5.0,
+        "superior": 6.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt6_pos_colmeia": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90: teto inteiro da carga em robôs-equivalentes por hora, máximo na janela observada; PR07 e PR08 provável); frota dia a dia (p90 entre dias da frota diária); BASE da oferta (regime pós-colmeia, sem 21 a 25/09)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.0,
+        "superior": 5.0,
+        "nivel": null,
+        "nota": "grade do plano: PR08 inferior a superior, p90 no ponto e nos limites do IC de ANA-008, com e sem pós-pausa, perfil pela banda, pelo dia real e frota dia a dia"
+      }
+    },
+    "frota_necessaria_alt6_banda_pos_colmeia": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pelo perfil da banda de dias do p90, que alisa o pico horário; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_mesmo_dia_pos_colmeia": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia: p90 entre dias do máximo horário diário do teto inteiro da carga; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_por_tipo_pos_colmeia": {
+      "valor": 6.0,
+      "unidade": "robôs",
+      "descricao": "robôs (teto inteiro de cada tipo, somado por hora; PR07 e PR08 provável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 4.0,
+        "superior": 6.0,
+        "nivel": null,
+        "nota": "grade do plano com a regra por tipo"
+      }
+    },
+    "frota_necessaria_alt6_pr07_menos25_pos_colmeia": {
+      "valor": 6.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_pr07_mais25_pos_colmeia": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_grade_minima_pos_colmeia": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (menor frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_grade_maxima_pos_colmeia": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (maior frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_mesmo_dia_ic_dias_pos_colmeia": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 4.0,
+        "superior": 5.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt6_normal": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90: teto inteiro da carga em robôs-equivalentes por hora, máximo na janela observada; PR07 e PR08 provável); frota dia a dia (p90 entre dias da frota diária); janela normal de ANA-002 (24/08 a 18/09)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.0,
+        "superior": 5.0,
+        "nivel": null,
+        "nota": "grade do plano: PR08 inferior a superior, p90 no ponto e nos limites do IC de ANA-008, com e sem pós-pausa, perfil pela banda, pelo dia real e frota dia a dia"
+      }
+    },
+    "frota_necessaria_alt6_banda_normal": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pelo perfil da banda de dias do p90, que alisa o pico horário; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_mesmo_dia_normal": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia: p90 entre dias do máximo horário diário do teto inteiro da carga; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_por_tipo_normal": {
+      "valor": 6.0,
+      "unidade": "robôs",
+      "descricao": "robôs (teto inteiro de cada tipo, somado por hora; PR07 e PR08 provável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.0,
+        "superior": 6.0,
+        "nivel": null,
+        "nota": "grade do plano com a regra por tipo"
+      }
+    },
+    "frota_necessaria_alt6_pr07_menos25_normal": {
+      "valor": 6.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_pr07_mais25_normal": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR07 de 0,75 ou 1,25 vezes; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_grade_minima_normal": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (menor frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_grade_maxima_normal": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (maior frota da grade do plano)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_necessaria_alt6_mesmo_dia_ic_dias_normal": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 4.0,
+        "superior": 5.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt2_ic_dias": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2.0,
+        "superior": 3.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt2_ic_dias_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt2_ic_dias_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt3_ic_dias": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2.0,
+        "superior": 3.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt3_ic_dias_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt3_ic_dias_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt6_ic_dias": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 5.0,
+        "superior": 6.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt6_ic_dias_pos_colmeia": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 4.0,
+        "superior": 5.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "frota_necessaria_alt6_ic_dias_normal": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota dia a dia, variante primária; IC de percentis por bootstrap de dias)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 4.0,
+        "superior": 5.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid)"
+      }
+    },
+    "pr09_slide14_inferior": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR09, deck slide 14, ponta inferior)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pr09_slide14_superior": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (PR09, deck slide 14, ponta superior)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pr09_slide12_inferior": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (deck slide 12, Royal Canin, ponta inferior)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pr09_slide12_superior": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (deck slide 12, Royal Canin, ponta superior)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "demanda_pico_linhas_alt3_p90": {
+      "valor": 45.5,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (pico do perfil p90, pedido-a-pedido da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "demanda_pico_pedidos_alt3_p90": {
+      "valor": 34.375,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (pico do perfil p90, checkout da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p90_linhas_dia_alt3": {
+      "valor": 232.90000000000026,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 diário do pedido-a-pedido da Royal Canin; igual ao de ANA-008)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "demanda_pico_linhas_alt3_p90_pos_colmeia": {
+      "valor": 22.833333333333332,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (pico do perfil p90, pedido-a-pedido da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "demanda_pico_pedidos_alt3_p90_pos_colmeia": {
+      "valor": 41.666666666666664,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (pico do perfil p90, checkout da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p90_linhas_dia_alt3_pos_colmeia": {
+      "valor": 110.4,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 diário do pedido-a-pedido da Royal Canin; igual ao de ANA-008)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "demanda_pico_linhas_alt3_p90_normal": {
+      "valor": 15.0,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (pico do perfil p90, pedido-a-pedido da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "demanda_pico_pedidos_alt3_p90_normal": {
+      "valor": 28.4,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (pico do perfil p90, checkout da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p90_linhas_dia_alt3_normal": {
+      "valor": 112.19999999999999,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (p90 diário do pedido-a-pedido da Royal Canin; igual ao de ANA-008)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "frota_armazem_p90_so_linhas": {
+      "valor": 9.0,
+      "unidade": "robôs",
+      "descricao": "robôs (pico horário do dia p90 do armazém, todas as linhas ÷ PR07; leitura do slide 12, sem filtro de compatibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "slide12_robos_armazem": {
+      "valor": 7.0,
+      "unidade": "robôs",
+      "descricao": "robôs (deck, slide 12: cerca de 7 no armazém no dia p90)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p12_alt3_cabe_no_slide14_em_toda_a_grade": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p12_alt3_cabe_no_slide12_em_toda_a_grade": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p12_alt2_cabe_no_slide12_em_toda_a_grade": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p12_alt3_cabe_no_slide14_em_toda_a_grade_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p12_alt3_cabe_no_slide12_em_toda_a_grade_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p12_alt2_cabe_no_slide12_em_toda_a_grade_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p12_alt3_cabe_no_slide14_em_toda_a_grade_normal": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p12_alt3_cabe_no_slide12_em_toda_a_grade_normal": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p12_alt2_cabe_no_slide12_em_toda_a_grade_normal": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_dia_tipico_alt3_pr09_4": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (média na janela observada de PR09 menos a frota da hora no perfil médio; ALT3, PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide14_min": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária dia a dia no dia p90; negativo = falta; ALT3; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide14_min_banda": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_dia_tipico_alt3_pr09_5": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (média na janela observada de PR09 menos a frota da hora no perfil médio; ALT3, PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide14_max": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária dia a dia no dia p90; negativo = falta; ALT3; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide14_max_banda": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide12_min": {
+      "valor": -1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária dia a dia no dia p90; negativo = falta; ALT3; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide12_min_banda": {
+      "valor": -1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide12_max": {
+      "valor": 0.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária dia a dia no dia p90; negativo = falta; ALT3; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide12_max_banda": {
+      "valor": 0.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_dia_tipico_alt3": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (média na janela observada de PR09 menos a frota da hora no perfil médio; ALT3; PR09 do slide 14, ponta inferior; faixa até a ponta superior)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.0,
+        "superior": 4.0,
+        "nivel": null,
+        "nota": "ponta inferior e superior do slide 14"
+      }
+    },
+    "sobra_dia_tipico_alt3_minima_na_hora": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (pior hora do dia típico: PR09 menos a frota da hora; ponta inferior do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt2_slide12_min": {
+      "valor": -1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura do slide 12 menos a frota necessária dia a dia no dia p90; negativo = falta; ALT2; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt2_slide12_min_banda": {
+      "valor": -1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura do slide 12 menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt2_slide12_max": {
+      "valor": 0.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura do slide 12 menos a frota necessária dia a dia no dia p90; negativo = falta; ALT2; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt2_slide12_max_banda": {
+      "valor": 0.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura do slide 12 menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_dia_tipico_alt3_pr09_4_pos_colmeia": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (média na janela observada de PR09 menos a frota da hora no perfil médio; ALT3, PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide14_min_pos_colmeia": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária dia a dia no dia p90; negativo = falta; ALT3; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide14_min_banda_pos_colmeia": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_dia_tipico_alt3_pr09_5_pos_colmeia": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (média na janela observada de PR09 menos a frota da hora no perfil médio; ALT3, PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide14_max_pos_colmeia": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária dia a dia no dia p90; negativo = falta; ALT3; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide14_max_banda_pos_colmeia": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide12_min_pos_colmeia": {
+      "valor": -1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária dia a dia no dia p90; negativo = falta; ALT3; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide12_min_banda_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide12_max_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária dia a dia no dia p90; negativo = falta; ALT3; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide12_max_banda_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_dia_tipico_alt3_pos_colmeia": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (média na janela observada de PR09 menos a frota da hora no perfil médio; ALT3; PR09 do slide 14, ponta inferior; faixa até a ponta superior)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.0,
+        "superior": 4.0,
+        "nivel": null,
+        "nota": "ponta inferior e superior do slide 14"
+      }
+    },
+    "sobra_dia_tipico_alt3_minima_na_hora_pos_colmeia": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (pior hora do dia típico: PR09 menos a frota da hora; ponta inferior do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt2_slide12_min_pos_colmeia": {
+      "valor": -1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura do slide 12 menos a frota necessária dia a dia no dia p90; negativo = falta; ALT2; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt2_slide12_min_banda_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura do slide 12 menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt2_slide12_max_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura do slide 12 menos a frota necessária dia a dia no dia p90; negativo = falta; ALT2; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt2_slide12_max_banda_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura do slide 12 menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_dia_tipico_alt3_pr09_4_normal": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (média na janela observada de PR09 menos a frota da hora no perfil médio; ALT3, PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide14_min_normal": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária dia a dia no dia p90; negativo = falta; ALT3; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide14_min_banda_normal": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_dia_tipico_alt3_pr09_5_normal": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (média na janela observada de PR09 menos a frota da hora no perfil médio; ALT3, PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide14_max_normal": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária dia a dia no dia p90; negativo = falta; ALT3; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide14_max_banda_normal": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide12_min_normal": {
+      "valor": -1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária dia a dia no dia p90; negativo = falta; ALT3; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide12_min_banda_normal": {
+      "valor": 0.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide12_max_normal": {
+      "valor": 0.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária dia a dia no dia p90; negativo = falta; ALT3; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt3_slide12_max_banda_normal": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_dia_tipico_alt3_normal": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (média na janela observada de PR09 menos a frota da hora no perfil médio; ALT3; PR09 do slide 14, ponta inferior; faixa até a ponta superior)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 3.0,
+        "superior": 4.0,
+        "nivel": null,
+        "nota": "ponta inferior e superior do slide 14"
+      }
+    },
+    "sobra_dia_tipico_alt3_minima_na_hora_normal": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (pior hora do dia típico: PR09 menos a frota da hora; ponta inferior do slide 14)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt2_slide12_min_normal": {
+      "valor": -1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura do slide 12 menos a frota necessária dia a dia no dia p90; negativo = falta; ALT2; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt2_slide12_min_banda_normal": {
+      "valor": 0.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura do slide 12 menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt2_slide12_max_normal": {
+      "valor": 0.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura do slide 12 menos a frota necessária dia a dia no dia p90; negativo = falta; ALT2; ponta desfavorável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "sobra_pico_p90_alt2_slide12_max_banda_normal": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota da leitura do slide 12 menos a frota necessária pelo perfil da banda, variante otimista; negativo = falta; ALT2)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_linhas_p90_alt3": {
+      "valor": 139.48749999999998,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (soma na janela de max(0, perfil p90 − perfil típico), pedido-a-pedido da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_pedidos_p90_alt3": {
+      "valor": 42.43749999999999,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (soma na janela de max(0, perfil p90 − perfil típico), checkout da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_horas_p90_alt3": {
+      "valor": 2.3183368055555555,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (excedente do dia p90 sobre o típico, jornada ativa de ANA-003; teto conservador)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_fte_p90_alt3": {
+      "valor": 0.31628060103077155,
+      "unidade": "FTE",
+      "descricao": "FTE (excedente de horas do dia p90 ÷ PR12, fração de FTE equivalente de horas ativas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90": {
+      "valor": 3.1864299134515215,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas pela frota proposta no dia p90, ALT3, leitura autônoma de M23: limite superior; M14 do teto conservador do G2; PR09 do slide 14, ponta inferior)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 2.8162231133806026,
+        "superior": 3.1864299134515215,
+        "nivel": null,
+        "nota": "grade: PR08, perfil banda e dia real, leituras de PR09 dos slides 12 e 14"
+      }
+    },
+    "horas_residuais_p90": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (excedente de horas menos horas absorvidas, mínimo zero; leitura autônoma)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "reforco_p90_cr8": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço sem robô além da equipe com robô no dia p90, leitura autônoma de M23, limite inferior do reforço: teto inteiro das horas residuais ÷ PR12)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "cr8_passa_no_dia_p90": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cr8_passa_em_toda_a_grade": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_t900": {
+      "valor": 4.444638618512,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; M14 do teto base; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_t900": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma, com M14 e excedente do teto base)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_slide14_min": {
+      "valor": 3.1864299134515215,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_slide14_min": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_slide14_min": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_slide14_max": {
+      "valor": 3.1864299134515215,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_slide14_max": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_slide14_max": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_slide12_min": {
+      "valor": 3.1864299134515215,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_slide12_min": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_slide12_min": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_slide12_max": {
+      "valor": 3.1864299134515215,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_slide12_max": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_slide12_max": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_literal": {
+      "valor": 3.1864299134515215,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (fórmula literal de M23: capacidade de N robôs em cada tipo, leitura autônoma; limite superior da absorção)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_com_robo_nas_linhas_absorvidas_p90": {
+      "valor": 2.756439393939394,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (trabalho humano que continua nas linhas absorvidas pela frota: linhas e pedidos absorvidos ÷ PR05; leitura colaborativa)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_poupadas_colab": {
+      "valor": 0.42999051951212763,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (poupadas pelo robô no dia p90, leitura colaborativa: horas absorvidas autônomas menos o trabalho humano que continua; ALT3; M14 do teto conservador; PR09 do slide 14, ponta inferior)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.265073909329288,
+        "superior": 0.42999051951212763,
+        "nivel": null,
+        "nota": "grade: PR08, perfil banda e dia real, leituras de PR09 dos slides 12 e 14"
+      }
+    },
+    "horas_residuais_colab": {
+      "valor": 1.888346286043428,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (excedente de horas menos horas poupadas, mínimo zero; leitura colaborativa)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.888346286043428,
+        "superior": 2.0532628962262676,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "horas_residuais_colab_em_fte": {
+      "valor": 0.257618865763087,
+      "unidade": "FTE",
+      "descricao": "FTE (horas residuais da leitura colaborativa ÷ PR12; fração, sem o teto inteiro de M23)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço no dia p90 na leitura colaborativa: teto inteiro das horas residuais ÷ PR12)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "cr8_passa_no_dia_p90_colab": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cr8_passa_em_toda_a_grade_colab": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_poupadas_colab_por_tipo_piso_zero": {
+      "valor": 0.6437022976192863,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (poupadas, leitura colaborativa, sem deixar o checkout com robô piorar o manual: economia por tipo com piso zero; sensibilidade à premissa de PR05 no checkout, E9)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_por_tipo_piso_zero": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa com piso zero por tipo; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_t900": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa, com M14 e excedente do teto base)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_zero_possivel_colab": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pr05_para_reforco_zero": {
+      "valor": 209.5685340031547,
+      "unidade": "linhas por hora por operador",
+      "descricao": "linhas por hora por operador (PR05 que zeraria o reforço na leitura colaborativa, variante primária; compara com PR05 do deck)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_linhas_p90_alt3_pos_colmeia": {
+      "valor": 54.27777777777778,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (soma na janela de max(0, perfil p90 − perfil típico), pedido-a-pedido da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_pedidos_p90_alt3_pos_colmeia": {
+      "valor": 41.66666666666667,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (soma na janela de max(0, perfil p90 − perfil típico), checkout da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_horas_p90_alt3_pos_colmeia": {
+      "valor": 1.2041738683127572,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (excedente do dia p90 sobre o típico, jornada ativa de ANA-003; teto conservador)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_fte_p90_alt3_pos_colmeia": {
+      "valor": 0.1642802003155194,
+      "unidade": "FTE",
+      "descricao": "FTE (excedente de horas do dia p90 ÷ PR12, fração de FTE equivalente de horas ativas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_pos_colmeia": {
+      "valor": 1.5016268482759825,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas pela frota proposta no dia p90, ALT3, leitura autônoma de M23: limite superior; M14 do teto conservador do G2; PR09 do slide 14, ponta inferior)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.5016268482759825,
+        "superior": 1.7684006219029014,
+        "nivel": null,
+        "nota": "grade: PR08, perfil banda e dia real, leituras de PR09 dos slides 12 e 14"
+      }
+    },
+    "horas_residuais_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (excedente de horas menos horas absorvidas, mínimo zero; leitura autônoma)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "reforco_p90_cr8_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço sem robô além da equipe com robô no dia p90, leitura autônoma de M23, limite inferior do reforço: teto inteiro das horas residuais ÷ PR12)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "cr8_passa_no_dia_p90_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cr8_passa_em_toda_a_grade_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_t900_pos_colmeia": {
+      "valor": 2.1544385134112582,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; M14 do teto base; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_t900_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma, com M14 e excedente do teto base)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_slide14_min_pos_colmeia": {
+      "valor": 1.5016268482759825,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_slide14_min_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_slide14_min_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_slide14_max_pos_colmeia": {
+      "valor": 1.5016268482759825,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_slide14_max_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_slide14_max_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_slide12_min_pos_colmeia": {
+      "valor": 1.5016268482759825,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_slide12_min_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_slide12_min_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_slide12_max_pos_colmeia": {
+      "valor": 1.5016268482759825,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_slide12_max_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_slide12_max_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_literal_pos_colmeia": {
+      "valor": 1.5016268482759825,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (fórmula literal de M23: capacidade de N robôs em cada tipo, leitura autônoma; limite superior da absorção)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_com_robo_nas_linhas_absorvidas_p90_pos_colmeia": {
+      "valor": 1.453703703703704,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (trabalho humano que continua nas linhas absorvidas pela frota: linhas e pedidos absorvidos ÷ PR05; leitura colaborativa)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_poupadas_colab_pos_colmeia": {
+      "valor": 0.04792314457227853,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (poupadas pelo robô no dia p90, leitura colaborativa: horas absorvidas autônomas menos o trabalho humano que continua; ALT3; M14 do teto conservador; PR09 do slide 14, ponta inferior)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0386026421049217,
+        "superior": 0.04792314457227853,
+        "nivel": null,
+        "nota": "grade: PR08, perfil banda e dia real, leituras de PR09 dos slides 12 e 14"
+      }
+    },
+    "horas_residuais_colab_pos_colmeia": {
+      "valor": 1.1562507237404787,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (excedente de horas menos horas poupadas, mínimo zero; leitura colaborativa)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.1562507237404787,
+        "superior": 1.1655712262078355,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "horas_residuais_colab_em_fte_pos_colmeia": {
+      "valor": 0.15774225426200256,
+      "unidade": "FTE",
+      "descricao": "FTE (horas residuais da leitura colaborativa ÷ PR12; fração, sem o teto inteiro de M23)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço no dia p90 na leitura colaborativa: teto inteiro das horas residuais ÷ PR12)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "cr8_passa_no_dia_p90_colab_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cr8_passa_em_toda_a_grade_colab_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_poupadas_colab_por_tipo_piso_zero_pos_colmeia": {
+      "valor": 0.25775306907611606,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (poupadas, leitura colaborativa, sem deixar o checkout com robô piorar o manual: economia por tipo com piso zero; sensibilidade à premissa de PR05 no checkout, E9)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_por_tipo_piso_zero_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa com piso zero por tipo; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_t900_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa, com M14 e excedente do teto base)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_zero_possivel_colab_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pr05_para_reforco_zero_pos_colmeia": {
+      "valor": 322.5533139937151,
+      "unidade": "linhas por hora por operador",
+      "descricao": "linhas por hora por operador (PR05 que zeraria o reforço na leitura colaborativa, variante primária; compara com PR05 do deck)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_linhas_p90_alt3_normal": {
+      "valor": 26.315789473684212,
+      "unidade": "linhas por dia",
+      "descricao": "linhas por dia (soma na janela de max(0, perfil p90 − perfil típico), pedido-a-pedido da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_pedidos_p90_alt3_normal": {
+      "valor": 31.347368421052632,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos por dia (soma na janela de max(0, perfil p90 − perfil típico), checkout da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_horas_p90_alt3_normal": {
+      "valor": 0.8162134502923983,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (excedente do dia p90 sobre o típico, jornada ativa de ANA-003; teto conservador)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "excedente_fte_p90_alt3_normal": {
+      "valor": 0.11135244888027263,
+      "unidade": "FTE",
+      "descricao": "FTE (excedente de horas do dia p90 ÷ PR12, fração de FTE equivalente de horas ativas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_normal": {
+      "valor": 0.8407892466159795,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas pela frota proposta no dia p90, ALT3, leitura autônoma de M23: limite superior; M14 do teto conservador do G2; PR09 do slide 14, ponta inferior)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.8407892466159795,
+        "superior": 1.8882792824457928,
+        "nivel": null,
+        "nota": "grade: PR08, perfil banda e dia real, leituras de PR09 dos slides 12 e 14"
+      }
+    },
+    "horas_residuais_p90_normal": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (excedente de horas menos horas absorvidas, mínimo zero; leitura autônoma)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "reforco_p90_cr8_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço sem robô além da equipe com robô no dia p90, leitura autônoma de M23, limite inferior do reforço: teto inteiro das horas residuais ÷ PR12)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "cr8_passa_no_dia_p90_normal": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cr8_passa_em_toda_a_grade_normal": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_t900_normal": {
+      "valor": 1.2256837236980207,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; M14 do teto base; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_t900_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma, com M14 e excedente do teto base)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_slide14_min_normal": {
+      "valor": 0.8407892466159795,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_slide14_min_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_slide14_min_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_slide14_max_normal": {
+      "valor": 0.8407892466159795,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_slide14_max_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_slide14_max_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_slide12_min_normal": {
+      "valor": 0.8407892466159795,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_slide12_min_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_slide12_min_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_slide12_max_normal": {
+      "valor": 0.8407892466159795,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (absorvidas, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_slide12_max_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura autônoma; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_slide12_max_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa; frota da leitura)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_absorvidas_p90_literal_normal": {
+      "valor": 0.8407892466159795,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (fórmula literal de M23: capacidade de N robôs em cada tipo, leitura autônoma; limite superior da absorção)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_com_robo_nas_linhas_absorvidas_p90_normal": {
+      "valor": 0.8736842105263157,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (trabalho humano que continua nas linhas absorvidas pela frota: linhas e pedidos absorvidos ÷ PR05; leitura colaborativa)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_poupadas_colab_normal": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (poupadas pelo robô no dia p90, leitura colaborativa: horas absorvidas autônomas menos o trabalho humano que continua; ALT3; M14 do teto conservador; PR09 do slide 14, ponta inferior)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0094914036579139,
+        "nivel": null,
+        "nota": "grade: PR08, perfil banda e dia real, leituras de PR09 dos slides 12 e 14"
+      }
+    },
+    "horas_residuais_colab_normal": {
+      "valor": 0.8162134502923983,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (excedente de horas menos horas poupadas, mínimo zero; leitura colaborativa)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.8067220466344844,
+        "superior": 0.8162134502923983,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "horas_residuais_colab_em_fte_normal": {
+      "valor": 0.11135244888027263,
+      "unidade": "FTE",
+      "descricao": "FTE (horas residuais da leitura colaborativa ÷ PR12; fração, sem o teto inteiro de M23)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço no dia p90 na leitura colaborativa: teto inteiro das horas residuais ÷ PR12)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "cr8_passa_no_dia_p90_colab_normal": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cr8_passa_em_toda_a_grade_colab_normal": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_poupadas_colab_por_tipo_piso_zero_normal": {
+      "valor": 0.12496781887006658,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (poupadas, leitura colaborativa, sem deixar o checkout com robô piorar o manual: economia por tipo com piso zero; sensibilidade à premissa de PR05 no checkout, E9)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_por_tipo_piso_zero_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa com piso zero por tipo; sensibilidade)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_p90_cr8_colab_t900_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (reforço, leitura colaborativa, com M14 e excedente do teto base)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "reforco_zero_possivel_colab_normal": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (1 = sim, 0 = não)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pr05_para_reforco_zero_normal": {
+      "valor": 2346.339346872245,
+      "unidade": "linhas por hora por operador",
+      "descricao": "linhas por hora por operador (PR05 que zeraria o reforço na leitura colaborativa, variante primária; compara com PR05 do deck)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_pico_p90_com_robo": {
+      "valor": 1.0,
+      "unidade": "separadores",
+      "descricao": "separadores (máximo na janela do teto inteiro de (linhas + pedidos) ÷ PR05; ALT3, dia p90 pela banda)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": null,
+        "nota": "PR05 de 0,75 a 1,25 vezes (premissa de zona, confiança baixa)"
+      }
+    },
+    "separadores_pico_p90_sem_robo": {
+      "valor": 1.0,
+      "unidade": "separadores",
+      "descricao": "separadores (máximo na janela do teto inteiro de linhas ÷ M14 + pedidos ÷ M14 do checkout; ALT3, dia p90 pela banda; M14 do teto conservador)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 2.0,
+        "nivel": null,
+        "nota": "M14 do teto conservador e do teto base"
+      }
+    },
+    "separadores_pico_p90_com_robo_continuo": {
+      "valor": 0.8636363636363636,
+      "unidade": "separadores equivalentes",
+      "descricao": "separadores equivalentes (pico da carga horária do dia p90 ÷ PR05, sem arredondar; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_pico_p90_sem_robo_continuo": {
+      "valor": 0.9335059729831303,
+      "unidade": "separadores equivalentes",
+      "descricao": "separadores equivalentes (pico da carga horária do dia p90 ÷ M14, sem arredondar; ALT3; M14 do teto conservador)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_pico_tipico_com_robo": {
+      "valor": 1.0,
+      "unidade": "separadores",
+      "descricao": "separadores (máximo na janela no dia típico, com robô)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_pico_tipico_sem_robo": {
+      "valor": 1.0,
+      "unidade": "separadores",
+      "descricao": "separadores (máximo na janela no dia típico, sem robô)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hora_do_pico_de_separadores_p90": {
+      "valor": 8.0,
+      "unidade": "hora do dia",
+      "descricao": "hora do dia (primeira hora de maior número de separadores com robô no dia p90)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ativos_hoje_pico_armazem_dias_p90": {
+      "valor": 5.625,
+      "unidade": "operadores",
+      "descricao": "operadores (média por dia dos operadores distintos com linha iniciada na hora do pico de separadores, armazém, dias da banda p90 da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ativos_hoje_pico_royal_canin_dias_p90": {
+      "valor": 1.625,
+      "unidade": "operadores",
+      "descricao": "operadores (idem, só linhas da Royal Canin; só com PAR07 operadores distintos na hora)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_pico_p90_com_robo_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "separadores",
+      "descricao": "separadores (máximo na janela do teto inteiro de (linhas + pedidos) ÷ PR05; ALT3, dia p90 pela banda)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": null,
+        "nota": "PR05 de 0,75 a 1,25 vezes (premissa de zona, confiança baixa)"
+      }
+    },
+    "separadores_pico_p90_sem_robo_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "separadores",
+      "descricao": "separadores (máximo na janela do teto inteiro de linhas ÷ M14 + pedidos ÷ M14 do checkout; ALT3, dia p90 pela banda; M14 do teto conservador)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": null,
+        "nota": "M14 do teto conservador e do teto base"
+      }
+    },
+    "separadores_pico_p90_com_robo_continuo_pos_colmeia": {
+      "valor": 0.7222222222222222,
+      "unidade": "separadores equivalentes",
+      "descricao": "separadores equivalentes (pico da carga horária do dia p90 ÷ PR05, sem arredondar; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_pico_p90_sem_robo_continuo_pos_colmeia": {
+      "valor": 0.5408849604207598,
+      "unidade": "separadores equivalentes",
+      "descricao": "separadores equivalentes (pico da carga horária do dia p90 ÷ M14, sem arredondar; ALT3; M14 do teto conservador)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_pico_tipico_com_robo_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "separadores",
+      "descricao": "separadores (máximo na janela no dia típico, com robô)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_pico_tipico_sem_robo_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "separadores",
+      "descricao": "separadores (máximo na janela no dia típico, sem robô)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hora_do_pico_de_separadores_p90_pos_colmeia": {
+      "valor": 8.0,
+      "unidade": "hora do dia",
+      "descricao": "hora do dia (primeira hora de maior número de separadores com robô no dia p90)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ativos_hoje_pico_armazem_dias_p90_pos_colmeia": {
+      "valor": 6.166666666666667,
+      "unidade": "operadores",
+      "descricao": "operadores (média por dia dos operadores distintos com linha iniciada na hora do pico de separadores, armazém, dias da banda p90 da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ativos_hoje_pico_royal_canin_dias_p90_pos_colmeia": {
+      "valor": 1.8333333333333333,
+      "unidade": "operadores",
+      "descricao": "operadores (idem, só linhas da Royal Canin; só com PAR07 operadores distintos na hora)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_pico_p90_com_robo_normal": {
+      "valor": 1.0,
+      "unidade": "separadores",
+      "descricao": "separadores (máximo na janela do teto inteiro de (linhas + pedidos) ÷ PR05; ALT3, dia p90 pela banda)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": null,
+        "nota": "PR05 de 0,75 a 1,25 vezes (premissa de zona, confiança baixa)"
+      }
+    },
+    "separadores_pico_p90_sem_robo_normal": {
+      "valor": 1.0,
+      "unidade": "separadores",
+      "descricao": "separadores (máximo na janela do teto inteiro de linhas ÷ M14 + pedidos ÷ M14 do checkout; ALT3, dia p90 pela banda; M14 do teto conservador)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": null,
+        "nota": "M14 do teto conservador e do teto base"
+      }
+    },
+    "separadores_pico_p90_com_robo_continuo_normal": {
+      "valor": 0.4878787878787878,
+      "unidade": "separadores equivalentes",
+      "descricao": "separadores equivalentes (pico da carga horária do dia p90 ÷ PR05, sem arredondar; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_pico_p90_sem_robo_continuo_normal": {
+      "valor": 0.39262676139861624,
+      "unidade": "separadores equivalentes",
+      "descricao": "separadores equivalentes (pico da carga horária do dia p90 ÷ M14, sem arredondar; ALT3; M14 do teto conservador)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_pico_tipico_com_robo_normal": {
+      "valor": 1.0,
+      "unidade": "separadores",
+      "descricao": "separadores (máximo na janela no dia típico, com robô)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_pico_tipico_sem_robo_normal": {
+      "valor": 1.0,
+      "unidade": "separadores",
+      "descricao": "separadores (máximo na janela no dia típico, sem robô)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "hora_do_pico_de_separadores_p90_normal": {
+      "valor": 8.0,
+      "unidade": "hora do dia",
+      "descricao": "hora do dia (primeira hora de maior número de separadores com robô no dia p90)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ativos_hoje_pico_armazem_dias_p90_normal": {
+      "valor": 5.8,
+      "unidade": "operadores",
+      "descricao": "operadores (média por dia dos operadores distintos com linha iniciada na hora do pico de separadores, armazém, dias da banda p90 da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ativos_hoje_pico_royal_canin_dias_p90_normal": {
+      "valor": 1.8,
+      "unidade": "operadores",
+      "descricao": "operadores (idem, só linhas da Royal Canin; só com PAR07 operadores distintos na hora)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ativos_hoje_horas_estendidas": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (maior média por dia pleno, entre as horas depois da janela e antes das 22 h com PAR07 operadores distintos no período, dos operadores com linha iniciada na hora; armazém; sem hora reportável, 0 por convenção de privacidade: nenhum grupo com PAR07 operadores é reportável depois da janela, o que não prova que ninguém trabalhe nesse horário)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_estendidas_com_grupo_reportavel": {
+      "valor": 0.0,
+      "unidade": "horas",
+      "descricao": "horas (depois da janela e antes das 22 h com PAR07 operadores distintos no período)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_extra_janela_retomada": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (além da janela observada que a frota proposta precisaria para processar a fila; PR09 do slide 14, ponta inferior; PR08 provável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "PR08 inferior a superior e as quatro pontas de PR09 dos slides 12 e 14"
+      }
+    },
+    "horas_extra_janela_retomada_pior_caso": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (pior caso da grade de PR08 e das quatro pontas de PR09)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_horario_estendido_com_robo": {
+      "valor": 0.0,
+      "unidade": "separadores",
+      "descricao": "separadores (simultâneos nas horas estendidas, com robô: (linhas + pedidos) ÷ PR05)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "separadores_horario_estendido_sem_robo": {
+      "valor": 0.0,
+      "unidade": "separadores",
+      "descricao": "separadores (simultâneos nas horas estendidas, sem robô: linhas ÷ M14 + pedidos ÷ M14 do checkout)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "horas_extra_janela_retomada_dia_maximo_limite_superior": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (além da janela observada que a frota proposta precisaria para processar a fila; PR09 do slide 14, ponta inferior; PR08 provável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 4.844263128176173,
+        "nivel": null,
+        "nota": "PR08 inferior a superior e as quatro pontas de PR09 dos slides 12 e 14"
+      }
+    },
+    "horas_extra_janela_retomada_dia_maximo_limite_superior_pior_caso": {
+      "valor": 4.844263128176173,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (pior caso da grade de PR08 e das quatro pontas de PR09)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_horario_estendido_com_robo_dia_maximo_limite_superior": {
+      "valor": 0.0,
+      "unidade": "separadores",
+      "descricao": "separadores (simultâneos nas horas estendidas, com robô: (linhas + pedidos) ÷ PR05)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 1.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "separadores_horario_estendido_sem_robo_dia_maximo_limite_superior": {
+      "valor": 0.0,
+      "unidade": "separadores",
+      "descricao": "separadores (simultâneos nas horas estendidas, sem robô: linhas ÷ M14 + pedidos ÷ M14 do checkout)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 1.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "horas_extra_janela_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (além da janela observada que a frota proposta precisaria para processar a fila; PR09 do slide 14, ponta inferior; PR08 provável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "PR08 inferior a superior e as quatro pontas de PR09 dos slides 12 e 14"
+      }
+    },
+    "horas_extra_janela_retomada_pior_caso_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (pior caso da grade de PR08 e das quatro pontas de PR09)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_horario_estendido_com_robo_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "separadores",
+      "descricao": "separadores (simultâneos nas horas estendidas, com robô: (linhas + pedidos) ÷ PR05)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "separadores_horario_estendido_sem_robo_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "separadores",
+      "descricao": "separadores (simultâneos nas horas estendidas, sem robô: linhas ÷ M14 + pedidos ÷ M14 do checkout)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "horas_extra_janela_retomada_dia_maximo_limite_superior_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (além da janela observada que a frota proposta precisaria para processar a fila; PR09 do slide 14, ponta inferior; PR08 provável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 2.727098939707635,
+        "nivel": null,
+        "nota": "PR08 inferior a superior e as quatro pontas de PR09 dos slides 12 e 14"
+      }
+    },
+    "horas_extra_janela_retomada_dia_maximo_limite_superior_pior_caso_pos_colmeia": {
+      "valor": 2.727098939707635,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (pior caso da grade de PR08 e das quatro pontas de PR09)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_horario_estendido_com_robo_dia_maximo_limite_superior_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "separadores",
+      "descricao": "separadores (simultâneos nas horas estendidas, com robô: (linhas + pedidos) ÷ PR05)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 1.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "separadores_horario_estendido_sem_robo_dia_maximo_limite_superior_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "separadores",
+      "descricao": "separadores (simultâneos nas horas estendidas, sem robô: linhas ÷ M14 + pedidos ÷ M14 do checkout)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 1.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "horas_extra_janela_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (além da janela observada que a frota proposta precisaria para processar a fila; PR09 do slide 14, ponta inferior; PR08 provável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "PR08 inferior a superior e as quatro pontas de PR09 dos slides 12 e 14"
+      }
+    },
+    "horas_extra_janela_retomada_pior_caso_normal": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (pior caso da grade de PR08 e das quatro pontas de PR09)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_horario_estendido_com_robo_normal": {
+      "valor": 0.0,
+      "unidade": "separadores",
+      "descricao": "separadores (simultâneos nas horas estendidas, com robô: (linhas + pedidos) ÷ PR05)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "separadores_horario_estendido_sem_robo_normal": {
+      "valor": 0.0,
+      "unidade": "separadores",
+      "descricao": "separadores (simultâneos nas horas estendidas, sem robô: linhas ÷ M14 + pedidos ÷ M14 do checkout)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "horas_extra_janela_retomada_dia_maximo_limite_superior_normal": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (além da janela observada que a frota proposta precisaria para processar a fila; PR09 do slide 14, ponta inferior; PR08 provável)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "PR08 inferior a superior e as quatro pontas de PR09 dos slides 12 e 14"
+      }
+    },
+    "horas_extra_janela_retomada_dia_maximo_limite_superior_pior_caso_normal": {
+      "valor": 0.0,
+      "unidade": "horas por dia",
+      "descricao": "horas por dia (pior caso da grade de PR08 e das quatro pontas de PR09)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "separadores_horario_estendido_com_robo_dia_maximo_limite_superior_normal": {
+      "valor": 0.0,
+      "unidade": "separadores",
+      "descricao": "separadores (simultâneos nas horas estendidas, com robô: (linhas + pedidos) ÷ PR05)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "separadores_horario_estendido_sem_robo_dia_maximo_limite_superior_normal": {
+      "valor": 0.0,
+      "unidade": "separadores",
+      "descricao": "separadores (simultâneos nas horas estendidas, sem robô: linhas ÷ M14 + pedidos ÷ M14 do checkout)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.0,
+        "superior": 0.0,
+        "nivel": null,
+        "nota": "mesma grade"
+      }
+    },
+    "h02_carga_adicional_pessoas_hora_com_robo_p90": {
+      "valor": 2.7267045454545453,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (carga adicional do dia p90 sobre o típico, com robô: (linhas + pedidos) ÷ PR05; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_carga_adicional_pessoas_hora_sem_robo_p90": {
+      "valor": 3.1580130713973142,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (carga adicional do dia p90 sobre o típico, sem robô: linhas ÷ M14 + pedidos ÷ M14 do checkout; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_carga_adicional_pessoas_hora_com_robo_retomada": {
+      "valor": 0.6128577441077443,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (carga adicional do dia retomada sobre o típico, com robô: (linhas + pedidos) ÷ PR05; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_carga_adicional_pessoas_hora_sem_robo_retomada": {
+      "valor": 0.585179620708563,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (carga adicional do dia retomada sobre o típico, sem robô: linhas ÷ M14 + pedidos ÷ M14 do checkout; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_carga_adicional_pessoas_hora_com_robo_p90_pos_colmeia": {
+      "valor": 1.3476430976430969,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (carga adicional do dia p90 sobre o típico, com robô: (linhas + pedidos) ÷ PR05; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_carga_adicional_pessoas_hora_sem_robo_p90_pos_colmeia": {
+      "valor": 1.4074431196363735,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (carga adicional do dia p90 sobre o típico, sem robô: linhas ÷ M14 + pedidos ÷ M14 do checkout; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_carga_adicional_pessoas_hora_com_robo_retomada_pos_colmeia": {
+      "valor": 1.2183960820324458,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (carga adicional do dia retomada sobre o típico, com robô: (linhas + pedidos) ÷ PR05; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_carga_adicional_pessoas_hora_sem_robo_retomada_pos_colmeia": {
+      "valor": 1.2502890977231753,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (carga adicional do dia retomada sobre o típico, sem robô: linhas ÷ M14 + pedidos ÷ M14 do checkout; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_carga_adicional_pessoas_hora_com_robo_p90_normal": {
+      "valor": 0.811642743221691,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (carga adicional do dia p90 sobre o típico, com robô: (linhas + pedidos) ÷ PR05; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_carga_adicional_pessoas_hora_sem_robo_p90_normal": {
+      "valor": 0.7858759592081177,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (carga adicional do dia p90 sobre o típico, sem robô: linhas ÷ M14 + pedidos ÷ M14 do checkout; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_carga_adicional_pessoas_hora_com_robo_retomada_normal": {
+      "valor": 1.1305821371610847,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (carga adicional do dia retomada sobre o típico, com robô: (linhas + pedidos) ÷ PR05; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_carga_adicional_pessoas_hora_sem_robo_retomada_normal": {
+      "valor": 1.0531143342317815,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (carga adicional do dia retomada sobre o típico, sem robô: linhas ÷ M14 + pedidos ÷ M14 do checkout; ALT3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_hora_extra_pessoas_hora_p90": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, manual, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_escala_pessoas_hora_p90": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, manual, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_operadores_hora_extra_p90": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, manual, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_operadores_escala_p90": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, manual, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_hora_extra_pessoas_hora_p90": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_escala_pessoas_hora_p90": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, robo, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_operadores_hora_extra_p90": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_operadores_escala_p90": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, robo, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_hora_extra_pessoas_hora_p90": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo checkout manual, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_escala_pessoas_hora_p90": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, robo checkout manual, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_operadores_hora_extra_p90": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo checkout manual, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_operadores_escala_p90": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, robo checkout manual, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_hora_extra_pessoas_hora_p90": {
+      "valor": 2.3183368055555555,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, manual, dia p90; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_temporario_pessoas_hora_p90": {
+      "valor": 7.33,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (temporário, manual, dia p90; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_operadores_hora_extra_p90": {
+      "valor": 2.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, manual, dia p90; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_operadores_temporario_p90": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (temporários com jornada PR12, manual, dia p90; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_hora_extra_pessoas_hora_p90": {
+      "valor": 1.888346286043428,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo, dia p90; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_temporario_pessoas_hora_p90": {
+      "valor": 7.33,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (temporário, robo, dia p90; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_operadores_hora_extra_p90": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo, dia p90; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_operadores_temporario_p90": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (temporários com jornada PR12, robo, dia p90; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_hora_extra_pessoas_hora_retomada": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, manual, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_escala_pessoas_hora_retomada": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, manual, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_operadores_hora_extra_retomada": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, manual, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_operadores_escala_retomada": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, manual, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_hora_extra_pessoas_hora_retomada": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_escala_pessoas_hora_retomada": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, robo, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_operadores_hora_extra_retomada": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_operadores_escala_retomada": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, robo, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_hora_extra_pessoas_hora_retomada": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo checkout manual, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_escala_pessoas_hora_retomada": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, robo checkout manual, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_operadores_hora_extra_retomada": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo checkout manual, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_operadores_escala_retomada": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, robo checkout manual, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_hora_extra_pessoas_hora_retomada": {
+      "valor": 0.6668051697530868,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, manual, dia retomada; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_temporario_pessoas_hora_retomada": {
+      "valor": 7.33,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (temporário, manual, dia retomada; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_operadores_hora_extra_retomada": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, manual, dia retomada; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_operadores_temporario_retomada": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (temporários com jornada PR12, manual, dia retomada; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_hora_extra_pessoas_hora_retomada": {
+      "valor": 0.6668051697530868,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo, dia retomada; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_temporario_pessoas_hora_retomada": {
+      "valor": 7.33,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (temporário, robo, dia retomada; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_operadores_hora_extra_retomada": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo, dia retomada; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_operadores_temporario_retomada": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (temporários com jornada PR12, robo, dia retomada; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_hora_extra_pessoas_hora_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, manual, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_escala_pessoas_hora_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, manual, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_operadores_hora_extra_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, manual, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_operadores_escala_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, manual, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_hora_extra_pessoas_hora_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_escala_pessoas_hora_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, robo, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_operadores_hora_extra_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_operadores_escala_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, robo, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_hora_extra_pessoas_hora_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo checkout manual, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_escala_pessoas_hora_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, robo checkout manual, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_operadores_hora_extra_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo checkout manual, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_operadores_escala_p90_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, robo checkout manual, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_hora_extra_pessoas_hora_p90_pos_colmeia": {
+      "valor": 1.2041738683127572,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, manual, dia p90; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_temporario_pessoas_hora_p90_pos_colmeia": {
+      "valor": 7.33,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (temporário, manual, dia p90; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_operadores_hora_extra_p90_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, manual, dia p90; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_operadores_temporario_p90_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (temporários com jornada PR12, manual, dia p90; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_hora_extra_pessoas_hora_p90_pos_colmeia": {
+      "valor": 1.1562507237404787,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo, dia p90; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_temporario_pessoas_hora_p90_pos_colmeia": {
+      "valor": 7.33,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (temporário, robo, dia p90; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_operadores_hora_extra_p90_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo, dia p90; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_operadores_temporario_p90_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (temporários com jornada PR12, robo, dia p90; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_hora_extra_pessoas_hora_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, manual, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_escala_pessoas_hora_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, manual, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_operadores_hora_extra_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, manual, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_operadores_escala_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, manual, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_hora_extra_pessoas_hora_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_escala_pessoas_hora_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, robo, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_operadores_hora_extra_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_operadores_escala_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, robo, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_hora_extra_pessoas_hora_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo checkout manual, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_escala_pessoas_hora_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, robo checkout manual, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_operadores_hora_extra_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo checkout manual, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_operadores_escala_retomada_pos_colmeia": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, robo checkout manual, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_hora_extra_pessoas_hora_retomada_pos_colmeia": {
+      "valor": 1.2692344743733637,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, manual, dia retomada; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_temporario_pessoas_hora_retomada_pos_colmeia": {
+      "valor": 7.33,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (temporário, manual, dia retomada; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_operadores_hora_extra_retomada_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, manual, dia retomada; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_operadores_temporario_retomada_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (temporários com jornada PR12, manual, dia retomada; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_hora_extra_pessoas_hora_retomada_pos_colmeia": {
+      "valor": 1.2355426426048068,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo, dia retomada; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_temporario_pessoas_hora_retomada_pos_colmeia": {
+      "valor": 7.33,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (temporário, robo, dia retomada; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_operadores_hora_extra_retomada_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo, dia retomada; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_operadores_temporario_retomada_pos_colmeia": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (temporários com jornada PR12, robo, dia retomada; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_hora_extra_pessoas_hora_p90_normal": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, manual, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_escala_pessoas_hora_p90_normal": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, manual, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_operadores_hora_extra_p90_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, manual, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_operadores_escala_p90_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, manual, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_hora_extra_pessoas_hora_p90_normal": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_escala_pessoas_hora_p90_normal": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, robo, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_operadores_hora_extra_p90_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_operadores_escala_p90_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, robo, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_hora_extra_pessoas_hora_p90_normal": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo checkout manual, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_escala_pessoas_hora_p90_normal": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, robo checkout manual, dia p90; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_operadores_hora_extra_p90_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo checkout manual, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_operadores_escala_p90_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, robo checkout manual, dia p90; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_hora_extra_pessoas_hora_p90_normal": {
+      "valor": 0.8162134502923983,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, manual, dia p90; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_temporario_pessoas_hora_p90_normal": {
+      "valor": 7.33,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (temporário, manual, dia p90; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_operadores_hora_extra_p90_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, manual, dia p90; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_operadores_temporario_p90_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (temporários com jornada PR12, manual, dia p90; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_hora_extra_pessoas_hora_p90_normal": {
+      "valor": 0.8162134502923983,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo, dia p90; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_temporario_pessoas_hora_p90_normal": {
+      "valor": 7.33,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (temporário, robo, dia p90; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_operadores_hora_extra_p90_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo, dia p90; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_operadores_temporario_p90_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (temporários com jornada PR12, robo, dia p90; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_hora_extra_pessoas_hora_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, manual, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_escala_pessoas_hora_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, manual, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_operadores_hora_extra_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, manual, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_manual_operadores_escala_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, manual, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_hora_extra_pessoas_hora_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_escala_pessoas_hora_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, robo, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_operadores_hora_extra_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_operadores_escala_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, robo, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_hora_extra_pessoas_hora_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo checkout manual, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_escala_pessoas_hora_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (escala adicional, robo checkout manual, dia retomada; A: curva de separadores inteiros; ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_operadores_hora_extra_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo checkout manual, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraA_robo_checkout_manual_operadores_escala_retomada_normal": {
+      "valor": 0.0,
+      "unidade": "operadores",
+      "descricao": "operadores (turnos adicionais, robo checkout manual, dia retomada; A: curva de separadores inteiros)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_hora_extra_pessoas_hora_retomada_normal": {
+      "valor": 1.2199634502923984,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, manual, dia retomada; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_temporario_pessoas_hora_retomada_normal": {
+      "valor": 7.33,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (temporário, manual, dia retomada; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_operadores_hora_extra_retomada_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, manual, dia retomada; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_manual_operadores_temporario_retomada_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (temporários com jornada PR12, manual, dia retomada; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_hora_extra_pessoas_hora_retomada_normal": {
+      "valor": 1.2199634502923984,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (hora extra, robo, dia retomada; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_temporario_pessoas_hora_retomada_normal": {
+      "valor": 7.33,
+      "unidade": "pessoas-hora por dia",
+      "descricao": "pessoas-hora por dia (temporário, robo, dia retomada; B: excedente de horas ativas (ANA-003); ALT3; custo [●])",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_operadores_hora_extra_retomada_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (na hora extra de até 2 h por dia, robo, dia retomada; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h02_regraB_robo_operadores_temporario_retomada_normal": {
+      "valor": 1.0,
+      "unidade": "operadores",
+      "descricao": "operadores (temporários com jornada PR12, robo, dia retomada; B: excedente de horas ativas (ANA-003))",
+      "incerteza": null,
+      "contagem": true
+    }
+  },
+  "tabelas": {
+    "frota_grade": "frota_grade.csv",
+    "sobra_e_falta_alt3": "sobra_e_falta_alt3.csv",
+    "cr8_grade": "cr8_grade.csv",
+    "separadores_por_hora_p90": "separadores_por_hora_p90.csv",
+    "retomada_horas_alem_da_janela": "retomada_horas_alem_da_janela.csv",
+    "h02_arranjos_pessoas_hora": "h02_arranjos_pessoas_hora.csv"
+  },
+  "figuras": [
+    "fig_cr8_horas_absorvidas.png",
+    "fig_frota_necessaria_por_alternativa.png",
+    "fig_frota_por_hora_alt3.png",
+    "fig_h02_arranjos.png",
+    "fig_separadores_por_hora_p90.png"
+  ],
+  "notas": "Verificação determinística com premissas (faixa_cenarios), fora das famílias. REGIME DA COLMEIA (revisoes/orquestrador_decisao_regime_colmeia.md, a confirmar por Marcus no G3; correção do red team analítico): o p90 do pedido-a-pedido da Royal Canin no período inteiro é formado por dias anteriores à colmeia, que mudou o mix. As chaves saem em três leituras: sem sufixo e _estresse = variante do plano (período inteiro, regime pré-colmeia e semana do incidente incluídos); _pos_colmeia = BASE da oferta (dias plenos desde a primeira semana com colmeia da Royal Canin, definida pelo dado em ANA-008, sem 21 a 25/09); _normal = janela normal de ANA-002 (24/08 a 18/09, poucos dias). O M14 do período inteiro vem de ANA-004 do plano; o do regime pós-colmeia e o da janela normal, do mix da janela normal (ANA-004, chaves _mix_normal). Frota por hora = teto inteiro da carga em robôs-equivalentes (a regra de ANA-010; a variante por tipo é sensibilidade). Duas formas de perfil: a frota dia a dia (máximo horário de cada dia, p90 entre dias, método 'higher', a mesma de ANA-010, calculada aqui com o mesmo código porque ANA-010 vem depois na ordem do plano), PRIMÁRIA em ALT2, ALT3 e ALT6 (CR4 lido com a ponta desfavorável; uma frota de um robô não tem reserva), e a média dos dias da banda do p90, que alisa o pico horário, como variante otimista (chaves *_banda). Entradas de análises anteriores: PR08 (ANA-006), M14 (ANA-004 e ANA-006), excedente de horas e jornada (ANA-003, tabela excedente_p90_e_retomada, uma janela por leitura), janela e p90 (ANA-008); a conferência do perfil e do p90 com ANA-008 está na chave confere_perfil_ana008. Convenção do squad: sem sufixo = variante do plano. PR09 em duas leituras (slide 14 e slide 12 para a Royal Canin); o armazém inteiro no slide 12 é comparado na chave frota_armazem_p90_so_linhas, sem filtro de compatibilidade. Curva horária = processamento (PQ06), copia o dimensionamento atual de pessoal. Não considera disponibilidade do robô (recarga, manutenção, reserva), que aumenta a frota necessária. CR8 (M23) em duas leituras: a autônoma (a fórmula do contrato: toda linha absorvida pela frota tira o trabalho humano; horas = linhas ÷ M14) é o LIMITE SUPERIOR da absorção; a colaborativa (o Kappabot é colaborativo, como o plano e o H02 supõem ao usar PR05) mantém o trabalho humano das linhas absorvidas, mais rápido (linhas ÷ PR05), e o robô poupa só a diferença; as duas vão a Marcus no G3. PR05 também é aplicado ao checkout (uma coleta por pedido, M09): premissa a validar com a engenharia (E9), com a sensibilidade de piso zero por tipo. O excedente de horas (jornada ativa) e M14 saem de recortes diferentes (M23). H02: fila hora a hora com N robôs por hora; separadores com robô = (linhas + pedidos) ÷ PR05; sem robô = linhas ÷ M14 + pedidos ÷ M14 do checkout; operadores ativos hoje = operadores distintos com linha iniciada na hora (armazém inteiro; a comparação com o escopo da Royal Canin é de ordem de grandeza; grupos com menos de PAR07 operadores distintos na hora ficam em branco, e o zero de ativos_hoje_horas_estendidas é convenção de privacidade, não ausência medida). Os arranjos em pessoas-hora usam duas regras, cada uma igual para o manual e para o robô: A = curva de separadores inteiros por hora; B = excedente de horas ativas de ANA-003 (no robô, o residual da leitura colaborativa). Hora extra até 2 h por dia (CLT, art. 59) e adicional mínimo (CF, art. 7º, XVI) vêm do parecer do especialista (H02); custos de hora extra e de temporário: [●] (E11). Tabelas: frota_grade, sobra_e_falta_alt3, cr8_grade, separadores_por_hora_p90, retomada_horas_alem_da_janela, h02_arranjos_pessoas_hora. Dependências fora do hash do script: analises/comum.py e os resultados e tabelas de ANA-003, ANA-004, ANA-006 e ANA-008.",
+  "em": "2026-10-03T21:21:40",
+  "segundos": 1.57
+}

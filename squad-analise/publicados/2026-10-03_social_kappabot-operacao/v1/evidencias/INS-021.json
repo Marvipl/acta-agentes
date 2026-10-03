@@ -1,0 +1,69 @@
+{
+  "id": "INS-021",
+  "estado": "validado",
+  "afirmacao": "A capacidade do robô no checkout (PR08) fica numa faixa larga pelos dados do WMS: de {{v.inf}} a {{v.sup}}, com ponto provável em {{v.prov}}. A faixa vem do checkout manual: inferior pelo ciclo completo, provável pelo tempo por pedido dentro da tarefa e superior pelo quartil inferior desse tempo. Ela supõe que o robô só tira o deslocamento ao packing e tem confiança baixa: a engenharia da Acta precisa validar a carga útil e os pedidos por viagem.",
+  "pergunta_ref": "P3",
+  "criterio_ref": "CR4",
+  "valores": {
+    "inf": "ANA-006.pr08_inf",
+    "prov": "ANA-006.pr08_provavel",
+    "sup": "ANA-006.pr08_sup",
+    "inf_t300": "ANA-006.pr08_inf_t300",
+    "inf_t1800": "ANA-006.pr08_inf_t1800"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "teto de intervalo de 300 s",
+      "analise": "ANA-006",
+      "resultado": "parcial",
+      "nota": "o ciclo completo sobe e o inferior chega perto do provável (chave pr08_inf_t300): a faixa depende do teto, que os dados não identificam"
+    },
+    {
+      "recorte": "teto de intervalo de 1.800 s",
+      "analise": "ANA-006",
+      "resultado": "parcial",
+      "nota": "o ciclo completo cai e define o piso da faixa (chave pr08_inf_t1800)"
+    },
+    {
+      "recorte": "sensibilidade S3 e semana de incidente",
+      "analise": "ANA-006",
+      "resultado": "passa",
+      "nota": "S3 coincide com a base no checkout e a variante sem 21 a 25/09 é idêntica (chaves pr08_inf_normal e pr08_provavel_normal)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Rodada dois. Mantida a ressalva da primeira rodada (texto inalterado): a faixa é o ritmo do humano; o ciclo do robô (viagem ao packing, carga útil, pedidos por viagem) pode deixar a capacidade abaixo do ponto inferior. Depende de E9. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Usar a faixa inteira de PR08 em CR4 e CR6; a engenharia da Acta valida PR08 (E9) antes de dimensionar a frota do checkout.",
+  "dono": "estatistico (ANA-006); engenharia da Acta (PR08)",
+  "premissas": [
+    "o robô não acelera a coleta, só tira o deslocamento ao packing (premissa do planejador)",
+    "teto de intervalo base como variante primária; os quatro tetos ficam na tabela checkout_pedidos_hora_ciclo"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:21",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:16",
+      "por": "red-team-analitico"
+    }
+  ]
+}

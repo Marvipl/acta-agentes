@@ -1,0 +1,60 @@
+{
+  "id": "INS-078",
+  "estado": "validado",
+  "afirmacao": "A conferência de incidente da Royal Canin nas semanas pares não marca nenhuma semana ({{v.marcadas}}): a razão entre o menor volume por dia pleno da Royal Canin nas semanas pares e a mediana das semanas ímpares sem o incidente de 21 a 25/09 é {{v.razao}}, e a regra marca só o que ficar abaixo da metade. A confirmação não depende do incidente e rodou sem filtro de incidente. Descritivo.",
+  "pergunta_ref": "P9",
+  "criterio_ref": "CR3",
+  "valores": {
+    "marcadas": "ANA-016.n_semanas_pares_marcadas_rc",
+    "razao": "ANA-016.volume_rc_semana_par_minimo_sobre_referencia"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "referência sem a semana do incidente",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "a mediana das semanas ímpares exclui a semana do incidente (tabela conferencia_volume_rc_semanas)"
+    },
+    {
+      "recorte": "limite de metade da referência",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "nenhuma semana par fica abaixo do limite"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Sem mudança; nenhum ataque muda a leitura."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Registrar a conferência no memorando como nota de método; nenhuma ação sobre os dados.",
+  "dono": "estatistico (ANA-016)",
+  "premissas": [
+    "confirmação nas semanas ISO pares, com limiares, pesos e cortes de ANA-012 lidos do arquivo registrado, sem recálculo; Holm com seis testes na F2 (PT-H04, PT-H09, PT-H10, PT-D1, PT-D3, PT-D4)",
+    "incidente de 21 a 25/09 tratado como recorte atípico (revisoes/orquestrador_decisao_semana_incidente.md)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "alta",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:29:04",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:55",
+      "por": "red-team-analitico"
+    }
+  ]
+}

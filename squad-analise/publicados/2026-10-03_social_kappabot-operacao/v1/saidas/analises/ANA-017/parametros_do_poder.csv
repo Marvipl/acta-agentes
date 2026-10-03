@@ -1,0 +1,6 @@
+parametro,valor
+replicas,4000
+semente,42 (derivada por teste)
+alfa,0.05
+testes_F2,6
+poder,0.8

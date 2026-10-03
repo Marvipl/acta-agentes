@@ -1,0 +1,136 @@
+{
+ "supervisor": "sup-dados",
+ "agentes_revisados": [
+  "engenheiro-de-dados",
+  "qualidade-privacidade"
+ ],
+ "rodada": 1,
+ "veredito": "revisar",
+ "rubrica": [
+  {
+   "agente": "engenheiro-de-dados",
+   "criterio": "[crítico] Contrato completo e métricas da decisão definidas",
+   "nota": 1,
+   "evidencia": "Tabela com origem, versão (sha256 do contrato confere com dados/brutos/PROD_90DIAS.xlsx), data de extração inferida, granularidade, chave, fuso e as 21 colunas com unidade e significado. M01 a M28 cobrem CR1 a CR8 e P1 a P19; P2 está declarada como não mensurável. Faltam fórmulas para partes de limite: em CR5, a margem do robô adicional dos outros depositantes (M21 só calcula 'no escopo' e M27 só para a frota proposta); em CR8, a absorção do excedente do dia p90 pela frota (M23 diz só 'o que M22 cobre'). Em M21 a faixa reduzida da tarifa não diz se vale só acima do limite ou para todo o volume. PR01 é por trimestre e M28 é mensal, e isso não está conciliado."
+  },
+  {
+   "agente": "engenheiro-de-dados",
+   "criterio": "[crítico] Toda coluna pessoal tratada; nenhuma linha pessoal impressa ou exposta",
+   "nota": 2,
+   "evidencia": "Usuário marcada pessoal:true; Qtde Endereços explicada como falso positivo (NQ11). M03 proíbe imprimir, logar ou carregar o login original. Procurei os 40 logins originais e os 40 códigos em 47 arquivos de texto do dv (nos, revisoes, saidas, insumos, entregaveis): 0 ocorrências. Nenhuma métrica sai por operador (PAR07). Ressalva sobre o desenho da etapa 00 no ponto de severidade média."
+  },
+  {
+   "agente": "engenheiro-de-dados",
+   "criterio": "Regras de limpeza ligadas às faixas do especialista e com linhas afetadas",
+   "nota": 1,
+   "evidencia": "PAR01 está ligado a F3, PAR02 a F12/A4, PAR12 a F11 e a regra de Data/Início a F13. A5 e A2 foram absorvidos em M10 e M11. Problema: o limite da cauda em M11 (max(1, Qtde Endereços da linha n − 1) × PAR01) aplica F3 só aos endereços do último pedido, e não às coletas que ainda faltam no lote. Simulei M11 base (PAR02 = 900) em agregado: na colmeia da Royal Canin, 53 de 330 unidades Usuário×Tarefa têm cauda acima do limite. Com o limite pelas coletas restantes, as horas sobem 16% (1,160×) e M14 cai na mesma razão. No armazém, a colmeia sobe 15%. M11 e M12 não exigem registrar o tempo descartado."
+  },
+  {
+   "agente": "engenheiro-de-dados",
+   "criterio": "Preparação sem duplicação em junções; contagens conferidas",
+   "nota": 1,
+   "evidencia": "Granularidade Tarefa×Pedido e chave (Tarefa, Pedido, Início, Fim) conferidas: 43.976 valores distintos em 43.976 linhas. Tarefa // 10.000 = Id Onda falha em 0 linhas; 6 ondas (todas de checkout, 45 linhas) têm 2 tarefas; Região Destino é constante na onda (0 exceções). pedido_id = (depositante, Pedido) está definido: 43.918 distintos contra 43.914 números de Pedido. A união com M_k evita contar duas vezes linhas sobrepostas de colmeia e checkout. Faltam invariantes de contagem para as prep_* da D3 (pipeline.json ainda não existe). Além disso, a granularidade afirma 'pedido-a-pedido: uma linha por tarefa', mas há 53 pares (Tarefa, Pedido) repetidos, todos de pedido-a-pedido (108 linhas, 15 com usuários diferentes), e M11 os trata como cadência."
+  },
+  {
+   "agente": "qualidade-privacidade",
+   "criterio": "[crítico] Contrato completo e métricas da decisão definidas",
+   "nota": 2,
+   "evidencia": "NQ01 a NQ13 estão tratados em QD01 a QD29, cada um com regra, etapa, critério, severidade e linhas_afetadas. Há referencias_exatas, verificações sem ocorrência, viés de amostra e conclusão por pergunta (P1 a P19). conta_robo tem método e proibições."
+  },
+  {
+   "agente": "qualidade-privacidade",
+   "criterio": "[crítico] Toda coluna pessoal tratada; nenhuma linha pessoal impressa ou exposta",
+   "nota": 2,
+   "evidencia": "pseudonimizar = Usuário; nao_pessoal = Qtde Endereços, com justificativa; excluir_colunas vazio. saidas/privacidade.json (03:10:11): ativa, Usuário pseudonimizado, nada excluído. Conferência agregada: base e raw têm 43.976 linhas; 40 originais viram 40 códigos, um a um (0 originais com mais de um código e 0 códigos com mais de um original). Nenhum código fora do formato P_ + 16 hex, e nenhum código coincide com um original. As outras 20 colunas são idênticas (EXCEPT ALL = 0 nos dois sentidos). Qtde Endereços está intacta: mesma soma, mínimo, máximo e 45 distintos, com 0 diferenças pela chave, e o tipo continua BIGINT. A correspondência (40 pares) fica em dados/privado e bate com o join raw×base. O padrão do robô dá 1 conta: 214 linhas em raw e 214 em base."
+  },
+  {
+   "agente": "qualidade-privacidade",
+   "criterio": "Regras de limpeza ligadas às faixas do especialista e com linhas afetadas",
+   "nota": 1,
+   "evidencia": "Todos os QD têm linhas_afetadas, e a maioria cita F1 a F13 ou A1 a A9. Lacunas: QD03 endossa os segmentos de M11 sem medir as caudas descartadas (ver a nota do engenheiro). limiares.instante_confirmacao_s = 3 não vem de faixa do especialista (F1a não tem número e não existe em nos/especialista.json; as faixas do nó não têm id, então as referências F1 a F13 dependem da posição). QD15 soma intervalos (860 + 1.714) como linhas_afetadas. QD12 não tem âncora do especialista (é regra de Marcus, A05; aceitável)."
+  },
+  {
+   "agente": "qualidade-privacidade",
+   "criterio": "Preparação sem duplicação em junções; contagens conferidas",
+   "nota": 2,
+   "evidencia": "Recontei 15 números por SQL agregado sobre base_* e todos batem. Linhas por tipo de onda: checkout 15.102, colmeia 12.188, pedido-a-pedido 16.686; na RC, pedido-a-pedido 4.708; ondas de checkout 1.217. QD01: 89 (57 colmeia, 32 pedido-a-pedido, 17 RC, 1 robô). QD02: 214 (20 checkout, 194 pedido-a-pedido, 8 antes de PAR11). QD03: 8.473 + 11.818. QD04: 1.250 e 982. QD05: linhas por mês. QD12: 9 canceladas, 62 MULTI, 4 CANCELADO puro. QD13: 548, 0 da RC. QD16: 7. QD17: 29. QD18: 53 pares e 108 linhas, 4 números em mais de um depositante. QD22: 12.973. QD26: 280. QD18 trata pedido segmentado e QD03 proíbe somar Tempo por linha."
+  }
+ ],
+ "checagens_executadas": [
+  "python -m motor.validar <dv> --fase D1, rodado duas vezes. Deu LIBERADO nas duas. Na segunda, a qualidade já tinha sido recarimbada (03:10:11, hash 73fa3fc27d22) sobre o contrato 5527342f3195 e o especialista 8d40688b559e. Nenhum nó desatualizado.",
+  "saidas/privacidade.json lido: ativa, raw_prod_90dias_produtividade.Usuário pseudonimizada, excluidas [].",
+  "saidas/pipeline.json não existe (a preparação é da D3). As contagens antes e depois das junções não são verificáveis; avaliei granularidade, chave e relações no nível do contrato.",
+  "Pseudonimização, por SQL agregado em DuckDB read-only sem imprimir valores: linhas, colunas e ordem iguais; mapeamento 1:1 (40 para 40); formato dos códigos; nenhum código igual a um original; demais colunas por EXCEPT ALL; Qtde Endereços por chave e por estatísticas; correspondência contra o join; conta do robô (1 conta, 214 linhas; 0 com 'kappa' ou 'fleet'); 7 contas com menos de PAR07 linhas (18 linhas).",
+  "Busca de vazamento: 47 arquivos de texto do dv (fora de dados/) e de conhecimento/, contra os logins originais e os códigos P_. 0 ocorrências.",
+  "sha256 de dados/brutos/PROD_90DIAS.xlsx igual ao citado em contrato.tabelas[0].versao e em saidas/catalogo.json.",
+  "Recontagem de M01, M02 e QD01, QD02, QD03, QD04, QD05, QD12, QD13, QD16, QD17, QD18, QD22 e QD26 por SQL agregado: todas batem.",
+  "Granularidade e relações: chave única; Tarefa // 10.000 = Id Onda; ondas com mais de uma tarefa; Região Destino constante por onda; pedidos em mais de uma onda ou tarefa (7); pares (Tarefa, Pedido) repetidos por tipo (53, todos de pedido-a-pedido); tarefas de checkout ou colmeia com mais de um usuário (0).",
+  "Simulação agregada de M11/M12 (base, PAR02 = 900): limite de cauda do contrato contra limite pelas coletas restantes da unidade. Horas alt/base: colmeia RC 1,160; colmeia do armazém 1,154; checkout RC 1,000; pedido-a-pedido RC 1,001; total 1,031.",
+  "Fuso e unidades: fuso assumido America/Sao_Paulo e declarado (PQ01). Atividade fora do lote entre 7 h e 18 h; o horário de verão não existe em 2026, sem efeito. Unidades declaradas em todas as colunas e métricas. Exceções: PR01 por trimestre contra M28 mensal, e a semântica das faixas de tarifa em M21.",
+  "Cobertura da decisão: cruzei CR1 a CR8 com criterios_ref das métricas. Todos têm métrica; as partes de limite sem fórmula estão em CR5 e CR8.",
+  "Exclusões: CANCELADO (9 linhas), MULTI (62), linha_palete (548), tarefa_aberta_lote (89) e robô (214) estão registrados como marcação, com efeito declarado por métrica. Os segmentos descartados por M11 (cadência ou cauda acima do limite, gap acima do teto) não têm registro.",
+  "Anti-complacência 1: procurei rótulo de depositante errado nas 2 linhas 'INSUMOS -GERAL' e em 'CANCELADO' sem o token. As 2 linhas recebem depositante de outro token, e há 0 linhas com depositante CANCELADO sem o token.",
+  "Anti-complacência 2: procurei dupla contagem de tempo em colmeia e checkout. A união com M_k evita a dupla contagem. Achei o erro no sentido oposto: subcontagem pela cauda.",
+  "Anti-complacência 3: procurei nos nós e nas revisões valor de Usuário ou código que reidentificasse alguém. Não há; os detalhes trazem só contagens.",
+  "Anti-complacência 4: li a etapa 00 prevista contra motor/pipeline.py. O motor executa a .py e, se ela falhar, imprime o texto da exceção (sys.exit(f'Etapa ... falhou: {e}')); a etapa também lê raw_ e dados/privado, fora do que estado/README.md prevê para etapas (prep_* a partir de base_*)."
+ ],
+ "pontos": [
+  {
+   "severidade": "alta",
+   "local": "nos/contrato.json: metricas M11 (passo 1, limite da cauda); efeito em M12, M13, M14 (CR7, CR1, CR8)",
+   "problema": "Na colmeia, o Início de cada linha é o primeiro bipe do pedido e o Fim é comum. Por isso, depois do último primeiro bipe ainda faltam as coletas de todos os pedidos do lote. O limite max(1, Qtde Endereços da linha n − 1) × PAR01 só conta as coletas do último pedido e descarta a cauda inteira. Simulação agregada: na colmeia da RC, 53 de 330 unidades perdem a cauda, e as horas ficam 14% abaixo do que dá o limite pelas coletas restantes (alt/base = 1,160). As coletas por hora (M14) sobem na mesma proporção. O viés tem o mesmo sentido do viés declarado em M05 e favorece manter a exclusão da colmeia (CR7, ALT5).",
+   "correcao_sugerida": "Trocar o limite da cauda por max(1, sum(Qtde Endereços da unidade) − (n − 1) − 1) × PAR01, ou mantê-lo e tornar obrigatória essa variante como sensibilidade de M12 e M14 na colmeia e no checkout. Registrar a verificação em verificacoes e marcar a regra para validar com a pessoa do setor (A2, E3)."
+  },
+  {
+   "severidade": "media",
+   "local": "nos/contrato.json: M11 e M12 (exclusões); nos/qualidade.json: QD03",
+   "problema": "O tempo descartado pelas regras de segmento não tem registro: cadência acima de PAR01, cauda acima do limite, gap acima do teto, linhas de lote e do robô fora da sequência. M10 manda contar os intervalos excluídos; M11 e M12 não.",
+   "correcao_sugerida": "Exigir em M11 e M12 o relatório de segmentos e segundos descartados por motivo, tipo de onda e depositante, ao lado das horas creditadas. A qualidade acrescenta isso ao detalhe de QD03, ou cria um QD novo com as unidades afetadas."
+  },
+  {
+   "severidade": "media",
+   "local": "nos/contrato.json: M21, M23, M27, M28; decisao CR5, CR8 e PR01",
+   "problema": "Duas partes de limite não têm fórmula. Em CR5, a margem do robô adicional: M21 só calcula a receita 'no escopo' e M27 só para a frota proposta. Em CR8, a frota absorver o excedente do dia p90: M23 diz só 'o que M22 cobre', sem converter capacidade de robô em horas humanas. Também falta dizer se a faixa reduzida de PR03 e PR04 vale só acima do limite ou para todo o volume do mês, e conciliar a garantia PR01, que é trimestral, com M28, que é mensal.",
+   "correcao_sugerida": "Em M21 e M27, criar a variante 'depositante adicional': receita do volume compatível, robôs adicionais de M22 e margem por robô adicional. Em M23: horas absorvidas = min(excedente_h, capacidade da frota nas horas da janela ÷ M14 manual). Em M21: escrever a regra da faixa e, se o deck não disser, deixar [●] com pergunta. Em M28: dizer que a garantia é medida no trimestre (soma de três meses)."
+  },
+  {
+   "severidade": "media",
+   "local": "nos/contrato.json: M03 e notas (etapa 00_conta_robo.py); nos/qualidade.json: conta_robo.autorizacao",
+   "problema": "A etapa 00 lê dados/privado (a tabela de reidentificação) e raw_ (para conferir a contagem). estado/README.md diz que as etapas criam prep_* a partir de base_*. A autorização citada é de uso dos dados na nuvem, não de uso da correspondência. Se a etapa falhar, o motor imprime o texto da exceção do DuckDB para quem roda o pipeline (um agente).",
+   "correcao_sugerida": "Registrar com Marcus uma autorização específica para a etapa 00 ler a correspondência só para achar a conta de sistema, em controle.json ou em conta_robo.autorizacao. Na etapa, envolver o SQL em try/except que levanta uma mensagem fixa, sem o texto do erro. Fazer a conferência raw×base dentro de uma única consulta que devolve só um booleano. Alternativa: pedir ao motor um marcador de conta de sistema gerado na pseudonimização."
+  },
+  {
+   "severidade": "media",
+   "local": "nos/contrato.json: notas da tabela (tabelas derivadas previstas) e pendencias D3",
+   "problema": "Faltam invariantes de contagem para as prep_* da D3. Quando pipeline.json existir, não haverá referência para comparar linhas antes e depois de cada etapa e de cada junção (pedidos por onda, atributos de onda e de pedido levados para as linhas).",
+   "correcao_sugerida": "Escrever as igualdades sem números, com assert em cada etapa: prep_prod_linhas = count(*) de base_*; prep_prod_pedidos = count(distinct pedido_id); soma de Qtde Endereços e de Qtde Produtos conservada de linhas para pedidos (fora as exclusões declaradas); prep_prod_tarefas = count(distinct (Tarefa, Usuário)); soma de ciclo_k por operador-dia = M11; contagem de linhas inalterada depois de cada join de atributos de onda e de pedido."
+  },
+  {
+   "severidade": "baixa",
+   "local": "nos/contrato.json: tabelas[0].granularidade e M11 passo 1 ('pedido-a-pedido: uma linha por tarefa')",
+   "problema": "53 tarefas de pedido-a-pedido têm 2 ou mais linhas: 108 linhas, 15 pares com usuários diferentes. M11 as trata como cadência Início a Início com teto PAR01, o que pode descartar o primeiro segmento [Início, Fim], que tem coletas próprias.",
+   "correcao_sugerida": "Corrigir o texto da granularidade. No pedido-a-pedido, usar cada linha como segmento próprio [Início, fim_corrigido], com limite (Qtde Endereços − 1) × PAR01, e aplicar a cadência só a linhas com fim_em_bloco."
+  },
+  {
+   "severidade": "media",
+   "local": "nos/qualidade.json: QD03 (regra e detalhe)",
+   "problema": "A qualidade aprovou os segmentos de M11 ('o contrato já trata isso') sem medir a validade das caudas. O detalhe mede só intervalos negativos e acima de PAR01 entre linhas. Ficou de fora o caso que mais pesa na colmeia da RC: 53 de 330 unidades com cauda acima do limite.",
+   "correcao_sugerida": "Acrescentar ao detalhe de QD03 as unidades e os segundos de cauda acima do limite, por tipo de onda e depositante, e a sensibilidade pelo limite das coletas restantes. Perguntar ao especialista se a cauda longa da colmeia é coleta ou distribuição no put wall (E3)."
+  },
+  {
+   "severidade": "baixa",
+   "local": "nos/qualidade.json: QD15.linhas_afetadas; limiares.instante_confirmacao_s; refs F1a; consultas sobre raw_",
+   "problema": "QD15 conta intervalos (860 + 1.714) como linhas_afetadas. O limiar de 3 s vem de uma observação do contrato (NQ03), não de faixa do especialista. F1a só existe em revisoes/especialista_D1.md e não está em nos/especialista.json, cujas faixas não têm id. As verificações sobre Usuário (padrão do robô) foram feitas em raw_ e não por etapa sobre base_*.",
+   "correcao_sugerida": "Informar linhas_afetadas em linhas, com os intervalos no detalhe. Marcar o limiar de 3 s como proposta [●] ou pedir a faixa ao especialista. Pedir ao perfilador ids nas faixas e F1a no nó. Daqui em diante, consultar a coluna Usuário só por etapa ou sobre base_*."
+  }
+ ],
+ "lacunas": [
+  "Principal: nenhum nó registra quanto tempo as regras de segmento de M11 descartam. Isso é exclusão sem registro e é onde está o viés de CR7 (colmeia, ALT5).",
+  "saidas/pipeline.json ainda não existe (D3), e o contrato não traz invariantes de contagem por prep_*. As contagens antes e depois das junções ficam para a revisão da D3.",
+  "CR5 (margem do robô adicional) e CR8 (absorção do excedente do p90 pela frota) não têm fórmula no contrato.",
+  "Não há autorização registrada específica para a etapa 00 ler dados/privado.",
+  "saidas/perguntas_marcus.md (02:10) não traz PQ01 a PQ07 do contrato nem a pergunta da qualidade sobre linhas de milhares de unidades. O orquestrador precisa consolidar antes do G2.",
+  "Fuso (America/Sao_Paulo) e data de extração continuam inferidos (PQ01). A versão do WMS Senior é [●]."
+ ],
+ "em": "2026-10-03"
+}

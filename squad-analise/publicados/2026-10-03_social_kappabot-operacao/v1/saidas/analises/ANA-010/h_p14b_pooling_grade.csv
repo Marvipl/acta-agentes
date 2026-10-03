@@ -1,0 +1,73 @@
+PR07,PR08,ponto_PR08,leitura,regra_da_frota,metodo,frota_agrupada,soma_das_frotas_individuais,robos_poupados,depositantes_na_soma
+26.25,61.53341311817164,inf,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),7.0,21.0,14.0,19
+26.25,61.53341311817164,inf,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),4.0,18.0,14.0,19
+26.25,61.53341311817164,inf,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,dia a dia (p90 da frota diária; base),7.0,23.0,16.0,19
+26.25,61.53341311817164,inf,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,banda (média de perfis; subestima o pico),5.0,24.0,19.0,19
+26.25,61.53341311817164,inf,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),5.0,8.0,3.0,2
+26.25,61.53341311817164,inf,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),3.0,6.0,3.0,2
+26.25,61.53341311817164,inf,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,dia a dia (p90 da frota diária; base),5.0,8.0,3.0,2
+26.25,61.53341311817164,inf,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,banda (média de perfis; subestima o pico),4.0,7.0,3.0,2
+26.25,106.37017221200469,provavel,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),6.0,19.0,13.0,19
+26.25,106.37017221200469,provavel,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),4.0,18.0,14.0,19
+26.25,106.37017221200469,provavel,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,dia a dia (p90 da frota diária; base),7.0,23.0,16.0,19
+26.25,106.37017221200469,provavel,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,banda (média de perfis; subestima o pico),5.0,24.0,19.0,19
+26.25,106.37017221200469,provavel,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),5.0,8.0,3.0,2
+26.25,106.37017221200469,provavel,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),3.0,6.0,3.0,2
+26.25,106.37017221200469,provavel,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,dia a dia (p90 da frota diária; base),5.0,8.0,3.0,2
+26.25,106.37017221200469,provavel,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,banda (média de perfis; subestima o pico),4.0,7.0,3.0,2
+26.25,154.01069518716577,sup,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),6.0,19.0,13.0,19
+26.25,154.01069518716577,sup,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),4.0,18.0,14.0,19
+26.25,154.01069518716577,sup,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,dia a dia (p90 da frota diária; base),7.0,23.0,16.0,19
+26.25,154.01069518716577,sup,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,banda (média de perfis; subestima o pico),5.0,24.0,19.0,19
+26.25,154.01069518716577,sup,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),5.0,8.0,3.0,2
+26.25,154.01069518716577,sup,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),3.0,6.0,3.0,2
+26.25,154.01069518716577,sup,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,dia a dia (p90 da frota diária; base),5.0,8.0,3.0,2
+26.25,154.01069518716577,sup,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,banda (média de perfis; subestima o pico),4.0,7.0,3.0,2
+35.0,61.53341311817164,inf,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),5.0,19.0,14.0,19
+35.0,61.53341311817164,inf,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),3.0,17.0,14.0,19
+35.0,61.53341311817164,inf,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,dia a dia (p90 da frota diária; base),6.0,21.0,15.0,19
+35.0,61.53341311817164,inf,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,banda (média de perfis; subestima o pico),4.0,23.0,19.0,19
+35.0,61.53341311817164,inf,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),4.0,6.0,2.0,2
+35.0,61.53341311817164,inf,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),2.0,5.0,3.0,2
+35.0,61.53341311817164,inf,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,dia a dia (p90 da frota diária; base),4.0,6.0,2.0,2
+35.0,61.53341311817164,inf,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,banda (média de perfis; subestima o pico),3.0,6.0,3.0,2
+35.0,106.37017221200469,provavel,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),5.0,17.0,12.0,19
+35.0,106.37017221200469,provavel,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),3.0,17.0,14.0,19
+35.0,106.37017221200469,provavel,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,dia a dia (p90 da frota diária; base),5.0,21.0,16.0,19
+35.0,106.37017221200469,provavel,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,banda (média de perfis; subestima o pico),4.0,23.0,19.0,19
+35.0,106.37017221200469,provavel,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),4.0,6.0,2.0,2
+35.0,106.37017221200469,provavel,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),2.0,5.0,3.0,2
+35.0,106.37017221200469,provavel,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,dia a dia (p90 da frota diária; base),4.0,6.0,2.0,2
+35.0,106.37017221200469,provavel,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,banda (média de perfis; subestima o pico),3.0,6.0,3.0,2
+35.0,154.01069518716577,sup,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),5.0,17.0,12.0,19
+35.0,154.01069518716577,sup,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),3.0,17.0,14.0,19
+35.0,154.01069518716577,sup,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,dia a dia (p90 da frota diária; base),5.0,21.0,16.0,19
+35.0,154.01069518716577,sup,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,banda (média de perfis; subestima o pico),4.0,23.0,19.0,19
+35.0,154.01069518716577,sup,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),4.0,6.0,2.0,2
+35.0,154.01069518716577,sup,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),2.0,5.0,3.0,2
+35.0,154.01069518716577,sup,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,dia a dia (p90 da frota diária; base),4.0,6.0,2.0,2
+35.0,154.01069518716577,sup,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,banda (média de perfis; subestima o pico),3.0,6.0,3.0,2
+43.75,61.53341311817164,inf,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),5.0,19.0,14.0,19
+43.75,61.53341311817164,inf,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),3.0,15.0,12.0,19
+43.75,61.53341311817164,inf,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,dia a dia (p90 da frota diária; base),5.0,21.0,16.0,19
+43.75,61.53341311817164,inf,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,banda (média de perfis; subestima o pico),3.0,21.0,18.0,19
+43.75,61.53341311817164,inf,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),3.0,6.0,3.0,2
+43.75,61.53341311817164,inf,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),2.0,3.0,1.0,2
+43.75,61.53341311817164,inf,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,dia a dia (p90 da frota diária; base),3.0,6.0,3.0,2
+43.75,61.53341311817164,inf,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,banda (média de perfis; subestima o pico),3.0,4.0,1.0,2
+43.75,106.37017221200469,provavel,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),4.0,17.0,13.0,19
+43.75,106.37017221200469,provavel,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),2.0,15.0,13.0,19
+43.75,106.37017221200469,provavel,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,dia a dia (p90 da frota diária; base),5.0,21.0,16.0,19
+43.75,106.37017221200469,provavel,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,banda (média de perfis; subestima o pico),3.0,21.0,18.0,19
+43.75,106.37017221200469,provavel,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),3.0,6.0,3.0,2
+43.75,106.37017221200469,provavel,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),2.0,3.0,1.0,2
+43.75,106.37017221200469,provavel,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,dia a dia (p90 da frota diária; base),3.0,6.0,3.0,2
+43.75,106.37017221200469,provavel,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,banda (média de perfis; subestima o pico),3.0,4.0,1.0,2
+43.75,154.01069518716577,sup,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),4.0,17.0,13.0,19
+43.75,154.01069518716577,sup,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),2.0,15.0,13.0,19
+43.75,154.01069518716577,sup,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,dia a dia (p90 da frota diária; base),5.0,21.0,16.0,19
+43.75,154.01069518716577,sup,"literal (todos os depositantes com PAR07 registros, os menores em 'outros')",teto inteiro por tipo,banda (média de perfis; subestima o pico),3.0,21.0,18.0,19
+43.75,154.01069518716577,sup,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,dia a dia (p90 da frota diária; base),3.0,6.0,3.0,2
+43.75,154.01069518716577,sup,relevantes (carga média >= 10% de um robô),teto inteiro da soma das cargas,banda (média de perfis; subestima o pico),2.0,3.0,1.0,2
+43.75,154.01069518716577,sup,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,dia a dia (p90 da frota diária; base),3.0,6.0,3.0,2
+43.75,154.01069518716577,sup,relevantes (carga média >= 10% de um robô),teto inteiro por tipo,banda (média de perfis; subestima o pico),3.0,4.0,1.0,2

@@ -1,0 +1,77 @@
+{
+  "id": "INS-004",
+  "estado": "validado",
+  "afirmacao": "Depois da entrada da colmeia, o pedido-a-pedido da Royal Canin gera {{v.pos_sem}} sem a semana do incidente ({{v.pos_plano}} com ela). O volume total da Royal Canin em coletas por dia pleno foi {{v.tot_pre}} antes da colmeia e {{v.tot_pos}} depois, sem o incidente (variação {{v.var}}, com IC que contém zero), enquanto o pedido-a-pedido passou de {{v.pap_pre}} para {{v.pap_pos}} e a colmeia passou a {{v.col_pos}}: o degrau de {{v.degrau}} do volume tarifável diário do pedido-a-pedido (variante do plano, com a semana do incidente; não há versão sem o incidente para o nível) coincide com a transferência para a colmeia, sem perda de demanda distinguível (o IC da variação do volume total admite queda e aumento). Líquida do degrau, a tendência do nível é {{v.incl_sem}} sem a semana do incidente (o IC contém zero) e {{v.incl_plano}} na variante do plano, puxada pelos dias quase zerados do incidente; só a leitura sem o incidente serve como sensibilidade de PR14. A base tarifável depende do roteamento da Social.",
+  "pergunta_ref": "P6",
+  "criterio_ref": "CR2",
+  "valores": {
+    "pos_sem": "ANA-001.media_linhas_tarif_pap_rc_dia_pos_colmeia_sem_incidente",
+    "pos_plano": "ANA-001.media_linhas_tarif_pap_rc_dia_pos_colmeia_estresse",
+    "tot_pre": "ANA-001.coletas_rc_dia_pre_colmeia",
+    "tot_pos": "ANA-001.coletas_rc_dia_pos_colmeia_sem_incidente",
+    "var": "ANA-001.variacao_coletas_rc_dia_pos_colmeia_sem_incidente",
+    "pap_pre": "ANA-001.coletas_pap_rc_dia_pre_colmeia",
+    "pap_pos": "ANA-001.coletas_pap_rc_dia_pos_colmeia_sem_incidente",
+    "col_pos": "ANA-001.coletas_colmeia_rc_dia_pos_colmeia_sem_incidente",
+    "degrau": "ANA-001.degrau_colmeia_linhas_tarif_pap_rc_dia",
+    "incl_plano": "ANA-001.inclinacao_linhas_tarif_pap_rc_dia_semana_estresse",
+    "incl_sem": "ANA-001.inclinacao_linhas_tarif_pap_rc_dia_semana_sem_incidente"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "média pós-colmeia com e sem a semana do incidente",
+      "analise": "ANA-001",
+      "resultado": "passa",
+      "nota": "os dois níveis têm IC que se sobrepõem (chaves media_linhas_tarif_pap_rc_dia_pos_colmeia_sem_incidente e _estresse)"
+    },
+    {
+      "recorte": "tendência do nível com e sem a semana do incidente",
+      "analise": "ANA-001",
+      "resultado": "parcial",
+      "nota": "o sinal é negativo nas duas, mas sem a semana do incidente o IC passa a conter zero; usar só a leitura sem o incidente como sensibilidade, nunca como base"
+    },
+    {
+      "recorte": "volume total da Royal Canin antes e depois da colmeia",
+      "analise": "ANA-001",
+      "resultado": "passa",
+      "nota": "o volume total em coletas por dia pleno muda pouco, com IC que contém zero (chave variacao_coletas_rc_dia_pos_colmeia_sem_incidente): é transferência entre tipos de onda"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: linguagem descritiva, volume total antes e depois da colmeia, tendência só da leitura sem o incidente. Ajuste menor de texto: o IC da variação do volume total vai de uma queda relevante a um aumento, então 'não com perda de demanda' deve virar 'sem perda de demanda distinguível'; e o degrau citado é o da variante do plano, sem rótulo. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Usar o nível pós-colmeia sem o incidente como base do volume e a tendência sem o incidente como cenário de sensibilidade do prazo (CR2 no prazo PR14); declarar que o roteamento para a colmeia é decisão da Social.",
+  "dono": "analista de impacto",
+  "premissas": [
+    "PR14",
+    "M06 limite inferior (Qtde Produtos)",
+    "primeira semana com colmeia definida pelo dado",
+    "janela de operação normal (24/08 a 18/09) como base da oferta e janela do plano (31/08 a 25/09, com o incidente operacional de 21 a 25/09) como cenário de estresse: revisoes/orquestrador_decisao_semana_incidente.md; Marcus pode trocar a base no G3"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:57",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:04",
+      "por": "red-team-analitico"
+    }
+  ]
+}

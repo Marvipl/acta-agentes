@@ -1,0 +1,59 @@
+{
+  "id": "INS-033",
+  "estado": "validado",
+  "afirmacao": "Em linhas operacionais por dia pleno, a razão entre o pedido-a-pedido compatível dos outros depositantes e o da Royal Canin é {{v.r_n}} em operação normal e {{v.r_e}} no cenário de estresse (janela do plano, em que a Royal Canin cai na semana de incidente). Os outros depositantes seguem normais nessa semana, então a razão sobe principalmente porque o denominador cai.",
+  "pergunta_ref": "P14",
+  "criterio_ref": "CR5",
+  "valores": {
+    "r_n": "ANA-010.razao_compat_outros_sobre_rc_pap_normal",
+    "r_e": "ANA-010.razao_compat_outros_sobre_rc_pap_estresse"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "janela de operação normal contra janela do plano",
+      "analise": "ANA-010",
+      "resultado": "passa",
+      "nota": "as duas leituras mostram os outros maiores que a Royal Canin; o IC do estresse é mais largo"
+    },
+    {
+      "recorte": "pedido-a-pedido compatível contra linhas totais",
+      "analise": "ANA-010",
+      "resultado": "parcial",
+      "nota": "só o perfil compatível (pedido_multi_endereco) entra no numerador; o total dos outros é maior"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Mantido; render com o rótulo correto. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Citar as duas leituras ao comparar o volume dos outros depositantes com a Royal Canin.",
+  "dono": "estatistico (ANA-010)",
+  "premissas": [
+    "decisão do orquestrador sobre a semana de incidente (revisoes/orquestrador_decisao_semana_incidente.md)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:32",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:29",
+      "por": "red-team-analitico"
+    }
+  ]
+}

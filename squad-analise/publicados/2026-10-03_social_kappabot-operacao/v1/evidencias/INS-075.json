@@ -1,0 +1,65 @@
+{
+  "id": "INS-075",
+  "estado": "validado",
+  "afirmacao": "O painel de novatos das semanas pares tem poucos novatos ({{v.n}}), abaixo do mínimo de dez unidades: a pista PT-H09 fica inconclusiva por desenho, sem p nem IC inferencial. A inclinação por semana desde a entrada da razão entre o M14 do novato e o dos experientes é {{v.incl}}, apenas descritiva, com efeito mínimo detectável de {{v.mde}}, muito acima do efeito relevante de {{v.er}}. Não se lê como falta de aprendizado: a curva descreve só quem ficou até o fim do acompanhamento, login novo não é pessoa nova e a razão tem valores extremos. Não sustenta nem derruba o argumento do temporário guiado pelo robô.",
+  "pergunta_ref": "P13",
+  "criterio_ref": "CR8",
+  "valores": {
+    "n": "ANA-016.n_operadores_pt_h09",
+    "incl": "ANA-016.pt_h09_inclinacao",
+    "mde": "ANA-016.pt_h09_mde",
+    "er": "ANA-016.pt_h09_efeito_relevante"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "teto conservador do G2",
+      "analise": "ANA-016",
+      "resultado": "parcial",
+      "nota": "mesma leitura descritiva; sem valor inferencial"
+    },
+    {
+      "recorte": "deixar um novato de fora por vez",
+      "analise": "ANA-016",
+      "resultado": "parcial",
+      "nota": "os extremos ficam do mesmo lado, mas a pista é inconclusiva por desenho"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Sem mudança; inconclusiva por desenho e lida como tal."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Manter P13 descritiva e não usar a curva de aprendizado como número na oferta. Pedir à Social a data de admissão dos temporários (v2).",
+  "dono": "estatistico (ANA-016); Marcus (pergunta à Social)",
+  "premissas": [
+    "confirmação nas semanas ISO pares, com limiares, pesos e cortes de ANA-012 lidos do arquivo registrado, sem recálculo; Holm com seis testes na F2 (PT-H04, PT-H09, PT-H10, PT-D1, PT-D3, PT-D4)",
+    "o MDE de ANA-000 passa do efeito relevante (10% do valor de referência): a magnitude pode estar exagerada (poder baixo, erro tipo M) e não deve ser citada como precisa",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador do G2 como robustez",
+    "nenhuma semana par foi marcada como incidente da Royal Canin, por isso não há filtro de incidente na confirmação",
+    "viés de sobrevivência e de alocação do painel balanceado; a referência de experientes é comum aos dois lados e medida na mesma semana-calendário, de qualquer paridade (exceção declarada ao recorte)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:29:04",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:52",
+      "por": "red-team-analitico"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+recorte,dif_h,ic_inf,ic_sup,p_unilateral,operadores,classe,observacao
+sem dias pós-pausa,0.769319315008509,0.3221148147606496,1.2555095057735235,0.0004998750312421895,21,1,"dias de pico 6, dias típicos 40"
+primeira metade do período,0.6471085866936561,0.14384620170371057,1.176560879024204,0.005748562859285179,18,1,"dias de pico 3, dias típicos 16"
+segunda metade do período,0.8826087967943896,0.37173283114443467,1.4826364507340883,0.0004998750312421895,14,1,"dias de pico 5, dias típicos 24"
+escopo Royal Canin (horas do pedido-a-pedido e do checkout),0.10623779245445913,-0.44612943432364854,0.406948442068798,0.4496375906023494,9,0,"dias de pico 8, dias típicos 40"

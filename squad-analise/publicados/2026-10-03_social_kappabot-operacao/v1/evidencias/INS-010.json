@@ -1,0 +1,72 @@
+{
+  "id": "INS-010",
+  "estado": "validado",
+  "afirmacao": "O escopo da ALT3 (separação do checkout e do pedido-a-pedido da Royal Canin) consome {{v.horas}} na janela normal de 24/08 a 18/09, no teto conservador (a faixa entre parênteses é de cenários de teto e sensibilidade, não intervalo de confiança), ou {{v.fte}} de FTE equivalente de horas ativas (horas por dia pleno ÷ PR12). O slide 14 do deck mostra {{v.deck}} só de separação: as horas ativas medidas, que são piso do tempo dedicado, ficam abaixo disso em todo teto e sensibilidade, e o deck equivale a {{v.razao}} o medido no teto conservador na janela normal e a {{v.razao_est}} na janela do plano. Isso vale só para horas ativas: o deck pode ter contado alocação ou presença, e o método precisa ser reconciliado com a Social antes de dizer ao cliente que o slide 14 não se reproduz. No teto conservador a maior parte do tempo do escopo é descartada ({{v.desc}}). Verificação do deck, em linguagem descritiva.",
+  "pergunta_ref": "P1",
+  "criterio_ref": "CR1",
+  "valores": {
+    "horas": "ANA-003.horas_dia_escopo_alt3_normal",
+    "fte": "ANA-003.fte_escopo_alt3_ic_dias_normal",
+    "deck": "ANA-003.fte_deck_slide14_total",
+    "razao": "ANA-003.hp1_razao_deck_sobre_fte_medido_total_normal",
+    "razao_est": "ANA-003.hp1_razao_deck_sobre_fte_medido_total_estresse",
+    "desc": "ANA-003.fracao_descartada_escopo_t300"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "por mês e por tipo de onda",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "nenhuma combinação de mês e tipo de onda traz o FTE do deck para dentro da faixa medida (chaves hp1_meses_tipos_dentro_da_faixa e hp1_meses_tipos_avaliados)"
+    },
+    {
+      "recorte": "janela de operação normal e janela do plano",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "o deck fica fora da faixa nas duas janelas (chaves hp1_dentro_da_faixa_total_normal e hp1_dentro_da_faixa_total_estresse)"
+    },
+    {
+      "recorte": "quatro tetos, S1 a S3 e com ou sem turnos fundidos",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "o deck fica acima do maior valor da grade; não há operador-dia com turnos fundidos (chave operador_dias_turnos_fundidos)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: 'FTE equivalente de horas ativas', faixa de cenários rotulada, IC de bootstrap do FTE citado, fração descartada e reconciliação do método do slide com a Social antes de falar ao cliente. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Refazer o FTE de separação com o método de jornada ativa, declarando-o como FTE equivalente de horas ativas, e reconciliar com a Social o método do slide 14 (alocação ou presença) antes de afirmar ao cliente que ele não se reproduz.",
+  "dono": "Marcus; analista de impacto",
+  "premissas": [
+    "PR12 (jornada do deck; 'FTE equivalente de horas ativas', não presença nem quadro)",
+    "PR11",
+    "M11 e M12: horas ativas são piso do tempo dedicado",
+    "janela de operação normal (24/08 a 18/09) como base da oferta e janela do plano (31/08 a 25/09, com o incidente operacional de 21 a 25/09) como cenário de estresse: revisoes/orquestrador_decisao_semana_incidente.md; Marcus pode trocar a base no G3"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:17:02",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:10",
+      "por": "red-team-analitico"
+    }
+  ]
+}

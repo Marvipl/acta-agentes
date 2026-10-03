@@ -1,0 +1,129 @@
+{
+  "id": "INS-088",
+  "estado": "aprovado",
+  "afirmacao": "Na ALT6, o robô adicional que atende os outros depositantes compatíveis tem margem de contribuição positiva na frota agrupada dia a dia: {{v.add}} na base da oferta (receita da janela normal) e {{v.add_p}} na variante do plano, sem franquia adicional (a franquia já é cobrada pelo escopo da Royal Canin, cuja receita por transação sozinha não a cobre, INS-001), com o IC de dias de ANA-010 acima de zero. O hardware máximo pagável do robô adicional na base é {{v.hw_add}}. A frota agrupada dia a dia dos outros depositantes é {{v.rob}}; pela banda de dias a margem do robô adicional seria {{v.banda}}, superestimada porque a média de perfis alisa o pico, por isso a primária é o dia a dia. Somando a receita adicional ({{v.ra}}) à do escopo, a ALT6 total tem margem de {{v.tot}} na base, com a frota necessária da ALT6 ({{v.n6}}), e de {{v.tot_p}} no plano; o hardware máximo pagável da ALT6 total na base é {{v.hw_tot}} (as faixas de cenários da ALT6 total são as da grade de frota de ANA-009). A receita por transação das duas partes ({{v.rec3}} do escopo e {{v.ra}} dos outros depositantes) soma mais que a franquia ({{v.fr}}), então a margem da ALT6 total não depende da franquia e é a maior margem sem o piso entre as alternativas calculadas aqui. Na ALT3 com a frota necessária dia a dia a margem sem o piso é positiva ({{v.alt3_sp}}), mas pequena e sem reserva de disponibilidade, e na ALT2 é negativa. O valor para os outros depositantes pode ser menor, porque já rendem mais no manual (INS-070): isso pesa na adoção, não na margem da Acta.",
+  "pergunta_ref": "P16",
+  "criterio_ref": "CR6",
+  "valores": {
+    "add": "ANA-015.margem_robo_adicional_alt6_normal",
+    "hw_add": "ANA-015.hardware_max_adicional_alt6_normal",
+    "ra": "ANA-015.receita_adicional_alt6_normal",
+    "tot": "ANA-015.margem_robo_alt6_total_normal",
+    "n6": "ANA-015.frota_necessaria_alt6_normal",
+    "hw_tot": "ANA-015.hardware_max_alt6_total_normal",
+    "add_p": "ANA-015.margem_robo_adicional_alt6",
+    "rob": "ANA-015.robos_adicionais_alt6",
+    "tot_p": "ANA-015.margem_robo_alt6_total",
+    "banda": "ANA-015.margem_robo_adicional_alt6_banda_normal",
+    "rec3": "ANA-015.receita_mes_alt3_taxa_corrente_normal",
+    "fr": "ANA-015.franquia_pr02",
+    "alt3_sp": "ANA-015.margem_robo_alt3_frota_nec_sem_piso_normal"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "IC de dias do robô adicional (ANA-010)",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "o IC bootstrap da margem do robô adicional não inclui zero, na variante do plano e na base da oferta"
+    },
+    {
+      "recorte": "operação normal e variante do plano",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "a margem do robô adicional e a da ALT6 total ficam positivas nas duas leituras (chaves _normal e sem sufixo)"
+    },
+    {
+      "recorte": "faixa da frota da ALT6 em ANA-009",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "com a maior frota da grade de ANA-009 a margem da ALT6 total continua positiva (faixa de margem_robo_alt6_total)"
+    },
+    {
+      "recorte": "banda contra frota dia a dia",
+      "analise": "ANA-015",
+      "resultado": "parcial",
+      "nota": "a banda dá margem bem maior que o dia a dia, porque subestima a frota (chaves margem_robo_adicional_alt6_banda*)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção atendida: frota agrupada dia a dia como primária, adoção pelos outros depositantes declarada. Premissas de tarifa e PR07 seguem nas premissas do insight."
+  },
+  "impacto": {
+    "modelo": "IMP-CR6-ALT6-NO-TETO-INT",
+    "modelos_relacionados": [
+      "IMP-CR2-ALT6-NORMAL",
+      "IMP-CR2-ALT6-ESTRESSE",
+      "IMP-CR2-RECEITA-ALT6",
+      "IMP-CR1-ALT6-DECK-INT",
+      "IMP-CR1-ALT6-DECK-SEM",
+      "IMP-CR1-ALT6-DECK-SEM-ALTO",
+      "IMP-CR6-ALT6-TOTAL",
+      "IMP-CR6-ALT6-HW",
+      "IMP-ALT4-PMAX-ALT6-INT",
+      "IMP-ALT4-KMAX-ALT6-INT",
+      "IMP-ALT4-FOLGA-ALT6-INT",
+      "IMP-ALT4-HW-ALT6-PMAX",
+      "IMP-CR8-FTE-ALT6-SEM-AUT",
+      "IMP-CR8-FTE-ALT6-SEM-COL",
+      "IMP-CR8-FTE-ALT6-INT-COL",
+      "IMP-CR8-CRESCIMENTO-ALT6-COL",
+      "IMP-INV-PR11-ALT6-REC",
+      "IMP-INV-PR11-CR8-ALT6-COL",
+      "IMP-FOLGA-ALT6-SEM",
+      "IMP-FOLGA-ALT6-SEM-ALTO",
+      "IMP-CR1-ALT6-REC-PISO-INT",
+      "IMP-IMPL-INVESTIMENTO-ALT6-SEM-RESERVA",
+      "IMP-IMPL-INVESTIMENTO-ALT6-COM-RESERVA",
+      "IMP-CR6-ALT6-NO-TETO-INT-COM-IMPL",
+      "IMP-HW-ALT6-NO-TETO-INT-SO-HARDWARE",
+      "IMP-ALT4-FOLGA-ALT6-INT-COM-RESERVA",
+      "IMP-ALT4-FOLGA-ALT6-INT-COM-IMPL",
+      "IMP-ALT4-FOLGA-ALT6-INT-COM-RESERVA-COM-IMPL"
+    ]
+  },
+  "acao": "Levar a ALT6 a Marcus como fase seguinte, não como alternativa pronta. A margem das tarifas do deck (IMP-CR6-ALT6-TOTAL) entra só como contraste, porque nessas tarifas CR1 da ALT6 falha (IMP-CR1-ALT6-DECK-INT). A referência é a margem máxima compatível com CR1, com PR11 integral e o armazém inteiro como teto do escopo (IMP-CR6-ALT6-NO-TETO-INT). Com a implementação a preço de tabela essa margem e a janela de preço desaparecem (IMP-CR6-ALT6-NO-TETO-INT-COM-IMPL, IMP-ALT4-FOLGA-ALT6-INT-COM-IMPL, IMP-ALT4-FOLGA-ALT6-INT-COM-RESERVA-COM-IMPL) e o hardware pagável só de hardware fica em zero (IMP-HW-ALT6-NO-TETO-INT-SO-HARDWARE). Exige o checkout conferido (IMP-ALT6-DEP-CHECKOUT), a adesão dos depositantes (CR5 inconclusivo) e a conferência desmobilizada (IMP-INV-PR11-ALT6-REC). Pendência de texto: a afirmação diz que a franquia já é coberta pelo escopo da Royal Canin, o que conflita com INS-001; o correto é já é cobrada.",
+  "dono": "Marcus Lima, CEO; Matheus Correa, Comercial; Renato Correa, CFO",
+  "premissas": [
+    "ALT6: o escopo de mão de obra é a separação do armazém inteiro, que é o teto do escopo compatível; os resultados de CR1 e CR8 da ALT6 são limite superior",
+    "frota necessária dia a dia na base pós-colmeia (decisão do orquestrador, a confirmar por Marcus no G3), com capacidade do robô de confiança baixa (PR07, PR08) e sem reserva de disponibilidade",
+    "tarifas e franquia do deck (PR02, PR03, PR04) e custo de servir sem hardware informado por Marcus (PR13); custo de hardware (PR20) é [●] e o motor entrega o máximo pagável",
+    "adesão de todo o volume compatível dos outros depositantes ([●]) e checkout conferido pronto",
+    "conferência (PR11) lida de três formas, integral, rateada entre depositantes pela parte da Royal Canin no checkout e fora, porque o WMS não a registra (E15)",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados",
+    "custo de implementação (implantação por robô e integração simples) a preço de tabela da Acta (perfil de Marcus, a confirmar), amortizado no prazo do contrato e usado como limite superior do custo; o custo real da Acta é [●]; mapeamento (área [●]) e desenvolvimento do checkout conferido ([●]) ficam fora da conta; o tudo incluído do deck cobre mais do que a manutenção de PR13",
+    "referência de margem da ALT6 = teto de CR1 com PR11 integral; a margem nas tarifas do deck é contraste, porque a Social não a aceitaria pelo próprio critério de compra"
+  ],
+  "red_team_decisao": {
+    "veredito": "ressalva",
+    "nota": "Ressalva. Levar a ALT6 como fase seguinte, não como alternativa pronta: ela exige checkout, adesão dos depositantes (CR5) e conferência desmobilizada (RTD-INV-PR11-ALT6-REC). A economia usa o armazém inteiro como teto e a razão de produtividade da RC, o que superestima o ganho nos depositantes que já rendem mais (INS-070). Detalhes em revisoes/red-team-decisao.json."
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:52:11",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:55:04",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:43",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:02",
+      "por": "Marcus"
+    }
+  ]
+}

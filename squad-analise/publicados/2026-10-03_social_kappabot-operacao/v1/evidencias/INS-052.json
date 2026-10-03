@@ -1,0 +1,68 @@
+{
+  "id": "INS-052",
+  "estado": "validado",
+  "afirmacao": "O tempo descartado pelas regras de segmento e de lacuna (M29) é {{v.todos}} do tempo no teto base ({{v.pap}} no pedido-a-pedido, {{v.chk}} no checkout e {{v.col}} na colmeia) e sobe para {{v.todos300}} no teto conservador. A maior parte é pausa entre tarefas acima do teto, não abandono: as linhas manuais cortadas por cadência, cauda ou linha acima do limite são {{v.cort}} do total e {{v.cort_col}} na colmeia, onde a cauda longa pode ser coleta ou distribuição no put wall. Na colmeia, com o limite S3 da cauda, a fração descartada é {{v.col_s3}}. Censo do período inteiro (descritivo).",
+  "pergunta_ref": "P10",
+  "criterio_ref": "CR7",
+  "valores": {
+    "todos": "ANA-013.fracao_descartada_por_tipo",
+    "pap": "ANA-013.fracao_descartada_pap",
+    "chk": "ANA-013.fracao_descartada_checkout",
+    "col": "ANA-013.fracao_descartada_colmeia",
+    "todos300": "ANA-013.fracao_descartada_por_tipo_t300",
+    "cort": "ANA-013.fracao_linhas_cortadas_por_tipo",
+    "cort_col": "ANA-013.fracao_linhas_cortadas_colmeia",
+    "col_s3": "ANA-013.fracao_descartada_colmeia_s3"
+  },
+  "nivel": "descritivo",
+  "exploratorio": false,
+  "robustez": [
+    {
+      "recorte": "quatro tetos de intervalo",
+      "analise": "ANA-013",
+      "resultado": "parcial",
+      "nota": "a fração descartada depende muito do teto (tabela m29_fracao_descartada)"
+    },
+    {
+      "recorte": "limite S3 da cauda na colmeia",
+      "analise": "ANA-013",
+      "resultado": "parcial",
+      "nota": "a fração da colmeia muda com a regra da cauda (chave fracao_descartada_colmeia_s3)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Sem mudança; nenhum ataque muda a leitura."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Validar com a pessoa da operação se a cauda longa da colmeia é coleta ou distribuição no put wall antes de ler CR7.",
+  "dono": "especialista-setorial; analista-de-impacto",
+  "premissas": [
+    "censo do período observado (carga inteira em dias plenos): estatísticas exatas do período, sem incerteza amostral",
+    "a semana de incidente operacional da Royal Canin fica nos totais; as variantes sem_incidente e janela_normal estão nas chaves de ANA-013 (revisoes/orquestrador_decisao_semana_incidente.md)",
+    "a regra da cauda da colmeia é premissa a validar com o setor (A2, E3)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:54",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:36",
+      "por": "red-team-analitico"
+    }
+  ]
+}

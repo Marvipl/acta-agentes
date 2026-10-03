@@ -1,0 +1,102 @@
+{
+  "id": "INS-085",
+  "estado": "aprovado",
+  "afirmacao": "Na ALT3, com a frota do slide 14, a receita por transação sozinha não paga o custo de servir o robô, e a H-P16 não se sustenta. Na base da oferta (receita da janela normal) a margem sem o piso da franquia é {{v.m5n}} na ponta de mais robôs e {{v.m4n}} na de menos robôs; na variante do plano (receita com a semana do incidente) é {{v.m5}} e {{v.m4}}. A receita por transação da ALT3 na taxa corrente é {{v.recn}} na base e {{v.rec}} no plano; dividida pela frota do slide 14, dá por robô {{v.rr5n}} na base e {{v.rr5}} no plano na ponta de mais robôs, contra {{v.pr13}} de PR13. Nenhuma réplica de dias de ANA-002 dá margem não negativa na base ({{v.f4n}} das réplicas na ponta de menos robôs e {{v.f5n}} na de mais) nem no plano ({{v.f4}} e {{v.f5}}); a média das réplicas do plano na ponta de mais robôs é {{v.ic5}}. Na ALT2, com a frota de pedido-a-pedido do slide 14, a margem sem o piso também é negativa: {{v.alt2n}} na base e {{v.alt2}} no plano.",
+  "pergunta_ref": "P16",
+  "criterio_ref": "CR6",
+  "valores": {
+    "m5": "ANA-015.margem_robo_alt3_pr09_5_sem_piso",
+    "m4": "ANA-015.margem_robo_alt3_pr09_4_sem_piso",
+    "rec": "ANA-015.receita_mes_alt3_taxa_corrente",
+    "rr5": "ANA-015.receita_por_robo_alt3_pr09_5_sem_piso",
+    "pr13": "ANA-015.pr13_custo_servir_robo_mes",
+    "f4": "ANA-015.fracao_replicas_margem_sem_piso_nao_negativa_pr09_4",
+    "f5": "ANA-015.fracao_replicas_margem_sem_piso_nao_negativa_pr09_5",
+    "ic5": "ANA-015.margem_robo_alt3_sem_piso_ic_dias_pr09_5",
+    "m5n": "ANA-015.margem_robo_alt3_pr09_5_sem_piso_normal",
+    "m4n": "ANA-015.margem_robo_alt3_pr09_4_sem_piso_normal",
+    "alt2": "ANA-015.margem_robo_alt2_slide14_pap_sem_piso",
+    "recn": "ANA-015.receita_mes_alt3_taxa_corrente_normal",
+    "rr5n": "ANA-015.receita_por_robo_alt3_pr09_5_sem_piso_normal",
+    "f4n": "ANA-015.fracao_replicas_margem_sem_piso_nao_negativa_pr09_4_normal",
+    "f5n": "ANA-015.fracao_replicas_margem_sem_piso_nao_negativa_pr09_5_normal",
+    "alt2n": "ANA-015.margem_robo_alt2_slide14_pap_sem_piso_normal"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "bootstrap de dias da receita de ANA-002",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "nenhuma das réplicas dá margem não negativa nas duas pontas de PR09 (chaves fracao_replicas_margem_sem_piso_nao_negativa_pr09_*) e o IC de dias não inclui zero"
+    },
+    {
+      "recorte": "variantes do envelope de ANA-002 (janelas e conferências)",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "todas as variantes dão margem negativa na ponta de mais robôs (chave margem_robo_alt3_sem_piso_envelope e tabela grade_margem_por_robo)"
+    },
+    {
+      "recorte": "operação normal, sem a semana do incidente",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "a margem sem o piso continua negativa nas duas pontas de PR09 (chaves _normal)"
+    },
+    {
+      "recorte": "sensibilidade a PR13",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "para a margem ser não negativa PR13 teria de ficar abaixo da receita por robô sem o piso, que é menor que o PR13 informado nas duas pontas; PR13 é de confiança média"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Base da oferta citada primeiro; conta robusta nas duas janelas."
+  },
+  "impacto": {
+    "modelo": "IMP-CR6-ALT3-DECK5-SEM-PISO",
+    "modelos_relacionados": [
+      "IMP-CR6-ALT2-SEM-PISO",
+      "IMP-CR6-ALT2-HW"
+    ]
+  },
+  "acao": "Mostrar a Marcus a margem com piso e sem piso lado a lado. Com a frota do slide 14 a receita por transação não paga o custo de servir (IMP-CR6-ALT3-DECK5-SEM-PISO); a saída é frota menor (IMP-CR6-ALT3-SEM-PISO) ou preço maior, não a franquia do deck.",
+  "dono": "Renato Correa, CFO; Marcus Lima, CEO",
+  "premissas": [
+    "tarifas e franquia do deck (PR02, PR03, PR04) e custo de servir sem hardware informado por Marcus (PR13); custo de hardware (PR20) é [●] e o motor entrega o máximo pagável",
+    "frota do slide 14 na ponta de mais robôs (PR09, leitura desfavorável)",
+    "base da oferta em operação normal (as quatro semanas anteriores ao incidente) para volume e receita; a janela do plano, que inclui o incidente da Royal Canin, entra como estresse (decisão do orquestrador; Marcus confirma ou troca no G3)",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "Sobrevive. A frota do deck não se paga sem a franquia; a saída é frota menor, como diz a ação."
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:52:08",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:55:01",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:40",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:02",
+      "por": "Marcus"
+    }
+  ]
+}

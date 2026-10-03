@@ -1,0 +1,552 @@
+{
+  "id": "ANA-006",
+  "valores": {
+    "t_unidade_checkout_rc_s": {
+      "valor": 33.84407419050613,
+      "unidade": "s por unidade",
+      "descricao": "s por unidade",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 28.713630858409616,
+        "superior": 40.20374631147313,
+        "nivel": 0.9,
+        "unidade_ic": "operador",
+        "ic95_inferior": 28.160232153752286,
+        "ic95_superior": 41.265970889451246,
+        "referencia_slide10": 38.0,
+        "margem_inferior": 34.2,
+        "margem_superior": 41.800000000000004
+      }
+    },
+    "classe_t_unidade_checkout_rc": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "por_desenho_t_unidade_checkout_rc": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_t_unidade_ao_slide10": {
+      "valor": 0.8906335313291086,
+      "unidade": "x",
+      "descricao": "razão ao valor do slide 10",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.7556218646949899,
+        "superior": 1.057993323986135,
+        "nivel": 0.9,
+        "unidade_ic": "operador"
+      }
+    },
+    "unid_por_onda_checkout_rc": {
+      "valor": 10.932098765432098,
+      "unidade": "unidades por onda",
+      "descricao": "unidades por onda",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 10.52151837524178,
+        "superior": 11.626298701298701,
+        "nivel": 0.9,
+        "unidade_ic": "operador",
+        "ic95_inferior": 10.41084709583193,
+        "ic95_superior": 11.8352534562212,
+        "referencia_slide10": 11.0,
+        "margem_inferior": 9.9,
+        "margem_superior": 12.100000000000001
+      }
+    },
+    "classe_unid_onda_checkout_rc": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "por_desenho_unid_onda_checkout_rc": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_unid_onda_ao_slide10": {
+      "valor": 0.9938271604938271,
+      "unidade": "x",
+      "descricao": "razão ao valor do slide 10",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.9565016704765253,
+        "superior": 1.0569362455726092,
+        "nivel": 0.9,
+        "unidade_ic": "operador"
+      }
+    },
+    "classe_h_p3_checkout_rc": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "por_desenho_h_p3_checkout_rc": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "t_pedido_checkout_rc_s": {
+      "valor": 33.84407419050613,
+      "unidade": "s por pedido",
+      "descricao": "s por pedido",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 28.056990278568275,
+        "superior": 41.15968921126171,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "t_unidade_checkout_rc_extensao_s": {
+      "valor": 36.74549409571162,
+      "unidade": "s por unidade",
+      "descricao": "s por unidade (extensão da tarefa)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 32.80705444435268,
+        "superior": 41.9489221575769,
+        "nivel": 0.9,
+        "unidade_ic": "operador"
+      }
+    },
+    "n_operadores_checkout": {
+      "valor": 13.0,
+      "unidade": "operadores",
+      "descricao": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_tarefas_checkout": {
+      "valor": 324.0,
+      "unidade": "tarefas",
+      "descricao": "tarefas (Tarefa e Usuário)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_ondas_checkout": {
+      "valor": 324.0,
+      "unidade": "ondas",
+      "descricao": "ondas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_pedidos_checkout_rc": {
+      "valor": 3542.0,
+      "unidade": "pedidos",
+      "descricao": "pedidos (uma unidade por pedido no checkout da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_confere_ana000_t_unidade": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_confere_ana000_unid_onda": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_tarefas_checkout_rc_semana_incidente": {
+      "valor": 0.0,
+      "unidade": "tarefas de checkout da Royal Canin de 21 a 25/09",
+      "descricao": "tarefas de checkout da Royal Canin de 21 a 25/09 (incidente operacional da Royal Canin, confirmado por Marcus)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "t_unidade_checkout_rc_s_normal": {
+      "valor": 33.84407419050613,
+      "unidade": "s por unidade",
+      "descricao": "s por unidade",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 28.713630858409616,
+        "superior": 40.20374631147313,
+        "nivel": 0.9,
+        "unidade_ic": "operador"
+      }
+    },
+    "classe_t_unidade_checkout_rc_normal": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "unid_por_onda_checkout_rc_normal": {
+      "valor": 10.932098765432098,
+      "unidade": "unidades por onda",
+      "descricao": "unidades por onda",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 10.52151837524178,
+        "superior": 11.626298701298701,
+        "nivel": 0.9,
+        "unidade_ic": "operador"
+      }
+    },
+    "classe_unid_onda_checkout_rc_normal": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pr08_inf_normal": {
+      "valor": 61.53341311817164,
+      "unidade": "pedidos por hora por robô",
+      "descricao": "pedidos por hora por robô (checkout manual em ciclo completo, teto de 900 s, sem 21 a 25/09)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 52.624033250546084,
+        "superior": 71.48759200124904,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pr08_provavel_normal": {
+      "valor": 106.37017221200469,
+      "unidade": "pedidos por hora por robô",
+      "descricao": "pedidos por hora por robô (3600 ÷ tempo por pedido, sem 21 a 25/09)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 87.46421732055033,
+        "superior": 128.31027007540624,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "t_unidade_checkout_rc_s_antes_par11": {
+      "valor": 28.308943089430894,
+      "unidade": "s por unidade",
+      "descricao": "s por unidade",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 24.320281737379027,
+        "superior": 39.59082304258045,
+        "nivel": 0.9,
+        "unidade_ic": "operador e semana (vale o mais largo); menos de 20 operadores: IC com aviso"
+      }
+    },
+    "classe_t_unidade_antes_par11": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "t_unidade_checkout_rc_s_a_partir_par11": {
+      "valor": 37.333675038441825,
+      "unidade": "s por unidade",
+      "descricao": "s por unidade",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 32.595176677066185,
+        "superior": 41.51338090534419,
+        "nivel": 0.9,
+        "unidade_ic": "operador e semana (vale o mais largo); menos de 20 operadores: IC com aviso"
+      }
+    },
+    "classe_t_unidade_a_partir_par11": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "classe_t_unidade_reamostra_tarefa": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "t_unidade_checkout_rc_reamostra_tarefa": {
+      "valor": 33.84407419050613,
+      "unidade": "s por unidade",
+      "descricao": "s por unidade",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 32.309862835697146,
+        "superior": 35.39854407484176,
+        "nivel": 0.9,
+        "unidade_ic": "tarefa e usuário"
+      }
+    },
+    "classe_unid_onda_reamostra_tarefa": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "unid_onda_checkout_rc_reamostra_tarefa": {
+      "valor": 10.932098765432098,
+      "unidade": "unidades por onda",
+      "descricao": "unidades por onda",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 10.262345679012345,
+        "superior": 11.63888888888889,
+        "nivel": 0.9,
+        "unidade_ic": "tarefa e usuário"
+      }
+    },
+    "t_unidade_checkout_rc_media_por_tarefa_s": {
+      "valor": 36.92372109129626,
+      "unidade": "s por unidade",
+      "descricao": "s por unidade (média das médias por tarefa; descritivo, fora da classificação)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 31.153518009097937,
+        "superior": 45.09864155013348,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "t_unidade_checkout_rc_mediana_por_tarefa_s": {
+      "valor": 33.857142857142854,
+      "unidade": "s por unidade",
+      "descricao": "s por unidade (mediana entre tarefas; descritivo, fora da classificação)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 27.333333333333332,
+        "superior": 43.14,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "razao_t_unidade_media_por_tarefa_ao_slide10": {
+      "valor": 0.9716768708235858,
+      "unidade": "x",
+      "descricao": "razão ao valor do slide 10 (descritivo)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.8198294212920509,
+        "superior": 1.18680635658246,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pedidos_hora_checkout_rc_ciclo": {
+      "valor": 61.53341311817164,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (ciclo completo, teto de 900 s)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 52.624033250546084,
+        "superior": 71.48759200124904,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pedidos_hora_checkout_rc_ciclo_t300": {
+      "valor": 98.85724032065494,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (ciclo completo, teto de 300 s)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 85.49033457767607,
+        "superior": 107.74096606856273,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pedidos_hora_checkout_rc_ciclo_t600": {
+      "valor": 73.573670605613,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (ciclo completo, teto de 600 s)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 64.12856356665557,
+        "superior": 83.0988651092816,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pedidos_hora_checkout_rc_ciclo_t900": {
+      "valor": 61.53341311817164,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (ciclo completo, teto de 900 s)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 52.624033250546084,
+        "superior": 71.48759200124904,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pedidos_hora_checkout_rc_ciclo_t1800": {
+      "valor": 50.801796023091725,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (ciclo completo, teto de 1800 s)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 45.098105569985144,
+        "superior": 61.035173587534366,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pedidos_hora_checkout_rc_ciclo_s3": {
+      "valor": 61.53341311817164,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (ciclo completo, S3, teto de 900 s)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 53.093888334523385,
+        "superior": 71.30756247081266,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pr08_inf": {
+      "valor": 61.53341311817164,
+      "unidade": "pedidos por hora por robô",
+      "descricao": "pedidos por hora por robô (checkout manual em ciclo completo, teto de 900 s)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 52.624033250546084,
+        "superior": 71.48759200124904,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pr08_provavel": {
+      "valor": 106.37017221200469,
+      "unidade": "pedidos por hora por robô",
+      "descricao": "pedidos por hora por robô (3600 ÷ tempo por pedido dentro da tarefa)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 87.46421732055033,
+        "superior": 128.31027007540624,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pr08_sup": {
+      "valor": 154.01069518716577,
+      "unidade": "pedidos por hora por robô",
+      "descricao": "pedidos por hora por robô (3600 ÷ quartil inferior do tempo por pedido)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 113.43283582089552,
+        "superior": 187.39726027397262,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pr08_inf_t300": {
+      "valor": 98.85724032065494,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (ciclo completo, teto de 300 s)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 85.49033457767607,
+        "superior": 107.74096606856273,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pr08_inf_t1800": {
+      "valor": 50.801796023091725,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (ciclo completo, teto de 1800 s)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 45.098105569985144,
+        "superior": 61.035173587534366,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "quartil_inferior_t_pedido_s": {
+      "valor": 23.375,
+      "unidade": "s por pedido",
+      "descricao": "s por pedido (quartil inferior entre tarefas, ponderado por cadências)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 19.210526315789473,
+        "superior": 31.736842105263158,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "pr08_ordem_inf_prov_sup_confere": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_checkout_multiunidade": {
+      "valor": 0.010397350993377484,
+      "unidade": "%",
+      "descricao": "fração de pedidos de checkout em ondas multiunidade (armazém)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_ondas_checkout_multiunidade": {
+      "valor": 0.009174311926605505,
+      "unidade": "%",
+      "descricao": "fração de ondas de checkout multiunidade (armazém)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_checkout_multiunidade_rc": {
+      "valor": 0.0,
+      "unidade": "%",
+      "descricao": "fração de pedidos de checkout em ondas multiunidade (Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_pedidos_checkout_multiunidade_armazem": {
+      "valor": 157.0,
+      "unidade": "pedidos",
+      "descricao": "pedidos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_depositantes_com_checkout_multiunidade": {
+      "valor": 2.0,
+      "unidade": "depositantes",
+      "descricao": "depositantes",
+      "incerteza": null,
+      "contagem": true
+    }
+  },
+  "tabelas": {
+    "equivalencia_slide10": "equivalencia_slide10.csv",
+    "robustez_equivalencia": "robustez_equivalencia.csv",
+    "checkout_pedidos_hora_ciclo": "checkout_pedidos_hora_ciclo.csv",
+    "pr08_faixa": "pr08_faixa.csv",
+    "checkout_multiunidade_por_depositante": "checkout_multiunidade_por_depositante.csv"
+  },
+  "figuras": [
+    "equivalencia_slide10.png",
+    "faixa_pr08.png"
+  ],
+  "notas": "H-P3 (slide 10), equivalência fora das famílias de Holm. Margem de ±10% do valor do slide (G2); IC de 90% por bootstrap com operador como unidade primária e bloco de semana como comparação (vale o mais largo; de 10 a 19 operadores: IC com aviso, n_operadores_checkout). Mesmos geradores e réplicas de ANA-000 (equiv|...); o EP aqui confere com o de ANA-000 (chaves ep_confere_ana000_*). Códigos: classe_* = 1 reproduz, 0 inconclusivo, -1 não reproduz; por_desenho_* = 1 quando o MDE de ANA-000 (mde_equiv_slide10) passa da margem: inconclusivo por desenho, proibido ler como compatibilidade ou como falha. classe_h_p3_checkout_rc combina os dois indicadores (reproduz só se os dois reproduzem). Verificação do deck (linguagem descritiva: 'o WMS reproduz' ou 'não reproduz'), não evidência nova. O tempo por unidade é a razão das somas (Σ cadências válidas ÷ Σ unidades), como em ANA-000; a média das médias por tarefa e a mediana entre tarefas ficam como leitura alternativa descritiva (fora da classificação, porque a hipótese registrada fixa a razão das somas). No checkout da Royal Canin há uma unidade por pedido, então tempo por pedido e por unidade coincidem. Robustez: por mês (julho suprimido por PAR07 operadores), manhã e tarde, tercis do tamanho da onda, hora de início (só horas com PAR07 operadores), reamostragem por tarefa e usuário e fórmula pela extensão da tarefa (ext_valida_s ÷ (unidades − 1)). Recortes com menos de 10 operadores são só descritivos (sem IC nem classe). Faixa de PR08 (baixa confiança, premissa do planejador: o robô não acelera a coleta, só tira o deslocamento ao packing): inferior = pedidos por hora do checkout manual em ciclo completo no teto base de 900 s (o teto de 1.800 s dá o piso da faixa, pr08_inf_t1800; o de 300 s, o topo do ciclo, pr08_inf_t300); provável = 3600 ÷ tempo por pedido (M09); superior = 3600 ÷ quartil inferior do tempo por pedido entre as tarefas (ponderado por cadências). A engenharia da Acta valida carga útil e pedidos por viagem ([●], E9). H12 (contagem completa): fração de pedidos e de ondas de checkout em ondas multiunidade, por depositante (grupos abaixo de PAR07 pedidos ou ondas em 'outros'). Semana do incidente (decisão do orquestrador, revisoes/orquestrador_decisao_semana_incidente.md): a Royal Canin cai para quase zero no WMS de 21 a 25/09 por problemas na operação (confirmado por Marcus; não é falha de extração). A variante do plano (período inteiro, chaves sem sufixo) é o cenário de estresse; as chaves *_normal excluem esses dias (operação normal, base da oferta). O checkout da Royal Canin termina em 18/09, então as duas coincidem (n_tarefas_checkout_rc_semana_incidente = 0). Dependência fora do hash do script: analises/comum.py.",
+  "em": "2026-10-03T21:21:04",
+  "segundos": 1.89
+}

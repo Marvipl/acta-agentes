@@ -1,0 +1,1790 @@
+{
+  "congelado_em": "2026-10-03T21:23:16",
+  "resumo": {
+    "em": "2026-10-03T21:23:14",
+    "assinatura_registro": "83355130f40d9233578bf4913a23ad3bbab7a3ac8eb913151760b8bee1d6df1a",
+    "auditoria": "ok",
+    "insights": {
+      "INS-080": {
+        "estado": "aprovado",
+        "texto": "A economia do slide 15 e a franquia do slide 18 implicam um volume que o WMS não mostra. O serviço do slide 15 equivale a 3.816 pedidos de checkout por mês e a 10.020 linhas tarifáveis por mês no pedido-a-pedido; a franquia, lida como a fração do volume atual descrita no deck, implica 9.452 linhas tarifáveis por mês no pedido-a-pedido, e a franquia sobre a receita da economia é 65,6%, então os dois números do deck são coerentes entre si. Contra o volume corrente da Royal Canin, o implícito é 9,18 x nas linhas e 4,10 x nos pedidos de checkout na janela do plano, e 6,28 x e 3,47 x na operação normal. Entre as 45 bases testadas, 0 bases reproduzem a franquia e a economia ao mesmo tempo. A razão entre o volume mensal de checkout implícito e a taxa diária de pedidos de checkout do slide 10 é 30,0 x, compatível com a hipótese de que o deck multiplicou a taxa diária pelos dias do mês, a confirmar com o autor do deck."
+      },
+      "INS-058": {
+        "estado": "aprovado",
+        "texto": "Na ALT6, que soma o volume compatível dos outros depositantes ao escopo da Royal Canin, a frota agrupada é calculada dia a dia (o máximo horário de cada dia, p90 entre dias), porque a média de perfis de dias diferentes alisa o pico: no dia p90 a frota necessária é 5 robôs (faixa de cenários de 3 a 5) na base pós-colmeia (IC de dias: 5 robôs (IC bootstrap 4 a 5)) e 5 robôs (faixa de cenários de 4 a 7) na variante do plano, contra 2 robôs (faixa de cenários de 1 a 2) na ALT3 da base. Pela banda de dias seria 4 robôs na base e 4 robôs no plano, o que subestima o pico. Com a regra por tipo são 6 robôs (faixa de cenários de 4 a 6) na base. Pelas linhas do armazém inteiro, sem filtro de compatibilidade, o pico do dia p90 pediria 9 robôs, contra 7 robôs do slide 12. A sobra do slide 14 (de 4 robôs a 5 robôs) deixa de ser sobra se a oferta incluir os outros depositantes. A frota é determinística dado PR07 e PR08 e não inclui reserva de disponibilidade do robô."
+      },
+      "INS-012": {
+        "estado": "aprovado",
+        "texto": "A exportação PROD 90DIAS do WMS não traz pré-conferência nem conferência: nenhuma das 43.976 linhas examinadas tem região de origem, região de destino ou área de conferência. Isso vale para esta exportação, de produtividade de separação; o módulo de conferência do WMS (conferência por bipe em bancada) é outro relatório e pode registrar o que aqui não aparece. PR11 (postos de conferência) segue como premissa e sensibilidade, sem medição."
+      },
+      "INS-055": {
+        "estado": "aprovado",
+        "texto": "Contra a leitura do slide 14 (PR09 de 4 robôs a 5 robôs), na base pós-colmeia a ALT3 tem sobra de 2 robôs no dia p90 na ponta inferior pela frota dia a dia (leitura desfavorável; 3 robôs pelo perfil da banda, variante otimista) e de 3 robôs na ponta superior; no dia típico a sobra média por hora da janela é 3 robôs (faixa de cenários de 3 a 4) (pior hora: 3 robôs). É sobra condicionada às premissas (PR07, PR08 e a curva de processamento), não ociosidade medida: a frota do deck pode embutir reserva de disponibilidade e crescimento. Contra a leitura do slide 12 (Royal Canin, de 1 robôs a 2 robôs), a ponta inferior fica em -1 robôs no dia p90 dia a dia (negativo é falta; 0 robôs pela banda), e a superior em 0 robôs dia a dia (1 robôs pela banda). Na ALT2 a ponta inferior do slide 12 fica em -1 robôs dia a dia. Na variante do plano (período inteiro) a sobra da ponta inferior do slide 14 é 2 robôs e a ponta inferior do slide 12 fica em -1 robôs. Os robôs a mais do slide 14 só se justificam se CR6 passar; o dado não mostra pico que peça a frota maior."
+      },
+      "INS-054": {
+        "estado": "aprovado",
+        "texto": "Na base da oferta (regime pós-colmeia), a frota necessária da Royal Canin no dia p90 é calculada dia a dia (o máximo horário de cada dia, p90 entre dias), que é a leitura desfavorável de CR4: 2 robôs (faixa de cenários de 1 a 2) na ALT3 e 2 robôs (faixa de cenários de 1 a 2) na ALT2 (PR07 e PR08 provável; a faixa entre parênteses é a da grade do plano). O perfil médio da banda de dias do p90 alisa o pico horário e é a leitura otimista: daria 1 robôs na ALT3 e 1 robôs na ALT2, e uma frota nesse nível não tem reserva, porque qualquer parada do robô interrompe o serviço. Na variante do plano (período inteiro, com o regime anterior à colmeia e a semana do incidente) a ALT3 pede 2 robôs (faixa de cenários de 1 a 3) dia a dia e 2 robôs pela banda. A grade do plano (PR08 inferior a superior, limites do IC do p90, com e sem pós-pausa, banda, dia real e dia a dia) vai de 1 robôs a 2 robôs na ALT3 da base e de 1 robôs a 3 robôs no plano. A frota necessária cabe na leitura do slide 14 (ponta inferior 4 robôs) em toda a grade, na base e no plano; na leitura do slide 12 (ponta superior 2 robôs) a ALT3 cabe em toda a grade da base, mas o máximo da grade do plano passa dela. Com a regra por tipo (robôs não fungíveis entre pedido-a-pedido e checkout) a ALT3 pede 2 robôs (faixa de cenários de 2 a 3) na base e 3 robôs (faixa de cenários de 2 a 4) no plano. Verificação determinística com premissas de confiança baixa, sem reserva de disponibilidade do robô; os intervalos são faixas de cenários, não intervalos estatísticos."
+      },
+      "INS-088": {
+        "estado": "aprovado",
+        "texto": "Na ALT6, o robô adicional que atende os outros depositantes compatíveis tem margem de contribuição positiva na frota agrupada dia a dia: R$ 554 por robô por mês (IC bootstrap R$ 254 a R$ 1.185) na base da oferta (receita da janela normal) e R$ 596 por robô por mês (IC bootstrap R$ 225 a R$ 1.326) na variante do plano, sem franquia adicional (a franquia já é cobrada pelo escopo da Royal Canin, cuja receita por transação sozinha não a cobre, INS-001), com o IC de dias de ANA-010 acima de zero. O hardware máximo pagável do robô adicional na base é R$ 13.260 por robô (IC bootstrap R$ 6.082 a R$ 28.392). A frota agrupada dia a dia dos outros depositantes é 5 robôs (IC bootstrap 4 a 6); pela banda de dias a margem do robô adicional seria R$ 1.590 por robô por mês (IC bootstrap R$ 747 a R$ 2.267), superestimada porque a média de perfis alisa o pico, por isso a primária é o dia a dia. Somando a receita adicional (R$ 7.769 por mês) à do escopo, a ALT6 total tem margem de R$ 1.007 por robô por mês (faixa de cenários de R$ 1.007 a R$ 2.346) na base, com a frota necessária da ALT6 (5 robôs), e de R$ 967 por robô por mês (faixa de cenários de R$ 405 a R$ 1.458) no plano; o hardware máximo pagável da ALT6 total na base é R$ 24.177 por robô (faixa de cenários de R$ 24.177 a R$ 56.295) (as faixas de cenários da ALT6 total são as da grade de frota de ANA-009). A receita por transação das duas partes (R$ 2.268 por mês do escopo e R$ 7.769 por mês dos outros depositantes) soma mais que a franquia (R$ 5.900 por mês), então a margem da ALT6 total não depende da franquia e é a maior margem sem o piso entre as alternativas calculadas aqui. Na ALT3 com a frota necessária dia a dia a margem sem o piso é positiva (R$ 134 por robô por mês (faixa de cenários de R$ 134 a R$ 1.268)), mas pequena e sem reserva de disponibilidade, e na ALT2 é negativa. O valor para os outros depositantes pode ser menor, porque já rendem mais no manual (INS-070): isso pesa na adoção, não na margem da Acta."
+      },
+      "INS-085": {
+        "estado": "aprovado",
+        "texto": "Na ALT3, com a frota do slide 14, a receita por transação sozinha não paga o custo de servir o robô, e a H-P16 não se sustenta. Na base da oferta (receita da janela normal) a margem sem o piso da franquia é -R$ 546 por robô por mês na ponta de mais robôs e -R$ 433 por robô por mês na de menos robôs; na variante do plano (receita com a semana do incidente) é -R$ 629 por robô por mês e -R$ 537 por robô por mês. A receita por transação da ALT3 na taxa corrente é R$ 2.268 por mês na base e R$ 1.854 por mês no plano; dividida pela frota do slide 14, dá por robô R$ 454 por robô por mês na base e R$ 371 por robô por mês no plano na ponta de mais robôs, contra R$ 1.000 por robô por mês de PR13. Nenhuma réplica de dias de ANA-002 dá margem não negativa na base (0,0% das réplicas na ponta de menos robôs e 0,0% na de mais) nem no plano (0,0% e 0,0%); a média das réplicas do plano na ponta de mais robôs é -R$ 629 por robô por mês (IC bootstrap -R$ 741 a -R$ 521). Na ALT2, com a frota de pedido-a-pedido do slide 14, a margem sem o piso também é negativa: -R$ 867 por robô por mês na base e -R$ 909 por robô por mês no plano."
+      },
+      "INS-086": {
+        "estado": "aprovado",
+        "texto": "Com o piso da franquia, a margem por robô da ALT3 é não negativa com a frota do slide 14, mas ela vem da franquia, não da receita por transação. A receita por transação (R$ 1.854 por mês) fica abaixo da franquia (R$ 5.900 por mês), então a receita por robô é a franquia dividida pela frota. Pela métrica de CR6 (franquia se maior que a receita), a margem é R$ 180 por robô por mês na ponta de mais robôs e R$ 475 por robô por mês na de menos, e o hardware máximo pagável no prazo do contrato é R$ 4.320 por robô na ponta de mais robôs e R$ 11.400 por robô na de menos, a comparar com o custo de hardware (PR20), que não foi informado ([●]). A maior frota que a franquia sustenta, com margem não negativa, é 5 robôs, que coincide com a ponta de mais robôs de PR09. Na ALT2, a margem com o piso é R$ 967 por robô por mês. A franquia do deck implica um volume maior que o do WMS (ANA-011), então a margem com o piso depende de a franquia ser cobrada integralmente no volume corrente e de o cliente aceitá-la, o que a verificação de CR2 põe em dúvida."
+      },
+      "INS-087": {
+        "estado": "aprovado",
+        "texto": "Com a frota necessária de ANA-009 a margem por robô da ALT3 é maior que com a frota do slide 14, com e sem o piso, e a segunda parte da H-P16 se sustenta; isso é quase aritmético, porque menos robôs dividem a mesma receita. O sinal da margem sem o piso, porém, depende da frota e da janela. Na leitura desfavorável, com a frota dia a dia do regime pós-colmeia (2 robôs (faixa de cenários de 1 a 2)) e a receita da janela normal (base da oferta), a margem sem o piso é R$ 134 por robô por mês (faixa de cenários de R$ 134 a R$ 1.268), positiva e pequena; com a regra por tipo (robôs não fungíveis) ela é R$ 134 por robô por mês (faixa de cenários de -R$ 244 a R$ 134), e a ponta alta da faixa de frota a deixa negativa (as faixas de cenários são as da grade de frota de ANA-009). Na variante do plano (receita com a semana do incidente, frota do período inteiro, 2 robôs (faixa de cenários de 1 a 3)) a margem sem o piso é -R$ 73,14 por robô por mês (faixa de cenários de -R$ 382 a R$ 854), contra -R$ 629 por robô por mês com a frota do slide 14 na ponta de mais robôs. A leitura otimista, pelo perfil médio da banda de dias, daria 1 robôs na base e margem de R$ 1.268 por robô por mês; essa frota não tem reserva de disponibilidade, porque qualquer parada do robô interrompe o serviço, e a média de dias alisa o pico. A maior frota que a receita por transação sustenta é 2 robôs na base e 1 robôs no plano. A fração das réplicas de dias com margem sem o piso não negativa é 98,2% na base com a frota dia a dia (100,0% pela banda) e 31,3% no plano. Com o piso, a margem com a frota necessária da base é R$ 1.950 por robô por mês (faixa de cenários de R$ 1.950 a R$ 4.900) e o hardware máximo pagável é R$ 46.800 por robô (faixa de cenários de R$ 46.800 a R$ 117.600)."
+      },
+      "INS-048": {
+        "estado": "aprovado",
+        "texto": "Nos dias de pico (volume diário no percentil mais alto, período inteiro) o armazém coloca 10,4 operadores por dia em atividade contra 7,55 operadores por dia nos dias típicos pelo corte de uma linha, e 7 operadores por dia contra 4,33 operadores por dia pelo corte de uma hora. As horas ativas de separação sobem de 14,7 horas por dia nos dias típicos para 26,4 horas por dia nos de pico: 11,8 horas por dia de excedente no teto base e 10,3 horas por dia no teto conservador. Censo descritivo: mostra que a Social cobre o pico com mais gente e mais horas, e não diz como (hora extra, temporário, remanejamento ou a folga da própria equipe, já que boa parte do tempo da equipe não é creditada a coletas, INS-052). As horas ativas são tempo creditado de separação, não horas pagas, e os dias de pico são escolhidos pelo próprio volume: o excedente é limite superior para planejar picos futuros."
+      },
+      "INS-015": {
+        "estado": "aprovado",
+        "texto": "O excedente de horas ativas do escopo da ALT3 no dia p90 sobre o dia típico depende do regime. Na base pós-colmeia (dias plenos desde a entrada da colmeia, sem o incidente de 21 a 25/09) é de 1,20 horas por dia (faixa de cenários de 1,20 a 2,34), ou 0,16 FTE (faixa de cenários de 0,16 a 0,32): uma fração de jornada, não uma vaga inteira. A banda do p90 pós-colmeia tem só o mínimo de dias (5 dias plenos na banda PAR05 do volume diário), então o IC de bootstrap de dias, largo, deve acompanhar o número: 1,20 horas por dia (IC bootstrap 0,56 a 2,15), ou 0,16 FTE (IC bootstrap 0,08 a 0,29); a conclusão (fração de jornada) vale nas duas incertezas (a faixa de cenários citada é dos tetos e de S1 a S3, não é intervalo de confiança). Na variante do plano, que inclui o regime pré-colmeia, é de 2,32 horas por dia (faixa de cenários de 2,32 a 5,15), ou 0,32 FTE (faixa de cenários de 0,32 a 0,70), porque a banda do p90 do período inteiro tem 8 dias plenos, dos quais 8 dias plenos anteriores à colmeia, quando o pedido-a-pedido era bem maior. Na janela normal de 24/08 a 18/09 a leitura é só descritiva (0,82 horas por dia (faixa de cenários de 0,60 a 0,87), poucos dias na banda do p90). Na retomada (segundas e dias pós-pausa) o excedente pós-colmeia é 1,27 horas por dia (faixa de cenários de 1,27 a 2,68). A regra de teto inteiro de M23 transformaria qualquer fração em um operador adicional, mas esse número não sustenta o argumento 'pico sem temporário': o reforço é uma fração de jornada. No armazém inteiro, sem quebra de regime, o excedente do dia p90 é 5,12 horas por dia (faixa de cenários de 4,77 a 9,16) (0,70 FTE (faixa de cenários de 0,65 a 1,25)). O dia máximo fica só como limite superior. A base pós-colmeia é decisão do orquestrador a confirmar por Marcus no G3."
+      },
+      "INS-083": {
+        "estado": "aprovado",
+        "texto": "Os FTE do slide 14 não se reproduzem pelo método do contrato no teto conservador do G2, que é o extremo de menos horas: a separação do checkout e do pedido-a-pedido soma 1,86 FTE (deck, slide 14) no deck e 0,21 FTE pelas horas ativas do WMS (0,30 FTE na operação normal), uma razão de 8,70 x (6,16 x na operação normal). Nos quatro tetos de intervalo e nos segmentos S1 a S3 o FTE de separação do escopo da ALT3 pelo WMS fica em 0,21 FTE (faixa de cenários de 0,21 a 0,51), então a razão depende do teto. A jornada ativa é limite inferior da presença: o FTE do deck pode ser presença paga e o do WMS é tempo de coleta creditado, de modo que parte da diferença é de definição, não de dado. A jornada de um FTE 'medida no WMS' é a jornada contratual (PR12), enquanto a jornada ativa média por operador-dia nos dias típicos é 2,08 horas. O método do deck é desconhecido, e a conferência (postos de PR11, premissa confirmada por Marcus) o WMS não registra."
+      },
+      "INS-032": {
+        "estado": "aprovado",
+        "texto": "Os outros depositantes compatíveis trariam receita adicional por transação de R$ 7.769 por mês (IC bootstrap R$ 6.427 a R$ 9.121) em operação normal e R$ 7.980 por mês (IC bootstrap R$ 6.292 a R$ 9.730) no cenário de estresse (janela do plano, com a semana de incidente da Royal Canin). Com a frota agrupada dia a dia (ponta desfavorável), a margem por robô adicional é R$ 554 por robô por mês (IC bootstrap R$ 254 a R$ 1.185) em operação normal (R$ 596 por robô por mês (IC bootstrap R$ 225 a R$ 1.326) no estresse), descontado o custo sem hardware; no limite inferior de M06 é R$ 553 por robô por mês (IC bootstrap R$ 253 a R$ 1.183). Pelo perfil da banda, que subestimava a frota, seria R$ 1.590 por robô por mês (IC bootstrap R$ 747 a R$ 2.267). O hardware máximo pagável no prazo, na leitura conservadora, é R$ 13.260 por robô (IC bootstrap R$ 6.082 a R$ 28.392). Só com a frota dos depositantes relevantes a margem seria R$ 942 por robô por mês (IC bootstrap R$ 510 a R$ 1.536), leitura otimista. O sinal da margem se mantém, mas a magnitude cai bastante frente à leitura pela banda. Nenhuma faixa reduzida de tarifa é atingida. A receita supõe que todo o volume compatível dos outros clientes da Social vá ao robô na tarifa da Royal Canin."
+      },
+      "INS-001": {
+        "estado": "aprovado",
+        "texto": "Na ALT3, a receita por transação da Royal Canin na taxa corrente cobre 38,4% (faixa de cenários de 34,2% a 43,8%) da franquia em operação normal (receita de R$ 2.268 por mês (faixa de cenários de R$ 2.017 a R$ 2.584) contra a franquia de R$ 5.900 por mês) e 31,4% (faixa de cenários de 21,1% a 40,6%) na janela do plano, que inclui o incidente operacional de 21 a 25/09. CR2 falha nas duas janelas: para cobrir a franquia o volume teria de ser 2,60 vezes o volume corrente (faixa de cenários de 2,28 a 2,93). H-P4a (slide 18) não se confirma."
+      },
+      "INS-011": {
+        "estado": "aprovado",
+        "texto": "Pelas horas ativas do WMS, o escopo da ALT3 equivale a 0,30 FTE (faixa de cenários de 0,30 a 0,67) em toda a grade de tetos e sensibilidades: menos de uma vaga inteira. Como a jornada ativa sobe nos dias de pico (H13a), o plano manda ler esse FTE como limite superior da liberação. Só pela separação, a ALT3 não libera vaga inteira; o argumento de CR8 muda de vagas liberadas para absorver crescimento e pico sem contratar. Os postos de conferência de PR11 não estão no WMS."
+      },
+      "INS-089": {
+        "estado": "aprovado",
+        "texto": "O custo atual de mão de obra no escopo da ALT3 é uma estimativa, não uma medida do WMS: separação pelas horas ativas do WMS mais os postos de conferência de PR11, valorados por PR10. Ela dá R$ 11.510 por mês (faixa de cenários de R$ 11.510 a R$ 13.346) na operação normal (base da oferta) e R$ 11.069 por mês (faixa de cenários de R$ 11.069 a R$ 12.526) na variante do plano, ou seja, 0,57 x do custo do slide 15 (R$ 19.307 por mês) na variante do plano; as faixas de cenários são as dos quatro tetos de intervalo e dos segmentos S1 a S3 de ANA-003. A maior parte desse custo, 90,3%, vem dos postos de conferência de PR11, premissa confirmada por Marcus que o WMS não mede, e a parte de separação é limite inferior, porque usa horas ativas (tempo de coleta creditado), não presença. O FTE de separação do escopo pelo WMS é 0,21 FTE (faixa de cenários de 0,21 a 0,51), uma fração de vaga inteira mesmo no teto mais folgado, e o FTE atual da ALT3 (separação mais PR11) é 2,21 FTE (faixa de cenários de 2,21 a 2,51). Na ALT2, o custo atual é R$ 721 por mês (faixa de cenários de R$ 721 a R$ 1.741) e o FTE atual é 0,14 FTE (faixa de cenários de 0,14 a 0,35), menos de uma vaga inteira nos quatro tetos de intervalo. O FTE residual, o FTE liberado, as vagas inteiras e a economia trimestral ficam para o modelo de impacto (PR05 e PR06)."
+      },
+      "INS-002": {
+        "estado": "aprovado",
+        "texto": "Na ALT2 (só pedido-a-pedido), a receita por transação cobre apenas 6,8% (faixa de cenários de 4,9% a 7,8%) da franquia em operação normal e 4,6% (faixa de cenários de 2,7% a 6,8%) na janela do plano. CR2 falha em todo o envelope; para cobrir a franquia o volume teria de ser 14,8 vezes o volume corrente (faixa de cenários de 12,8 a 20,6). H-P4b (slide 18) se confirma: sem o checkout, a franquia deixa de fazer sentido."
+      },
+      "INS-006": {
+        "estado": "aprovado",
+        "texto": "Com PR05 como constante, o ganho que o deck sugere sobre o manual medido é 1,30 vezes (IC bootstrap 1,20 a 1,51) no teto conservador, 1,78 vezes (IC bootstrap 1,64 a 2,03) no teto base e 2,12 vezes (IC bootstrap 1,91 a 2,44) no limite superior do teto na regra base de pausas: nessa regra o dobro só aparece no limite superior. Com truncamento das pausas (S2) a razão sobe para 1,96 vezes (IC bootstrap 1,77 a 2,32) no teto conservador e 2,54 vezes (IC bootstrap 2,27 a 3,06) no teto base, perto do dobro ou acima dele em todos os tetos. O WMS não decide o dobro, nem a favor nem contra: PR05 tem método de medição desconhecido (com ou sem pausas) e vem de amostra pequena, cuja incerteza não está nos intervalos, então a razão só é comparável se o denominador for o mesmo. A oferta não deve afirmar o dobro com base no WMS."
+      },
+      "INS-059": {
+        "estado": "aprovado",
+        "texto": "Para cobrir o dia p90 da Royal Canin (ALT3, base pós-colmeia) a vantagem do robô não aparece quando manual e robô são medidos pela mesma regra. Pela regra do excedente de horas ativas (ANA-003), o manual precisa de 1,20 pessoas-hora por dia em hora extra (1 operadores) ou de 7,33 pessoas-hora por dia contratadas de temporário (1 operadores); o robô na leitura colaborativa reduz o excedente para 1,16 pessoas-hora por dia em hora extra e mantém 7,33 pessoas-hora por dia no temporário, uma diferença pequena. Na variante do plano o excedente é 2,32 pessoas-hora por dia no manual e 1,89 pessoas-hora por dia com robô. Pela regra da curva de separadores inteiros por hora, o manual (0 pessoas-hora por dia em hora extra, 0 pessoas-hora por dia em escala adicional) e o robô (0 pessoas-hora por dia e 0 pessoas-hora por dia) cobrem o dia p90 com a escala do dia típico, porque a Royal Canin pede no máximo 1 separadores por hora, no dia p90 e no dia típico: a regra inteira é grossa demais para discriminar e não mostra vantagem do robô. A carga adicional do dia p90 é 1,41 pessoas-hora por dia sem robô e 1,35 pessoas-hora por dia com robô. Custos de hora extra e de temporário: [●] (E11), não calculados. A PR05 com robô tem confiança baixa e, no checkout, deixa o robô mais lento que o manual (E9)."
+      },
+      "INS-056": {
+        "estado": "aprovado",
+        "texto": "CR8 no dia p90 da Royal Canin (ALT3) depende de como se lê M23, e a leitura é de Marcus no G3. Na base pós-colmeia o excedente é 1,20 horas por dia de jornada ativa sobre o dia típico, ou 0,16 FTE. A leitura registrada no plano é a autônoma (a fórmula do contrato: o robô tira todo o trabalho humano das linhas absorvidas): por ela a frota absorve 1,50 horas por dia (faixa de cenários de 1,50 a 1,77), o reforço é 0 operadores (faixa de cenários de 0 a 0) e CR8 passa no dia p90, mas é o limite superior da absorção. A leitura colaborativa é a variante, a que o H02 usa (o trabalho humano das linhas absorvidas continua, mais rápido pela PR05, 1,45 horas por dia): por ela o robô poupa só 0,05 horas por dia (faixa de cenários de 0,04 a 0,05); as horas residuais ficam em 1,16 horas por dia (faixa de cenários de 1,16 a 1,17), ou 0,16 FTE, e o reforço é 1 operadores (faixa de cenários de 1 a 1) além da equipe com robô; pela regra de teto inteiro de M23, CR8 não passa no dia p90 nessa variante, embora o residual seja só uma fração de FTE. O reforço só seria zero com PR05 de 323 linhas por hora por operador. Na leitura do período inteiro (chaves sem sufixo, regime pré-colmeia incluído) o excedente é 2,32 horas por dia, a leitura colaborativa poupa 0,43 horas por dia (faixa de cenários de 0,27 a 0,43) e o reforço é 1 operadores (faixa de cenários de 1 a 1) (leitura autônoma: 0 operadores (faixa de cenários de 0 a 0)). O excedente de horas (jornada ativa) e as horas absorvidas (M14) vêm de recortes diferentes, e o reforço inteiro de M23 é regra, não mensagem: o que importa é a fração de FTE."
+      },
+      "INS-003": {
+        "estado": "validado",
+        "texto": "O WMS reproduz a queda do pedido-a-pedido nos pedidos da Royal Canin do slide 8: a participação passou de 74,6% em junho para 24,4% em agosto. O degrau da entrada da colmeia é -52,9 p.p. (IC -86,3 p.p. a -19,6 p.p.) na variante do plano, que inclui a semana do incidente de 21 a 25/09 (quase sem pedidos, pesando como semana cheia), e -37,4 p.p. (IC -50,5 p.p. a -24,4 p.p.) sem essa semana. Além do degrau, a tendência semanal é 1,2 p.p. (IC -3,2 p.p. a 5,6 p.p.) na variante do plano e -1,4 p.p. (IC -3,0 p.p. a 0,6 p.p.) sem a semana do incidente (p unilateral 0,08): o IC contém zero nas duas, então a tendência contínua não está comprovada, o que é inconclusivo e não ausência de tendência, porque o poder é baixo. A participação do pedido-a-pedido depende do roteamento da Social para a colmeia. Verificação do deck, em linguagem descritiva."
+      },
+      "INS-004": {
+        "estado": "validado",
+        "texto": "Depois da entrada da colmeia, o pedido-a-pedido da Royal Canin gera 75,9 linhas tarifáveis por dia (IC bootstrap 63,2 a 90,8) sem a semana do incidente (70,8 linhas tarifáveis por dia (IC bootstrap 58,4 a 85,5) com ela). O volume total da Royal Canin em coletas por dia pleno foi 260 coletas por dia pleno (IC 231 a 292) antes da colmeia e 243 coletas por dia pleno (IC 227 a 260) depois, sem o incidente (variação -6,6% (IC -18,2% a 7,3%), com IC que contém zero), enquanto o pedido-a-pedido passou de 222 coletas por dia pleno (IC 194 a 251) para 76,4 coletas por dia pleno (IC 64,7 a 90,8) e a colmeia passou a 117 coletas por dia pleno (IC 102 a 132): o degrau de -96,3 linhas tarifáveis por dia (IC -158 a -34,6) do volume tarifável diário do pedido-a-pedido (variante do plano, com a semana do incidente; não há versão sem o incidente para o nível) coincide com a transferência para a colmeia, sem perda de demanda distinguível (o IC da variação do volume total admite queda e aumento). Líquida do degrau, a tendência do nível é -4,77 linhas tarifáveis por dia por semana (IC -11,1 a 1,55) sem a semana do incidente (o IC contém zero) e -6,21 linhas tarifáveis por dia por semana (IC -12,0 a -0,44) na variante do plano, puxada pelos dias quase zerados do incidente; só a leitura sem o incidente serve como sensibilidade de PR14. A base tarifável depende do roteamento da Social."
+      },
+      "INS-005": {
+        "estado": "validado",
+        "texto": "No pedido-a-pedido da Royal Canin, o ritmo manual medido pelo WMS em ciclo completo é de 50,6 coletas/h (IC bootstrap 43,6 a 54,8) no teto conservador, 19,6 coletas/h (IC bootstrap 12,6 a 23,8) acima da linha de base do deck (31 coletas/h): na regra base de pausas (lacunas acima do teto fora da jornada), o WMS não confirma PR06 e CR3 sai com classificação de falha. A leitura depende da regra de pausa e do teto: no teto base são 37,1 coletas/h (IC bootstrap 32,4 a 40,3) e só no limite superior do teto o intervalo encosta na linha de base (31,2 coletas/h (IC bootstrap 27,1 a 34,5)); com truncamento das pausas (S2) o ritmo cai para 33,7 coletas/h (IC bootstrap 28,4 a 37,3) no teto conservador e 26,0 coletas/h (IC bootstrap 21,6 a 29,1) no teto base, e 18 células da grade de tetos e sensibilidades ficam em PR06 ou abaixo. No teto conservador a maior parte do tempo do recorte é descartada (68,7%), então M14 mede o ritmo enquanto o operador trabalha, e o WMS não registra a primeira coleta nem a ida ao packing, que a linha de base do deck pode incluir. O WMS, portanto, não confirma nem refuta PR06; o que se sustenta nas duas leituras é a ação: não prometer o dobro com base no WMS. A hipótese de M14 não passar de PR06 não se sustenta na regra base (p ajustado por Holm, limite superior: 1), e o poder é baixo: a magnitude vem com aviso e não deve ser citada como precisa."
+      },
+      "INS-007": {
+        "estado": "validado",
+        "texto": "Cada coleta manual no pedido-a-pedido da Royal Canin leva 63,0 segundos por coleta (IC bootstrap 55,1 a 81,0) (razão ponderada, correção N-1, que exclui o deslocamento até o primeiro endereço). Com os números do relatório do robô (amostra preliminar, premissas PR17 e PR18), o tempo produtivo do robô seria 0,83 vezes (IC bootstrap 0,64 a 0,94) do manual e, com a espera, 1,71 vezes (IC bootstrap 1,33 a 1,96) do manual. As definições dos dois lados não são iguais: a missão do robô inclui a navegação, inclusive a primeira perna, o que pesa contra o robô em todos os pedidos da amostra do relatório, que só tem pedidos de dois ou mais endereços; a fração de pedidos de um só endereço é 68,6% na conta do robô e 47,0% no manual, então essa amostra cobre a minoria dos pedidos do robô; a espera mede a disponibilidade do operador num piloto com um robô. Comparação descritiva, sem teste, de baixa confiança; o banco da frota não está nesta análise."
+      },
+      "INS-008": {
+        "estado": "validado",
+        "texto": "A contaminação do tempo manual por pedidos do robô com devolutiva não automática (H06) não aparece no WMS: a proporção de linhas humanas da Royal Canin com dois ou mais endereços e sem tempo mensurável é 0,3% (IC bootstrap 0,0% a 1,3%) depois do início do robô e 0,0% (IC bootstrap 0,0% a 0,0%) antes. A diferença-em-diferenças contra os outros depositantes é -0,7 p.p. (IC bootstrap -3,8 p.p. a 0,3 p.p.) e H06 não se confirma (p ajustado, limite superior de Holm: 1). Leitura associativa, com um robô e sem teste controlado; CR3 segue com o período inteiro como primário."
+      },
+      "INS-009": {
+        "estado": "validado",
+        "texto": "Os pedidos feitos pelo robô aparecem no WMS numa conta de sistema própria, que capta só as devolutivas automáticas: a participação real do robô é maior que os 12,3% dos pedidos do pedido-a-pedido da Royal Canin desde o início da operação (piso), e há 20 pedidos de checkout na mesma conta. A participação sobe de 3,5% em julho para 20,1% em setembro. Os pedidos da conta são menores que os manuais (1,60 endereços por pedido (IC bootstrap 1,44 a 1,78) contra 2,06 endereços por pedido (IC bootstrap 1,99 a 2,14), e 6,83 unidades por pedido (IC bootstrap 5,11 a 8,69) contra 13,6 unidades por pedido (IC bootstrap 12,6 a 14,5)), mas isso reflete a escolha da operação, não uma propriedade do robô: a fração de pedidos de um só endereço é 68,6% na conta do robô e 47,0% no manual. Comparação descritiva; o Tempo do robô no WMS não é comparável com o do manual."
+      },
+      "INS-010": {
+        "estado": "validado",
+        "texto": "O escopo da ALT3 (separação do checkout e do pedido-a-pedido da Royal Canin) consome 2,21 horas por dia pleno (faixa de cenários de 2,21 a 4,90) na janela normal de 24/08 a 18/09, no teto conservador (a faixa entre parênteses é de cenários de teto e sensibilidade, não intervalo de confiança), ou 0,30 FTE (IC bootstrap 0,26 a 0,34) de FTE equivalente de horas ativas (horas por dia pleno ÷ PR12). O slide 14 do deck mostra 1,86 FTE (deck, slide 14) só de separação: as horas ativas medidas, que são piso do tempo dedicado, ficam abaixo disso em todo teto e sensibilidade, e o deck equivale a 6,16 vezes (faixa de cenários de 2,78 a 6,16) o medido no teto conservador na janela normal e a 8,70 vezes (faixa de cenários de 3,68 a 8,70) na janela do plano. Isso vale só para horas ativas: o deck pode ter contado alocação ou presença, e o método precisa ser reconciliado com a Social antes de dizer ao cliente que o slide 14 não se reproduz. No teto conservador a maior parte do tempo do escopo é descartada (68,9%). Verificação do deck, em linguagem descritiva."
+      },
+      "INS-013": {
+        "estado": "validado",
+        "texto": "No armazém, a jornada ativa do mesmo operador é maior nos dias de pico do que nos típicos em 0,87 horas (IC bootstrap 0,47 a 1,31) (H13a; p ajustado, limite superior de Holm: 0,00). A amplitude do dia muda 0,16 horas (IC bootstrap -0,70 a 0,97), com IC largo demais para separar folga de hora extra: a leitura de folga fica indeterminada. Os dias de pico caem em segundas-feiras e dias pós-pausa, então pico e retomada se misturam. O poder é baixo para o efeito relevante: a magnitude vem com aviso. Consequência do plano: as horas ativas valem como limite superior em CR1 e CR8."
+      },
+      "INS-014": {
+        "estado": "validado",
+        "texto": "Com efeitos fixos de hora e de dia da semana e sem a faixa de refeição, o coeficiente do log do volume do dia sobre a fração de intervalos acima do teto é -0,03 (IC bootstrap -0,06 a 0,01): o sinal é negativo (menos espera quando o volume sobe), mas o IC contém zero (p ajustado, limite superior de Holm: 0,30; o p de Holm exato da F1b é menor e não muda a conclusão) e H13b não se confirma. Não é ausência de efeito: em elasticidade o efeito estimado é -0,24 elasticidade (IC bootstrap -0,49 a 0,10), e o efeito relevante da convenção equivale a 1,05 elasticidade, uma elasticidade grande; o poder só exclui efeitos grandes, e um efeito moderado de menos espera com mais volume continua compatível com o IC. Leitura associativa; a espera por onda depende da liberação de ondas, cuja hora não está na planilha."
+      },
+      "INS-020": {
+        "estado": "validado",
+        "texto": "No checkout da Royal Canin, o WMS reproduz as unidades por onda do slide 10: 10,9 unidades por onda (IC bootstrap 10,5 a 11,6), com o IC da equivalência dentro da margem fixada no G2. Mas não decide o tempo por unidade: 33,8 s por unidade (IC bootstrap 28,7 a 40,2), com o IC da equivalência cruzando a margem. O resultado é inconclusivo por desenho, porque o MDE de ANA-000 passa da margem, e não pode ser lido como compatibilidade nem como falha. Depois do início da operação do robô o tempo por unidade é 37,3 s por unidade (IC bootstrap 32,6 a 41,5); antes, 28,3 s por unidade (IC bootstrap 24,3 a 39,6). O período inteiro mistura dois regimes. Verificação do deck, não evidência nova."
+      },
+      "INS-021": {
+        "estado": "validado",
+        "texto": "A capacidade do robô no checkout (PR08) fica numa faixa larga pelos dados do WMS: de 61,5 pedidos por hora por robô (IC bootstrap 52,6 a 71,5) a 154 pedidos por hora por robô (IC bootstrap 113 a 187), com ponto provável em 106 pedidos por hora por robô (IC bootstrap 87,5 a 128). A faixa vem do checkout manual: inferior pelo ciclo completo, provável pelo tempo por pedido dentro da tarefa e superior pelo quartil inferior desse tempo. Ela supõe que o robô só tira o deslocamento ao packing e tem confiança baixa: a engenharia da Acta precisa validar a carga útil e os pedidos por viagem."
+      },
+      "INS-022": {
+        "estado": "validado",
+        "texto": "Pedidos de checkout em ondas com mais de uma unidade por linha são raros: 1,0% dos pedidos de checkout do armazém, concentrados em poucos depositantes, e nenhum na Royal Canin (0,0%). Por onda, a fração é 0,9%. A tarifa por pedido de checkout (PR03) supõe uma peça por pedido; na Royal Canin a suposição vale na carga inteira (contagem completa, sem incerteza amostral)."
+      },
+      "INS-023": {
+        "estado": "validado",
+        "texto": "CR7 fica inconclusivo: a exclusão da colmeia do slide 14 não se sustenta nem cai. No teto base, a colmeia da Royal Canin faz 70,3 coletas por hora (IC bootstrap 65,4 a 74,7) em ciclo completo, com IC que cruza PR05. Nas duas variantes desfavoráveis à exclusão o IC fica inteiro abaixo de PR05: 47,2 coletas por hora (IC bootstrap 43,3 a 52,4) em S2 e 59,2 coletas por hora (IC bootstrap 55,0 a 62,9) no teto maior. Nas variantes favoráveis à exclusão (S3: 87,6 coletas por hora (IC bootstrap 82,9 a 103); teto conservador: 88,9 coletas por hora (IC bootstrap 81,2 a 94,3)) a colmeia passa, mas elas só são reportadas. O ajuste de Holm no pior caso da família dá 0,10 p ajustado (IC bootstrap 0,08 a 0,12). A colmeia fica candidata a teste (ALT5). O viés declarado favorece a exclusão (a mesma visita é contada várias vezes e a distribuição no put wall não está no WMS), então uma aprovação seria fraca."
+      },
+      "INS-024": {
+        "estado": "validado",
+        "texto": "Em ciclo completo e no teto base, a colmeia da Royal Canin roda mais coletas por hora que o pedido-a-pedido: 93,5% (IC bootstrap 75,7% a 121,0%) (M14 bruto, descritivo), e a diferença se mantém no teto conservador (77,4% (IC bootstrap 63,3% a 101,2%)). Contra o checkout o sinal depende do teto: 14,2% (IC bootstrap 1,7% a 29,4%) no teto base e -10,1% (IC bootstrap -15,0% a -2,5%) no teto conservador, então não há vantagem estável sobre o checkout. A vantagem sobre o pedido-a-pedido é em boa parte do método (a separação em lote amortiza a caminhada) e da contagem repetida da mesma visita: 97,1% das linhas da colmeia repetem o fim da tarefa. Não é espaço de ganho para o robô. Entre as linhas de um endereço, 93,0% têm tempo acima do instante de confirmação na colmeia, contra 55,6% no pedido-a-pedido, e 19,5% do tempo da colmeia (creditado mais descartado) é cauda acima do limite, descartada pela regra base. Até a operação da Social confirmar onde a distribuição no put wall é registrada (E3), o número da colmeia é provisório."
+      },
+      "INS-025": {
+        "estado": "validado",
+        "texto": "O WMS não mostra que a primeira hora pese mais nas segundas-feiras que de terça a sexta: a diferença (segunda menos terça a sexta) é -1,5 p.p. (IC -5,7 p.p. a 2,6 p.p.) da participação no volume do dia, com IC que cruza zero. O resultado é inconclusivo por desenho, porque o MDE de ANA-000 (7,0%) passa do efeito relevante (1,8%), e não pode ser lido como ausência de efeito. O ajuste de Holm no pior caso da família dá 1 p ajustado (faixa de cenários de 1 a 1). A participação é uma medida relativa: nas segundas o dia todo é maior (a retomada do armazém é 1.842 linhas por dia (IC bootstrap 1.532 a 2.199) contra 1.100 linhas por dia (IC bootstrap 983 a 1.232) no dia típico), então a fila pode ser processada sem aumentar a fatia da primeira hora. Em pedidos a diferença tem sinal oposto ao das linhas. Não se pode afirmar nem negar, por esta medida, que a fila acumulada seja processada na chegada da equipe nas segundas."
+      },
+      "INS-026": {
+        "estado": "validado",
+        "texto": "O dia de pico (p90) do armazém reproduz o slide 12: 1.630 linhas por dia (IC bootstrap 1.470 a 2.299); razão ao valor do deck: 1,00 x (IC bootstrap 0,90 a 1,41) (verificação, não evidência nova). Na Royal Canin o pico do pedido-a-pedido depende do regime da colmeia: o p90 do período inteiro (233 linhas por dia (IC bootstrap 152 a 328)) vem todo de dias anteriores à entrada da colmeia, que mudou o mix. No regime pós-colmeia, base da oferta (sem a semana de incidente), o p90 é 110 linhas por dia (IC bootstrap 89,4 a 188), e na janela normal de ANA-002 é 112 linhas por dia (IC bootstrap 82,6 a 159). O pico do perfil do dia p90 cai de 45,5 linhas por hora (IC bootstrap 27,4 a 57,1) para 22,8 linhas por hora (IC bootstrap 17,9 a 40,6). No checkout não há quebra relevante: o p90 é 84,2 pedidos por dia (IC bootstrap 68,1 a 90,3) no período inteiro e 86,7 pedidos por dia (IC bootstrap 68,4 a 93) no regime pós-colmeia. O máximo diário vem logo depois de dias sem registro: é fila acumulada, não dia típico. As duas leituras (período inteiro, com o regime pré-colmeia incluído, e pós-colmeia) vão ao memorando; Marcus confirma a base no G3."
+      },
+      "INS-027": {
+        "estado": "validado",
+        "texto": "A janela observada do armazém vai de 8 h a 18 h (fim exclusivo), e a concentração matinal reproduz o slide 17: 41,8% (IC bootstrap 38,4% a 44,9%) das linhas começam nas duas primeiras horas da janela; razão ao valor do deck: 0,99 x (IC bootstrap 0,91 a 1,07) (verificação, não evidência nova). No dia p90, o pico horário do pedido-a-pedido da Royal Canin começa às 11 h (IC bootstrap 9 a 12) (regime pós-colmeia: 11 h (IC bootstrap 9 a 16)), o do checkout às 8 h (IC bootstrap 8 a 16) (intervalo largo demais para orientar decisão) e o do armazém às 9 h (IC bootstrap 8 a 11). É curva de processamento (hora da confirmação), não de chegada do pedido (PQ06): a frota por ela copia o dimensionamento atual de pessoal."
+      },
+      "INS-028": {
+        "estado": "validado",
+        "texto": "Nos dias de retomada (pós-pausa e segundas-feiras) o armazém processa 1.842 linhas por dia (IC bootstrap 1.532 a 2.199) contra 1.100 linhas por dia (IC bootstrap 983 a 1.232) no dia típico. Na Royal Canin, no regime pós-colmeia (base da oferta, sem a semana de incidente), a retomada do pedido-a-pedido é 121 linhas por dia (IC bootstrap 80 a 179) contra 76,4 linhas por dia (IC bootstrap 62,6 a 92,3) no dia típico; no período inteiro, que mistura o regime anterior à colmeia, os números são 131 linhas por dia (IC bootstrap 84,6 a 181) e 113 linhas por dia (IC bootstrap 80,5 a 148) e escondem o efeito de retomada. O pico de retomada é fila acumulada que precisa ser separada, mas o máximo diário é só limite superior e não dimensiona a frota. Não há teste de diferença registrado entre retomada e dia típico: a leitura é descritiva."
+      },
+      "INS-029": {
+        "estado": "validado",
+        "texto": "Pela definição registrada (pedido-a-pedido com dois ou mais endereços), CR5 em linhas não passa: a razão da demanda média por hora dos outros depositantes à capacidade de um robô (PR07) é 0,87 x (IC bootstrap 0,77 a 0,98), com IC inteiro abaixo de um, mas a leitura não se sustenta entre meses. O ajuste de Holm no pior caso da família dá 1 p ajustado (IC bootstrap 1 a 1). Na janela base a razão é 1,02 x (IC bootstrap 0,87 a 1,19), com IC que cruza um, e sem o maior depositante compatível cai para 0,55 x (IC bootstrap 0,49 a 0,63). O MDE de ANA-000 (0,16 x) passa do efeito relevante: magnitude possivelmente exagerada (poder baixo, erro tipo M). Depois da regra de inversão de sinal entre meses, CR5 em linhas fica inconclusivo. A classe depende da definição de compatível: como sensibilidade declarada, e não como primária, com todo o pedido-a-pedido dos outros (incluindo pedidos de um endereço, que são 59,1% dos pedidos) a razão é 1,13 x (IC bootstrap 1,02 a 1,23), com IC inteiro acima de um; sem o maior depositante dessa variante cai para 0,76 x (IC bootstrap 0,69 a 0,84). A janela não cobre a alta temporada."
+      },
+      "INS-030": {
+        "estado": "validado",
+        "texto": "Somando o checkout dos outros depositantes, a carga média na janela observada chega perto da capacidade de um robô. A razão combinada (linhas por PR07 mais pedidos de checkout por PR08 provável) é 1,02 x (faixa de cenários de 0,97 a 1,13), contra 0,87 x (IC bootstrap 0,77 a 0,98) só das linhas e 0,15 x (IC bootstrap 0,12 a 0,18) só do checkout. A faixa de PR08 dá de 0,10 x (IC bootstrap 0,08 a 0,12) a 0,26 x (IC bootstrap 0,21 a 0,31) para o checkout. Na sensibilidade com todo o pedido-a-pedido dos outros a razão combinada é 1,28 x (faixa de cenários de 1,23 a 1,39), acima de um. Se o mesmo robô alterna os dois tipos (regra da soma das cargas) a conta é essa; se os robôs não são fungíveis entre tipos (regra por tipo), a frota é maior. A combinação é descritiva e fica fora do teste registrado de CR5, que só tem p nas linhas."
+      },
+      "INS-031": {
+        "estado": "validado",
+        "texto": "Calculada dia a dia (máximo horário do teto inteiro da carga de cada dia; p90 entre dias), a frota agrupada dos depositantes relevantes (carga média acima do corte de efeito relevante do G2) é 4 robôs (IC bootstrap 3 a 5) contra 6 robôs (IC bootstrap 5 a 7) individuais: o pooling poupa 2 robôs (IC bootstrap 2 a 3), a única leitura creditável. Na leitura literal, com todos os depositantes compatíveis, a frota agrupada é 5 robôs (IC bootstrap 4 a 6) contra 17 robôs (IC bootstrap 14 a 19) se cada um fosse atendido sozinho e o pooling poupa 12 robôs (IC bootstrap 9 a 14), número inflado pelo teto inteiro de depositantes pequenos. O perfil pela banda (média de perfis de dias diferentes) dava frota agrupada de 3 robôs (IC bootstrap 3 a 4), e de 2 robôs (IC bootstrap 2 a 4) nos relevantes, menor que a de um deles sozinho, o que é impossível no mesmo dia: a banda alisa o pico e foi abandonada para a frota. A correlação entre os volumes diários dos dois depositantes relevantes é 0,36 r (IC bootstrap 0,03 a 0,67) na janela longa, positiva, e 0,16 r (IC bootstrap -0,12 a 0,42) no período inteiro, sem separar de zero: não há evidência de que os picos dos dois se compensem, o que limita o ganho de pooling. A média de três pares com um terceiro depositante, perto de zero (-0,10 r (IC bootstrap -0,24 a 0,01)), não descreve o par que define a leitura."
+      },
+      "INS-033": {
+        "estado": "validado",
+        "texto": "Em linhas operacionais por dia pleno, a razão entre o pedido-a-pedido compatível dos outros depositantes e o da Royal Canin é 4,36 x (IC bootstrap 3,15 a 5,90) em operação normal e 7,12 x (IC bootstrap 5,15 a 10,6) no cenário de estresse (janela do plano, em que a Royal Canin cai na semana de incidente). Os outros depositantes seguem normais nessa semana, então a razão sobe principalmente porque o denominador cai."
+      },
+      "INS-040": {
+        "estado": "validado",
+        "texto": "No pedido-a-pedido manual, a Royal Canin roda menos coletas por hora em ciclo completo que os outros depositantes, mesmo com o mix de faixas de endereços igualado: diferença padronizada de -15,8 coletas por hora (IC bootstrap -27,1 a -7,67), com a Royal Canin em 36,3 coletas por hora (IC bootstrap 30,7 a 39,4) e os outros em 52,1 coletas por hora (IC bootstrap 44,1 a 61,3) (descoberta, semanas ISO ímpares, teto base). No teto conservador a diferença é -21,3 coletas por hora (IC bootstrap -32,1 a -13,5) e, com a semana de incidente da Royal Canin dentro, -15,8 coletas por hora (IC bootstrap -27,4 a -7,79). O sinal é o mesmo em todas as faixas de endereços e ao retirar qualquer operador. Achado exploratório e associativo: não separa produto, layout e processo, e só vira resultado depois da confirmação nas semanas pares (pista PT-D1 em ANA-016)."
+      },
+      "INS-044": {
+        "estado": "validado",
+        "texto": "Nos dias de maior volume o armazém coloca mais operadores em atividade: 1,69 operadores ativos por mil linhas (IC bootstrap 0,78 a 4,20) (descoberta, em desvios da média da semana, com dia da semana e mês controlados e corte de uma hora de jornada ativa). O sinal se mantém no teto conservador (1,67 operadores ativos por mil linhas (IC bootstrap 0,79 a 4,30)), com o corte de uma linha (2,66 operadores ativos por mil linhas (IC bootstrap 0,66 a 5,98)) e com os dias do incidente da Royal Canin dentro (1,91 operadores ativos por mil linhas (IC bootstrap 1,07 a 3,95)). Associativo: a forma da flexibilização do quadro no pico (hora extra, temporário, remanejamento) não está separada. É a pista a priori PT-H10; só vira resultado depois da confirmação nas semanas pares em ANA-016."
+      },
+      "INS-047": {
+        "estado": "validado",
+        "texto": "Pelo corte de uma linha por dia, o armazém tem em média 7,95 operadores por dia (11 operadores por dia no p90); quando o ativo precisa de uma hora de jornada ativa, 4,59 operadores por dia (7 operadores por dia no p90). Na Royal Canin são 2,83 operadores por dia pelo corte de uma linha e 1,71 operadores por dia pelo de uma hora. O corte de uma linha conta supervisor e apoio como separador e o de uma hora não tem fonte setorial. Censo do período inteiro, com a semana de incidente da Royal Canin; sem ela, o armazém tem 7,95 operadores por dia e a Royal Canin 2,93 operadores por dia (corte de uma linha)."
+      },
+      "INS-049": {
+        "estado": "validado",
+        "texto": "O armazém consome em média 15,4 horas por dia de separação ativa no teto base, 11,6 horas por dia no teto conservador, 13,9 horas por dia no intermediário e 18,6 horas por dia no limite superior. Pelas regras S1, S2 e S3 do teto base, a média é 16,7 horas por dia, 23,3 horas por dia e 14,9 horas por dia. É um limite inferior do tempo dedicado à separação: o WMS não registra reabastecimento nem apoio ao packing. Sem a semana de incidente da Royal Canin o teto base fica em 15,5 horas por dia; nas quatro semanas de operação normal da oferta, em 16,7 horas por dia."
+      },
+      "INS-050": {
+        "estado": "validado",
+        "texto": "As entradas e saídas de logins na carga não medem a rotatividade da equipe. Depois da primeira semana entram 24 logins e antes das duas últimas semanas saem 18 logins, sobre 39 logins na carga e 14,7 logins por semana em média. Das entradas, 14 logins têm até 5 dias de atividade na carga (18 logins com até 10 dias), e 11 logins entram e saem dentro da própria carga: o padrão é de logins esporádicos (apoio, supervisão ou temporário de pico), que o dado não separa da equipe fixa. A primeira semana da carga tem poucos dias, então as entradas do primeiro mês incluem quem já trabalhava; depois do mês inicial entram 5 logins. As saídas também pegam férias e afastamentos no fim da carga. Login novo não é pessoa nova (veterano de outra área, recontratação, troca de login). A contagem por mês não sai porque alguns meses têm menos logins que o mínimo de privacidade."
+      },
+      "INS-051": {
+        "estado": "validado",
+        "texto": "Dos pedidos-a-pedido da Royal Canin, 45,3% têm um só endereço e, desses, 45,3% (962 pedidos) têm mais de uma unidade, enquanto 1.162 pedidos têm uma só unidade. Pela hipótese H08, pedidos de um endereço e uma unidade são candidatos a lote ou ao checkout sem robô, e os de mais de uma unidade não caberiam no Checkout Express. Censo do período inteiro, sem pedidos com palete; sem a semana de incidente da Royal Canin a fração de um endereço é 45,2%."
+      },
+      "INS-052": {
+        "estado": "validado",
+        "texto": "O tempo descartado pelas regras de segmento e de lacuna (M29) é 65,5% do tempo no teto base (69,5% no pedido-a-pedido, 49,7% no checkout e 58,1% na colmeia) e sobe para 74,2% no teto conservador. A maior parte é pausa entre tarefas acima do teto, não abandono: as linhas manuais cortadas por cadência, cauda ou linha acima do limite são 2,6% do total e 6,1% na colmeia, onde a cauda longa pode ser coleta ou distribuição no put wall. Na colmeia, com o limite S3 da cauda, a fração descartada é 67,8%. Censo do período inteiro (descritivo)."
+      },
+      "INS-053": {
+        "estado": "validado",
+        "texto": "O tempo fora do relógio entre tarefas do mesmo operador (M10 a) tem mediana de 74 s no pedido-a-pedido, 260 s no checkout e 292 s na colmeia no teto base; no teto conservador as medianas são 66 s, 175 s e 174 s. Retrato do período inteiro, sem comparação entre segmentos (quartis por tipo de onda e depositante na tabela m10a_por_tipo_e_depositante). A mediana depende do teto de intervalo: ela muda entre o teto conservador e o base, então o teto precisa ser declarado sempre que a mediana for citada."
+      },
+      "INS-057": {
+        "estado": "validado",
+        "texto": "Na retomada (média dos dias pós-pausa e das segundas, base pós-colmeia), a frota proposta processa a fila dentro da janela observada: 0 horas por dia (faixa de cenários de 0 a 0) além da janela na ALT3, e o pior caso da grade de PR08 e das pontas de PR09 é 0 horas por dia. Só o dia de maior volume, usado como limite superior, exigiria horas estendidas: 2,73 horas por dia no pior caso. No pico do dia p90 a Royal Canin pede 1 separadores (faixa de cenários de 1 a 1) com robô e 1 separadores (faixa de cenários de 1 a 1) sem robô (sem arredondar: 0,72 separadores equivalentes e 0,54 separadores equivalentes), contra 6,17 operadores ativos hoje no armazém na mesma hora. O separador contínuo com robô sai maior que o sem robô porque a PR05 é aplicada também ao pedido do checkout, o que deixa o robô mais lento que o checkout manual: é efeito dessa premissa, a validar com a engenharia (E9). Nas horas depois da janela nenhum grupo de operadores atinge o mínimo de privacidade para ser reportado (0 operadores é convenção, não ausência medida); isso não prova que ninguém trabalhe nesse horário. O horário estendido só absorve o pico sem reforço se os separadores já existirem na escala."
+      },
+      "INS-060": {
+        "estado": "validado",
+        "texto": "Na última semana completa da carga, os pedidos diários da Royal Canin variaram -99,0% contra a média das quatro semanas anteriores, nos três tipos de onda e nas duas contagens de linha, enquanto os demais depositantes variaram -7,3%. Marcus confirmou que a causa é um incidente operacional da Royal Canin, não lacuna de extração; a natureza do incidente é [●]. A base da oferta é a operação normal, as quatro semanas até o incidente: o mês 1 projeta 1.443 linhas em quatro semanas (previsão entre 669 e 1.890) de linhas tarifáveis do pedido-a-pedido. A janela do plano, que inclui o incidente, vira cenário de estresse e projeta 988 linhas em quatro semanas (previsão entre 458 e 1.294); se o ritmo do incidente persistisse, seriam 28,5 linhas em quatro semanas (faixa de cenários de 28,5 a 1.443). Os intervalos de previsão são o mínimo e o máximo dos erros de poucas origens, com nível nominal de 0,67 proporção na operação normal e 0,71 proporção no estresse (nível muito abaixo do de um intervalo de confiança usual, e a cobertura real pode ser menor, porque os horizontes das origens se sobrepõem)."
+      },
+      "INS-061": {
+        "estado": "validado",
+        "texto": "Entre os candidatos fixados no plano, nenhum superou a média das últimas quatro semanas pela regra pré-registrada, que manteve a referência base. A hipótese H-P4c, de que a média de quatro semanas erra menos que a média de toda a história, vale nas séries da Royal Canin (checkout, linhas tarifáveis e linhas operacionais do pedido-a-pedido) e falha no armazém: são 3 séries (de 4) com a média de quatro semanas melhor, e no armazém o erro absoluto médio da história é 141 linhas por dia pleno (faixa de cenários de 61,7 a 280), contra 153 linhas por dia pleno (faixa de cenários de 18,3 a 269) da média de quatro semanas. No pedido-a-pedido, o erro absoluto médio fora da amostra foi 21,7 linhas por dia pleno (faixa de cenários de 0,55 a 67,1), contra 77,0 linhas por dia pleno (faixa de cenários de 54,6 a 112) da história e 56,8 linhas por dia pleno (faixa de cenários de 27,4 a 72,6) da regressão, e as faixas de erro entre origens se sobrepõem entre candidatos. O cenário de operação normal (quatro semanas até o incidente) supõe que a Royal Canin voltou ao normal depois do incidente, e nenhum dado confirma isso ([●]). Nele, a projeção do mês 1 é 1.443 linhas em quatro semanas (previsão entre 669 e 1.890) de linhas tarifáveis do pedido-a-pedido, com nível nominal de 0,67 proporção, e 995 pedidos em quatro semanas (faixa de cenários de 995 a 1.124) de pedidos de checkout, em faixa que contém a projeção pontual e as bordas do intervalo. Os intervalos vêm dos erros de poucas origens com horizontes sobrepostos, então a cobertura real pode ser menor. No checkout, todos os erros das origens normais têm o mesmo sinal (a média de quatro semanas subestimou) e a projeção pontual ficaria fora do próprio intervalo de previsão; o impacto deve usar a faixa, não o intervalo. No estresse, com a semana do incidente, o volume é menor (ver INS-060)."
+      },
+      "INS-062": {
+        "estado": "validado",
+        "texto": "Além do mês 1 não há previsão validada: o volume dos meses 2 e 3 é uma faixa entre manter o ritmo do mês 1 e seguir a tendência. Em operação normal, o mês 3 do pedido-a-pedido da Royal Canin fica na faixa 1.519 linhas em quatro semanas (faixa de cenários de 755 a 1.519), com a inclinação por dia pleno, sem a semana do incidente, em -4,77 linhas por dia pleno, por semana (IC -11,1 a 1,55), intervalo que inclui zero; no cenário de estresse a faixa abre para 1.040 linhas em quatro semanas (faixa de cenários de 47,1 a 1.040), com a inclinação -6,21 linhas por dia pleno, por semana (IC -12,0 a -0,44), que só se distingue de zero por causa da semana do incidente. No checkout, a faixa do mês 3 é 1.047 pedidos em quatro semanas (faixa de cenários de 1.047 a 1.130) em operação normal (inclinação 0,51 pedidos por dia pleno, por semana (IC -1,21 a 2,24), intervalo que inclui zero) e 886 pedidos em quatro semanas (faixa de cenários de 702 a 886) no estresse. A alta temporada (a Black Friday cai no mês 3) não está modelada."
+      },
+      "INS-070": {
+        "estado": "validado",
+        "texto": "Nas semanas pares, o pedido-a-pedido manual da Royal Canin roda menos coletas por hora em ciclo completo que o dos outros depositantes, com o mix de faixas de endereços igualado: diferença padronizada de -19,5 coletas por hora (IC bootstrap -29,9 a -10,5) (Royal Canin em 36,8 coletas por hora (IC bootstrap 31,9 a 41,4), outros em 56,2 coletas por hora (IC bootstrap 48,2 a 64,4)). A pista PT-D1 de ANA-012 se confirma, mas a confirmação depende do critério de inversão por depositante, fixado depois dos sinais (decisão registrada em revisoes/orquestrador_decisao_inversao_ANA-016.md): pelo critério só de sinal, depositantes pequenos com sinal oposto fariam a pista falhar. Os resultados: p unilateral ajustado por Holm na F2 de 0,1%, IC inteiro abaixo de zero e mesmo sinal no teto conservador, por faixa de endereços, ao deixar qualquer operador de fora e sem os dias pós-pausa. O sinal resiste, mas a magnitude cai nos recortes: sem o maior depositante do grupo de comparação, que responde por 36,5% das coletas desse grupo, a diferença é -11,1 coletas por hora (IC bootstrap -17,6 a -6,49), e entre os operadores que separam para os dois grupos é -10,4 coletas por hora (IC bootstrap -16,1 a -5,52), os dois com IC inteiro abaixo de zero. Entre os 12 depositantes com PAR07 operadores, 3 depositantes mostram sinal oposto, todos com IC que contém o zero e 0 depositantes com inversão forte. Leituras do critério de inversão por depositante, lado a lado: (a) IC por operador do segmento inteiro do lado oposto, o critério adotado: confirma, com 0 depositantes com inversão forte; (b) só sinal: não confirma, com 3 depositantes de 12 depositantes com PAR07 operadores com sinal oposto; (c) leave-one-out, retirando um depositante por vez do grupo de comparação: confirma, com o IC por operador fora do zero em 23 retiradas do total de 23 retiradas. A escolha entre as leituras é de Marcus no G3, e a confirmação de PT-D1 fica condicionada a um critério definido depois dos sinais: confiança baixa. O efeito mínimo detectável é 15,9 coletas por hora, acima do efeito relevante de 5,62 coletas por hora: a magnitude pode estar exagerada e não deve ser citada como precisa. Associativo: não separa produto, layout e processo. A produtividade da Royal Canin não vale como base do armazém, e a oportunidade com os outros depositantes deve ser lida com a produtividade deles."
+      },
+      "INS-071": {
+        "estado": "validado",
+        "texto": "No checkout e na colmeia, nas semanas pares, a Royal Canin roda menos coletas por hora que o conjunto dos outros depositantes, com o mix de tipo de onda e faixa igualado: diferença padronizada de -36,1 coletas por hora (IC bootstrap -50,6 a -21,4) (Royal Canin em 66,5 coletas por hora (IC bootstrap 59,8 a 76,4), outros em 103 coletas por hora (IC bootstrap 90,0 a 117); p unilateral ajustado por Holm na F2 de 0,1%, IC inteiro abaixo de zero). Mas a pista PT-D4 de ANA-012 não se confirma pelo critério de inversão fixado depois dos sinais (decisão registrada em revisoes/orquestrador_decisao_inversao_ANA-016.md), porque contra um depositante a Royal Canin roda 33,6 coletas por hora a mais, com IC por operador inteiro do lado oposto. O plano não fixava o critério por depositante. Isso mostra heterogeneidade do grupo de comparação, não necessariamente inversão do efeito agregado: tirando um depositante por vez do grupo de comparação, o IC por operador continua fora do zero em 9 retiradas do total de 9 retiradas (leave-one-out registrado em ANA-016). O sinal resiste sem o maior depositante do grupo de comparação (-44,7 coletas por hora (IC bootstrap -58,4 a -29,4)) e entre os operadores que separam para os dois grupos (-36,2 coletas por hora (IC bootstrap -51,7 a -20,4)), mas a magnitude cai nesses recortes. A lentidão da Royal Canin no checkout e na colmeia vale contra a maioria dos depositantes, não contra todos: fica como hipótese exploratória, sem número no memorando. Com poucos depositantes comparados, uma inversão isolada pode ser acaso, e isso não está resolvido. O IC do agregado sai com aviso, porque há poucos operadores nesses tipos de onda. O efeito mínimo detectável é 24,5 coletas por hora, acima do efeito relevante de 10,3 coletas por hora. Associativo. A pista não altera a regra de CR7 de ANA-007."
+      },
+      "INS-072": {
+        "estado": "validado",
+        "texto": "No pedido-a-pedido, nas semanas pares, a mediana do tempo fora do relógio entre tarefas do mesmo operador é maior na Royal Canin (100 s (IC bootstrap 90 a 125)) que no conjunto dos outros depositantes (63 s (IC bootstrap 57 a 73,5)): diferença de 37 s (IC bootstrap 22 a 62) (p unilateral ajustado por Holm na F2 de 0,1%, IC inteiro acima de zero). Mas a pista PT-D3 de ANA-012 não se confirma pelo critério de inversão fixado depois dos sinais (decisão registrada em revisoes/orquestrador_decisao_inversao_ANA-016.md): contra um depositante a diferença é -29,5 s, com IC por operador inteiro do lado oposto. O plano não fixava o critério por depositante. Isso mostra heterogeneidade do grupo de comparação, não necessariamente inversão do efeito agregado: tirando um depositante por vez do grupo de comparação, o IC por operador continua fora do zero em 24 retiradas do total de 24 retiradas (leave-one-out registrado em ANA-016). O sinal resiste sem o maior depositante do grupo de comparação (27 s (IC bootstrap 14 a 51)) e entre os operadores que separam para os dois grupos (26 s (IC bootstrap 13 a 51)), com magnitude menor. Mesmo a parte que se sustenta pesa menos que uma replicação cega: o censo do período inteiro de ANA-013, do mesmo autor das pistas, já mostrava o contraste por depositante antes de a pista ser proposta. Descritivo da estrutura do tempo fora do relógio: a causa não está separada e não se prova que o robô elimine esse tempo. O efeito mínimo detectável é 33,5 s, acima do efeito relevante de 6,30 s."
+      },
+      "INS-073": {
+        "estado": "validado",
+        "texto": "Nas linhas de dois endereços do pedido-a-pedido da Royal Canin, nas semanas pares, a mediana do intervalo até a próxima linha (98 s) supera a mediana da duração da linha (53 s) em 45 s (IC bootstrap 26 a 61,5). A pista PT-H04 se confirma (p unilateral ajustado por Holm na F2 de 0,1%, IC inteiro acima de zero, mesmo sinal em todas as verificações), mas o resultado é uma verificação do esperado e não evidência nova: o intervalo inclui a ida ao packing e a linha tem um só intervalo. O efeito mínimo detectável é 24,7 s, acima do efeito relevante de 9,80 s: a magnitude pode estar exagerada. Há menos de vinte operadores: o IC sai com aviso e é o do cluster mais largo entre operador e bloco de semana. Descritivo."
+      },
+      "INS-074": {
+        "estado": "validado",
+        "texto": "Nos dias plenos das semanas pares, o armazém coloca mais operadores em atividade quando o volume do dia sobe: coeficiente de 2,24 operadores ativos por mil linhas operacionais (IC bootstrap 1,21 a 2,82), em desvios da média da semana, com dia da semana e mês controlados e corte de uma hora de jornada ativa, com média de 4,49 operadores ativos por dia. A pista PT-H10 se confirma: p unilateral ajustado por Holm na F2 de 0,1%, IC inteiro acima de zero, mesmo sinal no teto conservador, com o corte de uma linha e ao deixar qualquer operador de fora. O efeito mínimo detectável é 1,29 operadores ativos por mil linhas operacionais, acima do efeito relevante de 0,41 operadores ativos por mil linhas operacionais: a magnitude pode estar exagerada. Associativo: o que a associação mostra é mais logins ativos nos dias de volume alto; parte dela é mecânica (mais volume faz mais operadores passarem do corte de jornada) e parte vem de logins esporádicos, e a forma da flexibilização do quadro (hora extra, temporário, remanejamento) não está separada."
+      },
+      "INS-075": {
+        "estado": "validado",
+        "texto": "O painel de novatos das semanas pares tem poucos novatos (8 novatos), abaixo do mínimo de dez unidades: a pista PT-H09 fica inconclusiva por desenho, sem p nem IC inferencial. A inclinação por semana desde a entrada da razão entre o M14 do novato e o dos experientes é -0,58 razão por semana, apenas descritiva, com efeito mínimo detectável de 1,58 razão por semana, muito acima do efeito relevante de 0,10 razão por semana. Não se lê como falta de aprendizado: a curva descreve só quem ficou até o fim do acompanhamento, login novo não é pessoa nova e a razão tem valores extremos. Não sustenta nem derruba o argumento do temporário guiado pelo robô."
+      },
+      "INS-076": {
+        "estado": "validado",
+        "texto": "A pista PT-D2 (no dia de pico o M14 padronizado do armazém é maior que no típico) ficou fora da F2 e não foi testada: nas semanas pares há só 4 dias plenos de pico e 8 dias plenos típicos pelos limiares da descoberta, abaixo de dez unidades. A diferença descritiva é 12,3 coletas por hora (IC bootstrap 0,93 a 22,8), com o IC descritivo mais largo entre operador, semana e dia e sem p. O achado exploratório não foi testado: não se confirma nem se refuta e não vira resultado. Fica como hipótese a medir no teste controlado, porque converter o excedente de linhas do dia p90 em horas com o M14 típico pode exagerar as horas excedentes de CR8 se a produtividade no pico for diferente."
+      },
+      "INS-077": {
+        "estado": "validado",
+        "texto": "Na família F2 (Holm com seis testes) há 6 pistas e se confirmam nas semanas pares 3 pistas: PT-D1 (pedido-a-pedido), PT-H04 e PT-H10. PT-D3 e PT-D4 têm sinal agregado forte, mas não se confirmam, porque contra um depositante o sinal se inverte com IC inteiro do lado oposto; PT-H09 é inconclusiva por desenho. Nas pistas testadas o efeito mínimo detectável de ANA-000 passa do efeito relevante: as confirmações valem pelo sinal e pelo intervalo, e as magnitudes levam o aviso de poder baixo (possivelmente exageradas); em PT-D1 a magnitude cai sem o maior depositante e entre os mesmos operadores. A confirmação é replicação em semanas intercaladas, com os mesmos operadores, layout e período: protege contra acaso e contra escolhas de caminho, não contra confusão estável. O critério de inversão por depositante (IC por operador do segmento inteiro do lado oposto) foi declarado depois do desenho; pelo critério só de sinal, depositantes pequenos com sinal oposto fariam PT-D1 também falhar. Todas são associativas ou descritivas e nenhuma é causal."
+      },
+      "INS-078": {
+        "estado": "validado",
+        "texto": "A conferência de incidente da Royal Canin nas semanas pares não marca nenhuma semana (0 semanas ISO): a razão entre o menor volume por dia pleno da Royal Canin nas semanas pares e a mediana das semanas ímpares sem o incidente de 21 a 25/09 é 0,83 razão, e a regra marca só o que ficar abaixo da metade. A confirmação não depende do incidente e rodou sem filtro de incidente. Descritivo."
+      },
+      "INS-081": {
+        "estado": "validado",
+        "texto": "O WMS reproduz a maior parte dos números dos slides 8, 12 e 17 pelo método que o deck descreve (pedidos por mês sem CANCELADO, linhas e pedidos por data distinta, participação por depositante, p90 e concentração matinal). Entre os 10 números que têm valor pelos dois métodos, o método aparente da fonte reproduz 9 números e o método do contrato, que usa dias plenos, reproduz 2 números, e a diferença está em alguns volumes diários. O que não reproduz é o que vem do 9fleet (última semana, taxas diárias de pedidos de checkout e de pedido-a-pedido), a quantidade de separadores ativos, os FTE do slide 14 e o volume implícito no slide 15. Na semana de 21 a 25/09 o WMS tem 1,50 pedidos por dia da Royal Canin, contra a última semana do deck por 9fleet: a queda é o incidente operacional, não falha do deck."
+      },
+      "INS-082": {
+        "estado": "validado",
+        "texto": "A média do relatório 9fleet é 62,1 s por coleta, com n de 2.471 tarefas e desvio de 42,7 s por coleta, e reproduz-se no WMS só com 62 linhas do robô (tempo próximo de zero) dentro da amostra; sem elas a média sobe para 63,6 s por coleta e o n cai para 2.409 tarefas. O M08 do contrato, com o piso físico por coleta, dá 63,7 s por coleta. O tempo por coleta é estável entre as faixas de dois a cinco endereços (amplitude relativa de 3,7%). A comparação do relatório entre o robô produtivo e o manual usa, portanto, um manual um pouco mais rápido que o medido só com operadores."
+      },
+      "INS-084": {
+        "estado": "validado",
+        "texto": "O intervalo mediano entre pedidos do slide 6 é compatível com o teto base de intervalo (101 s). No teto conservador do G2 a mediana é 92 segundos (M10 b, teto conservador) (IC bootstrap 84 a 113), fora da tolerância pontual embora o IC da mediana, entre parênteses, contenha o valor do slide; o dado não identifica o teto. As linhas por hora manuais em ciclo completo do slide 6 só se aproximam do deck com o teto de intervalo mais alto (31,2 coletas/h (IC bootstrap 27,1 a 34,5)), enquanto o teto conservador dá 50,6 coletas/h (IC bootstrap 43,6 a 54,8). Os dois números do slide 6 são compatíveis com tetos diferentes, e o deck pode ter usado um teto mais folgado que o conservador na linha de base de CR3 ou outra definição de linhas por hora (outra base de tempo, como a presença). A confirmar com Marcus. Se o teto do deck for mais folgado, as linhas por hora manuais da linha de base ficam reduzidas e a promessa de dobrar fica mais fácil de sustentar."
+      },
+      "INS-041": {
+        "estado": "quantificado",
+        "texto": "Na descoberta, nos dias de pico (volume diário no percentil mais alto) o M14 padronizado do armazém ficou 7,10 coletas por hora (IC bootstrap -1,21 a 15,6) acima do dos dias típicos (pico em 76,6 coletas por hora (IC bootstrap 65,9 a 86,7), típico em 69,5 coletas por hora (IC bootstrap 62,3 a 76,9)), com o mesmo sinal nos três tipos de onda. O intervalo de confiança do tratamento principal cruza o zero e o resultado depende da semana de incidente da Royal Canin: com ela dentro, a diferença é 9,68 coletas por hora (IC bootstrap 0,50 a 16,8). Apoio fraco, poucos dias de pico, exploratório e associativo. Se a pista PT-D2 confirmar, converter o excedente de linhas do dia de pico em horas com o M14 dos dias típicos exagera as horas excedentes de CR8."
+      },
+      "INS-042": {
+        "estado": "quantificado",
+        "texto": "No pedido-a-pedido manual da Royal Canin, o tempo fora do relógio até a próxima linha tem mediana de 104 s (IC bootstrap 92 a 131) e quase não muda com o número de endereços: 101 s (IC bootstrap 90 a 115) nas linhas de endereço único e 103 s (IC bootstrap 82 a 238) nas da faixa mais alta. Por isso a parcela do intervalo no ciclo cai de 92,4% (IC bootstrap 84,0% a 94,7%) nas linhas de endereço único para 31,8% (IC bootstrap 22,7% a 40,6%) na faixa mais alta, e o tempo fora do relógio pesa mais nas linhas pequenas. Nas linhas de dois endereços a mediana do intervalo supera a da duração da linha em 54 s (IC bootstrap 29 a 80), o que sai positivo quase por construção (verificação do esperado da pista PT-H04, não evidência nova). Descoberta, semanas ISO ímpares; a queda da parcela com os endereços é por construção e fica descritiva."
+      },
+      "INS-043": {
+        "estado": "quantificado",
+        "texto": "No pedido-a-pedido, a mediana do tempo fora do relógio entre tarefas do mesmo operador é maior na Royal Canin (105 s (IC bootstrap 92 a 128)) que nos outros depositantes (62 s (IC bootstrap 54 a 76)): diferença de 43 s (IC bootstrap 27 a 67) (descoberta, teto base). No teto conservador a diferença é 36 s (IC bootstrap 26,0 a 60). Exploratório e associativo: a causa (distância ao packing, etiqueta, processo) não está separada. A pista PT-D3 não foi confirmada nas semanas pares em ANA-016 (o sinal se inverte contra um depositante), então segue como trilha da descoberta, fora do memorando."
+      },
+      "INS-045": {
+        "estado": "quantificado",
+        "texto": "O painel de novatos da descoberta tem 10 novatos, no limite do mínimo de unidades exigido, e não mostra tendência de subida da razão entre o M14 do novato e o dos experientes: a inclinação por semana desde a entrada é -1,92 razão por semana (IC bootstrap -8,15 a 2,34), com intervalo que cruza o zero. A razão mediana fica abaixo da paridade tanto nas duas primeiras semanas (0,68 razão (IC bootstrap 0,63 a 1,95)) quanto nas seguintes (0,67 razão (IC bootstrap 0,62 a 9,34)). A curva é inconclusiva por desenho, porque o intervalo cruza o zero e o efeito mínimo detectável com tão poucas unidades é grande: login novo não é pessoa nova, o painel descreve só quem ficou até o fim do acompanhamento e a razão tem valores extremos. Não sustenta nem derruba o argumento do temporário guiado pelo robô."
+      },
+      "INS-046": {
+        "estado": "quantificado",
+        "texto": "No checkout e na colmeia a Royal Canin também roda menos coletas por hora que os outros depositantes, com o mix de tipo de onda e faixa igualado: diferença padronizada de -28,2 coletas por hora (IC bootstrap -38,7 a -18,0) (Royal Canin em 66,1 coletas por hora (IC bootstrap 53,8 a 70,8), outros em 94,3 coletas por hora (IC bootstrap 86,0 a 103); descoberta, teto base). O sinal vale nos dois tipos de onda, no teto conservador (-37,0 coletas por hora (IC bootstrap -59,8 a -19,2)) e com a semana de incidente dentro. Como a lentidão aparece nos três tipos de onda, produto e layout são explicações mais prováveis que o processo do pedido-a-pedido, mas isso não está testado. Exploratório e associativo (pista PT-D4, não confirmada nas semanas pares em ANA-016: o sinal se inverte contra um depositante, então segue como trilha da descoberta, fora do memorando); o viés de contagem de visitas do checkout e da colmeia (M05) vale para os dois grupos."
+      }
+    },
+    "impacto": {
+      "IMP-CR2-ALT3-NORMAL": {
+        "provavel": 0.38445361284567353,
+        "p10": 0.3596465235356741,
+        "p50": 0.38707259018161305,
+        "p90": 0.41719015998097164,
+        "unidade": "%"
+      },
+      "IMP-CR2-ALT3-ESTRESSE": {
+        "provavel": 0.31418926553672316,
+        "p10": 0.2667236335779809,
+        "p50": 0.31418909768880543,
+        "p90": 0.36105181147124277,
+        "unidade": "%"
+      },
+      "IMP-CR2-ALT2-NORMAL": {
+        "provavel": 0.06758028545941124,
+        "p10": 0.06210244960156717,
+        "p50": 0.06776897847135,
+        "p90": 0.07349417916084293,
+        "unidade": "%"
+      },
+      "IMP-CR2-ALT2-ESTRESSE": {
+        "provavel": 0.046271186440677965,
+        "p10": 0.03889806574281938,
+        "p50": 0.04617963597646974,
+        "p90": 0.05358164472311826,
+        "unidade": "%"
+      },
+      "IMP-CR2-ALT6-NORMAL": {
+        "provavel": 1.7011685994647636,
+        "p10": 1.5906036109774848,
+        "p50": 1.7030373207171792,
+        "p90": 1.8157967810510782,
+        "unidade": "%"
+      },
+      "IMP-CR2-ALT6-ESTRESSE": {
+        "provavel": 1.6667316384180793,
+        "p10": 1.5196652793358179,
+        "p50": 1.6710443382792555,
+        "p90": 1.8246991389522003,
+        "unidade": "%"
+      },
+      "IMP-CR2-ALT3-PROJ-MES1": {
+        "provavel": 0.38445361284567353,
+        "p10": 0.3729449669096877,
+        "p50": 0.3932368624979132,
+        "p90": 0.41310066168391096,
+        "unidade": "%"
+      },
+      "IMP-CR2-RECEITA-ALT3": {
+        "provavel": 2268.2763157894738,
+        "p10": 2121.1133484186257,
+        "p50": 2285.593477614938,
+        "p90": 2462.055572590535,
+        "unidade": "R$/mês"
+      },
+      "IMP-CR2-RECEITA-ALT2": {
+        "provavel": 398.7236842105263,
+        "p10": 366.80429519127364,
+        "p50": 399.07254368488196,
+        "p90": 434.37254388359787,
+        "unidade": "R$/mês"
+      },
+      "IMP-CR2-RECEITA-ALT6": {
+        "provavel": 10036.894736842105,
+        "p10": 9393.152933145799,
+        "p50": 10059.919920152051,
+        "p90": 10702.800170259807,
+        "unidade": "R$/mês"
+      },
+      "IMP-CR2-ALT4-ALT3": {
+        "provavel": 1.134138157894737,
+        "p10": 1.0604115965012575,
+        "p50": 1.1422537975552145,
+        "p90": 1.2334142453392307,
+        "unidade": "%"
+      },
+      "IMP-CR2-ALT4-ALT6": {
+        "provavel": 2.007378947368421,
+        "p10": 1.879302548970905,
+        "p50": 2.011119240610392,
+        "p90": 2.140685694169227,
+        "unidade": "%"
+      },
+      "IMP-CR2-VOLUME-CHECKOUT-ALT3": {
+        "provavel": 3236.044891640867,
+        "p10": 3216.0034653626203,
+        "p50": 3235.660813230393,
+        "p90": 3254.91288217811,
+        "unidade": "pedidos/mês"
+      },
+      "IMP-ALT3-DEP-CHECKOUT": {
+        "provavel": 0.8242173224509683,
+        "p10": 0.8073555564140547,
+        "p50": 0.8249272694663117,
+        "p90": 0.8416117129890414,
+        "unidade": "%"
+      },
+      "IMP-ALT6-DEP-CHECKOUT": {
+        "provavel": 0.7862570201519655,
+        "p10": 0.7651460864052515,
+        "p50": 0.7855890312707787,
+        "p90": 0.8048314980999407,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT2": {
+        "provavel": -0.13008672488479472,
+        "p10": -0.13380840775537767,
+        "p50": -0.0677701021453048,
+        "p90": 0.000633766912144435,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT2-ALTO": {
+        "provavel": 0.3030851573146472,
+        "p10": 0.2895953599540237,
+        "p50": 0.3280009722242696,
+        "p90": 0.36731112796264526,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT2-AUT": {
+        "provavel": 0.6364466633325756,
+        "p10": 0.6373288623643133,
+        "p50": 0.6852508743938412,
+        "p90": 0.7344589080569418,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT3-DECK-INT": {
+        "provavel": 0.3784676848348794,
+        "p10": 0.36950451326299855,
+        "p50": 0.37525470078622547,
+        "p90": 0.3812207391253593,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT3-DECK-RAT": {
+        "provavel": -0.8443173382472664,
+        "p10": -0.8831402504890478,
+        "p50": -0.7664288947084823,
+        "p90": -0.6598599334601859,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT3-DECK-SEM": {
+        "provavel": -3.7384382162645267,
+        "p10": -3.5124581573257316,
+        "p50": -3.186550557127409,
+        "p90": -2.7984179830812965,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT4-ALT3-INT": {
+        "provavel": 0.6940033947945113,
+        "p10": 0.6653763174327753,
+        "p50": 0.682054681809503,
+        "p90": 0.6981541406904797,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT4-ALT3-RAT": {
+        "provavel": 0.09199436512748982,
+        "p10": 0.05804609022653662,
+        "p50": 0.10116767838907911,
+        "p90": 0.1469891170338477,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT4-ALT3-SEM": {
+        "provavel": -1.332856993554218,
+        "p10": -1.287161633200194,
+        "p50": -1.122430776220089,
+        "p90": -0.9486804022846221,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT4-ALT3-SEM-ALTO": {
+        "provavel": -0.5347771585722976,
+        "p10": -0.5405963498239245,
+        "p50": -0.44799301884889003,
+        "p90": -0.35323375304496046,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT3-AUT-SEM": {
+        "provavel": -0.7760018931862471,
+        "p10": -0.7511656875517985,
+        "p50": -0.5795542100009332,
+        "p90": -0.3930677987806521,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT6-DECK-INT": {
+        "provavel": 0.10905181227171486,
+        "p10": 0.08107854174799597,
+        "p50": 0.12188077330945146,
+        "p90": 0.16275552912687508,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT6-DECK-SEM": {
+        "provavel": -0.8741473699175127,
+        "p10": -0.8883104958478962,
+        "p50": -0.7385615206649334,
+        "p90": -0.5830927218419104,
+        "unidade": "%"
+      },
+      "IMP-CR1-ALT6-DECK-SEM-ALTO": {
+        "provavel": -0.2236593252704041,
+        "p10": -0.24077954171283739,
+        "p50": -0.14393514538619018,
+        "p90": -0.03842558942565665,
+        "unidade": "%"
+      },
+      "IMP-CR1-RS-ALT3-DECK-INT": {
+        "provavel": 4356.0522988000375,
+        "p10": 4349.728893417611,
+        "p50": 4412.493889806573,
+        "p90": 4490.291361691602,
+        "unidade": "R$/mês"
+      },
+      "IMP-CR1-RS-ALT4-ALT3-INT": {
+        "provavel": 7987.775983010564,
+        "p10": 7842.586017341133,
+        "p50": 8029.054805242612,
+        "p90": 8207.124764081038,
+        "unidade": "R$/mês"
+      },
+      "IMP-CR1-RS-ALT4-ALT3-RAT": {
+        "provavel": 356.8236020581853,
+        "p10": 226.4769630283238,
+        "p50": 416.99472843208287,
+        "p90": 641.3359583431011,
+        "unidade": "R$/mês"
+      },
+      "IMP-CR1-RS-ALT4-ALT3-SEM": {
+        "provavel": -2012.224016989434,
+        "p10": -2154.6188033558874,
+        "p50": -1967.0432548774756,
+        "p90": -1794.2496871505048,
+        "unidade": "R$/mês"
+      },
+      "IMP-PR11-ATRIBUIVEL-RC": {
+        "provavel": 2369.0476190476193,
+        "p10": 2165.6240771886282,
+        "p50": 2391.615582901434,
+        "p90": 2643.6945182233585,
+        "unidade": "R$/mês"
+      },
+      "IMP-CR6-ALT2-SEM-PISO": {
+        "provavel": -800.6381578947369,
+        "p10": -816.807076396655,
+        "p50": -800.3250944170918,
+        "p90": -782.9968202119015,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-CR6-ALT2-HW": {
+        "provavel": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "unidade": "R$/robô"
+      },
+      "IMP-CR6-ALT3-COM-PISO": {
+        "provavel": 1950.0,
+        "p10": 1950.0,
+        "p50": 1950.0,
+        "p90": 1950.0,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-CR6-ALT3-HW-COM-PISO": {
+        "provavel": 46800.0,
+        "p10": 46800.0,
+        "p50": 46800.0,
+        "p90": 46800.0,
+        "unidade": "R$/robô"
+      },
+      "IMP-CR6-ALT3-SEM-PISO": {
+        "provavel": 134.13815789473688,
+        "p10": 61.13061089848636,
+        "p50": 141.7033089066109,
+        "p90": 230.61730751852198,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-CR6-ALT3-HW-SEM-PISO": {
+        "provavel": 3219.315789473685,
+        "p10": 1482.1820551802964,
+        "p50": 3411.3790793309136,
+        "p90": 5586.639679838027,
+        "unidade": "R$/robô"
+      },
+      "IMP-CR6-ALT3-DECK5-COM-PISO": {
+        "provavel": 180.0,
+        "p10": 180.0,
+        "p50": 180.0,
+        "p90": 180.0,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-CR6-ALT3-DECK5-SEM-PISO": {
+        "provavel": -546.3447368421052,
+        "p10": -574.9184199651721,
+        "p50": -542.8178147079318,
+        "p90": -507.06238717197715,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-CR6-ALT3-DECK5-HW-COM-PISO": {
+        "provavel": 4320.0,
+        "p10": 4320.0,
+        "p50": 4320.0,
+        "p90": 4320.0,
+        "unidade": "R$/robô"
+      },
+      "IMP-CR6-ALT6-TOTAL": {
+        "provavel": 1007.378947368421,
+        "p10": 877.1313080784624,
+        "p50": 1009.2632318430522,
+        "p90": 1141.8549409984612,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-CR6-ALT6-HW": {
+        "provavel": 24177.094736842104,
+        "p10": 21008.11583749042,
+        "p50": 24172.0734337822,
+        "p90": 27365.02939318346,
+        "unidade": "R$/robô"
+      },
+      "IMP-CR4-SOBRA-FROTA-DECK-INF": {
+        "provavel": 2000.0,
+        "p10": 2000.0,
+        "p50": 2000.0,
+        "p90": 2000.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-CR4-SOBRA-FROTA-DECK-SUP": {
+        "provavel": 3000.0,
+        "p10": 3000.0,
+        "p50": 3000.0,
+        "p90": 3000.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-ALT4-PMIN-ALT3": {
+        "provavel": 2000.0,
+        "p10": 2000.0,
+        "p50": 2000.0,
+        "p90": 2000.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-ALT4-PMIN-ALT6": {
+        "provavel": 5000.0,
+        "p10": 5000.0,
+        "p50": 5000.0,
+        "p90": 5000.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-ALT4-KMIN-ALT3": {
+        "provavel": 0.8817267923127345,
+        "p10": 0.810585595530156,
+        "p50": 0.8750515916309984,
+        "p90": 0.9429832211753029,
+        "unidade": "x"
+      },
+      "IMP-ALT4-KMIN-ALT6": {
+        "provavel": 0.49816204424727717,
+        "p10": 0.4661569603604085,
+        "p50": 0.4974023777386968,
+        "p90": 0.532497701844935,
+        "unidade": "x"
+      },
+      "IMP-ALT4-PMAX-ALT3-INT": {
+        "provavel": 7954.110826200852,
+        "p10": 7904.950554897433,
+        "p50": 7959.663226696652,
+        "p90": 8028.672916526317,
+        "unidade": "R$/mês"
+      },
+      "IMP-ALT4-KMAX-ALT3-INT": {
+        "provavel": 3.506676312243036,
+        "p10": 3.2298437337886416,
+        "p50": 3.4869977065376583,
+        "p90": 3.749195708792033,
+        "unidade": "x"
+      },
+      "IMP-ALT4-FOLGA-ALT3-INT": {
+        "provavel": 5954.110826200852,
+        "p10": 5904.836002934571,
+        "p50": 5959.114127485887,
+        "p90": 6029.427815714614,
+        "unidade": "R$/mês"
+      },
+      "IMP-ALT4-PMAX-ALT3-RAT": {
+        "provavel": 1849.3489214389474,
+        "p10": 1688.768947805353,
+        "p50": 1879.6230671069911,
+        "p90": 2094.1270789897203,
+        "unidade": "R$/mês"
+      },
+      "IMP-ALT4-KMAX-ALT3-RAT": {
+        "provavel": 0.8153102461836892,
+        "p10": 0.7517078348887603,
+        "p50": 0.8196272249070713,
+        "p90": 0.8967445366159842,
+        "unidade": "x"
+      },
+      "IMP-ALT4-FOLGA-ALT3-RAT": {
+        "provavel": -150.6510785610526,
+        "p10": -316.9929989338805,
+        "p50": -125.11215513510501,
+        "p90": 86.91918895422205,
+        "unidade": "R$/mês"
+      },
+      "IMP-ALT4-PMAX-ALT6-INT": {
+        "provavel": 8303.265275818767,
+        "p10": 8012.12831458902,
+        "p50": 8447.967948126796,
+        "p90": 8994.385696811474,
+        "unidade": "R$/mês"
+      },
+      "IMP-ALT4-KMAX-ALT6-INT": {
+        "provavel": 0.8272743207458617,
+        "p10": 0.7748432334437002,
+        "p50": 0.8447839384460079,
+        "p90": 0.9207801662582322,
+        "unidade": "x"
+      },
+      "IMP-ALT4-FOLGA-ALT6-INT": {
+        "provavel": 3303.265275818767,
+        "p10": 3022.892472177528,
+        "p50": 3449.940335911372,
+        "p90": 3994.310779290339,
+        "unidade": "R$/mês"
+      },
+      "IMP-ALT4-HW-ALT6-PMAX": {
+        "provavel": 15855.673323930081,
+        "p10": 14528.001551269079,
+        "p50": 16558.119654993774,
+        "p90": 19199.402537897753,
+        "unidade": "R$/robô"
+      },
+      "IMP-CR8-FTE-ALT3-SEM-AUT": {
+        "provavel": 0.3019414725991878,
+        "p10": 0.31986808535331124,
+        "p50": 0.35112770422358264,
+        "p90": 0.3954041042187088,
+        "unidade": "FTE"
+      },
+      "IMP-CR8-FTE-ALT3-SEM-COL": {
+        "provavel": 0.05121045976000797,
+        "p10": 0.049795976890487786,
+        "p50": 0.06238346600432637,
+        "p90": 0.0784310414532083,
+        "unidade": "FTE"
+      },
+      "IMP-CR8-FTE-ALT3-RAT-AUT": {
+        "provavel": 0.7757509964087117,
+        "p10": 0.7757630876158038,
+        "p50": 0.8317164115893458,
+        "p90": 0.8946976127011791,
+        "unidade": "FTE"
+      },
+      "IMP-CR8-FTE-ALT3-RAT-COL": {
+        "provavel": 0.5250199835695318,
+        "p10": 0.49302475860711076,
+        "p50": 0.5408894499872015,
+        "p90": 0.5947992203216811,
+        "unidade": "FTE"
+      },
+      "IMP-CR8-FTE-ALT3-INT-COL": {
+        "provavel": 2.051210459760008,
+        "p10": 2.049837787169605,
+        "p50": 2.06226779650272,
+        "p90": 2.0787126097390165,
+        "unidade": "FTE"
+      },
+      "IMP-CR8-FTE-ALT6-SEM-AUT": {
+        "provavel": 1.8123452579455306,
+        "p10": 1.8072367447834319,
+        "p50": 2.027041162618577,
+        "p90": 2.3903462788811605,
+        "unidade": "FTE"
+      },
+      "IMP-CR8-FTE-ALT6-SEM-COL": {
+        "provavel": 0.42312210675285933,
+        "p10": 0.4009562175775115,
+        "p50": 0.5033882907754399,
+        "p90": 0.6293020981794123,
+        "unidade": "FTE"
+      },
+      "IMP-CR8-FTE-ALT6-INT-COL": {
+        "provavel": 2.423122106752859,
+        "p10": 2.4000541131984092,
+        "p50": 2.502510990633439,
+        "p90": 2.6310675241483423,
+        "unidade": "FTE"
+      },
+      "IMP-CR8-CRESCIMENTO-ALT3-AUT": {
+        "provavel": 3.311900122204974,
+        "p10": 2.5320350575445647,
+        "p50": 2.84999979732755,
+        "p90": 3.129189873539823,
+        "unidade": "x"
+      },
+      "IMP-CR8-CRESCIMENTO-ALT3-COL": {
+        "provavel": 19.527260733185894,
+        "p10": 12.740632743026598,
+        "p50": 16.01069761112187,
+        "p90": 20.036837787658058,
+        "unidade": "x"
+      },
+      "IMP-CR8-CRESCIMENTO-ALT6-COL": {
+        "provavel": 2.3633839594774195,
+        "p10": 1.5776976554817,
+        "p50": 1.9892457605331921,
+        "p90": 2.5063506887759393,
+        "unidade": "x"
+      },
+      "IMP-CR8-P90-RC-EXCEDENTE": {
+        "provavel": 1.2041738683127572,
+        "p10": 1.2041738683127572,
+        "p50": 1.2041738683127572,
+        "p90": 1.2041738683127572,
+        "unidade": "pessoas-hora/dia"
+      },
+      "IMP-CR8-P90-RC-POUPA-COL": {
+        "provavel": 0.04792314457227853,
+        "p10": 0.04160107767218329,
+        "p50": 0.04517799501796556,
+        "p90": 0.047431103885246614,
+        "unidade": "pessoas-hora/dia"
+      },
+      "IMP-CR8-P90-RC-PCT-COL": {
+        "provavel": 0.03979752910551582,
+        "p10": 0.034529147381254004,
+        "p50": 0.037521180507107274,
+        "p90": 0.039384800723012175,
+        "unidade": "%"
+      },
+      "IMP-CR8-P90-RC-PCT-AUT": {
+        "provavel": 1.0,
+        "p10": 1.0,
+        "p50": 1.0,
+        "p90": 1.0,
+        "unidade": "%"
+      },
+      "IMP-CR8-PICO-ARM-PESSOAS": {
+        "provavel": 2.825,
+        "p10": 2.825,
+        "p50": 2.825,
+        "p90": 2.825,
+        "unidade": "pessoas"
+      },
+      "IMP-CR8-PICO-ARM-EXCEDENTE": {
+        "provavel": 5.121184027777778,
+        "p10": 5.155115481058385,
+        "p50": 6.181336027829275,
+        "p90": 7.854253044559607,
+        "unidade": "pessoas-hora/dia"
+      },
+      "IMP-CR8-PICO-ARM-ALIVIO-COL": {
+        "provavel": 1.195625483280599,
+        "p10": 1.164286905905141,
+        "p50": 1.5303069175530695,
+        "p90": 2.0323244575129205,
+        "unidade": "pessoas-hora/dia"
+      },
+      "IMP-INV-PR11-CR1-ALT4-ALT3": {
+        "provavel": 0.5785413723971554,
+        "p10": 0.5374585964873692,
+        "p50": 0.580480893250864,
+        "p90": 0.6273325313515337,
+        "unidade": "postos"
+      },
+      "IMP-INV-PR11-CR1-ALT4-ALT3-FRACAO": {
+        "provavel": 0.2892706861985777,
+        "p10": 0.26886588571759196,
+        "p50": 0.29003736720726336,
+        "p90": 0.3127698559340922,
+        "unidade": "%"
+      },
+      "IMP-PR11-RATEIO-POSTOS": {
+        "provavel": 0.47380952380952385,
+        "p10": 0.43361957748538144,
+        "p50": 0.47883369709388274,
+        "p90": 0.5311878710308401,
+        "unidade": "postos"
+      },
+      "IMP-PR11-RATEIO-FRACAO": {
+        "provavel": 0.23690476190476192,
+        "p10": 0.21674376401472345,
+        "p50": 0.23935425293673368,
+        "p90": 0.26498124821491803,
+        "unidade": "%"
+      },
+      "IMP-INV-PR11-CR1-ALT3-DECK": {
+        "provavel": 1.486472293449787,
+        "p10": 1.4679779031362763,
+        "p50": 1.4851618415432988,
+        "p90": 1.498916726791529,
+        "unidade": "postos"
+      },
+      "IMP-INV-PR11-CR8-ALT3-COL": {
+        "provavel": 0.9487895402399921,
+        "p10": 0.9217666766702467,
+        "p50": 0.9378628851624373,
+        "p90": 0.9503339928453826,
+        "unidade": "postos"
+      },
+      "IMP-INV-PR11-ALT6-REC": {
+        "provavel": 1.1741836810453081,
+        "p10": 1.0012878478728116,
+        "p50": 1.1377019732745244,
+        "p90": 1.2459092476530256,
+        "unidade": "postos"
+      },
+      "IMP-INV-PR11-CR8-ALT6-COL": {
+        "provavel": 0.5768778932471407,
+        "p10": 0.37173461064584584,
+        "p50": 0.4962796399099579,
+        "p90": 0.6014570307346477,
+        "unidade": "postos"
+      },
+      "IMP-CR1-ALT4-ALT3-UM-POSTO": {
+        "provavel": 0.4589723955940644,
+        "p10": 0.4194187805167189,
+        "p50": 0.44697030266526755,
+        "p90": 0.47449120708177606,
+        "unidade": "%"
+      },
+      "IMP-INV-PR13-ALT4-RAT": {
+        "provavel": 924.6744607194737,
+        "p10": 841.0536692143033,
+        "p50": 937.5151081618046,
+        "p90": 1043.609127367421,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-INV-PR13-ALT4-INT": {
+        "provavel": 3977.055413100426,
+        "p10": 3952.111395459093,
+        "p50": 3979.3720426544587,
+        "p90": 4013.8703555210727,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-INV-PR13-ALT4-TARIFA-DECK": {
+        "provavel": 1134.1381578947369,
+        "p10": 1060.6760762999875,
+        "p50": 1143.2101568702642,
+        "p90": 1231.0596086640383,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-INV-PR10-ALT4-RAT": {
+        "provavel": 64887.70107624147,
+        "p10": 57264.15575870381,
+        "p50": 63908.82245164702,
+        "p90": 71274.81363830969,
+        "unidade": "R$/ano"
+      },
+      "IMP-INV-FROTA-CR2-ALT4": {
+        "provavel": 2.268276315789474,
+        "p10": 2.1237503593791747,
+        "p50": 2.2861075925007253,
+        "p90": 2.4602783080835815,
+        "unidade": "robôs"
+      },
+      "IMP-CR2-ALT4-ALT3-COM-RESERVA": {
+        "provavel": 0.756092105263158,
+        "p10": 0.7058977324534614,
+        "p50": 0.7606901976994196,
+        "p90": 0.8206927175102617,
+        "unidade": "%"
+      },
+      "IMP-FOLGA-ALT4-ALT3-INT-COM-RESERVA": {
+        "provavel": 4954.110826200852,
+        "p10": 4904.674107684646,
+        "p50": 4959.180383282535,
+        "p90": 5026.731269560612,
+        "unidade": "R$/mês"
+      },
+      "IMP-FOLGA-ALT4-ALT3-RAT-FROTA-BANDA": {
+        "provavel": 849.3489214389474,
+        "p10": 683.4340334059162,
+        "p50": 875.4172665796217,
+        "p90": 1086.2424194313217,
+        "unidade": "R$/mês"
+      },
+      "IMP-PMAX-ALT3-SEM": {
+        "provavel": -45.88917379914801,
+        "p10": -96.2234506703546,
+        "p50": -40.8094852988371,
+        "p90": 26.425712673118333,
+        "unidade": "R$/mês"
+      },
+      "IMP-PMAX-ALT3-SEM-ALTO": {
+        "provavel": 438.3826325831076,
+        "p10": 412.4116303702639,
+        "p50": 491.6268173566309,
+        "p90": 588.7402760815248,
+        "unidade": "R$/mês"
+      },
+      "IMP-FOLGA-ALT6-SEM": {
+        "provavel": -4696.734724181233,
+        "p10": -4980.612537399774,
+        "p50": -4544.630097896898,
+        "p90": -4001.895712672512,
+        "unidade": "R$/mês"
+      },
+      "IMP-FOLGA-ALT6-SEM-ALTO": {
+        "provavel": -621.6006219814399,
+        "p10": -730.2425331567223,
+        "p50": -52.29109604919904,
+        "p90": 865.3914146293736,
+        "unidade": "R$/mês"
+      },
+      "IMP-INV-PR05-ALT6-SEM": {
+        "provavel": 203.80879602704275,
+        "p10": 129.76400864630367,
+        "p50": 161.51537915695357,
+        "p90": 202.75495764223803,
+        "unidade": "linhas/h"
+      },
+      "IMP-INV-PR05-ALT6-SEM-ALTO": {
+        "provavel": 73.21648239769999,
+        "p10": 59.35198930409701,
+        "p50": 66.55941112672,
+        "p90": 74.2437268133649,
+        "unidade": "linhas/h"
+      },
+      "IMP-FOLGA-ALT2-PR05-TETO": {
+        "provavel": -1833.9591568898468,
+        "p10": -1844.9935852976953,
+        "p50": -1794.485678744798,
+        "p90": -1730.015349543629,
+        "unidade": "R$/mês"
+      },
+      "IMP-FOLGA-ALT2-PR05-TETO-ALTO": {
+        "provavel": -1289.4946190886,
+        "p10": -1288.5659761221953,
+        "p50": -1209.981462350908,
+        "p90": -1105.8854289838744,
+        "unidade": "R$/mês"
+      },
+      "IMP-FOLGA-ARM-PAP-POOL": {
+        "provavel": -3696.734724181233,
+        "p10": -3977.7028211213146,
+        "p50": -3541.557641822899,
+        "p90": -3002.8823739880336,
+        "unidade": "R$/mês"
+      },
+      "IMP-FOLGA-ARM-PAP-POOL-ALTO": {
+        "provavel": 378.3993780185601,
+        "p10": 262.416471036247,
+        "p50": 927.1784914683258,
+        "p90": 1825.555167555149,
+        "unidade": "R$/mês"
+      },
+      "IMP-MARGEM-ARM-PAP-POOL": {
+        "provavel": -463.67105263157896,
+        "p10": -508.1072125295175,
+        "p50": -461.81814274515494,
+        "p90": -413.7540002958123,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-PILOTO-ECONOMIA-SOCIAL-RC-PAP": {
+        "provavel": 256.05229880003986,
+        "p10": 249.19041492203112,
+        "p50": 311.7737391327745,
+        "p90": 395.18301655266833,
+        "unidade": "R$/mês"
+      },
+      "IMP-PILOTO-ECONOMIA-SOBRE-CUSTO-ROBO": {
+        "provavel": 0.2560522988000399,
+        "p10": 0.25027705216216567,
+        "p50": 0.31290630303628897,
+        "p90": 0.3937160732741907,
+        "unidade": "x"
+      },
+      "IMP-CR1-ALT6-REC-PISO-INT": {
+        "provavel": 0.3732930808894729,
+        "p10": 0.34737653670921065,
+        "p50": 0.37048856220805115,
+        "p90": 0.3972120530235942,
+        "unidade": "%"
+      },
+      "IMP-FOLGA-ALT4-ALT3-RAT-COM-RESERVA": {
+        "provavel": -1150.6510785610526,
+        "p10": -1321.820778575148,
+        "p50": -1121.769656647878,
+        "p90": -913.9033342161354,
+        "unidade": "R$/mês"
+      },
+      "IMP-KMIN-ALT4-ALT3-COM-RESERVA": {
+        "provavel": 1.3225901884691018,
+        "p10": 1.219383824096389,
+        "p50": 1.3128741093682588,
+        "p90": 1.4133707912861104,
+        "unidade": "x"
+      },
+      "IMP-KMIN-ARM-PAP-POOL": {
+        "provavel": 1.8645273668457594,
+        "p10": 1.7016468753591052,
+        "p50": 1.85804474676801,
+        "p90": 2.0317519623953495,
+        "unidade": "x"
+      },
+      "IMP-KMAX-ARM-PAP-POOL-ALTO": {
+        "provavel": 2.040911365824014,
+        "p10": 1.9373081881369008,
+        "p50": 2.3027506101774406,
+        "p90": 2.7751494212929284,
+        "unidade": "x"
+      },
+      "IMP-KMAX-ARM-PAP-POOL": {
+        "provavel": 0.1413616015445296,
+        "p10": 0.013766755007545534,
+        "p50": 0.2125048214366893,
+        "p90": 0.4711089636713087,
+        "unidade": "x"
+      },
+      "IMP-HW-ALT4-INT-NO-TETO": {
+        "provavel": 71449.32991441022,
+        "p10": 70831.8051682569,
+        "p50": 71506.72776606682,
+        "p90": 72332.79251032548,
+        "unidade": "R$/robô"
+      },
+      "IMP-HW-ALT4-INT-NO-TETO-COM-RESERVA": {
+        "provavel": 39632.88660960681,
+        "p10": 39222.74788681165,
+        "p50": 39672.7677684973,
+        "p90": 40220.51393624589,
+        "unidade": "R$/robô"
+      },
+      "IMP-IMPL-INVESTIMENTO-ALT3-SEM-RESERVA": {
+        "provavel": 60000.0,
+        "p10": 60000.0,
+        "p50": 60000.0,
+        "p90": 60000.0,
+        "unidade": "R$"
+      },
+      "IMP-IMPL-INVESTIMENTO-ALT3-COM-RESERVA": {
+        "provavel": 84000.0,
+        "p10": 84000.0,
+        "p50": 84000.0,
+        "p90": 84000.0,
+        "unidade": "R$"
+      },
+      "IMP-IMPL-INVESTIMENTO-ALT6-SEM-RESERVA": {
+        "provavel": 132000.0,
+        "p10": 132000.0,
+        "p50": 132000.0,
+        "p90": 132000.0,
+        "unidade": "R$"
+      },
+      "IMP-IMPL-INVESTIMENTO-ALT6-COM-RESERVA": {
+        "provavel": 156000.0,
+        "p10": 156000.0,
+        "p50": 156000.0,
+        "p90": 156000.0,
+        "unidade": "R$"
+      },
+      "IMP-INV-PR11-CR1-ALT4-ALT3-COM-RESERVA": {
+        "provavel": 0.7614722934497871,
+        "p10": 0.7433517909423022,
+        "p50": 0.7601214802773377,
+        "p90": 0.7742512332739101,
+        "unidade": "postos"
+      },
+      "IMP-INV-PR11-CR1-ALT4-ALT3-COM-IMPL": {
+        "provavel": 1.136472293449787,
+        "p10": 1.1182123740579333,
+        "p50": 1.1352519642655656,
+        "p90": 1.1490376576317713,
+        "unidade": "postos"
+      },
+      "IMP-INV-PR11-CR1-ALT4-ALT3-COM-RESERVA-COM-IMPL": {
+        "provavel": 1.636472293449787,
+        "p10": 1.6183124200075487,
+        "p50": 1.6350995571469191,
+        "p90": 1.6493091848961747,
+        "unidade": "postos"
+      },
+      "IMP-ALT4-KMIN-ALT3-COM-IMPL": {
+        "provavel": 1.9838852827036528,
+        "p10": 1.8249381116349657,
+        "p50": 1.970528813057491,
+        "p90": 2.1222788878691623,
+        "unidade": "x"
+      },
+      "IMP-ALT4-KMAX-ALT3-UM-POSTO": {
+        "provavel": 1.743222727617567,
+        "p10": 1.6064216191052982,
+        "p50": 1.7325338857183015,
+        "p90": 1.8704320060228332,
+        "unidade": "x"
+      },
+      "IMP-ALT4-FOLGA-ALT3-INT-COM-IMPL": {
+        "provavel": 3454.110826200852,
+        "p10": 3404.4441861381206,
+        "p50": 3459.2820230873663,
+        "p90": 3528.4218847307056,
+        "unidade": "R$/mês"
+      },
+      "IMP-ALT4-FOLGA-ALT3-RAT-COM-IMPL": {
+        "provavel": -2650.6510785610526,
+        "p10": -2819.8068028157372,
+        "p50": -2620.861283992324,
+        "p90": -2412.139846533998,
+        "unidade": "R$/mês"
+      },
+      "IMP-CR6-ALT3-SEM-PISO-COM-IMPL": {
+        "provavel": -1115.8618421052631,
+        "p10": -1189.8479970472415,
+        "p50": -1109.0145020249684,
+        "p90": -1019.0327409661577,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-CR6-ALT3-SEM-PISO-COM-RESERVA": {
+        "provavel": -243.90789473684208,
+        "p10": -292.3740171104304,
+        "p50": -238.93712996576522,
+        "p90": -179.93280187811217,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-CR6-ALT3-SEM-PISO-COM-RESERVA-COM-IMPL": {
+        "provavel": -1410.5745614035088,
+        "p10": -1460.091602455431,
+        "p50": -1404.2010458675843,
+        "p90": -1344.255559618389,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-CR6-ALT3-HW-SEM-PISO-SO-HARDWARE": {
+        "provavel": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "unidade": "R$/robô"
+      },
+      "IMP-CR6-ALT3-HW-SEM-PISO-COM-RESERVA-SO-HARDWARE": {
+        "provavel": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "unidade": "R$/robô"
+      },
+      "IMP-CR6-ALT3-NO-TETO-INT": {
+        "provavel": 2977.055413100426,
+        "p10": 2952.205042155176,
+        "p50": 2979.372418012479,
+        "p90": 3013.8221100001297,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-CR6-ALT3-NO-TETO-INT-COM-IMPL": {
+        "provavel": 1727.055413100426,
+        "p10": 1702.0678543579513,
+        "p50": 1729.4789211309399,
+        "p90": 1764.7229739332195,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-HW-ALT4-INT-NO-TETO-SO-HARDWARE": {
+        "provavel": 41449.32991441022,
+        "p10": 40843.920168545956,
+        "p50": 41514.574402974955,
+        "p90": 42344.53980269551,
+        "unidade": "R$/robô"
+      },
+      "IMP-CR6-ALT6-NO-TETO-INT": {
+        "provavel": 660.6530551637534,
+        "p10": 606.0390343714485,
+        "p50": 689.9004499679122,
+        "p90": 800.1745950843388,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-CR6-ALT6-NO-TETO-INT-COM-IMPL": {
+        "provavel": -439.3469448362466,
+        "p10": -496.45427380124414,
+        "p50": -409.82661264173,
+        "p90": -298.8241759227425,
+        "unidade": "R$/robô/mês"
+      },
+      "IMP-HW-ALT6-NO-TETO-INT-SO-HARDWARE": {
+        "provavel": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "unidade": "R$/robô"
+      },
+      "IMP-ALT4-FOLGA-ALT6-INT-COM-RESERVA": {
+        "provavel": 2303.265275818767,
+        "p10": 2024.0149818023235,
+        "p50": 2446.15333565094,
+        "p90": 3002.6640008780937,
+        "unidade": "R$/mês"
+      },
+      "IMP-ALT4-FOLGA-ALT6-INT-COM-IMPL": {
+        "provavel": -2196.734724181233,
+        "p10": -2471.757972335816,
+        "p50": -2053.4468724963817,
+        "p90": -1503.5975248298023,
+        "unidade": "R$/mês"
+      },
+      "IMP-ALT4-FOLGA-ALT6-INT-COM-RESERVA-COM-IMPL": {
+        "provavel": -4196.734724181233,
+        "p10": -4466.146607688338,
+        "p50": -4047.7897934220628,
+        "p90": -3499.3652259426526,
+        "unidade": "R$/mês"
+      },
+      "IMP-CR6-ALT3-RECEITA-ROBO-SOBRE-LOCACAO-DECK": {
+        "provavel": 0.16201973684210527,
+        "p10": 0.1559252186478386,
+        "p50": 0.16899546177797353,
+        "p90": 0.18300606446196951,
+        "unidade": "x"
+      },
+      "IMP-CR6-ALT3-RECEITA-ROBO-SOBRE-LOCACAO-NO-TETO": {
+        "provavel": 0.5681507733000608,
+        "p10": 0.5712775471047602,
+        "p50": 0.5858990158019104,
+        "p90": 0.6102428414758106,
+        "unidade": "x"
+      },
+      "IMP-REC-FROTA-TOTAL": {
+        "provavel": 3.0,
+        "p10": 3.0,
+        "p50": 3.0,
+        "p90": 3.0,
+        "unidade": "robôs"
+      },
+      "IMP-REC-PISO-MES-SEM-IMPL": {
+        "provavel": 3000.0,
+        "p10": 3000.0,
+        "p50": 3000.0,
+        "p90": 3000.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-PISO-MES-COM-IMPL": {
+        "provavel": 6500.0,
+        "p10": 6500.0,
+        "p50": 6500.0,
+        "p90": 6500.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-VOL-CHECKOUT-MES": {
+        "provavel": 1099.7368421052631,
+        "p10": 1014.8371028381162,
+        "p50": 1106.5678203314972,
+        "p90": 1209.978880238809,
+        "unidade": "pedidos/mês"
+      },
+      "IMP-REC-VOL-LINHAS-MES": {
+        "provavel": 1594.8947368421052,
+        "p10": 1470.1228383121804,
+        "p50": 1600.449010748764,
+        "p90": 1733.1123990309793,
+        "unidade": "linhas/mês"
+      },
+      "IMP-REC-KMIN-SEM-IMPL": {
+        "provavel": 1.3225901884691018,
+        "p10": 1.2195456526963186,
+        "p50": 1.311572940668181,
+        "p90": 1.4138075194375685,
+        "unidade": "x"
+      },
+      "IMP-REC-KMIN-COM-IMPL": {
+        "provavel": 2.8656120750163874,
+        "p10": 2.6399199245631744,
+        "p50": 2.8450717765757063,
+        "p90": 3.062968442211797,
+        "unidade": "x"
+      },
+      "IMP-REC-KMAX-RAT": {
+        "provavel": 0.8153102461836892,
+        "p10": 0.7521046686462053,
+        "p50": 0.8192556101143802,
+        "p90": 0.8963833700694107,
+        "unidade": "x"
+      },
+      "IMP-REC-KMAX-INT": {
+        "provavel": 3.506676312243036,
+        "p10": 3.2309608437810917,
+        "p50": 3.482307011034205,
+        "p90": 3.749061032762925,
+        "unidade": "x"
+      },
+      "IMP-REC-TARIFA-CHECKOUT-MIN-SEM-IMPL": {
+        "provavel": 2.248403320397473,
+        "p10": 2.0678727624501065,
+        "p50": 2.23223243836694,
+        "p90": 2.402949854303256,
+        "unidade": "R$/pedido"
+      },
+      "IMP-REC-TARIFA-LINHA-MIN-SEM-IMPL": {
+        "provavel": 0.33064754711727545,
+        "p10": 0.3052455160698352,
+        "p50": 0.32814688231232264,
+        "p90": 0.35366132762057273,
+        "unidade": "R$/linha"
+      },
+      "IMP-REC-TARIFA-CHECKOUT-MIN-COM-IMPL": {
+        "provavel": 4.871540527527858,
+        "p10": 4.4931366667181765,
+        "p50": 4.834761771686202,
+        "p90": 5.2058243747529405,
+        "unidade": "R$/pedido"
+      },
+      "IMP-REC-TARIFA-LINHA-MIN-COM-IMPL": {
+        "provavel": 0.7164030187540968,
+        "p10": 0.6595510632284247,
+        "p50": 0.7111263986079182,
+        "p90": 0.7663434147948323,
+        "unidade": "R$/linha"
+      },
+      "IMP-REC-TARIFA-CHECKOUT-MAX-RAT": {
+        "provavel": 1.3860274185122716,
+        "p10": 1.2793409097398587,
+        "p50": 1.3920132094551296,
+        "p90": 1.5243484289793752,
+        "unidade": "R$/pedido"
+      },
+      "IMP-REC-TARIFA-LINHA-MAX-RAT": {
+        "provavel": 0.2038275615459223,
+        "p10": 0.18835019986960708,
+        "p50": 0.20509584418203264,
+        "p90": 0.22426585407183258,
+        "unidade": "R$/linha"
+      },
+      "IMP-REC-TARIFA-CHECKOUT-MAX-INT": {
+        "provavel": 5.961349730813161,
+        "p10": 5.487747777053278,
+        "p50": 5.922396760113363,
+        "p90": 6.388951789837971,
+        "unidade": "R$/pedido"
+      },
+      "IMP-REC-TARIFA-LINHA-MAX-INT": {
+        "provavel": 0.876669078060759,
+        "p10": 0.8073293384521969,
+        "p50": 0.8709307633706973,
+        "p90": 0.9389740750718066,
+        "unidade": "R$/linha"
+      },
+      "IMP-REC-FOLGA-INT-SEM-IMPL": {
+        "provavel": 4954.110826200852,
+        "p10": 4904.26001453575,
+        "p50": 4959.102147433747,
+        "p90": 5027.293849815922,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-PRECO-MES-INT-SEM-IMPL": {
+        "provavel": 5477.055413100426,
+        "p10": 5451.029940261042,
+        "p50": 5480.032962700778,
+        "p90": 5513.909565608214,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-ECONOMIA-SOCIAL-MES-INT-SEM-IMPL": {
+        "provavel": 4778.996885699611,
+        "p10": 4790.231781517284,
+        "p50": 4831.347079627427,
+        "p90": 4886.863114900939,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-ECONOMIA-SOCIAL-PCT-INT-SEM-IMPL": {
+        "provavel": 0.41521445636960613,
+        "p10": 0.4065695488634145,
+        "p50": 0.4109602975661457,
+        "p90": 0.4147809922843027,
+        "unidade": "%"
+      },
+      "IMP-REC-MARGEM-ACTA-MES-INT-SEM-IMPL": {
+        "provavel": 2477.0554131004264,
+        "p10": 2452.3702720094234,
+        "p50": 2480.0155251251977,
+        "p90": 2513.7310319204803,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-FOLGA-INT-COM-IMPL": {
+        "provavel": 1454.110826200852,
+        "p10": 1403.0923572083861,
+        "p50": 1458.628682087674,
+        "p90": 1526.9688370914298,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-PRECO-MES-INT-COM-IMPL": {
+        "provavel": 7227.055413100426,
+        "p10": 7201.698128763388,
+        "p50": 7230.078235199098,
+        "p90": 7263.555477867446,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-ECONOMIA-SOCIAL-MES-INT-COM-IMPL": {
+        "provavel": 3028.996885699611,
+        "p10": 3040.060424426759,
+        "p50": 3082.233724360531,
+        "p90": 3138.4639629655344,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-ECONOMIA-SOCIAL-PCT-INT-COM-IMPL": {
+        "provavel": 0.2631688878066465,
+        "p10": 0.2594354899599897,
+        "p50": 0.2620780326550828,
+        "p90": 0.2649528123735393,
+        "unidade": "%"
+      },
+      "IMP-REC-MARGEM-ACTA-MES-INT-COM-IMPL": {
+        "provavel": 727.0554131004264,
+        "p10": 701.9290909184983,
+        "p50": 729.7255112325383,
+        "p90": 763.9596653375096,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-FOLGA-RAT-SEM-IMPL": {
+        "provavel": -1150.6510785610526,
+        "p10": -1314.5856802248877,
+        "p50": -1122.1915852455782,
+        "p90": -909.9578855940082,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-PRECO-MES-RAT-SEM-IMPL": {
+        "provavel": 3000.0,
+        "p10": 3000.0,
+        "p50": 3000.0,
+        "p90": 3000.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-ECONOMIA-SOCIAL-MES-RAT-SEM-IMPL": {
+        "provavel": -374.90008215234093,
+        "p10": -530.7210233666717,
+        "p50": -295.8336750047547,
+        "p90": -31.641229271299185,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-ECONOMIA-SOCIAL-PCT-RAT-SEM-IMPL": {
+        "provavel": -0.09665474717735878,
+        "p10": -0.13457593756381697,
+        "p50": -0.07015097658758151,
+        "p90": -0.006363217610634489,
+        "unidade": "%"
+      },
+      "IMP-REC-MARGEM-ACTA-MES-RAT-SEM-IMPL": {
+        "provavel": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-FOLGA-RAT-COM-IMPL": {
+        "provavel": -4650.651078561053,
+        "p10": -4814.373797338123,
+        "p50": -4623.577465660015,
+        "p90": -4409.303153287082,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-PRECO-MES-RAT-COM-IMPL": {
+        "provavel": 6500.0,
+        "p10": 6500.0,
+        "p50": 6500.0,
+        "p90": 6500.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-ECONOMIA-SOCIAL-MES-RAT-COM-IMPL": {
+        "provavel": -3874.900082152341,
+        "p10": -4028.2990835113605,
+        "p50": -3790.217199072349,
+        "p90": -3525.3671405281775,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-ECONOMIA-SOCIAL-PCT-RAT-COM-IMPL": {
+        "provavel": -0.9990061501927646,
+        "p10": -1.0310728361263592,
+        "p50": -0.9107941794025443,
+        "p90": -0.7937931006969071,
+        "unidade": "%"
+      },
+      "IMP-REC-MARGEM-ACTA-MES-RAT-COM-IMPL": {
+        "provavel": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-HW-MAX-INT-SEM-IMPL": {
+        "provavel": 19816.44330480341,
+        "p10": 19616.376921910083,
+        "p50": 19834.822152811925,
+        "p90": 20108.343838469442,
+        "unidade": "R$/robô"
+      },
+      "IMP-REC-TARIFA-CHECKOUT-RECOMENDADA-INT-SEM-IMPL": {
+        "provavel": 4.1048765256053175,
+        "p10": 3.7821135499603256,
+        "p50": 4.075505573338794,
+        "p90": 4.393125395051683,
+        "unidade": "R$/pedido"
+      },
+      "IMP-REC-TARIFA-LINHA-RECOMENDADA-INT-SEM-IMPL": {
+        "provavel": 0.6036583125890173,
+        "p10": 0.5566052751982831,
+        "p50": 0.5992475344618592,
+        "p90": 0.646175134162155,
+        "unidade": "R$/linha"
+      },
+      "IMP-REC-HW-MAX-INT-COM-IMPL": {
+        "provavel": 5816.443304803412,
+        "p10": 5620.171104904589,
+        "p50": 5838.251868460418,
+        "p90": 6108.528633018713,
+        "unidade": "R$/robô"
+      },
+      "IMP-REC-TARIFA-CHECKOUT-RECOMENDADA-INT-COM-IMPL": {
+        "provavel": 5.41644512917051,
+        "p10": 5.001471046303374,
+        "p50": 5.382596331441915,
+        "p90": 5.793572727889347,
+        "unidade": "R$/pedido"
+      },
+      "IMP-REC-TARIFA-LINHA-RECOMENDADA-INT-COM-IMPL": {
+        "provavel": 0.796536048407428,
+        "p10": 0.7348702639183865,
+        "p50": 0.7912096093066049,
+        "p90": 0.8521216053785285,
+        "unidade": "R$/linha"
+      },
+      "IMP-PILOTO-FROTA": {
+        "provavel": 4.0,
+        "p10": 4.0,
+        "p50": 4.0,
+        "p90": 4.0,
+        "unidade": "robôs"
+      },
+      "IMP-PILOTO-PRECO-MES-CUSTO-DE-SERVIR": {
+        "provavel": 4000.0,
+        "p10": 4000.0,
+        "p50": 4000.0,
+        "p90": 4000.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-PILOTO-INVESTIMENTO-IMPLANTACAO": {
+        "provavel": 72000.0,
+        "p10": 72000.0,
+        "p50": 72000.0,
+        "p90": 72000.0,
+        "unidade": "R$"
+      },
+      "IMP-PILOTO-PRECO-MES-COM-IMPLANTACAO": {
+        "provavel": 28000.0,
+        "p10": 28409.59950145191,
+        "p50": 30560.88243497404,
+        "p90": 35024.96930283177,
+        "unidade": "R$/mês"
+      },
+      "IMP-PILOTO-CUSTO-TOTAL-ACTA": {
+        "provavel": 84000.0,
+        "p10": 81262.84985352088,
+        "p50": 82837.9615848804,
+        "p90": 83800.40746605888,
+        "unidade": "R$"
+      },
+      "IMP-ALT1-CUSTO-MES-PILOTO-GRATUITO": {
+        "provavel": 1000.0,
+        "p10": 1000.0,
+        "p50": 1000.0,
+        "p90": 1000.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-PILOTO-DURACAO-MESES": {
+        "provavel": 3.0,
+        "p10": 2.317581059963496,
+        "p50": 2.7031604977845305,
+        "p90": 2.946391100935645,
+        "unidade": "meses"
+      },
+      "IMP-INV-PR05-ALT6-SEM-BASE": {
+        "provavel": 104.73286987418228,
+        "p10": 77.72995898002495,
+        "p50": 90.32280092578256,
+        "p90": 104.03346006120154,
+        "unidade": "linhas/h"
+      },
+      "IMP-PILOTO-META-PR05-T300": {
+        "provavel": 141.0864516686577,
+        "p10": 105.9953660306891,
+        "p50": 122.13222962185839,
+        "p90": 140.55516839740417,
+        "unidade": "linhas/h"
+      },
+      "IMP-PILOTO-META-FOLGA-FISICA-T300": {
+        "provavel": -63.0864516686577,
+        "p10": -62.54929793138804,
+        "p50": -44.45314951929648,
+        "p90": -27.70179330949056,
+        "unidade": "linhas/h"
+      },
+      "IMP-PILOTO-META-PR05-T900": {
+        "provavel": 83.71251417824308,
+        "p10": 67.88655268869647,
+        "p50": 75.52621567505435,
+        "p90": 83.76207892291592,
+        "unidade": "linhas/h"
+      },
+      "IMP-PILOTO-META-FOLGA-FISICA-T900": {
+        "provavel": -5.712514178243083,
+        "p10": -5.8306137154471385,
+        "p50": 2.3663477501909256,
+        "p90": 10.095516237932356,
+        "unidade": "linhas/h"
+      },
+      "IMP-PILOTO-META-PR05-T1800": {
+        "provavel": 62.264115074797346,
+        "p10": 52.926863934453806,
+        "p50": 58.16495000334524,
+        "p90": 63.46202084569003,
+        "unidade": "linhas/h"
+      },
+      "IMP-PILOTO-META-FOLGA-FISICA-T1800": {
+        "provavel": 15.735884925202654,
+        "p10": 14.407194096764211,
+        "p50": 19.840556653266482,
+        "p90": 25.038235068063074,
+        "unidade": "linhas/h"
+      },
+      "IMP-IMPL-INVESTIMENTO-ALT3-SEM-RESERVA-DESCONTO": {
+        "provavel": 36000.0,
+        "p10": 36000.0,
+        "p50": 36000.0,
+        "p90": 36000.0,
+        "unidade": "R$"
+      },
+      "IMP-IMPL-INVESTIMENTO-ALT3-COM-RESERVA-DESCONTO": {
+        "provavel": 60000.0,
+        "p10": 60000.0,
+        "p50": 60000.0,
+        "p90": 60000.0,
+        "unidade": "R$"
+      },
+      "IMP-INV-PR11-CR1-ALT4-ALT3-COM-IMPL-DESCONTO": {
+        "provavel": 0.8864722934497871,
+        "p10": 0.8682667774118252,
+        "p50": 0.8852843959255152,
+        "p90": 0.8991633927163958,
+        "unidade": "postos"
+      },
+      "IMP-INV-PR11-CR1-ALT4-ALT3-COM-RESERVA-COM-IMPL-DESCONTO": {
+        "provavel": 1.386472293449787,
+        "p10": 1.3682559444117062,
+        "p50": 1.3851542352938075,
+        "p90": 1.3993121088414935,
+        "unidade": "postos"
+      },
+      "IMP-REC-PISO-MES-COM-IMPL-DESCONTO": {
+        "provavel": 5500.0,
+        "p10": 5500.0,
+        "p50": 5500.0,
+        "p90": 5500.0,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-KMIN-COM-IMPL-DESCONTO": {
+        "provavel": 2.42474867886002,
+        "p10": 2.2303888237596343,
+        "p50": 2.4069497168561726,
+        "p90": 2.5886353207781356,
+        "unidade": "x"
+      },
+      "IMP-REC-FOLGA-INT-COM-IMPL-DESCONTO": {
+        "provavel": 2454.110826200852,
+        "p10": 2403.9924550079368,
+        "p50": 2458.896453226961,
+        "p90": 2527.2725579509747,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-FOLGA-RAT-COM-IMPL-DESCONTO": {
+        "provavel": -3650.6510785610526,
+        "p10": -3818.3541584111563,
+        "p50": -3623.0878126559737,
+        "p90": -3414.233504404348,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-PRECO-MES-INT-COM-IMPL-DESCONTO": {
+        "provavel": 6727.055413100426,
+        "p10": 6701.687864235045,
+        "p50": 6729.450145079446,
+        "p90": 6763.573322142478,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-ECONOMIA-SOCIAL-MES-INT-COM-IMPL-DESCONTO": {
+        "provavel": 3528.996885699611,
+        "p10": 3540.097866816622,
+        "p50": 3582.1243984802936,
+        "p90": 3637.377752946989,
+        "unidade": "R$/mês"
+      },
+      "IMP-REC-MARGEM-ACTA-MES-INT-COM-IMPL-DESCONTO": {
+        "provavel": 1227.0554131004264,
+        "p10": 1201.900840404578,
+        "p50": 1229.7700139595213,
+        "p90": 1262.8362751576358,
+        "unidade": "R$/mês"
+      }
+    }
+  },
+  "hashes": {
+    "meta": "3e7ac3011393",
+    "briefing": "0f87f260079c",
+    "decisao": "cac84cf9a15c",
+    "contrato": "eeaae3ddd687",
+    "especialista": "5c11a351fc8d",
+    "qualidade": "20c68993d4ba",
+    "plano": "8c3214c9076c",
+    "impacto": "c6f6548a0fa4"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "INS-002",
+  "estado": "aprovado",
+  "afirmacao": "Na ALT2 (só pedido-a-pedido), a receita por transação cobre apenas {{v.cob_normal}} da franquia em operação normal e {{v.cob_estresse}} na janela do plano. CR2 falha em todo o envelope; para cobrir a franquia o volume teria de ser {{v.fator}}. H-P4b (slide 18) se confirma: sem o checkout, a franquia deixa de fazer sentido.",
+  "pergunta_ref": "P4",
+  "criterio_ref": "CR2",
+  "valores": {
+    "cob_normal": "ANA-002.cobertura_franquia_alt2_normal",
+    "cob_estresse": "ANA-002.cobertura_franquia_alt2_estresse",
+    "fator": "ANA-002.fator_volume_para_cobrir_franquia_alt2_normal"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "janelas de operação normal e de estresse (plano), mais as janelas do envelope",
+      "analise": "ANA-002",
+      "resultado": "passa",
+      "nota": "a classificação é a mesma nas duas janelas (chave mesma_classe_cr2_nas_duas_janelas)"
+    },
+    {
+      "recorte": "contagem de linha tarifável: M06 inferior, M06 superior e M05",
+      "analise": "ANA-002",
+      "resultado": "passa",
+      "nota": "as três contagens dão cobertura minúscula (chaves cobertura_franquia_alt2_m06_sup e cobertura_franquia_alt2_m05)"
+    },
+    {
+      "recorte": "variante só com pedido_multi_endereco",
+      "analise": "ANA-002",
+      "resultado": "passa",
+      "nota": "a cobertura continua minúscula (chave cobertura_franquia_alt2_pap_multi)"
+    },
+    {
+      "recorte": "mês a mês, normalizado por M20",
+      "analise": "ANA-002",
+      "resultado": "passa",
+      "nota": "todos os meses ficam muito abaixo da franquia (chaves cobertura_franquia_alt2_mes_*)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Mantido: cobertura minúscula em todo o envelope; render com o rótulo correto. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": "IMP-CR2-ALT2-NORMAL",
+    "modelos_relacionados": [
+      "IMP-CR2-ALT2-ESTRESSE",
+      "IMP-CR2-RECEITA-ALT2"
+    ]
+  },
+  "acao": "Na ALT2, não propor a franquia cheia nem ligar a garantia a ela. Um piso proporcional ao escopo fica no máximo na receita por transação (IMP-CR2-RECEITA-ALT2), e nesse nível a margem por robô é negativa (IMP-CR6-ALT2-SEM-PISO): a ALT2 sozinha não fecha para a Acta.",
+  "dono": "Matheus Correa, Comercial; decisão de Marcus Lima, CEO; Renato Correa, CFO (margem)",
+  "premissas": [
+    "base da oferta em operação normal (as quatro semanas anteriores ao incidente) para volume e receita; a janela do plano, que inclui o incidente da Royal Canin, entra como estresse (decisão do orquestrador; Marcus confirma ou troca no G3)",
+    "ALT2 medida contra a franquia cheia do deck; a decisão pede franquia proporcional ao escopo sem checkout",
+    "tarifas e franquia do deck (PR02, PR03, PR04) e custo de servir sem hardware informado por Marcus (PR13); custo de hardware (PR20) é [●] e o motor entrega o máximo pagável",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "Sobrevive. Reforço: nenhuma estrutura de preço resolve a ALT2. A economia de separação do pedido-a-pedido da RC é menor que o custo de servir de um robô, mesmo com PR05 no teto de manuseio do deck (RTD-FOLGA-ALT2-PR05-TETO e RTD-PILOTO-ECONOMIA-SOBRE-CUSTO-ROBO). Num piloto curto, cobrar o custo de servir como valor fixo, não por linha. Detalhes em revisoes/red-team-decisao.json."
+  },
+  "confianca": "alta",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:55",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:02",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:27",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:01",
+      "por": "Marcus"
+    }
+  ]
+}

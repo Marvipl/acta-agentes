@@ -1,0 +1,61 @@
+{
+  "id": "INS-045",
+  "estado": "quantificado",
+  "afirmacao": "O painel de novatos da descoberta tem {{v.n}}, no limite do mínimo de unidades exigido, e não mostra tendência de subida da razão entre o M14 do novato e o dos experientes: a inclinação por semana desde a entrada é {{v.incl}}, com intervalo que cruza o zero. A razão mediana fica abaixo da paridade tanto nas duas primeiras semanas ({{v.m01}}) quanto nas seguintes ({{v.m23}}). A curva é inconclusiva por desenho, porque o intervalo cruza o zero e o efeito mínimo detectável com tão poucas unidades é grande: login novo não é pessoa nova, o painel descreve só quem ficou até o fim do acompanhamento e a razão tem valores extremos. Não sustenta nem derruba o argumento do temporário guiado pelo robô.",
+  "pergunta_ref": "P13",
+  "criterio_ref": "CR8",
+  "valores": {
+    "n": "ANA-012.n_novatos_descoberta",
+    "incl": "ANA-012.razao_novato_experiente_semana",
+    "m01": "ANA-012.razao_novato_mediana_sem01",
+    "m23": "ANA-012.razao_novato_mediana_sem23"
+  },
+  "nivel": "descritivo",
+  "exploratorio": true,
+  "robustez": [
+    {
+      "recorte": "inclinação do log da razão (menos sensível a razões extremas)",
+      "analise": "ANA-012",
+      "resultado": "parcial",
+      "nota": "mesmo sinal e IC que cruza o zero (chave razao_novato_experiente_semana_log)"
+    },
+    {
+      "recorte": "teto conservador",
+      "analise": "ANA-012",
+      "resultado": "parcial",
+      "nota": "mesmo sinal e IC que cruza o zero (chave razao_novato_experiente_semana_t300)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "ANA-016",
+    "resultado": "nao_confirma",
+    "nota": "PT-H09 inconclusiva por desenho em ANA-016: menos de dez novatos nas semanas pares"
+  },
+  "red_team_analitico": {
+    "veredito": "cai",
+    "nota": "Texto corrigido, mas segue exploratório sem confirmação (PT-H09 inconclusiva por desenho em ANA-016): não segue ao impacto."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Manter P13 descritiva (o plano já prevê isso com poucos novatos); não usar a curva de aprendizado como número na oferta. Pedir à Social a data de admissão dos temporários (v2). Para o teste controlado, ponderar a razão novato-semana pelas horas do novato (a razão explode quando o novato faz poucas horas).",
+  "dono": "estatistico (ANA-016); Marcus (pergunta à Social)",
+  "premissas": [
+    "achado exploratório da descoberta (semanas ISO ímpares): estimativa sem ajuste para as muitas comparações olhadas; não vai ao memorando antes da confirmação em ANA-016",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador como robustez",
+    "incidente operacional da Royal Canin na semana ISO ímpar de fim de setembro tratado como recorte atípico e declarado (revisoes/orquestrador_decisao_semana_incidente.md)",
+    "viés de sobrevivência e de alocação do painel balanceado; a referência de experientes é comum aos dois lados"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:47",
+      "por": "analista-exploratorio"
+    }
+  ]
+}

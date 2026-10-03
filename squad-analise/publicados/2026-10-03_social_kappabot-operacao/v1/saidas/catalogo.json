@@ -1,0 +1,19 @@
+{
+  "arquivos": [
+    {
+      "arquivo": "PROD_90DIAS.xlsx",
+      "sha256": "62c917fc1f76a5d02d670e1f423620279be9dd4497edde6f36dd22b38598ca94",
+      "importado_em": "2026-10-03T01:18:32"
+    }
+  ],
+  "tabelas": [
+    {
+      "tabela": "raw_prod_90dias_produtividade",
+      "arquivo": "PROD_90DIAS.xlsx",
+      "parte": "PRODUTIVIDADE",
+      "leitura": "excel",
+      "linhas": 43976,
+      "colunas": 21
+    }
+  ]
+}

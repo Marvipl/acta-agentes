@@ -1,0 +1,87 @@
+{
+  "id": "INS-080",
+  "estado": "aprovado",
+  "afirmacao": "A economia do slide 15 e a franquia do slide 18 implicam um volume que o WMS não mostra. O serviço do slide 15 equivale a {{v.ped}} e a {{v.lin}} no pedido-a-pedido; a franquia, lida como a fração do volume atual descrita no deck, implica {{v.lin_fr}} no pedido-a-pedido, e a franquia sobre a receita da economia é {{v.fr_rec}}, então os dois números do deck são coerentes entre si. Contra o volume corrente da Royal Canin, o implícito é {{v.r_lin}} nas linhas e {{v.r_ped}} nos pedidos de checkout na janela do plano, e {{v.r_lin_n}} e {{v.r_ped_n}} na operação normal. Entre as {{v.n_bases}} testadas, {{v.n_dois}} reproduzem a franquia e a economia ao mesmo tempo. A razão entre o volume mensal de checkout implícito e a taxa diária de pedidos de checkout do slide 10 é {{v.dias}}, compatível com a hipótese de que o deck multiplicou a taxa diária pelos dias do mês, a confirmar com o autor do deck.",
+  "pergunta_ref": "P5",
+  "criterio_ref": "CR2",
+  "valores": {
+    "ped": "ANA-011.vol_implicito_economia_pedidos_checkout",
+    "lin": "ANA-011.vol_implicito_economia_linhas",
+    "lin_fr": "ANA-011.vol_implicito_franquia_linhas",
+    "fr_rec": "ANA-011.franquia_sobre_receita_implicita_economia",
+    "r_lin": "ANA-011.razao_implicito_corrente",
+    "r_ped": "ANA-011.razao_implicito_corrente_checkout",
+    "r_lin_n": "ANA-011.razao_implicito_corrente_normal",
+    "r_ped_n": "ANA-011.razao_implicito_corrente_checkout_normal",
+    "n_bases": "ANA-011.n_bases_testadas",
+    "n_dois": "ANA-011.n_bases_que_reproduzem_os_dois",
+    "dias": "ANA-011.vol_implicito_checkout_em_dias_do_slide10"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "lista fechada de bases do WMS",
+      "analise": "ANA-011",
+      "resultado": "passa",
+      "nota": "nenhuma das bases (cada mês cru, agosto normalizado, média por datas distintas, taxa corrente, com e sem CANCELADO, com Qtde Produtos e Qtde Endereços) reproduz a franquia nem a economia (tabela bases_volume_implicito)"
+    },
+    {
+      "recorte": "arredondamento do deck",
+      "analise": "ANA-011",
+      "resultado": "passa",
+      "nota": "o volume implícito muda pouco com o arredondamento dos FTE e dos valores em reais (chaves _minimo e _maximo)"
+    },
+    {
+      "recorte": "janela do plano contra operação normal",
+      "analise": "ANA-011",
+      "resultado": "passa",
+      "nota": "o volume implícito fica longe do corrente nas duas janelas"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Sem mudança; ANA-011 reconferida pelo dono com valores idênticos."
+  },
+  "impacto": {
+    "modelo": "IMP-CR2-VOLUME-CHECKOUT-ALT3",
+    "modelos_relacionados": []
+  },
+  "acao": "Perguntar ao autor do deck qual volume mensal alimentou a franquia e a economia (hipótese: taxa diária da semana de retomada vezes os dias do mês) e usar o volume do WMS na oferta. O ponto de equilíbrio de checkout (IMP-CR2-VOLUME-CHECKOUT-ALT3) mostra quanto o volume teria de crescer para cobrir a franquia.",
+  "dono": "Marcus Lima, CEO (autor do deck)",
+  "premissas": [
+    "volume de linhas do pedido-a-pedido mantido no corrente e tarifas do deck",
+    "o método do deck é desconhecido; a confirmação é do autor (Marcus)",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "Sobrevive. Corrigir o volume antes de apresentar é condição, não detalhe."
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:41:54",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:56",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:38",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:02",
+      "por": "Marcus"
+    }
+  ]
+}

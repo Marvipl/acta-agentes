@@ -1,0 +1,90 @@
+{
+  "id": "INS-015",
+  "estado": "aprovado",
+  "afirmacao": "O excedente de horas ativas do escopo da ALT3 no dia p90 sobre o dia típico depende do regime. Na base pós-colmeia (dias plenos desde a entrada da colmeia, sem o incidente de 21 a 25/09) é de {{v.exc_pc}}, ou {{v.fte_pc}}: uma fração de jornada, não uma vaga inteira. A banda do p90 pós-colmeia tem só o mínimo de dias ({{v.banda_pc}}), então o IC de bootstrap de dias, largo, deve acompanhar o número: {{v.ic_pc_h}}, ou {{v.ic_pc_fte}}; a conclusão (fração de jornada) vale nas duas incertezas (a faixa de cenários citada é dos tetos e de S1 a S3, não é intervalo de confiança). Na variante do plano, que inclui o regime pré-colmeia, é de {{v.exc_plano}}, ou {{v.fte_plano}}, porque a banda do p90 do período inteiro tem {{v.banda}}, dos quais {{v.banda_pre}} anteriores à colmeia, quando o pedido-a-pedido era bem maior. Na janela normal de 24/08 a 18/09 a leitura é só descritiva ({{v.exc_jn}}, poucos dias na banda do p90). Na retomada (segundas e dias pós-pausa) o excedente pós-colmeia é {{v.ret_pc}}. A regra de teto inteiro de M23 transformaria qualquer fração em um operador adicional, mas esse número não sustenta o argumento 'pico sem temporário': o reforço é uma fração de jornada. No armazém inteiro, sem quebra de regime, o excedente do dia p90 é {{v.arm}} ({{v.fte_arm}}). O dia máximo fica só como limite superior. A base pós-colmeia é decisão do orquestrador a confirmar por Marcus no G3.",
+  "pergunta_ref": "P19",
+  "criterio_ref": "CR8",
+  "valores": {
+    "exc_pc": "ANA-003.excedente_h_p90_escopo_poscolmeia",
+    "fte_pc": "ANA-003.excedente_fte_p90_escopo_poscolmeia",
+    "exc_plano": "ANA-003.excedente_h_p90_escopo",
+    "fte_plano": "ANA-003.excedente_fte_p90_escopo",
+    "exc_jn": "ANA-003.excedente_h_p90_escopo_normal",
+    "ret_pc": "ANA-003.excedente_h_retomada_escopo_poscolmeia",
+    "arm": "ANA-003.excedente_h_p90_armazem",
+    "fte_arm": "ANA-003.excedente_fte_p90_armazem",
+    "banda_pre": "ANA-003.dias_banda_p90_escopo_pre_colmeia",
+    "banda": "ANA-003.dias_na_banda_p90_escopo",
+    "banda_pc": "ANA-003.dias_na_banda_p90_escopo_poscolmeia",
+    "ic_pc_h": "ANA-003.excedente_h_p90_escopo_poscolmeia_ic_dias",
+    "ic_pc_fte": "ANA-003.excedente_fte_p90_escopo_poscolmeia_ic_dias"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "regime: pós-colmeia contra período inteiro (variante do plano, regime pré-colmeia incluído)",
+      "analise": "ANA-003",
+      "resultado": "parcial",
+      "nota": "o excedente do p90 cai no regime pós-colmeia e a retomada passa a ser maior que o p90 (chaves excedente_h_p90_escopo_poscolmeia, excedente_h_retomada_escopo_poscolmeia e excedente_h_p90_escopo); em ambos é fração de jornada"
+    },
+    {
+      "recorte": "sem o incidente de 21 a 25/09 no período inteiro",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "mesma ordem de grandeza da variante do plano (chave excedente_h_p90_escopo_sem_incidente)"
+    },
+    {
+      "recorte": "quatro tetos e S1 a S3",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "o excedente continua abaixo de uma jornada em toda a grade, nas duas leituras de regime (faixa de excedente_fte_p90_escopo_poscolmeia e excedente_fte_p90_escopo)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Rodada dois. Correção atendida no essencial: base pós-colmeia com a variante do plano rotulada, excedente em fração de jornada e o teto inteiro desarmado como argumento. Ressalva nova: a banda do p90 pós-colmeia tem só o mínimo de dias e o texto cita apenas a faixa de cenários; o IC de bootstrap de dias (gravado na chave) é largo e deve acompanhar o número no impacto. A conclusão (fração de jornada, não vaga) vale nas duas incertezas. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": "IMP-CR8-P90-RC-EXCEDENTE",
+    "modelos_relacionados": []
+  },
+  "acao": "Usar o excedente pós-colmeia do dia p90 como base de CR8 (IMP-CR8-P90-RC-EXCEDENTE) e apresentar o do período inteiro com o rótulo regime pré-colmeia incluído. Marcus escolhe o regime no G3; não usar o dia máximo como base.",
+  "dono": "Marcus Lima, CEO (escolha do regime no G3)",
+  "premissas": [
+    "regime pós-colmeia como base, sem a semana do incidente (decisão do orquestrador, a confirmar por Marcus no G3)",
+    "horas de jornada ativa por operador-dia no WMS, dia típico pela média dos dias plenos",
+    "custos de hora extra e de temporário da Social são [●] (E11): o modelo fica em pessoas-hora, sem reais",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "Sobrevive. A conclusão (fração de jornada) vale nas duas incertezas e desarma o argumento de pico na RC. O argumento de pico vai para o armazém (INS-048), em pessoas-hora."
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:17:07",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:15",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:31",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:01",
+      "por": "Marcus"
+    }
+  ]
+}

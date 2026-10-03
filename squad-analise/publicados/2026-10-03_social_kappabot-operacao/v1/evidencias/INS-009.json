@@ -1,0 +1,70 @@
+{
+  "id": "INS-009",
+  "estado": "validado",
+  "afirmacao": "Os pedidos feitos pelo robô aparecem no WMS numa conta de sistema própria, que capta só as devolutivas automáticas: a participação real do robô é maior que os {{v.part}} dos pedidos do pedido-a-pedido da Royal Canin desde o início da operação (piso), e há {{v.chk}} na mesma conta. A participação sobe de {{v.jul}} em julho para {{v.set}} em setembro. Os pedidos da conta são menores que os manuais ({{v.end_robo}} contra {{v.end_man}}, e {{v.un_robo}} contra {{v.un_man}}), mas isso reflete a escolha da operação, não uma propriedade do robô: a fração de pedidos de um só endereço é {{v.um_robo}} na conta do robô e {{v.um_man}} no manual. Comparação descritiva; o Tempo do robô no WMS não é comparável com o do manual.",
+  "pergunta_ref": "P8",
+  "criterio_ref": "CR3",
+  "valores": {
+    "part": "ANA-005.part_robo_pap_rc",
+    "chk": "ANA-001.pedidos_checkout_rc_conta_robo_desde_par11",
+    "jul": "ANA-001.part_robo_pap_rc_mes_2026_07",
+    "set": "ANA-001.part_robo_pap_rc_mes_2026_09",
+    "end_robo": "ANA-005.media_enderecos_por_pedido_robo",
+    "end_man": "ANA-005.media_enderecos_por_pedido_manual",
+    "un_robo": "ANA-005.media_un_por_pedido_robo",
+    "un_man": "ANA-005.media_un_por_pedido_manual",
+    "um_robo": "ANA-001.fracao_pedidos_um_endereco_pap_rc_robo",
+    "um_man": "ANA-001.fracao_pedidos_um_endereco_pap_rc_manual"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "por mês",
+      "analise": "ANA-001",
+      "resultado": "passa",
+      "nota": "a participação do robô cresce de julho a setembro (chaves part_robo_pap_rc_mes_*)"
+    },
+    {
+      "recorte": "por campo: endereços, unidades e produtos por pedido",
+      "analise": "ANA-005",
+      "resultado": "passa",
+      "nota": "o robô faz pedidos menores nos três campos (chaves media_*_por_pedido_robo e _manual)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: a participação da conta do robô é declarada como piso, os pedidos de checkout da conta aparecem e a diferença de tamanho é atribuída à escolha da operação. Só formatação: contagem de pedidos com casas decimais. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Tratar a mistura de pedidos do robô como viés declarado do tempo manual (M12, M14) e mostrar a comparação robô e manual só como descritiva.",
+  "dono": "analista de impacto",
+  "premissas": [
+    "PAR11",
+    "conta de sistema do robô identificada por etapa local (PQ09)",
+    "pedidos do robô com devolutiva não automática não se distinguem do manual",
+    "a participação do robô no WMS é piso"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "alta",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:17:01",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:09",
+      "por": "red-team-analitico"
+    }
+  ]
+}

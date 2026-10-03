@@ -1,0 +1,77 @@
+{
+  "id": "INS-020",
+  "estado": "validado",
+  "afirmacao": "No checkout da Royal Canin, o WMS reproduz as unidades por onda do slide 10: {{v.unid_onda}}, com o IC da equivalência dentro da margem fixada no G2. Mas não decide o tempo por unidade: {{v.t_unid}}, com o IC da equivalência cruzando a margem. O resultado é inconclusivo por desenho, porque o MDE de ANA-000 passa da margem, e não pode ser lido como compatibilidade nem como falha. Depois do início da operação do robô o tempo por unidade é {{v.t_unid_pos}}; antes, {{v.t_unid_pre}}. O período inteiro mistura dois regimes. Verificação do deck, não evidência nova.",
+  "pergunta_ref": "P3",
+  "criterio_ref": "CR1",
+  "valores": {
+    "unid_onda": "ANA-006.unid_por_onda_checkout_rc",
+    "t_unid": "ANA-006.t_unidade_checkout_rc_s",
+    "t_unid_pos": "ANA-006.t_unidade_checkout_rc_s_a_partir_par11",
+    "t_unid_pre": "ANA-006.t_unidade_checkout_rc_s_antes_par11",
+    "classe": "ANA-006.classe_h_p3_checkout_rc",
+    "por_desenho": "ANA-006.por_desenho_h_p3_checkout_rc"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "antes e depois do início da operação do robô (PAR11)",
+      "analise": "ANA-006",
+      "resultado": "parcial",
+      "nota": "o tempo por unidade sobe de um regime para o outro e os dois ICs de 90% continuam cruzando a margem (chaves t_unidade_checkout_rc_s_antes_par11 e _a_partir_par11); a leitura do período inteiro mistura os regimes"
+    },
+    {
+      "recorte": "reamostragem por tarefa e usuário (sensibilidade)",
+      "analise": "ANA-006",
+      "resultado": "parcial",
+      "nota": "IC mais estreito por ignorar a dependência do operador; o tempo por unidade segue inconclusivo e as unidades por onda seguem reproduzindo (chaves classe_*_reamostra_tarefa)"
+    },
+    {
+      "recorte": "fórmula pela extensão da tarefa",
+      "analise": "ANA-006",
+      "resultado": "parcial",
+      "nota": "a variante pela extensão da tarefa (t_unidade_checkout_rc_extensao_s) dá tempo maior, mas o IC de 90% também cruza a margem"
+    },
+    {
+      "recorte": "manhã contra tarde",
+      "analise": "ANA-006",
+      "resultado": "parcial",
+      "nota": "manhã inconclusiva; tarde só descritiva, porque tem menos operadores que o mínimo para IC (tabela robustez_equivalencia)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Mantido; render com o rótulo correto. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Apresentar o tempo por unidade do slide 10 como não confirmado pelo WMS no período inteiro; cronometrar ondas no teste controlado para fechar o valor antes de usá-lo na oferta.",
+  "dono": "estatistico (ANA-006); operação da Social para validar ondas cronometradas",
+  "premissas": [
+    "equivalência com margem fixada no G2 (dois testes unilaterais, IC de operador e semana, vale o mais largo)",
+    "uma unidade por pedido no checkout da Royal Canin: tempo por pedido e por unidade coincidem",
+    "incidente operacional da Royal Canin sem registros de checkout: variante de operação normal idêntica à do plano (revisoes/orquestrador_decisao_semana_incidente.md)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:20",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:15",
+      "por": "red-team-analitico"
+    }
+  ]
+}

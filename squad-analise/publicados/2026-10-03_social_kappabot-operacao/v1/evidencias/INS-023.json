@@ -1,0 +1,79 @@
+{
+  "id": "INS-023",
+  "estado": "validado",
+  "afirmacao": "CR7 fica inconclusivo: a exclusão da colmeia do slide 14 não se sustenta nem cai. No teto base, a colmeia da Royal Canin faz {{v.m14}} em ciclo completo, com IC que cruza PR05. Nas duas variantes desfavoráveis à exclusão o IC fica inteiro abaixo de PR05: {{v.s2}} em S2 e {{v.t1800}} no teto maior. Nas variantes favoráveis à exclusão (S3: {{v.s3}}; teto conservador: {{v.t300}}) a colmeia passa, mas elas só são reportadas. O ajuste de Holm no pior caso da família dá {{v.p_holm}}. A colmeia fica candidata a teste (ALT5). O viés declarado favorece a exclusão (a mesma visita é contada várias vezes e a distribuição no put wall não está no WMS), então uma aprovação seria fraca.",
+  "pergunta_ref": "P17",
+  "criterio_ref": "CR7",
+  "valores": {
+    "m14": "ANA-007.linhas_hora_colmeia_rc",
+    "s2": "ANA-007.linhas_hora_colmeia_rc_s2",
+    "t1800": "ANA-007.linhas_hora_colmeia_rc_t1800",
+    "s3": "ANA-007.linhas_hora_colmeia_rc_s3",
+    "t300": "ANA-007.linhas_hora_colmeia_rc_t300",
+    "p_holm": "ANA-007.p_holm_f1a_pior_caso",
+    "classe": "ANA-007.classe_cr7",
+    "candidata": "ANA-007.colmeia_candidata_alt5"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "S2 (regra de passa)",
+      "analise": "ANA-007",
+      "resultado": "falha",
+      "nota": "IC inteiro abaixo de PR05: é uma das duas variantes que impedem o passa"
+    },
+    {
+      "recorte": "teto de 1.800 s (regra de passa)",
+      "analise": "ANA-007",
+      "resultado": "falha",
+      "nota": "IC inteiro abaixo de PR05: a outra variante que impede o passa"
+    },
+    {
+      "recorte": "teto de 300 s e S3 (só reportados)",
+      "analise": "ANA-007",
+      "resultado": "passa",
+      "nota": "limite favorável à exclusão; não entra na regra de passa"
+    },
+    {
+      "recorte": "mês, destino de colmeia e tercil de pedidos por onda",
+      "analise": "ANA-007",
+      "resultado": "parcial",
+      "nota": "há inversão de sinal entre segmentos (chave inversao_de_sinal_entre_segmentos): setembro, algumas cores e o primeiro tercil ficam abaixo de PR05, então a leitura agregada acima de PR05 na variante primária não vale como passa"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Mantido. Resta só apresentação: o p ajustado continua com intervalo de bootstrap no render. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Manter a colmeia fora do preço, como candidata a teste (ALT5), com a ressalva do put wall; perguntar à operação da Social onde a distribuição é registrada (E3).",
+  "dono": "estatistico (ANA-007); operação da Social (E3)",
+  "premissas": [
+    "regra de passa registrada no plano: variante primária, S2 e teto de 1.800 s",
+    "p de Holm no pior caso da família F1a (o exato exige os p de ANA-004 e ANA-010)",
+    "PR05 é premissa de pedido-a-pedido em zona, referência de ordem de grandeza"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:23",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:19",
+      "por": "red-team-analitico"
+    }
+  ]
+}

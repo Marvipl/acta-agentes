@@ -1,0 +1,158 @@
+{
+  "supervisor": "sup-negocio",
+  "agentes_revisados": [
+    "perfilador-setorial",
+    "especialista-setorial"
+  ],
+  "rodada": 1,
+  "veredito": "revisar",
+  "rubrica": [
+    {
+      "agente": "perfilador-setorial",
+      "criterio": "[crítico] Decisão com alternativas, critérios e limites",
+      "nota": null,
+      "evidencia": "Não se aplica: critério do arquiteto. O perfil cita ALT6, CR1 a CR8, PR05, PR06, PR10 e PR12 de forma coerente com nos/decisao.json (conferido)."
+    },
+    {
+      "agente": "perfilador-setorial",
+      "criterio": "[crítico] Premissas do impacto com fonte; impacto comparado aos limites",
+      "nota": 1,
+      "evidencia": "O perfil não fixa premissa de impacto (usa PR10), mas entrega faixas que o analista de impacto vai usar. Duas não batem com a fonte: ganho com AMR cita só 2,6x da MD Logistics e omite, na mesma página, 'more than 25% on a daily basis, and 50% on the busiest days'; absenteísmo de 3,4% (BLS) é 'absence rate' (proporção de trabalhadores), não horas ausentes ÷ horas programadas (essa é a 'lost worktime rate', 1,8%). motor.impacto: IMP-001 (impacto.json ainda é template)."
+    },
+    {
+      "agente": "perfilador-setorial",
+      "criterio": "Perfil do especialista com fontes e confiança",
+      "nota": 1,
+      "evidencia": "29 conhecimentos, 15 indicadores e 13 faixas, todos com fonte e confiança. Tentei 19 URLs (16 acessíveis). Os números citados conferem nas 16: de Koster (55% e Fig. 4: 50/20/15/10/5), Bartholdi 3.3 (55%; 55/15/10/20; lote de uma linha; 1 reabastecedor por 5), cap. 1 (1 a 3 itens; 3PL com estações complementares), cap. 14 (até cerca de 4 linhas, média), 16.3 (filas; surto antes do corte), DHL/Automated Warehouse (30% a 180%, menos 80% de treino, mais de 40 sites), DHL/Supply Chain Dive (78 para 150 UPH; cerca de 60% da caminhada), GEODIS (todos os números), salario.com.br (R$ 1.998,58; 43 h; 45,5% = desligamento ÷ movimento total; R$ 2.068; R$ 3.626; 49,3%), ABOL/Times Brasil (13%), Manhattan/Vanson Bourne (84%), SC Digest (5%, 3-5%, 2-4%), BLS (3,4% e 1,8%; 3,1% e 1,7%), RSM/DC Velocity, Senior Checkout Express, SSI Schäfer, Fulfill.com. Mas 7 afirmações extrapolam a fonte ou atribuem errado (ponto de severidade média sobre fontes). Dematic (403) e TCC LALT (503) inacessíveis também nesta revisão. CLT no Planalto: 503 em três tentativas. Confiança superestimada em 4 itens (ponto P3)."
+    },
+    {
+      "agente": "perfilador-setorial",
+      "criterio": "Recomendações viáveis na operação",
+      "nota": 1,
+      "evidencia": "As 15 perguntas à Social são operacionais (jornada, coletor, meta, colmeia, SLA de conferência, layout, corte). Faltam as alavancas que decidem a viabilidade no Brasil: custo de hora extra e de temporário, custo de desligamento e reposição, custo e prazo de implantação do lado da Social, segurança do AMR e ergonomia, carga útil frente ao mix de pet food."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "[crítico] Decisão com alternativas, critérios e limites",
+      "nota": null,
+      "evidencia": "Não se aplica: critério do arquiteto. O parecer liga hipóteses a CR1 a CR8 e ALT5/ALT6 sem alterar a regra de decisão."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "[crítico] Premissas do impacto com fonte; impacto comparado aos limites",
+      "nota": 1,
+      "evidencia": "A4 troca o cenário conservador de CR1, CR3 e CR8 de 300 s para 600 s com premissa contrariada pelo deck (slide 6) e pelo relatório 9fleet v1 (p. 13). Já entrou no contrato (PAR02, nota; engenheiro-de-dados_resposta_r1.md, A4 'Aceito'). A5 e 3.1 (FTE como presença, não quadro) vão no sentido conservador."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "Perfil do especialista com fontes e confiança",
+      "nota": 1,
+      "evidencia": "F1 a F13 com fonte e confiança. Fora disso: afirmações de setor sem fonte (3.8 'raramente faz um pedido por viagem'; seção 2 'um 3PL de e-commerce raramente para tanto'; Corpus Christi 'feriado municipal em muitas cidades e ponto facultativo federal'); âncora CLT de 15 min herdada e mal aplicada; F4 usa a taxa da SSI, que é 'cases per hour' e inclui robô, como coletas manuais; 3.1 atribui 44 h semanais ao art. 58 da CLT (que fixa 8 h diárias; 44 h está na CF, art. 7º, XIII)."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "Recomendações viáveis na operação",
+      "nota": 1,
+      "evidencia": "H02 promete pico em 'horário estendido da frota, sem hora extra nem temporário', mas o Kappabot é colaborativo e o teste (M23 contra capacidade da frota) ignora as horas humanas. O deck, slide 17, mantém o temporário ('o robô guia o temporário'). H09 usa tempo de treino como prova de proficiência. A6 (palete fora do escopo do robô) e H08 (ganho de processo sem robô) estão presentes."
+    }
+  ],
+  "checagens_executadas": [
+    "WebFetch em 19 URLs do perfil (lista em rubrica, perfilador, critério 3): 16 acessíveis, com os números citados conferindo em todas; 7 afirmações extrapolam a fonte ou atribuem errado; Dematic (403), TCC LALT (503) e CLT no Planalto (503) inacessíveis. PDFs de de Koster e Bartholdi lidos com pdftotext (seção 3.3, cap. 1, cap. 14, Fig. 15.5, 16.3).",
+    "CLT (planalto.gov.br, del5452.htm e compilado; Lei 13.467 no Planalto): HTTP 503. Espelhos TRT2, Jusbrasil, Normas Legais e Guia Trabalhista: sem texto, 403 ou 404. Os artigos 71 e 611-A não foram conferidos na fonte nesta revisão.",
+    "python -m motor.impacto <dv>: 'ERRO impacto: IMP-001: premissa nome sem fonte'. nos/impacto.json é template; o analista de impacto não rodou. Não imputado aos revisados.",
+    "python -m motor.validar <dv> --fase D1: LIBERADO.",
+    "python -m motor.linhagem <dv>: 1 arquivo, 0 etapas, 0 análises, 0 insights.",
+    "Calendário do parecer conferido em Python: Páscoa 05/04/2026 (domingo), 04/06 quinta, 05/06 sexta, 08/06 segunda, 07/09 segunda, 24/09 quinta, 25/09 sexta, 28/09 segunda. Tudo certo.",
+    "Anti-complacência 1: para cada ajuste A1 a A10, verifiquei o sentido em relação à oferta. A4 é o único que favorece a oferta (teto maior gera mais horas, mais FTE e manual mais lento em CR3), e a premissa dele é falsa: PR16 (2 a 3 min) é o trajeto do robô ao faturamento no 9fleet (relatório 9fleet v1, p. 13), fica abaixo de 300 s, e o deck (slide 6) mede o intervalo humano entre pedidos, que já inclui packing, etiqueta e primeira coleta: mediana de 101 s, quartis de 69 a 167 s.",
+    "Anti-complacência 2: segui a propagação de A4. nos/contrato.json, PAR02, nota: 'conservador de CR1, CR3 e CR8 = 600 s; estresse = 300 s, que fica abaixo do ciclo do pedido-a-pedido que o próprio deck documenta'. Aceito em revisoes/engenheiro-de-dados_resposta_r1.md (A4).",
+    "Anti-complacência 3: confrontei a âncora 'pausa curta de 15 min (CLT, art. 71, §1º) = PAR02' com PR12 (7,33 h por dia) e com a escala 6x1 que o próprio parecer infere (3.1). O §1º só vale para trabalho de 4 a 6 h. Acima de 6 h, a pausa legal é a refeição. A CLT não sustenta o 'endosso do setor' a 900 s.",
+    "Anti-complacência 4: confrontei H02 com o modo de operação do Kappabot (perfil: AMR colaborativo, picking assistido) e com o deck, slides 16 e 17. O robô em horário estendido precisa de separador. O teste proposto mede só o robô.",
+    "Anti-complacência 5: procurei, no perfil e no parecer, custo de implementação do lado da Social, alternativa sem robô e custo da contratação no Brasil. Só H08 trata de ganho sem robô. Não há custo de implantação nem custo de hora extra, de temporário ou de desligamento.",
+    "Anti-complacência 6: grep de disciplina de nomes ([nome interno do orquestrador], [nome interno de produto], [nome interno de produto], [não parceiro], [não parceiro], reconhecimento facial) em perfil_especialista.md, nos/especialista.json e revisoes/especialista_D1.md: nada encontrado.",
+    "Anti-complacência 7: controle.json: o nó especialista foi carimbado contra o contrato b9e63d0ebd87. O contrato atual é 5527342f3195 (03:09). O parecer D1 é das 02:44, antes de nos/qualidade.json (03:04) e das respostas r1 e r2 do engenheiro."
+  ],
+  "pontos": [
+    {
+      "severidade": "alta",
+      "local": "revisoes/especialista_D1.md, A4 e tabela F12; propagado a nos/contrato.json (parametros, PAR02, nota) e a revisoes/engenheiro-de-dados_resposta_r1.md (A4)",
+      "problema": "Especialista. A4 diz que 300 s 'fica abaixo do que o próprio deck documenta' porque PR16 = 2 a 3 min. Mas PR16 é o trajeto do robô ao faturamento medido no 9fleet (relatório 9fleet v1, p. 13) e fica abaixo de 300 s. O deck (slide 6) mede o intervalo humano entre pedidos, que já inclui ida ao packing, etiqueta e primeira coleta: mediana de 101 s e quartis de 69 a 167 s, todos abaixo de 300 s. A troca do conservador para 600 s favorece a oferta (mais horas e FTE em CR1 e CR8, manual mais lento em CR3) e já está no contrato.",
+      "correcao_sugerida": "Retirar a justificativa de A4 em revisoes/especialista-setorial_resposta_r1.md. Até PQ03, manter 300 s como conservador. Propor ao planejador que o teto conservador saia da distribuição medida de M10 no WMS, com o percentil declarado antes do resultado. Reportar 300, 600, 900 e 1.800 s. Marcus decide. O engenheiro corrige a nota de PAR02."
+    },
+    {
+      "severidade": "alta",
+      "local": "revisoes/especialista_D1.md, Conclusão item 5 e tabela da seção 4, H02",
+      "problema": "Especialista. H02 afirma que o excedente do pico 'cabe em horário estendido da frota, sem hora extra nem temporário'. O Kappabot é colaborativo: o robô em horário estendido precisa de separador no mesmo horário. O teste proposto (M23 contra capacidade da frota com janela estendida) mede só o robô. O deck (slide 17) mantém o temporário ('o robô guia o temporário'). Como está, é recomendação inviável e seria contestada pela Social no critério que ela mais valoriza (CR8).",
+      "correcao_sugerida": "Reescrever H02 com a restrição de horas humanas: separadores × horas na janela estendida, por escala escalonada (sem hora extra) contra hora extra (CLT, art. 59; adicional da CF, art. 7º, XVI), com e sem robô. Só depois concluir. Marcar 'validar com pessoa do setor'."
+    },
+    {
+      "severidade": "alta",
+      "local": "perfil_especialista.md (seções 'O que o setor sabe' e 'Lacunas'); nos/especialista.json (conhecimentos, indicadores 6, 7, 8 e 9, lacunas 2 e 5)",
+      "problema": "Perfilador. O objetivo é enriquecer a oferta para uma 3PL que quer reduzir mão de obra e dificuldade de contratação. O perfil não traz nada que quantifique esse segundo critério no Brasil: custo da hora extra e do adicional noturno (para horário estendido), regras e custo do trabalho temporário (Lei 6.019/1974), custo de desligamento e reposição (aviso prévio, multa do FGTS, recrutamento, treinamento), rotatividade na definição usual (desligamentos ÷ estoque, via RAIS ou Novo CAGED), tempo de reposição de vaga. Só há uma pesquisa (84% com dificuldade de retenção, 2024) e a 'rotatividade' do portal Salário, que o próprio perfil desqualifica.",
+      "correcao_sugerida": "Pesquisar e registrar cada item com fonte, URL e confiança, ou [●] com pergunta e resposta proposta. Ligar a CR8, P13, P18 e P19. Acrescentar às perguntas à Social: horas extras pagas por mês, temporários por pico e custo da agência."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/especialista.json: indicadores[0], conhecimentos[12], indicadores[6], indicadores[10], conhecimentos[14], conhecimentos[10], conhecimentos[20], conhecimentos[2]; e linhas correspondentes de perfil_especialista.md",
+      "problema": "Perfilador. Sete afirmações que a fonte aberta não sustenta. (a) Bartholdi, Fig. 15.5: a fonte fala em 'pick-lines per person-hour' sem denominador; 'horas totais' e 'muito abaixo das medidas sobre o tempo em tarefa' não estão lá. (b) BLS: 3,4% é 'absence rate'; a fórmula do perfil corresponde à 'lost worktime rate' (1,8%), e o .md mostra só 3,4%. (c) MD Logistics: a mesma página traz 'more than 25% daily, 50% on the busiest days' ao lado de 2,6x; o perfil cita só 2,6x. (d) DHL: o Supply Chain Dive não diz 'carrinho' nem 'EUA'; os 30% a 180% são de 'more than 40 sites worldwide'; a data do Automated Warehouse (23/02/2026) era verificável. (e) SC Digest não diz que 100% de ocupação 'não é realista' (é inferência). (f) Times Brasil: os 16,1% do e-commerce são do ICVA (Cielo), não da ABOL; os 13% são crescimento anual da atividade, não multiplicador de pico. (g) Bartholdi 3.3: 'intermediário' é 'more than two pick-lines'; a leitura 'pedido-a-pedido com 2 ou mais endereços é o perfil intermediário' não decorre da fonte.",
+      "correcao_sugerida": "Corrigir texto, fonte e confiança item a item. Separar o que é da fonte do que é 'interpretação'. Em absenteísmo, usar a lost worktime rate ou mostrar as duas com a definição. Em ganho com AMR, mostrar a faixa completa da MD Logistics. Não usar os 13% da ABOL como pico em CR8 ou P19."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/especialista.json: faixas_plausiveis[11] e lacunas[3]; perfil_especialista.md, faixa M10 e lacuna 'Teto do intervalo'; revisoes/especialista_D1.md, F12 e A4",
+      "problema": "Ambos. A âncora 'pausa curta de 15 min (CLT, art. 71, §1º) = PAR02' foi usada para dizer que 'o setor endossa' 900 s. O §1º só vale para trabalho de 4 a 6 h. Com PR12 (7,33 h) e a escala 6x1 que o próprio parecer infere, a pausa legal é a refeição (1 h, ou 30 min por convenção). A lei não diz se um intervalo de 15 min é trabalho ou pausa.",
+      "correcao_sugerida": "Retirar a CLT como âncora de 900 s. Ancorar PAR02 na distribuição medida (deck, slide 6; M10) e em PQ03, com confiança baixa até a Social validar. Reconferir o texto de arts. 71 e 611-A no Planalto quando o site voltar."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/especialista.json: conhecimentos[4], conhecimentos[26], conhecimentos[18] e faixas_plausiveis[3], indicadores[0], conhecimentos[0] e [1]",
+      "problema": "Perfilador. Confiança superestimada. (1) '3PL multi-cliente' com confiança alta carrega a leitura de frota compartilhada (ALT6), que a fonte não trata. (2) 'Curva de aprendizagem' com confiança média apoia-se em Grosse e Glock 'não lido na íntegra', sem URL, e em tempo de treino (DHL), que não é tempo até a proficiência. (3) O piso físico de 3,6 s, faixa de limpeza, vem de resumo de busca de um white paper inacessível (Dematic, 403 também nesta revisão), e o TCC LALT (503) sustenta a referência brasileira de linhas por hora. (4) 'Peso da separação' e 'Tempo do separador' com confiança alta: são estimativas de Frazelle (1996) e Tompkins (2003) para separação com papel (20% de 'paperwork'); a aplicação à separação com coletor da Social é de confiança média.",
+      "correcao_sugerida": "Rebaixar: leitura de ALT6 para baixa; curva de aprendizagem para baixa, separando treino de proficiência; piso físico para [●] com a SSI (verificada, em caixas por hora) só como sensibilidade; aplicabilidade das proporções de tempo para média."
+    },
+    {
+      "severidade": "media",
+      "local": "perfil_especialista.md e nos/especialista.json (todo o perfil); revisoes/especialista_D1.md (seções 3 e 4)",
+      "problema": "Ambos. Falta o custo de implementação do lado da Social e a viabilidade física: layout e largura de corredor, rede sem fio, integração com o WMS Senior (devolutiva), treinamento, queda de produtividade no go-live, gestão de mudança e sindicato. Falta segurança de AMR em convivência com pessoas (por exemplo, ISO 3691-4) e ergonomia (NR-17, transporte manual de cargas), que também é argumento de retenção. Falta o perfil de carga por segmento (pet food da Royal Canin, cosméticos, brinquedos) e a sazonalidade por segmento, que sustentam ALT6 e H03.",
+      "correcao_sugerida": "Perfilador: acrescentar esses temas com fonte e confiança, ou [●] com pergunta e resposta proposta. Especialista: na D3 e na D4, julgar cada recomendação também por custo e prazo de implantação para a Social."
+    },
+    {
+      "severidade": "media",
+      "local": "revisoes/especialista_D1.md, seção 2 (08/06), seção 3.8 e H03",
+      "problema": "Especialista. Afirmações de setor sem fonte apresentadas como fato: 'um separador manual de e-commerce raramente faz um pedido por viagem quando o carrinho comporta vários'; 'um 3PL de e-commerce raramente para tanto'; Corpus Christi 'feriado municipal em muitas cidades e ponto facultativo federal'. A sazonalidade de brinquedos está corretamente marcada como baixa.",
+      "correcao_sugerida": "Dar fonte ou marcar [●] com confiança baixa e ligar à pergunta já existente (E1, E4). Não usar como premissa até a Social responder."
+    },
+    {
+      "severidade": "media",
+      "local": "revisoes/especialista_D1.md, H09; nos/especialista.json, indicadores[14]",
+      "problema": "Ambos. O argumento do 'temporário guiado pelo robô' usa tempo de treino (DHL, menos 80%; MD Logistics, 'duas horas', depoimento de fornecedor) como se fosse tempo até a proficiência. São métricas diferentes. O teste M25 só mede a curva do manual.",
+      "correcao_sugerida": "Separar treino de proficiência no perfil e no parecer. Declarar [●] para a proficiência com AMR. Na oferta, o argumento só sai como 'treino mais curto, segundo casos dos EUA, confiança baixa'."
+    },
+    {
+      "severidade": "baixa",
+      "local": "revisoes/especialista_D1.md, F4 e A3",
+      "problema": "Especialista. A sensibilidade do piso (3.600 ÷ 650) usa a taxa da SSI Schäfer, que é 'cases per hour' e vale 'between a person or picking robot', como se fosse coletas manuais.",
+      "correcao_sugerida": "Declarar a unidade e manter como ordem de grandeza, com confiança baixa."
+    },
+    {
+      "severidade": "baixa",
+      "local": "revisoes/especialista_D1.md, 3.1 (PR12); controle.json (nó especialista)",
+      "problema": "Especialista. 44 h semanais estão na CF, art. 7º, XIII, não no art. 58 da CLT, que fixa 8 h por dia. O parecer foi escrito às 02:44, antes do contrato atual (5527342f3195) e de nos/qualidade.json (03:04). Não confere se a qualidade aplicou F1 a F13 nem se o contrato r2 mudou M09, M10 e M11.",
+      "correcao_sugerida": "Corrigir a citação. Na resposta à revisão, reconferir F1 a F13 e A1 a A10 contra o contrato e a qualidade atuais."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/especialista.json, conhecimentos[27] (Perfil 2)",
+      "problema": "Perfilador. O modelo 'híbrido' aparece como 'base mais transações acima de uma franquia'. A Fulfill.com descreve 'base subscription with per-transaction fees or percentage-of-order charges'. 'Acima de uma franquia' é leitura do perfil. Não há referência brasileira de como a 3PL cobra o depositante, que é o que decide se a tarifa da Acta cabe (CR2).",
+      "correcao_sugerida": "Ajustar o texto à fonte. Manter [●] para o Brasil e a pergunta 14 à Social como prioritária."
+    }
+  ],
+  "lacunas": [
+    "Custo da dificuldade de contratação no Brasil: hora extra, adicional noturno, temporário (Lei 6.019/1974), desligamento e reposição, rotatividade na definição usual e tempo para repor vaga. Sem isso, CR8 fica só como argumento qualitativo.",
+    "Proxy de rotatividade no próprio WMS: entradas e saídas de logins por mês, em agregado e com o mínimo por grupo. Hoje só há novos logins (M25). Sugestão ao planejador, com as ressalvas de 3.6, item 8.",
+    "Custo e prazo de implantação do lado da Social, segurança do AMR e ergonomia.",
+    "Caso brasileiro de AMR em 3PL ou referência local. Todos os casos são dos EUA ou de fornecedor.",
+    "Sazonalidade e perfil de carga por segmento (pet food, cosméticos, brinquedos) para ALT6 e H03.",
+    "Texto da CLT (arts. 71 e 611-A) não conferido na fonte nesta revisão: Planalto fora do ar (503).",
+    "Pessoa da operação da Social para validar as marcas 'validar com pessoa do setor' continua [●] (A08). A4, H02, H05, H06, H11 e H13 dependem dela."
+  ],
+  "em": "2026-10-03"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "INS-007",
+  "estado": "validado",
+  "afirmacao": "Cada coleta manual no pedido-a-pedido da Royal Canin leva {{v.t_man}} (razão ponderada, correção N-1, que exclui o deslocamento até o primeiro endereço). Com os números do relatório do robô (amostra preliminar, premissas PR17 e PR18), o tempo produtivo do robô seria {{v.r17}} do manual e, com a espera, {{v.r18}} do manual. As definições dos dois lados não são iguais: a missão do robô inclui a navegação, inclusive a primeira perna, o que pesa contra o robô em todos os pedidos da amostra do relatório, que só tem pedidos de dois ou mais endereços; a fração de pedidos de um só endereço é {{v.um_robo}} na conta do robô e {{v.um_man}} no manual, então essa amostra cobre a minoria dos pedidos do robô; a espera mede a disponibilidade do operador num piloto com um robô. Comparação descritiva, sem teste, de baixa confiança; o banco da frota não está nesta análise.",
+  "pergunta_ref": "P7",
+  "criterio_ref": "CR3",
+  "valores": {
+    "t_man": "ANA-004.t_coleta_manual_ponderada_s",
+    "r17": "ANA-004.razao_robo_pr17_sobre_tempo_manual_ponderado",
+    "r18": "ANA-004.razao_robo_pr18_sobre_tempo_manual_ponderado",
+    "um_robo": "ANA-001.fracao_pedidos_um_endereco_pap_rc_robo",
+    "um_man": "ANA-001.fracao_pedidos_um_endereco_pap_rc_manual"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "antes de PAR11",
+      "analise": "ANA-004",
+      "resultado": "parcial",
+      "nota": "o tempo manual do período anterior é menor (chave t_coleta_manual_ponderada_s_pre_par11) e a comparação com o robô produtivo passa a conter a igualdade"
+    },
+    {
+      "recorte": "só linhas sem sobreposição (H05)",
+      "analise": "ANA-004",
+      "resultado": "passa",
+      "nota": "praticamente o mesmo tempo (chave t_coleta_manual_ponderada_s_sem_sobreposicao)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: diferença de definição e viés contra o robô declarados, com a fração de pedidos de um endereço. Ajuste de texto: a primeira perna pesa contra o robô em todos os pedidos da amostra do relatório (que só tem pedidos de dois ou mais endereços), não 'quando o pedido tem um só endereço'; a fração de um endereço mostra que a amostra cobre a minoria dos pedidos do robô. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Citar a comparação como faixa de baixa confiança e pedir o banco da frota para uma v2; não usar PR17 como diferencial de venda sem a espera.",
+  "dono": "Marcus; engenharia da Acta",
+  "premissas": [
+    "PR17",
+    "PR18",
+    "restrição de Q04: sem o banco da frota",
+    "amostra preliminar do robô",
+    "definições de coleta diferentes no manual (M08) e no robô (relatório 9fleet v1)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:59",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:07",
+      "por": "red-team-analitico"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "INS-005",
+  "estado": "validado",
+  "afirmacao": "No pedido-a-pedido da Royal Canin, o ritmo manual medido pelo WMS em ciclo completo é de {{v.m14}} no teto conservador, {{v.dif}} acima da linha de base do deck ({{v.pr06}}): na regra base de pausas (lacunas acima do teto fora da jornada), o WMS não confirma PR06 e CR3 sai com classificação de falha. A leitura depende da regra de pausa e do teto: no teto base são {{v.m14_900}} e só no limite superior do teto o intervalo encosta na linha de base ({{v.m14_1800}}); com truncamento das pausas (S2) o ritmo cai para {{v.s2_300}} no teto conservador e {{v.s2_900}} no teto base, e {{v.cel_abaixo}} da grade de tetos e sensibilidades ficam em PR06 ou abaixo. No teto conservador a maior parte do tempo do recorte é descartada ({{v.desc}}), então M14 mede o ritmo enquanto o operador trabalha, e o WMS não registra a primeira coleta nem a ida ao packing, que a linha de base do deck pode incluir. O WMS, portanto, não confirma nem refuta PR06; o que se sustenta nas duas leituras é a ação: não prometer o dobro com base no WMS. A hipótese de M14 não passar de PR06 não se sustenta na regra base (p ajustado por Holm, limite superior: {{v.p_holm}}), e o poder é baixo: a magnitude vem com aviso e não deve ser citada como precisa.",
+  "pergunta_ref": "P7",
+  "criterio_ref": "CR3",
+  "valores": {
+    "m14": "ANA-004.linhas_hora_pap_rc",
+    "dif": "ANA-004.diferenca_m14_pr06",
+    "pr06": "ANA-004.limite_pr06",
+    "m14_900": "ANA-004.linhas_hora_pap_rc_t900",
+    "m14_1800": "ANA-004.linhas_hora_pap_rc_t1800",
+    "s2_300": "ANA-004.linhas_hora_pap_rc_s2_ic_t300",
+    "s2_900": "ANA-004.linhas_hora_pap_rc_s2_ic_t900",
+    "cel_abaixo": "ANA-004.celulas_da_grade_em_pr06_ou_abaixo",
+    "desc": "ANA-004.fracao_tempo_descartado_pap_rc_t300",
+    "p_holm": "ANA-004.p_holm_f1a_limite_superior_cr3"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "teto de intervalo: 300, 600, 900 e 1.800 s",
+      "analise": "ANA-004",
+      "resultado": "parcial",
+      "nota": "falha na regra base nos três primeiros tetos; no limite superior do teto o IC cruza o limite (chave classe_cr3_t1800)"
+    },
+    {
+      "recorte": "por mês, padronizado por faixa de endereços",
+      "analise": "ANA-004",
+      "resultado": "passa",
+      "nota": "todos os meses ficam acima da linha de base do deck e a leitura agregada não tem inversão de sinal (chave leitura_agregada_valida_meses)"
+    },
+    {
+      "recorte": "antes e depois de PAR11",
+      "analise": "ANA-004",
+      "resultado": "passa",
+      "nota": "os dois períodos ficam acima da linha de base do deck (chaves linhas_hora_pap_rc_pre_robo e _pos_robo)"
+    },
+    {
+      "recorte": "por faixa de endereços com ctx.estat.robustez",
+      "analise": "ANA-004",
+      "resultado": "passa",
+      "nota": "as cinco faixas ficam acima da linha de base, sem inversão de sinal (chave leitura_agregada_valida_faixas)"
+    },
+    {
+      "recorte": "só linhas sem sobreposição (H05)",
+      "analise": "ANA-004",
+      "resultado": "passa",
+      "nota": "a classificação de CR3 não muda sem as linhas sobrepostas (chave cr3_sensivel_h05)"
+    },
+    {
+      "recorte": "S1 a S3 por teto (regra de pausa)",
+      "analise": "ANA-004",
+      "resultado": "falha",
+      "nota": "com S2 (truncar as pausas) a classificação muda: inconclusivo nos tetos de 300 e 600 s e dentro de PR06 nos de 900 e 1.800 s (chaves classe_cr3_s2_t*); por isso o insight não afirma que o WMS refuta PR06"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: o texto diz que o WMS não confirma nem refuta PR06, mostra S2 com IC, a fração de tempo descartada e a cobertura incompleta do ciclo; a ação (não prometer o dobro) segue robusta. Só formatação: a contagem de células aparece com casas decimais. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Não prometer o dobro de produtividade com base no WMS: ir a ALT4 (refazer FTE e garantia sem essa promessa) e levar a promessa ao teste controlado (slide 19). Validar com a operação da Social se o teto de 300 s corta trabalho legítimo (A4) e o que a linha de base do deck inclui (primeira coleta, ida ao packing).",
+  "dono": "Marcus; operação da Social (validação do teto)",
+  "premissas": [
+    "PR05",
+    "PR06",
+    "teto conservador de 300 s fixado no G2 (QP5)",
+    "padronização por faixa de endereços ao mix da janela base",
+    "H06 não se confirmou: período inteiro como primário",
+    "o método de PR06 e de PR05 não está no deck: [●]"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:58",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:05",
+      "por": "red-team-analitico"
+    }
+  ]
+}

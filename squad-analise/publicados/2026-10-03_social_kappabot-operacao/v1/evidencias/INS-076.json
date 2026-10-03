@@ -1,0 +1,69 @@
+{
+  "id": "INS-076",
+  "estado": "validado",
+  "afirmacao": "A pista PT-D2 (no dia de pico o M14 padronizado do armazém é maior que no típico) ficou fora da F2 e não foi testada: nas semanas pares há só {{v.npico}} de pico e {{v.ntip}} típicos pelos limiares da descoberta, abaixo de dez unidades. A diferença descritiva é {{v.dif}}, com o IC descritivo mais largo entre operador, semana e dia e sem p. O achado exploratório não foi testado: não se confirma nem se refuta e não vira resultado. Fica como hipótese a medir no teste controlado, porque converter o excedente de linhas do dia p90 em horas com o M14 típico pode exagerar as horas excedentes de CR8 se a produtividade no pico for diferente.",
+  "pergunta_ref": "P19",
+  "criterio_ref": "CR8",
+  "valores": {
+    "dif": "ANA-016.pt_d2_dif_m14_pico_tipico_descritivo",
+    "npico": "ANA-016.n_dias_pico_pt_d2",
+    "ntip": "ANA-016.n_dias_tipicos_pt_d2"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "limiares de pico e típico da descoberta, sem recálculo",
+      "analise": "ANA-016",
+      "resultado": "parcial",
+      "nota": "poucos dias de pico nas semanas pares: descritivo apenas"
+    },
+    {
+      "recorte": "fora da família F2",
+      "analise": "ANA-016",
+      "resultado": "parcial",
+      "nota": "sem p, por desenho do plano; o IC é descritivo"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo. O IC tem poucas unidades e está rotulado como descritivo, sem p; não ler como evidência."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Manter M23 com o M14 típico e registrar a diferença como sensibilidade; levar a hipótese ao teste controlado.",
+  "dono": "planejador-analitico; estatistico (ANA-016)",
+  "premissas": [
+    "confirmação nas semanas ISO pares, com limiares, pesos e cortes de ANA-012 lidos do arquivo registrado, sem recálculo; Holm com seis testes na F2 (PT-H04, PT-H09, PT-H10, PT-D1, PT-D3, PT-D4)",
+    "o MDE de ANA-000 passa do efeito relevante (10% do valor de referência): a magnitude pode estar exagerada (poder baixo, erro tipo M) e não deve ser citada como precisa",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador do G2 como robustez",
+    "nenhuma semana par foi marcada como incidente da Royal Canin, por isso não há filtro de incidente na confirmação"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:29:04",
+      "por": "estatistico"
+    },
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T18:24:35",
+      "por": "estatistico",
+      "nota": "revisado após as correções do red team (parte B) e a robustez por depositante"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:53",
+      "por": "red-team-analitico"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "INS-074",
+  "estado": "validado",
+  "afirmacao": "Nos dias plenos das semanas pares, o armazém coloca mais operadores em atividade quando o volume do dia sobe: coeficiente de {{v.coef}}, em desvios da média da semana, com dia da semana e mês controlados e corte de uma hora de jornada ativa, com média de {{v.ativos}}. A pista PT-H10 se confirma: p unilateral ajustado por Holm na F2 de {{v.padj}}, IC inteiro acima de zero, mesmo sinal no teto conservador, com o corte de uma linha e ao deixar qualquer operador de fora. O efeito mínimo detectável é {{v.mde}}, acima do efeito relevante de {{v.er}}: a magnitude pode estar exagerada. Associativo: o que a associação mostra é mais logins ativos nos dias de volume alto; parte dela é mecânica (mais volume faz mais operadores passarem do corte de jornada) e parte vem de logins esporádicos, e a forma da flexibilização do quadro (hora extra, temporário, remanejamento) não está separada.",
+  "pergunta_ref": "P15",
+  "criterio_ref": "CR8",
+  "valores": {
+    "coef": "ANA-016.pt_h10_coef",
+    "ativos": "ANA-016.pt_h10_ativos_dia_media",
+    "padj": "ANA-016.pt_h10_p_ajustado_holm",
+    "mde": "ANA-016.pt_h10_mde",
+    "er": "ANA-016.pt_h10_efeito_relevante"
+  },
+  "nivel": "associativo",
+  "robustez": [
+    {
+      "recorte": "teto conservador do G2 (jornada ativa no teto menor)",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "mesmo sinal"
+    },
+    {
+      "recorte": "corte de uma linha em vez de uma hora",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "mesmo sinal"
+    },
+    {
+      "recorte": "deixar um operador de fora por vez",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "os extremos da retirada ficam do mesmo lado do zero"
+    },
+    {
+      "recorte": "erro HAC por dia contra bloco de semana",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "os dois intervalos ficam acima de zero; vale o mais largo"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo. A inferência resiste ao erro robusto por semana."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "No argumento de reforço no pico, dizer 'mais logins ativos nos dias de volume alto' e separar equipe fixa com hora extra de reforço por temporário (dado da Social).",
+  "dono": "estatistico (ANA-016); Marcus (pergunta à Social)",
+  "premissas": [
+    "confirmação nas semanas ISO pares, com limiares, pesos e cortes de ANA-012 lidos do arquivo registrado, sem recálculo; Holm com seis testes na F2 (PT-H04, PT-H09, PT-H10, PT-D1, PT-D3, PT-D4)",
+    "o MDE de ANA-000 passa do efeito relevante (10% do valor de referência): a magnitude pode estar exagerada (poder baixo, erro tipo M) e não deve ser citada como precisa",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador do G2 como robustez",
+    "nenhuma semana par foi marcada como incidente da Royal Canin, por isso não há filtro de incidente na confirmação",
+    "corte de uma hora de jornada ativa sem fonte setorial ([●])",
+    "dia pleno como unidade, erro HAC (Newey-West); bloco de semana (oito blocos) só como comparação, exceção declarada ao mínimo de clusters"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:29:04",
+      "por": "estatistico"
+    },
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T18:24:35",
+      "por": "estatistico",
+      "nota": "revisado após as correções do red team (parte B) e a robustez por depositante"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:51",
+      "por": "red-team-analitico"
+    }
+  ]
+}

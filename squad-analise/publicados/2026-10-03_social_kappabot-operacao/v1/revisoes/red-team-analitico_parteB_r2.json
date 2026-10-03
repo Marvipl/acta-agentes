@@ -1,0 +1,476 @@
+{
+  "agente": "red-team-analitico",
+  "parte": "B",
+  "rodada": 2,
+  "em": "2026-10-03T19:05:00",
+  "dv": "projetos/2026-10-03_social_kappabot-operacao/v1",
+  "escopo": "INS-040 a INS-089",
+  "contagem": {
+    "ressalva": 8,
+    "cai": 5,
+    "sobrevive": 29
+  },
+  "contagem_r1": {
+    "ressalva": 26,
+    "cai": 5,
+    "sobrevive": 11
+  },
+  "reprodutibilidade": "Hash dos scripts igual ao de saidas/registro.json em todas as análises do escopo; cada resultado.json foi gerado depois da última edição do script (re-execução de 18:39 a 18:41). ANA-012 (descoberta) e ANA-000 (poder) com valores idênticos aos da rodada 1.",
+  "correcoes_r1": [
+    {
+      "pedido": "M23 colaborativa (ANA-009, INS-056)",
+      "status": "atendida",
+      "nota": "chaves horas_poupadas_colab, horas_residuais_colab, reforco_p90_cr8_colab, pr05_para_reforco_zero; INS-056 com as duas leituras. O contrato (M23) segue com a fórmula autônoma: se Marcus adotar a colaborativa no G3, atualizar o contrato."
+    },
+    {
+      "pedido": "Arranjos H02 com a mesma regra (INS-059)",
+      "status": "atendida",
+      "nota": "regras A e B iguais para manual e robô; a vantagem do robô no pico não aparece em nenhuma."
+    },
+    {
+      "pedido": "Robustez por depositante em ANA-016",
+      "status": "atendida, com problema novo",
+      "nota": "ver avaliacao_criterio_inversao."
+    },
+    {
+      "pedido": "IC descritivo de PT-D2",
+      "status": "atendida",
+      "nota": "rotulado como descritivo, sem p."
+    },
+    {
+      "pedido": "Rótulo de faixa e nível do intervalo de previsão no renderizador",
+      "status": "atendida",
+      "nota": "motor/insights.py: 'faixa de cenários de', 'previsão entre', 'IC bootstrap'."
+    },
+    {
+      "pedido": "Textos INS-045, 048, 050, 053, 057, 060, 061, 073, 074, 076, 083, 084, 089",
+      "status": "atendida"
+    },
+    {
+      "pedido": "Ações de INS-040 e INS-046",
+      "status": "INS-040 atendida; INS-046 ficou contraditória depois que PT-D4 deixou de confirmar (ação diz 'confirmada', campo confirmacao diz 'nao_confirma'); INS-043 com ação desatualizada."
+    }
+  ],
+  "avaliacao_criterio_inversao": {
+    "decisao_avaliada": "revisoes/orquestrador_decisao_inversao_ANA-016.md",
+    "parecer": "Aceitável como regra conservadora para o memorando (não cria confirmação falsa), mas com quatro problemas que precisam ir declarados ao G3.",
+    "problemas": [
+      "Fixado depois de ver os sinais. Entre as duas regras estritas consideradas, a escolhida é a única que mantém PT-D1; a regra só de sinal derrubaria as três pistas de ANA-012. A escolha tem efeito direto no resultado de cada pista.",
+      "Mede outra coisa. A pista compara a Royal Canin com o conjunto dos outros depositantes. 'Royal Canin contra cada depositante' é outro estimando, com cerca de trinta comparações ao todo nas três pistas, sem correção de multiplicidade e com segmentos de cinco a nove operadores do lado do depositante. Um depositante do outro lado mostra heterogeneidade do grupo de comparação, não inversão do efeito agregado no sentido de Simpson.",
+      "Inconsistente com o mínimo de clusters. Em PT-D3 a inversão vem de um depositante com 9 operadores; pela regra do menor grupo (que o red team pediu na rodada 1) o segmento seria só descritivo e não poderia derrubar a pista; pela convenção da união (21 operadores) pode.",
+      "O teste coerente com o estimando, retirar um depositante por vez do grupo B, mantém as três pistas: o IC por operador fica fora do zero em todas as retiradas."
+    ],
+    "quantificacao": [
+      {
+        "o_que": "PT-D1, retirar cada depositante do grupo B com PAR07 operadores (12 retiradas), IC por operador",
+        "resultado": "todas negativas; maior estimativa −11,12; maior limite superior do IC −6,19",
+        "fonte": "consulta só de leitura do red team (DuckDB read_only, dentro da trava), não registrada; /tmp/claude-0/-home-user-acta-agentes/861fe110-e1d7-568a-b70c-aa0ce7ccae6b/scratchpad/rtb/q7_r2.py"
+      },
+      {
+        "o_que": "PT-D3, idem (13 retiradas)",
+        "resultado": "todas positivas; menor estimativa 27 s; menor limite inferior do IC 14 s. Depositante da 'inversão': 9 operadores (união com a Royal Canin: 21)",
+        "fonte": "consulta só de leitura do red team (DuckDB read_only, dentro da trava), não registrada; /tmp/claude-0/-home-user-acta-agentes/861fe110-e1d7-568a-b70c-aa0ce7ccae6b/scratchpad/rtb/q7_r2.py"
+      },
+      {
+        "o_que": "PT-D4, idem (8 retiradas)",
+        "resultado": "todas negativas; maior estimativa −23,22; maior limite superior do IC −9,34. Depositante da 'inversão': 10 operadores, cerca de um quarto das coletas do grupo B (união: 16)",
+        "fonte": "consulta só de leitura do red team (DuckDB read_only, dentro da trava), não registrada; /tmp/claude-0/-home-user-acta-agentes/861fe110-e1d7-568a-b70c-aa0ce7ccae6b/scratchpad/rtb/q7_r2.py"
+      }
+    ],
+    "proposta_G3": "Manter PT-D3 e PT-D4 fora do memorando como números (conservador), mas descrevê-las como 'efeito agregado que resiste à retirada de qualquer depositante, heterogêneo entre depositantes' e não como 'inversão pela regra do plano'. Declarar nas três pistas (inclusive PT-D1) que o critério por depositante foi fixado depois de ver os sinais e mostrar o resultado pelos três critérios: IC oposto, só sinal e retirar um depositante por vez. Para uma próxima versão, o plano deve fixar antes o critério de inversão por segmento e o mínimo de operadores do segmento."
+  },
+  "problemas_novos": [
+    {
+      "insights": [
+        "INS-054",
+        "INS-087"
+      ],
+      "dono": "analista-exploratorio (ANA-009, ANA-015)",
+      "problema": "Na ALT3 a frota da base usa a banda de dias (um robô), e o dia a dia fica como ponta desfavorável. Na ALT6 o mesmo analista trocou a banda pelo dia a dia porque a média de perfis alisa o pico, e a ALT3 também agrupa pedido-a-pedido e checkout. A margem citada primeiro em INS-087 é a de um robô, e uma frota de um robô não tem reserva de disponibilidade.",
+      "pedido": "Usar o dia a dia como leitura principal também na ALT2 e na ALT3 (ou justificar a diferença) e citar a margem de um robô como ponta otimista."
+    },
+    {
+      "insights": [
+        "INS-071",
+        "INS-072"
+      ],
+      "dono": "estatistico",
+      "problema": "Os textos dizem 'não se confirma pela regra do plano', mas o critério foi fixado depois de ver os sinais; o fenômeno descrito é heterogeneidade do grupo de comparação.",
+      "pedido": "Corrigir a frase e citar os critérios (ver proposta_G3)."
+    },
+    {
+      "insights": [
+        "INS-070"
+      ],
+      "dono": "estatistico",
+      "problema": "Não declara que a confirmação depende do critério de inversão escolhido depois (INS-077 declara).",
+      "pedido": "Acrescentar uma frase."
+    },
+    {
+      "insights": [
+        "INS-043",
+        "INS-046"
+      ],
+      "dono": "analista-exploratorio",
+      "problema": "Ações desatualizadas ou contraditórias com o campo confirmacao.",
+      "pedido": "Atualizar as ações."
+    }
+  ],
+  "mudancas_de_veredito": {
+    "INS-043": {
+      "r1": "ressalva",
+      "r2": "cai"
+    },
+    "INS-046": {
+      "r1": "ressalva",
+      "r2": "cai"
+    },
+    "INS-048": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-050": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-053": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-055": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-056": {
+      "r1": "cai",
+      "r2": "ressalva"
+    },
+    "INS-057": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-058": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-059": {
+      "r1": "cai",
+      "r2": "sobrevive"
+    },
+    "INS-060": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-061": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-062": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-073": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-074": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-076": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-077": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-083": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-084": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-088": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    },
+    "INS-089": {
+      "r1": "ressalva",
+      "r2": "sobrevive"
+    }
+  },
+  "insights": [
+    {
+      "id": "INS-040",
+      "veredito": "ressalva",
+      "nota_no_insight": "Trilha da descoberta de PT-D1, confirmada em ANA-016 (INS-070); números da descoberta fora do memorando, ação atualizada. A confirmação de PT-D1 depende do critério de inversão por depositante fixado depois de ver os sinais (ver revisoes/red-team-analitico_parteB_r2.json).",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-041",
+      "veredito": "cai",
+      "nota_no_insight": "Sem mudança: PT-D2 ficou fora da F2 e não foi testada; exploratório sem confirmação não segue ao impacto.",
+      "veredito_r1": "cai"
+    },
+    {
+      "id": "INS-042",
+      "veredito": "cai",
+      "nota_no_insight": "Sem mudança: só a parte de PT-H04 foi confirmada (INS-073); a afirmação própria sobre o intervalo por faixa de endereços não foi testada e não se repete nas semanas pares.",
+      "veredito_r1": "cai"
+    },
+    {
+      "id": "INS-043",
+      "veredito": "cai",
+      "nota_no_insight": "Exploratório agora sem confirmação: ANA-016 classificou PT-D3 como não confirmada pelo critério de inversão adotado. A ação continua desatualizada ('registrar PT-D3 no plano e confirmar'). Se no G3 Marcus adotar a leitura agregada (retirar um depositante por vez mantém o IC acima de zero, ver revisoes/red-team-analitico_parteB_r2.json), revisar.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-044",
+      "veredito": "ressalva",
+      "nota_no_insight": "Sem mudança: trilha da descoberta de PT-H10, confirmada em ANA-016 (INS-074); números da descoberta fora do memorando.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-045",
+      "veredito": "cai",
+      "nota_no_insight": "Texto corrigido, mas segue exploratório sem confirmação (PT-H09 inconclusiva por desenho em ANA-016): não segue ao impacto.",
+      "veredito_r1": "cai"
+    },
+    {
+      "id": "INS-046",
+      "veredito": "cai",
+      "nota_no_insight": "Exploratório agora sem confirmação: ANA-016 classificou PT-D4 como não confirmada. A ação contradiz o campo confirmacao (diz 'confirmada em ANA-016, INS-071'): corrigir. Se no G3 a leitura agregada for adotada, revisar.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-047",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Sem mudança; nenhum ataque muda a leitura.",
+      "veredito_r1": "sobrevive"
+    },
+    {
+      "id": "INS-048",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-049",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Sem mudança; nenhum ataque muda a leitura.",
+      "veredito_r1": "sobrevive"
+    },
+    {
+      "id": "INS-050",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo. A contagem de quem entra e sai difere da do red team por definição de saída, sem efeito na leitura.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-051",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Sem mudança; nenhum ataque muda a leitura.",
+      "veredito_r1": "sobrevive"
+    },
+    {
+      "id": "INS-052",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Sem mudança; nenhum ataque muda a leitura.",
+      "veredito_r1": "sobrevive"
+    },
+    {
+      "id": "INS-053",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-054",
+      "veredito": "ressalva",
+      "nota_no_insight": "Correções atendidas (reserva de disponibilidade declarada, frota dia a dia). Problema novo: a frota da base da ALT3 usa a banda de dias, que o próprio analista diz alisar o pico e por isso trocou pelo dia a dia na ALT6; a ALT3 também agrupa pedido-a-pedido e checkout. Com a mesma regra, a base seria a frota dia a dia, maior. Uma frota de um robô não tem reserva: qualquer parada interrompe o serviço. Levar o dia a dia como leitura principal ou justificar a diferença de método.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-055",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo. Mostra a banda e o dia a dia lado a lado.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-056",
+      "veredito": "ressalva",
+      "nota_no_insight": "Correção atendida: as duas leituras de M23 estão no texto e, na colaborativa, CR8 não passa no dia p90. Segue em aberto a leitura de Marcus no G3 e a PR05 (confiança baixa). Se a leitura colaborativa for adotada, o contrato (M23) precisa ser atualizado pelo engenheiro de dados.",
+      "veredito_r1": "cai"
+    },
+    {
+      "id": "INS-057",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo. O efeito da PR05 no checkout está declarado como premissa a validar (E9).",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-058",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-059",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção atendida: os arranjos usam a mesma regra no manual e no robô, e a vantagem do robô no pico não aparece em nenhuma delas. Depende da PR05, declarada.",
+      "veredito_r1": "cai"
+    },
+    {
+      "id": "INS-060",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-061",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-062",
+      "veredito": "sobrevive",
+      "nota_no_insight": "O renderizador passou a rotular faixa de cenários como faixa; nenhum outro problema.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-070",
+      "veredito": "ressalva",
+      "nota_no_insight": "Correções atendidas (sem o maior depositante, entre os mesmos operadores, por depositante). Ressalvas que ficam: magnitude não deve ser citada; a confirmação depende do critério de inversão fixado depois de ver os sinais (pelo critério só de sinal PT-D1 também falharia), o que o texto deve dizer, como INS-077 já diz; o grupo Royal Canin tem menos de vinte operadores. Ver revisoes/red-team-analitico_parteB_r2.json.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-071",
+      "veredito": "ressalva",
+      "nota_no_insight": "O texto diz 'não se confirma pela regra do plano', mas o plano não fixava o critério por depositante: ele foi fixado depois de ver os sinais (revisoes/orquestrador_decisao_inversao_ANA-016.md). O que aparece é heterogeneidade do grupo de comparação, não inversão do efeito agregado: retirando qualquer depositante do grupo B, um por vez, o IC continua abaixo de zero (consulta só de leitura em revisoes/red-team-analitico_parteB_r2.json). Manter fora do memorando é conservador e aceitável; corrigir a frase e citar os dois critérios.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-072",
+      "veredito": "ressalva",
+      "nota_no_insight": "Mesmo problema de INS-071: o critério não é do plano, foi fixado depois de ver os sinais. A 'inversão' vem de um único depositante cujo grupo tem menos de dez operadores (pela regra do menor grupo, só descritivo); retirando qualquer depositante, um por vez, o IC continua acima de zero (revisoes/red-team-analitico_parteB_r2.json). Manter fora do memorando é conservador; corrigir a frase e citar os dois critérios.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-073",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-074",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo. A inferência resiste ao erro robusto por semana.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-075",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Sem mudança; inconclusiva por desenho e lida como tal.",
+      "veredito_r1": "sobrevive"
+    },
+    {
+      "id": "INS-076",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo. O IC tem poucas unidades e está rotulado como descritivo, sem p; não ler como evidência.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-077",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Resumo correto, com o critério de inversão declarado como posterior ao desenho e a alternativa só de sinal. Ver a avaliação do critério em revisoes/red-team-analitico_parteB_r2.json.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-078",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Sem mudança; nenhum ataque muda a leitura.",
+      "veredito_r1": "sobrevive"
+    },
+    {
+      "id": "INS-080",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Sem mudança; ANA-011 reconferida pelo dono com valores idênticos.",
+      "veredito_r1": "sobrevive"
+    },
+    {
+      "id": "INS-081",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Sem mudança; nenhum ataque muda a leitura.",
+      "veredito_r1": "sobrevive"
+    },
+    {
+      "id": "INS-082",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Sem mudança; nenhum ataque muda a leitura.",
+      "veredito_r1": "sobrevive"
+    },
+    {
+      "id": "INS-083",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-084",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-085",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Base da oferta citada primeiro; conta robusta nas duas janelas.",
+      "veredito_r1": "sobrevive"
+    },
+    {
+      "id": "INS-086",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Cita a dúvida de CR2 sobre a franquia; nenhum ataque muda a leitura.",
+      "veredito_r1": "sobrevive"
+    },
+    {
+      "id": "INS-087",
+      "veredito": "ressalva",
+      "nota_no_insight": "Correção atendida (o sinal depende da frota e da janela). Problema novo: a margem citada primeiro na base usa a frota de um robô pela banda de dias, método que o analista rejeitou na ALT6 por alisar o pico; com a frota dia a dia a margem sem piso cai muito e, com a regra por tipo, fica negativa na ponta alta. Uma frota de um robô não tem reserva de disponibilidade. Citar primeiro a frota dia a dia, ou declarar a margem de um robô como ponta otimista.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-088",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção atendida: frota agrupada dia a dia como primária, adoção pelos outros depositantes declarada. Premissas de tarifa e PR07 seguem nas premissas do insight.",
+      "veredito_r1": "ressalva"
+    },
+    {
+      "id": "INS-089",
+      "veredito": "sobrevive",
+      "nota_no_insight": "Correção da rodada anterior atendida no texto; nenhum problema novo.",
+      "veredito_r1": "ressalva"
+    }
+  ],
+  "pendencias": [
+    "G3 (Marcus): critério de inversão por depositante em ANA-016 (proposta em avaliacao_criterio_inversao).",
+    "G3 (Marcus): leitura de M23 (autônoma ou colaborativa); se colaborativa, o engenheiro de dados atualiza M23 no contrato.",
+    "G3 (Marcus) e engenharia: frota da ALT3 pela banda ou pelo dia a dia, e reserva de disponibilidade."
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual critério de inversão por depositante vale para as pistas de ANA-016?",
+      "resposta_proposta": "Retirar um depositante por vez para confirmar o efeito agregado; o contraste contra cada depositante fica descritivo, como heterogeneidade. Manter PT-D3 e PT-D4 fora do memorando como números até o teste controlado.",
+      "para": "Marcus (G3)"
+    },
+    {
+      "pergunta": "A frota da ALT3 é lida pela banda de dias ou pelo dia a dia?",
+      "resposta_proposta": "Dia a dia, como na ALT6, com reserva de disponibilidade a definir com a engenharia.",
+      "para": "Marcus (G3) e engenharia da Acta"
+    }
+  ]
+}

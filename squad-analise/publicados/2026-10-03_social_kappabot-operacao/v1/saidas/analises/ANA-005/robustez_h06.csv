@@ -1,0 +1,4 @@
+recorte,did_pp,ic_op_inf,ic_op_sup,ic_sem_inf,ic_sem_sup,p_unilateral,classe_operador,operadores_royal_canin,operadores_controle,semanas_pre,semanas_pos,mesmo_sinal_da_primaria,no_plano
+"piso de sensibilidade da qualidade (5,5 s)",-0.007466173003009428,-0.037984275038710345,0.0028586705068641294,-0.060162114370370896,0.02404003995667932,0.931267183204199,0,21,33,7,10,True,True
+sem as duas primeiras semanas com colmeia na Royal Canin,-0.00038474791916232504,-0.018446718769311823,0.029840963593878025,-0.1534364764445151,0.20731803322374712,0.596048024012006,0,21,33,5,10,True,True
+controle só com operadores que não separam Royal Canin,-0.0009547896769119893,-0.08421881224675702,0.007839905325079185,-0.02973918743998181,0.01617532698646092,0.6923269182704324,0,21,16,7,10,True,True

@@ -1,0 +1,1281 @@
+{
+  "agente": "dados-red-team-decisao",
+  "fase": "D4",
+  "em": "2026-10-03",
+  "dv": "projetos/2026-10-03_social_kappabot-operacao/v1",
+  "aviso": "Os números deste relatório vêm do motor (python -m motor.impacto), rodado numa cópia da versão em que o red team só acrescentou modelos ao nos/impacto.json. A versão real não foi alterada. Os 79 modelos originais se reproduzem sem diferença na cópia. Os modelos RTD-* não estão no nó real: só vão a insight, nó de texto ou entregável depois que o analista de impacto os registrar (pendências).",
+  "entradas_lidas": [
+    "CLAUDE.md",
+    "nos/decisao.json",
+    "nos/impacto.json",
+    "saidas/impacto.json",
+    "evidencias/INS-*.json (20 acionáveis)",
+    "saidas/analises/*/resultado.json (só os valores usados pelos modelos)",
+    "revisoes/orquestrador_tabela_criterios.md",
+    "revisoes/especialista_D3.md",
+    "revisoes/orquestrador_decisao_*.md",
+    "insumos/texto/Kappabot na Social - Resultados e Potencial de Escala.pptx.md"
+  ],
+  "metodo": [
+    "Três personas por insight acionável e pela recomendação: executivo do 'e daí?' (a decisão muda? passa do limite?), operador (implantável com a equipe e o checkout ainda não pronto? quem faz? o que quebra?) e concorrente (o que o dado revela e o que outro faria com ele).",
+    "Premissa crítica testada no motor numa cópia. Não existe motor.cenario neste squad; usei python -m motor.impacto <cópia>, com modelos de inversão (ponto em que a classe muda) e de alternativas não consideradas acrescentados ao nos/impacto.json da cópia. As premissas vêm de nos/decisao.json com min = provável = max, como no nó real. A incerteza vem dos resultados registrados.",
+    "Classe dos modelos com limite pela regra do plano (passa se P10 a P90, ampliado pelo provável, fica do lado que aprova; falha se fica todo do outro lado; inconclusivo se cruza).",
+    "Nenhuma linha de dado lida; nada por operador."
+  ],
+  "copia": {
+    "base": "/tmp/claude-0/-home-user-acta-agentes/861fe110-e1d7-568a-b70c-aa0ce7ccae6b/scratchpad/rtd/base",
+    "cenarios": "/tmp/claude-0/-home-user-acta-agentes/861fe110-e1d7-568a-b70c-aa0ce7ccae6b/scratchpad/rtd/cen",
+    "script_cenarios": "/tmp/claude-0/-home-user-acta-agentes/861fe110-e1d7-568a-b70c-aa0ce7ccae6b/scratchpad/rtd/montar_cenarios.py",
+    "script_relatorio": "/tmp/claude-0/-home-user-acta-agentes/861fe110-e1d7-568a-b70c-aa0ce7ccae6b/scratchpad/rtd/gerar_revisao.py",
+    "modelos_originais_reproduzidos": 79,
+    "diferencas_contra_versao_real": 0,
+    "modelos_acrescentados": 38
+  },
+  "recomendacao_atacada": {
+    "texto": "Leitura do analista de impacto pela regra de decisão. Na leitura conservadora (PR11 rateado ou fora), nenhuma alternativa de ALT2 a ALT4 passa CR1, CR2 e CR6 juntas, e a regra aponta ALT1. A ALT4 no escopo da ALT3 só passa com PR11 integral e exige o checkout conferido, que não está pronto. A ALT6 recalibrada passa com PR11 integral, mas a regra não a admite porque CR5 está inconclusivo.",
+    "fonte": "nos/impacto.json (comparacao_limites, viabilidade_conjunta_cr1_cr2_cr6); nos/decisao.json (regra_decisao)",
+    "executivo": [
+      "A decisão muda e é robusta num ponto: o deck não deve ser apresentado como está. A franquia não é coberta (IMP-CR2-ALT3-NORMAL, 38%). A ALT3 do deck precisaria de 1,49 postos atribuíveis à RC para passar CR1. A margem sem piso com a frota do deck é negativa (IMP-CR6-ALT3-DECK5-SEM-PISO, R$ -546 por robô).",
+      "Entre ALT1 e ALT4, quem decide é uma resposta da Social, não mais análise. A ALT4 passa CR1 a partir de 0,58 posto atribuível à RC e libera uma vaga inteira a partir de 0,95. O rateio dá 0,47. A pergunta custa dias; desenvolver o checkout antes dela é aposta.",
+      "A palavra 'conservadora' mistura dois casos. Com PR11 fora, ALT1 é robusta. Com PR11 rateado, a ALT4 está no fio da navalha: a folga é inconclusiva (IMP-ALT4-FOLGA-ALT3-RAT, R$ -151). Ela fica positiva com PR13 abaixo de R$ 925, PR10 acima de R$ 64.888 por ano ou frota de um robô. O memorando deve mostrar isso, e não um 'ALT1' seco.",
+      "O que se vende é a conferência, não a separação. Com PR11 integral, a economia líquida da Social na ALT4 é R$ 7.988 por mês. No ganho bruto, a separação do pedido-a-pedido da RC entra com só R$ 256 (RTD-PILOTO-ECONOMIA-SOCIAL-RC-PAP); o resto é a conferência. A mensagem e a garantia devem tratar da conferência desmobilizada.",
+      "Com PR11 integral, as tarifas do deck deixam quase todo o valor com a Social e não pagam o hardware: o máximo pagável sem piso é R$ 3.219 por robô. A janela de preço vai até 3,51 vezes as tarifas (IMP-ALT4-KMAX-ALT3-INT). No teto, o preço pagaria até R$ 71.449 de hardware por robô, ou R$ 39.633 com reserva. O preço deve sair dessa janela, limitado pelo custo da alternativa sem robô ([●]).",
+      "A ALT1 da lista ('manter o piloto atual e rodar o teste controlado') gasta o custo de servir sem atacar a dúvida decisiva. O teste do slide 19 mede PR05, e PR05 não decide a RC (premissa crítica, secundária PR05). A ALT1 útil é um portão de perguntas (E15, L4), seguido de teste pago e focado."
+    ],
+    "operador": [
+      "A ALT4 não é implantável hoje. Ela depende do checkout conferido: L4, prazo [●], com Vinicius Bastos (CTO). A cobrança do deck começa no go-live do checkout (slide 18). Se a frota for instalada antes, a Acta paga R$ 2.000 por mês (IMP-ALT4-PMIN-ALT3) sem a receita principal.",
+      "Desmobilizar a conferência exige robô disponível na hora. Sem reserva, uma parada devolve a conferência à bancada, a Social mantém o posto e PR11 se desfaz. Com um robô de reserva, o piso passa da receita nas tarifas do deck (RTD-CR2-ALT4-ALT3-COM-RESERVA, 76%), e as tarifas precisam subir 1,32 vezes.",
+      "Quem faz o quê:\n- Marcus Lima leva E15 à Social e decide.\n- Vinicius Bastos estima o checkout, a reserva e PR08.\n- Renato Correa confere PR13 e PR20.\n- Matheus Correa monta a proposta.\nCom a equipe de cerca de dez pessoas informada pelo orquestrador, não dá para fazer ao mesmo tempo o checkout, a frota com reserva e a abertura de outros depositantes. O cronograma do slide 19 (checkout nas semanas 3 a 6) não tem estimativa da engenharia.",
+      "O que pode quebrar:\n- erro de conferência no robô vira responsabilidade da Acta perante a RC;\n- a realocação das pessoas dos postos depende da Social (FTE fracionário só vira economia com realocação, restrição do nó decisão);\n- segurança e acordo coletivo seguem [●] (parecer D3, viabilidade).\nA integração 9fleet com o Senior já roda, o que reduz o risco de TI."
+    ],
+    "concorrente": [
+      "O dado mostra que o valor está em dois lugares: na conferência (INS-089) e na elasticidade do armazém no pico (INS-048). A separação robotizada só na RC vale menos que o custo de servir de um robô.",
+      "Um concorrente, ou a própria Social, atacaria a conferência sem robô: bipe na coleta com coletor e auditoria amostral. Se isso for viável no Senior da Social ([●]), o maior valor da ALT4 não é exclusivo do Kappabot, e o preço fica limitado ao custo dessa alternativa. A oferta precisa juntar o que um coletor não faz: levar o pedido ao packing, a integração já em produção e a frota para o pico.",
+      "Nos depositantes de pedido leve, o concorrente sem investimento é o lote manual com carrinho (parecer D3, seção 1.7). No pico, um fornecedor de RaaS ofereceria robôs só na alta temporada, cobrados por robô-mês. Os dados não cobrem Black Friday.",
+      "As incoerências do deck dariam a um concorrente o argumento de que a Acta superestima: franquia acima do volume (INS-080) e FTE do slide 14 (INS-083). Corrigir antes de apresentar é condição."
+    ]
+  },
+  "premissa_critica": {
+    "premissa": "PR11 lida como postos de conferência atribuíveis à Royal Canin e efetivamente desmobilizados com o checkout conferido no robô",
+    "por_que_pesa": [
+      "É a maior parte do custo atual da ALT3 (INS-089, ANA-015.fracao_custo_atual_alt3_vinda_de_pr11), não aparece no WMS (INS-012) e pode ser compartilhada com outros depositantes ou incluir embalagem (parecer D3, seção 1.5).",
+      "A separação sozinha é pequena: no pedido-a-pedido da RC a economia é R$ 256 (P10 a P90: R$ 249 a R$ 395) por mês, 0,26 vezes o custo de servir de um robô (RTD-PILOTO-ECONOMIA-SOBRE-CUSTO-ROBO).",
+      "Sem PR11, nenhuma estrutura de preço cabe em CR1 no escopo da ALT3: a cobrança máxima compatível com PR01 é R$ -46 (P10 a P90: R$ -96 a R$ 26) por mês no teto conservador e R$ 438 no folgado, contra o custo de servir da frota de R$ 2.000. Na ALT6, a folga sem PR11 é R$ -4.697 (P10 a P90: R$ -4.981 a R$ -4.002) (teto folgado: R$ -622 (P10 a P90: R$ -730 a R$ 865)).",
+      "Com PR11 integral, nenhuma outra premissa testada inverte a ALT4: ela resiste a PR13 bem acima do informado, a um robô de reserva e a tarifas mais altas."
+    ],
+    "valor_atual": "PR11 = 2 postos (fonte: Social, confirmada por Marcus). A atribuição à RC e a desmobilização não têm fonte: E15 e L2 seguem abertas.",
+    "pontos_de_inversao": [
+      {
+        "modelo": "RTD-INV-PR11-CR1-ALT4-ALT3",
+        "leitura": "A ALT4 (escopo da ALT3, franquia = custo de servir da frota necessária, tarifas do deck) passa CR1 a partir de 0,58 (P10 a P90: 0,54 a 0,63) postos de conferência atribuíveis à RC, isto é, 29% de PR11. Com CR1, CR2 e CR6 juntos é a inversão de ALT1 para ALT4 (dado o checkout pronto)."
+      },
+      {
+        "modelo": "RTD-PR11-RATEIO-POSTOS",
+        "leitura": "O rateio por pedidos de checkout atribui à RC 0,47 (P10 a P90: 0,43 a 0,53) postos (24% de PR11): abaixo do limiar, por pouco."
+      },
+      {
+        "modelo": "RTD-INV-PR11-CR8-ALT3-COL",
+        "leitura": "CR8 (uma vaga inteira, leitura colaborativa) da ALT3/ALT4 passa a partir de 0,95 (P10 a P90: 0,92 a 0,95) posto: na prática, um posto inteiro tem de sair por causa da RC. Com um posto inteiro, CR1 da ALT4 fica em 46% (RTD-CR1-ALT4-ALT3-UM-POSTO)."
+      },
+      {
+        "modelo": "RTD-INV-PR11-CR1-ALT3-DECK",
+        "leitura": "A ALT3 do deck (franquia PR02) só passa CR1 a partir de 1,49 (P10 a P90: 1,47 a 1,50) postos atribuíveis à RC; e ainda falha em CR2."
+      },
+      {
+        "modelo": "RTD-INV-PR11-ALT6-REC",
+        "leitura": "A ALT6 recalibrada tem janela de preço a partir de 1,17 (P10 a P90: 1,00 a 1,25) postos desmobilizados. Na ALT6 o checkout dos outros entra no escopo, então o rateio deixa de ser a questão; resta saber se os postos saem. CR8 da ALT6 passa a partir de 0,58 posto (RTD-INV-PR11-CR8-ALT6-COL)."
+      }
+    ],
+    "conclusao": "A recomendação inverte de ALT1 para ALT4 quando a Social confirmar que deixam de existir, por causa do checkout da RC, pelo menos 0,58 posto de conferência (viabilidade: CR1, CR2 e CR6) e, para atender ao critério de compra de vaga inteira (CR8), cerca de um posto inteiro (0,95). Também é preciso haver prazo para o checkout (L4). O rateio por pedidos (0,47) fica logo abaixo. Nessa leitura, a classe depende de PR13, PR10 e da frota dentro da incerteza deles. Com PR11 fora, ALT1 é robusta.",
+    "premissas_secundarias": [
+      {
+        "premissa": "PR13 custo de servir (Marcus: 'cerca de', confiança média)",
+        "leitura": "Com PR11 rateado, a ALT4 ganha janela de preço com PR13 abaixo de R$ 925 (P10 a P90: R$ 841 a R$ 1.044) por robô (PR13 = R$ 1.000). Com PR11 integral, a janela resiste até R$ 3.977 por robô. Com as tarifas do deck, PR13 acima de R$ 1.134 (P10 a P90: R$ 1.061 a R$ 1.231) faz o piso da ALT4 passar da receita (CR2 falha) e a margem sem piso ficar negativa; aí é preciso subir as tarifas.",
+        "modelos": [
+          "RTD-INV-PR13-ALT4-RAT",
+          "RTD-INV-PR13-ALT4-INT",
+          "RTD-INV-PR13-ALT4-TARIFA-DECK"
+        ]
+      },
+      {
+        "premissa": "PR10 custo por operador",
+        "leitura": "Com PR11 rateado, a ALT4 ganha janela de preço com PR10 a partir de R$ 64.888 (P10 a P90: R$ 57.264 a R$ 71.275) por ano (PR10 = R$ 60.000). A faixa contém PR10: por isso a folga com rateio é inconclusiva (IMP-ALT4-FOLGA-ALT3-RAT).",
+        "modelos": [
+          "RTD-INV-PR10-ALT4-RAT"
+        ]
+      },
+      {
+        "premissa": "Frota da ALT4 (reserva e leitura da banda)",
+        "leitura": "Com as tarifas do deck, o piso cabe na receita até 2,27 robôs (RTD-INV-FROTA-CR2-ALT4). Com um robô de reserva, CR2 da ALT4 cai para 76% e as tarifas precisam subir pelo menos 1,32 vezes; com PR11 integral a folga segue positiva (R$ 4.954), com rateio fica negativa (R$ -1.151 (P10 a P90: R$ -1.322 a R$ -914)). Na outra ponta, a frota de um robô pela banda abre a janela com rateio (R$ 849 (P10 a P90: R$ 683 a R$ 1.086)), mas sem reserva.",
+        "modelos": [
+          "RTD-INV-FROTA-CR2-ALT4",
+          "RTD-CR2-ALT4-ALT3-COM-RESERVA",
+          "RTD-KMIN-ALT4-ALT3-COM-RESERVA",
+          "RTD-FOLGA-ALT4-ALT3-INT-COM-RESERVA",
+          "RTD-FOLGA-ALT4-ALT3-RAT-COM-RESERVA",
+          "RTD-FOLGA-ALT4-ALT3-RAT-FROTA-BANDA"
+        ]
+      },
+      {
+        "premissa": "PR05 e o teto de intervalo (o denominador do ganho)",
+        "leitura": "Não decidem a RC: mesmo com PR05 no teto de manuseio do deck, a folga da ALT2 é R$ -1.834 no teto conservador e R$ -1.289 no folgado. Decidem o armazém sem conferência: a ALT6 sem PR11 precisaria de PR05 de 73,22 (P10 a P90: 59,35 a 74,24) linhas/h no teto folgado (PR05 do deck = 66; teto de manuseio do deck = 78) e de 204 no conservador, impossível.",
+        "modelos": [
+          "RTD-FOLGA-ALT2-PR05-TETO",
+          "RTD-FOLGA-ALT2-PR05-TETO-ALTO",
+          "RTD-INV-PR05-ALT6-SEM",
+          "RTD-INV-PR05-ALT6-SEM-ALTO"
+        ]
+      },
+      {
+        "premissa": "Franquia (PR02)",
+        "leitura": "Não é a que mais pesa porque já falha: a maior franquia que o volume corrente cobre é a própria receita da ALT3 (R$ 2.268, IMP-CR2-RECEITA-ALT3), e o checkout teria de chegar a 3.236 pedidos/mês para cobrir PR02 (IMP-CR2-VOLUME-CHECKOUT-ALT3). Com frota necessária, CR2 e CR6 com piso convivem só com franquia entre o custo de servir da frota (IMP-ALT4-PMIN-ALT3) e a receita.",
+        "modelos": [
+          "IMP-CR2-RECEITA-ALT3",
+          "IMP-CR2-VOLUME-CHECKOUT-ALT3",
+          "IMP-ALT4-PMIN-ALT3"
+        ]
+      }
+    ]
+  },
+  "alternativas_nao_consideradas": [
+    {
+      "nome": "Piloto pago de 60 a 90 dias com meta de linhas por hora",
+      "teste": "No pedido-a-pedido da RC, a economia da Social é R$ 256 por mês, contra o custo de servir de R$ 2.000 da frota necessária. Qualquer preço que cubra a Acta deixa a Social no negativo durante o piloto. Uma tarifa por linha precisaria ser várias vezes PR04 (INS-002). O piloto só se vende como investimento em informação, com:\n- preço fixo igual ao custo de servir;\n- crédito no contrato se a fase seguinte for contratada;\n- critério de sucesso fixado antes (M14 nos tetos de 300 s e 900 s, sorteio de pedidos, espera, pessoas-hora por mil linhas no pico).",
+      "veredito": "Melhor que a ALT1 gratuita, desde que teste o que decide. Na RC isolada não decide nada (PR05 não inverte a RC). Deve medir o denominador no pedido-a-pedido de dois ou mais endereços da RC e de um ou dois depositantes compatíveis (pooling) e, se houver protótipo, o tempo da conferência.",
+      "modelos": [
+        "RTD-PILOTO-ECONOMIA-SOCIAL-RC-PAP",
+        "RTD-PILOTO-ECONOMIA-SOBRE-CUSTO-ROBO",
+        "IMP-ALT4-PMIN-ALT3"
+      ]
+    },
+    {
+      "nome": "Oferta só armazém, pedido-a-pedido com frota agrupada (sem checkout e sem PR11)",
+      "teste": "É implantável sem o desenvolvimento. Com a tarifa do deck, a margem é R$ -464 (P10 a P90: R$ -508 a R$ -414) por robô, com a frota mínima favorável. A tarifa precisaria ser 1,86 vezes PR04. CR1 permite no máximo 0,14 vezes no teto conservador e 2,04 (P10 a P90: 1,94 a 2,78) vezes no teto folgado. A folga é R$ -3.697 no conservador e R$ 378 (P10 a P90: R$ 262 a R$ 1.826) no folgado. Usa o armazém inteiro como teto, a razão de produtividade da RC e a menor frota possível: é limite superior.",
+      "veredito": "Candidata a teste, não a oferta. A janela só existe se o ganho real estiver perto do teto folgado, que é justamente o que o teste controlado mede. Depende da adesão dos depositantes (CR5 inconclusivo).",
+      "modelos": [
+        "RTD-MARGEM-ARM-PAP-POOL",
+        "RTD-KMIN-ARM-PAP-POOL",
+        "RTD-KMAX-ARM-PAP-POOL",
+        "RTD-KMAX-ARM-PAP-POOL-ALTO",
+        "RTD-FOLGA-ARM-PAP-POOL",
+        "RTD-FOLGA-ARM-PAP-POOL-ALTO"
+      ]
+    },
+    {
+      "nome": "Preço por pessoa-hora evitada (divisão do ganho)",
+      "teste": "Não muda a viabilidade. A maior cobrança compatível com CR1 é a mesma em qualquer estrutura (IMP-ALT4-PMAX-*). Sem PR11 ela é R$ -46 por mês no escopo da ALT3 (RTD-PMAX-ALT3-SEM) e R$ 438 no teto folgado, abaixo do custo de servir. Com PR11 integral, é uma estrutura mais limpa: tira da Social o risco de volume da franquia e atende CR1 por construção. Mas exige linha de base medida e regra para disputas.",
+      "veredito": "Estrutura para depois do teste; não resgata nenhuma alternativa.",
+      "modelos": [
+        "RTD-PMAX-ALT3-SEM",
+        "RTD-PMAX-ALT3-SEM-ALTO",
+        "IMP-ALT4-PMAX-ALT3-INT"
+      ]
+    },
+    {
+      "nome": "Garantia de capacidade em vez de percentual de economia, e economia garantida só sobre a conferência efetivamente desmobilizada",
+      "teste": "A Acta não controla PR11, que é decisão de processo da Social e da RC. Garantir percentual sobre um custo dominado por PR11 transfere à Acta um risco que ela não gere. A garantia de capacidade (linhas por hora no pico com a frota contratada) depende só do robô (parecer D3, seção 3).",
+      "veredito": "Adotar em qualquer oferta que avance.",
+      "modelos": [
+        "IMP-CR1-ALT4-ALT3-INT",
+        "IMP-CR1-ALT4-ALT3-RAT",
+        "IMP-CR1-ALT4-ALT3-SEM"
+      ]
+    },
+    {
+      "nome": "Encerrar o piloto gratuito se a conferência não sair",
+      "teste": "Se E15 vier abaixo do limiar, nenhuma estrutura fecha no volume atual, nem na RC (RTD-PMAX-ALT3-SEM) nem no armazém com checkout (RTD-FOLGA-ALT6-SEM, R$ -4.697). Manter o piloto gratuito custa PR13 por robô por mês, sem caminho para receita até haver dados de alta temporada.",
+      "veredito": "Opção legítima que a lista de alternativas não tem. A relação se mantém com uma oferta de pico quando houver dados de Black Friday.",
+      "modelos": [
+        "RTD-PMAX-ALT3-SEM",
+        "RTD-FOLGA-ALT6-SEM",
+        "RTD-FOLGA-ALT6-SEM-ALTO"
+      ]
+    }
+  ],
+  "recomendacao_sustentada": {
+    "alternativa": "ALT1 como portão, não como espera. Não apresentar o deck. Decidir entre ALT4 e encerrar com duas respostas baratas, nesta ordem.",
+    "passos": [
+      "E15 com o limiar. Perguntar à Social quantos postos de conferência deixam de existir por causa do checkout da RC, se os postos também embalam e se a conferência sairia sem robô (bipe na coleta). A ALT4 inverte a partir de 0,58 posto (CR1, CR2 e CR6). O critério de compra de vaga inteira (CR8) pede cerca de um posto. Dono: Marcus Lima.",
+      "L4. Pedir o prazo e o esforço do checkout conferido, com robô de reserva. Não começar o desenvolvimento antes da resposta de E15. Dono: Vinicius Bastos.",
+      "Se a conferência sair acima do limiar e houver prazo: ALT4 no escopo da ALT3, com:\n- frota necessária mais reserva;\n- piso igual ao custo de servir dessa frota;\n- tarifas de pelo menos 1,32 vezes as do deck e até o teto de CR1 (IMP-ALT4-KMAX-ALT3-INT), limitadas pelo custo da alternativa sem robô;\n- garantia de capacidade, e garantia de economia só sobre a conferência desmobilizada, medida no primeiro trimestre;\n- ALT6 como fase seguinte, quando CR5 for testado.",
+      "Se a conferência não sair, ou sair abaixo do limiar: nenhuma estrutura de preço fecha no volume atual. As saídas são:\n- um piloto pago curto, a custo de servir, no pedido-a-pedido de dois ou mais endereços da RC e de um ou dois depositantes compatíveis, com critério fixado antes, para medir o denominador (a oferta só de pedido-a-pedido do armazém tem janela apenas perto do teto folgado);\n- ou encerrar o piloto gratuito e voltar com uma oferta de pico quando houver dados de alta temporada."
+    ],
+    "por_que_nao_alt4_ja": "Sem E15, a ALT4 se apoia na leitura favorável de PR11, contra o próprio limite de CR1 ('cenário conservador'). E depende de um desenvolvimento sem prazo.",
+    "por_que_nao_alt1_seca": "Com PR11 rateado, a ALT4 fica dentro da incerteza de PR13, PR10 e da frota. Manter o piloto gratuito e testar PR05 não ataca a dúvida que decide."
+  },
+  "insights": {
+    "INS-001": {
+      "executivo": "Muda a decisão: tira a franquia do deck da mesa. A cobertura (38% em operação normal, 31% no estresse) fica longe do limite em todo o envelope. A maior franquia que o volume cobre é a própria receita (IMP-CR2-RECEITA-ALT3, R$ 2.268).",
+      "operador": "Trocar a franquia é decisão comercial, sem implantação. Com as tarifas do deck, o piso que a substitui (frota × PR13) cabe na receita só até 2,27 robôs ou com PR13 até R$ 1.134.",
+      "concorrente": "Uma franquia que exige multiplicar o volume seria o primeiro ponto atacado pela Social ou por um concorrente.",
+      "veredito": "sobrevive",
+      "nota": "Sobrevive às três personas. A ação vale com uma condição: com as tarifas do deck, o piso recalibrado (frota × PR13) só cabe na receita por transação sem robô de reserva e sem PR13 acima do informado (RTD-INV-FROTA-CR2-ALT4 e RTD-INV-PR13-ALT4-TARIFA-DECK). Com reserva, é preciso subir as tarifas (RTD-KMIN-ALT4-ALT3-COM-RESERVA). Detalhes em revisoes/red-team-decisao.json."
+    },
+    "INS-002": {
+      "executivo": "Confirma que a única alternativa implantável sem o checkout não fecha para a Acta: margem de R$ -801 por robô (IMP-CR6-ALT2-SEM-PISO). Nem PR05 no teto de manuseio do deck a salva: a folga é R$ -1.834, e R$ -1.289 no teto folgado.",
+      "operador": "O que dá para implantar hoje (ALT2) não fecha; o que fecha (ALT4) não dá para implantar hoje. É o nó da decisão.",
+      "concorrente": "Sem checkout, a oferta da RC é pequena demais para atrair concorrente. O risco é a Social não ver valor.",
+      "veredito": "sobrevive",
+      "nota": "Sobrevive. Reforço: nenhuma estrutura de preço resolve a ALT2. A economia de separação do pedido-a-pedido da RC é menor que o custo de servir de um robô, mesmo com PR05 no teto de manuseio do deck (RTD-FOLGA-ALT2-PR05-TETO e RTD-PILOTO-ECONOMIA-SOBRE-CUSTO-ROBO). Num piloto curto, cobrar o custo de servir como valor fixo, não por linha. Detalhes em revisoes/red-team-decisao.json."
+    },
+    "INS-006": {
+      "executivo": "Não prometer o dobro está certo. Mas confirmar o dobro não muda a decisão na RC: mesmo com PR05 no teto de manuseio, a folga da ALT2 é negativa nos dois tetos (R$ -1.834 e R$ -1.289). O denominador só decide no armazém. Sem PR11, a ALT6 precisaria de PR05 de 73,22 no teto folgado e de 204 no conservador.",
+      "operador": "O teste do slide 19, de duas a três horas, não mede o denominador. Precisa de semanas, sorteio de pedidos e M14 em dois tetos (parecer D3, seção 3). Quem desenha: o planejador e Vinicius Bastos.",
+      "concorrente": "Promessas de produtividade baseadas em casos estrangeiros são terreno do concorrente. A Acta ganha credibilidade ao medir.",
+      "veredito": "ressalva",
+      "nota": "Ressalva. A ação sugere que o teste controlado pode levar a ALT2 ao mínimo da garantia. Mesmo que CR1 passe no teto folgado, a margem da Acta na ALT2 continua negativa com PR05 no teto de manuseio do deck (RTD-FOLGA-ALT2-PR05-TETO). Reescrever: o teste do dobro não decide a oferta da RC; decide a oferta de armazém sem conferência (RTD-INV-PR05-ALT6-SEM-ALTO, RTD-FOLGA-ARM-PAP-POOL-ALTO). Detalhes em revisoes/red-team-decisao.json."
+    },
+    "INS-011": {
+      "executivo": "Muda o argumento de compra (CR8). A vaga inteira só aparece se sair por causa da RC pelo menos 0,95 posto de conferência (RTD-INV-PR11-CR8-ALT3-COL), quase um posto inteiro. O rateio dá 0,47.",
+      "operador": "Liberar vaga inteira exige realocar uma pessoa da conferência, e essa decisão é da Social.",
+      "concorrente": "Qualquer comprador com o WMS desmonta o slide 14 (FTE liberados).",
+      "veredito": "sobrevive",
+      "nota": "Sobrevive. O limite de CR8 na ALT3 e na ALT4 depende só da conferência. Passa a partir de cerca de um posto inteiro atribuível à RC (RTD-INV-PR11-CR8-ALT3-COL), acima do rateio por pedidos (RTD-PR11-RATEIO-POSTOS). Perguntar à Social, diretamente, se um posto sai. Detalhes em revisoes/red-team-decisao.json."
+    },
+    "INS-012": {
+      "executivo": "É o insight que decide. A ALT4 passa CR1 a partir de 0,58 posto atribuível à RC; o rateio dá 0,47. Na ALT6 recalibrada, o limiar é de 1,17 postos desmobilizados.",
+      "operador": "A pergunta à Social é barata e vem antes de investir no checkout. O relatório do módulo de conferência mede o tempo, mas não diz se o posto sai: os postos podem também embalar (parecer D3, seção 1.5).",
+      "concorrente": "Se a conferência puder sair com bipe na coleta, sem robô ([●]), o maior valor da oferta não é do Kappabot.",
+      "veredito": "ressalva",
+      "nota": "Ressalva. O fato sobrevive, mas a ação está incompleta para a decisão. Levar à Social a pergunta já com o limiar: quantos postos deixam de existir por causa do checkout da RC. Inversão de CR1 da ALT4 em RTD-INV-PR11-CR1-ALT4-ALT3, de CR8 em RTD-INV-PR11-CR8-ALT3-COL, rateio em RTD-PR11-RATEIO-POSTOS. Perguntar também se os postos embalam e se a Social removeria a conferência sem robô, com bipe na coleta ([●]). Sem essa resposta, a regra aponta ALT1. Detalhes em revisoes/red-team-decisao.json."
+    },
+    "INS-015": {
+      "executivo": "Muda o argumento: 'pico sem temporário' sai da oferta da RC, porque o excedente é uma fração de jornada nas duas incertezas.",
+      "operador": "Nada a implantar; é uma restrição de mensagem.",
+      "concorrente": "O pico relevante é o do armazém e o da alta temporada, que os dados não cobrem.",
+      "veredito": "sobrevive",
+      "nota": "Sobrevive. A conclusão (fração de jornada) vale nas duas incertezas e desarma o argumento de pico na RC. O argumento de pico vai para o armazém (INS-048), em pessoas-hora."
+    },
+    "INS-032": {
+      "executivo": "Muda a ALT6: a maior parte da receita vem do checkout (79%, IMP-ALT6-DEP-CHECKOUT). A expansão não escapa do desenvolvimento.",
+      "operador": "Abrir outros depositantes exige adesão de clientes da Social que a Acta não atende. O custo comercial disso não está nos modelos.",
+      "concorrente": "Nos depositantes de pedido leve, o lote manual concorre sem investimento.",
+      "veredito": "sobrevive",
+      "nota": "Sobrevive. Reforço: sem checkout, o pedido-a-pedido do armazém não paga a frota com as tarifas do deck (RTD-MARGEM-ARM-PAP-POOL). A adesão dos outros depositantes segue [●]. Detalhes em revisoes/red-team-decisao.json."
+    },
+    "INS-048": {
+      "executivo": "Não muda a escolha entre alternativas, mas é o argumento legítimo de CR8. Na leitura colaborativa, o robô alivia parte do excedente: 1,20 pessoas-hora por dia, contra 5,12.",
+      "operador": "Sem os custos de hora extra e de temporário (E11, L3), o argumento não vira reais.",
+      "concorrente": "Um fornecedor de RaaS ofereceria robôs só no pico. A Acta deveria ter essa oferta.",
+      "veredito": "sobrevive",
+      "nota": "Sobrevive. Usar em pessoas-hora e deixar claro que, na leitura colaborativa, a frota alivia só parte do excedente (IMP-CR8-PICO-ARM-ALIVIO-COL). Um concorrente ofereceria robôs só no pico; a oferta da Acta deveria prever um pool de pico."
+    },
+    "INS-054": {
+      "executivo": "A frota é a segunda premissa que inverte. Com um robô (banda), a ALT4 com PR11 rateado passa: folga de R$ 849. Com reserva, CR2 da ALT4 cai para 76% nas tarifas do deck, e a folga com rateio fica em R$ -1.151.",
+      "operador": "Uma frota sem reserva não sustenta a conferência desmobilizada: uma parada devolve a conferência à bancada. PR08 é [●].",
+      "concorrente": "Nada de novo.",
+      "veredito": "ressalva",
+      "nota": "Ressalva. Fixar a franquia recalibrada (frota × PR13) com a frota que a engenharia aceita operar, com reserva. A reserva faz o piso passar da receita nas tarifas do deck (RTD-CR2-ALT4-ALT3-COM-RESERVA, RTD-KMIN-ALT4-ALT3-COM-RESERVA) e, com PR11 rateado, fecha a janela de preço (RTD-FOLGA-ALT4-ALT3-RAT-COM-RESERVA). A frota de um robô pela banda abre a janela com rateio, mas fica sem reserva. Decidir a reserva antes do preço. Detalhes em revisoes/red-team-decisao.json."
+    },
+    "INS-055": {
+      "executivo": "Robusto: a frota do deck sobra e vira custo da Acta, de R$ 2.000 a R$ 3.000 por mês.",
+      "operador": "A promessa 'frota acompanha o pico sem custo fixo' exige robôs extras disponíveis. Quem paga essa frota de pico é [●].",
+      "concorrente": "Nada de novo.",
+      "veredito": "sobrevive",
+      "nota": "Sobrevive. Ao reduzir a frota, manter a reserva que a conferência desmobilizada exige (INS-054). A promessa de robôs extras no pico sem custo fixo pressupõe robôs parados disponíveis, que são custo da Acta."
+    },
+    "INS-056": {
+      "executivo": "CR8 no dia p90 da RC só passa na leitura autônoma. O Kappabot é colaborativo, então a leitura que vale para a oferta é a colaborativa, e nela CR8 falha (IMP-CR8-P90-RC-PCT-COL).",
+      "operador": "Nada a implantar.",
+      "concorrente": "Um concorrente usaria a leitura autônoma contra a Acta se ela aparecesse como resultado.",
+      "veredito": "ressalva",
+      "nota": "Ressalva. O modelo principal do insight é o da leitura autônoma (IMP-CR8-P90-RC-PCT-AUT), que é limite superior e não descreve um robô colaborativo. Para a decisão, citar primeiro a leitura colaborativa (IMP-CR8-P90-RC-PCT-COL), que falha. A conclusão prática (não usar 'pico sem temporário' na RC) já está na ação e sobrevive."
+    },
+    "INS-058": {
+      "executivo": "O piso da ALT6 (R$ 5.000, IMP-ALT4-PMIN-ALT6) fica na ordem da franquia do deck: a franquia faz sentido no armazém, não na RC. Mas a ALT6 só tem janela de preço com pelo menos 1,17 postos desmobilizados. Sem PR11, a folga é R$ -4.697, e R$ -622 no teto folgado.",
+      "operador": "Frota agrupada, checkout em desenvolvimento e vários depositantes ao mesmo tempo não cabem numa primeira fase com a equipe atual.",
+      "concorrente": "Nos depositantes leves, o concorrente é o lote manual.",
+      "veredito": "ressalva",
+      "nota": "Ressalva. A ALT6 não pode ser a primeira fase: a receita depende do checkout (IMP-ALT6-DEP-CHECKOUT), CR5 está inconclusivo e a janela de preço exige conferência desmobilizada (RTD-INV-PR11-ALT6-REC; sem PR11, RTD-FOLGA-ALT6-SEM). Na ALT6 o rateio deixa de ser problema, porque o checkout dos outros entra no escopo, mas a desmobilização continua em aberto. Detalhes em revisoes/red-team-decisao.json."
+    },
+    "INS-059": {
+      "executivo": "Confirma que o pico da RC não é argumento de venda: a poupança do robô no dia p90 é pequena pelas mesmas regras.",
+      "operador": "Nada a implantar.",
+      "concorrente": "Nada de novo.",
+      "veredito": "sobrevive",
+      "nota": "Sobrevive. Nenhuma persona muda a leitura."
+    },
+    "INS-080": {
+      "executivo": "Explica o erro do deck e obriga a refazer franquia e frota antes de apresentar. Para cobrir a franquia, o checkout teria de chegar a 3.236 pedidos por mês.",
+      "operador": "Marcus confirma a base com o autor do deck; não há implantação.",
+      "concorrente": "Um comprador com o WMS refaz a conta em minutos.",
+      "veredito": "sobrevive",
+      "nota": "Sobrevive. Corrigir o volume antes de apresentar é condição, não detalhe."
+    },
+    "INS-083": {
+      "executivo": "Decisivo: sem conferência, nenhuma cobrança cabe em CR1. A cobrança máxima é R$ -46 por mês no teto conservador e R$ 438 no folgado (RTD-PMAX-ALT3-SEM).",
+      "operador": "Reconciliar o método do slide 14 com a Social.",
+      "concorrente": "Nada de novo.",
+      "veredito": "sobrevive",
+      "nota": "Sobrevive. Reforço: sem PR11, o teto de cobrança compatível com CR1 no escopo da ALT3 é nulo ou negativo no teto conservador e fica abaixo do piso no teto folgado (RTD-PMAX-ALT3-SEM e RTD-PMAX-ALT3-SEM-ALTO). Isso vale para qualquer estrutura de preço, inclusive pessoa-hora evitada. Detalhes em revisoes/red-team-decisao.json."
+    },
+    "INS-085": {
+      "executivo": "A frota do deck não se paga sem a franquia (R$ -546 por robô). A saída é frota menor.",
+      "operador": "Nada a implantar.",
+      "concorrente": "Nada de novo.",
+      "veredito": "sobrevive",
+      "nota": "Sobrevive. A frota do deck não se paga sem a franquia; a saída é frota menor, como diz a ação."
+    },
+    "INS-086": {
+      "executivo": "A margem com piso (R$ 1.950 por robô) é a Social pagando robôs ociosos, não viabilidade.",
+      "operador": "Nada a implantar.",
+      "concorrente": "Um comprador perceberia a franquia acima do volume como custo fixo sem contrapartida.",
+      "veredito": "ressalva",
+      "nota": "Ressalva. Não usar o hardware máximo com piso (IMP-CR6-ALT3-HW-COM-PISO, IMP-CR6-ALT3-DECK5-HW-COM-PISO) como referência para comparar com PR20, porque ele depende de uma franquia que CR2 reprova. A referência para Renato Correa é o hardware sem piso (IMP-CR6-ALT3-HW-SEM-PISO) ou, com PR11 confirmado, o da janela de preço (RTD-HW-ALT4-INT-NO-TETO). Detalhes em revisoes/red-team-decisao.json."
+    },
+    "INS-087": {
+      "executivo": "A margem é pequena (R$ 134 por robô) e inverte com PR13 acima de R$ 1.134 ou com um robô de reserva. O hardware pagável (R$ 3.219) é pequeno: nas tarifas do deck, a RC sozinha não paga robô.",
+      "operador": "Nada a implantar.",
+      "concorrente": "Nada de novo.",
+      "veredito": "ressalva",
+      "nota": "Ressalva. A margem sem piso fica negativa com custo de servir pouco acima de PR13 ou com um robô de reserva (RTD-INV-PR13-ALT4-TARIFA-DECK, RTD-CR2-ALT4-ALT3-COM-RESERVA). Com PR11 integral, a resposta é subir as tarifas dentro da janela (IMP-ALT4-KMAX-ALT3-INT), não aceitar a margem das tarifas do deck. Mantém-se a ressalva do red team analítico sobre a frota. Detalhes em revisoes/red-team-decisao.json."
+    },
+    "INS-088": {
+      "executivo": "A direção é certa (a conta da Acta fecha em escala), mas é condicional. Nas tarifas do deck, CR1 falha mesmo com PR11 integral (11%); as tarifas teriam de cair para 0,83 vezes (IMP-ALT4-KMAX-ALT6-INT). Sem PR11, nenhuma tarifa fecha (RTD-FOLGA-ALT6-SEM). Pelo desempate (CR8 antes de CR1), com PR11 integral a ALT6 supera a ALT4 (2,42 contra 2,05 FTE), mas a regra a barra por CR5.",
+      "operador": "Mesma objeção de sequência de INS-058.",
+      "concorrente": "Os outros depositantes já rendem mais no manual (INS-070), e o lote manual concorre.",
+      "veredito": "ressalva",
+      "nota": "Ressalva. Levar a ALT6 como fase seguinte, não como alternativa pronta: ela exige checkout, adesão dos depositantes (CR5) e conferência desmobilizada (RTD-INV-PR11-ALT6-REC). A economia usa o armazém inteiro como teto e a razão de produtividade da RC, o que superestima o ganho nos depositantes que já rendem mais (INS-070). Detalhes em revisoes/red-team-decisao.json."
+    },
+    "INS-089": {
+      "executivo": "Decisivo: a economia da Social é quase toda conferência. Com PR11 integral, CR1 da ALT3 do deck é 38%; com rateio, -84%; sem PR11, -374%.",
+      "operador": "Marcus confirma com a Social o que o slide 15 incluiu.",
+      "concorrente": "Ver a recomendação: a conferência pode ser atacada sem robô ([●]).",
+      "veredito": "sobrevive",
+      "nota": "Sobrevive e é a base da premissa crítica. Os pontos de inversão de PR11 (RTD-INV-PR11-CR1-ALT4-ALT3, RTD-INV-PR11-CR1-ALT3-DECK, RTD-INV-PR11-CR8-ALT3-COL) estão em revisoes/red-team-decisao.json e devem entrar no memorando ao lado de INS-089."
+    }
+  },
+  "vereditos": {
+    "INS-001": "sobrevive",
+    "INS-002": "sobrevive",
+    "INS-006": "ressalva",
+    "INS-011": "sobrevive",
+    "INS-012": "ressalva",
+    "INS-015": "sobrevive",
+    "INS-032": "sobrevive",
+    "INS-048": "sobrevive",
+    "INS-054": "ressalva",
+    "INS-055": "sobrevive",
+    "INS-056": "ressalva",
+    "INS-058": "ressalva",
+    "INS-059": "sobrevive",
+    "INS-080": "sobrevive",
+    "INS-083": "sobrevive",
+    "INS-085": "sobrevive",
+    "INS-086": "ressalva",
+    "INS-087": "ressalva",
+    "INS-088": "ressalva",
+    "INS-089": "sobrevive"
+  },
+  "contagem": {
+    "sobrevive": 12,
+    "ressalva": 8,
+    "cai": 0
+  },
+  "perguntas": [
+    {
+      "id": "RTD-Q1",
+      "para": "Social (via Marcus Lima)",
+      "pergunta": "Se o checkout da Royal Canin for conferido no robô, quantos postos de conferência deixam de existir? Os postos também embalam? A Royal Canin aceita conferência na coleta com auditoria amostral?",
+      "resposta_proposta": "Até a resposta, usar o rateio (0,47 posto), que fica abaixo do limiar da ALT4 (0,58). A regra então aponta ALT1. Se a Social disser que um posto inteiro sai, a ALT4 passa CR1 e CR8."
+    },
+    {
+      "id": "RTD-Q2",
+      "para": "Social (via Marcus Lima)",
+      "pergunta": "A Social conseguiria conferir na coleta, com coletor e sem robô, no Senior que usa hoje?",
+      "resposta_proposta": "[●]. Tratar como risco competitivo: o preço da ALT4 fica limitado ao custo dessa alternativa, e a oferta precisa somar o transporte ao packing e o pico."
+    },
+    {
+      "id": "RTD-Q3",
+      "para": "Vinicius Bastos, CTO",
+      "pergunta": "Qual o prazo e o esforço do checkout conferido? A conferência desmobilizada exige robô de reserva?",
+      "resposta_proposta": "Sim, exige reserva. Sem prazo, a ALT4 não entra. Não desenvolver antes de RTD-Q1."
+    },
+    {
+      "id": "RTD-Q4",
+      "para": "Marcus Lima e Renato Correa",
+      "pergunta": "O custo de servir de cerca de R$ 1.000 por robô por mês (PR13) inclui suporte em campo e reserva? Qual a faixa?",
+      "resposta_proposta": "Manter como provável. Com PR11 rateado, a decisão inverte abaixo de R$ 925 por robô. Com as tarifas do deck, a margem da ALT4 fica negativa acima de R$ 1.134."
+    },
+    {
+      "id": "RTD-Q5",
+      "para": "Social (via Marcus Lima)",
+      "pergunta": "O custo por operador (PR10) inclui encargos e benefícios?",
+      "resposta_proposta": "Sim, como custo total. Com PR11 rateado, a ALT4 ganha janela a partir de R$ 64.888 por ano."
+    },
+    {
+      "id": "RTD-Q6",
+      "para": "Marcus Lima",
+      "pergunta": "A Acta aceita propor um piloto pago, a custo de servir e com crédito no contrato, no lugar do piloto gratuito?",
+      "resposta_proposta": "Sim, mas só no pedido-a-pedido de dois ou mais endereços da RC e de um ou dois depositantes compatíveis, com critério de sucesso fixado antes pelo planejador."
+    }
+  ],
+  "pendencias": [
+    "Analista de impacto: registrar no nó real os modelos de inversão e de alternativas deste relatório (fórmulas em cenarios_motor). Assim, os números passam a ser do motor da versão e podem ir ao memorando. Prioridade: RTD-INV-PR11-CR1-ALT4-ALT3, RTD-INV-PR11-CR8-ALT3-COL, RTD-PR11-RATEIO-POSTOS, RTD-INV-PR13-ALT4-RAT, RTD-INV-PR10-ALT4-RAT, RTD-CR2-ALT4-ALT3-COM-RESERVA, RTD-FOLGA-ALT6-SEM e RTD-FOLGA-ARM-PAP-POOL(-ALTO).",
+    "Analista de impacto: em comparacao_limites, viabilidade_conjunta 'ALT4_PR11_rateado: falha' esconde que a folga é inconclusiva (IMP-ALT4-FOLGA-ALT3-RAT). Rotular como 'falha no provável, inconclusiva na faixa'.",
+    "Analista de impacto: ligar INS-056 primeiro ao modelo colaborativo (IMP-CR8-P90-RC-PCT-COL).",
+    "Analista de impacto: reescrever a ação de INS-006. O teste do dobro não decide a RC.",
+    "Visualização e narrativa: no memorando, separar 'PR11 fora' (ALT1 robusta) de 'PR11 rateado' (fio da navalha). Mostrar a conferência como o que se vende. Não usar o hardware máximo com piso como referência de PR20.",
+    "Orquestrador: levar RTD-Q1 a RTD-Q6 a saidas/perguntas_terceiros.md e saidas/perguntas_marcus.md. RTD-Q1 substitui E15 com o limiar.",
+    "Planejador: desenhar o piloto pago (pedido-a-pedido de dois ou mais endereços, RC e um ou dois depositantes compatíveis, sorteio, M14 nos tetos de 300 s e 900 s, critério fixado antes)."
+  ],
+  "cenarios_motor": {
+    "RTD-INV-PR11-CR1-ALT4-ALT3": {
+      "descricao": "Postos de conferência atribuíveis à RC a partir dos quais a ALT4 (escopo da ALT3, franquia = custo de servir da frota necessária, tarifas do deck) passa CR1 = PR01.",
+      "formula": "((fte_chk + fte_pap*(m14/linhas_hora_operador_zona))*(custo_operador_ano/12) + max((vol_chk_rc*tarifa_checkout + vol_lin_rc*tarifa_pap), frota_alt3*custo_servir_robo_mes))/((1 - garantia_economia)*(custo_operador_ano/12)) - (fte_chk + fte_pap)",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_lin_rc": "ANA-002.vol_mes_linhas_tarif_pap_rc_sup_normal",
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "tarifa_checkout": 1.7,
+        "tarifa_pap": 0.25,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "postos",
+      "provavel": 0.5785413723971554,
+      "p10": 0.5374585964873692,
+      "p50": 0.580480893250864,
+      "p90": 0.6273325313515337
+    },
+    "RTD-INV-PR11-CR1-ALT4-ALT3-FRACAO": {
+      "descricao": "A mesma inversão como fração dos postos de PR11.",
+      "formula": "(((fte_chk + fte_pap*(m14/linhas_hora_operador_zona))*(custo_operador_ano/12) + max((vol_chk_rc*tarifa_checkout + vol_lin_rc*tarifa_pap), frota_alt3*custo_servir_robo_mes))/((1 - garantia_economia)*(custo_operador_ano/12)) - (fte_chk + fte_pap))/postos_conferencia_checkout",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_lin_rc": "ANA-002.vol_mes_linhas_tarif_pap_rc_sup_normal",
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "tarifa_checkout": 1.7,
+        "tarifa_pap": 0.25,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000,
+        "postos_conferencia_checkout": 2
+      },
+      "unidade": "%",
+      "provavel": 0.2892706861985777,
+      "p10": 0.26886588571759196,
+      "p50": 0.29003736720726336,
+      "p90": 0.3127698559340922
+    },
+    "RTD-PR11-RATEIO-POSTOS": {
+      "descricao": "Postos atribuíveis à RC pelo rateio de pedidos de checkout (leitura RAT do analista).",
+      "formula": "postos_conferencia_checkout*(vol_chk_rc/(vol_chk_rc + vol_chk_out))",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_chk_out": "ANA-010.volume_mes_pedidos_checkout_outros_normal"
+      },
+      "premissas": {
+        "postos_conferencia_checkout": 2
+      },
+      "unidade": "postos",
+      "provavel": 0.47380952380952385,
+      "p10": 0.43361957748538144,
+      "p50": 0.47883369709388274,
+      "p90": 0.5311878710308401
+    },
+    "RTD-PR11-RATEIO-FRACAO": {
+      "descricao": "Parte da RC no checkout do armazém (fração do rateio).",
+      "formula": "(vol_chk_rc/(vol_chk_rc + vol_chk_out))",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_chk_out": "ANA-010.volume_mes_pedidos_checkout_outros_normal"
+      },
+      "premissas": {},
+      "unidade": "%",
+      "provavel": 0.23690476190476192,
+      "p10": 0.21674376401472345,
+      "p50": 0.23935425293673368,
+      "p90": 0.26498124821491803
+    },
+    "RTD-INV-PR11-CR1-ALT3-DECK": {
+      "descricao": "Postos atribuíveis à RC a partir dos quais a ALT3 do deck (franquia PR02) passa CR1 = PR01.",
+      "formula": "((fte_chk + fte_pap*(m14/linhas_hora_operador_zona))*(custo_operador_ano/12) + max((vol_chk_rc*tarifa_checkout + vol_lin_rc*tarifa_pap), franquia_mensal))/((1 - garantia_economia)*(custo_operador_ano/12)) - (fte_chk + fte_pap)",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_lin_rc": "ANA-002.vol_mes_linhas_tarif_pap_rc_sup_normal",
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "franquia_mensal": 5900,
+        "tarifa_checkout": 1.7,
+        "tarifa_pap": 0.25,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000
+      },
+      "unidade": "postos",
+      "provavel": 1.486472293449787,
+      "p10": 1.4679779031362763,
+      "p50": 1.4851618415432988,
+      "p90": 1.498916726791529
+    },
+    "RTD-INV-PR11-CR8-ALT3-COL": {
+      "descricao": "Postos atribuíveis à RC a partir dos quais a ALT3/ALT4 libera uma vaga inteira (CR8, leitura colaborativa).",
+      "formula": "1 - fte_pap*(1 - (m14/linhas_hora_operador_zona))",
+      "usa_resultados": {
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300"
+      },
+      "premissas": {
+        "linhas_hora_operador_zona": 66
+      },
+      "unidade": "postos",
+      "provavel": 0.9487895402399921,
+      "p10": 0.9217666766702467,
+      "p50": 0.9378628851624373,
+      "p90": 0.9503339928453826
+    },
+    "RTD-INV-PR11-ALT6-REC": {
+      "descricao": "Postos desmobilizados a partir dos quais a ALT6 recalibrada tem janela de preço (teto de CR1 >= custo de servir da frota agrupada).",
+      "formula": "(frota_alt6*custo_servir_robo_mes + fte_arm*(m14/linhas_hora_operador_zona)*(custo_operador_ano/12))/((1 - garantia_economia)*(custo_operador_ano/12)) - fte_arm",
+      "usa_resultados": {
+        "fte_arm": "ANA-003.fte_armazem_t300",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt6": "ANA-009.frota_necessaria_alt6_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "postos",
+      "provavel": 1.1741836810453081,
+      "p10": 1.0012878478728116,
+      "p50": 1.1377019732745244,
+      "p90": 1.2459092476530256
+    },
+    "RTD-INV-PR11-CR8-ALT6-COL": {
+      "descricao": "Postos desmobilizados a partir dos quais a ALT6 libera uma vaga inteira (leitura colaborativa).",
+      "formula": "1 - fte_arm*(1 - (m14/linhas_hora_operador_zona))",
+      "usa_resultados": {
+        "fte_arm": "ANA-003.fte_armazem_t300",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300"
+      },
+      "premissas": {
+        "linhas_hora_operador_zona": 66
+      },
+      "unidade": "postos",
+      "provavel": 0.5768778932471407,
+      "p10": 0.37173461064584584,
+      "p50": 0.4962796399099579,
+      "p90": 0.6014570307346477
+    },
+    "RTD-CR1-ALT4-ALT3-UM-POSTO": {
+      "descricao": "CR1 da ALT4 (escopo da ALT3) com um posto inteiro atribuível à RC.",
+      "formula": "(((fte_chk + fte_pap) + postos_conferencia_rc)*(custo_operador_ano/12) - (fte_chk + fte_pap*(m14/linhas_hora_operador_zona))*(custo_operador_ano/12) - max((vol_chk_rc*tarifa_checkout + vol_lin_rc*tarifa_pap), frota_alt3*custo_servir_robo_mes))/(((fte_chk + fte_pap) + postos_conferencia_rc)*(custo_operador_ano/12))",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_lin_rc": "ANA-002.vol_mes_linhas_tarif_pap_rc_sup_normal",
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "tarifa_checkout": 1.7,
+        "tarifa_pap": 0.25,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000,
+        "postos_conferencia_rc": 1.0
+      },
+      "unidade": "%",
+      "provavel": 0.4589723955940644,
+      "p10": 0.4194187805167189,
+      "p50": 0.44697030266526755,
+      "p90": 0.47449120708177606,
+      "limite": {
+        "ref": "PR01",
+        "valor": 0.2,
+        "sentido": "maior_melhor"
+      },
+      "classe": "passa"
+    },
+    "RTD-INV-PR13-ALT4-RAT": {
+      "descricao": "Custo de servir por robô abaixo do qual a ALT4 (escopo da ALT3) com PR11 rateado ganha janela de preço (folga >= 0).",
+      "formula": "((1 - garantia_economia)*((fte_chk + fte_pap) + postos_conferencia_checkout*(vol_chk_rc/(vol_chk_rc + vol_chk_out)))*(custo_operador_ano/12) - (fte_chk + fte_pap*(m14/linhas_hora_operador_zona))*(custo_operador_ano/12))/frota_alt3",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_chk_out": "ANA-010.volume_mes_pedidos_checkout_outros_normal",
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "postos_conferencia_checkout": 2
+      },
+      "unidade": "R$/robo/mes",
+      "provavel": 924.6744607194737,
+      "p10": 841.0536692143033,
+      "p50": 937.5151081618046,
+      "p90": 1043.609127367421
+    },
+    "RTD-INV-PR13-ALT4-INT": {
+      "descricao": "Custo de servir por robô até o qual a ALT4 com PR11 integral mantém janela de preço.",
+      "formula": "((1 - garantia_economia)*((fte_chk + fte_pap) + postos_conferencia_checkout)*(custo_operador_ano/12) - (fte_chk + fte_pap*(m14/linhas_hora_operador_zona))*(custo_operador_ano/12))/frota_alt3",
+      "usa_resultados": {
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "postos_conferencia_checkout": 2
+      },
+      "unidade": "R$/robo/mes",
+      "provavel": 3977.055413100426,
+      "p10": 3952.111395459093,
+      "p50": 3979.3720426544587,
+      "p90": 4013.8703555210727
+    },
+    "RTD-INV-PR13-ALT4-TARIFA-DECK": {
+      "descricao": "Custo de servir por robô acima do qual, com as tarifas do deck, o piso da ALT4 (frota × PR13) passa da receita por transação (CR2 falha) e a margem sem piso fica negativa.",
+      "formula": "(vol_chk_rc*tarifa_checkout + vol_lin_rc*tarifa_pap)/frota_alt3",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_lin_rc": "ANA-002.vol_mes_linhas_tarif_pap_rc_sup_normal",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "tarifa_checkout": 1.7,
+        "tarifa_pap": 0.25
+      },
+      "unidade": "R$/robo/mes",
+      "provavel": 1134.1381578947369,
+      "p10": 1060.6760762999875,
+      "p50": 1143.2101568702642,
+      "p90": 1231.0596086640383
+    },
+    "RTD-INV-PR10-ALT4-RAT": {
+      "descricao": "Custo anual por operador a partir do qual a ALT4 com PR11 rateado ganha janela de preço.",
+      "formula": "12*frota_alt3*custo_servir_robo_mes/((1 - garantia_economia)*((fte_chk + fte_pap) + postos_conferencia_checkout*(vol_chk_rc/(vol_chk_rc + vol_chk_out))) - (fte_chk + fte_pap*(m14/linhas_hora_operador_zona)))",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_chk_out": "ANA-010.volume_mes_pedidos_checkout_outros_normal",
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "postos_conferencia_checkout": 2,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "R$/ano",
+      "provavel": 64887.70107624147,
+      "p10": 57264.15575870381,
+      "p50": 63908.82245164702,
+      "p90": 71274.81363830969
+    },
+    "RTD-INV-FROTA-CR2-ALT4": {
+      "descricao": "Maior frota cujo piso (frota × PR13) cabe na receita por transação com tarifas do deck (ALT4, escopo da ALT3).",
+      "formula": "(vol_chk_rc*tarifa_checkout + vol_lin_rc*tarifa_pap)/custo_servir_robo_mes",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_lin_rc": "ANA-002.vol_mes_linhas_tarif_pap_rc_sup_normal"
+      },
+      "premissas": {
+        "tarifa_checkout": 1.7,
+        "tarifa_pap": 0.25,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "robos",
+      "provavel": 2.268276315789474,
+      "p10": 2.1237503593791747,
+      "p50": 2.2861075925007253,
+      "p90": 2.4602783080835815
+    },
+    "RTD-CR2-ALT4-ALT3-COM-RESERVA": {
+      "descricao": "Cobertura do piso pela receita por transação com um robô de reserva sobre a frota necessária (tarifas do deck).",
+      "formula": "(vol_chk_rc*tarifa_checkout + vol_lin_rc*tarifa_pap)/((frota_alt3 + 1)*custo_servir_robo_mes)",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_lin_rc": "ANA-002.vol_mes_linhas_tarif_pap_rc_sup_normal",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "tarifa_checkout": 1.7,
+        "tarifa_pap": 0.25,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "%",
+      "provavel": 0.756092105263158,
+      "p10": 0.7058977324534614,
+      "p50": 0.7606901976994196,
+      "p90": 0.8206927175102617,
+      "limite": {
+        "ref": "PR02 recalibrada",
+        "valor": 1.0,
+        "sentido": "maior_melhor"
+      },
+      "classe": "falha"
+    },
+    "RTD-FOLGA-ALT4-ALT3-INT-COM-RESERVA": {
+      "descricao": "Folga de preço da ALT4 com PR11 integral e um robô de reserva.",
+      "formula": "((1 - garantia_economia)*((fte_chk + fte_pap) + postos_conferencia_checkout)*(custo_operador_ano/12) - (fte_chk + fte_pap*(m14/linhas_hora_operador_zona))*(custo_operador_ano/12)) - (frota_alt3 + 1)*custo_servir_robo_mes",
+      "usa_resultados": {
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "postos_conferencia_checkout": 2,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "R$/mes",
+      "provavel": 4954.110826200852,
+      "p10": 4904.674107684646,
+      "p50": 4959.180383282535,
+      "p90": 5026.731269560612,
+      "limite": {
+        "ref": "zero",
+        "valor": 0.0,
+        "sentido": "maior_melhor"
+      },
+      "classe": "passa"
+    },
+    "RTD-FOLGA-ALT4-ALT3-RAT-FROTA-BANDA": {
+      "descricao": "Folga de preço da ALT4 com PR11 rateado e a frota pela banda (um robô, sem reserva).",
+      "formula": "((1 - garantia_economia)*((fte_chk + fte_pap) + postos_conferencia_checkout*(vol_chk_rc/(vol_chk_rc + vol_chk_out)))*(custo_operador_ano/12) - (fte_chk + fte_pap*(m14/linhas_hora_operador_zona))*(custo_operador_ano/12)) - frota_alt3_banda*custo_servir_robo_mes",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_chk_out": "ANA-010.volume_mes_pedidos_checkout_outros_normal",
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt3_banda": "ANA-009.frota_necessaria_alt3_banda_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "postos_conferencia_checkout": 2,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "R$/mes",
+      "provavel": 849.3489214389474,
+      "p10": 683.4340334059162,
+      "p50": 875.4172665796217,
+      "p90": 1086.2424194313217,
+      "limite": {
+        "ref": "zero",
+        "valor": 0.0,
+        "sentido": "maior_melhor"
+      },
+      "classe": "passa"
+    },
+    "RTD-PMAX-ALT3-SEM": {
+      "descricao": "Maior cobrança mensal compatível com CR1 = PR01 sem PR11, escopo da ALT3, teto conservador (vale para tarifa, franquia, pessoa-hora ou divisão de ganho).",
+      "formula": "((1 - garantia_economia)*(fte_chk + fte_pap)*(custo_operador_ano/12) - (fte_chk + fte_pap*(m14/linhas_hora_operador_zona))*(custo_operador_ano/12))",
+      "usa_resultados": {
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000
+      },
+      "unidade": "R$/mes",
+      "provavel": -45.88917379914801,
+      "p10": -96.2234506703546,
+      "p50": -40.8094852988371,
+      "p90": 26.425712673118333
+    },
+    "RTD-PMAX-ALT3-SEM-ALTO": {
+      "descricao": "Idem no teto de intervalo mais folgado.",
+      "formula": "((1 - garantia_economia)*(fte_chk_alto + fte_pap_alto)*(custo_operador_ano/12) - (fte_chk_alto + fte_pap_alto*(m14_alto/linhas_hora_operador_zona))*(custo_operador_ano/12))",
+      "usa_resultados": {
+        "fte_pap_alto": "ANA-003.fte_pap_rc_t1800_normal",
+        "fte_chk_alto": "ANA-003.fte_checkout_rc_t1800_normal",
+        "m14_alto": "ANA-004.linhas_hora_pap_rc_t1800"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000
+      },
+      "unidade": "R$/mes",
+      "provavel": 438.3826325831076,
+      "p10": 412.4116303702639,
+      "p50": 491.6268173566309,
+      "p90": 588.7402760815248
+    },
+    "RTD-FOLGA-ALT6-SEM": {
+      "descricao": "Folga de preço da ALT6 sem PR11 (teto de CR1 menos custo de servir da frota agrupada), teto conservador; armazém inteiro como limite superior.",
+      "formula": "((1 - garantia_economia)*fte_arm*(custo_operador_ano/12) - fte_arm*(m14/linhas_hora_operador_zona)*(custo_operador_ano/12)) - frota_alt6*custo_servir_robo_mes",
+      "usa_resultados": {
+        "fte_arm": "ANA-003.fte_armazem_t300",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt6": "ANA-009.frota_necessaria_alt6_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "R$/mes",
+      "provavel": -4696.734724181233,
+      "p10": -4980.612537399774,
+      "p50": -4544.630097896898,
+      "p90": -4001.895712672512,
+      "limite": {
+        "ref": "zero",
+        "valor": 0.0,
+        "sentido": "maior_melhor"
+      },
+      "classe": "falha"
+    },
+    "RTD-FOLGA-ALT6-SEM-ALTO": {
+      "descricao": "Idem no teto mais folgado.",
+      "formula": "((1 - garantia_economia)*fte_arm_alto*(custo_operador_ano/12) - fte_arm_alto*(m14_alto/linhas_hora_operador_zona)*(custo_operador_ano/12)) - frota_alt6*custo_servir_robo_mes",
+      "usa_resultados": {
+        "fte_arm_alto": "ANA-003.fte_armazem_t1800",
+        "m14_alto": "ANA-004.linhas_hora_pap_rc_t1800",
+        "frota_alt6": "ANA-009.frota_necessaria_alt6_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "R$/mes",
+      "provavel": -621.6006219814399,
+      "p10": -730.2425331567223,
+      "p50": -52.29109604919904,
+      "p90": 865.3914146293736,
+      "limite": {
+        "ref": "zero",
+        "valor": 0.0,
+        "sentido": "maior_melhor"
+      },
+      "classe": "inconclusivo"
+    },
+    "RTD-INV-PR05-ALT6-SEM": {
+      "descricao": "PR05 (linhas/h com robô) a partir da qual a ALT6 sem PR11 ganha janela de preço, teto conservador; negativo = impossível.",
+      "formula": "m14/((1 - garantia_economia) - frota_alt6*custo_servir_robo_mes/(fte_arm*(custo_operador_ano/12)))",
+      "usa_resultados": {
+        "fte_arm": "ANA-003.fte_armazem_t300",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt6": "ANA-009.frota_necessaria_alt6_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "linhas/h",
+      "provavel": 203.80879602704275,
+      "p10": 129.76400864630367,
+      "p50": 161.51537915695357,
+      "p90": 202.75495764223803
+    },
+    "RTD-INV-PR05-ALT6-SEM-ALTO": {
+      "descricao": "Idem no teto mais folgado.",
+      "formula": "m14_alto/((1 - garantia_economia) - frota_alt6*custo_servir_robo_mes/(fte_arm_alto*(custo_operador_ano/12)))",
+      "usa_resultados": {
+        "fte_arm_alto": "ANA-003.fte_armazem_t1800",
+        "m14_alto": "ANA-004.linhas_hora_pap_rc_t1800",
+        "frota_alt6": "ANA-009.frota_necessaria_alt6_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "linhas/h",
+      "provavel": 73.21648239769999,
+      "p10": 59.35198930409701,
+      "p50": 66.55941112672,
+      "p90": 74.2437268133649
+    },
+    "RTD-FOLGA-ALT2-PR05-TETO": {
+      "descricao": "Folga de preço da ALT2 (só pedido-a-pedido da RC) mesmo com PR05 no teto de manuseio do deck, teto conservador.",
+      "formula": "(1 - garantia_economia)*fte_pap*(custo_operador_ano/12) - fte_pap*(m14/teto_manuseio)*(custo_operador_ano/12) - frota_alt2*custo_servir_robo_mes",
+      "usa_resultados": {
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt2": "ANA-009.frota_necessaria_alt2_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000,
+        "teto_manuseio": 78.0
+      },
+      "unidade": "R$/mes",
+      "provavel": -1833.9591568898468,
+      "p10": -1844.9935852976953,
+      "p50": -1794.485678744798,
+      "p90": -1730.015349543629,
+      "limite": {
+        "ref": "zero",
+        "valor": 0.0,
+        "sentido": "maior_melhor"
+      },
+      "classe": "falha"
+    },
+    "RTD-FOLGA-ALT2-PR05-TETO-ALTO": {
+      "descricao": "Idem no teto de intervalo mais folgado.",
+      "formula": "(1 - garantia_economia)*fte_pap_alto*(custo_operador_ano/12) - fte_pap_alto*(m14_alto/teto_manuseio)*(custo_operador_ano/12) - frota_alt2*custo_servir_robo_mes",
+      "usa_resultados": {
+        "fte_pap_alto": "ANA-003.fte_pap_rc_t1800_normal",
+        "m14_alto": "ANA-004.linhas_hora_pap_rc_t1800",
+        "frota_alt2": "ANA-009.frota_necessaria_alt2_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000,
+        "teto_manuseio": 78.0
+      },
+      "unidade": "R$/mes",
+      "provavel": -1289.4946190886,
+      "p10": -1288.5659761221953,
+      "p50": -1209.981462350908,
+      "p90": -1105.8854289838744,
+      "limite": {
+        "ref": "zero",
+        "valor": 0.0,
+        "sentido": "maior_melhor"
+      },
+      "classe": "falha"
+    },
+    "RTD-FOLGA-ARM-PAP-POOL": {
+      "descricao": "Oferta só pedido-a-pedido do armazém com frota agrupada (sem checkout, sem PR11): folga de preço com a frota mínima favorável (maior entre a da RC e a dos outros).",
+      "formula": "((1 - garantia_economia)*fte_arm*(custo_operador_ano/12) - fte_arm*(m14/linhas_hora_operador_zona)*(custo_operador_ano/12)) - max(frota_alt2, frota_so_pap_outros)*custo_servir_robo_mes",
+      "usa_resultados": {
+        "fte_arm": "ANA-003.fte_armazem_t300",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt2": "ANA-009.frota_necessaria_alt2_mesmo_dia_pos_colmeia",
+        "frota_so_pap_outros": "ANA-010.robos_adicionais_alt6_so_pap"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "R$/mes",
+      "provavel": -3696.734724181233,
+      "p10": -3977.7028211213146,
+      "p50": -3541.557641822899,
+      "p90": -3002.8823739880336,
+      "limite": {
+        "ref": "zero",
+        "valor": 0.0,
+        "sentido": "maior_melhor"
+      },
+      "classe": "falha"
+    },
+    "RTD-FOLGA-ARM-PAP-POOL-ALTO": {
+      "descricao": "Idem no teto mais folgado.",
+      "formula": "((1 - garantia_economia)*fte_arm_alto*(custo_operador_ano/12) - fte_arm_alto*(m14_alto/linhas_hora_operador_zona)*(custo_operador_ano/12)) - max(frota_alt2, frota_so_pap_outros)*custo_servir_robo_mes",
+      "usa_resultados": {
+        "fte_arm_alto": "ANA-003.fte_armazem_t1800",
+        "m14_alto": "ANA-004.linhas_hora_pap_rc_t1800",
+        "frota_alt2": "ANA-009.frota_necessaria_alt2_mesmo_dia_pos_colmeia",
+        "frota_so_pap_outros": "ANA-010.robos_adicionais_alt6_so_pap"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "R$/mes",
+      "provavel": 378.3993780185601,
+      "p10": 262.416471036247,
+      "p50": 927.1784914683258,
+      "p90": 1825.555167555149,
+      "limite": {
+        "ref": "zero",
+        "valor": 0.0,
+        "sentido": "maior_melhor"
+      },
+      "classe": "passa"
+    },
+    "RTD-MARGEM-ARM-PAP-POOL": {
+      "descricao": "Margem por robô da oferta só pedido-a-pedido do armazém com tarifa do deck e frota mínima favorável.",
+      "formula": "(vol_lin_rc + vol_lin_out)*tarifa_pap/max(frota_alt2, frota_so_pap_outros) - custo_servir_robo_mes",
+      "usa_resultados": {
+        "vol_lin_rc": "ANA-002.vol_mes_linhas_tarif_pap_rc_sup_normal",
+        "vol_lin_out": "ANA-010.volume_mes_linhas_tarifaveis_compat_outros_normal",
+        "frota_alt2": "ANA-009.frota_necessaria_alt2_mesmo_dia_pos_colmeia",
+        "frota_so_pap_outros": "ANA-010.robos_adicionais_alt6_so_pap"
+      },
+      "premissas": {
+        "tarifa_pap": 0.25,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "R$/robo/mes",
+      "provavel": -463.67105263157896,
+      "p10": -508.1072125295175,
+      "p50": -461.81814274515494,
+      "p90": -413.7540002958123,
+      "limite": {
+        "ref": "zero",
+        "valor": 0.0,
+        "sentido": "maior_melhor"
+      },
+      "classe": "falha"
+    },
+    "RTD-PILOTO-ECONOMIA-SOCIAL-RC-PAP": {
+      "descricao": "Economia mensal de separação da Social num piloto só no pedido-a-pedido da RC (leitura colaborativa, teto conservador).",
+      "formula": "fte_pap*(1 - (m14/linhas_hora_operador_zona))*(custo_operador_ano/12)",
+      "usa_resultados": {
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300"
+      },
+      "premissas": {
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000
+      },
+      "unidade": "R$/mes",
+      "provavel": 256.05229880003986,
+      "p10": 249.19041492203112,
+      "p50": 311.7737391327745,
+      "p90": 395.18301655266833
+    },
+    "RTD-PILOTO-ECONOMIA-SOBRE-CUSTO-ROBO": {
+      "descricao": "Economia mensal de separação no pedido-a-pedido da RC dividida pelo custo de servir de um robô.",
+      "formula": "fte_pap*(1 - (m14/linhas_hora_operador_zona))*(custo_operador_ano/12)/custo_servir_robo_mes",
+      "usa_resultados": {
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300"
+      },
+      "premissas": {
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "x",
+      "provavel": 0.2560522988000399,
+      "p10": 0.25027705216216567,
+      "p50": 0.31290630303628897,
+      "p90": 0.3937160732741907
+    },
+    "RTD-CR1-ALT6-REC-PISO-INT": {
+      "descricao": "CR1 da ALT6 recalibrada cobrando só o piso (custo de servir da frota agrupada), PR11 integral.",
+      "formula": "((fte_arm + postos_conferencia_checkout)*(custo_operador_ano/12) - fte_arm*(m14/linhas_hora_operador_zona)*(custo_operador_ano/12) - frota_alt6*custo_servir_robo_mes)/((fte_arm + postos_conferencia_checkout)*(custo_operador_ano/12))",
+      "usa_resultados": {
+        "fte_arm": "ANA-003.fte_armazem_t300",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt6": "ANA-009.frota_necessaria_alt6_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "postos_conferencia_checkout": 2,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "%",
+      "provavel": 0.3732930808894729,
+      "p10": 0.34737653670921065,
+      "p50": 0.37048856220805115,
+      "p90": 0.3972120530235942,
+      "limite": {
+        "ref": "PR01",
+        "valor": 0.2,
+        "sentido": "maior_melhor"
+      },
+      "classe": "passa"
+    },
+    "RTD-FOLGA-ALT4-ALT3-RAT-COM-RESERVA": {
+      "descricao": "Folga de preço da ALT4 com PR11 rateado e um robô de reserva sobre a frota necessária.",
+      "formula": "((1 - garantia_economia)*((fte_chk + fte_pap) + postos_conferencia_checkout*(vol_chk_rc/(vol_chk_rc + vol_chk_out)))*(custo_operador_ano/12) - (fte_chk + fte_pap*(m14/linhas_hora_operador_zona))*(custo_operador_ano/12)) - (frota_alt3 + 1)*custo_servir_robo_mes",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_chk_out": "ANA-010.volume_mes_pedidos_checkout_outros_normal",
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "postos_conferencia_checkout": 2,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "R$/mes",
+      "provavel": -1150.6510785610526,
+      "p10": -1321.820778575148,
+      "p50": -1121.769656647878,
+      "p90": -913.9033342161354,
+      "limite": {
+        "ref": "zero",
+        "valor": 0.0,
+        "sentido": "maior_melhor"
+      },
+      "classe": "falha"
+    },
+    "RTD-KMIN-ALT4-ALT3-COM-RESERVA": {
+      "descricao": "Multiplicador mínimo sobre as tarifas do deck para a receita por transação cobrir o piso com um robô de reserva.",
+      "formula": "(frota_alt3 + 1)*custo_servir_robo_mes/(vol_chk_rc*tarifa_checkout + vol_lin_rc*tarifa_pap)",
+      "usa_resultados": {
+        "vol_chk_rc": "ANA-002.vol_mes_pedidos_checkout_rc_normal",
+        "vol_lin_rc": "ANA-002.vol_mes_linhas_tarif_pap_rc_sup_normal",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "tarifa_checkout": 1.7,
+        "tarifa_pap": 0.25,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "x",
+      "provavel": 1.3225901884691018,
+      "p10": 1.219383824096389,
+      "p50": 1.3128741093682588,
+      "p90": 1.4133707912861104
+    },
+    "RTD-KMIN-ARM-PAP-POOL": {
+      "descricao": "Multiplicador mínimo sobre PR04 para a oferta só pedido-a-pedido do armazém cobrir o custo de servir da frota mínima favorável.",
+      "formula": "max(frota_alt2, frota_so_pap_outros)*custo_servir_robo_mes/((vol_lin_rc + vol_lin_out)*tarifa_pap)",
+      "usa_resultados": {
+        "vol_lin_rc": "ANA-002.vol_mes_linhas_tarif_pap_rc_sup_normal",
+        "vol_lin_out": "ANA-010.volume_mes_linhas_tarifaveis_compat_outros_normal",
+        "frota_alt2": "ANA-009.frota_necessaria_alt2_mesmo_dia_pos_colmeia",
+        "frota_so_pap_outros": "ANA-010.robos_adicionais_alt6_so_pap"
+      },
+      "premissas": {
+        "tarifa_pap": 0.25,
+        "custo_servir_robo_mes": 1000
+      },
+      "unidade": "x",
+      "provavel": 1.8645273668457594,
+      "p10": 1.7016468753591052,
+      "p50": 1.85804474676801,
+      "p90": 2.0317519623953495
+    },
+    "RTD-KMAX-ARM-PAP-POOL-ALTO": {
+      "descricao": "Multiplicador máximo sobre PR04 compatível com CR1 = PR01 na oferta só pedido-a-pedido do armazém, teto mais folgado (limite superior).",
+      "formula": "((1 - garantia_economia)*fte_arm_alto*(custo_operador_ano/12) - fte_arm_alto*(m14_alto/linhas_hora_operador_zona)*(custo_operador_ano/12))/((vol_lin_rc + vol_lin_out)*tarifa_pap)",
+      "usa_resultados": {
+        "vol_lin_rc": "ANA-002.vol_mes_linhas_tarif_pap_rc_sup_normal",
+        "vol_lin_out": "ANA-010.volume_mes_linhas_tarifaveis_compat_outros_normal",
+        "fte_arm_alto": "ANA-003.fte_armazem_t1800",
+        "m14_alto": "ANA-004.linhas_hora_pap_rc_t1800"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "tarifa_pap": 0.25
+      },
+      "unidade": "x",
+      "provavel": 2.040911365824014,
+      "p10": 1.9373081881369008,
+      "p50": 2.3027506101774406,
+      "p90": 2.7751494212929284
+    },
+    "RTD-KMAX-ARM-PAP-POOL": {
+      "descricao": "Idem no teto conservador.",
+      "formula": "((1 - garantia_economia)*fte_arm*(custo_operador_ano/12) - fte_arm*(m14/linhas_hora_operador_zona)*(custo_operador_ano/12))/((vol_lin_rc + vol_lin_out)*tarifa_pap)",
+      "usa_resultados": {
+        "vol_lin_rc": "ANA-002.vol_mes_linhas_tarif_pap_rc_sup_normal",
+        "vol_lin_out": "ANA-010.volume_mes_linhas_tarifaveis_compat_outros_normal",
+        "fte_arm": "ANA-003.fte_armazem_t300",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "tarifa_pap": 0.25
+      },
+      "unidade": "x",
+      "provavel": 0.1413616015445296,
+      "p10": 0.013766755007545534,
+      "p50": 0.2125048214366893,
+      "p90": 0.4711089636713087
+    },
+    "RTD-HW-ALT4-INT-NO-TETO": {
+      "descricao": "Hardware máximo pagável por robô no prazo PR14 se a ALT4 (PR11 integral) cobrar o teto compatível com CR1 = PR01, frota necessária.",
+      "formula": "max(0, ((1 - garantia_economia)*((fte_chk + fte_pap) + postos_conferencia_checkout)*(custo_operador_ano/12) - (fte_chk + fte_pap*(m14/linhas_hora_operador_zona))*(custo_operador_ano/12))/frota_alt3 - custo_servir_robo_mes)*prazo_contrato",
+      "usa_resultados": {
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "postos_conferencia_checkout": 2,
+        "custo_servir_robo_mes": 1000,
+        "prazo_contrato": 24
+      },
+      "unidade": "R$/robo",
+      "provavel": 71449.32991441022,
+      "p10": 70831.8051682569,
+      "p50": 71506.72776606682,
+      "p90": 72332.79251032548
+    },
+    "RTD-HW-ALT4-INT-NO-TETO-COM-RESERVA": {
+      "descricao": "Idem com um robô de reserva.",
+      "formula": "max(0, ((1 - garantia_economia)*((fte_chk + fte_pap) + postos_conferencia_checkout)*(custo_operador_ano/12) - (fte_chk + fte_pap*(m14/linhas_hora_operador_zona))*(custo_operador_ano/12))/(frota_alt3 + 1) - custo_servir_robo_mes)*prazo_contrato",
+      "usa_resultados": {
+        "fte_pap": "ANA-003.fte_pap_rc_t300_normal",
+        "fte_chk": "ANA-003.fte_checkout_rc_t300_normal",
+        "m14": "ANA-004.linhas_hora_pap_rc_t300",
+        "frota_alt3": "ANA-009.frota_necessaria_alt3_mesmo_dia_pos_colmeia"
+      },
+      "premissas": {
+        "garantia_economia": 0.2,
+        "linhas_hora_operador_zona": 66,
+        "custo_operador_ano": 60000,
+        "postos_conferencia_checkout": 2,
+        "custo_servir_robo_mes": 1000,
+        "prazo_contrato": 24
+      },
+      "unidade": "R$/robo",
+      "provavel": 39632.88660960681,
+      "p10": 39222.74788681165,
+      "p50": 39672.7677684973,
+      "p90": 40220.51393624589
+    }
+  },
+  "autoverificacao": {
+    "tres_personas_aplicadas": true,
+    "premissa_critica_testada": true,
+    "veredito_em_cada_insight_acionavel": true,
+    "versao_real_inalterada_fora_das_saidas": true,
+    "numeros_do_motor": true
+  }
+}

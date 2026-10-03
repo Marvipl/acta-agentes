@@ -1,0 +1,128 @@
+{
+  "id": "INS-089",
+  "estado": "aprovado",
+  "afirmacao": "O custo atual de mão de obra no escopo da ALT3 é uma estimativa, não uma medida do WMS: separação pelas horas ativas do WMS mais os postos de conferência de PR11, valorados por PR10. Ela dá {{v.c3n}} na operação normal (base da oferta) e {{v.c3}} na variante do plano, ou seja, {{v.razao}} do custo do slide 15 ({{v.deck}}) na variante do plano; as faixas de cenários são as dos quatro tetos de intervalo e dos segmentos S1 a S3 de ANA-003. A maior parte desse custo, {{v.fracao}}, vem dos postos de conferência de PR11, premissa confirmada por Marcus que o WMS não mede, e a parte de separação é limite inferior, porque usa horas ativas (tempo de coleta creditado), não presença. O FTE de separação do escopo pelo WMS é {{v.fte_sep}}, uma fração de vaga inteira mesmo no teto mais folgado, e o FTE atual da ALT3 (separação mais PR11) é {{v.fte3}}. Na ALT2, o custo atual é {{v.c2}} e o FTE atual é {{v.fte2}}, menos de uma vaga inteira nos quatro tetos de intervalo. O FTE residual, o FTE liberado, as vagas inteiras e a economia trimestral ficam para o modelo de impacto (PR05 e PR06).",
+  "pergunta_ref": "P18",
+  "criterio_ref": "CR8",
+  "valores": {
+    "c3": "ANA-015.custo_atual_mes_alt3",
+    "c3n": "ANA-015.custo_atual_mes_alt3_normal",
+    "razao": "ANA-015.razao_custo_atual_alt3_sobre_deck",
+    "deck": "ANA-015.custo_atual_mes_deck_slide15",
+    "fracao": "ANA-015.fracao_custo_atual_alt3_vinda_de_pr11",
+    "fte_sep": "ANA-015.fte_separacao_alt3",
+    "fte3": "ANA-015.fte_atual_alt3",
+    "c2": "ANA-015.custo_atual_mes_alt2",
+    "fte2": "ANA-015.fte_atual_alt2"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "quatro tetos de intervalo",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "em nenhum dos quatro tetos o custo atual da ALT3 chega ao do slide 15 (chaves custo_atual_mes_alt3_t*)"
+    },
+    {
+      "recorte": "operação normal, sem a semana do incidente",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "o custo atual continua abaixo do deck na operação normal (chaves _normal)"
+    },
+    {
+      "recorte": "segmentos S1 a S3 de ANA-003",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "a faixa superior do FTE de separação (quatro tetos e S1 a S3) fica abaixo de uma vaga inteira na ALT3 e na ALT2"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo."
+  },
+  "impacto": {
+    "modelo": "IMP-CR1-ALT3-DECK-INT",
+    "modelos_relacionados": [
+      "IMP-CR1-ALT3-DECK-RAT",
+      "IMP-CR1-ALT3-DECK-SEM",
+      "IMP-CR1-ALT4-ALT3-INT",
+      "IMP-CR1-ALT4-ALT3-RAT",
+      "IMP-CR1-RS-ALT3-DECK-INT",
+      "IMP-CR1-RS-ALT4-ALT3-INT",
+      "IMP-ALT4-PMAX-ALT3-INT",
+      "IMP-ALT4-KMAX-ALT3-INT",
+      "IMP-ALT4-FOLGA-ALT3-INT",
+      "IMP-CR8-FTE-ALT3-INT-COL",
+      "IMP-INV-PR11-CR1-ALT4-ALT3",
+      "IMP-INV-PR11-CR1-ALT4-ALT3-FRACAO",
+      "IMP-INV-PR11-CR1-ALT3-DECK",
+      "IMP-CR1-ALT4-ALT3-UM-POSTO",
+      "IMP-INV-PR10-ALT4-RAT",
+      "IMP-ALT4-KMAX-ALT3-UM-POSTO",
+      "IMP-ALT4-FOLGA-ALT3-INT-COM-IMPL",
+      "IMP-CR6-ALT3-NO-TETO-INT",
+      "IMP-CR6-ALT3-NO-TETO-INT-COM-IMPL",
+      "IMP-CR6-ALT3-RECEITA-ROBO-SOBRE-LOCACAO-NO-TETO",
+      "IMP-REC-KMAX-INT",
+      "IMP-REC-FOLGA-INT-SEM-IMPL",
+      "IMP-REC-PRECO-MES-INT-SEM-IMPL",
+      "IMP-REC-ECONOMIA-SOCIAL-MES-INT-SEM-IMPL",
+      "IMP-REC-ECONOMIA-SOCIAL-PCT-INT-SEM-IMPL",
+      "IMP-REC-FOLGA-INT-COM-IMPL",
+      "IMP-REC-PRECO-MES-INT-COM-IMPL",
+      "IMP-REC-ECONOMIA-SOCIAL-MES-INT-COM-IMPL",
+      "IMP-REC-ECONOMIA-SOCIAL-PCT-INT-COM-IMPL",
+      "IMP-REC-TARIFA-CHECKOUT-RECOMENDADA-INT-SEM-IMPL",
+      "IMP-REC-TARIFA-LINHA-RECOMENDADA-INT-SEM-IMPL",
+      "IMP-REC-TARIFA-CHECKOUT-RECOMENDADA-INT-COM-IMPL",
+      "IMP-REC-TARIFA-LINHA-RECOMENDADA-INT-COM-IMPL",
+      "IMP-REC-FOLGA-INT-COM-IMPL-DESCONTO",
+      "IMP-REC-PRECO-MES-INT-COM-IMPL-DESCONTO",
+      "IMP-REC-ECONOMIA-SOCIAL-MES-INT-COM-IMPL-DESCONTO"
+    ]
+  },
+  "acao": "Antes da reunião com a Social (data [●]), perguntar a Marcus como o custo do slide 15 foi calculado e confirmar com a Social se os postos de conferência entram no escopo que o robô substitui (E15). A economia da Social em CR1 só passa do mínimo da garantia com os postos integrais (IMP-CR1-ALT3-DECK-INT contra IMP-CR1-ALT3-DECK-RAT e IMP-CR1-ALT3-DECK-SEM). Na configuração recomendada, com PR11 integral, a economia no preço recomendado está em IMP-REC-ECONOMIA-SOCIAL-PCT-INT-SEM-IMPL e IMP-REC-ECONOMIA-SOCIAL-PCT-INT-COM-IMPL; com PR11 rateado ela fica abaixo do limite (IMP-REC-ECONOMIA-SOCIAL-PCT-RAT-SEM-IMPL). Não garantir economia sobre PR11 enquanto não for medida.",
+  "dono": "Marcus Lima, CEO (autor do deck); Social (via Marcus)",
+  "premissas": [
+    "conferência (PR11) lida de três formas, integral, rateada entre depositantes pela parte da Royal Canin no checkout e fora, porque o WMS não a registra (E15)",
+    "teto de intervalo conservador do G2 como valor provável e o limite superior do teto como sensibilidade favorável; o dado não identifica o teto",
+    "mão de obra residual pela leitura colaborativa (o operador permanece; ritmo manual medido ÷ PR05); no checkout não há ganho de separação",
+    "custo atual = (separação em FTE + postos de PR11) × PR10 ÷ 12",
+    "base da oferta em operação normal (as quatro semanas anteriores ao incidente) para volume e receita; a janela do plano, que inclui o incidente da Royal Canin, entra como estresse (decisão do orquestrador; Marcus confirma ou troca no G3)",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados",
+    "custos de transição da Social (realocação ou rescisão dos postos, queda de produtividade no go-live, operador dedicado no teste, estações fixas) são [●] e ficam fora de CR1; os postos também embalam, então a garantia vale só sobre a conferência desmobilizada e medida",
+    "custo de implementação (implantação por robô e integração simples) a preço de tabela da Acta (perfil de Marcus, a confirmar), amortizado no prazo do contrato e usado como limite superior do custo; o custo real da Acta é [●]; mapeamento (área [●]) e desenvolvimento do checkout conferido ([●]) ficam fora da conta; o tudo incluído do deck cobre mais do que a manutenção de PR13",
+    "um robô de reserva sobre a frota necessária: hipótese de configuração a confirmar com a engenharia (Vinicius Bastos), porque sem reserva uma parada devolve a conferência à bancada e desfaz PR11"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "Sobrevive e é a base da premissa crítica. Os pontos de inversão de PR11 (RTD-INV-PR11-CR1-ALT4-ALT3, RTD-INV-PR11-CR1-ALT3-DECK, RTD-INV-PR11-CR8-ALT3-COL) estão em revisoes/red-team-decisao.json e devem entrar no memorando ao lado de INS-089."
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:52:12",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:55:05",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:44",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:02",
+      "por": "Marcus"
+    }
+  ]
+}

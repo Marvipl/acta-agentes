@@ -1,0 +1,99 @@
+{
+  "id": "INS-001",
+  "estado": "aprovado",
+  "afirmacao": "Na ALT3, a receita por transação da Royal Canin na taxa corrente cobre {{v.cob_normal}} da franquia em operação normal (receita de {{v.receita}} contra a franquia de {{v.franquia}}) e {{v.cob_estresse}} na janela do plano, que inclui o incidente operacional de 21 a 25/09. CR2 falha nas duas janelas: para cobrir a franquia o volume teria de ser {{v.fator}}. H-P4a (slide 18) não se confirma.",
+  "pergunta_ref": "P4",
+  "criterio_ref": "CR2",
+  "valores": {
+    "cob_normal": "ANA-002.cobertura_franquia_alt3_normal",
+    "cob_estresse": "ANA-002.cobertura_franquia_alt3_estresse",
+    "receita": "ANA-002.receita_mes_alt3_normal",
+    "franquia": "ANA-002.franquia_pr02",
+    "fator": "ANA-002.fator_volume_para_cobrir_franquia_alt3_normal"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "janelas de operação normal e de estresse (plano), mais as janelas do envelope",
+      "analise": "ANA-002",
+      "resultado": "passa",
+      "nota": "a classificação é a mesma nas duas janelas (chave mesma_classe_cr2_nas_duas_janelas) e em todas as janelas de duas, seis e oito semanas, com e sem dias pós-pausa"
+    },
+    {
+      "recorte": "contagem de linha tarifável: M06 inferior, M06 superior e M05",
+      "analise": "ANA-002",
+      "resultado": "passa",
+      "nota": "as três contagens dão cobertura praticamente igual e muito abaixo da franquia (chaves cobertura_franquia_alt3_m06_sup e cobertura_franquia_alt3_m05)"
+    },
+    {
+      "recorte": "variante só com pedido_multi_endereco",
+      "analise": "ANA-002",
+      "resultado": "passa",
+      "nota": "a cobertura continua muito abaixo da franquia (chave cobertura_franquia_alt3_pap_multi)"
+    },
+    {
+      "recorte": "mês a mês, normalizado por M20",
+      "analise": "ANA-002",
+      "resultado": "passa",
+      "nota": "todos os meses ficam abaixo da franquia e a cobertura cai de junho a setembro (chaves cobertura_franquia_alt3_mes_*)"
+    },
+    {
+      "recorte": "tarifa reduzida marginal contra retroativa (PQ08)",
+      "analise": "ANA-002",
+      "resultado": "passa",
+      "nota": "os volumes ficam abaixo dos limites das faixas e as duas regras coincidem (chave receita_mes_alt3_retroativa_normal)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Mantido: CR2 falha em todo o envelope e nas duas janelas; o render agora rotula o envelope como faixa de cenários. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": "IMP-CR2-ALT3-NORMAL",
+    "modelos_relacionados": [
+      "IMP-CR2-ALT3-ESTRESSE",
+      "IMP-CR2-RECEITA-ALT3",
+      "IMP-ALT3-DEP-CHECKOUT"
+    ]
+  },
+  "acao": "Não apresentar a franquia do deck na ALT3: o volume corrente não a cobre, nas duas janelas. Levar à ALT4 uma franquia limitada à receita por transação e igual ao custo de servir da frota necessária (IMP-ALT4-PMIN-ALT3, IMP-CR2-ALT4-ALT3), e mostrar à Social as duas leituras de janela.",
+  "dono": "Matheus Correa, Comercial; decisão de Marcus Lima, CEO",
+  "premissas": [
+    "base da oferta em operação normal (as quatro semanas anteriores ao incidente) para volume e receita; a janela do plano, que inclui o incidente da Royal Canin, entra como estresse (decisão do orquestrador; Marcus confirma ou troca no G3)",
+    "linha tarifável = Qtde Produtos e tarifa reduzida só sobre o excedente (G2), sem efeito porque o volume fica abaixo das faixas",
+    "sem crescimento assumido: a previsão validada cobre só o primeiro mês",
+    "tarifas e franquia do deck (PR02, PR03, PR04) e custo de servir sem hardware informado por Marcus (PR13); custo de hardware (PR20) é [●] e o motor entrega o máximo pagável",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "Sobrevive às três personas. A ação vale com uma condição: com as tarifas do deck, o piso recalibrado (frota × PR13) só cabe na receita por transação sem robô de reserva e sem PR13 acima do informado (RTD-INV-FROTA-CR2-ALT4 e RTD-INV-PR13-ALT4-TARIFA-DECK). Com reserva, é preciso subir as tarifas (RTD-KMIN-ALT4-ALT3-COM-RESERVA). Detalhes em revisoes/red-team-decisao.json."
+  },
+  "confianca": "alta",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:54",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:01",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:26",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:01",
+      "por": "Marcus"
+    }
+  ]
+}

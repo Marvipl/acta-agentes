@@ -1,0 +1,103 @@
+{
+  "supervisor": "sup-negocio",
+  "agentes_revisados": [
+    "arquiteto-da-decisao"
+  ],
+  "rodada": 2,
+  "veredito": "aprovado_com_ressalvas",
+  "rubrica": [
+    {
+      "agente": "arquiteto-da-decisao",
+      "criterio": "[crítico] Decisão com alternativas, critérios e limites",
+      "nota": 1,
+      "evidencia": "Há ALT1 a ALT6 (ALT1 = adiar; ALT5 = colmeia), CR1 a CR7 com métrica e limite apoiados em premissas nomeadas, e regra_decisao para cada alternativa. Nenhum limite inventado. Ainda incoerente: CR6 diz 'ALT1 ou apresentação com ressalva' sem PR13, mas regra_decisao só leva a ALT1; a regra de ALT2 não exige CR1; a falha de CR3 leva a ALT1 ou ALT4 no limite, mas a regra de ALT4 não cita CR3."
+    },
+    {
+      "agente": "arquiteto-da-decisao",
+      "criterio": "[crítico] Premissas do impacto com fonte; impacto comparado aos limites",
+      "nota": 2,
+      "evidencia": "PR01 a PR19 têm fonte. PR08, PR13 e PR15 estão em [●] com pergunta. Os valores conferem com o deck, o relatório 9fleet v1 e a Base de Conhecimento. A economia do deck virou PR19 ('referência a reconciliar'). impacto_esperado = [●]. P5 e P16 ligam o impacto a CR2 e CR6."
+    },
+    {
+      "agente": "arquiteto-da-decisao",
+      "criterio": "Perfil do especialista com fontes e confiança",
+      "nota": null,
+      "evidencia": "Não se aplica: nos/especialista.json ainda é template."
+    },
+    {
+      "agente": "arquiteto-da-decisao",
+      "criterio": "Recomendações viáveis na operação",
+      "nota": 1,
+      "evidencia": "Entraram como condições: desmobilização da conferência (Q02, ALT2 e ALT3), prontidão do checkout (Q07c) e FTE fracionários (restrições). ALT5 continua sem modelo operacional, sem tarifa e sem capacidade de robô na colmeia: o deck (slide 18) só tem tarifa de checkout e de PaP, e Q07(b) só pede a capacidade no checkout."
+    }
+  ],
+  "checagens_executadas": [
+    "python -m motor.prontidao <dv>: 73% (mínimo 80%), 7 perguntas abertas, bloqueios só por premissa não aceita (esperado; não contado).",
+    "python -m motor.validar <dv> --fase D0: BLOQUEADO só por prontidão, premissas e 7 perguntas abertas. Nenhum bloqueio estrutural. O nó decisao foi carimbado de novo às 01:34:12 (hash aa01e9145606), sem 'alterado_sem_carimbo'.",
+    "python -m motor.impacto <dv>: 'IMP-001: premissa nome sem fonte'. impacto.json ainda é template; não se aplica ao arquiteto.",
+    "Pontos da r1 conferidos no nó: (1) base de volume: restrição 1, PR19, P5, Q06(a), impacto em [●], resolvido; (2) colmeia e trilha exploratória: ALT5, CR7, P17 e trilha_exploratoria, resolvido, com a ressalva do ponto 4 abaixo; (3) viabilidade da Acta: CR6, PR13 e Q07(a), resolvido, com a ressalva do ponto 1; CR4 de mão dupla ('faixa', hora a hora no p90, PR15), resolvido; Q04 corrigida em Q05 (Região Origem, Região Destino, pedidos por onda), resolvido, com as ressalvas dos pontos 2 e 3; pergunta sobre o que a Social quer: Q02, resolvido; regra de decisão: regra_decisao, resolvido, com as ressalvas dos pontos 1 e 5; CR3, CR2, CR5, Q05 comercial, robô no WMS (P8 e Q04), alta temporada e Q07, resolvidos.",
+    "Anti-complacência 1: conferi as 19 premissas contra o texto dos insumos (slides 5, 6, 9, 12, 14, 15 e 18; relatório 9fleet v1, p. 6, 8, 12 e 13; Base de Conhecimento 1.3). Todos os valores batem. Os nulos têm [●]. Nenhum valor sem fonte.",
+    "Anti-complacência 2: procurei limite inventado em CR1 a CR7. Não achei: todos referenciam PR com fonte, outro critério ou o extremo da sensibilidade. CR5 não define o que é 'ocupar' um robô.",
+    "Anti-complacência 3: cruzei regra_decisao com o texto dos limites e achei 3 incoerências (pontos 1, 5 e 6).",
+    "Anti-complacência 4: procurei registro da 'verificação do orquestrador' citada em A05 e Q05 (prefixo ' - AVARIA', linhas de cancelamento, várias regiões). Não há registro em etapas/, evidencias/, nos/qualidade.json nem saidas/. O perfil só mostra mínimo e máximo.",
+    "Anti-complacência 5: a regra 'pedido-a-pedido = onda com um pedido' não diz qual coluna usa. O perfil tem Onda (cerca de 21.919 valores distintos) e Id Onda (cerca de 19.520).",
+    "Anti-complacência 6: perguntas-chave = 7 (dentro do limite), todas ligadas a dimensão crítica ou ao impacto. saidas/perguntas_marcus.md está sincronizado (7 perguntas, prontidão 73%)."
+  ],
+  "pontos": [
+    {
+      "severidade": "alta",
+      "local": "nos/decisao.json: CR6 (limite), regra_decisao ALT1, Q07(a) (resposta_proposta)",
+      "problema": "Sem PR13, a regra leva sempre a ALT1 (adiar), porque ALT3 a ALT6 exigem CR6. O texto de CR6 oferece também 'apresentação com ressalva'. A resposta proposta de Q07(a) só diz 'CR6 fica [●]'. Como 'perguntas sem resposta viram premissa', o caminho padrão recomenda adiar a oferta sem que Marcus saiba.",
+      "correcao_sugerida": "Escolher uma regra só e escrevê-la em Q07(a). Por exemplo: 'sem PR13, a análise recomenda ALT1; se preferir apresentar mesmo assim, ALT3 ou ALT4 sai com a ressalva de margem não verificada'. Pôr as duas como opções."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/decisao.json: A05 (evidencias, premissa_adotada), Q05, restricoes[6]",
+      "problema": "As afirmações sobre os dados ('prefixo antes de \" - PICKING\", \" - AVARIA\"', 'linhas com várias regiões e de cancelamento') vêm de uma 'verificação do orquestrador' que não está registrada em nenhum arquivo do dv. Falta rastro.",
+      "correcao_sugerida": "Registrar a consulta e o resultado agregado (valores distintos de Região Origem e Região Destino, com contagens; contagem de linhas de cancelamento) em saidas/ ou em nos/qualidade.json, e citar esse arquivo em A05."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/decisao.json: Q05, A05 (premissa_adotada)",
+      "problema": "'Pedido-a-pedido = onda com um pedido' e 'checkout = onda com vários pedidos' não dizem se a onda é Onda ou Id Onda. As duas têm contagens diferentes no perfil, e a escolha muda o mix e o volume tarifável.",
+      "correcao_sugerida": "Dizer em Q05 qual coluna define a onda, com motivo, e validar contra os totais por tipo de onda do slide 8."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/decisao.json: ALT5, CR7, regra_decisao ALT5, Q07(b)",
+      "problema": "ALT5 não pode ser avaliada. Não há tarifa para a colmeia (o slide 18 só cobre checkout e PaP), nem capacidade de robô ou modelo operacional para lote de vários pedidos. Mesmo assim, a regra pede 'CR4 e CR6 refeitos incluindo a colmeia'. CR7 compara a colmeia manual com PR05, premissa de PaP em zona com confiança baixa.",
+      "correcao_sugerida": "Criar premissas para tarifa e capacidade na colmeia ([●]) e estender Q07(b) à colmeia. Ou declarar ALT5 como 'candidata a teste na fase seguinte', sem preço nesta versão, e ajustar a regra."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/decisao.json: regra_decisao ALT2",
+      "problema": "A regra de ALT2 exige só CR2 e CR6. Não exige CR1 (economia para a Social), embora a decisão diga 'vantajosa para a Social'.",
+      "correcao_sugerida": "Incluir CR1 na regra de ALT2, com a garantia própria dessa alternativa ou sem garantia, declarado."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/decisao.json: CR3 (limite), regra_decisao ALT4",
+      "problema": "Pelo limite, a falha de CR3 leva a ALT1 ou ALT4. A regra de ALT4 não cita CR3, então na prática a falha só leva a ALT1.",
+      "correcao_sugerida": "Alinhar o texto do limite com a regra de decisão."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/decisao.json: Q03",
+      "problema": "Um único 'aceito todos' cobre 7 limites, a regra, 19 premissas, A06 e A08. Isso favorece aceite sem leitura das premissas de baixa confiança que decidem o resultado (PR05, PR07, PR10 a PR12).",
+      "correcao_sugerida": "Destacar essas premissas na pergunta ou separar a opção 'aceito, menos as premissas de baixa confiança'."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/decisao.json: CR5 (limite)",
+      "problema": "'Ocupa ao menos um robô adicional' não define a ocupação: média da janela, toda hora ou dia típico.",
+      "correcao_sugerida": "Definir, por exemplo, como a demanda média na janela PR15 do dia típico de pelo menos uma capacidade PR07 ou PR08."
+    }
+  ],
+  "lacunas": [
+    "Registro da verificação de dados do orquestrador (prefixos de Região Origem, cancelamentos), hoje sem rastro no dv.",
+    "Qtde Endereços continua mascarada como PESSOAL no perfil (falso positivo pelo nome). Fica com a qualidade-privacidade, não com o arquiteto, mas trava N−1, a definição de linha, CR2 e CR3.",
+    "Modelo operacional, tarifa e capacidade da colmeia com robô (ALT5).",
+    "PR13 (custo de servir) define sozinho, por padrão, se a recomendação é adiar."
+  ],
+  "em": "2026-10-03"
+}

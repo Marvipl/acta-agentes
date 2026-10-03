@@ -1,0 +1,186 @@
+{
+ "supervisor": "sup-comunicacao",
+ "agentes_revisados": [
+  "visualizacao-narrativa"
+ ],
+ "rodada": 1,
+ "fase": "D4 (G3 pendente: 0 de 71 aprovados, 20 acionáveis; auditoria de reprodutibilidade 'falhou', tentativa 1)",
+ "veredito": "revisar",
+ "rubrica": [
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "[crítico] Só insights aprovados e nenhum número digitado",
+   "nota": 1,
+   "evidencia": "Varredura dos três .tpl fora de {{}} e comentários: nenhuma quantidade digitada (só 'slide 14/15/18/19' e códigos). O validador D4 não acusou número nem termo proibido. Memorando e oferta citam só os 20 acionáveis. Com o G3 pendente, isso é esperado. Falhas: relatorio_executivo.md.tpl linha 20 tem o título '## Insights aprovados' com 0 de 71 aprovados. INS-052 e INS-070 (validados, não acionáveis) entram pelo texto de fmt.ins_INS_048 e fmt.ins_INS_088. O aviso de rascunho só existe em comentário HTML, invisível no topo dos três documentos."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "[crítico] Nível e limites declarados",
+   "nota": 1,
+   "evidencia": "O nível descritivo está declarado em todos os documentos. O relatório tem a seção 'O que estes dados não permitem concluir' e a seção de limites, e a oferta tem 'Limites deste documento'. Falhas: o memorando não diz o que os dados não permitem concluir. Ele também chama de 'fatos descritivos' estimativas de modelo ('economiza R$ 256/mes'; 'sobra vira custo', que IMP-CR4-SOBRA-FROTA-DECK-INF descreve como 'não ociosidade medida'). O argumento V2 da oferta põe a lente do especialista (U1) e o efeito do robô como 'sustentados pelos dados'. Ficaram de fora ressalvas do red team (INS-087 com reserva, IC de INS-015, go-live, realocação, acordo coletivo)."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Memorando em uma página com próximo passo e dono",
+   "nota": 1,
+   "evidencia": "saidas/memo_decisao.md tem 717 palavras: passa de uma página. Cada próximo passo tem dono, mas o prazo é '[●], data não informada', sem data proposta. ALT1 não é definida e aparece em dois sentidos. Os códigos PR11, PR13, PR10, PR20, PR08, CR1, CR2, CR6 e CR8 não têm legenda."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Gráficos legíveis",
+   "nota": 1,
+   "evidencia": "Abri 7 dos 40 gráficos: títulos em português e eixos com unidade. Mas as legendas do painel são nomes de arquivo ('ANA-012 · fig_novatos') e os 40 entram sem seleção. Falta o gráfico da decisão (limiar de PR11 e janela de preço por cenário). ANA-002 usa eixo em fração (0 a 1), não em %. ANA-015 fig_margem_por_robo_alt3 mostra a variante do plano (frota necessária negativa), enquanto o memorando cita a base (134,14). ANA-012 fig_m14_rc_contra_outros tem o título 'a Royal Canin roda menos coletas por hora em todas as faixas' e nenhuma ressalva."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Legibilidade dos números renderizados",
+   "nota": 1,
+   "evidencia": "Os percentuais estão certos depois da correção do motor ('38,4%'). Ainda há: '3.236,04 pedidos/mes (faixa de 3.216,00 a 3.254,91)'; '2,00 robôs', '1,00 operadores', '45,00 bases testadas, 0,00 bases'; 'até 2,27 robôs'; 'R$ -151/mes'; 'economia de R$ -2.012/mes'; '-546,34 R$/robo/mes'; '71.449,33 R$/robo'; '11.510 R$ por mês (faixa de 11.509,71 a 13.345,66)'. Há três formatos de R$ e faltam acentos em 'mes', 'robo' e 'media'. A causa principal está em motor.relatorio._num e motor.insights._fmt e nas unidades de nos/impacto.json."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Coerência entre memorando, relatório e oferta",
+   "nota": 1,
+   "evidencia": "Os limiares batem nos três documentos: 0,58, 0,47 e 0,95 postos; tarifas de 1,32 x a 3,51 x; piso de R$ 2.000. Mas a economia de R$ 7.988 (IMP-CR1-RS-ALT4-ALT3-INT, 'tarifas do deck') é a de uma configuração que os próprios documentos não recomendam. A oferta diz 'O que manter: tarifas do deck' e, em 'O que mudar', 1,32 x a 3,51 x. PR11 rateado aparece como 'inconclusiva' na tabela e no memorando e como 'não há janela' em 'O que mudar'."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Oferta acionável pelo comercial",
+   "nota": 1,
+   "evidencia": "Traz o que retirar, manter e mudar, a janela de preço por cenário, as perguntas com resposta proposta, os donos e o desenho do piloto. Falta o que permite cotar: o número de robôs da frota recomendada, o piso com reserva ('Recalcular com a reserva que a engenharia aceitar'), as tarifas em reais (só há multiplicadores das tarifas do deck), o nível da garantia de capacidade e um glossário de códigos (PR, CR, M23, E11, teto conservador/folgado). As cláusulas não falam do go-live do checkout nem do erro de conferência."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Sem exposição negativa da Social ou da Royal Canin",
+   "nota": 1,
+   "evidencia": "N10 e o relatório (linha 144) protegem contra a crítica. Mas a oferta, na linha 112 (Q6, 'Para quem: Social'), traz como resposta proposta 'Causa do lado da Royal Canin'. N9 (linha 98) diz 'A causa provavelmente é da Royal Canin, e a Social ainda não a explicou'. U5 (linha 76) fala em 'tempo perdido na Royal Canin' e 'Desperdício'. O painel publica o gráfico da Royal Canin mais lenta sem ressalva."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Disciplina de nomes",
+   "nota": 2,
+   "evidencia": "Busquei [fornecedor de reconhecimento facial], [nome interno do orquestrador], [nome interno do orquestrador], [nome interno de produto], [nome interno de produto], [não parceiro], [não parceiro], 'reconhecimento facial' e 'parceiro' nos cinco renderizados: 0 ocorrências. 9fleet e HBR (hardware) estão usados corretamente."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Conclusão primeiro e frases curtas",
+   "nota": 1,
+   "evidencia": "Os três documentos abrem pela recomendação. Mas o relatório copia o texto integral das afirmações: há parágrafos únicos de 200 a 350 palavras (INS-015, INS-056, INS-088, INS-089), o que não é executivo."
+  }
+ ],
+ "checagens_executadas": [
+  "flock <trava> python -m motor.rodar projetos/2026-10-03_social_kappabot-operacao/v1: 3 .tpl renderizados; render_status.json sem variáveis faltando; 71 insights (0 aprovados).",
+  "flock <trava> python -m motor.validar <dv> --fase D4: BLOQUEADO por 'auditoria de reprodutibilidade: falhou' e 'sem revisão de sup-comunicacao'. Nenhum bloqueio por número digitado nem por termo proibido.",
+  "Varredura própria de dígitos nos .tpl fora de {{}} e de comentários, sem contar códigos (PR, CR, ALT, INS, IMP): só referências a slides. O regex do validador não pega inteiros, por isso fiz a varredura à parte.",
+  "Busca de termos proibidos (config.termos_proibidos, [nome interno de produto], reconhecimento facial, parceiro) em memo, relatório, oferta, cartões e painel: 0.",
+  "Cruzamento dos INS citados com os 20 acionáveis em evidencias/: memorando e oferta limpos; o relatório cita INS-052 e INS-070.",
+  "Leitura das notas de red team (analítico e decisão) dos 9 acionáveis com ressalva e de revisoes/red-team-decisao.json (recomendacao_atacada, premissa_critica): confronto com os três documentos.",
+  "Leitura das descrições de 16 modelos em saidas/impacto.json usados nos documentos; busca de modelo para piso com reserva e economia com tarifa recomendada: não existe.",
+  "Extração e leitura de 7 dos 40 gráficos do painel (ANA-002, ANA-005, ANA-009 x2, ANA-012, ANA-015 x2).",
+  "Conferência do parecer revisoes/especialista_D3.md (seções 1.10, 1.12, 1.14, U1 a U8, N9 a N11, E14).",
+  "wc -w saidas/memo_decisao.md: 717 palavras.",
+  "saidas/auditoria.json (19:55, depois da renderização): status 'falhou', tentativa 1. Os renderizados ainda dizem 'não executada'."
+ ],
+ "verificacoes_anticomplacencia": [
+  "Procurei números digitados que o regex do validador não pega (inteiros, quantidades por extenso): não achei quantidade de dado digitada.",
+  "Procurei incoerência numérica entre os três documentos: os limiares batem; a economia de R$ 7.988 não corresponde à tarifa recomendada.",
+  "Procurei ressalvas do red team omitidas: faltam go-live do checkout, realocação dos postos, acordo coletivo, lote com carrinho, margem de INS-087 com reserva e IC de INS-015.",
+  "Procurei associação ou lente escrita como fato: V2 da oferta e os 'fatos descritivos' do memorando, que são estimativas de modelo.",
+  "Procurei exposição da Social ou da Royal Canin: Q6, N9 e U5 da oferta e o gráfico ANA-012 do painel."
+ ],
+ "pontos": [
+  {
+   "severidade": "alta",
+   "local": "saidas/oferta_enriquecida.md V1 (linha 63); saidas/memo_decisao.md Impacto (linhas 18 a 20); relatorio_executivo.md INS-089 'Para a oferta'",
+   "problema": "A economia da Social de R$ 7.988/mes (IMP-CR1-RS-ALT4-ALT3-INT) é calculada 'com as tarifas do deck' e sem reserva. Os mesmos documentos recomendam frota com reserva e tarifas de 1,32 x a 3,51 x (IMP-KMIN-ALT4-ALT3-COM-RESERVA, IMP-ALT4-KMAX-ALT3-INT). No teto de preço (IMP-ALT4-PMAX-ALT3-INT, R$ 7.954, quase o mesmo número), a economia da Social cai ao mínimo da garantia (PR01). O comercial pode prometer R$ 7.988 e cobrar 3,51 x.",
+   "correcao_sugerida": "Escrever 'com as tarifas do deck, sem reserva' junto de cada economia. Pedir ao analista de impacto a economia da Social e a margem da Acta no multiplicador mínimo com reserva e no teto. Mostrar na oferta uma linha por preço: preço, economia da Social e margem da Acta."
+  },
+  {
+   "severidade": "alta",
+   "local": "saidas/oferta_enriquecida.md V2 (linha 64), tabela 'Argumentos de venda sustentados pelos dados'",
+   "problema": "'No pico, a separação puxa gente de outras áreas, e o robô reduz parte desse puxão' aparece como argumento sustentado pelos dados. INS-048 diz que o dado 'não diz como' a Social cobre o pico. IMP-CR8-PICO-ARM-PESSOAS diz que 'não prova contratação (pode ser remanejamento)'. Em especialista_D3 §1.12, isso é lente do setor, de confiança média. A redução pelo robô é um modelo (leitura colaborativa, PR05 de confiança baixa). Associação e lente estão escritas como causa.",
+   "correcao_sugerida": "Na tabela, deixar só o medido: pessoas a mais e pessoas-hora de excedente no pico, mais o alívio 'estimado pelo modelo colaborativo'. Levar 'puxa gente de outras áreas' para o Apoio qualitativo como hipótese U1."
+  },
+  {
+   "severidade": "alta",
+   "local": "saidas/oferta_enriquecida.md V4 (linha 66)",
+   "problema": "'Mostrar que a Acta não cobra por robô parado' contradiz o piso fixo igual ao custo de servir e o robô de reserva, cujo custo entra no 1,32 x. A margem citada (134,14, IMP-CR6-ALT3-SEM-PISO) é sem reserva, num argumento 'com reserva'. Falta a ressalva do red team da decisão em INS-087: a margem sem piso fica negativa com um robô de reserva ou com PR13 pouco acima.",
+   "correcao_sugerida": "Reescrever como 'frota dimensionada pelo pico medido, sem os robôs a mais do deck'. Incluir a ressalva de INS-087 e a margem com reserva (ou [●] até o modelo existir)."
+  },
+  {
+   "severidade": "alta",
+   "local": "saidas/oferta_enriquecida.md Q6 (linha 112), N9 (linha 98), U5 (linha 76); topo do documento",
+   "problema": "O documento que o comercial leva diz por escrito 'Causa do lado da Royal Canin' e 'A causa provavelmente é da Royal Canin, e a Social ainda não a explicou'. Q6 é dirigida à 'Social', não 'via Marcus'. U5 fala em 'tempo perdido na Royal Canin' e 'Desperdício'. O especialista (D3 §1.14 e §1.10) disse para não usar o incidente nem a lentidão, porque constrange a Social diante da Royal Canin. O aviso 'Uso interno' é comentário HTML e não aparece.",
+   "correcao_sugerida": "Q6 fica só com Marcus, em conversa reservada, e pede o volume diário normal depois de setembro. Remover a atribuição de causa e escrever 'causa não explicada; não usar'. Em U5, escrever 'o tempo entre pedidos (ida ao packing, etiqueta) é o trecho que o robô ataca'. Pôr um aviso visível no topo: 'USO INTERNO, não encaminhar à Social'."
+  },
+  {
+   "severidade": "alta",
+   "local": "saidas/oferta_enriquecida.md 'O que mudar' (linhas 37 a 40) e 'Sequência e donos'",
+   "problema": "A oferta não é cotável. Não diz o número de robôs da configuração recomendada (frota necessária mais reserva). O piso com reserva está como 'Recalcular' e não há modelo para ele. As tarifas só aparecem como múltiplos das do deck, sem os valores de PR03 e PR04. A garantia de capacidade não tem nível nem método. Os códigos não têm glossário para o comercial.",
+   "correcao_sugerida": "Registrar pendência para o analista de impacto: piso com reserva, frota recomendada em robôs e tarifas em reais (multiplicador × PR03 e PR04). Acrescentar um bloco 'proposta-modelo' só com variáveis e um glossário de uma linha por código."
+  },
+  {
+   "severidade": "alta",
+   "local": "saidas/memo_decisao.md Riscos; saidas/oferta_enriquecida.md Cláusulas e Defesa; saidas/relatorio_executivo.md",
+   "problema": "Faltam ressalvas do red team da decisão (recomendacao_atacada.operador e concorrente): (a) frota instalada antes do go-live do checkout faz a Acta pagar IMP-ALT4-PMIN-ALT3 sem receita; (b) FTE fracionário só vira economia se a Social realocar as pessoas; (c) segurança e acordo coletivo [●]; (d) o lote manual com carrinho é concorrente sem investimento. A oferta omite o erro de conferência como responsabilidade da Acta, que está no memorando. Na linha 22, cita o excedente de INS-015 sem o IC de bootstrap que o red team analítico exigiu.",
+   "correcao_sugerida": "Uma linha a mais nos Riscos do memorando. Nas Cláusulas da oferta: instalação e cobrança no go-live, limite de responsabilidade por erro de conferência e realocação a cargo da Social. Na Defesa: o lote com carrinho. Pôr o IC de INS-015 ao lado de 1,20."
+  },
+  {
+   "severidade": "alta",
+   "local": "entregaveis/relatorio_executivo.md.tpl linha 20; topo de memo, relatório e oferta",
+   "problema": "O título 'Insights aprovados' aparece com 0 de 71 aprovados. O aviso de rascunho pré-G3 só existe em comentário HTML. INS-052 e INS-070, não acionáveis, entram pelo texto das afirmações.",
+   "correcao_sugerida": "Trocar o título para 'Insights acionáveis, pendentes do G3'. Pôr uma linha visível no topo dos três documentos: 'Rascunho pré-G3: {{fmt.n_aprovados}} de {{fmt.n_insights}} aprovados; auditoria {{fmt.auditoria}}'. Marcar INS-052 e INS-070 como contexto."
+  },
+  {
+   "severidade": "media",
+   "local": "saidas/memo_decisao.md linhas 8, 13 a 15, 19 e 20; oferta linhas 17, 20, 28, 49 a 57; relatório (textos de insight)",
+   "problema": "Números ilegíveis ou com falsa precisão: '3.236,04 pedidos/mes'; '2,00 robôs'; '45,00 bases, 0,00 bases'; 'até 2,27 robôs'; 'R$ -151/mes'; 'economia de R$ -2.012/mes'; '924,67 R$/robo/mes'; '71.449,33 R$/robo'; precisão diferente entre o ponto e a faixa; três formatos de R$; 'mes', 'robo' e 'media' sem acento.",
+   "correcao_sugerida": "Orquestrador: em motor.relatorio._num e motor.insights._fmt, tratar toda unidade que começa com 'R$' sem centavos e como 'R$ X/unidade', negativos como '−R$ X', unidades inteiras (robôs, operadores, bases, dias) sem casas e a faixa com a precisão do ponto. Analista de impacto: acentuar as unidades em nos/impacto.json. Narrativa: trocar economia negativa por 'custo adicional da Social' e '2,27 robôs' por 'até 2 robôs'."
+  },
+  {
+   "severidade": "media",
+   "local": "saidas/memo_decisao.md linhas 12 a 15 e 22",
+   "problema": "'Três fatos principais, todos descritivos' mistura medida do WMS com estimativa de modelo sob premissas de confiança baixa ('economiza R$ 256/mes', 'sobra vira custo', margem). O memorando não diz o que os dados não permitem concluir.",
+   "correcao_sugerida": "Separar 'medido no WMS' de 'estimado pelo modelo (premissas PR07, PR08, PR13)' e usar verbo condicional. Acrescentar uma linha: 'Os dados não mostram o ganho do robô, os postos que saem nem a alta temporada'."
+  },
+  {
+   "severidade": "media",
+   "local": "saidas/memo_decisao.md linhas 7 a 10 e 28 a 33",
+   "problema": "ALT1 aparece em dois sentidos ('portão' e 'a regra aponta ALT1'), e no nó decisao ALT1 é 'adiar e manter o piloto atual'. 'Piloto pago' e 'encerrar o piloto gratuito' vêm de red-team-decisao.alternativas_nao_consideradas, fora da lista do nó decisao, e o memorando não pede o aceite de Marcus. São 717 palavras e códigos sem legenda. O prazo é [●] sem data proposta.",
+   "correcao_sugerida": "Definir ALT1 na própria frase. Rotular as novas alternativas como 'fora da lista original; Marcus aceita no G3'. Cortar o Impacto para duas linhas. Pôr o nome ao lado de cada código. Propor uma data com [●]."
+  },
+  {
+   "severidade": "media",
+   "local": "saidas/oferta_enriquecida.md 'O que manter' (linha 28) contra 'O que mudar' (linha 39) e a tabela (linha 50)",
+   "problema": "'O que manter' fala das tarifas do deck sem reserva, contra a recomendação de frota com reserva e tarifas de 1,32 x a 3,51 x. PR11 rateado aparece ao mesmo tempo como 'Inconclusiva' e 'não há janela'.",
+   "correcao_sugerida": "Escrever 'manter a estrutura por transação; o nível sobe'. Usar uma redação só: 'no provável, não há janela; ela abre se PR13 < X ou PR10 > Y'."
+  },
+  {
+   "severidade": "media",
+   "local": "saidas/painel.html e saidas/cartoes_insight.md (gerados por motor.relatorio)",
+   "problema": "O painel mostra os 71 insights (46 validados e 5 só quantificados) com o mesmo peso dos 20 acionáveis. Tem 40 gráficos com legenda igual ao nome do arquivo. Inclui ANA-012 fig_m14_rc_contra_outros e fig_novatos (N8) sem ressalva. Não tem o gráfico do limiar de PR11 nem da janela de preço. O eixo de ANA-002 está em fração.",
+   "correcao_sugerida": "Orquestrador: no painel, filtrar ou ordenar por estado, usar títulos legíveis ligados aos INS e marcar os gráficos sensíveis como internos. Analista de impacto ou narrativa: um gráfico da janela de preço por cenário de PR11, a partir dos modelos IMP-INV-PR11-* e IMP-ALT4-*."
+  },
+  {
+   "severidade": "baixa",
+   "local": "saidas/relatorio_executivo.md seções de insight",
+   "problema": "O relatório copia o texto integral das afirmações em parágrafos de 200 a 350 palavras. Não é executivo e fere a regra de frases curtas.",
+   "correcao_sugerida": "No relatório, usar um resumo de duas linhas por insight e remeter ao cartão. O texto integral fica nos cartões."
+  },
+  {
+   "severidade": "baixa",
+   "local": "saidas/auditoria.json contra os renderizados",
+   "problema": "A auditoria está 'falhou' (tentativa 1, 19:55), e os renderizados ainda dizem 'não executada'. Depois de renderizar de novo, o memorando vai mostrar 'reprovada'.",
+   "correcao_sugerida": "Orquestrador e auditor resolvem a auditoria antes de levar qualquer documento a Marcus ou ao comercial. Renderizar de novo depois."
+  }
+ ],
+ "lacunas": [
+  "Faltam variáveis do motor para a configuração recomendada: piso com reserva, frota em robôs, tarifas em reais, economia da Social e margem da Acta no multiplicador mínimo com reserva e no teto. Sem elas, memorando e oferta recomendam uma oferta que não conseguem cotar.",
+  "Falta o gráfico da decisão: limiar de PR11 (rateio 0,47, ALT4 0,58, vaga 0,95) e janela de preço por cenário.",
+  "Falta uma seção curta 'o que os dados não permitem concluir' no memorando.",
+  "Faltam cláusulas da oferta: go-live do checkout, erro de conferência, realocação dos postos, segurança e acordo coletivo.",
+  "Falta um glossário de códigos para o comercial.",
+  "Falta um aviso visível de uso interno e de rascunho pré-G3."
+ ],
+ "em": "2026-10-03"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "INS-022",
+  "estado": "validado",
+  "afirmacao": "Pedidos de checkout em ondas com mais de uma unidade por linha são raros: {{v.fracao}} dos pedidos de checkout do armazém, concentrados em poucos depositantes, e nenhum na Royal Canin ({{v.fracao_rc}}). Por onda, a fração é {{v.fracao_ondas}}. A tarifa por pedido de checkout (PR03) supõe uma peça por pedido; na Royal Canin a suposição vale na carga inteira (contagem completa, sem incerteza amostral).",
+  "pergunta_ref": "P3",
+  "criterio_ref": "CR2",
+  "valores": {
+    "fracao": "ANA-006.fracao_checkout_multiunidade",
+    "fracao_rc": "ANA-006.fracao_checkout_multiunidade_rc",
+    "fracao_ondas": "ANA-006.fracao_ondas_checkout_multiunidade"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "pedidos contra ondas",
+      "analise": "ANA-006",
+      "resultado": "passa",
+      "nota": "a fração de pedidos e a de ondas ficam na mesma ordem de grandeza"
+    },
+    {
+      "recorte": "Royal Canin contra o armazém",
+      "analise": "ANA-006",
+      "resultado": "passa",
+      "nota": "nenhuma onda multiunidade na Royal Canin; as ondas multiunidade ficam em dois depositantes (tabela checkout_multiunidade_por_depositante)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção de texto atendida (unidade duplicada removida). Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Manter PR03 por pedido de checkout; tratar a fração multiunidade dos outros depositantes na conta de ALT6 se a cobrança for por pedido de uma peça.",
+  "dono": "estatistico (ANA-006); analista de impacto (ALT6)",
+  "premissas": [
+    "checkout_multiunidade marcado em M02; grupos abaixo de PAR07 pedidos ou ondas juntos em outros"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "alta",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:22",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:18",
+      "por": "red-team-analitico"
+    }
+  ]
+}

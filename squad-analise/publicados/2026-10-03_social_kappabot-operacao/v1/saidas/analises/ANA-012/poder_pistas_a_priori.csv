@@ -1,0 +1,4 @@
+pista,recorte_do_poder,n_unidades_confirmacao,mde_confirmacao,efeito_relevante_10pct_da_referencia,unidade,estimativa_descoberta,ic_inferior_descoberta,ic_superior_descoberta,classe_na_descoberta,por_desenho,aviso
+PT-H04,"confirmação (semanas pares, só EP e MDE de ANA-000, sem efeito)",16,24.74764367738059,10.4,s,54.0,29.0,80.0,passa,False,"magnitude possivelmente exagerada (poder baixo, erro tipo M)"
+PT-H09,"confirmação (semanas pares, só EP e MDE de ANA-000, sem efeito)",8,1.5794019919815963,0.1,razão por semana,-1.9225210825471286,-8.146404748670836,2.3406016306142288,inconclusivo,True,
+PT-H10,"confirmação (semanas pares, só EP e MDE de ANA-000, sem efeito)",39,1.2914807349374757,0.4248422190024803,operadores ativos por mil linhas,1.694442192216392,0.778127886930821,4.201256144987208,passa,False,"magnitude possivelmente exagerada (poder baixo, erro tipo M)"

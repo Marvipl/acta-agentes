@@ -1,0 +1,69 @@
+{
+  "id": "INS-014",
+  "estado": "validado",
+  "afirmacao": "Com efeitos fixos de hora e de dia da semana e sem a faixa de refeição, o coeficiente do log do volume do dia sobre a fração de intervalos acima do teto é {{v.coef}}: o sinal é negativo (menos espera quando o volume sobe), mas o IC contém zero (p ajustado, limite superior de Holm: {{v.p}}; o p de Holm exato da F1b é menor e não muda a conclusão) e H13b não se confirma. Não é ausência de efeito: em elasticidade o efeito estimado é {{v.elast}}, e o efeito relevante da convenção equivale a {{v.elast_rel}}, uma elasticidade grande; o poder só exclui efeitos grandes, e um efeito moderado de menos espera com mais volume continua compatível com o IC. Leitura associativa; a espera por onda depende da liberação de ondas, cuja hora não está na planilha.",
+  "pergunta_ref": "P19",
+  "criterio_ref": "CR8",
+  "valores": {
+    "coef": "ANA-003.h13b_coef_volume",
+    "p": "ANA-003.h13b_p_holm_f1b_limite_superior",
+    "elast": "ANA-003.h13b_elasticidade",
+    "elast_rel": "ANA-003.h13b_efeito_relevante_elasticidade"
+  },
+  "nivel": "associativo",
+  "robustez": [
+    {
+      "recorte": "faixa de refeição ampliada",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "mesma leitura: IC contém zero (chave h13b_coef_volume_refeicao_ampliada)"
+    },
+    {
+      "recorte": "escopo Royal Canin contra armazém",
+      "analise": "ANA-003",
+      "resultado": "parcial",
+      "nota": "o coeficiente é negativo e o limite superior do IC fica rente a zero (chave h13b_coef_volume_escopo_rc)"
+    },
+    {
+      "recorte": "primeira e segunda metades do período",
+      "analise": "ANA-003",
+      "resultado": "parcial",
+      "nota": "só a primeira metade exclui zero; a segunda não tem sinal (chaves h13b_coef_volume_metade1 e _metade2)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: o texto mostra a elasticidade estimada e a do efeito relevante, diz que não é ausência de efeito e menciona o Holm exato. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Não usar espera por onda como argumento de folga; manter a leitura de H13a como a que sustenta o limite superior das horas ativas.",
+  "dono": "analista de impacto",
+  "premissas": [
+    "M10: fração de intervalos acima do teto de 900 s",
+    "faixa de refeição definida pelo perfil médio (regra fixada no plano)",
+    "hora de liberação das ondas não exportada (PQ06)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:17:06",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:14",
+      "por": "red-team-analitico"
+    }
+  ]
+}

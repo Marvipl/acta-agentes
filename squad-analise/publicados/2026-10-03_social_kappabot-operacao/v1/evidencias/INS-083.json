@@ -1,0 +1,85 @@
+{
+  "id": "INS-083",
+  "estado": "aprovado",
+  "afirmacao": "Os FTE do slide 14 não se reproduzem pelo método do contrato no teto conservador do G2, que é o extremo de menos horas: a separação do checkout e do pedido-a-pedido soma {{v.deck}} no deck e {{v.fte}} pelas horas ativas do WMS ({{v.fte_n}} na operação normal), uma razão de {{v.razao}} ({{v.razao_n}} na operação normal). Nos quatro tetos de intervalo e nos segmentos S1 a S3 o FTE de separação do escopo da ALT3 pelo WMS fica em {{v.faixa}}, então a razão depende do teto. A jornada ativa é limite inferior da presença: o FTE do deck pode ser presença paga e o do WMS é tempo de coleta creditado, de modo que parte da diferença é de definição, não de dado. A jornada de um FTE 'medida no WMS' é a jornada contratual (PR12), enquanto a jornada ativa média por operador-dia nos dias típicos é {{v.h13}}. O método do deck é desconhecido, e a conferência (postos de PR11, premissa confirmada por Marcus) o WMS não registra.",
+  "pergunta_ref": "P1",
+  "criterio_ref": "CR1",
+  "valores": {
+    "deck": "ANA-003.fte_deck_slide14_total",
+    "fte": "ANA-011.fte_slide14_metodo_contrato",
+    "fte_n": "ANA-011.fte_slide14_metodo_contrato_normal",
+    "razao": "ANA-011.razao_fte_slide14_sobre_contrato",
+    "razao_n": "ANA-011.razao_fte_slide14_sobre_contrato_normal",
+    "h13": "ANA-003.h13a_media_jornada_tipicos_h",
+    "faixa": "ANA-015.fte_separacao_alt3"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "quatro tetos e S1 a S3",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "o FTE do deck fica fora da faixa dos quatro tetos e das três regras de segmento (hp1_dentro_da_faixa_*)"
+    },
+    {
+      "recorte": "por mês e tipo de onda",
+      "analise": "ANA-003",
+      "resultado": "passa",
+      "nota": "nenhum mês e tipo de onda cai dentro da faixa (tabela hp1_por_mes_e_tipo_de_onda)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo."
+  },
+  "impacto": {
+    "modelo": "IMP-CR1-ALT4-ALT3-SEM",
+    "modelos_relacionados": [
+      "IMP-CR1-ALT4-ALT3-SEM-ALTO",
+      "IMP-CR1-ALT3-AUT-SEM",
+      "IMP-CR1-RS-ALT4-ALT3-SEM",
+      "IMP-PMAX-ALT3-SEM",
+      "IMP-PMAX-ALT3-SEM-ALTO"
+    ]
+  },
+  "acao": "Usar o FTE do contrato (horas ativas, faixa dos quatro tetos) em CR1 e CR8, declarado como FTE equivalente de horas ativas, e reconciliar com a Social o método do slide 14 (alocação ou presença). Sem a conferência, a ALT4 não dá economia à Social, nem no teto mais folgado (IMP-CR1-ALT4-ALT3-SEM e IMP-CR1-ALT4-ALT3-SEM-ALTO).",
+  "dono": "Marcus Lima, CEO (autor do deck); Social (via Marcus)",
+  "premissas": [
+    "teto de intervalo conservador do G2 como valor provável e o limite superior do teto como sensibilidade favorável; o dado não identifica o teto",
+    "mão de obra residual pela leitura colaborativa (o operador permanece; ritmo manual medido ÷ PR05); no checkout não há ganho de separação",
+    "jornada de um FTE = jornada contratual (PR12, G2)",
+    "tarifas e franquia do deck (PR02, PR03, PR04) e custo de servir sem hardware informado por Marcus (PR13); custo de hardware (PR20) é [●] e o motor entrega o máximo pagável",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "Sobrevive. Reforço: sem PR11, o teto de cobrança compatível com CR1 no escopo da ALT3 é nulo ou negativo no teto conservador e fica abaixo do piso no teto folgado (RTD-PMAX-ALT3-SEM e RTD-PMAX-ALT3-SEM-ALTO). Isso vale para qualquer estrutura de preço, inclusive pessoa-hora evitada. Detalhes em revisoes/red-team-decisao.json."
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:41:57",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:59",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:39",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:02",
+      "por": "Marcus"
+    }
+  ]
+}

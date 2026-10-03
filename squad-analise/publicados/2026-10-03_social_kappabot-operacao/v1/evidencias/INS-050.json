@@ -1,0 +1,77 @@
+{
+  "id": "INS-050",
+  "estado": "validado",
+  "afirmacao": "As entradas e saídas de logins na carga não medem a rotatividade da equipe. Depois da primeira semana entram {{v.entrada}} e antes das duas últimas semanas saem {{v.saida}}, sobre {{v.total}} na carga e {{v.estoque}} por semana em média. Das entradas, {{v.poucos}} têm até {{v.lim}} de atividade na carga ({{v.poucos_f}} com até {{v.lim_f}}), e {{v.entra_sai}} entram e saem dentro da própria carga: o padrão é de logins esporádicos (apoio, supervisão ou temporário de pico), que o dado não separa da equipe fixa. A primeira semana da carga tem poucos dias, então as entradas do primeiro mês incluem quem já trabalhava; depois do mês inicial entram {{v.entrada_apos}}. As saídas também pegam férias e afastamentos no fim da carga. Login novo não é pessoa nova (veterano de outra área, recontratação, troca de login). A contagem por mês não sai porque alguns meses têm menos logins que o mínimo de privacidade.",
+  "pergunta_ref": "P13",
+  "criterio_ref": "CR8",
+  "valores": {
+    "entrada": "ANA-013.logins_entrada_periodo",
+    "saida": "ANA-013.logins_saida_periodo",
+    "total": "ANA-013.logins_total_periodo",
+    "estoque": "ANA-013.logins_ativos_por_semana_media",
+    "entrada_apos": "ANA-013.logins_entrada_apos_mes_inicial",
+    "poucos": "ANA-013.logins_entrada_poucos_dias",
+    "poucos_f": "ANA-013.logins_entrada_poucos_dias_folgado",
+    "lim": "ANA-013.limiar_poucos_dias_ativos",
+    "lim_f": "ANA-013.limiar_poucos_dias_ativos_folgado",
+    "entra_sai": "ANA-013.logins_entram_e_saem_na_carga"
+  },
+  "nivel": "descritivo",
+  "exploratorio": false,
+  "robustez": [
+    {
+      "recorte": "período inteiro contra depois do mês inicial",
+      "analise": "ANA-013",
+      "resultado": "parcial",
+      "nota": "as entradas do primeiro mês incluem quem já trabalhava (censura da primeira semana da carga); depois do mês inicial o grupo é menor"
+    },
+    {
+      "recorte": "limite de poucos dias ativos (limite do red team contra limite folgado)",
+      "analise": "ANA-013",
+      "resultado": "passa",
+      "nota": "com os dois limites a maior parte das entradas é de logins com poucos dias ativos (chaves logins_entrada_poucos_dias*); o limite não tem fonte setorial ([●])"
+    },
+    {
+      "recorte": "entradas e saídas",
+      "analise": "ANA-013",
+      "resultado": "passa",
+      "nota": "as contagens de entradas e de saídas saem do censo da carga, sem inferência"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo. A contagem de quem entra e sai difere da do red team por definição de saída, sem efeito na leitura."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Não citar a rotatividade como taxa: usar as entradas e saídas de logins só como ordem de grandeza. Perguntar à Social quem são os logins com poucos dias ativos (apoio, supervisão, temporário) e pedir a lista de admissões e desligamentos para medir a rotatividade real (v2).",
+  "dono": "Marcus (pergunta à Social); analista-de-impacto",
+  "premissas": [
+    "censo do período observado (carga inteira em dias plenos): estatísticas exatas do período, sem incerteza amostral",
+    "a semana de incidente operacional da Royal Canin fica nos totais; as variantes sem_incidente e janela_normal estão nas chaves de ANA-013 (revisoes/orquestrador_decisao_semana_incidente.md)",
+    "login novo não é pessoa nova",
+    "censura à esquerda: primeira semana da carga com poucos dias"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:52",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:34",
+      "por": "red-team-analitico"
+    }
+  ]
+}

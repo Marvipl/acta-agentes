@@ -1,0 +1,65 @@
+{
+  "id": "INS-053",
+  "estado": "validado",
+  "afirmacao": "O tempo fora do relógio entre tarefas do mesmo operador (M10 a) tem mediana de {{v.pap}} no pedido-a-pedido, {{v.chk}} no checkout e {{v.col}} na colmeia no teto base; no teto conservador as medianas são {{v.pap300}}, {{v.chk300}} e {{v.col300}}. Retrato do período inteiro, sem comparação entre segmentos (quartis por tipo de onda e depositante na tabela m10a_por_tipo_e_depositante). A mediana depende do teto de intervalo: ela muda entre o teto conservador e o base, então o teto precisa ser declarado sempre que a mediana for citada.",
+  "pergunta_ref": "P10",
+  "criterio_ref": "CR3",
+  "valores": {
+    "pap": "ANA-013.intervalo_mediano_pap",
+    "chk": "ANA-013.intervalo_mediano_checkout",
+    "col": "ANA-013.intervalo_mediano_colmeia",
+    "pap300": "ANA-013.intervalo_mediano_pap_t300",
+    "chk300": "ANA-013.intervalo_mediano_checkout_t300",
+    "col300": "ANA-013.intervalo_mediano_colmeia_t300"
+  },
+  "nivel": "descritivo",
+  "exploratorio": false,
+  "robustez": [
+    {
+      "recorte": "quatro tetos de intervalo",
+      "analise": "ANA-013",
+      "resultado": "passa",
+      "nota": "as medianas do pedido-a-pedido variam pouco entre os tetos; as do checkout e da colmeia variam mais (tabela m10a_por_tipo_e_depositante)"
+    },
+    {
+      "recorte": "com e sem a semana de incidente",
+      "analise": "ANA-013",
+      "resultado": "passa",
+      "nota": "a mediana da Royal Canin no pedido-a-pedido quase não muda (chave intervalo_mediano_pap_rc_sem_incidente)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Usar a mediana do pedido-a-pedido como ordem de grandeza do tempo fora do relógio em CR3, sempre com o teto declarado.",
+  "dono": "analista-de-impacto",
+  "premissas": [
+    "censo do período observado (carga inteira em dias plenos): estatísticas exatas do período, sem incerteza amostral",
+    "a semana de incidente operacional da Royal Canin fica nos totais; as variantes sem_incidente e janela_normal estão nas chaves de ANA-013 (revisoes/orquestrador_decisao_semana_incidente.md)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:55",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:37",
+      "por": "red-team-analitico"
+    }
+  ]
+}

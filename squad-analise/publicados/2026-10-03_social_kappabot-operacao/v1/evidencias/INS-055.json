@@ -1,0 +1,101 @@
+{
+  "id": "INS-055",
+  "estado": "aprovado",
+  "afirmacao": "Contra a leitura do slide 14 (PR09 de {{v.s14i}} a {{v.s14s}}), na base pós-colmeia a ALT3 tem sobra de {{v.sobra14}} no dia p90 na ponta inferior pela frota dia a dia (leitura desfavorável; {{v.sobra14b}} pelo perfil da banda, variante otimista) e de {{v.sobra14max}} na ponta superior; no dia típico a sobra média por hora da janela é {{v.tipico}} (pior hora: {{v.tipico_min}}). É sobra condicionada às premissas (PR07, PR08 e a curva de processamento), não ociosidade medida: a frota do deck pode embutir reserva de disponibilidade e crescimento. Contra a leitura do slide 12 (Royal Canin, de {{v.s12i}} a {{v.s12s}}), a ponta inferior fica em {{v.f12min}} no dia p90 dia a dia (negativo é falta; {{v.f12min_b}} pela banda), e a superior em {{v.f12max}} dia a dia ({{v.f12max_b}} pela banda). Na ALT2 a ponta inferior do slide 12 fica em {{v.alt2_12min}} dia a dia. Na variante do plano (período inteiro) a sobra da ponta inferior do slide 14 é {{v.sobra14_p}} e a ponta inferior do slide 12 fica em {{v.f12min_p}}. Os robôs a mais do slide 14 só se justificam se CR6 passar; o dado não mostra pico que peça a frota maior.",
+  "pergunta_ref": "P12",
+  "criterio_ref": "CR4",
+  "valores": {
+    "s14i": "ANA-009.pr09_slide14_inferior",
+    "s14s": "ANA-009.pr09_slide14_superior",
+    "s12i": "ANA-009.pr09_slide12_inferior",
+    "s12s": "ANA-009.pr09_slide12_superior",
+    "sobra14": "ANA-009.sobra_pico_p90_alt3_slide14_min_pos_colmeia",
+    "sobra14max": "ANA-009.sobra_pico_p90_alt3_slide14_max_pos_colmeia",
+    "tipico": "ANA-009.sobra_dia_tipico_alt3_pos_colmeia",
+    "tipico_min": "ANA-009.sobra_dia_tipico_alt3_minima_na_hora_pos_colmeia",
+    "f12min": "ANA-009.sobra_pico_p90_alt3_slide12_min_pos_colmeia",
+    "f12max": "ANA-009.sobra_pico_p90_alt3_slide12_max_pos_colmeia",
+    "alt2_12min": "ANA-009.sobra_pico_p90_alt2_slide12_min_pos_colmeia",
+    "sobra14_p": "ANA-009.sobra_pico_p90_alt3_slide14_min",
+    "f12min_p": "ANA-009.sobra_pico_p90_alt3_slide12_min",
+    "sobra14b": "ANA-009.sobra_pico_p90_alt3_slide14_min_banda_pos_colmeia",
+    "f12min_b": "ANA-009.sobra_pico_p90_alt3_slide12_min_banda_pos_colmeia",
+    "f12max_b": "ANA-009.sobra_pico_p90_alt3_slide12_max_banda_pos_colmeia"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "variante do plano contra base pós-colmeia",
+      "analise": "ANA-009",
+      "resultado": "parcial",
+      "nota": "a sobra contra o slide 14 existe nas duas leituras, e a falta contra o slide 12 aparece na ponta inferior (chaves com e sem sufixo _pos_colmeia)"
+    },
+    {
+      "recorte": "duas pontas de cada leitura de PR09",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "a falta aparece só no slide 12; as pontas do slide 14 têm sobra"
+    },
+    {
+      "recorte": "frota dia a dia contra perfil da banda",
+      "analise": "ANA-009",
+      "resultado": "parcial",
+      "nota": "a banda reduz a falta contra o slide 12 e aumenta a sobra contra o slide 14 em uma unidade, sendo a ponta otimista (chaves _banda)"
+    },
+    {
+      "recorte": "PR08 inferior, provável e superior",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "a classificação de sobra e falta não muda na grade (tabela sobra_e_falta_alt3)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo. Mostra a banda e o dia a dia lado a lado."
+  },
+  "impacto": {
+    "modelo": "IMP-CR4-SOBRA-FROTA-DECK-SUP",
+    "modelos_relacionados": [
+      "IMP-CR4-SOBRA-FROTA-DECK-INF"
+    ]
+  },
+  "acao": "Tratar a sobra de robôs do slide 14 como custo da Acta se a oferta prometer essa frota (IMP-CR4-SOBRA-FROTA-DECK-INF e IMP-CR4-SOBRA-FROTA-DECK-SUP). Propor frota inicial menor, com revisão trimestral e robôs extras no pico, e não tratar a sobra como ociosidade medida.",
+  "dono": "Renato Correa, CFO (custo); Vinicius Bastos, CTO (frota)",
+  "premissas": [
+    "frota necessária dia a dia na base pós-colmeia (decisão do orquestrador, a confirmar por Marcus no G3), com capacidade do robô de confiança baixa (PR07, PR08) e sem reserva de disponibilidade",
+    "custo de servir por robô sem hardware (PR13), informado por Marcus de forma aproximada",
+    "a frota do deck pode embutir reserva de disponibilidade e crescimento",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "Sobrevive. Ao reduzir a frota, manter a reserva que a conferência desmobilizada exige (INS-054). A promessa de robôs extras no pico sem custo fixo pressupõe robôs parados disponíveis, que são custo da Acta."
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:30:25",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:39",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:35",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:01",
+      "por": "Marcus"
+    }
+  ]
+}

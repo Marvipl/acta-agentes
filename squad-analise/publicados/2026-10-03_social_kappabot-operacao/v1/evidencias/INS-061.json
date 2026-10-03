@@ -1,0 +1,89 @@
+{
+  "id": "INS-061",
+  "estado": "validado",
+  "afirmacao": "Entre os candidatos fixados no plano, nenhum superou a média das últimas quatro semanas pela regra pré-registrada, que manteve a referência base. A hipótese H-P4c, de que a média de quatro semanas erra menos que a média de toda a história, vale nas séries da Royal Canin (checkout, linhas tarifáveis e linhas operacionais do pedido-a-pedido) e falha no armazém: são {{v.h4c_n}} com a média de quatro semanas melhor, e no armazém o erro absoluto médio da história é {{v.mae_hist_arm}}, contra {{v.mae_4s_arm}} da média de quatro semanas. No pedido-a-pedido, o erro absoluto médio fora da amostra foi {{v.mae_4s}}, contra {{v.mae_hist}} da história e {{v.mae_modelo}} da regressão, e as faixas de erro entre origens se sobrepõem entre candidatos. O cenário de operação normal (quatro semanas até o incidente) supõe que a Royal Canin voltou ao normal depois do incidente, e nenhum dado confirma isso ([●]). Nele, a projeção do mês 1 é {{v.proj_pap}} de linhas tarifáveis do pedido-a-pedido, com nível nominal de {{v.cob_normal}}, e {{v.proj_ck}} de pedidos de checkout, em faixa que contém a projeção pontual e as bordas do intervalo. Os intervalos vêm dos erros de poucas origens com horizontes sobrepostos, então a cobertura real pode ser menor. No checkout, todos os erros das origens normais têm o mesmo sinal (a média de quatro semanas subestimou) e a projeção pontual ficaria fora do próprio intervalo de previsão; o impacto deve usar a faixa, não o intervalo. No estresse, com a semana do incidente, o volume é menor (ver INS-060).",
+  "pergunta_ref": "P4",
+  "criterio_ref": "CR2",
+  "valores": {
+    "mae_4s": "ANA-014.mae_janela_4s",
+    "mae_hist": "ANA-014.mae_historia",
+    "mae_modelo": "ANA-014.mae_modelo",
+    "proj_pap": "ANA-014.proj_mes1_linhas_tarif_pap_rc_normal",
+    "proj_ck": "ANA-014.proj_mes1_pedidos_checkout_rc_normal_faixa",
+    "cob_normal": "ANA-014.cobertura_nominal_intervalo_normal",
+    "h4c_n": "ANA-014.h_p4c_series_com_janela_4s_melhor",
+    "mae_hist_arm": "ANA-014.mae_historia_linhas_armazem",
+    "mae_4s_arm": "ANA-014.mae_janela_4s_linhas_armazem"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "sem os dias pós-pausa",
+      "analise": "ANA-014",
+      "resultado": "passa",
+      "nota": "a média de quatro semanas continua melhor que a história na mesma contagem de séries e a regra de vitória continua sem troca (chaves h_p4c_series_com_janela_4s_melhor_sem_pos_pausa e troca_referencia_base_sem_pos_pausa)"
+    },
+    {
+      "recorte": "sem a origem 36 (horizonte com a queda da última semana)",
+      "analise": "ANA-014",
+      "resultado": "passa",
+      "nota": "mesma contagem de séries e nenhuma troca de referência (chaves h_p4c_series_com_janela_4s_melhor_sem_origem36 e troca_referencia_base_sem_origem36)"
+    },
+    {
+      "recorte": "por série",
+      "analise": "ANA-014",
+      "resultado": "parcial",
+      "nota": "vale para as três séries da Royal Canin; no armazém a média de toda a história erra menos (chave h_p4c_series_com_janela_4s_melhor)"
+    },
+    {
+      "recorte": "base da projeção: operação normal contra estresse (com o incidente)",
+      "analise": "ANA-014",
+      "resultado": "parcial",
+      "nota": "a ordem dos candidatos se mantém sem a origem 36, mas o nível do mês 1 muda muito entre as bases (chaves proj_mes1_*_normal e proj_mes1_*_estresse); a faixa é larga nas duas"
+    },
+    {
+      "recorte": "sinal dos erros das origens normais (checkout)",
+      "analise": "ANA-014",
+      "resultado": "parcial",
+      "nota": "a faixa do checkout em operação normal não contém a projeção pontual quando lida como intervalo de previsão: a média de quatro semanas subestimou em todas as origens sem incidente (chave intervalo_mes1_contem_ponto_pedidos_checkout_rc_normal); a chave proj_mes1_pedidos_checkout_rc_normal_faixa contém o ponto e as bordas, e no pedido-a-pedido o intervalo contém a projeção"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Usar a média de quatro semanas até o incidente como referência de volume em CR2 (operação normal), com a faixa de erro das origens e não o ponto no checkout, e manter o estresse como segunda leitura.",
+  "dono": "Marcus (decisão) com o analista de impacto",
+  "premissas": [
+    "PR02",
+    "PR14",
+    "PAR08",
+    "PAR10",
+    "base normal = quatro semanas até 18/09 (decisão do orquestrador, revisoes/orquestrador_decisao_semana_incidente.md)",
+    "a operação da Royal Canin volta ao normal depois do incidente: [●], sem dado que confirme"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T16:49:40",
+      "por": "cientista-de-dados"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:45",
+      "por": "red-team-analitico"
+    }
+  ]
+}

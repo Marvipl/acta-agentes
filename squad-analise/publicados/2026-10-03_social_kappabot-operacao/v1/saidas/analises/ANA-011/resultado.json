@@ -1,0 +1,467 @@
+{
+  "id": "ANA-011",
+  "valores": {
+    "t_coleta_relatorio_com_robo_s": {
+      "valor": 62.122566373102586,
+      "unidade": "s por coleta",
+      "descricao": "segundos por coleta (média do método do relatório: Royal Canin, pedido-a-pedido, 2 ou mais endereços, corte de 300 s, com as linhas da conta do robô dentro da amostra)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "t_coleta_relatorio_sem_robo_s": {
+      "valor": 63.61780706609474,
+      "unidade": "s por coleta",
+      "descricao": "segundos por coleta (mesma amostra sem as linhas da conta do robô, sem o piso físico)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "t_coleta_contrato_m08_s": {
+      "valor": 63.6700445460001,
+      "unidade": "s por coleta",
+      "descricao": "segundos por coleta (M08 do contrato: manual, com o piso físico de 3,6 s por coleta)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_relatorio_com_robo": {
+      "valor": 2471.0,
+      "unidade": "tarefas",
+      "descricao": "tarefas (amostra do método do relatório, com a conta do robô)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_relatorio_sem_robo": {
+      "valor": 2409.0,
+      "unidade": "tarefas",
+      "descricao": "tarefas (amostra sem a conta do robô)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_linhas_robo_na_amostra": {
+      "valor": 62.0,
+      "unidade": "linhas do robô",
+      "descricao": "linhas da conta do robô dentro da amostra do relatório",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dp_relatorio_com_robo_s": {
+      "valor": 42.689036713379785,
+      "unidade": "s por coleta",
+      "descricao": "segundos por coleta (desvio padrão da amostra com a conta do robô)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dp_relatorio_sem_robo_s": {
+      "valor": 42.15942722387981,
+      "unidade": "s por coleta",
+      "descricao": "segundos por coleta (desvio padrão sem a conta do robô)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "amplitude_relativa_2a5_enderecos": {
+      "valor": 0.03722157617620572,
+      "unidade": "%",
+      "descricao": "fração (amplitude das médias por faixa de 2, 3 e 4-5 endereços ÷ média, M08 do contrato)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "intervalo_mediano_teto_base_s": {
+      "valor": 101.0,
+      "unidade": "s",
+      "descricao": "segundos (mediana de M10 b no teto base, de ANA-004)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_rc_por_dia_semana_incidente": {
+      "valor": 1.5,
+      "unidade": "pedidos por dia",
+      "descricao": "pedidos da Royal Canin por dia pleno de 21 a 25/09 (WMS, incidente operacional)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fte_slide14_metodo_contrato": {
+      "valor": 0.21380299125865293,
+      "unidade": "FTE",
+      "descricao": "FTE (separação do checkout + pedido-a-pedido da ALT3 pelo método do contrato, M13, teto conservador do G2; o deck diz 1,86)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fte_slide14_metodo_contrato_normal": {
+      "valor": 0.30194147259918774,
+      "unidade": "FTE",
+      "descricao": "FTE (idem, operação normal)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fte_slide14_metodo_contrato_estresse": {
+      "valor": 0.21380299125865293,
+      "unidade": "FTE",
+      "descricao": "FTE (separação do checkout + pedido-a-pedido da ALT3 pelo método do contrato, M13, teto conservador do G2; o deck diz 1,86)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_fte_slide14_sobre_contrato": {
+      "valor": 8.699597648518507,
+      "unidade": "x",
+      "descricao": "razão (FTE do slide 14 ÷ FTE do contrato no teto conservador)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_fte_slide14_sobre_contrato_normal": {
+      "valor": 6.160134227301254,
+      "unidade": "x",
+      "descricao": "razão (FTE do slide 14 ÷ FTE do contrato no teto conservador, operação normal)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "vol_implicito_economia_linhas": {
+      "valor": 10020.0,
+      "unidade": "linhas tarifáveis por mês",
+      "descricao": "linhas tarifáveis por mês (pedido-a-pedido, implícitas no serviço do slide 15: (R$ 6.055 − 0,71 FTE) ÷ PR04)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "vol_implicito_economia_pedidos_checkout": {
+      "valor": 3815.8823529411766,
+      "unidade": "pedidos de checkout por mês",
+      "descricao": "pedidos de checkout por mês (implícitos no serviço do slide 15: (R$ 8.187 − 0,34 FTE) ÷ PR03)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "vol_implicito_franquia_linhas": {
+      "valor": 9452.0,
+      "unidade": "linhas tarifáveis por mês",
+      "descricao": "linhas tarifáveis por mês (pedido-a-pedido, implícitas na franquia: (PR02 ÷ 2/3 − serviço do checkout) ÷ PR04)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_implicita_franquia_mes": {
+      "valor": 8850.0,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (receita mensal implícita na franquia: PR02 ÷ (2/3))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_implicita_economia_mes": {
+      "valor": 8992.0,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (receita mensal implícita no serviço do slide 15)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "franquia_sobre_receita_implicita_economia": {
+      "valor": 0.6561387900355872,
+      "unidade": "%",
+      "descricao": "fração (PR02 ÷ receita implícita na economia; o deck diz cerca de 2/3)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "economia_recalculada_slide15": {
+      "valor": 5065.0,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (custo hoje − mão de obra com robô − serviço implícito, aritmética do deck)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "vol_implicito_checkout_em_dias_do_slide10": {
+      "valor": 30.046317739694302,
+      "unidade": "x",
+      "descricao": "razão (pedidos de checkout implícitos por mês ÷ 127 pedidos por dia do slide 10)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "vol_implicito_economia_linhas_minimo": {
+      "valor": 9918.0,
+      "unidade": "linhas tarifáveis por mês",
+      "descricao": "linhas tarifáveis por mês (limite inferior pelo arredondamento do deck)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "vol_implicito_economia_linhas_maximo": {
+      "valor": 10122.0,
+      "unidade": "linhas tarifáveis por mês",
+      "descricao": "linhas tarifáveis por mês (limite superior pelo arredondamento do deck)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "vol_implicito_economia_pedidos_checkout_minimo": {
+      "valor": 3800.8823529411766,
+      "unidade": "pedidos de checkout por mês",
+      "descricao": "pedidos de checkout por mês (limite inferior pelo arredondamento do deck)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "vol_implicito_economia_pedidos_checkout_maximo": {
+      "valor": 3830.8823529411766,
+      "unidade": "pedidos de checkout por mês",
+      "descricao": "pedidos de checkout por mês (limite superior pelo arredondamento do deck)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_bases_testadas": {
+      "valor": 45.0,
+      "unidade": "bases",
+      "descricao": "bases de volume do WMS testadas (base × definição de linha × CANCELADO)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_bases_que_reproduzem_a_franquia": {
+      "valor": 0.0,
+      "unidade": "bases",
+      "descricao": "bases que reproduzem a franquia (cerca de 2/3 do volume)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_bases_que_reproduzem_a_economia": {
+      "valor": 0.0,
+      "unidade": "bases",
+      "descricao": "bases que reproduzem a economia de R$ 5.065",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_bases_que_reproduzem_os_dois": {
+      "valor": 0.0,
+      "unidade": "bases",
+      "descricao": "bases que reproduzem a franquia e a economia ao mesmo tempo",
+      "incerteza": null,
+      "contagem": true
+    },
+    "base_do_deck_numeros_reproduzidos": {
+      "valor": 0.0,
+      "unidade": "números",
+      "descricao": "números independentes reproduzidos pela melhor base (franquia e economia; no máximo dois)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "base_do_deck_razao_linhas": {
+      "valor": 0.33626722458697067,
+      "unidade": "x",
+      "descricao": "razão (linhas tarifáveis da melhor base ÷ linhas implícitas na economia)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "base_do_deck_razao_checkout": {
+      "valor": 0.3373976869401453,
+      "unidade": "x",
+      "descricao": "razão (pedidos de checkout da melhor base ÷ implícitos na economia)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "base_do_deck_franquia_sobre_receita": {
+      "valor": 1.9465213433660469,
+      "unidade": "%",
+      "descricao": "fração (franquia ÷ receita da melhor base)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_bases_testadas_normal": {
+      "valor": 45.0,
+      "unidade": "bases",
+      "descricao": "bases de volume do WMS testadas (base × definição de linha × CANCELADO)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_bases_que_reproduzem_a_franquia_normal": {
+      "valor": 0.0,
+      "unidade": "bases",
+      "descricao": "bases que reproduzem a franquia (cerca de 2/3 do volume)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_bases_que_reproduzem_a_economia_normal": {
+      "valor": 0.0,
+      "unidade": "bases",
+      "descricao": "bases que reproduzem a economia de R$ 5.065",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_bases_que_reproduzem_os_dois_normal": {
+      "valor": 0.0,
+      "unidade": "bases",
+      "descricao": "bases que reproduzem a franquia e a economia ao mesmo tempo",
+      "incerteza": null,
+      "contagem": true
+    },
+    "base_do_deck_numeros_reproduzidos_normal": {
+      "valor": 0.0,
+      "unidade": "números",
+      "descricao": "números independentes reproduzidos pela melhor base (franquia e economia; no máximo dois)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "base_do_deck_razao_linhas_normal": {
+      "valor": 0.35306601985901614,
+      "unidade": "x",
+      "descricao": "razão (linhas tarifáveis da melhor base ÷ linhas implícitas na economia)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "base_do_deck_razao_checkout_normal": {
+      "valor": 0.3544811141269882,
+      "unidade": "x",
+      "descricao": "razão (pedidos de checkout da melhor base ÷ implícitos na economia)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "base_do_deck_franquia_sobre_receita_normal": {
+      "valor": 1.8530445430402491,
+      "unidade": "%",
+      "descricao": "fração (franquia ÷ receita da melhor base)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_implicito_corrente": {
+      "valor": 9.175824175824175,
+      "unidade": "x",
+      "descricao": "razão (linhas tarifáveis implícitas na economia ÷ linhas tarifáveis correntes da Royal Canin, taxa corrente de ANA-002)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_implicito_corrente_checkout": {
+      "valor": 4.103834758495619,
+      "unidade": "x",
+      "descricao": "razão (pedidos de checkout implícitos na economia ÷ pedidos de checkout correntes)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_implicito_corrente_receita": {
+      "valor": 4.850795249184071,
+      "unidade": "x",
+      "descricao": "razão (receita implícita na economia ÷ receita corrente da ALT3 de ANA-002)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_franquia_implicita_corrente_linhas": {
+      "valor": 8.655677655677655,
+      "unidade": "x",
+      "descricao": "razão (linhas implícitas na franquia ÷ linhas correntes)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_implicito_corrente_normal": {
+      "valor": 6.282546282546283,
+      "unidade": "x",
+      "descricao": "razão (linhas tarifáveis implícitas na economia ÷ linhas tarifáveis correntes da Royal Canin, taxa corrente de ANA-002)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_implicito_corrente_checkout_normal": {
+      "valor": 3.469814056275777,
+      "unidade": "x",
+      "descricao": "razão (pedidos de checkout implícitos na economia ÷ pedidos de checkout correntes)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_implicito_corrente_receita_normal": {
+      "valor": 3.9642436582380545,
+      "unidade": "x",
+      "descricao": "razão (receita implícita na economia ÷ receita corrente da ALT3 de ANA-002)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_franquia_implicita_corrente_linhas_normal": {
+      "valor": 5.926409926409927,
+      "unidade": "x",
+      "descricao": "razão (linhas implícitas na franquia ÷ linhas correntes)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_implicito_corrente_estresse": {
+      "valor": 9.175824175824175,
+      "unidade": "x",
+      "descricao": "razão (linhas tarifáveis implícitas na economia ÷ linhas tarifáveis correntes da Royal Canin, taxa corrente de ANA-002)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "vol_implicito_economia_linhas_estresse": {
+      "valor": 10020.0,
+      "unidade": "linhas tarifáveis por mês",
+      "descricao": "linhas tarifáveis por mês (pedido-a-pedido, implícitas no serviço do slide 15: (R$ 6.055 − 0,71 FTE) ÷ PR04)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_numeros_ponte": {
+      "valor": 44.0,
+      "unidade": "números",
+      "descricao": "números do deck e do relatório na tabela ponte (ids distintos)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_linhas_ponte": {
+      "valor": 102.0,
+      "unidade": "linhas",
+      "descricao": "linhas da tabela ponte (número × método)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_linhas_aparente_reproduzem": {
+      "valor": 11.0,
+      "unidade": "linhas",
+      "descricao": "linhas pelo método aparente da fonte que reproduzem o número",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_linhas_aparente": {
+      "valor": 14.0,
+      "unidade": "linhas",
+      "descricao": "linhas pelo método aparente da fonte",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_linhas_contrato_reproduzem": {
+      "valor": 3.0,
+      "unidade": "linhas",
+      "descricao": "linhas pelo método do contrato que reproduzem o número",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_linhas_contrato": {
+      "valor": 18.0,
+      "unidade": "linhas",
+      "descricao": "linhas pelo método do contrato",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_numeros_com_os_dois_metodos": {
+      "valor": 10.0,
+      "unidade": "números",
+      "descricao": "números com valor pelo método aparente e pelo do contrato (mesmo número nos dois lados)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_numeros_reproduzidos_pelo_aparente": {
+      "valor": 9.0,
+      "unidade": "números",
+      "descricao": "números reproduzidos pelo método aparente da fonte, entre os que têm os dois métodos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_numeros_reproduzidos_pelo_contrato": {
+      "valor": 2.0,
+      "unidade": "números",
+      "descricao": "números reproduzidos pelo método do contrato, entre os que têm os dois métodos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_linhas_que_nao_reproduzem": {
+      "valor": 41.0,
+      "unidade": "linhas",
+      "descricao": "linhas que não reproduzem o número do deck (qualquer método)",
+      "incerteza": null,
+      "contagem": true
+    }
+  },
+  "tabelas": {
+    "volume_implicito_do_deck": "volume_implicito_do_deck.csv",
+    "bases_volume_implicito": "bases_volume_implicito.csv",
+    "melhor_base_estresse": "melhor_base_estresse.csv",
+    "melhor_base_normal": "melhor_base_normal.csv",
+    "ponte_deck_wms": "ponte_deck_wms.csv"
+  },
+  "figuras": [
+    "fig_bases_contra_volume_implicito.png",
+    "fig_ponte_diferenca_relativa.png"
+  ],
+  "notas": "Censo de verificação determinística (fora das famílias); linguagem descritiva ('o WMS reproduz' ou 'não reproduz'), sem chamar de evidência nova nem de significativo (regra de leitura dos limites). Tolerância fixada antes dos resultados: 2% para números exatos; intervalo de arredondamento do próprio número para os aproximados ('~', 'cerca de', percentuais inteiros; 'cerca de 2/3' = 0,67); sensibilidade de 10% (convenção de efeito relevante do G2) na coluna reproduz_amplo_10pct, sem valor de decisão. A confirmação final de qual método é o do deck é do autor (Marcus). O método aparente de cada número é o que a descrição da fonte indica (datas distintas, Qtde Endereços, sem CANCELADO, com as linhas da conta do robô no relatório); o do contrato é o de M04 a M24. Slides com fonte 9fleet (robô, última semana de 25/09 a 02/10, 127 e 248 pedidos por dia) ficam fora do alcance do WMS e aparecem só quando há contraparte; a semana de 21 a 25/09 do WMS é o incidente operacional da Royal Canin. Volume implícito: serviço do slide 15 (custo com Kappabot − mão de obra com robô), pedidos de checkout ÷ PR03 e linhas ÷ PR04 (abaixo dos limites de PAR14, sem tarifa reduzida); franquia como cerca de 2/3 do volume atual. Os FTE do slide 14 têm duas casas, e a conta do serviço carrega ±0,005 FTE × PR10 ÷ 12 de arredondamento (chaves _minimo e _maximo). A regra de empate entre bases (mais números reproduzidos, depois datas distintas, depois a mais recente) está no código. A conta do robô entra na amostra do relatório com as linhas de tempo próximo de zero (chave n_linhas_robo_na_amostra), por isso a média sem elas sobe. Dependências fora do hash do script: analises/comum.py e as saídas de ANA-002, ANA-003, ANA-004, ANA-006 e ANA-008.",
+  "em": "2026-10-03T21:22:03",
+  "segundos": 1.5
+}

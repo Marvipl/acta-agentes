@@ -1,0 +1,1719 @@
+{
+  "analises": [
+    {
+      "id": "ANA-000",
+      "pergunta_ref": "P7",
+      "perguntas_cobertas": [
+        "P7",
+        "P8",
+        "P11",
+        "P14",
+        "P17",
+        "P1",
+        "P3",
+        "P9"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "retrato",
+      "hipotese": "Sem hipótese de efeito: análise de poder pré-registrada. Grava só n_*, ep_* e mde_* de cada teste com p-valor ou margem registrado antes da D3 (F1a, F1b, as três pistas a priori da F2 e a equivalência de ANA-006), antes de qualquer efeito. Não lê nada de ANA-012.",
+      "variante_primaria": "As mesmas variantes primárias registradas em familias_holm e em ANA-006, com as mesmas unidades de reamostragem.",
+      "metodo": "Para cada teste: n de unidades independentes (dias, semanas, operadores, operador-semanas), EP e MDE pela fórmula de definicoes.poder.mde. Testes de diferença: EP por bootstrap sob permutação dos rótulos de grupo dentro do bloco (efeito nulo por construção). Testes contra limite (H-P7, H-P17, H-P14a) e equivalência (ANA-006): EP pelas réplicas do estimador centradas na própria média. O script não grava, não imprime e não devolve estimativa pontual, diferença, razão ao limite nem p; só n_*, ep_* e mde_* (o red team confere as chaves). Ordem auditável: o orquestrador roda e registra ANA-000 sozinha (python -m motor.registro <dv> ANA-000) antes de todas as outras; o horário fica em saidas/analises/ANA-000/resultado.json (campo em) e o hash em saidas/registro.json. As demais análises leem esses valores e não recalculam. As pistas de ANA-012 (PT-D1, PT-D3 e PT-D4) não são calculadas aqui: o poder delas fica em ANA-017, que roda depois de ANA-012. Assim ANA-000 não depende de ANA-012, e ANA-012 pode ler n_* e mde_* de ANA-000 (correção da dependência circular AUD-D1). O alfa das pistas a priori continua o da F2 com seis testes (alfa ÷ 6 no pior caso).",
+      "robustez": [],
+      "poder": {
+        "unidade": "a de cada teste"
+      },
+      "metricas": [
+        "M05",
+        "M08",
+        "M10",
+        "M11",
+        "M14",
+        "M16",
+        "M24",
+        "M25",
+        "M09"
+      ],
+      "premissas_usadas": [
+        "PR05",
+        "PR06",
+        "PR07",
+        "PAR02",
+        "PAR07"
+      ],
+      "hipoteses_setor": [],
+      "indicacao_preliminar_do_contrato": "Nenhuma.",
+      "incerteza": "nenhuma",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-000.py",
+      "chaves_principais": [
+        "n_operadores_cr3",
+        "mde_cr3",
+        "n_operadores_colmeia",
+        "mde_cr7",
+        "n_dias_janela_longa",
+        "mde_cr5",
+        "mde_h06",
+        "mde_h13a",
+        "mde_h13b",
+        "mde_h01",
+        "mde_equiv_slide10",
+        "mde_pt_h04",
+        "mde_pt_h09",
+        "mde_pt_h10"
+      ]
+    },
+    {
+      "id": "ANA-001",
+      "pergunta_ref": "P6",
+      "perguntas_cobertas": [
+        "P6"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "comparacao",
+      "hipotese": "Verificação do deck (slide 8), fora das famílias de Holm: a participação do pedido-a-pedido nos pedidos da Royal Canin cai ao longo do período, além do degrau da entrada da colmeia.",
+      "variante_primaria": "Participação semanal do pedido-a-pedido nos pedidos da Royal Canin (M04, conta do robô dentro), semanas ISO com pelo menos três dias plenos, ponderadas pelo número de dias plenos; modelo com degrau na primeira semana com colmeia e tendência linear; erro HAC (Newey-West) e bootstrap por bloco de semana como sensibilidade; estatística = inclinação.",
+      "metodo": "Modelo da variante primária, com p unilateral calculado com checagem de sinal (o p bilateral de ctx.estat.tendencia não é usado direto). Série em nível para PR14: linhas tarifáveis do pedido-a-pedido da Royal Canin por dia pleno (M06, limite inferior), mesma especificação, inclinação com IC HAC (vai a entradas_impacto). Tabela mês × tipo de onda com volume cru e normalizado (M20) em pedidos, M06 e M05, e participação mensal do robô (M26); contagens completas. Linguagem do insight: descritiva.",
+      "robustez": [
+        "unidade de volume: pedidos, M05 e M06",
+        "sem as três primeiras semanas (bloco sem registro de junho)",
+        "com e sem os dias pós-pausa"
+      ],
+      "poder": {
+        "unidade": "semana ISO",
+        "n_esperado": 17,
+        "regra": "10 a 19 clusters: IC HAC comparado ao de bloco de semana, vale o mais largo"
+      },
+      "metricas": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M15",
+        "M20",
+        "M26"
+      ],
+      "premissas_usadas": [
+        "PAR07",
+        "PAR08",
+        "PAR10",
+        "PAR11"
+      ],
+      "hipoteses_setor": [],
+      "indicacao_preliminar_do_contrato": "O contrato verificou que a regra de onda reproduz o slide 8: o teste só confirma o que já se viu e é rotulado como verificação.",
+      "incerteza": "intervalo_confianca",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-001.py",
+      "chaves_principais": [
+        "inclinacao_part_pap_rc_semana",
+        "degrau_colmeia_part_pap_rc",
+        "inclinacao_linhas_tarif_pap_rc_dia_semana",
+        "part_pap_rc_mes",
+        "part_robo_pap_rc_mes",
+        "n_semanas"
+      ]
+    },
+    {
+      "id": "ANA-002",
+      "pergunta_ref": "P4",
+      "perguntas_cobertas": [
+        "P4"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "comparacao",
+      "hipotese": "H-P4a (slide 18), verificação por envelope, fora das famílias de Holm: na ALT3, a receita mensal por transação na taxa corrente cobre a franquia (M21 ÷ PR02 ≥ 1) em todo o envelope. H-P4b: na ALT2, só com o pedido-a-pedido, a cobertura fica abaixo de 1 em todo o envelope.",
+      "variante_primaria": "Janela base, M06 limite inferior, mensalização com o mês de referência, faixa de tarifa marginal (PAR14), conta do robô dentro, sem linha_palete e sem tarefa_aberta_lote, todos os pedidos-a-pedido da Royal Canin.",
+      "metodo": "Taxas por dia pleno: pedidos de checkout da Royal Canin; linhas tarifáveis do pedido-a-pedido pela M06 (limites superior e inferior) e, como sensibilidade de PQ02, pela M05; pedidos-a-pedido e de colmeia (referência de ALT5, sem tarifa); parcela da conta do robô. Receita M21 por alternativa (ALT2 sem checkout; ALT3 e ALT4 com), com a faixa marginal e a retroativa (PQ08). Envelope de CR2 (faixa_cenarios): ponta inferior = o menor valor entre o limite inferior do IC da variante primária e as estimativas pontuais das variantes de janela (definicoes.janela_taxa_corrente.variantes_do_envelope) com M06 inferior; ponta superior, o simétrico com M06 superior. Classificação pela regra de leitura; inconclusivo vai a ALT4. O IC da variante primária vem do bootstrap de dias estratificado por dia da semana; o de bloco de semana é sensibilidade e não serve sozinho com quatro semanas. O resultado traz os dias plenos por dia da semana de cada janela e grava as réplicas do bootstrap (tabela) para o analista de impacto.",
+      "robustez": [
+        "contagem de linha: M06 superior, M06 inferior e M05",
+        "janelas do envelope e conferências (agosto, carga inteira, lacuna de extração)",
+        "variante só com pedido_multi_endereco"
+      ],
+      "poder": {
+        "unidade": "dia pleno",
+        "n_esperado": 18,
+        "regra": "10 a 19 dias e 3 a 4 por estrato: o IC é só uma componente do envelope"
+      },
+      "metricas": [
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M15",
+        "M18",
+        "M20",
+        "M21",
+        "M26"
+      ],
+      "premissas_usadas": [
+        "PR02",
+        "PR03",
+        "PR04",
+        "PAR07",
+        "PAR08",
+        "PAR10",
+        "PAR14"
+      ],
+      "hipoteses_setor": [],
+      "indicacao_preliminar_do_contrato": "Nenhuma sobre a receita. sup-negocio r1: a base de volume do deck parece não fechar com os slides 8 e 12.",
+      "incerteza": "faixa_cenarios",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-002.py",
+      "chaves_principais": [
+        "taxa_pedidos_checkout_rc_dia",
+        "taxa_linhas_tarif_pap_rc_dia",
+        "taxa_linhas_tarif_pap_rc_dia_inf",
+        "taxa_linhas_oper_pap_rc_dia",
+        "taxa_pedidos_pap_rc_dia",
+        "taxa_pedidos_colmeia_rc_dia",
+        "dias_uteis_mes_ref",
+        "vol_mes_pedidos_checkout_rc",
+        "vol_mes_linhas_tarif_pap_rc_inf",
+        "receita_mes_alt2",
+        "receita_mes_alt3",
+        "cobertura_franquia_alt2",
+        "cobertura_franquia_alt3",
+        "n_dias_janela"
+      ]
+    },
+    {
+      "id": "ANA-003",
+      "pergunta_ref": "P1",
+      "perguntas_cobertas": [
+        "P1",
+        "P2",
+        "P19"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "associativo",
+      "tipo_pergunta": "comparacao",
+      "hipotese": "H-P1 (slide 14), verificação determinística fora das famílias: os FTE de separação do escopo da ALT3 do slide 14 ficam dentro da faixa de M13 entre os quatro tetos e S1 a S3. H13a (F1b): o mesmo operador tem jornada ativa maior nos dias de pico do que nos dias típicos (folga nos dias típicos). H13b (F1b): com efeito fixo de hora do dia e de dia da semana, e sem a faixa de refeição, a fração de intervalos entre tarefas acima do teto numa hora cai quando o volume do dia sobe.",
+      "variante_primaria": "H13a: armazém, teto base, jornada ativa de M11 por operador-dia, diferença dentro do operador (média por operador nos dias de pico menos nos típicos, só operadores com os dois tipos de dia), média entre operadores; unidade = operador; todos os dias plenos. Leitura com a amplitude do operador-dia (primeiro início ao último fim), também dentro do operador: folga nos dias típicos só é sustentada se a jornada ativa sobe e a diferença de amplitude tem IC que contém zero e fica abaixo do efeito relevante; se a amplitude sobe junto, a leitura é hora extra (alternativa de H10), e H13a não confirma folga. H13b: armazém, teto base, unidade = (dia pleno, hora) na janela observada fora da faixa de refeição, regressão da fração de intervalos acima do teto (M10) em efeitos fixos de hora e de dia da semana e no log do volume do dia em linhas operacionais (exposição; não o processamento da hora, PQ06); estatística = coeficiente do volume; inferência por bloco de semana e por dia, vale o mais largo. Faixa de refeição = a hora do perfil médio do armazém com a maior fração de intervalos acima do teto e a hora seguinte (regra fixada agora; robustez com a hora anterior também).",
+      "metodo": "Horas ativas (M11, M12) por dia pleno na janela base e por mês: pedido-a-pedido, checkout e colmeia da Royal Canin, escopo de cada alternativa e armazém, nos quatro tetos, com S1, S2, S3 e com e sem turnos fundidos; cada teto é uma chave própria (sufixos _t300, _t600, _t900, _t1800) com faixa_cenarios de S1 a S3; a chave sem sufixo é o teto conservador do G2 com a faixa da grade inteira. FTE = horas por dia pleno ÷ PR12 (presença, não quadro) e FTE semanal com sábado (M13). Tempo descartado (M29) por motivo e tipo de onda no escopo. Viés do robô: horas sem robô equivalentes = volume total do escopo (robô incluído) ÷ M14 padronizado do período anterior a PAR11. P2: contagem de registros de pré-conferência ou conferência (se zero, PR11 segue sensibilidade). P19: excedente de horas (M23) do dia p90 (banda PAR05) e da média dos dias pós-pausa e segundas sobre o típico, no escopo e no armazém; o dia máximo só como limite superior; operadores adicionais sem robô = teto inteiro de excedente ÷ PR12. Consequência registrada: se H13a ou H13b confirmar (p ajustado na F1b abaixo de alfa e IC fora de zero), o analista de impacto lê a economia de CR1 e os FTE de CR8 em horas ativas como limite superior, a regra de decisão lê CR1 e CR8 no teto conservador, e o argumento de CR8 muda de 'vagas liberadas' para 'absorver crescimento e pico sem contratar'. Se não confirmar, a leitura base fica.",
+      "robustez": [
+        "H13: escopo Royal Canin contra armazém",
+        "H13: metades do período",
+        "H13a: sem dias pós-pausa",
+        "H13b: faixa de refeição ampliada",
+        "H-P1: por mês e por tipo de onda"
+      ],
+      "poder": {
+        "unidade": "H13a: operador com dias de pico e típicos; H13b: semana (bloco) e dia",
+        "n_esperado": {
+          "H13a_operadores": "até 39 (contado no script)",
+          "dias_de_pico": 8,
+          "semanas": 17,
+          "dias_plenos": 80
+        },
+        "efeito_relevante": "10% da jornada ativa média dos dias típicos (H13a); 10% da fração média de intervalos acima do teto (H13b), por variação de 10% no volume do dia"
+      },
+      "metricas": [
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M15",
+        "M16",
+        "M18",
+        "M23",
+        "M29"
+      ],
+      "premissas_usadas": [
+        "PR11",
+        "PR12",
+        "PAR01",
+        "PAR02",
+        "PAR04",
+        "PAR05",
+        "PAR07",
+        "PAR09",
+        "PAR11",
+        "PAR12"
+      ],
+      "hipoteses_setor": [
+        "H13"
+      ],
+      "indicacao_preliminar_do_contrato": "O contrato indicou que os FTE do slide 14 não se reproduzem e que as horas ativas ficam muito abaixo de PR12: H-P1 é verificação. H13 vem do especialista e não foi consultada.",
+      "incerteza": "faixa_cenarios",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-003.py",
+      "chaves_principais": [
+        "h13a_dif_amplitude_operador_h",
+        "horas_dia_pap_rc",
+        "horas_dia_checkout_rc",
+        "horas_dia_colmeia_rc",
+        "horas_dia_escopo_alt2",
+        "horas_dia_escopo_alt3",
+        "fte_escopo_alt2",
+        "fte_escopo_alt3",
+        "fte_escopo_alt3_t300",
+        "fte_escopo_alt3_t600",
+        "fte_escopo_alt3_t900",
+        "fte_escopo_alt3_t1800",
+        "fte_semana_escopo_alt3",
+        "horas_sem_robo_equiv_pap_rc",
+        "registros_conferencia",
+        "fracao_descartada_escopo",
+        "excedente_h_p90_escopo",
+        "excedente_h_p90_armazem",
+        "excedente_h_retomada_escopo",
+        "operadores_adicionais_p90_escopo",
+        "h13a_dif_jornada_operador_h",
+        "h13b_coef_volume",
+        "n_operadores_h13a"
+      ]
+    },
+    {
+      "id": "ANA-004",
+      "pergunta_ref": "P7",
+      "perguntas_cobertas": [
+        "P7"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "comparacao",
+      "hipotese": "H-P7 (CR3, F1a): no pedido-a-pedido da Royal Canin, as linhas operacionais por hora por operador em ciclo completo (M14) não passam de PR06.",
+      "variante_primaria": "Royal Canin, pedido-a-pedido, executor manual, sem CANCELADO, tarefa_aberta_lote nem linha_palete; M14 em coletas por hora; teto conservador fixado no G2; regra base de M11 (pausas fora); padronizado por faixa de endereços ao mix da janela base; período inteiro. Regra ligada a H06 (registrada agora): se H06 confirmar em ANA-005, a variante primária passa a ser o período anterior a PAR11, com a mesma padronização; ali o IC primário é por operador se houver pelo menos 20 operadores (de 10 a 19, com aviso), e o bloco de semana (7 semanas, abaixo do mínimo) só serve de comparação. Unidade de reamostragem = operador; IC por bloco de semana como comparação no período inteiro; vale o mais largo. Direção: M14 ≤ PR06.",
+      "metodo": "Teste da variante primária e classificação de CR3 pela regra de leitura. Também nos quatro tetos, S1 a S3, com e sem linha_longa, cru e padronizado, antes e depois de PAR11, e só linhas sem sobreposição. M08: média simples (base do relatório), razão ponderada (benchmark) e mediana, com n, com e sem linha_longa, antes de PAR11, sem sobreposição e com o piso de sensibilidade. M10 variante (b): mediana e quartis do intervalo entre pedidos-a-pedido consecutivos (slide 6). Ciclo completo por pedido por faixa de endereços. Tempo descartado (M29) do recorte. Pré-requisitos: H05 = fração de linhas sobrepostas (contagem completa) e M14 e M08 sem elas; se a classificação de CR3 mudar sem elas, CR3 fica sensível a H05 e vai à operação da Social (E1). A1 = tempo das linhas de um endereço por faixa de Qtde Un (mediana e p90). Comparação descritiva com PR17, PR18 e PR05, sem teste (Q04).",
+      "robustez": [
+        "por mês, padronizado",
+        "antes e depois de PAR11, padronizado",
+        "por faixa de endereços com ctx.estat.robustez (inversão invalida)"
+      ],
+      "poder": {
+        "unidade": "operador",
+        "n_esperado": "até 39 (contado no script); 17 semanas no período inteiro e 7 antes de PAR11",
+        "efeito_relevante": "PR05 ÷ 2 − PR06"
+      },
+      "metricas": [
+        "M03",
+        "M05",
+        "M07",
+        "M08",
+        "M10",
+        "M11",
+        "M14",
+        "M29"
+      ],
+      "premissas_usadas": [
+        "PR05",
+        "PR06",
+        "PR16",
+        "PR17",
+        "PR18",
+        "PAR01",
+        "PAR02",
+        "PAR03",
+        "PAR07",
+        "PAR11"
+      ],
+      "hipoteses_setor": [
+        "H05",
+        "A1"
+      ],
+      "indicacao_preliminar_do_contrato": "O contrato indicou que M14 cai no mesmo intervalo de PR06 e varia muito com o teto, e que o tempo das linhas de um endereço não cresce com as unidades (A1). A hipótese vem de PR06 (deck); o teto do teste não depende do resultado (cenarios_teto).",
+      "incerteza": "bootstrap",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-004.py",
+      "chaves_principais": [
+        "linhas_hora_pap_rc",
+        "linhas_hora_pap_rc_t300",
+        "linhas_hora_pap_rc_t600",
+        "linhas_hora_pap_rc_t900",
+        "linhas_hora_pap_rc_t1800",
+        "linhas_hora_pap_rc_pre_robo",
+        "linhas_hora_pap_rc_sem_sobreposicao",
+        "t_coleta_manual_media_s",
+        "t_coleta_manual_ponderada_s",
+        "intervalo_mediano_pap_rc_s",
+        "ciclo_pedido_pap_rc_s",
+        "fracao_sobreposicao_pap_rc",
+        "n_operadores_cr3"
+      ]
+    },
+    {
+      "id": "ANA-005",
+      "pergunta_ref": "P8",
+      "perguntas_cobertas": [
+        "P8"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "associativo",
+      "tipo_pergunta": "comparacao",
+      "hipotese": "H-P8 (H06, F1b): depois de PAR11, a proporção de linhas humanas do pedido-a-pedido da Royal Canin com dois ou mais endereços e sem tempo mensurável (abaixo do piso da qualidade) sobe mais do que no pedido-a-pedido dos outros depositantes, sem tendência prévia nem efeito numa data falsa.",
+      "variante_primaria": "Estudo de evento semanal: proporção por operador-semana e grupo (Royal Canin e controle), reponderada por faixa de endereços ao mix do período anterior a PAR11 de cada grupo; estatística = diferença-em-diferenças ajustada pela tendência prévia linear; inferência por operador (cluster) com unidade operador-semana; bloco de semana só como comparação (17 semanas); direção > 0.",
+      "metodo": "Coeficientes semanais relativos à semana anterior a PAR11 (antecipações e defasagens) com IC. Portão de H06 (registrado agora): a diferença-em-diferenças ajustada pela tendência prévia (descontando a extrapolação linear, ao período posterior, da diferença entre os grupos nas semanas anteriores a PAR11) precisa continuar com IC acima de zero, com inferência por operador (cluster) se houver pelo menos 10 operadores em cada grupo, sobre a unidade operador-semana; com menos, H06 é inconclusiva por desenho. A tendência prévia e o placebo (data falsa 2026-06-29) usam só 7 semanas, abaixo do mínimo de 10 clusters: são descritivos e declarados insuficientes, sem papel de portão. Leitura associativa: um robô, sem teste controlado; nada causal. Descritivo (contagens completas): participação da conta do robô por mês e desde PAR11 (M26); linhas da conta antes de PAR11 (PQ04); pedidos com linha do robô e linha humana; comparação robô x manual por pedido em Qtde Endereços, Qtde Un e Qtde Produtos (Tempo do robô não é comparável). Consequência registrada: se H06 confirmar (p ajustado na F1b abaixo de alfa e o portão acima), CR3 lê M14 do período anterior a PAR11 padronizado (ANA-004) e o viés de M12 é declarado com a fração estimada; se não, o período inteiro fica primário e o anterior a PAR11 é sensibilidade.",
+      "robustez": [
+        "piso de sensibilidade da qualidade",
+        "sem as duas primeiras semanas com colmeia na Royal Canin",
+        "controle só com operadores que não separam Royal Canin (se houver PAR07 operadores distintos)",
+        "horas com linhas da conta do robô contra horas sem"
+      ],
+      "poder": {
+        "unidade": "semana (bloco) e operador",
+        "n_esperado": {
+          "semanas_pre": 7,
+          "semanas_pos": 10,
+          "dias_pre": 32,
+          "dias_pos": 48
+        },
+        "efeito_relevante": "aumento que, tirando essas linhas, muda M14 do período posterior a PAR11 em mais que o efeito relevante de CR3"
+      },
+      "metricas": [
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M14",
+        "M26"
+      ],
+      "premissas_usadas": [
+        "PAR03",
+        "PAR07",
+        "PAR11"
+      ],
+      "hipoteses_setor": [
+        "H06"
+      ],
+      "indicacao_preliminar_do_contrato": "O contrato achou a conta de integração e linhas humanas em lote em número parecido; antes e depois de PAR11 não foi consultado.",
+      "incerteza": "bootstrap",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-005.py",
+      "chaves_principais": [
+        "part_robo_pap_rc",
+        "did_lote_humano",
+        "placebo_did_lote",
+        "inclinacao_pre_tendencia",
+        "pedidos_robo_e_humano",
+        "n_semanas_pre",
+        "n_semanas_pos"
+      ]
+    },
+    {
+      "id": "ANA-006",
+      "pergunta_ref": "P3",
+      "perguntas_cobertas": [
+        "P3"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "comparacao",
+      "hipotese": "H-P3 (slide 10), teste de equivalência fora das famílias de Holm: o tempo por unidade e as unidades por onda do checkout da Royal Canin no WMS (M09 base) são equivalentes aos do slide 10, com o IC de 90% inteiro dentro da margem de ±10% do valor do slide.",
+      "variante_primaria": "Royal Canin, checkout, executor manual, M09 base (cadências de Início a Início, corte PAR01 por intervalo), período inteiro; unidade de reamostragem = operador.",
+      "metodo": "Equivalência (dois testes unilaterais, IC de 90%) com margem fixada agora. Fora da margem ou IC que a cruza: 'não reproduz' ou 'inconclusivo', sem ler ausência de evidência como compatibilidade. M09 por tarefa e usuário: tempo por coleta, por unidade e por pedido, unidades por onda; variante pela extensão da tarefa; por hora de início da tarefa, tamanho da onda (tercis) e mês. M14 do checkout em coletas e pedidos por hora de ciclo completo, com S3. Faixa de PR08 (pedidos por hora por robô, baixa confiança), com premissa do planejador: o robô não acelera a coleta, só tira o deslocamento ao packing; inferior = pedidos por hora do checkout manual em ciclo completo; provável = pelo tempo por pedido dentro da tarefa (M09); superior = pelo quartil inferior desse tempo. A engenharia da Acta valida e informa carga útil e pedidos por viagem ([●], E9). H12: fração de checkout_multiunidade por depositante (contagem completa).",
+      "robustez": [
+        "por mês",
+        "manhã contra tarde",
+        "reamostragem por tarefa e usuário (sensibilidade)",
+        "fórmula por cadência contra extensão da tarefa"
+      ],
+      "poder": {
+        "unidade": "operador",
+        "n_esperado": "contado no script; menos de 10 operadores: só descritivo",
+        "efeito_relevante": "margem de equivalência de ±10% do valor do slide"
+      },
+      "metricas": [
+        "M02",
+        "M04",
+        "M07",
+        "M09",
+        "M12",
+        "M14"
+      ],
+      "premissas_usadas": [
+        "PR03",
+        "PR08",
+        "PAR01",
+        "PAR07"
+      ],
+      "hipoteses_setor": [
+        "H12",
+        "A2",
+        "A7"
+      ],
+      "indicacao_preliminar_do_contrato": "O contrato viu a mediana por coleta do checkout na ordem de grandeza do slide 10: verificação do deck.",
+      "incerteza": "bootstrap",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-006.py",
+      "chaves_principais": [
+        "t_unidade_checkout_rc_s",
+        "t_pedido_checkout_rc_s",
+        "unid_por_onda_checkout_rc",
+        "pedidos_hora_checkout_rc_ciclo",
+        "pr08_inf",
+        "pr08_provavel",
+        "pr08_sup",
+        "fracao_checkout_multiunidade",
+        "n_operadores_checkout"
+      ]
+    },
+    {
+      "id": "ANA-007",
+      "pergunta_ref": "P17",
+      "perguntas_cobertas": [
+        "P17"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "comparacao",
+      "hipotese": "H-P17 (slide 14, CR7, F1a): na colmeia da Royal Canin, as coletas por hora por operador em ciclo completo (M14) ficam em PR05 ou acima, no teto base e também nas variantes desfavoráveis à exclusão (S2 e teto de 1.800 s).",
+      "variante_primaria": "Royal Canin, colmeia, executor manual, sem palete; M14 em coletas por hora; teto base de 900 s; cauda de M11 pela regra base (por bloco); desde a primeira semana com colmeia; unidade de reamostragem = operador, com bloco de semana como comparação; vale o mais largo. Direção: M14 ≥ PR05. Regra de 'passa' (registrada agora): o IC inteiro em PR05 ou acima na variante primária E em S2 E no teto de 1.800 s, as variantes desfavoráveis à exclusão. Se alguma delas cruzar PR05, CR7 é inconclusivo e a colmeia fica candidata (ALT5).",
+      "metodo": "Teste da variante primária e classificação de CR7 (passa = a exclusão do slide 14 se sustenta; falha ou inconclusivo = colmeia candidata a teste, ALT5). Também nos quatro tetos e com S1, S2 e S3. S2 e 1.800 s entram na regra de 'passa'; S3 e 300 s (limite inferior de horas e superior de coletas por hora) são o limite favorável à exclusão e só são reportados. Também em unidades por hora, e a parcela descartada de M29 por motivo (em especial cauda acima do limite). Viés declarado a favor da exclusão: M05 conta a mesma visita várias vezes e a distribuição no put wall não está no WMS; uma falha é robusta e uma aprovação é fraca. Comparação descritiva com o pedido-a-pedido e o checkout (diferença relativa, bootstrap por operador). H11 (descritivo, contagens completas, PAR07 em operadores): fração de linhas sobrepostas na colmeia, tarefas e usuários distintos por destino de colmeia, linhas de um endereço com tempo acima do instante de confirmação. Consequência registrada de H11: enquanto a operação da Social não confirmar onde a distribuição no put wall é registrada (E3), mesmo um 'passa' pela regra acima é declarado como otimista para o manual, e a oferta apresenta a exclusão da colmeia como provisória, a rever com essa resposta.",
+      "robustez": [
+        "por mês, desde que a colmeia aparece",
+        "por destino de colmeia (cores e numeradas) ou, sem PAR07 operadores, por tercis de pedidos por onda",
+        "S2 e 1.800 s (na regra de passa); S3 e 300 s (só reportados)"
+      ],
+      "poder": {
+        "unidade": "operador",
+        "n_esperado": "contado no script; menos de 10 operadores: inconclusivo por desenho (CR7 vai à regra do inconclusivo)",
+        "efeito_relevante": "10% de PR05"
+      },
+      "metricas": [
+        "M02",
+        "M05",
+        "M07",
+        "M09",
+        "M11",
+        "M14",
+        "M29"
+      ],
+      "premissas_usadas": [
+        "PR05",
+        "PAR01",
+        "PAR02",
+        "PAR07"
+      ],
+      "hipoteses_setor": [
+        "H11",
+        "A1"
+      ],
+      "indicacao_preliminar_do_contrato": "Nenhuma sobre M14 da colmeia; o contrato registrou o Fim em bloco, a cauda por bloco (r3) e o tempo alto das linhas de um endereço na colmeia.",
+      "incerteza": "bootstrap",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-007.py",
+      "chaves_principais": [
+        "linhas_hora_colmeia_rc",
+        "linhas_hora_colmeia_rc_s2",
+        "linhas_hora_colmeia_rc_t1800",
+        "linhas_hora_colmeia_rc_s3",
+        "linhas_hora_colmeia_rc_t300",
+        "unid_hora_colmeia_rc",
+        "dif_rel_colmeia_pap",
+        "fracao_sobreposicao_colmeia",
+        "fracao_cauda_descartada_colmeia",
+        "n_operadores_colmeia"
+      ]
+    },
+    {
+      "id": "ANA-008",
+      "pergunta_ref": "P11",
+      "perguntas_cobertas": [
+        "P11"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "associativo",
+      "tipo_pergunta": "comparacao",
+      "hipotese": "H-P11 (H01, F1b): a participação da primeira hora com atividade no volume do dia é maior nas segundas-feiras do que de terça a sexta (fila acumulada processada na chegada da equipe).",
+      "variante_primaria": "Armazém, linhas operacionais (M05), unidade = dia pleno; segundas-feiras contra terças a sextas, os dois sem dias pós-pausa; primeira hora = a primeira hora do dia cujo volume alcança PAR06 do volume do dia; diferença de médias (Welch), com bootstrap por bloco de semana como comparação; vale o mais largo. Direção: segunda > terça a sexta.",
+      "metodo": "Teste da variante primária. Dias pós-pausa (três) só descritivos. Descritivo para o escopo (pedido-a-pedido em linhas operacionais, checkout em pedidos, colmeia) e o armazém: demanda por hora (M16) e janela observada (PAR06, para PR15); concentração matinal na definição do slide 17 (verificação do deck); volume por dia da semana (M17); dia típico, p90 e máximo com e sem pós-pausa, com IC do p90 por bootstrap de dias (M18); perfil horário do dia p90 pela banda PAR05 e o dia real mais próximo; pico horário (M19). Curva de processamento, não de demanda (PQ06): declarar.",
+      "robustez": [
+        "escopo Royal Canin contra armazém",
+        "pedidos contra linhas",
+        "metades do período (semanas 23 a 31 contra 32 a 39)"
+      ],
+      "poder": {
+        "unidade": "dia pleno (bloco de semana como comparação)",
+        "n_esperado": {
+          "segundas": 15,
+          "terca_a_sexta": "cerca de 60",
+          "pos_pausa": 3
+        },
+        "efeito_relevante": "10% da participação média da primeira hora de terça a sexta"
+      },
+      "metricas": [
+        "M04",
+        "M05",
+        "M15",
+        "M16",
+        "M17",
+        "M18",
+        "M19"
+      ],
+      "premissas_usadas": [
+        "PAR04",
+        "PAR05",
+        "PAR06",
+        "PAR07",
+        "PAR08",
+        "PAR10"
+      ],
+      "hipoteses_setor": [
+        "H01",
+        "H02"
+      ],
+      "indicacao_preliminar_do_contrato": "O contrato reproduziu o p90 do slide 12 e a concentração do slide 17 (verificação). H01 vem do especialista e não foi consultada.",
+      "incerteza": "intervalo_confianca",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-008.py",
+      "chaves_principais": [
+        "janela_inicio_h",
+        "janela_fim_h",
+        "concentracao_matinal",
+        "p90_linhas_dia_pap_rc",
+        "p90_pedidos_checkout_rc_dia",
+        "p90_linhas_dia_armazem",
+        "media_retomada_linhas_pap_rc",
+        "max_linhas_dia_pap_rc",
+        "pico_h_linhas_pap_rc_p90",
+        "pico_h_pedidos_checkout_rc_p90",
+        "dif_primeira_hora_segunda"
+      ]
+    },
+    {
+      "id": "ANA-009",
+      "pergunta_ref": "P12",
+      "perguntas_cobertas": [
+        "P12",
+        "P19"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "comparacao",
+      "hipotese": "H-P12, verificação determinística com premissas, fora das famílias: no escopo da ALT3, a frota necessária no dia p90 (M22) fica abaixo da frota do slide 14 (PR09) em toda a grade e dentro da leitura do slide 12; na ALT2 basta a leitura do slide 12.",
+      "variante_primaria": "Perfil horário do dia p90 pela banda PAR05, sem palete, PR07 no pedido-a-pedido e PR08 provável no checkout, janela observada de ANA-008.",
+      "metodo": "Frota por hora = teto inteiro da demanda horária ÷ capacidade; frota necessária = máximo na janela; por alternativa (ALT2, ALT3, ALT6 com ANA-010). Grade (faixa_cenarios): PR08 inferior, provável e superior; p90 no ponto e nos limites do IC de ANA-008; com e sem pós-pausa; perfil pela banda e pelo dia real. Sobra no dia típico por hora (PR09 nas duas leituras menos a frota da hora). CR8 pela fórmula de M23 (r3): absorvido por hora = mínimo entre o excedente em linhas e a capacidade da frota proposta; horas absorvidas = absorvido ÷ M14 (ANA-004, variante primária); reforço = teto inteiro das horas residuais ÷ PR12; CR8 passa se o reforço for zero no dia p90. H02: horas além da janela que a frota proposta precisaria na retomada (média dos pós-pausa e das segundas; o máximo só como limite superior). Separadores (o Kappabot é colaborativo): por hora do p90 e por hora estendida da retomada, separadores com robô = linhas da hora ÷ PR05 (premissa de zona, baixa confiança) e sem robô = ÷ M14 manual; separadores simultâneos = teto inteiro; comparados aos operadores ativos hoje na mesma hora (PAR07 em operadores). Leitura: o horário estendido só absorve o pico sem reforço se esses separadores já existirem na escala; senão é hora extra ou turno adicional (custo [●]). A curva copia o dimensionamento atual de pessoal (PQ06): declarar.",
+      "robustez": [
+        "p90 com e sem dias pós-pausa",
+        "perfil pela banda PAR05 e pelo dia real mais próximo",
+        "limites do IC do p90"
+      ],
+      "poder": {
+        "unidade": "não se aplica (determinístico com premissas)"
+      },
+      "metricas": [
+        "M05",
+        "M14",
+        "M16",
+        "M18",
+        "M19",
+        "M22",
+        "M23",
+        "M24"
+      ],
+      "premissas_usadas": [
+        "PR05",
+        "PR07",
+        "PR08",
+        "PR09",
+        "PR12",
+        "PR15",
+        "PAR04",
+        "PAR05",
+        "PAR06",
+        "PAR07"
+      ],
+      "hipoteses_setor": [
+        "H02"
+      ],
+      "indicacao_preliminar_do_contrato": "Nenhuma sobre a frota. A contradição entre os slides 12 e 14 está em PR09.",
+      "incerteza": "faixa_cenarios",
+      "desenho_causal": "",
+      "responsavel": "analista-exploratorio",
+      "script": "analises/ANA-009.py",
+      "chaves_principais": [
+        "frota_necessaria_alt2",
+        "frota_necessaria_alt3",
+        "sobra_dia_tipico_alt3",
+        "horas_absorvidas_p90",
+        "reforco_p90_cr8",
+        "horas_extra_janela_retomada",
+        "separadores_pico_p90_com_robo",
+        "separadores_horario_estendido_com_robo",
+        "separadores_horario_estendido_sem_robo",
+        "ativos_hoje_horas_estendidas"
+      ]
+    },
+    {
+      "id": "ANA-010",
+      "pergunta_ref": "P14",
+      "perguntas_cobertas": [
+        "P14"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "associativo",
+      "tipo_pergunta": "comparacao",
+      "hipotese": "H-P14a (CR5, F1a): a demanda de linhas operacionais do pedido-a-pedido compatível dos outros depositantes (pedido_multi_endereco, sem palete), em média por hora da janela observada, é de pelo menos uma capacidade de robô PR07. H-P14b (H03), verificação determinística com premissas, fora das famílias: o pooling poupa pelo menos um robô, isto é, a frota pela regra de M22 no perfil horário p90 da soma dos depositantes compatíveis é menor que a soma das frotas de cada depositante.",
+      "variante_primaria": "H-P14a: janela longa (semanas 32 a 39), dias plenos, razão demanda média por hora ÷ PR07, bootstrap de dias estratificado por dia da semana (só no numerador), direção ≥ 1.",
+      "metodo": "Por depositante (M01) e tipo de onda: volume por dia pleno e no período (M04 a M07, M15, M20); quantis de endereços por pedido e de unidades por linha, parcela de linha_palete e de un_extremas (H07, PAR13). H-P14a com p só na parte de linhas (PR07). A parte de checkout (pedidos ÷ PR08) é faixa_cenarios em toda a grade de PR08, sem p. H-P14b pela regra de M22 nos perfis horários p90, em toda a grade de PR07 e PR08; correlação dos volumes diários entre os maiores depositantes (descritiva). Variante 'depositante adicional' (M21, M27): receita adicional e robôs adicionais por depositante, para ANA-015. Grupos abaixo de PAR07 agregados como 'outros'.",
+      "robustez": [
+        "por mês",
+        "sem o maior depositante compatível",
+        "janela base"
+      ],
+      "poder": {
+        "unidade": "dia pleno",
+        "n_esperado": 38,
+        "efeito_relevante": "10% de uma capacidade PR07"
+      },
+      "metricas": [
+        "M01",
+        "M02",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M15",
+        "M16",
+        "M18",
+        "M20",
+        "M21",
+        "M22",
+        "M27"
+      ],
+      "premissas_usadas": [
+        "PR03",
+        "PR04",
+        "PR07",
+        "PR08",
+        "PR13",
+        "PAR03",
+        "PAR04",
+        "PAR06",
+        "PAR07",
+        "PAR13",
+        "PAR14"
+      ],
+      "hipoteses_setor": [
+        "H03",
+        "H07"
+      ],
+      "indicacao_preliminar_do_contrato": "O contrato reproduziu a participação por depositante e as linhas por dia útil do slide 12. As hipóteses vêm do slide 12 e do especialista.",
+      "incerteza": "bootstrap",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-010.py",
+      "chaves_principais": [
+        "taxa_linhas_compat_outros_dia",
+        "taxa_pedidos_checkout_outros_dia",
+        "razao_demanda_pr07_outros",
+        "razao_demanda_pr08_outros",
+        "robos_poupados_pooling",
+        "robos_adicionais_alt6",
+        "receita_adicional_mes_outros",
+        "n_dias_janela_longa"
+      ]
+    },
+    {
+      "id": "ANA-011",
+      "pergunta_ref": "P5",
+      "perguntas_cobertas": [
+        "P5",
+        "P6",
+        "P1",
+        "P7"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "retrato",
+      "hipotese": "H-P5 (sup-negocio r1), verificação determinística fora das famílias: o volume tarifável implícito na franquia (PR02, como a fração do volume do slide 18) e na economia do slide 15 (PR19, com os FTE do slide 14) não se reproduz com o volume tarifável corrente da Royal Canin pela M06 (ANA-002).",
+      "variante_primaria": "Volume implícito contra a variante primária de ANA-002.",
+      "metodo": "Tabela ponte, uma linha por número do deck e do relatório 9fleet v1: valor da fonte (constante com slide ou página), valor no WMS pelo método aparente da fonte, valor pelo método do contrato, diferença e causa (CANCELADO, conta do robô, datas distintas contra dias plenos, Qtde Endereços contra Qtde Produtos, teto). Números: slides 5 e 6, 8, 12, 14, 15, 17 e 18; relatório 9fleet v1: média do tempo por coleta manual (seção 4.2) e seu n, com e sem a conta do robô, estabilidade por número de endereços e a demanda diária da p. 10. Lista fechada de bases para o volume implícito: cada mês cru de junho a setembro, agosto normalizado, média do período por datas distintas, taxa corrente da janela base mensalizada, com e sem CANCELADO, com Qtde Produtos e com Qtde Endereços. Tolerância fixada agora: 'reproduz' = diferença relativa de até 2% para números dados com valor exato e, para números aproximados do deck ('cerca de', frações), o intervalo de arredondamento do próprio número, declarado no script. Uma base só é dada como a do deck se reproduzir ao mesmo tempo dois números independentes (por exemplo, PR02 e PR19). Empate: vence a que reproduz mais números independentes; depois o método documentado no slide 12 (datas distintas da carga); depois a mais recente. A confirmação final é do autor do deck (Marcus). Contagens completas.",
+      "robustez": [
+        "cada base candidata contra dois números independentes do deck"
+      ],
+      "poder": {
+        "unidade": "não se aplica (contagem completa)"
+      },
+      "metricas": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M08",
+        "M10",
+        "M12",
+        "M13",
+        "M15",
+        "M16",
+        "M18",
+        "M20",
+        "M21",
+        "M24",
+        "M28"
+      ],
+      "premissas_usadas": [
+        "PR02",
+        "PR03",
+        "PR04",
+        "PR06",
+        "PR09",
+        "PR10",
+        "PR11",
+        "PR12",
+        "PR19",
+        "PAR02",
+        "PAR08",
+        "PAR14"
+      ],
+      "hipoteses_setor": [],
+      "indicacao_preliminar_do_contrato": "O contrato reproduziu os slides 6, 8, 12 e 17, não reproduziu o slide 14 e viu a média do relatório reproduzida só com as linhas do robô dentro. A tabela ponte registra isso numa análise; linguagem descritiva.",
+      "incerteza": "nenhuma",
+      "desenho_causal": "",
+      "responsavel": "analista-exploratorio",
+      "script": "analises/ANA-011.py",
+      "chaves_principais": [
+        "vol_implicito_franquia_linhas",
+        "vol_implicito_economia_linhas",
+        "razao_implicito_corrente",
+        "t_coleta_relatorio_com_robo_s",
+        "t_coleta_relatorio_sem_robo_s",
+        "fte_slide14_metodo_contrato"
+      ]
+    },
+    {
+      "id": "ANA-012",
+      "pergunta_ref": "P10",
+      "perguntas_cobertas": [
+        "P10",
+        "P9",
+        "P13",
+        "P15"
+      ],
+      "tipo": "exploratoria",
+      "nivel": "associativo",
+      "tipo_pergunta": "retrato",
+      "hipotese": "",
+      "metodo": "Só no recorte de descoberta (semanas ISO ímpares; o script filtra no SQL e confere por assert). Associações e comparações, não contagens de censo (estas estão em ANA-013). P10: tempo fora do relógio (M10 a e b) por hora do dia, tipo de onda e depositante; intervalo absoluto por faixa de endereços no pedido-a-pedido como estatística principal de H04 (a parcela no ciclo fica descritiva, porque cai com os endereços por construção). P9: M14 em coletas e unidades por hora e M08 por tipo de onda, faixa de endereços, depositante e hora; onde o manual é mais lento. P15 e H10: operadores ativos com corte de uma hora de jornada ativa contra o volume do dia, em desvios da média da semana e com dia da semana e mês controlados. P13 e H09: painel balanceado (excecao_P13), razão entre o M14 do novato e o dos experientes na mesma semana-calendário e tipo de onda, por semana desde a entrada. Bootstrap por operador. Saídas obrigatórias: tabela limiares_descoberta (quartis e p90 do volume diário, janela observada, faixa de refeição e qualquer corte usado) e tabela pistas_propostas (recorte, métrica, estatística, direção, limiar), no máximo cinco, ordenadas pelo valor comercial. O planejador registra as pistas em ANA-016 e em F2 e o plano é recarimbado antes de ANA-016 rodar.",
+      "pistas_do_setor": [
+        "H04",
+        "H08",
+        "H09",
+        "H10"
+      ],
+      "confirmacao": "ANA-016 (semanas ISO pares).",
+      "poder": {
+        "unidade": "operador e semana",
+        "n_esperado": {
+          "semanas_impares": 9
+        }
+      },
+      "metricas": [
+        "M05",
+        "M07",
+        "M08",
+        "M10",
+        "M11",
+        "M14",
+        "M24",
+        "M25"
+      ],
+      "premissas_usadas": [
+        "PR16",
+        "PAR01",
+        "PAR02",
+        "PAR03",
+        "PAR07"
+      ],
+      "hipoteses_setor": [
+        "H04",
+        "H09",
+        "H10"
+      ],
+      "incerteza": "bootstrap",
+      "desenho_causal": "",
+      "responsavel": "analista-exploratorio",
+      "script": "analises/ANA-012.py",
+      "chaves_principais": [
+        "intervalo_mediano_por_faixa_end",
+        "linhas_hora_por_tipo",
+        "coef_ativos_volume",
+        "razao_novato_experiente_semana"
+      ]
+    },
+    {
+      "id": "ANA-013",
+      "pergunta_ref": "P15",
+      "perguntas_cobertas": [
+        "P15",
+        "P13",
+        "P10",
+        "P19",
+        "P9"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "retrato",
+      "hipotese": "Sem teste: retrato censitário pré-registrado do período inteiro, com a lista fechada do método. Serve para que contagens completas usadas na oferta e no impacto não dependam da confirmação de pistas (sup-metodologia r1).",
+      "metodo": "Lista fechada, período inteiro, contagens e estatísticas do período (contagem: true onde couber): (1) operadores ativos por dia pleno (M24) no armazém e na Royal Canin, média e p90, com o corte de uma linha (base do contrato) e o de uma hora de jornada ativa ([●] sem fonte setorial); (2) operadores ativos nos dias de pico e nos típicos (média); (3) horas ativas do armazém por dia pleno nos quatro tetos (M11); (4) proxy de rotatividade para CR8: logins que entram (primeira atividade depois da primeira semana da carga) e que saem (última atividade antes das duas últimas semanas), por mês, só com PAR07 operadores distintos por mês, senão no período inteiro; login novo não é pessoa nova (declarado); (5) H08: pedidos-a-pedido da Royal Canin por endereços (um contra dois ou mais) e unidades (uma contra mais de uma); (6) tempo descartado (M29) por motivo e tipo de onda e fração de linhas cortadas por abandono por tipo de onda e hora; (7) tempo fora do relógio (M10 a), mediana e quartis por tipo de onda e depositante, como retrato (sem comparação entre segmentos). Grupos com menos de PAR07 operadores ou registros: agregados ou omitidos.",
+      "robustez": [
+        "corte de uma linha contra uma hora em (1) e (2)",
+        "quatro tetos em (3)"
+      ],
+      "poder": {
+        "unidade": "não se aplica (contagem completa)"
+      },
+      "metricas": [
+        "M08",
+        "M10",
+        "M11",
+        "M18",
+        "M24",
+        "M29",
+        "M04",
+        "M05",
+        "M07"
+      ],
+      "premissas_usadas": [
+        "PAR01",
+        "PAR02",
+        "PAR04",
+        "PAR07"
+      ],
+      "hipoteses_setor": [
+        "H08",
+        "H10"
+      ],
+      "indicacao_preliminar_do_contrato": "O contrato reproduziu a ordem de grandeza dos separadores ativos do slide 12 com o corte de uma linha.",
+      "incerteza": "nenhuma",
+      "desenho_causal": "",
+      "responsavel": "analista-exploratorio",
+      "script": "analises/ANA-013.py",
+      "chaves_principais": [
+        "ativos_dia_media",
+        "ativos_dia_p90",
+        "ativos_dia_media_1h",
+        "ativos_pico_media",
+        "horas_armazem_dia",
+        "logins_entrada_periodo",
+        "logins_saida_periodo",
+        "pap_rc_1end_multiunid",
+        "fracao_descartada_por_tipo",
+        "intervalo_mediano_por_tipo"
+      ]
+    },
+    {
+      "id": "ANA-014",
+      "pergunta_ref": "P4",
+      "perguntas_cobertas": [
+        "P4",
+        "P6"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "previsao",
+      "hipotese": "H-P4c, comparação fora da amostra sem p-valor: a média das últimas quatro semanas (janela base de ANA-002) prevê o volume das quatro semanas seguintes com erro absoluto médio menor que a média de toda a história até a origem, porque o mix mudou (P6).",
+      "variante_primaria": "Séries diárias em dias plenos: pedidos de checkout, linhas tarifáveis (M06 inferior) e linhas operacionais (M05) do pedido-a-pedido da Royal Canin, e linhas do armazém. Horizonte validado: as quatro semanas seguintes à origem.",
+      "metodo": "Origem móvel semanal no tempo, sem vazamento, das semanas 31 a 36 (o horizonte de quatro semanas fecha dentro da carga); o resultado grava o número de origens. Quatro candidatos fixados agora: média de quatro semanas (referência base), média de oito semanas, média de toda a história até a origem e regressão com tendência linear, dia da semana e marca de feriado de calendário (só feriados e pontes conhecidos com antecedência; os dias sem explicação de PAR10 não entram como marca). Regra de vitória fixada agora: um candidato só substitui a referência base se tiver erro absoluto médio menor em todas as quatro séries e na maioria das origens; com menos de cinco origens não há troca. Intervalo de previsão pelo erro agregado de quatro semanas (um valor por origem): faixa entre o mínimo e o máximo dos erros das origens, aplicada à projeção, com a cobertura nominal declarada no resultado como (n − 1) ÷ (n + 1), n = número de origens; o script grava qual regra usou e não usa percentis de erros diários. Projeção: mês 1 (as quatro semanas depois da carga) com intervalo de previsão; meses 2 e 3 sem validação, como faixa_cenarios entre o volume constante e a tendência de ANA-001 em nível de M06. Além disso não há previsão; o prazo PR14 entra como cenário do analista de impacto. Alta temporada fora (fora_do_plano).",
+      "robustez": [
+        "por série",
+        "com e sem dias pós-pausa como origem"
+      ],
+      "poder": {
+        "unidade": "origem semanal",
+        "n_esperado": 6,
+        "regra": "menos de cinco origens: sem troca da referência base"
+      },
+      "metricas": [
+        "M02",
+        "M04",
+        "M05",
+        "M06",
+        "M15",
+        "M18",
+        "M20"
+      ],
+      "premissas_usadas": [
+        "PR14",
+        "PAR08",
+        "PAR10"
+      ],
+      "hipoteses_setor": [],
+      "indicacao_preliminar_do_contrato": "Nenhuma.",
+      "incerteza": "intervalo_previsao",
+      "desenho_causal": "",
+      "responsavel": "cientista-de-dados",
+      "script": "analises/ANA-014.py",
+      "chaves_principais": [
+        "mae_janela_4s",
+        "mae_historia",
+        "mae_modelo",
+        "n_origens",
+        "proj_mes1_linhas_tarif_pap_rc",
+        "proj_mes1_pedidos_checkout_rc",
+        "proj_mes2_3_linhas_tarif_pap_rc",
+        "proj_mes2_3_pedidos_checkout_rc"
+      ]
+    },
+    {
+      "id": "ANA-015",
+      "pergunta_ref": "P16",
+      "perguntas_cobertas": [
+        "P16",
+        "P18"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "investimento",
+      "hipotese": "H-P16, verificação determinística com premissas, fora das famílias: na ALT3 com a frota do slide 14 (PR09, nas duas pontas), a receita por transação na taxa corrente, sem o piso da franquia, paga PR13 por robô (M27 ≥ 0); com a frota necessária de ANA-009, a margem por robô é maior.",
+      "variante_primaria": "Receita da variante primária de ANA-002, frota PR09 nas duas pontas, M27 sem o piso da franquia.",
+      "metodo": "Grade determinística de insumos do impacto, por alternativa (ALT2, ALT3, ALT6), sem simulação (o analista de impacto simula em nos/impacto.json). Receita: as réplicas do bootstrap de ANA-002 e as variantes do envelope são passadas como tabela, sem combinar extremos de vários IC; frota: PR09 nas duas pontas e a grade de ANA-009; M27 com e sem o piso da franquia; variante 'depositante adicional' (ANA-010); hardware máximo pagável = margem mensal × PR14 quando positiva (depois comparado a PR20, [●]). P18 e M28, parte de dados: custo atual de mão de obra no escopo = FTE atual (ANA-003, nos quatro tetos) mais PR11 nas alternativas com checkout, × PR10 ÷ 12; FTE atual por alternativa. FTE residual, FTE liberado, vagas inteiras, economia trimestral (M28) e contratações evitadas com o crescimento (slide 16) ficam no modelo do analista de impacto, com PR05 e PR06.",
+      "robustez": [
+        "frota: PR09 nas duas pontas e frota necessária",
+        "receita: M06 superior e inferior"
+      ],
+      "poder": {
+        "unidade": "não se aplica (determinístico com premissas)"
+      },
+      "metricas": [
+        "M13",
+        "M21",
+        "M22",
+        "M27",
+        "M28"
+      ],
+      "premissas_usadas": [
+        "PR02",
+        "PR03",
+        "PR04",
+        "PR09",
+        "PR10",
+        "PR11",
+        "PR12",
+        "PR13",
+        "PR14",
+        "PR20",
+        "PAR14"
+      ],
+      "hipoteses_setor": [],
+      "indicacao_preliminar_do_contrato": "Nenhuma.",
+      "incerteza": "faixa_cenarios",
+      "desenho_causal": "",
+      "responsavel": "analista-exploratorio",
+      "script": "analises/ANA-015.py",
+      "chaves_principais": [
+        "margem_robo_alt3_pr09",
+        "margem_robo_alt3_sem_piso",
+        "margem_robo_alt3_frota_nec",
+        "margem_robo_alt2",
+        "margem_robo_adicional_alt6",
+        "hardware_max_alt3",
+        "custo_atual_mes_alt3",
+        "custo_atual_mes_alt2",
+        "fte_atual_alt3",
+        "fte_atual_alt2"
+      ]
+    },
+    {
+      "id": "ANA-017",
+      "pergunta_ref": "P9",
+      "perguntas_cobertas": [
+        "P9",
+        "P10"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "descritivo",
+      "tipo_pergunta": "retrato",
+      "hipotese": "Sem hipótese de efeito: poder das pistas da descoberta. Grava só n_*, ep_* e mde_* de PT-D1, PT-D3 e PT-D4 (F2 com seis testes, alfa ÷ 6 no pior caso), antes de qualquer efeito de ANA-016.",
+      "variante_primaria": "As variantes primárias de PT-D1, PT-D3 e PT-D4 registradas em ANA-016.pistas, nas semanas ISO pares, com as mesmas unidades de reamostragem (operador, bloco de semana e dia; vale o EP mais largo).",
+      "metodo": "Mesmo método de ANA-000 (definicoes.poder.mde): EP por bootstrap sob permutação dos rótulos Royal Canin contra demais dentro do bloco (efeito nulo por construção); sem gravar, imprimir nem devolver estimativa pontual, diferença ou p. Lê os limiares e pesos de saidas/analises/ANA-012/limiares_descoberta.csv (sem recálculo) e o alfa e as convenções de ANA-000. Faz a conferência agregada de incidente da Royal Canin nas semanas pares (regra de ANA-016) e grava n_semanas_pares_marcadas_rc. Ordem de execução: depois de ANA-012 e imediatamente antes de ANA-016 (posição na lista do plano). Desvio declarado: correção de reprodutibilidade (AUD-D1); o bloco sai de ANA-000 sem mudança de método nem de valores; o red team confere que as chaves pt_d* de ANA-017 coincidem com as que ANA-000 gravou antes.",
+      "robustez": [],
+      "poder": {
+        "unidade": "a de cada pista"
+      },
+      "metricas": [
+        "M01",
+        "M02",
+        "M05",
+        "M10",
+        "M11",
+        "M14"
+      ],
+      "premissas_usadas": [
+        "PAR02",
+        "PAR07"
+      ],
+      "hipoteses_setor": [],
+      "indicacao_preliminar_do_contrato": "Nenhuma.",
+      "incerteza": "nenhuma",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-017.py",
+      "chaves_principais": [
+        "n_pt_d1",
+        "ep_pt_d1",
+        "mde_pt_d1",
+        "n_pt_d3",
+        "ep_pt_d3",
+        "mde_pt_d3",
+        "n_pt_d4",
+        "ep_pt_d4",
+        "mde_pt_d4",
+        "n_semanas_pares_marcadas_rc"
+      ]
+    },
+    {
+      "id": "ANA-016",
+      "pergunta_ref": "P9",
+      "perguntas_cobertas": [
+        "P9",
+        "P10",
+        "P13",
+        "P15",
+        "P19"
+      ],
+      "tipo": "confirmatoria",
+      "nivel": "associativo",
+      "tipo_pergunta": "comparacao",
+      "hipotese": "Cada uma das seis pistas do campo pistas (PT-H04, PT-H09 e PT-H10, a priori; PT-D1, PT-D3 e PT-D4, de ANA-012, registradas com recarimbo antes desta execução) se repete nas semanas ISO pares com o sinal da direção declarada, IC de 95% fora do nulo e p unilateral ajustado por Holm na F2 (seis testes) abaixo de alfa, com os limiares e pesos de limiares_descoberta sem recálculo.",
+      "variante_primaria": "Para cada pista: a estatística registrada, nas semanas ISO pares, com os limiares de limiares_descoberta, na unidade declarada na pista (padrão: bootstrap por operador e por bloco de semana, vale o mais largo; PT-H10 por dia com erro HAC).",
+      "metodo": "Lê limiares_descoberta e pistas do plano; não recalcula cortes. Para cada pista: efeito, IC e p unilateral; Holm na F2. Pista confirmada: mesmo sinal, IC fora do nulo, p ajustado abaixo de alfa e sem inversão na robustez. Robustez sem valor de confirmação: semanas pares dentro da janela base (36 e 38); deixar um operador de fora por vez; por tipo de onda e por depositante (ctx.estat.robustez). O memorando usa só a estimativa das semanas pares. Pista não confirmada fica exploratória e não sobe a insight aprovado. Regra de integridade: ANA-012 e qualquer script exploratório não leem semanas pares; o red team confere que o carimbo do plano com as pistas é anterior ao campo 'em' de ANA-016 em saidas/registro.json. Limiares: saidas/analises/ANA-012/limiares_descoberta.csv (registrado em 2026-10-03T17:10:32; lido do arquivo, sem recálculo). Incidente da Royal Canin (semana de 21 a 25/09, ímpar; revisoes/orquestrador_decisao_semana_incidente.md): não há filtro de incidente nas semanas pares; antes dos testes, ANA-016 confere, em agregado, o volume da Royal Canin por dia pleno em cada semana par contra a mediana semanal das semanas ímpares sem o incidente; semana par abaixo da metade dessa mediana é marcada, e as pistas com a Royal Canin rodam sem ela (primário) e com ela (robustez). PT-D2 só descritiva (pistas_descartadas). Poder: n_* e mde_* das pistas a priori (PT-H04, PT-H09, PT-H10) vêm de ANA-000; os de PT-D1, PT-D3 e PT-D4 vêm de ANA-017. A conferência de incidente nas semanas pares é feita e gravada em ANA-017; ANA-016 a lê e aplica a regra.",
+      "pistas": [
+        {
+          "id": "PT-H04",
+          "fonte": "especialista, H04 (a priori)",
+          "recorte": "Royal Canin, pedido-a-pedido, executor manual, pedidos com dois endereços",
+          "metrica": "M10 variante (b) e duração da linha",
+          "estatistica": "mediana do intervalo até a próxima tarefa menos mediana da duração da linha",
+          "direcao": "> 0 (a viagem ao packing domina)",
+          "limiar": "zero",
+          "unidade": "operador",
+          "leitura": "verificação: a diferença sai positiva quase por construção (o intervalo inclui a ida ao packing e a linha tem um só intervalo N−1); o insight a trata como confirmação do esperado, não como evidência nova",
+          "limiares_fixos": [],
+          "regra_leitura": "comum (regra_leitura_pistas)"
+        },
+        {
+          "id": "PT-H09",
+          "fonte": "especialista, H09 (a priori)",
+          "recorte": "painel balanceado de novatos (excecao_P13)",
+          "metrica": "M14 do novato ÷ M14 dos experientes na mesma semana-calendário e tipo de onda",
+          "estatistica": "inclinação por semana desde a entrada",
+          "direcao": "> 0",
+          "limiar": "zero",
+          "limiares_fixos": [
+            "k_painel_semanas"
+          ],
+          "regra_leitura": "comum (regra_leitura_pistas)"
+        },
+        {
+          "id": "PT-H10",
+          "fonte": "especialista, H10 (a priori)",
+          "recorte": "armazém, dias plenos",
+          "metrica": "M24 com corte de uma hora de jornada ativa",
+          "estatistica": "coeficiente do volume do dia sobre os ativos, em desvios da média da semana, com dia da semana e mês controlados",
+          "direcao": "> 0 (a Social flexiona o quadro no pico)",
+          "limiar": "zero",
+          "unidade": "dia pleno (39 dias pares), erro HAC (Newey-West); bloco de semana (8 blocos) só como comparação, exceção declarada ao mínimo de clusters",
+          "limiares_fixos": [
+            "corte_ativo_jornada_s"
+          ],
+          "regra_leitura": "comum (regra_leitura_pistas)"
+        },
+        {
+          "id": "PT-D1",
+          "fonte": "ANA-012, descoberta (revisoes/pistas_ANA-012.md, ordem 1)",
+          "pergunta_ref": "P9",
+          "criterios": "CR3, CR5 (ALT6)",
+          "hipotese": "No pedido-a-pedido manual em ciclo completo, o M14 padronizado por faixa de endereços da Royal Canin é menor que o dos outros depositantes.",
+          "recorte": "prep_prod_ciclos, tipo_onda pedido_a_pedido, filtros de M14 (sem CANCELADO, linha_palete, tarefa_aberta_lote nem dia parcial), executor manual, semanas ISO pares. A = Royal Canin; B = todos os outros depositantes (MULTI incluído).",
+          "metrica": "M14 coletas por hora",
+          "estatistica": "M14 padronizado de A menos o de B",
+          "variante_primaria": "teto base (ciclo_t900), regra base de M11, padronização por faixa de endereços com os pesos fixos peso_faixa_pap_rc_* (mix da Royal Canin na descoberta)",
+          "limiares_fixos": [
+            "faixas_enderecos",
+            "peso_faixa_pap_rc_1",
+            "peso_faixa_pap_rc_2",
+            "peso_faixa_pap_rc_3",
+            "peso_faixa_pap_rc_4-5",
+            "peso_faixa_pap_rc_6+"
+          ],
+          "direcao": "< 0",
+          "limiar": "zero",
+          "unidade": "operador, bloco de semana e dia; vale o IC mais largo; o mesmo sorteio nos dois grupos",
+          "robustez": [
+            "teto conservador do G2 (mesmo sinal exigido)",
+            "sinal por faixa de endereços (sem inversão)",
+            "deixar um operador de fora",
+            "semanas pares da janela base",
+            "sem os dias pós-pausa"
+          ],
+          "efeito_relevante": "10% do M14 padronizado de B nas semanas pares",
+          "leitura": "Confirmada: a linha de base da Royal Canin não é dita válida para o armazém, e CR5 (ALT6) é lido com a produtividade dos outros depositantes. Não confirmada: nada muda. Associativa: não diz por que a Royal Canin rende menos.",
+          "regra_leitura": "comum (regra_leitura_pistas)"
+        },
+        {
+          "id": "PT-D3",
+          "fonte": "ANA-012, descoberta (ordem 3)",
+          "pergunta_ref": "P10",
+          "criterios": "CR3",
+          "hipotese": "No pedido-a-pedido, a mediana do intervalo entre tarefas do mesmo operador (M10 a) é maior na Royal Canin que nos outros depositantes.",
+          "recorte": "prep_prod_ciclos, tipo_onda pedido_a_pedido, executor manual, dias plenos das semanas ISO pares, sem CANCELADO, intervalo_entre_tarefas_s não nulo, entre zero e o teto base; hora e depositante da linha que termina antes do intervalo. A = Royal Canin; B = demais.",
+          "metrica": "M10 variante (a)",
+          "estatistica": "mediana do intervalo de A menos a de B (linhas agrupadas, sem ponderar por operador)",
+          "variante_primaria": "teto base (900 s) como limite superior do intervalo válido",
+          "limiares_fixos": [
+            "teto_base_s"
+          ],
+          "direcao": "> 0",
+          "limiar": "zero",
+          "unidade": "operador, bloco de semana e dia; vale o IC mais largo",
+          "robustez": [
+            "teto conservador do G2",
+            "deixar um operador de fora",
+            "sem os dias pós-pausa",
+            "faixa de endereços (sem inversão; o mix difere entre grupos)"
+          ],
+          "efeito_relevante": "10% da mediana de B nas semanas pares",
+          "leitura": "Descritiva da estrutura do tempo fora do relógio; não prova que o robô elimina esse tempo nem separa trajeto de espera.",
+          "regra_leitura": "comum (regra_leitura_pistas)"
+        },
+        {
+          "id": "PT-D4",
+          "fonte": "ANA-012, descoberta (ordem 4)",
+          "pergunta_ref": "P9",
+          "criterios": "CR3, CR7",
+          "hipotese": "No checkout e na colmeia, o M14 padronizado por tipo de onda e faixa de endereços da Royal Canin é menor que o dos outros depositantes.",
+          "recorte": "prep_prod_ciclos, tipo_onda checkout ou colmeia, filtros de M14, executor manual, semanas ISO pares. A = Royal Canin; B = demais.",
+          "metrica": "M14 coletas por hora",
+          "estatistica": "M14 padronizado de A menos o de B",
+          "variante_primaria": "teto base (ciclo_t900), cauda base de M11, células tipo de onda × faixa de endereços com os pesos fixos peso_celula_rc_cc_*",
+          "limiares_fixos": [
+            "faixas_enderecos",
+            "peso_celula_rc_cc_checkout|1",
+            "peso_celula_rc_cc_colmeia|1",
+            "peso_celula_rc_cc_colmeia|2",
+            "peso_celula_rc_cc_colmeia|3",
+            "peso_celula_rc_cc_colmeia|4-5",
+            "peso_celula_rc_cc_colmeia|6+"
+          ],
+          "direcao": "< 0",
+          "limiar": "zero",
+          "unidade": "operador, bloco de semana e dia; vale o IC mais largo (na descoberta, de 10 a 19 operadores: IC com aviso)",
+          "robustez": [
+            "teto conservador do G2",
+            "checkout e colmeia separados (sem inversão)",
+            "deixar um operador de fora",
+            "S3 da cauda"
+          ],
+          "efeito_relevante": "10% do M14 padronizado de B nas semanas pares",
+          "leitura": "Confirmada junto com PT-D1: a diferença tende a ser de produto e layout (vale nos três tipos), não só de processo. O viés de M05 (visita contada várias vezes) é comum aos dois grupos e não sai na diferença. Não altera a regra de CR7 (ANA-007).",
+          "regra_leitura": "comum (regra_leitura_pistas)"
+        }
+      ],
+      "robustez": [
+        "semanas pares da janela base (sem valor de confirmação)",
+        "deixar um operador de fora",
+        "tipo de onda e depositante"
+      ],
+      "poder": {
+        "unidade": "operador e semana",
+        "n_esperado": {
+          "semanas_pares": 8,
+          "dias_plenos_pares": 39
+        },
+        "regra": "8 semanas: o IC por operador é o primário se houver 20 ou mais operadores; menos de 10 operadores: pista inconclusiva por desenho",
+        "efeito_relevante": "10% do valor de referência da pista",
+        "n_testes_F2": 6,
+        "alfa_familia_pior_caso": "alfa ÷ 6"
+      },
+      "metricas": [
+        "M01",
+        "M02",
+        "M05",
+        "M07",
+        "M08",
+        "M10",
+        "M11",
+        "M14",
+        "M24",
+        "M25"
+      ],
+      "premissas_usadas": [
+        "PAR02",
+        "PAR07"
+      ],
+      "hipoteses_setor": [
+        "H04",
+        "H09",
+        "H10"
+      ],
+      "confirmacao_de": [
+        "ANA-012"
+      ],
+      "incerteza": "bootstrap",
+      "desenho_causal": "",
+      "responsavel": "estatistico",
+      "script": "analises/ANA-016.py",
+      "chaves_principais": [
+        "pt_h04_efeito",
+        "pt_h09_inclinacao",
+        "pt_h10_coef",
+        "pt_d1_dif_m14_pad",
+        "pt_d3_dif_mediana_intervalo_s",
+        "pt_d4_dif_m14_pad",
+        "pt_d2_dif_m14_pico_tipico_descritivo",
+        "n_operadores_confirmacao"
+      ],
+      "regra_leitura_pistas": "Confirmada = sinal da direção, IC 95% inteiro fora do nulo no IC mais largo entre as unidades declaradas, p unilateral ajustado por Holm na F2 (seis testes) abaixo de alfa e sem inversão de sinal na robustez. IC que contém o nulo: regra sem_poder (inconclusivo por desenho se o MDE de ANA-000 passar do efeito relevante; nunca 'sem efeito'). Confirmada com MDE acima do efeito relevante: aviso de magnitude. A estimativa das semanas pares é a única que vai ao memorando.",
+      "pistas_descartadas": [
+        {
+          "id": "PT-D2",
+          "proposta": "M14 padronizado do armazém maior nos dias de pico que nos típicos (P19, CR8)",
+          "decisao": "Fora da F2. Motivos, todos da descoberta: IC que cruza o zero no tratamento primário; sinal que depende da semana do incidente; e poucos dias de pico nas semanas pares, abaixo do mínimo de 10 unidades para a unidade dia. Seria inconclusiva por desenho e gastaria alfa das outras.",
+          "tratamento": "ANA-016 a reporta só como descritiva (estimativa e IC nas semanas pares, sem p, fora de Holm), com os limiares volume_q1, volume_q3 e volume_p90 e os pesos peso_celula_* da descoberta. Não sobe a insight aprovado; fica como hipótese do teste controlado para M23 (CR8)."
+        },
+        {
+          "id": "M08 Royal Canin contra outros",
+          "decisao": "Não proposta por ANA-012: mesmo fenômeno de PT-D1; não gasta alfa."
+        },
+        {
+          "id": "M14 antes contra depois da refeição",
+          "decisao": "Não proposta por ANA-012 (IC cruza o zero); descritiva."
+        }
+      ]
+    }
+  ],
+  "equipe": [
+    "analista-exploratorio",
+    "estatistico",
+    "cientista-de-dados",
+    "analista-de-impacto",
+    "red-team-analitico"
+  ],
+  "correcao_multiplos_testes": "holm",
+  "alfa": 0.05,
+  "familias_holm": {
+    "F1a": {
+      "descricao": "Testes de critério com p-valor. Uma linha por teste, com a variante primária; o resto é robustez.",
+      "testes": [
+        {
+          "teste": "ANA-004 H-P7 (CR3)",
+          "recorte": "Royal Canin, pedido-a-pedido, manual",
+          "metrica": "M14 coletas por hora",
+          "variante": "teto conservador do G2; regra base de M11; padronizado por faixa de endereços; período inteiro (ou anterior a PAR11 se H06 confirmar)",
+          "direcao": "≤ PR06",
+          "unidade": "operador (bloco de semana como comparação)"
+        },
+        {
+          "teste": "ANA-007 H-P17 (CR7)",
+          "recorte": "Royal Canin, colmeia, manual",
+          "metrica": "M14 coletas por hora",
+          "variante": "teto base de 900 s; cauda base; desde a primeira semana com colmeia; 'passa' exige também S2 e teto de 1.800 s (o p da família é o da variante primária)",
+          "direcao": "≥ PR05",
+          "unidade": "operador (bloco de semana como comparação)"
+        },
+        {
+          "teste": "ANA-010 H-P14a (CR5)",
+          "recorte": "outros depositantes, pedido-a-pedido com pedido_multi_endereco, sem palete",
+          "metrica": "demanda média por hora na janela observada ÷ PR07",
+          "variante": "janela longa",
+          "direcao": "≥ 1",
+          "unidade": "dia pleno, estratificado por dia da semana"
+        }
+      ]
+    },
+    "F1b": {
+      "descricao": "Testes de apoio e pré-requisitos com p-valor, em família própria.",
+      "testes": [
+        {
+          "teste": "ANA-005 H-P8 (H06)",
+          "recorte": "pedido-a-pedido, Royal Canin contra outros depositantes",
+          "metrica": "proporção de linhas humanas com dois ou mais endereços abaixo do piso",
+          "variante": "estudo de evento semanal, reponderado por faixa de endereços, diferença-em-diferenças",
+          "direcao": "> 0",
+          "unidade": "semana e operador (vale o mais largo)"
+        },
+        {
+          "teste": "ANA-003 H13a",
+          "recorte": "armazém",
+          "metrica": "jornada ativa (M11) por operador-dia",
+          "variante": "teto base; dentro do operador; todos os dias plenos",
+          "direcao": "pico > típico",
+          "unidade": "operador"
+        },
+        {
+          "teste": "ANA-003 H13b",
+          "recorte": "armazém, janela observada sem a faixa de refeição",
+          "metrica": "fração de intervalos acima do teto (M10) por dia e hora",
+          "variante": "teto base; efeitos fixos de hora e dia da semana; log do volume do dia",
+          "direcao": "coeficiente < 0",
+          "unidade": "semana e dia (vale o mais largo)"
+        },
+        {
+          "teste": "ANA-008 H-P11 (H01)",
+          "recorte": "armazém, linhas operacionais",
+          "metrica": "participação da primeira hora com atividade no volume do dia",
+          "variante": "segundas contra terças a sextas, sem pós-pausa",
+          "direcao": "segunda > terça a sexta",
+          "unidade": "dia pleno (bloco de semana como comparação)"
+        }
+      ]
+    },
+    "F2": {
+      "descricao": "Pistas confirmadas em ANA-016, fixadas antes de rodar: três a priori do especialista e três de ANA-012. Holm sobre seis testes; m fixo em seis mesmo que alguma pista saia inconclusiva por desenho. PT-D2 fica fora (descritiva).",
+      "testes": [
+        {
+          "teste": "ANA-016 PT-H04",
+          "direcao": "> 0",
+          "unidade": "operador"
+        },
+        {
+          "teste": "ANA-016 PT-H09",
+          "direcao": "> 0",
+          "unidade": "operador (painel balanceado)"
+        },
+        {
+          "teste": "ANA-016 PT-H10",
+          "direcao": "> 0",
+          "unidade": "dia pleno, HAC"
+        },
+        {
+          "teste": "ANA-016 PT-D1",
+          "direcao": "< 0",
+          "unidade": "operador, bloco de semana e dia (mais largo)"
+        },
+        {
+          "teste": "ANA-016 PT-D3",
+          "direcao": "> 0",
+          "unidade": "operador, bloco de semana e dia (mais largo)"
+        },
+        {
+          "teste": "ANA-016 PT-D4",
+          "direcao": "< 0",
+          "unidade": "operador, bloco de semana e dia (mais largo)"
+        }
+      ]
+    },
+    "fora_das_familias": "ANA-000 e ANA-017 (só poder, sem teste). Verificações do deck, envelopes e checagens determinísticas, sem p-valor: ANA-001, ANA-002 (H-P4a e H-P4b por envelope), ANA-003 H-P1, ANA-006 (equivalência), ANA-009, ANA-010 H-P14b, ANA-011, ANA-014 e ANA-015."
+  },
+  "definicoes": {
+    "escopos": {
+      "ALT1": "Piloto atual: só a referência do volume da conta do robô (M26). Sem cobrança.",
+      "ALT2": "Pedido-a-pedido da Royal Canin (zona), sem checkout.",
+      "ALT3_ALT4": "Checkout e pedido-a-pedido da Royal Canin (ALT4 recalibra condições sobre o mesmo escopo).",
+      "ALT5": "Escopo de ALT2 a ALT4 mais a colmeia da Royal Canin: só volume e produtividade, sem preço nem frota.",
+      "ALT6": "Escopo de ALT2 a ALT4 mais o volume compatível dos outros depositantes: pedido-a-pedido com pedido_multi_endereco e checkout, sem linha_palete."
+    },
+    "tabelas": "Só prep_prod_linhas, prep_prod_pedidos, prep_prod_tarefas, prep_prod_ciclos, prep_prod_descarte, prep_calendario e prep_conta_robo (D3). Nunca raw_* nem dados/privado. Métricas M01 a M29 como no contrato recarimbado (r3).",
+    "exclusoes_padrao": "Volume: sem CANCELADO (M04, pedido_id = depositante + Pedido); conta do robô dentro do volume e fora de todo tempo manual (M03); linha_palete fora da demanda de robô e da base tarifável (M05, M06); tarefa_aberta_lote fora do tempo e da base tarifável, dentro do volume físico. Tempo: só executor manual, regras de segmento de M11 (cadência, cauda por bloco), PAR01, PAR02 e piso da qualidade; o tempo não creditado fica em M29.",
+    "janela_taxa_corrente": {
+      "base": "Dias plenos (M15) de 2026-08-31 a 2026-09-25 (semanas ISO 36 a 39), fixada antes dos resultados.",
+      "longa": "Dias plenos de 2026-08-03 a 2026-09-25 (semanas ISO 32 a 39), usada como variante primária quando um teste precisa de pelo menos 20 dias independentes (ANA-010).",
+      "variantes_do_envelope": [
+        "duas, quatro (base), seis e oito semanas terminando em 2026-09-25",
+        "base sem os dias pós-pausa (M18)",
+        "base sem a última semana incompleta: janela deslocada de 2026-08-24 a 2026-09-18"
+      ],
+      "conferencias": [
+        "agosto de 2026, o mês completo mais recente",
+        "carga inteira em dias plenos",
+        "método do deck (datas distintas), só na reconciliação (ANA-011)"
+      ],
+      "nota": "O resultado reporta o número de dias plenos por dia da semana em cada janela. ANA-014 mede o erro fora da amostra das janelas, mas não troca a base.",
+      "desvio_declarado_incidente": "Decisão do orquestrador com Marcus (revisoes/orquestrador_decisao_semana_incidente.md), por fato externo e não por resultado: a semana de 21 a 25/09 é incidente operacional da Royal Canin. Base da oferta para taxas da Royal Canin = quatro semanas até 2026-09-18 (a variante 'sem a última semana' já registrada); a janela de 31/08 a 25/09 segue calculada como cenário de estresse. Tendências com e sem a semana. O memorando declara as duas leituras; Marcus pode trocar a base no G3."
+    },
+    "mes_referencia": {
+      "base": "Agosto de 2026: último mês completo da carga, sem feriado, ponte nem dia sem registro em dia útil (PAR10). Mensalização de M15.",
+      "sensibilidades": [
+        "média dos dias úteis de referência de junho a setembro de 2026 (calendário menos PAR10)",
+        "setembro de 2026 com os dias sem explicação como sem operação (base) e como lacuna de extração",
+        "escala de seis dias (PQ05): só se a Social confirmar; até lá [●]"
+      ]
+    },
+    "cenarios_teto": {
+      "valores_s": {
+        "conservador_provisorio": 300,
+        "intermediario": 600,
+        "base": 900,
+        "limite_superior": 1800
+      },
+      "regra": "Os quatro tetos de PAR02 são sempre reportados, com S1, S2 e S3 de M11 e com e sem turnos fundidos (PAR12). O teto conservador (provisório 300 s) é o extremo de CR1, CR3 e CR8: menos horas manuais e mais linhas por hora. A escolha final é de Marcus no G2 (PQ03), com a validação da operação da Social (A4 do especialista: 300 s pode cortar trabalho legítimo). Registro para o G2: a escolha segue a validação operacional e não o resultado de CR3, que nesta hora ainda não existe; o contrato só viu em consulta preliminar que M14 fica perto de PR06 e varia com o teto.",
+      "uso_nos_testes": "Os testes de critério de CR3 (H-P7) e CR5 (H-P14a, que não depende do teto) rodam no teto conservador fixado no G2. Exceção, CR7 (H-P17): o lado desfavorável à exclusão da colmeia é o teto maior (mais horas, menos coletas por hora), então a variante primária é o teto base de 900 s com a cauda base, e o 'passa' exige o IC também em S2 e no teto de 1.800 s; 300 s e S3 são o limite favorável e só são reportados (contrato, M14.exclusoes). Os testes de apoio (F1b) rodam no teto base, porque medem estrutura e não o limite."
+    },
+    "dias": "Dia pleno e dia pós-pausa como em M15 e M18. Dia típico = média e mediana dos dias plenos (M18). Para comparações entre dias, dias típicos = dias plenos entre os quartis do volume diário, e dias de pico = dias plenos no percentil PAR04 ou acima, os dois calculados no período inteiro, salvo nas análises exploratórias (recorte de descoberta). Para retomada e horário estendido, a referência é a média dos dias pós-pausa e das segundas-feiras; o dia máximo é só limite superior (regressão à média).",
+    "padronizacao_mix": "Regra transversal: toda comparação entre períodos (antes e depois de PAR11, meses, metades do período, coortes) usa M14, M08 e proporções padronizadas por faixa de endereços (faixas de endereços fixadas agora: 1, 2, 3, 4 a 5, 6 ou mais) e, quando o recorte mistura tipos, por tipo de onda, com os pesos do mix da janela base. Reporta o valor cru e o padronizado; ctx.estat.robustez por faixa; inversão de sinal entre faixas invalida a leitura agregada.",
+    "recorte_descoberta_confirmacao": {
+      "descoberta": "Semanas ISO ímpares (23 a 39). Os scripts exploratórios filtram as semanas no SQL e conferem (assert) que nenhuma linha de semana par entrou; a única exceção é P13, dividida por operador (excecao_P13), em que o assert confere que nenhum novato do lado de confirmação entrou.",
+      "confirmacao": "Semanas ISO pares (24 a 38), sem nenhuma semana da descoberta. Robustez sem valor de confirmação: semanas pares dentro da janela base (36 e 38), deixar um operador de fora por vez, e por segmento (tipo de onda e depositante) com ctx.estat.robustez.",
+      "limiares_fixos": "Quartis e p90 do volume diário, janela observada, faixa de refeição e qualquer corte usado por uma pista são calculados só nas semanas ímpares, gravados por ANA-012 (tabela limiares_descoberta) e aplicados em ANA-016 sem recálculo. As faixas de endereços são fixas desde já.",
+      "estimativa_para_o_memorando": "Só a do recorte de confirmação. A estimativa da descoberta e a do período inteiro não vão ao memorando para pistas exploratórias.",
+      "excecao_P13": "Curva de aprendizado: a divisão é por operador, não por semana. Painel balanceado com K = 4 semanas desde a entrada, o mesmo K nos dois lados, e cada novato é seguido nas suas K semanas, qualquer que seja a paridade. Descoberta = novatos com entrada em semana ímpar (25 a 35); confirmação = novatos com entrada em semana par (24 a 36); os dois grupos têm operadores distintos e acompanhamento completo antes do fim da carga. Experientes = operadores ativos na primeira semana da carga, medidos na mesma semana-calendário e tipo de onda do novato (referência comum aos dois lados, declarada). Sem PAR07 operadores distintos em algum lado, P13 fica descritiva e não sobe a insight aprovado. O painel condiciona à sobrevivência até K (a curva descreve quem ficou) e a referência de experientes é comum aos dois lados: os dois pontos vão declarados no insight, e o script grava quantos novatos saíram antes de completar K."
+    },
+    "regra_leitura_limites": {
+      "classificacao": "Cada critério é lido pelo próprio IC de 95% sem ajuste, ou pelo envelope de cenários quando o critério depende de premissas ou janelas: passa se o intervalo inteiro está do lado que o critério aprova; falha se está inteiro do outro lado; inconclusivo se cruza o limite. 'Passam juntos' (regra de decisão) é um teste de interseção e não pede ajuste.",
+      "afirmacao_no_insight": "Para os testes com p-valor, o insight cita o p unilateral ajustado por Holm na família (F1a, F1b ou F2). Os dois padrões têm papéis distintos: o IC classifica o critério; o p ajustado sustenta a afirmação de efeito.",
+      "sem_poder": "Só vale na não rejeição: quando o IC cruza o limite (teste de critério) ou contém o nulo (teste de diferença), e o MDE de ANA-000 passa do efeito relevante, o resultado é inconclusivo por desenho e é proibido lê-lo como 'sem efeito' ou como falha. Quando o IC inteiro fica de um lado do limite ou do nulo, a classificação vale no nível nominal, seja qual for o poder; se o MDE passar do efeito relevante, o resultado leva o aviso 'magnitude possivelmente exagerada (poder baixo, erro tipo M)' e o insight não cita a magnitude como precisa. Assim nenhum critério (CR3, logo ALT3, ou CR7) fica inalcançável por construção.",
+      "verificacoes_do_deck": "Onde a hipótese reproduz um número do deck calculado com a mesma planilha ou já visto pelo contrato (ANA-001, ANA-003 H-P1, ANA-006, ANA-008 descritivo, ANA-011), o insight usa linguagem descritiva ('o WMS reproduz', 'não reproduz') e não chama o resultado de evidência nova nem de significativo.",
+      "destino_do_inconclusivo": {
+        "CR1": "Lê o teto conservador e as premissas no extremo desfavorável; se seguir inconclusivo, a garantia vira meta declarada e não cláusula (ALT4).",
+        "CR2": "Envelope que cruza a franquia: ALT4 (franquia ou escopo); na ALT2, franquia proporcional ao escopo sem checkout.",
+        "CR3": "IC que cruza PR06: a oferta não promete o dobro e leva a promessa ao teste controlado (slide 19), como manda o limite de CR3.",
+        "CR4": "Faixa da frota necessária que cruza PR09: CR6 é lido com a ponta alta da frota (o lado do custo da Acta), e a oferta não promete 'frota acompanha o pico sem custo fixo' sem preço de pico ou horário estendido (ALT4).",
+        "CR5": "A expansão não entra como fase com número; fica como oportunidade a medir com dados do depositante (equivale a falha para a regra de ALT6).",
+        "CR6": "Margem que cruza zero na grade: lê a ponta desfavorável e vai para ALT4 (preço, franquia ou frota).",
+        "CR7": "A colmeia fica como candidata a teste (ALT5), porque o viés declarado (M05, put wall, cauda) favorece a exclusão.",
+        "CR8": "Lê o teto conservador; vaga inteira só conta se passar nele. Reforço no dia p90 (M23) inconclusivo: o argumento 'pico sem temporário' sai da oferta ou vira hipótese do teste controlado.",
+        "argumentos_de_venda": "Pista não confirmada ou inconclusiva não vai à oferta como número; pode entrar como hipótese a medir no teste controlado."
+      }
+    },
+    "poder": {
+      "unidades": "Cada teste declara a unidade independente e o n esperado pelo calendário (PAR08, PAR10 e definições deste plano: 80 dias plenos; 17 semanas ISO, 9 ímpares e 8 pares; 18 dias na janela base e 38 na longa; 32 dias plenos antes de PAR11 e 48 depois; 15 segundas plenas; 3 dias pós-pausa) e por qualidade.referencias_exatas (40 logins, com a conta do robô). ANA-000 grava o n real de cada teste (chaves n_*) antes dos efeitos; as análises repetem o n no próprio resultado para conferência.",
+      "minimo_clusters": "20 ou mais unidades independentes: IC por bootstrap por cluster. De 10 a 19: IC com aviso, comparado ao IC por bloco de semana (ou por dia), e vale o mais largo. Menos de 10: só descritivo, sem p nem IC inferencial; o teste fica inconclusivo por desenho.",
+      "mde": "Efeito mínimo detectável com poder de 80% e o alfa da família de Holm (alfa ÷ número de testes da família, o pior caso), MDE = (z(1 − alfa_familia) + z(0,80)) × EP. Calculado só em ANA-000, antes de qualquer efeito: EP pelo bootstrap sob permutação dos rótulos de grupo dentro do bloco (testes de diferença) ou das réplicas centradas do estimador (testes contra limite), sem gravar nem imprimir a estimativa pontual. As demais análises leem n_* e mde_* de saidas/analises/ANA-000/resultado.json e não recalculam.",
+      "efeito_relevante": "Convenção do planejador, a aceitar no G2: 10% do valor de referência (o limite PR ou a média do grupo de comparação), salvo onde a decisão define a distância. CR3: PR05 ÷ 2 − PR06, a distância em que a promessa de dobrar deixa de valer. H06: o aumento que, tirando essas linhas, muda M14 do período posterior a PAR11 em mais que o efeito relevante de CR3."
+    },
+    "reamostragem": "Um módulo comum em analises/ (sugestão: analises/comum.py), com bootstrap estratificado por dia da semana, bootstrap por cluster (operador pseudonimizado, tarefa e usuário, dia) e bootstrap por bloco de semana, todos com a semente padrão de ctx.estat. Cada teste declara a unidade primária; quando há dependência dupla (operador e dia), calcula os dois IC e usa o mais largo. ctx.estat.bootstrap é iid e só serve para unidades independentes.",
+    "privacidade": "Nenhum resultado por operador individual. Grupo definido por operadores (coorte, coorte-semana, operadores ativos numa hora, controle de operadores) só é reportado com PAR07 operadores distintos, além de PAR07 registros. Reamostrar por operador é permitido; listar, ranquear ou rotular operador não.",
+    "referencias_externas": "Números do deck e do relatório 9fleet v1 entram nos scripts como constantes com a fonte (slide ou página) na mesma linha. Premissas PR e parâmetros PAR são lidos de nos/decisao.json e nos/contrato.json (caminho do dv pelo pragma database_list). Nenhum número é digitado em nó de texto, insight ou entregável.",
+    "incerteza_por_chave": "Quando uma análise mistura tipos de valor, cada chave leva o próprio dicionário de incerteza (tipo, inf, sup); o campo incerteza da análise indica o tipo das chaves de decisão. Contagens completas usam contagem: true.",
+    "dependencias_entre_scripts": "Valores de outra análise são recalculados com as funções do módulo comum ou lidos de saidas/analises/ANA-xxx/resultado.json e das tabelas registradas. O motor executa na ordem da lista do plano, e a lista respeita as dependências, sem ciclo: ANA-000 (poder dos testes registrados antes da D3; não lê ninguém) → ANA-001 a ANA-011 → ANA-012 (descoberta; lê ANA-000) → ANA-013 a ANA-015 → ANA-017 (poder das pistas PT-D; lê ANA-000 e ANA-012) → ANA-016 (confirmação; lê ANA-000, ANA-012 e ANA-017). Nenhuma análise lê outra que venha depois dela na lista; o auditor confere numa cópia limpa (AUD-D1)."
+  },
+  "entradas_impacto": [
+    {
+      "insumo": "Volume tarifável corrente por dia pleno e mensalizado na Royal Canin, por tipo de onda, nas duas contagens de linha, e pedidos de checkout; envelope de janelas e réplicas do bootstrap",
+      "analise": "ANA-002",
+      "uso": "CR2, CR6, M21, M27, M28"
+    },
+    {
+      "insumo": "Inclinação do volume tarifável do pedido-a-pedido em nível de M06 (tendência do mix)",
+      "analise": "ANA-001",
+      "uso": "CR2 no prazo PR14 (sensibilidade exigida por CR2)"
+    },
+    {
+      "insumo": "Projeção do mês 1 com intervalo de previsão e faixa dos meses 2 e 3",
+      "analise": "ANA-014",
+      "uso": "CR2 no prazo PR14 (cenário)"
+    },
+    {
+      "insumo": "Horas e FTE no escopo por alternativa nos quatro tetos, com S1 a S3 e sem turnos fundidos; horas sem robô equivalentes; consequência de H13 para CR1 e CR8",
+      "analise": "ANA-003",
+      "uso": "CR1, CR8, M13, M28"
+    },
+    {
+      "insumo": "Linhas por hora manual em ciclo completo no pedido-a-pedido da Royal Canin (variante primária, quatro tetos, anterior ao robô, sem sobreposição) e ciclo por pedido",
+      "analise": "ANA-004",
+      "uso": "CR3; FTE residual com PR05 e PR06; horas absorvidas de M23"
+    },
+    {
+      "insumo": "Resultado de H06 e a regra que escolhe a variante primária de CR3",
+      "analise": "ANA-005",
+      "uso": "CR3"
+    },
+    {
+      "insumo": "Faixa de PR08 e tempos do checkout",
+      "analise": "ANA-006",
+      "uso": "CR4, CR6"
+    },
+    {
+      "insumo": "Dia p90 com IC, retomada, janela observada e pico horário",
+      "analise": "ANA-008",
+      "uso": "CR4, PR15"
+    },
+    {
+      "insumo": "Frota necessária por alternativa, sobra, horas absorvidas e reforço no p90 (M23), separadores no pico e no horário estendido",
+      "analise": "ANA-009",
+      "uso": "CR4, CR6, CR8 (H02)"
+    },
+    {
+      "insumo": "Volume compatível dos outros depositantes, robôs poupados pelo pooling, robôs e receita adicionais",
+      "analise": "ANA-010",
+      "uso": "CR5, CR6 (ALT6)"
+    },
+    {
+      "insumo": "Produtividade da colmeia contra PR05, com S3",
+      "analise": "ANA-007",
+      "uso": "CR7 (ALT5)"
+    },
+    {
+      "insumo": "Operadores ativos, horas do armazém por dia e proxy de rotatividade (censo)",
+      "analise": "ANA-013",
+      "uso": "CR8, P15, P19"
+    },
+    {
+      "insumo": "Curva de aprendizado e reforço no pico, só se confirmados",
+      "analise": "ANA-016",
+      "uso": "CR8, argumento do temporário"
+    },
+    {
+      "insumo": "Volume implícito no deck e ponte deck–WMS",
+      "analise": "ANA-011",
+      "uso": "reconciliar PR02 e PR19"
+    },
+    {
+      "insumo": "Margem por robô, hardware máximo pagável, custo atual no escopo e FTE atual por alternativa (grade determinística)",
+      "analise": "ANA-015",
+      "uso": "CR1, CR6, CR8; o impacto simula as faixas"
+    }
+  ],
+  "cobertura_perguntas": {
+    "P1": [
+      "ANA-003",
+      "ANA-011"
+    ],
+    "P2": [
+      "ANA-003"
+    ],
+    "P3": [
+      "ANA-006"
+    ],
+    "P4": [
+      "ANA-002",
+      "ANA-014"
+    ],
+    "P5": [
+      "ANA-011"
+    ],
+    "P6": [
+      "ANA-001",
+      "ANA-011",
+      "ANA-014"
+    ],
+    "P7": [
+      "ANA-004",
+      "ANA-011"
+    ],
+    "P8": [
+      "ANA-005"
+    ],
+    "P9": [
+      "ANA-012",
+      "ANA-013",
+      "ANA-016",
+      "ANA-017"
+    ],
+    "P10": [
+      "ANA-012",
+      "ANA-013",
+      "ANA-016",
+      "ANA-017"
+    ],
+    "P11": [
+      "ANA-008"
+    ],
+    "P12": [
+      "ANA-009"
+    ],
+    "P13": [
+      "ANA-012",
+      "ANA-013",
+      "ANA-016"
+    ],
+    "P14": [
+      "ANA-010"
+    ],
+    "P15": [
+      "ANA-013",
+      "ANA-012",
+      "ANA-016"
+    ],
+    "P16": [
+      "ANA-015"
+    ],
+    "P17": [
+      "ANA-007"
+    ],
+    "P18": [
+      "ANA-003",
+      "ANA-015"
+    ],
+    "P19": [
+      "ANA-003",
+      "ANA-009",
+      "ANA-013"
+    ]
+  },
+  "cobertura_hipoteses_setor": {
+    "H01": "ANA-008 (F1b)",
+    "H02": "ANA-008 e ANA-009 (frota e separadores no horário estendido)",
+    "H03": "ANA-010 (robôs poupados)",
+    "H04": "ANA-012 e ANA-016 (PT-H04)",
+    "H05": "ANA-004 (pré-requisito de CR3, com regra)",
+    "H06": "ANA-005 (F1b; regra para CR3)",
+    "H07": "ANA-010",
+    "H08": "ANA-013 (censo)",
+    "H09": "ANA-012 e ANA-016 (PT-H09)",
+    "H10": "ANA-012 e ANA-016 (PT-H10); ANA-013 (censo)",
+    "H11": "ANA-007 (pré-requisito de CR7, com regra)",
+    "H12": "ANA-006",
+    "H13": "ANA-003 (F1b; regra para CR1 e CR8)"
+  },
+  "validar_com_pessoa_do_setor": [
+    "H05 e H11: operação da Social (E1, E3)",
+    "H06 e faixa de PR08: engenharia da Acta (E2, E9)",
+    "H13 e teto conservador (provisório 300 s, ressalva A4 do especialista): operação da Social, com decisão de Marcus no G2 (PQ03)"
+  ],
+  "fora_do_plano": [
+    "Previsão do pico de alta temporada (Black Friday e Natal): a série vai de junho a setembro, sem nenhum pico sazonal, e não há multiplicador setorial confiável ([●]). O analista de impacto trata como cenário de sensibilidade; a Social pode enviar o volume do pico de 2025 para uma v2.",
+    "Previsão além do mês 1: sem validação; os meses 2 e 3 entram como faixa de cenários e o prazo PR14 como cenário do impacto.",
+    "Lado robô (tempo produtivo, espera, devolutiva): sem o banco 9fleet; PR16 a PR18 entram como premissa (Q04).",
+    "Produtividade em zona (PR05): premissa do deck; não é medida.",
+    "Conferência (PR11): o WMS desta planilha não a registra; ANA-003 só confirma a ausência.",
+    "Qualquer afirmação causal sobre o ganho do robô ou sobre H06: um robô, sem teste controlado (ALT1, slide 19).",
+    "Resultados por operador individual: proibido (A06).",
+    "Demanda real por hora de chegada ou liberação do pedido: não exportada (PQ06); a curva é de processamento.",
+    "Visita física distinta na colmeia e no checkout, e deduplicação por produto: a tabela não traz o código do endereço nem do produto.",
+    "Simulação financeira (economia trimestral, FTE liberado, contratações evitadas, faixas de premissas): é do analista de impacto em nos/impacto.json; ANA-015 só entrega a grade determinística."
+  ],
+  "perguntas": [
+    {
+      "id": "QP1",
+      "pergunta": "A janela da taxa corrente pode ser as quatro semanas de 2026-08-31 a 2026-09-25, com CR2 lido pelo envelope das variantes?",
+      "resposta_proposta": "Sim. Fica fixa antes dos resultados; ANA-014 mede o erro das alternativas como sensibilidade.",
+      "destinatario": "Marcus"
+    },
+    {
+      "id": "QP2",
+      "pergunta": "Mês de referência da mensalização: agosto de 2026, ou o calendário do mês em que a fase começaria?",
+      "resposta_proposta": "Agosto de 2026 como base; Marcus informa o mês de início para uma sensibilidade.",
+      "destinatario": "Marcus"
+    },
+    {
+      "id": "QP3",
+      "pergunta": "A faixa de PR08 pelo ritmo manual do checkout (o robô não acelera a coleta) é aceitável até a engenharia informar a capacidade real?",
+      "resposta_proposta": "Sim, como faixa de baixa confiança, com validação da engenharia da Acta (E9).",
+      "destinatario": "engenharia da Acta"
+    },
+    {
+      "id": "QP4",
+      "pergunta": "A Social pode enviar o volume diário do pico de 2025 (Black Friday e dezembro) por depositante?",
+      "resposta_proposta": "Pedir para uma v2; nesta versão, o pico sazonal fica como cenário [●].",
+      "destinatario": "Social, via Marcus"
+    },
+    {
+      "id": "QP5",
+      "pergunta": "Qual teto vale como conservador em CR1, CR3 e CR8: 300 s ou 600 s?",
+      "resposta_proposta": "300 s, o mais desfavorável à oferta, com os quatro tetos sempre no memorando; 600 s se a operação da Social confirmar que 300 s corta trabalho legítimo (A4). Decidir no G2 antes da D3, sem olhar CR3.",
+      "destinatario": "Marcus"
+    },
+    {
+      "id": "QP6",
+      "pergunta": "Aceita a convenção de efeito relevante (10% do valor de referência; CR3 = PR05 ÷ 2 − PR06, que pelas premissas do deck dá só 2 linhas por hora) e as margens de equivalência e de reprodução (±10% no slide 10; 2% na ponte do deck)? Com esse efeito pequeno, CR3 provavelmente sai com aviso de magnitude (poder baixo), mas continua alcançável pela regra sem_poder.",
+      "resposta_proposta": "Aceito no G2; o MDE é calculado em ANA-000 antes de qualquer efeito e comparado a essas convenções.",
+      "destinatario": "Marcus"
+    }
+  ],
+  "pendencias": [
+    "Orquestrador: carimbar o plano por último, depois do ajuste textual do contrato e da qualidade; recarimbar especialista e qualidade (desatualizados frente ao contrato r3) ou registrar que não mudam.",
+    "Marcus no G2: QP5 (teto conservador) e QP6 (convenções de efeito e margem), antes da D3.",
+    "Orquestrador na D3: rodar e registrar ANA-000 sozinha, antes das demais; repetir depois do recarimbo das pistas e antes de ANA-016.",
+    "Estatístico: escrever analises/ANA-017.py com o bloco PT-D tirado de ANA-000 e registrar na ordem da lista (ANA-000, ..., ANA-012, ..., ANA-017, ANA-016); orquestrador pede a tentativa 2 da auditoria."
+  ]
+}

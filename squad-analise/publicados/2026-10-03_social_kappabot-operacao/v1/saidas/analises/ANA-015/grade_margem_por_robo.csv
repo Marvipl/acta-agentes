@@ -1,0 +1,195 @@
+alternativa,incidente,frota_leitura,robos,receita_mes,receita_variante,piso_da_franquia,receita_por_robo,margem_por_robo,hardware_maximo_por_robo
+ALT3,estresse,slide14_min,4,1853.7166666666667,taxa corrente (ANA-002),com piso,1475.0,475.0,11400.0
+ALT3,estresse,slide14_max,5,1853.7166666666667,taxa corrente (ANA-002),com piso,1180.0,180.0,4320.0
+ALT3,estresse,slide12_min,1,1853.7166666666667,taxa corrente (ANA-002),com piso,5900.0,4900.0,117600.0
+ALT3,estresse,slide12_max,2,1853.7166666666667,taxa corrente (ANA-002),com piso,2950.0,1950.0,46800.0
+ALT3,estresse,frota necessária (ANA-009),2,1853.7166666666667,taxa corrente (ANA-002),com piso,2950.0,1950.0,46800.0
+ALT3,estresse,faixa da frota necessária (ANA-009),1,1853.7166666666667,taxa corrente (ANA-002),com piso,5900.0,4900.0,117600.0
+ALT3,estresse,faixa da frota necessária (ANA-009),3,1853.7166666666667,taxa corrente (ANA-002),com piso,1966.6666666666667,966.6666666666667,23200.0
+ALT3,estresse,"frota pela banda de dias (ANA-009, variante otimista)",2,1853.7166666666667,taxa corrente (ANA-002),com piso,2950.0,1950.0,46800.0
+ALT3,estresse,frota da janela normal (ANA-009),2,1853.7166666666667,taxa corrente (ANA-002),com piso,2950.0,1950.0,46800.0
+ALT3,estresse,frota por tipo (ANA-009),3,1853.7166666666667,taxa corrente (ANA-002),com piso,1966.6666666666667,966.6666666666667,23200.0
+ALT2,estresse,slide14_pap,3,273.0,taxa corrente (ANA-002),com piso,1966.6666666666667,966.6666666666667,23200.0
+ALT2,estresse,slide12_min,1,273.0,taxa corrente (ANA-002),com piso,5900.0,4900.0,117600.0
+ALT2,estresse,slide12_max,2,273.0,taxa corrente (ANA-002),com piso,2950.0,1950.0,46800.0
+ALT2,estresse,frota necessária (ANA-009),2,273.0,taxa corrente (ANA-002),com piso,2950.0,1950.0,46800.0
+ALT3,estresse,slide14_min,4,1853.7166666666667,taxa corrente (ANA-002),sem piso,463.4291666666667,-536.5708333333333,0.0
+ALT3,estresse,slide14_max,5,1853.7166666666667,taxa corrente (ANA-002),sem piso,370.74333333333334,-629.2566666666667,0.0
+ALT3,estresse,slide12_min,1,1853.7166666666667,taxa corrente (ANA-002),sem piso,1853.7166666666667,853.7166666666667,20489.2
+ALT3,estresse,slide12_max,2,1853.7166666666667,taxa corrente (ANA-002),sem piso,926.8583333333333,-73.14166666666665,0.0
+ALT3,estresse,frota necessária (ANA-009),2,1853.7166666666667,taxa corrente (ANA-002),sem piso,926.8583333333333,-73.14166666666665,0.0
+ALT3,estresse,faixa da frota necessária (ANA-009),1,1853.7166666666667,taxa corrente (ANA-002),sem piso,1853.7166666666667,853.7166666666667,20489.2
+ALT3,estresse,faixa da frota necessária (ANA-009),3,1853.7166666666667,taxa corrente (ANA-002),sem piso,617.9055555555556,-382.09444444444443,0.0
+ALT3,estresse,"frota pela banda de dias (ANA-009, variante otimista)",2,1853.7166666666667,taxa corrente (ANA-002),sem piso,926.8583333333333,-73.14166666666665,0.0
+ALT3,estresse,frota da janela normal (ANA-009),2,1853.7166666666667,taxa corrente (ANA-002),sem piso,926.8583333333333,-73.14166666666665,0.0
+ALT3,estresse,frota por tipo (ANA-009),3,1853.7166666666667,taxa corrente (ANA-002),sem piso,617.9055555555556,-382.09444444444443,0.0
+ALT2,estresse,slide14_pap,3,273.0,taxa corrente (ANA-002),sem piso,91.0,-909.0,0.0
+ALT2,estresse,slide12_min,1,273.0,taxa corrente (ANA-002),sem piso,273.0,-727.0,0.0
+ALT2,estresse,slide12_max,2,273.0,taxa corrente (ANA-002),sem piso,136.5,-863.5,0.0
+ALT2,estresse,frota necessária (ANA-009),2,273.0,taxa corrente (ANA-002),sem piso,136.5,-863.5,0.0
+ALT3,estresse,slide14_min,4,1853.7166666666667,janela base,sem piso,463.4291666666667,-536.5708333333333,0.0
+ALT3,estresse,slide14_max,5,1853.7166666666667,janela base,sem piso,370.74333333333334,-629.2566666666667,0.0
+ALT3,estresse,slide12_min,1,1853.7166666666667,janela base,sem piso,1853.7166666666667,853.7166666666667,20489.2
+ALT3,estresse,slide12_max,2,1853.7166666666667,janela base,sem piso,926.8583333333333,-73.14166666666665,0.0
+ALT2,estresse,slide14_pap,3,273.0,janela base,sem piso,91.0,-909.0,0.0
+ALT2,estresse,slide12_min,1,273.0,janela base,sem piso,273.0,-727.0,0.0
+ALT2,estresse,slide12_max,2,273.0,janela base,sem piso,136.5,-863.5,0.0
+ALT3,estresse,slide14_min,4,1245.5333333333333,janela 2s,sem piso,311.3833333333333,-688.6166666666667,0.0
+ALT3,estresse,slide14_max,5,1245.5333333333333,janela 2s,sem piso,249.10666666666665,-750.8933333333333,0.0
+ALT3,estresse,slide12_min,1,1245.5333333333333,janela 2s,sem piso,1245.5333333333333,245.5333333333333,5892.799999999999
+ALT3,estresse,slide12_max,2,1245.5333333333333,janela 2s,sem piso,622.7666666666667,-377.23333333333335,0.0
+ALT2,estresse,slide14_pap,3,158.66666666666666,janela 2s,sem piso,52.888888888888886,-947.1111111111111,0.0
+ALT2,estresse,slide12_min,1,158.66666666666666,janela 2s,sem piso,158.66666666666666,-841.3333333333334,0.0
+ALT2,estresse,slide12_max,2,158.66666666666666,janela 2s,sem piso,79.33333333333333,-920.6666666666666,0.0
+ALT3,estresse,slide14_min,4,1853.7166666666667,janela 4s,sem piso,463.4291666666667,-536.5708333333333,0.0
+ALT3,estresse,slide14_max,5,1853.7166666666667,janela 4s,sem piso,370.74333333333334,-629.2566666666667,0.0
+ALT3,estresse,slide12_min,1,1853.7166666666667,janela 4s,sem piso,1853.7166666666667,853.7166666666667,20489.2
+ALT3,estresse,slide12_max,2,1853.7166666666667,janela 4s,sem piso,926.8583333333333,-73.14166666666665,0.0
+ALT2,estresse,slide14_pap,3,273.0,janela 4s,sem piso,91.0,-909.0,0.0
+ALT2,estresse,slide12_min,1,273.0,janela 4s,sem piso,273.0,-727.0,0.0
+ALT2,estresse,slide12_max,2,273.0,janela 4s,sem piso,136.5,-863.5,0.0
+ALT3,estresse,slide14_min,4,1891.9125,janela 6s,sem piso,472.978125,-527.021875,0.0
+ALT3,estresse,slide14_max,5,1891.9125,janela 6s,sem piso,378.3825,-621.6175000000001,0.0
+ALT3,estresse,slide12_min,1,1891.9125,janela 6s,sem piso,1891.9125,891.9124999999999,21405.899999999998
+ALT3,estresse,slide12_max,2,1891.9125,janela 6s,sem piso,945.95625,-54.043750000000045,0.0
+ALT2,estresse,slide14_pap,3,318.5625,janela 6s,sem piso,106.1875,-893.8125,0.0
+ALT2,estresse,slide12_min,1,318.5625,janela 6s,sem piso,318.5625,-681.4375,0.0
+ALT2,estresse,slide12_max,2,318.5625,janela 6s,sem piso,159.28125,-840.71875,0.0
+ALT3,estresse,slide14_min,4,2001.71447368421,janela 8s,sem piso,500.4286184210525,-499.5713815789475,0.0
+ALT3,estresse,slide14_max,5,2001.71447368421,janela 8s,sem piso,400.34289473684197,-599.657105263158,0.0
+ALT3,estresse,slide12_min,1,2001.71447368421,janela 8s,sem piso,2001.71447368421,1001.7144736842099,24041.147368421036
+ALT3,estresse,slide12_max,2,2001.71447368421,janela 8s,sem piso,1000.857236842105,0.8572368421049532,20.573684210518877
+ALT2,estresse,slide14_pap,3,327.5723684210526,janela 8s,sem piso,109.1907894736842,-890.8092105263158,0.0
+ALT2,estresse,slide12_min,1,327.5723684210526,janela 8s,sem piso,327.5723684210526,-672.4276315789474,0.0
+ALT2,estresse,slide12_max,2,327.5723684210526,janela 8s,sem piso,163.7861842105263,-836.2138157894738,0.0
+ALT3,estresse,slide14_min,4,1797.796875,janela base_sem_pos_pausa,sem piso,449.44921875,-550.55078125,0.0
+ALT3,estresse,slide14_max,5,1797.796875,janela base_sem_pos_pausa,sem piso,359.559375,-640.440625,0.0
+ALT3,estresse,slide12_min,1,1797.796875,janela base_sem_pos_pausa,sem piso,1797.796875,797.796875,19147.125
+ALT3,estresse,slide12_max,2,1797.796875,janela base_sem_pos_pausa,sem piso,898.8984375,-101.1015625,0.0
+ALT2,estresse,slide14_pap,3,280.546875,janela base_sem_pos_pausa,sem piso,93.515625,-906.484375,0.0
+ALT2,estresse,slide12_min,1,280.546875,janela base_sem_pos_pausa,sem piso,280.546875,-719.453125,0.0
+ALT2,estresse,slide12_max,2,280.546875,janela base_sem_pos_pausa,sem piso,140.2734375,-859.7265625,0.0
+ALT3,estresse,slide14_min,4,2268.2763157894738,janela base_deslocada,sem piso,567.0690789473684,-432.93092105263156,0.0
+ALT3,estresse,slide14_max,5,2268.2763157894738,janela base_deslocada,sem piso,453.65526315789475,-546.3447368421052,0.0
+ALT3,estresse,slide12_min,1,2268.2763157894738,janela base_deslocada,sem piso,2268.2763157894738,1268.2763157894738,30438.63157894737
+ALT3,estresse,slide12_max,2,2268.2763157894738,janela base_deslocada,sem piso,1134.1381578947369,134.13815789473688,3219.315789473685
+ALT2,estresse,slide14_pap,3,398.7236842105263,janela base_deslocada,sem piso,132.9078947368421,-867.0921052631579,0.0
+ALT2,estresse,slide12_min,1,398.7236842105263,janela base_deslocada,sem piso,398.7236842105263,-601.2763157894738,0.0
+ALT2,estresse,slide12_max,2,398.7236842105263,janela base_deslocada,sem piso,199.36184210526315,-800.6381578947369,0.0
+ALT3,estresse,slide14_min,4,2161.280625,carga inteira (dias plenos),sem piso,540.32015625,-459.67984375000003,0.0
+ALT3,estresse,slide14_max,5,2161.280625,carga inteira (dias plenos),sem piso,432.256125,-567.743875,0.0
+ALT3,estresse,slide12_min,1,2161.280625,carga inteira (dias plenos),sem piso,2161.280625,1161.2806249999999,27870.734999999997
+ALT3,estresse,slide12_max,2,2161.280625,carga inteira (dias plenos),sem piso,1080.6403125,80.64031249999994,1935.3674999999985
+ALT2,estresse,slide14_pap,3,583.3406249999999,carga inteira (dias plenos),sem piso,194.44687499999998,-805.553125,0.0
+ALT2,estresse,slide12_min,1,583.3406249999999,carga inteira (dias plenos),sem piso,583.3406249999999,-416.65937500000007,0.0
+ALT2,estresse,slide12_max,2,583.3406249999999,carga inteira (dias plenos),sem piso,291.67031249999997,-708.3296875000001,0.0
+ALT3,estresse,slide14_min,4,2208.5,agosto/2026 em dias plenos (taxa de agosto mensalizada),sem piso,552.125,-447.875,0.0
+ALT3,estresse,slide14_max,5,2208.5,agosto/2026 em dias plenos (taxa de agosto mensalizada),sem piso,441.7,-558.3,0.0
+ALT3,estresse,slide12_min,1,2208.5,agosto/2026 em dias plenos (taxa de agosto mensalizada),sem piso,2208.5,1208.5,29004.0
+ALT3,estresse,slide12_max,2,2208.5,agosto/2026 em dias plenos (taxa de agosto mensalizada),sem piso,1104.25,104.25,2502.0
+ALT2,estresse,slide14_pap,3,381.0,agosto/2026 em dias plenos (taxa de agosto mensalizada),sem piso,127.0,-873.0,0.0
+ALT2,estresse,slide12_min,1,381.0,agosto/2026 em dias plenos (taxa de agosto mensalizada),sem piso,381.0,-619.0,0.0
+ALT2,estresse,slide12_max,2,381.0,agosto/2026 em dias plenos (taxa de agosto mensalizada),sem piso,190.5,-809.5,0.0
+ALT3,estresse,slide14_min,4,2208.5,agosto/2026 volume real do mês (inf),sem piso,552.125,-447.875,0.0
+ALT3,estresse,slide14_max,5,2208.5,agosto/2026 volume real do mês (inf),sem piso,441.7,-558.3,0.0
+ALT3,estresse,slide12_min,1,2208.5,agosto/2026 volume real do mês (inf),sem piso,2208.5,1208.5,29004.0
+ALT3,estresse,slide12_max,2,2208.5,agosto/2026 volume real do mês (inf),sem piso,1104.25,104.25,2502.0
+ALT2,estresse,slide14_pap,3,381.0,agosto/2026 volume real do mês (inf),sem piso,127.0,-873.0,0.0
+ALT2,estresse,slide12_min,1,381.0,agosto/2026 volume real do mês (inf),sem piso,381.0,-619.0,0.0
+ALT2,estresse,slide12_max,2,381.0,agosto/2026 volume real do mês (inf),sem piso,190.5,-809.5,0.0
+ALT3,estresse,slide14_min,4,1787.5125,mensalização: média dos dias úteis de referência de junho a setembro,sem piso,446.878125,-553.121875,0.0
+ALT3,estresse,slide14_max,5,1787.5125,mensalização: média dos dias úteis de referência de junho a setembro,sem piso,357.5025,-642.4975,0.0
+ALT3,estresse,slide12_min,1,1787.5125,mensalização: média dos dias úteis de referência de junho a setembro,sem piso,1787.5125,787.5125,18900.300000000003
+ALT3,estresse,slide12_max,2,1787.5125,mensalização: média dos dias úteis de referência de junho a setembro,sem piso,893.75625,-106.24374999999998,0.0
+ALT2,estresse,slide14_pap,3,263.25,mensalização: média dos dias úteis de referência de junho a setembro,sem piso,87.75,-912.25,0.0
+ALT2,estresse,slide12_min,1,263.25,mensalização: média dos dias úteis de referência de junho a setembro,sem piso,263.25,-736.75,0.0
+ALT2,estresse,slide12_max,2,263.25,mensalização: média dos dias úteis de referência de junho a setembro,sem piso,131.625,-868.375,0.0
+ALT3,estresse,slide14_min,4,1588.9,"mensalização: setembro, dias sem explicação como sem operação (base)",sem piso,397.225,-602.775,0.0
+ALT3,estresse,slide14_max,5,1588.9,"mensalização: setembro, dias sem explicação como sem operação (base)",sem piso,317.78000000000003,-682.22,0.0
+ALT3,estresse,slide12_min,1,1588.9,"mensalização: setembro, dias sem explicação como sem operação (base)",sem piso,1588.9,588.9000000000001,14133.600000000002
+ALT3,estresse,slide12_max,2,1588.9,"mensalização: setembro, dias sem explicação como sem operação (base)",sem piso,794.45,-205.54999999999995,0.0
+ALT2,estresse,slide14_pap,3,234.0,"mensalização: setembro, dias sem explicação como sem operação (base)",sem piso,78.0,-922.0,0.0
+ALT2,estresse,slide12_min,1,234.0,"mensalização: setembro, dias sem explicação como sem operação (base)",sem piso,234.0,-766.0,0.0
+ALT2,estresse,slide12_max,2,234.0,"mensalização: setembro, dias sem explicação como sem operação (base)",sem piso,117.0,-883.0,0.0
+ALT3,estresse,slide14_min,4,1677.1722222222222,"mensalização: setembro, dias sem explicação como lacuna de extração",sem piso,419.29305555555555,-580.7069444444444,0.0
+ALT3,estresse,slide14_max,5,1677.1722222222222,"mensalização: setembro, dias sem explicação como lacuna de extração",sem piso,335.43444444444447,-664.5655555555555,0.0
+ALT3,estresse,slide12_min,1,1677.1722222222222,"mensalização: setembro, dias sem explicação como lacuna de extração",sem piso,1677.1722222222222,677.1722222222222,16252.133333333333
+ALT3,estresse,slide12_max,2,1677.1722222222222,"mensalização: setembro, dias sem explicação como lacuna de extração",sem piso,838.5861111111111,-161.4138888888889,0.0
+ALT2,estresse,slide14_pap,3,247.0,"mensalização: setembro, dias sem explicação como lacuna de extração",sem piso,82.33333333333333,-917.6666666666666,0.0
+ALT2,estresse,slide12_min,1,247.0,"mensalização: setembro, dias sem explicação como lacuna de extração",sem piso,247.0,-753.0,0.0
+ALT2,estresse,slide12_max,2,247.0,"mensalização: setembro, dias sem explicação como lacuna de extração",sem piso,123.5,-876.5,0.0
+ALT3,estresse,slide14_min,4,1853.7166666666667,"janela base, só pedido_multi_endereco",sem piso,463.4291666666667,-536.5708333333333,0.0
+ALT3,estresse,slide14_max,5,1853.7166666666667,"janela base, só pedido_multi_endereco",sem piso,370.74333333333334,-629.2566666666667,0.0
+ALT3,estresse,slide12_min,1,1853.7166666666667,"janela base, só pedido_multi_endereco",sem piso,1853.7166666666667,853.7166666666667,20489.2
+ALT3,estresse,slide12_max,2,1853.7166666666667,"janela base, só pedido_multi_endereco",sem piso,926.8583333333333,-73.14166666666665,0.0
+ALT2,estresse,slide14_pap,3,273.0,"janela base, só pedido_multi_endereco",sem piso,91.0,-909.0,0.0
+ALT2,estresse,slide12_min,1,273.0,"janela base, só pedido_multi_endereco",sem piso,273.0,-727.0,0.0
+ALT2,estresse,slide12_max,2,273.0,"janela base, só pedido_multi_endereco",sem piso,136.5,-863.5,0.0
+ALT3,normal,slide14_min,4,2268.2763157894738,taxa corrente (ANA-002),com piso,1475.0,475.0,11400.0
+ALT3,normal,slide14_max,5,2268.2763157894738,taxa corrente (ANA-002),com piso,1180.0,180.0,4320.0
+ALT3,normal,slide12_min,1,2268.2763157894738,taxa corrente (ANA-002),com piso,5900.0,4900.0,117600.0
+ALT3,normal,slide12_max,2,2268.2763157894738,taxa corrente (ANA-002),com piso,2950.0,1950.0,46800.0
+ALT3,normal,frota necessária (ANA-009),2,2268.2763157894738,taxa corrente (ANA-002),com piso,2950.0,1950.0,46800.0
+ALT3,normal,faixa da frota necessária (ANA-009),1,2268.2763157894738,taxa corrente (ANA-002),com piso,5900.0,4900.0,117600.0
+ALT3,normal,"frota pela banda de dias (ANA-009, variante otimista)",1,2268.2763157894738,taxa corrente (ANA-002),com piso,5900.0,4900.0,117600.0
+ALT3,normal,frota da janela normal (ANA-009),2,2268.2763157894738,taxa corrente (ANA-002),com piso,2950.0,1950.0,46800.0
+ALT3,normal,frota por tipo (ANA-009),2,2268.2763157894738,taxa corrente (ANA-002),com piso,2950.0,1950.0,46800.0
+ALT2,normal,slide14_pap,3,398.7236842105263,taxa corrente (ANA-002),com piso,1966.6666666666667,966.6666666666667,23200.0
+ALT2,normal,slide12_min,1,398.7236842105263,taxa corrente (ANA-002),com piso,5900.0,4900.0,117600.0
+ALT2,normal,slide12_max,2,398.7236842105263,taxa corrente (ANA-002),com piso,2950.0,1950.0,46800.0
+ALT2,normal,frota necessária (ANA-009),2,398.7236842105263,taxa corrente (ANA-002),com piso,2950.0,1950.0,46800.0
+ALT3,normal,slide14_min,4,2268.2763157894738,taxa corrente (ANA-002),sem piso,567.0690789473684,-432.93092105263156,0.0
+ALT3,normal,slide14_max,5,2268.2763157894738,taxa corrente (ANA-002),sem piso,453.65526315789475,-546.3447368421052,0.0
+ALT3,normal,slide12_min,1,2268.2763157894738,taxa corrente (ANA-002),sem piso,2268.2763157894738,1268.2763157894738,30438.63157894737
+ALT3,normal,slide12_max,2,2268.2763157894738,taxa corrente (ANA-002),sem piso,1134.1381578947369,134.13815789473688,3219.315789473685
+ALT3,normal,frota necessária (ANA-009),2,2268.2763157894738,taxa corrente (ANA-002),sem piso,1134.1381578947369,134.13815789473688,3219.315789473685
+ALT3,normal,faixa da frota necessária (ANA-009),1,2268.2763157894738,taxa corrente (ANA-002),sem piso,2268.2763157894738,1268.2763157894738,30438.63157894737
+ALT3,normal,"frota pela banda de dias (ANA-009, variante otimista)",1,2268.2763157894738,taxa corrente (ANA-002),sem piso,2268.2763157894738,1268.2763157894738,30438.63157894737
+ALT3,normal,frota da janela normal (ANA-009),2,2268.2763157894738,taxa corrente (ANA-002),sem piso,1134.1381578947369,134.13815789473688,3219.315789473685
+ALT3,normal,frota por tipo (ANA-009),2,2268.2763157894738,taxa corrente (ANA-002),sem piso,1134.1381578947369,134.13815789473688,3219.315789473685
+ALT2,normal,slide14_pap,3,398.7236842105263,taxa corrente (ANA-002),sem piso,132.9078947368421,-867.0921052631579,0.0
+ALT2,normal,slide12_min,1,398.7236842105263,taxa corrente (ANA-002),sem piso,398.7236842105263,-601.2763157894738,0.0
+ALT2,normal,slide12_max,2,398.7236842105263,taxa corrente (ANA-002),sem piso,199.36184210526315,-800.6381578947369,0.0
+ALT2,normal,frota necessária (ANA-009),2,398.7236842105263,taxa corrente (ANA-002),sem piso,199.36184210526315,-800.6381578947369,0.0
+ALT3,normal,slide14_min,4,2268.2763157894738,operação normal: janela base (24/08 a 18/09),sem piso,567.0690789473684,-432.93092105263156,0.0
+ALT3,normal,slide14_max,5,2268.2763157894738,operação normal: janela base (24/08 a 18/09),sem piso,453.65526315789475,-546.3447368421052,0.0
+ALT3,normal,slide12_min,1,2268.2763157894738,operação normal: janela base (24/08 a 18/09),sem piso,2268.2763157894738,1268.2763157894738,30438.63157894737
+ALT3,normal,slide12_max,2,2268.2763157894738,operação normal: janela base (24/08 a 18/09),sem piso,1134.1381578947369,134.13815789473688,3219.315789473685
+ALT2,normal,slide14_pap,3,398.7236842105263,operação normal: janela base (24/08 a 18/09),sem piso,132.9078947368421,-867.0921052631579,0.0
+ALT2,normal,slide12_min,1,398.7236842105263,operação normal: janela base (24/08 a 18/09),sem piso,398.7236842105263,-601.2763157894738,0.0
+ALT2,normal,slide12_max,2,398.7236842105263,operação normal: janela base (24/08 a 18/09),sem piso,199.36184210526315,-800.6381578947369,0.0
+ALT3,normal,slide14_min,4,2500.4,operação normal: janela 2s (até 18/09),sem piso,625.1,-374.9,0.0
+ALT3,normal,slide14_max,5,2500.4,operação normal: janela 2s (até 18/09),sem piso,500.08000000000004,-499.91999999999996,0.0
+ALT3,normal,slide12_min,1,2500.4,operação normal: janela 2s (até 18/09),sem piso,2500.4,1500.4,36009.600000000006
+ALT3,normal,slide12_max,2,2500.4,operação normal: janela 2s (até 18/09),sem piso,1250.2,250.20000000000005,6004.800000000001
+ALT2,normal,slide14_pap,3,287.0,operação normal: janela 2s (até 18/09),sem piso,95.66666666666667,-904.3333333333334,0.0
+ALT2,normal,slide12_min,1,287.0,operação normal: janela 2s (até 18/09),sem piso,287.0,-713.0,0.0
+ALT2,normal,slide12_max,2,287.0,operação normal: janela 2s (até 18/09),sem piso,143.5,-856.5,0.0
+ALT3,normal,slide14_min,4,2218.3603448275862,operação normal: janela 6s (até 18/09),sem piso,554.5900862068966,-445.40991379310344,0.0
+ALT3,normal,slide14_max,5,2218.3603448275862,operação normal: janela 6s (até 18/09),sem piso,443.67206896551727,-556.3279310344827,0.0
+ALT3,normal,slide12_min,1,2218.3603448275862,operação normal: janela 6s (até 18/09),sem piso,2218.3603448275862,1218.3603448275862,29240.64827586207
+ALT3,normal,slide12_max,2,2218.3603448275862,operação normal: janela 6s (até 18/09),sem piso,1109.1801724137931,109.18017241379312,2620.324137931035
+ALT2,normal,slide14_pap,3,358.26724137931035,operação normal: janela 6s (até 18/09),sem piso,119.42241379310344,-880.5775862068965,0.0
+ALT2,normal,slide12_min,1,358.26724137931035,operação normal: janela 6s (até 18/09),sem piso,358.26724137931035,-641.7327586206897,0.0
+ALT2,normal,slide12_max,2,358.26724137931035,operação normal: janela 6s (até 18/09),sem piso,179.13362068965517,-820.8663793103449,0.0
+ALT3,normal,slide14_min,4,2171.103846153846,operação normal: janela 8s (até 18/09),sem piso,542.7759615384615,-457.2240384615385,0.0
+ALT3,normal,slide14_max,5,2171.103846153846,operação normal: janela 8s (até 18/09),sem piso,434.2207692307692,-565.7792307692308,0.0
+ALT3,normal,slide12_min,1,2171.103846153846,operação normal: janela 8s (até 18/09),sem piso,2171.103846153846,1171.103846153846,28106.492307692304
+ALT3,normal,slide12_max,2,2171.103846153846,operação normal: janela 8s (até 18/09),sem piso,1085.551923076923,85.551923076923,2053.246153846152
+ALT2,normal,slide14_pap,3,350.40384615384613,operação normal: janela 8s (até 18/09),sem piso,116.80128205128204,-883.198717948718,0.0
+ALT2,normal,slide12_min,1,350.40384615384613,operação normal: janela 8s (até 18/09),sem piso,350.40384615384613,-649.5961538461538,0.0
+ALT2,normal,slide12_max,2,350.40384615384613,operação normal: janela 8s (até 18/09),sem piso,175.20192307692307,-824.7980769230769,0.0
+ALT3,normal,slide14_min,4,2138.616666666667,operação normal: janela base_sem_pos_pausa (até 18/09),sem piso,534.6541666666667,-465.3458333333333,0.0
+ALT3,normal,slide14_max,5,2138.616666666667,operação normal: janela base_sem_pos_pausa (até 18/09),sem piso,427.72333333333336,-572.2766666666666,0.0
+ALT3,normal,slide12_min,1,2138.616666666667,operação normal: janela base_sem_pos_pausa (até 18/09),sem piso,2138.616666666667,1138.6166666666668,27326.800000000003
+ALT3,normal,slide12_max,2,2138.616666666667,operação normal: janela base_sem_pos_pausa (até 18/09),sem piso,1069.3083333333334,69.3083333333334,1663.4000000000015
+ALT2,normal,slide14_pap,3,397.25,operação normal: janela base_sem_pos_pausa (até 18/09),sem piso,132.41666666666666,-867.5833333333334,0.0
+ALT2,normal,slide12_min,1,397.25,operação normal: janela base_sem_pos_pausa (até 18/09),sem piso,397.25,-602.75,0.0
+ALT2,normal,slide12_max,2,397.25,operação normal: janela base_sem_pos_pausa (até 18/09),sem piso,198.625,-801.375,0.0
+ALT6,estresse,frota necessária (ANA-009),5,9833.716666666667,receita do escopo + receita adicional (ANA-010),com piso,1966.7433333333333,966.7433333333333,23201.84
+ALT6,estresse,faixa da frota necessária (ANA-009),4,9833.716666666667,receita do escopo + receita adicional (ANA-010),com piso,2458.429166666667,1458.4291666666668,35002.3
+ALT6,estresse,faixa da frota necessária (ANA-009),6,9833.716666666667,receita do escopo + receita adicional (ANA-010),com piso,1638.9527777777778,638.9527777777778,15334.866666666667
+ALT6,estresse,faixa da frota necessária (ANA-009),7,9833.716666666667,receita do escopo + receita adicional (ANA-010),com piso,1404.8166666666668,404.81666666666683,9715.600000000004
+ALT6,normal,frota necessária (ANA-009),5,10036.894736842103,receita do escopo + receita adicional (ANA-010),com piso,2007.3789473684205,1007.3789473684205,24177.094736842093
+ALT6,normal,faixa da frota necessária (ANA-009),3,10036.894736842103,receita do escopo + receita adicional (ANA-010),com piso,3345.631578947368,2345.631578947368,56295.157894736825
+ALT6,normal,faixa da frota necessária (ANA-009),4,10036.894736842103,receita do escopo + receita adicional (ANA-010),com piso,2509.223684210526,1509.2236842105258,36221.36842105262

@@ -1,0 +1,65 @@
+{
+  "id": "INS-030",
+  "estado": "validado",
+  "afirmacao": "Somando o checkout dos outros depositantes, a carga média na janela observada chega perto da capacidade de um robô. A razão combinada (linhas por PR07 mais pedidos de checkout por PR08 provável) é {{v.comb}}, contra {{v.pap}} só das linhas e {{v.chk}} só do checkout. A faixa de PR08 dá de {{v.chk_sup}} a {{v.chk_inf}} para o checkout. Na sensibilidade com todo o pedido-a-pedido dos outros a razão combinada é {{v.comb_todo}}, acima de um. Se o mesmo robô alterna os dois tipos (regra da soma das cargas) a conta é essa; se os robôs não são fungíveis entre tipos (regra por tipo), a frota é maior. A combinação é descritiva e fica fora do teste registrado de CR5, que só tem p nas linhas.",
+  "pergunta_ref": "P14",
+  "criterio_ref": "CR5",
+  "valores": {
+    "comb": "ANA-010.razao_demanda_combinada_outros",
+    "pap": "ANA-010.razao_demanda_pr07_outros",
+    "chk": "ANA-010.razao_demanda_pr08_outros_prov",
+    "chk_sup": "ANA-010.razao_demanda_pr08_outros_sup",
+    "chk_inf": "ANA-010.razao_demanda_pr08_outros_inf",
+    "comb_todo": "ANA-010.razao_demanda_combinada_outros_todo_pap"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "grade de PR08 (inferior, provável e superior)",
+      "analise": "ANA-010",
+      "resultado": "parcial",
+      "nota": "a combinação vai de um pouco abaixo a um pouco acima de um robô; o checkout pesa pouco em qualquer ponto da faixa"
+    },
+    {
+      "recorte": "pedido-a-pedido na janela base",
+      "analise": "ANA-010",
+      "resultado": "parcial",
+      "nota": "só as linhas já chegam perto de um robô na janela base (chave razao_demanda_pr07_outros_janela_base)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: fungibilidade declarada (regra por tipo como variante desfavorável), sensibilidade com todo o pedido-a-pedido e PR08 de baixa confiança nas premissas. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Ler CR5 com as duas partes juntas (linhas e checkout) ao dimensionar robôs adicionais, sem tratar a combinação como teste.",
+  "dono": "estatistico (ANA-010); analista de impacto (ALT6)",
+  "premissas": [
+    "PR08 vem da faixa de ANA-006 (baixa confiança)",
+    "soma de duas razões com geradores próprios: IC aproximado",
+    "o mesmo robô alterna pedido-a-pedido e checkout (regra da soma das cargas); a regra por tipo é a variante desfavorável"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:29",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:26",
+      "por": "red-team-analitico"
+    }
+  ]
+}

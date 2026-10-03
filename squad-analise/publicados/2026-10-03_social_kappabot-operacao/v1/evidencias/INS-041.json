@@ -1,0 +1,67 @@
+{
+  "id": "INS-041",
+  "estado": "quantificado",
+  "afirmacao": "Na descoberta, nos dias de pico (volume diário no percentil mais alto) o M14 padronizado do armazém ficou {{v.dif}} acima do dos dias típicos (pico em {{v.pico}}, típico em {{v.tipico}}), com o mesmo sinal nos três tipos de onda. O intervalo de confiança do tratamento principal cruza o zero e o resultado depende da semana de incidente da Royal Canin: com ela dentro, a diferença é {{v.difinc}}. Apoio fraco, poucos dias de pico, exploratório e associativo. Se a pista PT-D2 confirmar, converter o excedente de linhas do dia de pico em horas com o M14 dos dias típicos exagera as horas excedentes de CR8.",
+  "pergunta_ref": "P19",
+  "criterio_ref": "CR8",
+  "valores": {
+    "dif": "ANA-012.dif_m14_pico_tipico_pad",
+    "pico": "ANA-012.m14_pico_pad",
+    "tipico": "ANA-012.m14_tipico_pad",
+    "difinc": "ANA-012.dif_m14_pico_tipico_pad_com_incidente"
+  },
+  "nivel": "associativo",
+  "exploratorio": true,
+  "robustez": [
+    {
+      "recorte": "por tipo de onda",
+      "analise": "ANA-012",
+      "resultado": "passa",
+      "nota": "mesmo sinal no pedido-a-pedido, no checkout e na colmeia (tabela robustez_pico_tipico_por_tipo)"
+    },
+    {
+      "recorte": "teto conservador (ciclo no teto menor)",
+      "analise": "ANA-012",
+      "resultado": "parcial",
+      "nota": "mesmo sinal, mas o IC cruza o zero (chave dif_m14_pico_tipico_pad_t300)"
+    },
+    {
+      "recorte": "semana de incidente dentro",
+      "analise": "ANA-012",
+      "resultado": "parcial",
+      "nota": "com a semana dentro o IC fica fora do zero, com ela fora cruza o zero: o resultado depende desse recorte"
+    }
+  ],
+  "confirmacao": {
+    "analise": "ANA-016",
+    "resultado": "nao_confirma",
+    "nota": "PT-D2 ficou fora da F2 e é só descritiva em ANA-016: poucos dias de pico nas semanas pares, sem teste"
+  },
+  "red_team_analitico": {
+    "veredito": "cai",
+    "nota": "Sem mudança: PT-D2 ficou fora da F2 e não foi testada; exploratório sem confirmação não segue ao impacto."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Decidir se PT-D2 entra na F2 (custa um teste a mais). Até confirmar, M23 segue com o M14 típico e a diferença fica como sensibilidade.",
+  "dono": "planejador-analitico; estatistico (ANA-016)",
+  "premissas": [
+    "achado exploratório da descoberta (semanas ISO ímpares): estimativa sem ajuste para as muitas comparações olhadas; não vai ao memorando antes da confirmação em ANA-016",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador como robustez",
+    "incidente operacional da Royal Canin na semana ISO ímpar de fim de setembro tratado como recorte atípico e declarado (revisoes/orquestrador_decisao_semana_incidente.md)",
+    "os limiares de pico e típico são os da descoberta (limiares_descoberta), sem recálculo nas semanas pares"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:43",
+      "por": "analista-exploratorio"
+    }
+  ]
+}

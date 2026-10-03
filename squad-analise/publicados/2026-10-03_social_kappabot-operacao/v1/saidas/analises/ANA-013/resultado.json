@@ -1,0 +1,1530 @@
+{
+  "id": "ANA-013",
+  "valores": {
+    "n_dias_plenos": {
+      "valor": 80,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias plenos"
+    },
+    "n_dias_incidente_rc": {
+      "valor": 4,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias plenos (21 a 25/09) com incidente operacional da Royal Canin"
+    },
+    "n_semanas_iso": {
+      "valor": 17,
+      "unidade": "semanas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "semanas ISO com dia pleno"
+    },
+    "rc_linhas_total": {
+      "valor": 11381,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "linhas da Royal Canin (sem CANCELADO), carga inteira"
+    },
+    "rc_linhas_sem_incidente": {
+      "valor": 11375,
+      "unidade": "linhas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "linhas da Royal Canin, sem 21 a 25/09 (incidente operacional)"
+    },
+    "rc_enderecos_total": {
+      "valor": 19177,
+      "unidade": "linhas operacionais",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "linhas operacionais da Royal Canin, carga inteira"
+    },
+    "rc_enderecos_sem_incidente": {
+      "valor": 19171,
+      "unidade": "linhas operacionais",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "linhas operacionais da Royal Canin, sem 21 a 25/09 (incidente operacional)"
+    },
+    "rc_pedidos_total": {
+      "valor": 11369,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos da Royal Canin (sem CANCELADO), carga inteira"
+    },
+    "rc_pedidos_sem_incidente": {
+      "valor": 11363,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos da Royal Canin, sem 21 a 25/09 (incidente operacional)"
+    },
+    "rc_pedidos_por_dia_pleno": {
+      "valor": 140.075,
+      "unidade": "pedidos por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos da Royal Canin por dia pleno (período inteiro como extraído)"
+    },
+    "rc_pedidos_por_dia_pleno_sem_incidente": {
+      "valor": 147.3684210526316,
+      "unidade": "pedidos por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos da Royal Canin por dia pleno, sem 21 a 25/09 (incidente operacional)"
+    },
+    "rc_pedidos_por_dia_pleno_incidente": {
+      "valor": 1.5,
+      "unidade": "pedidos por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos da Royal Canin por dia pleno, só 21 a 25/09 (incidente operacional)"
+    },
+    "rc_semana_incidente_relativo_mediana": {
+      "valor": 0.010006671114076052,
+      "unidade": "razão",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos da Royal Canin por dia pleno na semana do incidente ÷ mediana das outras semanas"
+    },
+    "ativos_dia_media": {
+      "valor": 7.95,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_p90": {
+      "valor": 11.0,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_sem_incidente": {
+      "valor": 7.947368421052632,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_p90_sem_incidente": {
+      "valor": 10.5,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_1h": {
+      "valor": 4.5875,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_p90_1h": {
+      "valor": 7.0,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_1h_sem_incidente": {
+      "valor": 4.578947368421052,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_p90_1h_sem_incidente": {
+      "valor": 7.0,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_1h_t300": {
+      "valor": 4.15,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_p90_1h_t300": {
+      "valor": 6.1000000000000085,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_1h_t300_sem_incidente": {
+      "valor": 4.197368421052632,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_p90_1h_t300_sem_incidente": {
+      "valor": 6.5,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_rc": {
+      "valor": 2.825,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_p90_rc": {
+      "valor": 5.0,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_rc_sem_incidente": {
+      "valor": 2.9342105263157894,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_p90_rc_sem_incidente": {
+      "valor": 5.0,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_rc_1h": {
+      "valor": 1.7125,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_p90_rc_1h": {
+      "valor": 3.0,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_rc_1h_sem_incidente": {
+      "valor": 1.8026315789473684,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_p90_rc_1h_sem_incidente": {
+      "valor": 3.0,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_rc_1h_t300": {
+      "valor": 1.45,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_p90_rc_1h_t300": {
+      "valor": 2.1000000000000085,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_rc_1h_t300_sem_incidente": {
+      "valor": 1.5263157894736843,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_p90_rc_1h_t300_sem_incidente": {
+      "valor": 2.5,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "logins_com_atividade_periodo": {
+      "valor": 39,
+      "unidade": "logins",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins manuais distintos com atividade em dia pleno"
+    },
+    "n_dias_pico": {
+      "valor": 8,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias plenos de pico (volume no percentil PAR04 ou acima), período inteiro"
+    },
+    "n_dias_tipicos": {
+      "valor": 40,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias plenos típicos (entre os quartis do volume), período inteiro"
+    },
+    "volume_dia_p90": {
+      "valor": 1630.2000000000003,
+      "unidade": "linhas operacionais por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "linhas operacionais por dia pleno (M05), período inteiro"
+    },
+    "ativos_pico_media": {
+      "valor": 10.375,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_tipico_media": {
+      "valor": 7.55,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_pico_menos_tipico": {
+      "valor": 2.825,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_pico_media_sem_incidente": {
+      "valor": 10.375,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_tipico_media_sem_incidente": {
+      "valor": 7.578947368421052,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_pico_menos_tipico_sem_incidente": {
+      "valor": 2.796052631578948,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_pico_media_1h": {
+      "valor": 7.0,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_tipico_media_1h": {
+      "valor": 4.325,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_pico_menos_tipico_1h": {
+      "valor": 2.675,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_pico_media_1h_sem_incidente": {
+      "valor": 7.0,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_tipico_media_1h_sem_incidente": {
+      "valor": 4.2894736842105265,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_pico_menos_tipico_1h_sem_incidente": {
+      "valor": 2.7105263157894735,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_pico_media_1h_t300": {
+      "valor": 6.625,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_tipico_media_1h_t300": {
+      "valor": 3.85,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_pico_menos_tipico_1h_t300": {
+      "valor": 2.775,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_pico_media_1h_t300_sem_incidente": {
+      "valor": 6.625,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_tipico_media_1h_t300_sem_incidente": {
+      "valor": 3.8421052631578947,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_pico_menos_tipico_1h_t300_sem_incidente": {
+      "valor": 2.7828947368421053,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "horas_armazem_dia_t300": {
+      "valor": 11.55159375,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_dia_p90_t300": {
+      "valor": 17.924194444444446,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_dia_t300_sem_incidente": {
+      "valor": 11.587266081871345,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_pico_t300": {
+      "valor": 21.12902777777778,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_tipico_t300": {
+      "valor": 10.836118055555556,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_excedente_pico_t300": {
+      "valor": 10.292909722222223,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno (pico menos típico)"
+    },
+    "horas_armazem_pico_t300_sem_incidente": {
+      "valor": 21.12902777777778,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_tipico_t300_sem_incidente": {
+      "valor": 10.769466374269006,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_excedente_pico_t300_sem_incidente": {
+      "valor": 10.359561403508772,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno (pico menos típico)"
+    },
+    "horas_armazem_dia_t600": {
+      "valor": 13.927684027777781,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_dia_p90_t600": {
+      "valor": 21.68425,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_dia_t600_sem_incidente": {
+      "valor": 13.989579678362574,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_pico_t600": {
+      "valor": 24.593923611111112,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_tipico_t600": {
+      "valor": 13.15340277777778,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_excedente_pico_t600": {
+      "valor": 11.440520833333332,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno (pico menos típico)"
+    },
+    "horas_armazem_pico_t600_sem_incidente": {
+      "valor": 24.593923611111112,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_tipico_t600_sem_incidente": {
+      "valor": 13.134634502923978,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_excedente_pico_t600_sem_incidente": {
+      "valor": 11.459289108187134,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno (pico menos típico)"
+    },
+    "horas_armazem_dia": {
+      "valor": 15.434395833333335,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_dia_p90": {
+      "valor": 23.279388888888892,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_dia_sem_incidente": {
+      "valor": 15.506370614035086,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_pico": {
+      "valor": 26.43333333333333,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_tipico": {
+      "valor": 14.65673611111111,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_excedente_pico": {
+      "valor": 11.77659722222222,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno (pico menos típico)"
+    },
+    "horas_armazem_pico_sem_incidente": {
+      "valor": 26.43333333333333,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_tipico_sem_incidente": {
+      "valor": 14.637543859649123,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_excedente_pico_sem_incidente": {
+      "valor": 11.795789473684207,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno (pico menos típico)"
+    },
+    "horas_armazem_dia_t1800": {
+      "valor": 18.580159722222223,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_dia_p90_t1800": {
+      "valor": 27.20727777777778,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_dia_t1800_sem_incidente": {
+      "valor": 18.731173245614034,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_pico_t1800": {
+      "valor": 30.874444444444443,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_tipico_t1800": {
+      "valor": 17.82732638888889,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_excedente_pico_t1800": {
+      "valor": 13.047118055555554,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno (pico menos típico)"
+    },
+    "horas_armazem_pico_t1800_sem_incidente": {
+      "valor": 30.874444444444443,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_tipico_t1800_sem_incidente": {
+      "valor": 17.849919590643278,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_excedente_pico_t1800_sem_incidente": {
+      "valor": 13.024524853801164,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno (pico menos típico)"
+    },
+    "horas_armazem_dia_s1": {
+      "valor": 16.729102430555553,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_dia_s2": {
+      "valor": 23.307593750000002,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_dia_s3": {
+      "valor": 14.904854166666667,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_dia_sem_turnos_fundidos": {
+      "valor": 15.434395833333335,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "operador_dias_turnos_fundidos": {
+      "valor": 0,
+      "unidade": "operador-dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operador-dias marcados como turnos fundidos (PAR12)"
+    },
+    "operador_dias_sem_segmento_valido": {
+      "valor": 15,
+      "unidade": "operador-dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operador-dias humanos em dia pleno sem segmento válido (jornada zero; M29)"
+    },
+    "operador_dias_total": {
+      "valor": 636,
+      "unidade": "operador-dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operador-dias humanos em dia pleno"
+    },
+    "logins_total_periodo": {
+      "valor": 39,
+      "unidade": "logins",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins manuais distintos na carga"
+    },
+    "logins_base_primeira_semana": {
+      "valor": 15,
+      "unidade": "logins",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins ativos na primeira semana da carga (experientes)"
+    },
+    "logins_entrada_periodo": {
+      "valor": 24,
+      "unidade": "logins",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins que entram (primeira atividade depois da primeira semana da carga)"
+    },
+    "logins_saida_periodo": {
+      "valor": 18,
+      "unidade": "logins",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins que saem (última atividade antes das duas últimas semanas com dia pleno)"
+    },
+    "logins_entrada_apos_mes_inicial": {
+      "valor": 5,
+      "unidade": "logins",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins que entram depois do mês inicial da carga (sem o efeito de censura da primeira semana)"
+    },
+    "limiar_poucos_dias_ativos": {
+      "valor": 5,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias com atividade (limite de 'poucos dias ativos' do red team; sem fonte setorial [●])"
+    },
+    "limiar_poucos_dias_ativos_folgado": {
+      "valor": 10,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias com atividade (limite folgado de 'poucos dias ativos', sensibilidade)"
+    },
+    "logins_entrada_poucos_dias": {
+      "valor": 14,
+      "unidade": "logins",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins que entram e têm até 5 dias com atividade na carga"
+    },
+    "logins_entrada_demais_dias": {
+      "valor": 10,
+      "unidade": "logins",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins que entram e têm mais de 5 dias com atividade na carga"
+    },
+    "logins_entrada_poucos_dias_folgado": {
+      "valor": 18,
+      "unidade": "logins",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins que entram e têm até 10 dias com atividade na carga"
+    },
+    "logins_entrada_demais_dias_folgado": {
+      "valor": 6,
+      "unidade": "logins",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins que entram e têm mais de 10 dias com atividade na carga"
+    },
+    "logins_entram_e_saem_na_carga": {
+      "valor": 11,
+      "unidade": "logins",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins que entram depois da primeira semana e saem antes das duas últimas semanas (dentro da carga)"
+    },
+    "logins_ativos_por_semana_media": {
+      "valor": 14.705882352941176,
+      "unidade": "logins",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins distintos ativos por semana ISO, média"
+    },
+    "semanas_observadas_rotatividade": {
+      "valor": 17,
+      "unidade": "semanas",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "semanas ISO com atividade"
+    },
+    "taxa_entrada_periodo": {
+      "valor": 1.6320000000000001,
+      "unidade": "razão",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins que entram ÷ logins ativos por semana (média), período inteiro"
+    },
+    "taxa_saida_periodo": {
+      "valor": 1.224,
+      "unidade": "razão",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins que saem ÷ logins ativos por semana (média), período inteiro"
+    },
+    "taxa_entrada_apos_mes_inicial": {
+      "valor": 0.34,
+      "unidade": "razão",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "logins que entram depois do mês inicial ÷ logins ativos por semana (média); janela de julho a setembro"
+    },
+    "rotatividade_proxy_periodo": {
+      "valor": 1.4280000000000002,
+      "unidade": "razão",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "média de entradas e saídas ÷ logins ativos por semana (período inteiro, não anualizado)"
+    },
+    "pap_rc_pedidos_com_palete": {
+      "valor": 0,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos-a-pedido da Royal Canin com linha de palete (fora das contagens abaixo)"
+    },
+    "pap_rc_pedidos": {
+      "valor": 4692,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos-a-pedido da Royal Canin (sem CANCELADO e sem palete)"
+    },
+    "pap_rc_1end": {
+      "valor": 2124,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos-a-pedido da Royal Canin (sem CANCELADO e sem palete), um endereço"
+    },
+    "pap_rc_2mais_end": {
+      "valor": 2568,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos-a-pedido da Royal Canin (sem CANCELADO e sem palete), dois ou mais endereços"
+    },
+    "pap_rc_1end_1un": {
+      "valor": 1162,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos-a-pedido da Royal Canin (sem CANCELADO e sem palete), um endereço e uma unidade"
+    },
+    "pap_rc_1end_multiunid": {
+      "valor": 962,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos-a-pedido da Royal Canin (sem CANCELADO e sem palete), um endereço e mais de uma unidade"
+    },
+    "pap_rc_frac_1end": {
+      "valor": 0.45268542199488493,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração dos pedidos-a-pedido da Royal Canin com um endereço"
+    },
+    "pap_rc_frac_1end_multiunid": {
+      "valor": 0.4529190207156309,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração dos pedidos de um endereço com mais de uma unidade"
+    },
+    "pap_rc_frac_1un": {
+      "valor": 0.24765558397271953,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração dos pedidos-a-pedido da Royal Canin com uma unidade"
+    },
+    "pap_rc_pedidos_sem_incidente": {
+      "valor": 4686,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos-a-pedido da Royal Canin (sem CANCELADO e sem palete)"
+    },
+    "pap_rc_1end_sem_incidente": {
+      "valor": 2118,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos-a-pedido da Royal Canin (sem CANCELADO e sem palete), um endereço"
+    },
+    "pap_rc_2mais_end_sem_incidente": {
+      "valor": 2568,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos-a-pedido da Royal Canin (sem CANCELADO e sem palete), dois ou mais endereços"
+    },
+    "pap_rc_1end_1un_sem_incidente": {
+      "valor": 1158,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos-a-pedido da Royal Canin (sem CANCELADO e sem palete), um endereço e uma unidade"
+    },
+    "pap_rc_1end_multiunid_sem_incidente": {
+      "valor": 960,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos-a-pedido da Royal Canin (sem CANCELADO e sem palete), um endereço e mais de uma unidade"
+    },
+    "pap_rc_frac_1end_sem_incidente": {
+      "valor": 0.4519846350832266,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração dos pedidos-a-pedido da Royal Canin com um endereço"
+    },
+    "pap_rc_frac_1end_multiunid_sem_incidente": {
+      "valor": 0.45325779036827196,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração dos pedidos de um endereço com mais de uma unidade"
+    },
+    "pap_rc_frac_1un_sem_incidente": {
+      "valor": 0.2471190781049936,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração dos pedidos-a-pedido da Royal Canin com uma unidade"
+    },
+    "fracao_descartada_por_tipo": {
+      "valor": 0.6553792985578833,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_pap": {
+      "valor": 0.6954522790672162,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_checkout": {
+      "valor": 0.49685646490867025,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_colmeia": {
+      "valor": 0.5811863902944543,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_por_tipo_t300": {
+      "valor": 0.7417070590735101,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_pap_t300": {
+      "valor": 0.7692166027179234,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_checkout_t300": {
+      "valor": 0.6659251946876389,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_colmeia_t300": {
+      "valor": 0.674228389739345,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_por_tipo_t600": {
+      "valor": 0.6888898041763798,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_pap_t600": {
+      "valor": 0.723540229855503,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_checkout_t600": {
+      "valor": 0.5618318758065866,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_colmeia_t600": {
+      "valor": 0.6197217391018724,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_por_tipo_t1800": {
+      "valor": 0.5854437980975022,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_pap_t1800": {
+      "valor": 0.6305714632830935,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_checkout_t1800": {
+      "valor": 0.3896040326455381,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_colmeia_t1800": {
+      "valor": 0.5105663758090555,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo (descartado líquido ÷ (creditado + descartado líquido)), M29"
+    },
+    "fracao_descartada_colmeia_s3": {
+      "valor": 0.6775216227259563,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração do tempo descartado na colmeia, limite S3 da cauda"
+    },
+    "fracao_linhas_cortadas_por_tipo": {
+      "valor": 0.02553942003756471,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração das linhas manuais com segmento cortado (cadência ou cauda acima do limite, ou linha acima do limite)"
+    },
+    "fracao_linhas_cortadas_pap": {
+      "valor": 0.01933600875592849,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração das linhas manuais com segmento cortado"
+    },
+    "fracao_linhas_cortadas_checkout": {
+      "valor": 0.0033817386114979114,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração das linhas manuais com segmento cortado"
+    },
+    "fracao_linhas_cortadas_colmeia": {
+      "valor": 0.06149534251092243,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração das linhas manuais com segmento cortado"
+    },
+    "fracao_abandono_pap_2mais_end": {
+      "valor": 0.03458019375672766,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "fração das linhas do pedido-a-pedido com dois ou mais endereços cortadas por abandono (M08)"
+    },
+    "intervalo_mediano_por_tipo": {
+      "valor": 83.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a, todos os tipos de onda)"
+    },
+    "intervalo_mediano_pap": {
+      "valor": 74.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a)"
+    },
+    "intervalo_q1_pap": {
+      "valor": 40.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (primeiro quartil de M10 a)"
+    },
+    "intervalo_q3_pap": {
+      "valor": 139.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (terceiro quartil de M10 a)"
+    },
+    "intervalo_mediano_checkout": {
+      "valor": 260.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a)"
+    },
+    "intervalo_q1_checkout": {
+      "valor": 160.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (primeiro quartil de M10 a)"
+    },
+    "intervalo_q3_checkout": {
+      "valor": 422.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (terceiro quartil de M10 a)"
+    },
+    "intervalo_mediano_colmeia": {
+      "valor": 292.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a)"
+    },
+    "intervalo_q1_colmeia": {
+      "valor": 173.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (primeiro quartil de M10 a)"
+    },
+    "intervalo_q3_colmeia": {
+      "valor": 461.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (terceiro quartil de M10 a)"
+    },
+    "intervalo_mediano_pap_rc": {
+      "valor": 103.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a, pedido-a-pedido da Royal Canin)"
+    },
+    "intervalo_mediano_pap_rc_sem_incidente": {
+      "valor": 102.5,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (idem, sem 21 a 25/09)"
+    },
+    "intervalo_mediano_por_tipo_t300": {
+      "valor": 70.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a, todos os tipos de onda)"
+    },
+    "intervalo_mediano_pap_t300": {
+      "valor": 66.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a)"
+    },
+    "intervalo_q1_pap_t300": {
+      "valor": 37.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (primeiro quartil de M10 a)"
+    },
+    "intervalo_q3_pap_t300": {
+      "valor": 110.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (terceiro quartil de M10 a)"
+    },
+    "intervalo_mediano_checkout_t300": {
+      "valor": 175.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a)"
+    },
+    "intervalo_q1_checkout_t300": {
+      "valor": 118.5,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (primeiro quartil de M10 a)"
+    },
+    "intervalo_q3_checkout_t300": {
+      "valor": 229.25,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (terceiro quartil de M10 a)"
+    },
+    "intervalo_mediano_colmeia_t300": {
+      "valor": 173.5,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a)"
+    },
+    "intervalo_q1_colmeia_t300": {
+      "valor": 109.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (primeiro quartil de M10 a)"
+    },
+    "intervalo_q3_colmeia_t300": {
+      "valor": 232.25,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (terceiro quartil de M10 a)"
+    },
+    "intervalo_mediano_pap_rc_t300": {
+      "valor": 91.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a, pedido-a-pedido da Royal Canin)"
+    },
+    "intervalo_mediano_pap_rc_sem_incidente_t300": {
+      "valor": 91.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (idem, sem 21 a 25/09)"
+    },
+    "intervalo_mediano_por_tipo_t600": {
+      "valor": 79.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a, todos os tipos de onda)"
+    },
+    "intervalo_mediano_pap_t600": {
+      "valor": 72.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a)"
+    },
+    "intervalo_q1_pap_t600": {
+      "valor": 39.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (primeiro quartil de M10 a)"
+    },
+    "intervalo_q3_pap_t600": {
+      "valor": 129.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (terceiro quartil de M10 a)"
+    },
+    "intervalo_mediano_checkout_t600": {
+      "valor": 234.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a)"
+    },
+    "intervalo_q1_checkout_t600": {
+      "valor": 149.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (primeiro quartil de M10 a)"
+    },
+    "intervalo_q3_checkout_t600": {
+      "valor": 350.75,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (terceiro quartil de M10 a)"
+    },
+    "intervalo_mediano_colmeia_t600": {
+      "valor": 259.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a)"
+    },
+    "intervalo_q1_colmeia_t600": {
+      "valor": 157.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (primeiro quartil de M10 a)"
+    },
+    "intervalo_q3_colmeia_t600": {
+      "valor": 373.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (terceiro quartil de M10 a)"
+    },
+    "intervalo_mediano_pap_rc_t600": {
+      "valor": 99.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a, pedido-a-pedido da Royal Canin)"
+    },
+    "intervalo_mediano_pap_rc_sem_incidente_t600": {
+      "valor": 99.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (idem, sem 21 a 25/09)"
+    },
+    "intervalo_mediano_por_tipo_t1800": {
+      "valor": 88.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a, todos os tipos de onda)"
+    },
+    "intervalo_mediano_pap_t1800": {
+      "valor": 77.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a)"
+    },
+    "intervalo_q1_pap_t1800": {
+      "valor": 42.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (primeiro quartil de M10 a)"
+    },
+    "intervalo_q3_pap_t1800": {
+      "valor": 156.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (terceiro quartil de M10 a)"
+    },
+    "intervalo_mediano_checkout_t1800": {
+      "valor": 290.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a)"
+    },
+    "intervalo_q1_checkout_t1800": {
+      "valor": 170.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (primeiro quartil de M10 a)"
+    },
+    "intervalo_q3_checkout_t1800": {
+      "valor": 498.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (terceiro quartil de M10 a)"
+    },
+    "intervalo_mediano_colmeia_t1800": {
+      "valor": 341.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a)"
+    },
+    "intervalo_q1_colmeia_t1800": {
+      "valor": 188.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (primeiro quartil de M10 a)"
+    },
+    "intervalo_q3_colmeia_t1800": {
+      "valor": 627.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (terceiro quartil de M10 a)"
+    },
+    "intervalo_mediano_pap_rc_t1800": {
+      "valor": 106.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (mediana de M10 a, pedido-a-pedido da Royal Canin)"
+    },
+    "intervalo_mediano_pap_rc_sem_incidente_t1800": {
+      "valor": 106.0,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "s (idem, sem 21 a 25/09)"
+    },
+    "n_dias_janela_normal": {
+      "valor": 19,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "dias plenos de 24/08 a 18/09"
+    },
+    "rc_pedidos_por_dia_pleno_janela_normal": {
+      "valor": 151.05263157894737,
+      "unidade": "pedidos por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "pedidos da Royal Canin por dia pleno, 24/08 a 18/09"
+    },
+    "ativos_dia_media_janela_normal": {
+      "valor": 7.947368421052632,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_1h_janela_normal": {
+      "valor": 4.894736842105263,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_rc_janela_normal": {
+      "valor": 3.263157894736842,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "ativos_dia_media_rc_1h_janela_normal": {
+      "valor": 2.1578947368421053,
+      "unidade": "operadores por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "operadores ativos por dia pleno"
+    },
+    "horas_armazem_dia_janela_normal": {
+      "valor": 16.66182748538012,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    },
+    "horas_armazem_dia_t300_janela_normal": {
+      "valor": 13.190584795321637,
+      "unidade": "horas por dia",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "horas ativas do armazém por dia pleno"
+    }
+  },
+  "tabelas": {
+    "rc_por_semana": "rc_por_semana.csv",
+    "horas_armazem_por_teto_e_variante": "horas_armazem_por_teto_e_variante.csv",
+    "pap_rc_enderecos_x_unidades": "pap_rc_enderecos_x_unidades.csv",
+    "m29_fracao_descartada": "m29_fracao_descartada.csv",
+    "m29_por_motivo_e_tipo_teto_base": "m29_por_motivo_e_tipo_teto_base.csv",
+    "linhas_cortadas_por_tipo_e_hora": "linhas_cortadas_por_tipo_e_hora.csv",
+    "m10a_por_tipo_e_depositante": "m10a_por_tipo_e_depositante.csv"
+  },
+  "figuras": [
+    "fig_ativos_por_dia.png",
+    "fig_fracao_descartada_por_tipo.png",
+    "fig_horas_armazem_por_teto.png",
+    "fig_intervalo_por_tipo.png",
+    "fig_pap_rc_enderecos_unidades.png",
+    "fig_rc_pedidos_por_semana.png"
+  ],
+  "notas": "Unidades: \"%\" significa fração de 0 a 1 (o motor mostra como percentual); cada valor traz a descrição longa no campo descricao. Censo do período inteiro (80 dias plenos); todo valor leva contagem: true porque as estatísticas são exatas para o período observado (incerteza nenhuma). INCIDENTE OPERACIONAL DA ROYAL CANIN: de 21 a 25/09 (semana ISO 39) a Royal Canin cai para quase zero linhas por dia com o armazém normal; Marcus confirmou que a queda é real (problemas na operação), não falha da extração (revisoes/orquestrador_decisao_semana_incidente.md). A semana fica nos dados e nos totais, marcada como incidente na tabela rc_por_semana. Os totais da Royal Canin saem com e sem esses dias (chaves *_total e *_sem_incidente). As chaves sem sufixo seguem o método do plano (período inteiro, com a semana); as chaves *_sem_incidente tiram os dias do incidente e refazem os limiares de pico e típico sem eles; as chaves *_janela_normal usam as quatro semanas terminando em 18/09 (base da oferta). Para taxas por dia da Royal Canin e para o volume do pico, a leitura de operação normal é a *_sem_incidente ou a *_janela_normal; a sem sufixo é o cenário de estresse. Ativos: corte de uma linha (base do contrato, conta supervisor e apoio como separador) e de uma hora de jornada ativa ([●] sem fonte setorial); na Royal Canin o corte de uma hora usa o ciclo creditado em linhas da Royal Canin no dia. Dias de pico e típicos: calculados no período inteiro (definicoes.dias). Horas: jornada ativa de M11 somada no armazém, quatro tetos, mais S1 a S3 e sem turnos fundidos no teto base. Rotatividade: login novo não é pessoa nova (veterano de outra área, recontratação, troca de login); a primeira semana da carga tem poucos dias, então as entradas de junho incluem operadores que já existiam (censura à esquerda): veja logins_entrada_apos_mes_inicial; a contagem mensal só sai se todos os meses tiverem PAR07 logins ou mais, senão fica o período inteiro. H08: pedidos sem CANCELADO e sem linha de palete. M29: fração do tempo descartado líquido por tipo de onda e teto; horas fora da sequência (lote e conta do robô) na tabela. M10 a: mediana e quartis, só retrato, grupos com menos de PAR07 operadores ou registros omitidos. rotatividade por mês omitida: algum mês tem menos de PAR07 logins; só o período inteiro",
+  "em": "2026-10-03T21:22:27",
+  "segundos": 1.65
+}

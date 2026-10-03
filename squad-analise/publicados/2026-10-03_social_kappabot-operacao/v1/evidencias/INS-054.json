@@ -1,0 +1,133 @@
+{
+  "id": "INS-054",
+  "estado": "aprovado",
+  "afirmacao": "Na base da oferta (regime pós-colmeia), a frota necessária da Royal Canin no dia p90 é calculada dia a dia (o máximo horário de cada dia, p90 entre dias), que é a leitura desfavorável de CR4: {{v.alt3b}} na ALT3 e {{v.alt2b}} na ALT2 (PR07 e PR08 provável; a faixa entre parênteses é a da grade do plano). O perfil médio da banda de dias do p90 alisa o pico horário e é a leitura otimista: daria {{v.alt3b_banda}} na ALT3 e {{v.alt2b_banda}} na ALT2, e uma frota nesse nível não tem reserva, porque qualquer parada do robô interrompe o serviço. Na variante do plano (período inteiro, com o regime anterior à colmeia e a semana do incidente) a ALT3 pede {{v.alt3}} dia a dia e {{v.alt3_banda}} pela banda. A grade do plano (PR08 inferior a superior, limites do IC do p90, com e sem pós-pausa, banda, dia real e dia a dia) vai de {{v.gb_min}} a {{v.gb_max}} na ALT3 da base e de {{v.g_min}} a {{v.g_max}} no plano. A frota necessária cabe na leitura do slide 14 (ponta inferior {{v.s14}}) em toda a grade, na base e no plano; na leitura do slide 12 (ponta superior {{v.s12}}) a ALT3 cabe em toda a grade da base, mas o máximo da grade do plano passa dela. Com a regra por tipo (robôs não fungíveis entre pedido-a-pedido e checkout) a ALT3 pede {{v.alt3_tipo_b}} na base e {{v.alt3_tipo}} no plano. Verificação determinística com premissas de confiança baixa, sem reserva de disponibilidade do robô; os intervalos são faixas de cenários, não intervalos estatísticos.",
+  "pergunta_ref": "P12",
+  "criterio_ref": "CR4",
+  "valores": {
+    "alt3": "ANA-009.frota_necessaria_alt3",
+    "g_min": "ANA-009.frota_necessaria_alt3_grade_minima",
+    "g_max": "ANA-009.frota_necessaria_alt3_grade_maxima",
+    "s14": "ANA-009.pr09_slide14_inferior",
+    "s12": "ANA-009.pr09_slide12_superior",
+    "alt3_tipo": "ANA-009.frota_necessaria_alt3_por_tipo",
+    "alt3b": "ANA-009.frota_necessaria_alt3_pos_colmeia",
+    "alt2b": "ANA-009.frota_necessaria_alt2_pos_colmeia",
+    "gb_min": "ANA-009.frota_necessaria_alt3_grade_minima_pos_colmeia",
+    "gb_max": "ANA-009.frota_necessaria_alt3_grade_maxima_pos_colmeia",
+    "alt3_tipo_b": "ANA-009.frota_necessaria_alt3_por_tipo_pos_colmeia",
+    "alt3b_banda": "ANA-009.frota_necessaria_alt3_banda_pos_colmeia",
+    "alt2b_banda": "ANA-009.frota_necessaria_alt2_banda_pos_colmeia",
+    "alt3_banda": "ANA-009.frota_necessaria_alt3_banda"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "PR08 inferior, provável e superior",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "a ALT3 fica entre o piso e o teto da grade nos três pontos de PR08 (tabela frota_grade)"
+    },
+    {
+      "recorte": "frota dia a dia contra perfil da banda",
+      "analise": "ANA-009",
+      "resultado": "parcial",
+      "nota": "a banda dá menos robôs que o dia a dia na base (chaves frota_necessaria_alt3_banda*); a conclusão de caber no slide 14 não muda, mas a de caber no slide 12 depende da leitura"
+    },
+    {
+      "recorte": "p90 com e sem dias pós-pausa e nos limites do IC de ANA-008",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "a frota muda pouco nos limites do IC (tabela frota_grade)"
+    },
+    {
+      "recorte": "PR07 abaixo e acima do valor do plano",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "a ALT3 continua dentro da leitura do slide 14 (chaves frota_necessaria_alt3_pr07_menos25 e _mais25, com e sem sufixo _pos_colmeia)"
+    },
+    {
+      "recorte": "base pós-colmeia contra período inteiro",
+      "analise": "ANA-009",
+      "resultado": "parcial",
+      "nota": "o período inteiro pede mais robôs na ALT3 no extremo da grade porque o p90 é formado por dias do regime pré-colmeia; a ordem entre as leituras de PR09 não muda"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Correções atendidas (reserva de disponibilidade declarada, frota dia a dia). Problema novo: a frota da base da ALT3 usa a banda de dias, que o próprio analista diz alisar o pico e por isso trocou pelo dia a dia na ALT6; a ALT3 também agrupa pedido-a-pedido e checkout. Com a mesma regra, a base seria a frota dia a dia, maior. Uma frota de um robô não tem reserva: qualquer parada interrompe o serviço. Levar o dia a dia como leitura principal ou justificar a diferença de método."
+  },
+  "impacto": {
+    "modelo": "IMP-ALT4-PMIN-ALT3",
+    "modelos_relacionados": [
+      "IMP-CR2-ALT4-ALT3",
+      "IMP-ALT4-KMIN-ALT3",
+      "IMP-INV-FROTA-CR2-ALT4",
+      "IMP-CR2-ALT4-ALT3-COM-RESERVA",
+      "IMP-FOLGA-ALT4-ALT3-INT-COM-RESERVA",
+      "IMP-FOLGA-ALT4-ALT3-RAT-FROTA-BANDA",
+      "IMP-FOLGA-ALT4-ALT3-RAT-COM-RESERVA",
+      "IMP-KMIN-ALT4-ALT3-COM-RESERVA",
+      "IMP-ALT4-KMIN-ALT3-COM-IMPL",
+      "IMP-REC-FROTA-TOTAL",
+      "IMP-REC-PISO-MES-SEM-IMPL",
+      "IMP-REC-PISO-MES-COM-IMPL",
+      "IMP-REC-VOL-CHECKOUT-MES",
+      "IMP-REC-VOL-LINHAS-MES",
+      "IMP-REC-KMIN-SEM-IMPL",
+      "IMP-REC-KMIN-COM-IMPL",
+      "IMP-REC-TARIFA-CHECKOUT-MIN-SEM-IMPL",
+      "IMP-REC-TARIFA-LINHA-MIN-SEM-IMPL",
+      "IMP-REC-TARIFA-CHECKOUT-MIN-COM-IMPL",
+      "IMP-REC-TARIFA-LINHA-MIN-COM-IMPL",
+      "IMP-REC-TARIFA-CHECKOUT-MAX-RAT",
+      "IMP-REC-TARIFA-LINHA-MAX-RAT",
+      "IMP-REC-TARIFA-CHECKOUT-MAX-INT",
+      "IMP-REC-TARIFA-LINHA-MAX-INT",
+      "IMP-REC-PISO-MES-COM-IMPL-DESCONTO",
+      "IMP-REC-KMIN-COM-IMPL-DESCONTO"
+    ]
+  },
+  "acao": "Antes da reunião com a Social (data [●]), fixar a configuração com a frota necessária dia a dia mais um robô de reserva e o piso igual ao custo de servir dessa frota (IMP-REC-FROTA-TOTAL, IMP-REC-PISO-MES-SEM-IMPL, IMP-REC-PISO-MES-COM-IMPL). Cotar as tarifas em reais pela janela de preço de cada cenário, sem misturar reserva, implementação e PR11: mínimo (IMP-REC-TARIFA-CHECKOUT-MIN-SEM-IMPL, IMP-REC-TARIFA-CHECKOUT-MIN-COM-IMPL e as de linha), máximo com PR11 integral (IMP-REC-TARIFA-CHECKOUT-MAX-INT) e a recomendada no ponto médio (IMP-REC-TARIFA-CHECKOUT-RECOMENDADA-INT-SEM-IMPL, IMP-REC-TARIFA-CHECKOUT-RECOMENDADA-INT-COM-IMPL). Com PR11 rateado não há janela (IMP-REC-FOLGA-RAT-SEM-IMPL). Decidir com a engenharia a leitura de PR09 e a reserva antes do preço. Piso e janela com desconto da implantação do robô atual: IMP-REC-PISO-MES-COM-IMPL-DESCONTO, IMP-REC-KMIN-COM-IMPL-DESCONTO, IMP-REC-FOLGA-INT-COM-IMPL-DESCONTO; as versões sem DESCONTO contam a implantação de todos os robôs e são o limite superior.",
+  "dono": "Vinicius Bastos, CTO (frota e reserva); Matheus Correa, Comercial (cotação); decisão de Marcus Lima, CEO",
+  "premissas": [
+    "frota necessária dia a dia na base pós-colmeia (decisão do orquestrador, a confirmar por Marcus no G3), com capacidade do robô de confiança baixa (PR07, PR08) e sem reserva de disponibilidade",
+    "tarifas e franquia do deck (PR02, PR03, PR04) e custo de servir sem hardware informado por Marcus (PR13); custo de hardware (PR20) é [●] e o motor entrega o máximo pagável",
+    "curva horária de processamento, não de chegada do pedido",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados",
+    "um robô de reserva sobre a frota necessária: hipótese de configuração a confirmar com a engenharia (Vinicius Bastos), porque sem reserva uma parada devolve a conferência à bancada e desfaz PR11",
+    "custo de implementação (implantação por robô e integração simples) a preço de tabela da Acta (perfil de Marcus, a confirmar), amortizado no prazo do contrato e usado como limite superior do custo; o custo real da Acta é [●]; mapeamento (área [●]) e desenvolvimento do checkout conferido ([●]) ficam fora da conta; o tudo incluído do deck cobre mais do que a manutenção de PR13",
+    "preço recomendado = ponto médio da janela de preço, ou o piso quando não há janela: regra declarada pelo analista de impacto, que Marcus pode trocar"
+  ],
+  "red_team_decisao": {
+    "veredito": "ressalva",
+    "nota": "Ressalva. Fixar a franquia recalibrada (frota × PR13) com a frota que a engenharia aceita operar, com reserva. A reserva faz o piso passar da receita nas tarifas do deck (RTD-CR2-ALT4-ALT3-COM-RESERVA, RTD-KMIN-ALT4-ALT3-COM-RESERVA) e, com PR11 rateado, fecha a janela de preço (RTD-FOLGA-ALT4-ALT3-RAT-COM-RESERVA). A frota de um robô pela banda abre a janela com rateio, mas fica sem reserva. Decidir a reserva antes do preço. Detalhes em revisoes/red-team-decisao.json."
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:30:24",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:38",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:34",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:01",
+      "por": "Marcus"
+    }
+  ]
+}

@@ -1,0 +1,730 @@
+{
+  "id": "ANA-001",
+  "valores": {
+    "n_semanas": {
+      "valor": 17.0,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "semana_primeira_colmeia": {
+      "valor": 28.0,
+      "unidade": "semana ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "inclinacao_part_pap_rc_semana": {
+      "valor": 0.012187497882347253,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.032022699678179306,
+        "superior": 0.056397695442873805,
+        "nivel": 0.95,
+        "unidade_mais_larga": "HAC",
+        "ic_hac": [
+          -0.032022699678179306,
+          0.056397695442873805
+        ],
+        "ic_bloco_semana": [
+          -0.02504639432924549,
+          0.06197675200904384
+        ],
+        "n_semanas": 17,
+        "p_unilateral_hac": 0.7181132293237553,
+        "p_unilateral_bloco": 0.6437875751503006
+      }
+    },
+    "degrau_colmeia_part_pap_rc": {
+      "valor": -0.5293429181621991,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.8630701993273853,
+        "superior": -0.195615636997013,
+        "nivel": 0.95,
+        "metodo": "HAC (Newey-West), t com gl graus",
+        "n_semanas": 17
+      }
+    },
+    "classe_inclinacao_part": {
+      "valor": 0.0,
+      "unidade": "código: 1 queda confirmada, 0 inconclusivo, -1 sobe",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "p_unilateral_inclinacao_part": {
+      "valor": 0.7181132293237553,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: inclinação < 0; o maior entre HAC e bloco)"
+    },
+    "p_unilateral_inclinacao_part_hac": {
+      "valor": 0.7181132293237553,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: inclinação < 0), erro HAC"
+    },
+    "p_unilateral_inclinacao_part_bloco": {
+      "valor": 0.6437875751503006,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: inclinação < 0), bootstrap por bloco de semana"
+    },
+    "ep_hac_inclinacao_part": {
+      "valor": 0.02061286458442475,
+      "unidade": "p.p. por semana",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "lags_hac_semanal": {
+      "valor": 2.0,
+      "unidade": "lags",
+      "incerteza": null,
+      "contagem": true
+    },
+    "inclinacao_part_pap_rc_semana_m05": {
+      "valor": 0.008632462073872742,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.03429196089677845,
+        "superior": 0.05155688504452394,
+        "nivel": 0.95,
+        "unidade_mais_larga": "HAC",
+        "ic_hac": [
+          -0.03429196089677845,
+          0.05155688504452394
+        ],
+        "ic_bloco_semana": [
+          -0.027056719499014427,
+          0.05638183554580999
+        ],
+        "n_semanas": 17
+      }
+    },
+    "inclinacao_part_pap_rc_semana_m06": {
+      "valor": 0.008851227704824813,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.03407377668052633,
+        "superior": 0.051776232090175955,
+        "nivel": 0.95,
+        "unidade_mais_larga": "HAC",
+        "ic_hac": [
+          -0.03407377668052633,
+          0.051776232090175955
+        ],
+        "ic_bloco_semana": [
+          -0.027107923143604766,
+          0.057095064286395734
+        ],
+        "n_semanas": 17
+      }
+    },
+    "inclinacao_part_pap_rc_semana_sem3semanas": {
+      "valor": 0.012787770788274078,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.036129088930134834,
+        "superior": 0.061704630506683,
+        "nivel": 0.95,
+        "unidade_mais_larga": "HAC",
+        "ic_hac": [
+          -0.036129088930134834,
+          0.061704630506683
+        ],
+        "ic_bloco_semana": [
+          -0.02706350614562156,
+          0.06671193455074022
+        ],
+        "n_semanas": 14
+      }
+    },
+    "inclinacao_part_pap_rc_semana_sem_pos_pausa": {
+      "valor": 0.008562397625888863,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.024518361158283694,
+        "superior": 0.05786486294382128,
+        "nivel": 0.95,
+        "unidade_mais_larga": "bloco_semana",
+        "ic_hac": [
+          -0.02993112054256035,
+          0.04705591579433807
+        ],
+        "ic_bloco_semana": [
+          -0.024518361158283694,
+          0.05786486294382128
+        ],
+        "n_semanas": 17
+      }
+    },
+    "inclinacao_part_pap_rc_semana_sem_incidente": {
+      "valor": -0.013868258617944006,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.029679226209962186,
+        "superior": 0.0064128055919108855,
+        "nivel": 0.95,
+        "unidade_mais_larga": "bloco_semana",
+        "ic_hac": [
+          -0.02953548680401032,
+          0.001798969568122307
+        ],
+        "ic_bloco_semana": [
+          -0.029679226209962186,
+          0.0064128055919108855
+        ],
+        "n_semanas": 16,
+        "p_unilateral": 0.08354239839438034
+      }
+    },
+    "degrau_colmeia_part_pap_rc_sem_incidente": {
+      "valor": -0.3743118891516655,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.5045295217616609,
+        "superior": -0.24409425654167013,
+        "nivel": 0.95,
+        "metodo": "HAC"
+      }
+    },
+    "inclinacao_part_pap_rc_semana_pond_pedidos": {
+      "valor": -0.014041149452847118,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.028805186422998043,
+        "superior": 0.0060641432080299085,
+        "nivel": 0.95,
+        "unidade_mais_larga": "bloco_semana",
+        "ic_hac": [
+          -0.028329171828934678,
+          0.00024687292324044284
+        ],
+        "ic_bloco_semana": [
+          -0.028805186422998043,
+          0.0060641432080299085
+        ],
+        "n_semanas": 17
+      }
+    },
+    "classe_inclinacao_part_sem_incidente": {
+      "valor": 0.0,
+      "unidade": "código: 1 queda confirmada, 0 inconclusivo, -1 sobe",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "p_unilateral_inclinacao_part_sem_incidente": {
+      "valor": 0.08354239839438034,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: inclinação < 0; o maior entre HAC e bloco)"
+    },
+    "recortes_do_plano_com_classe_diferente": {
+      "valor": 0.0,
+      "unidade": "recortes",
+      "incerteza": null,
+      "contagem": true
+    },
+    "recortes_do_plano_com_sinal_oposto": {
+      "valor": 0.0,
+      "unidade": "recortes",
+      "incerteza": null,
+      "contagem": true
+    },
+    "leitura_agregada_valida_segmentos": {
+      "valor": 1.0,
+      "unidade": "1 = sem inversão de sinal entre segmentos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "inclinacao_segmento_antes_colmeia": {
+      "valor": 0.0018188099085461552,
+      "unidade": "p.p. por semana (sem IC; descritivo)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "inclinacao_segmento_com_colmeia": {
+      "valor": 0.01280339936224212,
+      "unidade": "p.p. por semana (sem IC; descritivo)",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "inclinacao_linhas_tarif_pap_rc_dia_semana": {
+      "valor": -6.205352707354725,
+      "unidade": "linhas tarifáveis por dia por semana",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -11.973361946678505,
+        "superior": -0.4373434680309458,
+        "nivel": 0.95,
+        "unidade_mais_larga": "HAC",
+        "ic_hac": [
+          -11.973361946678505,
+          -0.4373434680309458
+        ],
+        "ic_bloco_semana": [
+          -10.193024552379056,
+          -1.2205512505226166
+        ],
+        "n_semanas": 17,
+        "p_unilateral_hac": 0.017667552964810564
+      }
+    },
+    "degrau_colmeia_linhas_tarif_pap_rc_dia": {
+      "valor": -96.25081374652369,
+      "unidade": "linhas tarifáveis por dia",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -157.9141138633035,
+        "superior": -34.58751362974389,
+        "nivel": 0.95,
+        "metodo": "HAC"
+      }
+    },
+    "inclinacao_linhas_tarif_pap_rc_dia_semana_sem_incidente": {
+      "valor": -4.77352116259652,
+      "unidade": "linhas tarifáveis por dia por semana",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -11.096172727124664,
+        "superior": 1.549130401931623,
+        "nivel": 0.95,
+        "unidade_mais_larga": "HAC",
+        "ic_hac": [
+          -11.096172727124664,
+          1.549130401931623
+        ],
+        "ic_bloco_semana": [
+          -9.261546324487915,
+          0.04469100142317998
+        ],
+        "n_semanas": 16,
+        "p_unilateral_hac": 0.06835953501320371
+      }
+    },
+    "media_linhas_tarif_pap_rc_dia_pos_colmeia": {
+      "valor": 70.77586206896552,
+      "unidade": "linhas tarifáveis por dia",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 58.42931034482759,
+        "superior": 85.53491379310344,
+        "nivel": 0.95
+      },
+      "n": 58
+    },
+    "media_linhas_tarif_pap_rc_dia_pos_colmeia_sem_incidente": {
+      "valor": 75.9074074074074,
+      "unidade": "linhas tarifáveis por dia",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 63.18518518518518,
+        "superior": 90.75972222222222,
+        "nivel": 0.95
+      },
+      "n": 54
+    },
+    "n_dias_plenos_serie_nivel": {
+      "valor": 80.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "coletas_rc_dia_pre_colmeia": {
+      "valor": 260.3181818181818,
+      "unidade": "coletas por dia pleno",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": 231.13181818181818,
+        "superior": 291.50113636363636,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 22
+      },
+      "descricao": "coletas por dia pleno (M05, todos os tipos de onda)"
+    },
+    "coletas_rc_dia_pos_colmeia": {
+      "valor": 226.3793103448276,
+      "unidade": "coletas por dia pleno",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": 201.2573275862069,
+        "superior": 249.69008620689655,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 58
+      },
+      "descricao": "coletas por dia pleno (M05, todos os tipos de onda)"
+    },
+    "coletas_rc_dia_pos_colmeia_sem_incidente": {
+      "valor": 243.03703703703704,
+      "unidade": "coletas por dia pleno",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": 226.9611111111111,
+        "superior": 260.37175925925925,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 54
+      },
+      "descricao": "coletas por dia pleno (M05, todos os tipos de onda)"
+    },
+    "coletas_pap_rc_dia_pre_colmeia": {
+      "valor": 221.77272727272728,
+      "unidade": "coletas por dia pleno",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": 193.99886363636364,
+        "superior": 251.27386363636364,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 22
+      },
+      "descricao": "coletas por dia pleno (M05, pedido-a-pedido)"
+    },
+    "coletas_pap_rc_dia_pos_colmeia_sem_incidente": {
+      "valor": 76.44444444444444,
+      "unidade": "coletas por dia pleno",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": 64.70370370370371,
+        "superior": 90.79629629629629,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 54
+      },
+      "descricao": "coletas por dia pleno (M05, pedido-a-pedido)"
+    },
+    "coletas_colmeia_rc_dia_pos_colmeia_sem_incidente": {
+      "valor": 116.81481481481481,
+      "unidade": "coletas por dia pleno",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": 102.5,
+        "superior": 131.63009259259258,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 54
+      },
+      "descricao": "coletas por dia pleno (M05, colmeia)"
+    },
+    "coletas_checkout_rc_dia_pre_colmeia": {
+      "valor": 38.54545454545455,
+      "unidade": "coletas por dia pleno",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": 30.99886363636364,
+        "superior": 46.86363636363637,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 22
+      },
+      "descricao": "coletas por dia pleno (M05, checkout)"
+    },
+    "coletas_checkout_rc_dia_pos_colmeia_sem_incidente": {
+      "valor": 49.77777777777778,
+      "unidade": "coletas por dia pleno",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": 45.01851851851852,
+        "superior": 54.741203703703704,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 54
+      },
+      "descricao": "coletas por dia pleno (M05, checkout)"
+    },
+    "variacao_coletas_rc_dia_pos_colmeia_sem_incidente": {
+      "valor": -0.06638470144668851,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.18206865425202753,
+        "superior": 0.07334437074932253,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado, grupos independentes",
+        "leitura": "transferência entre tipos de onda, não perda de demanda, quando o IC contém valores próximos de zero"
+      }
+    },
+    "semana_iso_primeira_colmeia": {
+      "valor": 28.0,
+      "unidade": "semana ISO (primeira com ondas de colmeia da Royal Canin, definida pelo dado)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_plenos_pre_colmeia": {
+      "valor": 22.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_plenos_pos_colmeia_sem_incidente": {
+      "valor": 54.0,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_pedidos_um_endereco_pap_rc_robo": {
+      "valor": 0.6864864864864865,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "% (pedido-a-pedido da Royal Canin com um só endereço, conta do robô, desde PAR11)"
+    },
+    "fracao_pedidos_um_endereco_pap_rc_manual": {
+      "valor": 0.4696048632218845,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true,
+      "descricao": "% (pedido-a-pedido da Royal Canin com um só endereço, manual, desde PAR11)"
+    },
+    "pedidos_checkout_rc_conta_robo_desde_par11": {
+      "valor": 20.0,
+      "unidade": "pedidos de checkout",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_pap_rc_mes_2026_06": {
+      "valor": 0.7455911169170477,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_robo_pap_rc_mes_2026_06": {
+      "valor": 0.0,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_pap_rc_mes_2026_06": {
+      "valor": 2283.0,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_pap_rc_mes_2026_07": {
+      "valor": 0.388715710723192,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_robo_pap_rc_mes_2026_07": {
+      "valor": 0.03528468323977546,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_pap_rc_mes_2026_07": {
+      "valor": 1247.0,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_pap_rc_mes_2026_08": {
+      "valor": 0.24374390640233995,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_robo_pap_rc_mes_2026_08": {
+      "valor": 0.088,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_pap_rc_mes_2026_08": {
+      "valor": 750.0,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_pap_rc_mes_2026_09": {
+      "valor": 0.20375865479723046,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_robo_pap_rc_mes_2026_09": {
+      "valor": 0.20145631067961164,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_pap_rc_mes_2026_09": {
+      "valor": 412.0,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_pap_rc_mes": {
+      "valor": 0.24374390640233995,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_robo_pap_rc_mes": {
+      "valor": 0.088,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_pap_rc_set_ate_18_09": {
+      "valor": 0.2013888888888889,
+      "unidade": "% (pedidos de 01 a 18/09, sem o incidente de 21 a 25/09)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_robo_pap_rc_set_ate_18_09": {
+      "valor": 0.19950738916256158,
+      "unidade": "% (pedidos do robô ÷ pedido-a-pedido, 01 a 18/09, sem o incidente)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "part_robo_pap_rc_desde_par11": {
+      "valor": 0.12316910785619174,
+      "unidade": "%",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_pap_rc_com_robo_e_humano_desde_par11": {
+      "valor": 1.0,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pedidos_pap_rc_desde_par11": {
+      "valor": 1502.0,
+      "unidade": "pedidos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "inclinacao_part_pap_rc_semana_estresse": {
+      "valor": 0.012187497882347253,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.032022699678179306,
+        "superior": 0.056397695442873805,
+        "nivel": 0.95,
+        "unidade_mais_larga": "HAC",
+        "ic_hac": [
+          -0.032022699678179306,
+          0.056397695442873805
+        ],
+        "ic_bloco_semana": [
+          -0.02504639432924549,
+          0.06197675200904384
+        ],
+        "n_semanas": 17,
+        "p_unilateral_hac": 0.7181132293237553,
+        "p_unilateral_bloco": 0.6437875751503006
+      }
+    },
+    "degrau_colmeia_part_pap_rc_estresse": {
+      "valor": -0.5293429181621991,
+      "unidade": "p.p.",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -0.8630701993273853,
+        "superior": -0.195615636997013,
+        "nivel": 0.95,
+        "metodo": "HAC (Newey-West), t com gl graus",
+        "n_semanas": 17
+      }
+    },
+    "classe_inclinacao_part_estresse": {
+      "valor": 0.0,
+      "unidade": "código: 1 queda confirmada, 0 inconclusivo, -1 sobe",
+      "incerteza": {
+        "tipo": "nenhuma"
+      }
+    },
+    "p_unilateral_inclinacao_part_estresse": {
+      "valor": 0.7181132293237553,
+      "unidade": "",
+      "incerteza": {
+        "tipo": "nenhuma"
+      },
+      "descricao": "p (H1: inclinação < 0; o maior entre HAC e bloco)"
+    },
+    "inclinacao_linhas_tarif_pap_rc_dia_semana_estresse": {
+      "valor": -6.205352707354725,
+      "unidade": "linhas tarifáveis por dia por semana",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": -11.973361946678505,
+        "superior": -0.4373434680309458,
+        "nivel": 0.95,
+        "unidade_mais_larga": "HAC",
+        "ic_hac": [
+          -11.973361946678505,
+          -0.4373434680309458
+        ],
+        "ic_bloco_semana": [
+          -10.193024552379056,
+          -1.2205512505226166
+        ],
+        "n_semanas": 17,
+        "p_unilateral_hac": 0.017667552964810564
+      }
+    },
+    "media_linhas_tarif_pap_rc_dia_pos_colmeia_estresse": {
+      "valor": 70.77586206896552,
+      "unidade": "linhas tarifáveis por dia",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 58.42931034482759,
+        "superior": 85.53491379310344,
+        "nivel": 0.95
+      },
+      "n": 58
+    },
+    "coletas_rc_dia_pos_colmeia_estresse": {
+      "valor": 226.3793103448276,
+      "unidade": "coletas por dia pleno",
+      "incerteza": {
+        "tipo": "intervalo_confianca",
+        "inferior": 201.2573275862069,
+        "superior": 249.69008620689655,
+        "nivel": 0.95,
+        "metodo": "bootstrap de dias estratificado por dia da semana",
+        "n_dias": 58
+      },
+      "descricao": "coletas por dia pleno (M05, todos os tipos de onda)"
+    }
+  },
+  "tabelas": {
+    "mes_x_tipo_onda": "mes_x_tipo_onda.csv",
+    "serie_semanal": "serie_semanal.csv",
+    "robustez_inclinacao": "robustez_inclinacao.csv",
+    "serie_diaria_nivel": "serie_diaria_nivel.csv"
+  },
+  "figuras": [
+    "linhas_tarifaveis_dia_pap_rc.png",
+    "participacao_semanal_pap_rc.png"
+  ],
+  "notas": "Verificação do deck (slide 8), linguagem descritiva; fora das famílias de Holm (sem correção). Modelo da variante primária: participação semanal do pedido-a-pedido em pedidos da Royal Canin ~ constante + semana + degrau na primeira semana com colmeia; mínimos quadrados ponderados pelos dias plenos; IC95% o mais largo entre HAC (Newey-West, t com gl graus) e bootstrap por bloco de semana (4.000 réplicas, semente 42 derivada por teste); p unilateral (H1: inclinação < 0) a partir de t, com checagem de sinal; reportado o maior entre HAC e bloco. Códigos: classe_* = 1 (IC inteiro < 0, queda confirmada), 0 (IC cruza 0, inconclusivo), -1 (IC inteiro > 0). part_pap_rc_mes e part_robo_pap_rc_mes = mês de referência (agosto/2026); os demais meses em part_*_AAAA_MM (participação normalizada por M20; setembro é mês parcial e vem normalizado). ACHADO DE DADOS: na semana ISO 39 (21 a 25/09) a Royal Canin tem apenas um punhado de pedidos de pedido-a-pedido e nenhum de checkout ou colmeia, enquanto os demais depositantes seguem; nessa semana a participação do pedido-a-pedido é 100% por construção e puxa a inclinação para cima; a variante primária do plano a inclui (4 dias plenos) e por isso há sensibilidades sem a semana 39 e ponderada por pedidos, rotuladas como acréscimos (no_plano = falso). A queda é REAL: Marcus confirmou em 03/10/2026 que a Royal Canin teve problemas na operação nessa semana (incidente operacional; decisão em revisoes/orquestrador_decisao_semana_incidente.md). A semana fica nos dados, marcada como incidente. As duas leituras vão lado a lado, sem trocar a variante primária do plano: chaves com sufixo _estresse = variante do plano (inclui a semana 39; cenário de estresse) e chaves com sufixo _sem_incidente = sem a semana 39 (o período inteiro sem a semana do incidente; NÃO é a 'janela normal' de 24/08 a 18/09, quatro semanas, de ANA-002, ANA-003 e ANA-004: a tendência precisa da série toda). As chaves sem sufixo são as da variante do plano (iguais às _estresse). Regime da colmeia: coletas_rc_dia_* comparam o volume total da Royal Canin em coletas (M05) por dia pleno antes e depois da primeira semana com colmeia (definida pelo dado), com bootstrap de dias estratificado; variacao_coletas_rc_dia_pos_colmeia_sem_incidente mede se a queda do pedido-a-pedido é transferência entre tipos de onda. Robô (M26, contagens completas desde PAR11): a conta do robô só capta as devolutivas automáticas, então a participação do robô no WMS é piso; há também pedidos de checkout na conta do robô. Série em nível (PR14): linhas tarifáveis M06 inferior por dia pleno, mesma especificação, x em semanas desde o primeiro dia pleno; HAC com lags da regra de comum.ep_hac e bloco de semana; o mais largo. As colunas de mes_x_tipo_onda são contagens completas (volume cru) e normalização M20 (dias plenos com registro × dias úteis de referência + sábados). Dependência não coberta pelo hash do script: analises/comum.py.",
+  "em": "2026-10-03T21:20:38",
+  "segundos": 1.18
+}

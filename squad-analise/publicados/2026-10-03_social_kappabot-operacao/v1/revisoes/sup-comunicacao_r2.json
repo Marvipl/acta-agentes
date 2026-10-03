@@ -1,0 +1,238 @@
+{
+ "supervisor": "sup-comunicacao",
+ "agentes_revisados": [
+  "visualizacao-narrativa"
+ ],
+ "rodada": 2,
+ "fase": "D4 (G3 pendente: 0 de 71 aprovados, 20 acionáveis; auditoria ok na tentativa 2; validar D4 LIBERADO)",
+ "veredito": "aprovado_com_ressalvas",
+ "condicoes_antes_do_G3": [
+  "Corrigir o método da meta do piloto na oferta (ponto 1) e alinhar o mesmo texto no relatório.",
+  "Pôr no memorando a implantação e o custo total do piloto, além do escopo que explica os 4 robôs (ponto 2).",
+  "Pôr no memorando o limite de hardware junto da margem da Acta (ponto 3)."
+ ],
+ "status_pontos_r1": [
+  {
+   "ponto_r1": "Economia de R$ 7.988 nas tarifas do deck",
+   "status": "atendido",
+   "evidencia": "Memorando linha 16, oferta linhas 29 a 32 e relatório linha 28 usam IMP-REC-ECONOMIA-SOCIAL-* e IMP-REC-MARGEM-ACTA-* no preço recomendado."
+  },
+  {
+   "ponto_r1": "V2 com lente escrita como fato",
+   "status": "atendido",
+   "evidencia": "Oferta linha 92 traz só o medido; U1 foi para hipótese (linha 102)."
+  },
+  {
+   "ponto_r1": "V4 'não cobra por robô parado' e ressalva de INS-087",
+   "status": "atendido",
+   "evidencia": "Oferta linha 93 (V3): margem com e sem reserva e a ressalva do red team."
+  },
+  {
+   "ponto_r1": "Exposição da Social e da Royal Canin; aviso invisível",
+   "status": "atendido",
+   "evidencia": "Oferta linha 3 tem aviso visível. Q5 é com Marcus, em conversa reservada, 'sem juízo sobre a causa'. N9 diz 'causa não explicada'. N10 e U5 estão neutros."
+  },
+  {
+   "ponto_r1": "Oferta não cotável",
+   "status": "atendido",
+   "evidencia": "Tabela cotável por IMP-REC-* (frota, piso, tarifas em reais), glossário e cláusulas. O nível da garantia fica em [●], com justificativa."
+  },
+  {
+   "ponto_r1": "Ressalvas do red team omitidas",
+   "status": "parcial",
+   "evidencia": "Entraram go-live, realocação, acordo coletivo, segurança, erro de conferência e lote com carrinho. Falta o IC de bootstrap de INS-015 ao lado de 1,20."
+  },
+  {
+   "ponto_r1": "Título 'Insights aprovados', aviso pré-G3, INS-052 e INS-070",
+   "status": "atendido",
+   "evidencia": "O título é 'Insights para aprovação no G3'. O aviso aparece no topo dos três documentos. Nenhum insight não acionável é citado."
+  },
+  {
+   "ponto_r1": "Legibilidade dos números",
+   "status": "parcial",
+   "evidencia": "O formatador foi corrigido (R$ na frente, contagens sem casas). Ainda faltam acentos em 'mes', 'robo' e 'media', e há centavos isolados ('R$ 0,00/mes', '-R$ 45,89/mes')."
+  },
+  {
+   "ponto_r1": "Fatos e estimativas no memorando; o que os dados não permitem concluir",
+   "status": "atendido",
+   "evidencia": "Memorando linhas 11, 16 e 20."
+  },
+  {
+   "ponto_r1": "ALT1, novas alternativas, uma página, legenda, data",
+   "status": "parcial",
+   "evidencia": "445 palavras; ALT1 definida; novas alternativas com pedido de aceite no G3. O prazo continua '[●]', sem data proposta."
+  },
+  {
+   "ponto_r1": "'Manter' contra 'mudar'; 'inconclusiva' contra 'não há janela'",
+   "status": "atendido",
+   "evidencia": "Oferta linha 63 diz 'Manter a estrutura, não o nível'. Os três documentos dizem 'não há janela' com PR11 rateado."
+  },
+  {
+   "ponto_r1": "Painel (orquestrador)",
+   "status": "pendente",
+   "evidencia": "painel.html continua com 71 insights, 40 legendas com nome de arquivo, ANA-012 rc_contra_outros e fig_novatos sem ressalva, e sem gráfico da janela de preço."
+  },
+  {
+   "ponto_r1": "Relatório com parágrafos longos",
+   "status": "atendido",
+   "evidencia": "Os insights longos viraram resumos."
+  },
+  {
+   "ponto_r1": "Auditoria",
+   "status": "atendido",
+   "evidencia": "saidas/auditoria.json com status ok (tentativa 2, 20:33). Depois de renderizar de novo, os documentos dizem 'aprovada'."
+  }
+ ],
+ "rubrica": [
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "[crítico] Só insights aprovados e nenhum número digitado",
+   "nota": 2,
+   "evidencia": "Varredura dos três .tpl fora de {{}}, sem contar códigos e slides: 0 dígitos. Citam só os 20 acionáveis. O aviso 'Rascunho pré-G3' está visível nos três documentos. Com o G3 pendente, isso é o esperado."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "[crítico] Nível e limites declarados",
+   "nota": 1,
+   "evidencia": "Há nível, 'estimativa de modelo', 'não permitem concluir' e as ressalvas do red team. Restam três falhas: (1) a meta do piloto é medida por método diferente do limiar (oferta linha 158); (2) o memorando dá a margem da Acta sem o limite de hardware; (3) o IC de INS-015 não aparece em nenhum dos três documentos."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Memorando em uma página com próximo passo e dono",
+   "nota": 2,
+   "evidencia": "445 palavras. Próximo passo com dono por pessoa. Ressalva: o prazo é '[●]' sem data proposta."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Gráficos legíveis",
+   "nota": 1,
+   "evidencia": "Os documentos trocaram o gráfico pela tabela de cenários, que é legível. O painel não mudou desde a r1 (o problema é do motor e do orquestrador)."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Legibilidade dos números renderizados",
+   "nota": 1,
+   "evidencia": "Reais e contagens estão corrigidos. Ainda há 'mes', 'robo' e 'media' sem acento, 'R$ 0,00/mes', '-R$ 45,89/mes' e, no memorando linha 7, '(com, tabela)'."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Coerência entre memorando, relatório e oferta",
+   "nota": 1,
+   "evidencia": "Batem: limiares 0,76, 1,64, 0,47 e 0,95; frota de 3; pisos de R$ 3.000 e R$ 6.500; tarifas; economia e margem. Divergem: o memorando omite a implantação do piloto (R$ 72.000), que a oferta e o relatório trazem. A meta do piloto aparece como 'tetos conservador e base' (oferta), 'mesmo método' (relatório linha 61) e 'teto mais folgado' (relatório linha 100). O relatório (linha 207) põe Marcus 'com a Social e a Royal Canin', e a oferta Q2 diz 'Social, via Marcus'."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Oferta acionável pelo comercial",
+   "nota": 2,
+   "evidencia": "Tabela cotável em reais nos dois cenários, regra de 'não cotar', limiares, implementação, cláusulas, glossário e donos."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Sem exposição negativa da Social ou da Royal Canin",
+   "nota": 2,
+   "evidencia": "Nada de atribuição de causa do incidente nem de crítica ao ritmo da Royal Canin nos três documentos. O gráfico ANA-012 no painel fica com o orquestrador."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Disciplina de nomes",
+   "nota": 2,
+   "evidencia": "0 ocorrências de termos proibidos ou de 'parceiro' nos três documentos. 9fleet e HBR estão corretos."
+  },
+  {
+   "agente": "visualizacao-narrativa",
+   "criterio": "Conclusão primeiro e frases curtas",
+   "nota": 2,
+   "evidencia": "Os três documentos abrem pela recomendação. O relatório usa resumos."
+  }
+ ],
+ "checagens_executadas": [
+  "flock <trava> python -m motor.rodar <dv> (duas vezes; a segunda depois de auditoria.json ficar 'ok'): render_status sem variáveis faltando.",
+  "flock <trava> python -m motor.validar <dv> --fase D4: LIBERADO (duas vezes).",
+  "Varredura de dígitos nos três .tpl fora de {{}} e de comentários: 0.",
+  "Busca de termos proibidos e de 'parceiro' nos três renderizados: 0.",
+  "Cruzamento dos INS citados com os 20 acionáveis: nenhum não acionável.",
+  "Leitura das descrições de IMP-REC-*, IMP-PILOTO-*, IMP-IMPL-*, IMP-INV-PR05-ALT6-SEM(-ALTO) e IMP-ALT1-* em saidas/impacto.json.",
+  "Conferência do painel: 71 insights, 40 gráficos, sem mudança desde a r1.",
+  "Busca de revisoes/visualizacao-narrativa_resposta_r1.md: não existe.",
+  "wc -w memo_decisao.md: 445 palavras."
+ ],
+ "verificacoes_anticomplacencia": [
+  "Procurei se a meta do piloto usa o mesmo método do limiar de que saiu: não usa (oferta linha 158).",
+  "Procurei custos omitidos no memorando que a oferta tem: implantação do piloto e limite de hardware.",
+  "Procurei provável fora da faixa P10–P90 nos modelos novos: há três casos (IMP-PILOTO-PRECO-MES-COM-IMPLANTACAO, IMP-PILOTO-CUSTO-TOTAL-ACTA, IMP-REC-ECONOMIA-SOCIAL-MES-INT-SEM-IMPL).",
+  "Procurei incoerência de destinatário nas perguntas: o relatório põe Marcus em contato com a Royal Canin."
+ ],
+ "pontos": [
+  {
+   "severidade": "alta",
+   "local": "saidas/oferta_enriquecida.md linha 158; relatorio_executivo.md linhas 61 e 100",
+   "problema": "A meta de 'pelo menos 73,2 linhas/h' vem de IMP-INV-PR05-ALT6-SEM-ALTO, calculado no teto mais folgado. A oferta manda medi-la 'nos tetos de intervalo conservador e base'. No conservador, o requisito é 203,8 (IMP-INV-PR05-ALT6-SEM, 'impossível'). Uma meta fixada antes, mas medida por outro método, pode dar falso sucesso.",
+   "correcao_sugerida": "Escrever 'pelo menos 73,2 linhas/h, medido no teto mais folgado; no conservador o requisito seria {{fmt.imp_IMP_INV_PR05_ALT6_SEM_provavel}}, inatingível'. Usar o mesmo texto no relatório."
+  },
+  {
+   "severidade": "alta",
+   "local": "saidas/memo_decisao.md linha 9",
+   "problema": "O piloto aparece como 'R$ 4.000/mes, 4 robôs', sem a implantação de R$ 72.000 (IMP-PILOTO-INVESTIMENTO-IMPLANTACAO) e sem o custo total de R$ 84.000 (IMP-PILOTO-CUSTO-TOTAL-ACTA), que a oferta (linha 156) e o relatório (linha 61) trazem. Também não diz o escopo (armazém, Royal Canin mais depositantes), que explica 4 robôs contra 3 na ALT4. Marcus decide o aceite no G3 com o custo subestimado.",
+   "correcao_sugerida": "Acrescentar 'implantação de {{fmt.imp_IMP_PILOTO_INVESTIMENTO_IMPLANTACAO_provavel}}, quem paga decide-se no G3' e 'no pedido-a-pedido do armazém'."
+  },
+  {
+   "severidade": "media",
+   "local": "saidas/memo_decisao.md linha 16",
+   "problema": "'A Acta ganha R$ 2.477/mes (R$ 727/mes com implementação)' é margem de contribuição antes do hardware. O memorando não diz o máximo pagável de hardware (IMP-REC-HW-MAX-INT-COM-IMPL, R$ 5.816 por robô). A oferta (linha 45) e o relatório (linha 55) dizem, e o memorando da r1 também dizia.",
+   "correcao_sugerida": "Escrever 'margem antes do hardware; paga até {{fmt.imp_IMP_REC_HW_MAX_INT_COM_IMPL_provavel}} de hardware por robô; custo HBR [●]' e trocar 'ganha' por 'tem margem de'."
+  },
+  {
+   "severidade": "media",
+   "local": "oferta linhas 156 e 158; relatório linha 61; saidas/impacto.json",
+   "problema": "O preço do piloto com implantação (R$ 28.000/mes) amortiza 'nos meses do piloto', mas a duração está em '[●], a fixar'. Três modelos novos têm o provável fora da própria faixa P10–P90: IMP-PILOTO-PRECO-MES-COM-IMPLANTACAO (28.000 contra 28.410 a 35.025), IMP-PILOTO-CUSTO-TOTAL-ACTA (84.000 contra 81.263 a 83.800) e IMP-REC-ECONOMIA-SOCIAL-MES-INT-SEM-IMPL (4.779 contra 4.790 a 4.887).",
+   "correcao_sugerida": "Analista de impacto: expor a duração suposta como variável e revisar as faixas. Narrativa: escrever 'amortizada em {{duração}}'."
+  },
+  {
+   "severidade": "media",
+   "local": "memo linha 14; oferta linha 56; relatório linha 128",
+   "problema": "O excedente de 1,20 pessoas-hora/dia (INS-015) ainda aparece sem o IC de bootstrap exigido pelo red team analítico. O memorando também chama de 'excedente' as '2,83 pessoas a mais', que estão em outra unidade.",
+   "correcao_sugerida": "Pôr o IC de bootstrap ao lado do número e escrever 'o armazém põe 2,83 pessoas a mais em atividade'."
+  },
+  {
+   "severidade": "media",
+   "local": "saidas/relatorio_executivo.md linha 207",
+   "problema": "'Marcus Lima, com a Social e a Royal Canin' sugere contato direto com a cliente da Social. A oferta (Q2) diz 'Social, via Marcus Lima'.",
+   "correcao_sugerida": "Escrever 'com a Social; a pergunta à Royal Canin vai pela Social'."
+  },
+  {
+   "severidade": "media",
+   "local": "saidas/painel.html (motor.relatorio.painel, orquestrador)",
+   "problema": "Sem mudança desde a r1: 71 insights com o mesmo peso, legendas com nome de arquivo, ANA-012 fig_m14_rc_contra_outros e fig_novatos sem ressalva, e nenhum gráfico da janela de preço.",
+   "correcao_sugerida": "Orquestrador: filtrar por estado, dar títulos legíveis e marcar os gráficos sensíveis. Até lá, o painel não sai da Acta."
+  },
+  {
+   "severidade": "baixa",
+   "local": "oferta linhas 71 e 81",
+   "problema": "A garantia é 'medida no primeiro trimestre' em um lugar e 'o nível sai do piloto: [●]' em outro. No caminho da ALT4 não há piloto.",
+   "correcao_sugerida": "Escrever 'nível medido no primeiro trimestre da ALT4, sem o primeiro mês, ou no piloto, se houver'."
+  },
+  {
+   "severidade": "baixa",
+   "local": "três renderizados; nos/impacto.json; motor",
+   "problema": "'mes', 'robo' e 'media' sem acento; 'R$ 0,00/mes' e '-R$ 45,89/mes' com centavos, quando os outros valores mensais não têm; '(com, tabela)' no memorando linha 7.",
+   "correcao_sugerida": "Analista de impacto: acentuar as unidades ('R$/mês', 'R$/robô/mês'). Orquestrador: centavos só em R$/pedido e R$/linha; mostrar a confiança como 'média'. Narrativa: corrigir a redação."
+  },
+  {
+   "severidade": "baixa",
+   "local": "memo linha 26",
+   "problema": "O prazo é 'até [●]', sem data proposta (regra 3).",
+   "correcao_sugerida": "Propor uma data e pedir confirmação a Marcus."
+  },
+  {
+   "severidade": "baixa",
+   "local": "revisoes/",
+   "problema": "Falta revisoes/visualizacao-narrativa_resposta_r1.md (regra 9 do agente).",
+   "correcao_sugerida": "Registrar a resposta ponto a ponto à r1 e à r2."
+  }
+ ],
+ "lacunas": [
+  "Duração do piloto como variável do motor (dela dependem o preço com implantação e o custo total).",
+  "Gráfico da janela de preço por cenário de PR11 (painel)."
+ ],
+ "em": "2026-10-03"
+}

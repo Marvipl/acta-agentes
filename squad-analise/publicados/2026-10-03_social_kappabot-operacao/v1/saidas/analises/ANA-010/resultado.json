@@ -1,0 +1,1233 @@
+{
+  "id": "ANA-010",
+  "valores": {
+    "razao_demanda_pr07_outros": {
+      "valor": 0.8713533834586465,
+      "unidade": "x",
+      "descricao": "razão (demanda média por hora da janela observada ÷ PR07), janela longa",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.7707462406015037,
+        "superior": 0.9818063909774437,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno estratificado por dia da semana"
+      }
+    },
+    "p_unilateral_cr5": {
+      "valor": 0.9892526868282929,
+      "unidade": "p unilateral",
+      "descricao": "p unilateral (H0: razão <= 1), bootstrap",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.9855468633763558,
+        "superior": 0.9922095511730536,
+        "nivel": 0.95,
+        "tipo_ic": "Clopper-Pearson sobre o número de réplicas"
+      }
+    },
+    "p_holm_f1a_pior_caso": {
+      "valor": 1.0,
+      "unidade": "p ajustado",
+      "descricao": "p ajustado (pior caso de Holm na família F1a)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.0,
+        "superior": 1.0,
+        "nivel": 0.95,
+        "tipo_ic": "Clopper-Pearson sobre o número de réplicas"
+      }
+    },
+    "classe_cr5_linhas": {
+      "valor": -1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "por_desenho_cr5": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "aviso_magnitude_cr5": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "efeito_relevante_cr5": {
+      "valor": 0.1,
+      "unidade": "x",
+      "descricao": "razão (10% de uma capacidade de robô)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_cr5_de_ana000": {
+      "valor": 0.15731391083484406,
+      "unidade": "x",
+      "descricao": "razão (MDE de ANA-000)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_longa": {
+      "valor": 38.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_confere_ana000_cr5": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "taxa_linhas_compat_outros_dia": {
+      "valor": 307.2368421052632,
+      "unidade": "linhas operacionais por dia pleno",
+      "descricao": "linhas operacionais por dia pleno (todas as horas, janela longa)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 270.78552631578947,
+        "superior": 343.47499999999997,
+        "nivel": 0.95
+      }
+    },
+    "demanda_media_hora_linhas_compat_outros": {
+      "valor": 30.49736842105263,
+      "unidade": "linhas operacionais por hora",
+      "descricao": "linhas operacionais por hora (média na janela observada, janela longa)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 26.97611842105263,
+        "superior": 34.36322368421053,
+        "nivel": 0.95
+      }
+    },
+    "taxa_pedidos_checkout_outros_dia": {
+      "valor": 158.1315789473684,
+      "unidade": "pedidos de checkout por dia pleno",
+      "descricao": "pedidos de checkout por dia pleno (todas as horas, janela longa)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 128.81578947368422,
+        "superior": 188.97368421052633,
+        "nivel": 0.95
+      }
+    },
+    "demanda_media_hora_pedidos_checkout_outros": {
+      "valor": 15.813157894736841,
+      "unidade": "pedidos de checkout por hora",
+      "descricao": "pedidos de checkout por hora (média na janela observada, janela longa)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 12.968421052631578,
+        "superior": 18.907894736842103,
+        "nivel": 0.95
+      }
+    },
+    "razao_demanda_pr08_outros_inf": {
+      "valor": 0.25698489801579044,
+      "unidade": "x",
+      "descricao": "razão (pedidos de checkout por hora ÷ PR08 inf)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.2107541317060768,
+        "superior": 0.30727849762746784,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno estratificado por dia da semana"
+      }
+    },
+    "razao_demanda_pr08_outros_prov": {
+      "valor": 0.14866158027101703,
+      "unidade": "x",
+      "descricao": "razão (pedidos de checkout por hora ÷ PR08 provavel)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.12191783451082909,
+        "superior": 0.17775560896110124,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno estratificado por dia da semana"
+      }
+    },
+    "razao_demanda_pr08_outros_sup": {
+      "valor": 0.10267571271929825,
+      "unidade": "x",
+      "descricao": "razão (pedidos de checkout por hora ÷ PR08 sup)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.0842046783625731,
+        "superior": 0.12277001096491227,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno estratificado por dia da semana"
+      }
+    },
+    "razao_demanda_pr08_outros": {
+      "valor": 0.14866158027101703,
+      "unidade": "x",
+      "descricao": "razão (pedidos de checkout por hora ÷ PR08 provável); faixa = PR08 superior a inferior",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.10267571271929825,
+        "superior": 0.25698489801579044,
+        "nivel": null,
+        "nota": "inferior = PR08 superior, superior = PR08 inferior (grade de ANA-006)"
+      }
+    },
+    "razao_demanda_combinada_outros": {
+      "valor": 1.0200149637296636,
+      "unidade": "x",
+      "descricao": "razão (linhas ÷ PR07 + pedidos de checkout ÷ PR08 provável); descritivo, fora do teste",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 0.9740290961779448,
+        "superior": 1.128338281474437,
+        "nivel": null,
+        "nota": "inferior = PR08 superior, superior = PR08 inferior"
+      }
+    },
+    "razao_demanda_combinada_outros_prov_ic": {
+      "valor": 1.0200149637296636,
+      "unidade": "x",
+      "descricao": "razão combinada com PR08 provável (IC de dias, soma de duas razões; descritivo)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.9172939072866859,
+        "superior": 1.132316135158708,
+        "nivel": 0.95
+      }
+    },
+    "h_p14a_inversao_entre_meses": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "classe_cr5_linhas_apos_robustez": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p14a_recortes_mesmo_sinal": {
+      "valor": 2.0,
+      "unidade": "recortes de robustez com o mesmo lado de 1 que a primária",
+      "descricao": "recortes de robustez com o mesmo lado de 1 que a primária",
+      "incerteza": null,
+      "contagem": true
+    },
+    "h_p14a_recortes_testados": {
+      "valor": 4.0,
+      "unidade": "recortes de robustez",
+      "descricao": "recortes de robustez (meses, janela base, sem o maior depositante)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_demanda_pr07_outros_janela_base": {
+      "valor": 1.0231746031746032,
+      "unidade": "x",
+      "descricao": "razão (janela base)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.8718928571428572,
+        "superior": 1.1912857142857143,
+        "nivel": 0.95
+      }
+    },
+    "razao_demanda_pr07_outros_sem_maior": {
+      "valor": 0.5538345864661655,
+      "unidade": "x",
+      "descricao": "razão (sem o maior depositante compatível)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.48586278195488725,
+        "superior": 0.6343627819548873,
+        "nivel": 0.95
+      }
+    },
+    "razao_demanda_pr07_outros_todo_pap": {
+      "valor": 1.1282706766917292,
+      "unidade": "x",
+      "descricao": "razão (SENSIBILIDADE: todo o pedido-a-pedido dos outros, com pedidos de um endereço, sem palete; demanda média por hora ÷ PR07, janela longa)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.0249586466165415,
+        "superior": 1.23390977443609,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno estratificado por dia da semana"
+      }
+    },
+    "classe_cr5_linhas_todo_pap": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "por_desenho_cr5_todo_pap": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p_unilateral_cr5_todo_pap": {
+      "valor": 0.005498625343664084,
+      "unidade": "p unilateral da sensibilidade",
+      "descricao": "p unilateral da sensibilidade (H0: razão <= 1), bootstrap; fora da família F1a",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.003252682189149065,
+        "superior": 0.008014043554421186,
+        "nivel": 0.95,
+        "tipo_ic": "Clopper-Pearson sobre o número de réplicas"
+      }
+    },
+    "mde_cr5_todo_pap": {
+      "valor": 0.15506852649490913,
+      "unidade": "x",
+      "descricao": "razão (MDE da sensibilidade, calculado com o EP desta variante e o alfa da F1a)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "cr5_todo_pap_e_sensibilidade_nao_primaria": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_pedidos_um_endereco_pap_outros": {
+      "valor": 0.5906522855675398,
+      "unidade": "%",
+      "descricao": "fração dos pedidos do pedido-a-pedido dos outros depositantes com um só endereço (janela longa, sem palete)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "razao_demanda_combinada_outros_todo_pap": {
+      "valor": 1.2769322569627461,
+      "unidade": "x",
+      "descricao": "razão (SENSIBILIDADE: todo o pedido-a-pedido ÷ PR07 + pedidos de checkout ÷ PR08 provável; descritivo, fora do teste)",
+      "incerteza": {
+        "tipo": "faixa_cenarios",
+        "inferior": 1.2309463894110275,
+        "superior": 1.3852555747075197,
+        "nivel": null,
+        "nota": "inferior = PR08 superior, superior = PR08 inferior"
+      }
+    },
+    "razao_demanda_pr07_outros_todo_pap_janela_base": {
+      "valor": 1.2671428571428571,
+      "unidade": "x",
+      "descricao": "razão (sensibilidade todo o pedido-a-pedido, janela base)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.1217420634920632,
+        "superior": 1.4217499999999998,
+        "nivel": 0.95
+      }
+    },
+    "razao_demanda_pr07_outros_todo_pap_sem_maior": {
+      "valor": 0.7648120300751879,
+      "unidade": "x",
+      "descricao": "razão (sensibilidade todo o pedido-a-pedido, sem o maior depositante)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.6926259398496242,
+        "superior": 0.8387274436090225,
+        "nivel": 0.95
+      }
+    },
+    "h_p14a_todo_pap_inversao_entre_meses": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "robos_adicionais_alt6_banda": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota pela regra de M22 no perfil p90 pela banda, média de perfis de dias diferentes, da soma dos depositantes compatíveis; subestima o pico; PR07 e PR08 provável)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 3.0,
+        "superior": 4.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid dos dias do período inteiro)"
+      }
+    },
+    "robos_adicionais_alt6_relevantes_banda": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (idem pela banda, só os depositantes relevantes: carga média >= 10% de um robô)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2.0,
+        "superior": 4.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid dos dias do período inteiro)"
+      }
+    },
+    "robos_poupados_pooling_banda": {
+      "valor": 14.0,
+      "unidade": "robôs",
+      "descricao": "robôs (soma das frotas individuais − frota agrupada, pela banda; superestimado: o perfil médio alisa o pico)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 11.0,
+        "superior": 17.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid dos dias do período inteiro)"
+      }
+    },
+    "robos_poupados_pooling_relevantes_banda": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (idem pela banda, só os depositantes relevantes)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.0,
+        "superior": 4.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid dos dias do período inteiro)"
+      }
+    },
+    "soma_frotas_individuais_literal_banda": {
+      "valor": 17.0,
+      "unidade": "robôs",
+      "descricao": "robôs (soma das frotas individuais pela banda, literal)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 15.0,
+        "superior": 20.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno (bootstrap iid dos dias do período inteiro)"
+      }
+    },
+    "pooling_poupa_ao_menos_um_robo_banda": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pooling_poupa_ao_menos_um_robo_relevantes_banda": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_depositantes_compativeis": {
+      "valor": 22.0,
+      "unidade": "depositantes com demanda compatível",
+      "descricao": "depositantes com demanda compatível (antes de juntar os menores em 'outros')",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_depositantes_relevantes": {
+      "valor": 2.0,
+      "unidade": "depositantes com carga média >= 10% de um robô",
+      "descricao": "depositantes com carga média >= 10% de um robô",
+      "incerteza": null,
+      "contagem": true
+    },
+    "robos_adicionais_alt6_por_tipo_banda": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (teto inteiro por tipo, somado por hora, pela banda; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "robos_adicionais_alt6": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (frota agrupada dia a dia: p90 entre dias do máximo horário diário do teto inteiro da carga da soma dos depositantes compatíveis; PR07 e PR08 provável)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 4.0,
+        "superior": 6.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "robos_adicionais_alt6_relevantes": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (idem, só os depositantes relevantes: carga média >= 10% de um robô)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 3.0,
+        "superior": 5.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "soma_frotas_individuais_literal": {
+      "valor": 17.0,
+      "unidade": "robôs",
+      "descricao": "robôs (soma das frotas individuais dia a dia, literal)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 14.0,
+        "superior": 19.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "soma_frotas_individuais_relevantes": {
+      "valor": 6.0,
+      "unidade": "robôs",
+      "descricao": "robôs (soma das frotas individuais dia a dia, só os relevantes)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 5.0,
+        "superior": 7.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana"
+      }
+    },
+    "robos_poupados_pooling": {
+      "valor": 12.0,
+      "unidade": "robôs",
+      "descricao": "robôs (soma das frotas individuais − frota agrupada, dia a dia; variante literal do plano, ainda inflada pelo teto inteiro de depositantes pequenos)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 9.0,
+        "superior": 14.0,
+        "nivel": 0.95,
+        "unidade_ic": "semana"
+      }
+    },
+    "robos_poupados_pooling_relevantes": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (idem, só os depositantes relevantes; leitura conservadora para o impacto)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2.0,
+        "superior": 3.0,
+        "nivel": 0.95,
+        "unidade_ic": "dia"
+      }
+    },
+    "pooling_poupa_ao_menos_um_robo": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pooling_poupa_ao_menos_um_robo_relevantes": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dias_com_frota_agrupada_menor_que_maior_individual": {
+      "valor": 0.0,
+      "unidade": "dias plenos",
+      "descricao": "dias plenos (frota agrupada abaixo da maior individual do mesmo dia: deve ser zero)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "banda_agrupada_relevantes_menor_que_individual": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "robos_adicionais_alt6_por_tipo": {
+      "valor": 5.0,
+      "unidade": "robôs",
+      "descricao": "robôs (teto inteiro por tipo, somado por hora, dia a dia; PR07 e PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "robos_adicionais_alt6_so_pap": {
+      "valor": 4.0,
+      "unidade": "robôs",
+      "descricao": "robôs (só pedido-a-pedido, PR07, dia a dia)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "robos_adicionais_alt6_so_checkout": {
+      "valor": 2.0,
+      "unidade": "robôs",
+      "descricao": "robôs (só checkout, PR08 provável, dia a dia)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "correlacao_volume_dia_relevantes_periodo": {
+      "valor": 0.1581800665468887,
+      "unidade": "r",
+      "descricao": "r (correlação de Pearson entre os volumes diários de linhas dos dois depositantes relevantes, periodo inteiro; descritivo)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.11682220304776744,
+        "superior": 0.4203054773986304,
+        "nivel": 0.95,
+        "unidade_ic": "bloco de semana"
+      }
+    },
+    "correlacao_volume_dia_relevantes_janela_longa": {
+      "valor": 0.35928180536962784,
+      "unidade": "r",
+      "descricao": "r (correlação de Pearson entre os volumes diários de linhas dos dois depositantes relevantes, janela longa; descritivo)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.030645390330944624,
+        "superior": 0.669837655313245,
+        "nivel": 0.95,
+        "unidade_ic": "bloco de semana"
+      }
+    },
+    "robos_adicionais_alt6_so_pap_banda": {
+      "valor": 3.0,
+      "unidade": "robôs",
+      "descricao": "robôs (só pedido-a-pedido, PR07)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "robos_adicionais_alt6_so_checkout_banda": {
+      "valor": 1.0,
+      "unidade": "robôs",
+      "descricao": "robôs (só checkout, PR08 provável)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "demanda_pico_linhas_compat_outros_p90": {
+      "valor": 79.375,
+      "unidade": "linhas por hora",
+      "descricao": "linhas por hora (pico do perfil p90 da soma dos compatíveis)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "demanda_pico_pedidos_checkout_outros_p90": {
+      "valor": 101.5,
+      "unidade": "pedidos por hora",
+      "descricao": "pedidos por hora (pico do perfil p90 da soma dos compatíveis)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_adicional_mes_outros": {
+      "valor": 7980.0,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (tarifa por transação dos outros depositantes compatíveis; linha tarifável = Qtde Produtos, limite superior, M06 base; agosto/2026; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6291.907708333333,
+        "superior": 9729.601875,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "receita_adicional_mes_outros_inf": {
+      "valor": 7977.666666666666,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (idem, limite inferior de M06: conservador para a receita; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6287.2993750000005,
+        "superior": 9727.268541666666,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "receita_adicional_mes_outros_end": {
+      "valor": 7923.125,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (idem, linha tarifável = Qtde Endereços: sensibilidade de PQ02; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6244.418541666667,
+        "superior": 9664.905833333334,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "receita_adicional_mes_outros_retroativa": {
+      "valor": 7980.0,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (idem, tarifa reduzida retroativa: sensibilidade de PQ08; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6291.907708333333,
+        "superior": 9724.814166666667,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "volume_mes_pedidos_checkout_outros": {
+      "valor": 3558.3333333333335,
+      "unidade": "pedidos de checkout por mês",
+      "descricao": "pedidos de checkout por mês (outros depositantes, agosto/2026; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2672.833333333333,
+        "superior": 4488.195833333334,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "volume_mes_linhas_tarifaveis_compat_outros": {
+      "valor": 7723.333333333333,
+      "unidade": "linhas tarifáveis por mês",
+      "descricao": "linhas tarifáveis por mês (pedido-a-pedido compatível dos outros, Qtde Produtos limite superior; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6591.579166666667,
+        "superior": 8930.862500000001,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "volume_mes_pedidos_checkout_rc": {
+      "valor": 929.8333333333334,
+      "unidade": "pedidos de checkout por mês",
+      "descricao": "pedidos de checkout por mês (Royal Canin, agosto/2026; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "volume_mes_linhas_tarifaveis_pap_rc": {
+      "valor": 1092.0,
+      "unidade": "linhas tarifáveis por mês",
+      "descricao": "linhas tarifáveis por mês (pedido-a-pedido da Royal Canin, Qtde Produtos limite superior; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "faixa_reduzida_atingida_com_outros": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "faixa_reduzida_atingida_so_rc": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_adicional_mes": {
+      "valor": 1596.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita adicional ÷ frota agrupada dia a dia (literal); janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1225.3852916666665,
+        "superior": 2325.9720312499994,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_mes": {
+      "valor": 596.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô adicional − PR13; sem hardware; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 225.38529166666646,
+        "superior": 1325.9720312499996,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_mes_banda": {
+      "valor": 1660.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita ÷ frota agrupada pela banda − PR13; superestimada: a banda subestima a frota; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 744.3522395833337,
+        "superior": 2451.3976388888896,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_mes_inf": {
+      "valor": 595.5333333333333,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita no limite inferior de M06 − PR13; conservador; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 224.99445833333334,
+        "superior": 1325.78390625,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_mes_relevantes": {
+      "valor": 995.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita total ÷ frota agrupada dia a dia só dos depositantes relevantes − PR13; otimista: a receita dos demais fica; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 498.2147395833332,
+        "superior": 1630.947083333333,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "hardware_maximo_adicional_prazo": {
+      "valor": 14292.8,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (margem conservadora com a frota agrupada dia a dia × PR14, quando positiva; sem hardware; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 5399.867,
+        "superior": 31818.81375,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "razao_compat_outros_sobre_rc_pap": {
+      "valor": 7.120000000000001,
+      "unidade": "x",
+      "descricao": "razão (linhas operacionais por dia pleno: pedido-a-pedido compatível dos outros ÷ pedido-a-pedido da Royal Canin; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 5.149752278908139,
+        "superior": 10.590834972760291,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "n_dias_janela_receita": {
+      "valor": 18.0,
+      "unidade": "dias plenos da janela",
+      "descricao": "dias plenos da janela (janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_adicional_mes_outros_estresse": {
+      "valor": 7980.0,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (tarifa por transação dos outros depositantes compatíveis; linha tarifável = Qtde Produtos, limite superior, M06 base; agosto/2026; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6291.907708333333,
+        "superior": 9729.601875,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "receita_adicional_mes_outros_inf_estresse": {
+      "valor": 7977.666666666666,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (idem, limite inferior de M06: conservador para a receita; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6287.2993750000005,
+        "superior": 9727.268541666666,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "receita_adicional_mes_outros_end_estresse": {
+      "valor": 7923.125,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (idem, linha tarifável = Qtde Endereços: sensibilidade de PQ02; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6244.418541666667,
+        "superior": 9664.905833333334,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "receita_adicional_mes_outros_retroativa_estresse": {
+      "valor": 7980.0,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (idem, tarifa reduzida retroativa: sensibilidade de PQ08; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6291.907708333333,
+        "superior": 9724.814166666667,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "volume_mes_pedidos_checkout_outros_estresse": {
+      "valor": 3558.3333333333335,
+      "unidade": "pedidos de checkout por mês",
+      "descricao": "pedidos de checkout por mês (outros depositantes, agosto/2026; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2672.833333333333,
+        "superior": 4488.195833333334,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "volume_mes_linhas_tarifaveis_compat_outros_estresse": {
+      "valor": 7723.333333333333,
+      "unidade": "linhas tarifáveis por mês",
+      "descricao": "linhas tarifáveis por mês (pedido-a-pedido compatível dos outros, Qtde Produtos limite superior; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6591.579166666667,
+        "superior": 8930.862500000001,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "volume_mes_pedidos_checkout_rc_estresse": {
+      "valor": 929.8333333333334,
+      "unidade": "pedidos de checkout por mês",
+      "descricao": "pedidos de checkout por mês (Royal Canin, agosto/2026; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "volume_mes_linhas_tarifaveis_pap_rc_estresse": {
+      "valor": 1092.0,
+      "unidade": "linhas tarifáveis por mês",
+      "descricao": "linhas tarifáveis por mês (pedido-a-pedido da Royal Canin, Qtde Produtos limite superior; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "faixa_reduzida_atingida_com_outros_estresse": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "faixa_reduzida_atingida_so_rc_estresse": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_adicional_mes_estresse": {
+      "valor": 1596.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita adicional ÷ frota agrupada dia a dia (literal); janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1225.3852916666665,
+        "superior": 2325.9720312499994,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_mes_estresse": {
+      "valor": 596.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô adicional − PR13; sem hardware; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 225.38529166666646,
+        "superior": 1325.9720312499996,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_mes_banda_estresse": {
+      "valor": 1660.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita ÷ frota agrupada pela banda − PR13; superestimada: a banda subestima a frota; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 744.3522395833337,
+        "superior": 2451.3976388888896,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_mes_inf_estresse": {
+      "valor": 595.5333333333333,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita no limite inferior de M06 − PR13; conservador; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 224.99445833333334,
+        "superior": 1325.78390625,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_mes_relevantes_estresse": {
+      "valor": 995.0,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita total ÷ frota agrupada dia a dia só dos depositantes relevantes − PR13; otimista: a receita dos demais fica; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 498.2147395833332,
+        "superior": 1630.947083333333,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "hardware_maximo_adicional_prazo_estresse": {
+      "valor": 14292.8,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (margem conservadora com a frota agrupada dia a dia × PR14, quando positiva; sem hardware; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 5399.867,
+        "superior": 31818.81375,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "razao_compat_outros_sobre_rc_pap_estresse": {
+      "valor": 7.120000000000001,
+      "unidade": "x",
+      "descricao": "razão (linhas operacionais por dia pleno: pedido-a-pedido compatível dos outros ÷ pedido-a-pedido da Royal Canin; janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 5.149752278908139,
+        "superior": 10.590834972760291,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "n_dias_janela_receita_estresse": {
+      "valor": 18.0,
+      "unidade": "dias plenos da janela",
+      "descricao": "dias plenos da janela (janela do plano 2026-08-31 a 2026-09-25 (estresse))",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_adicional_mes_outros_normal": {
+      "valor": 7768.61842105263,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (tarifa por transação dos outros depositantes compatíveis; linha tarifável = Qtde Produtos, limite superior, M06 base; agosto/2026; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6426.804078947369,
+        "superior": 9121.137236842107,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "receita_adicional_mes_outros_inf_normal": {
+      "valor": 7762.53947368421,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (idem, limite inferior de M06: conservador para a receita; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6421.094013157895,
+        "superior": 9114.281842105263,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "receita_adicional_mes_outros_end_normal": {
+      "valor": 7716.118421052631,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (idem, linha tarifável = Qtde Endereços: sensibilidade de PQ02; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6383.769276315789,
+        "superior": 9056.367434210524,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "receita_adicional_mes_outros_retroativa_normal": {
+      "valor": 7768.61842105263,
+      "unidade": "R$ por mês",
+      "descricao": "R$ por mês (idem, tarifa reduzida retroativa: sensibilidade de PQ08; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6426.804078947369,
+        "superior": 9121.137236842107,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "volume_mes_pedidos_checkout_outros_normal": {
+      "valor": 3542.368421052631,
+      "unidade": "pedidos de checkout por mês",
+      "descricao": "pedidos de checkout por mês (outros depositantes, agosto/2026; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 2860.421052631579,
+        "superior": 4195.6618421052635,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "volume_mes_linhas_tarifaveis_compat_outros_normal": {
+      "valor": 6986.368421052632,
+      "unidade": "linhas tarifáveis por mês",
+      "descricao": "linhas tarifáveis por mês (pedido-a-pedido compatível dos outros, Qtde Produtos limite superior; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 5704.125000000001,
+        "superior": 8401.132894736842,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "volume_mes_pedidos_checkout_rc_normal": {
+      "valor": 1099.7368421052631,
+      "unidade": "pedidos de checkout por mês",
+      "descricao": "pedidos de checkout por mês (Royal Canin, agosto/2026; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "volume_mes_linhas_tarifaveis_pap_rc_normal": {
+      "valor": 1594.8947368421052,
+      "unidade": "linhas tarifáveis por mês",
+      "descricao": "linhas tarifáveis por mês (pedido-a-pedido da Royal Canin, Qtde Produtos limite superior; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "faixa_reduzida_atingida_com_outros_normal": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "faixa_reduzida_atingida_so_rc_normal": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "receita_por_robo_adicional_mes_normal": {
+      "valor": 1553.723684210526,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita adicional ÷ frota agrupada dia a dia (literal); operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1253.8510526315793,
+        "superior": 2184.604440789474,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_mes_normal": {
+      "valor": 553.723684210526,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita por robô adicional − PR13; sem hardware; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 253.85105263157914,
+        "superior": 1184.6044407894742,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_mes_banda_normal": {
+      "valor": 1589.53947368421,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita ÷ frota agrupada pela banda − PR13; superestimada: a banda subestima a frota; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 747.4842598684212,
+        "superior": 2267.39782894737,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_mes_inf_normal": {
+      "valor": 552.507894736842,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita no limite inferior de M06 − PR13; conservador; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 253.40388157894742,
+        "superior": 1182.9904111842104,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "margem_robo_adicional_mes_relevantes_normal": {
+      "valor": 942.1546052631575,
+      "unidade": "R$ por robô por mês",
+      "descricao": "R$ por robô por mês (receita total ÷ frota agrupada dia a dia só dos depositantes relevantes − PR13; otimista: a receita dos demais fica; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 509.82850328947353,
+        "superior": 1536.3855263157898,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "hardware_maximo_adicional_prazo_normal": {
+      "valor": 13260.189473684208,
+      "unidade": "R$ por robô",
+      "descricao": "R$ por robô (margem conservadora com a frota agrupada dia a dia × PR14, quando positiva; sem hardware; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 6081.693157894738,
+        "superior": 28391.76986842105,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana) e dia do perfil"
+      }
+    },
+    "razao_compat_outros_sobre_rc_pap_normal": {
+      "valor": 4.361538461538462,
+      "unidade": "x",
+      "descricao": "razão (linhas operacionais por dia pleno: pedido-a-pedido compatível dos outros ÷ pedido-a-pedido da Royal Canin; operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 3.147969304692902,
+        "superior": 5.899360143039559,
+        "nivel": 0.95,
+        "unidade_ic": "dia pleno da janela (bootstrap estratificado por dia da semana)"
+      }
+    },
+    "n_dias_janela_receita_normal": {
+      "valor": 19.0,
+      "unidade": "dias plenos da janela",
+      "descricao": "dias plenos da janela (operação normal: quatro semanas terminando em 2026-09-18)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_base_no_incidente_rc": {
+      "valor": 4.0,
+      "unidade": "dias plenos da janela do plano dentro de 21 a 25/09",
+      "descricao": "dias plenos da janela do plano dentro de 21 a 25/09 (semana do incidente da Royal Canin)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "correlacao_media_volume_dia_maiores_depositantes": {
+      "valor": -0.10333189533470244,
+      "unidade": "r",
+      "descricao": "r (correlação de Pearson média entre os volumes diários dos três maiores depositantes compatíveis, janela longa; descritivo)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.24361992732033733,
+        "superior": 0.009825516688058433,
+        "nivel": 0.95,
+        "unidade_ic": "semana"
+      }
+    }
+  },
+  "tabelas": {
+    "h_p14a_robustez": "h_p14a_robustez.csv",
+    "h_p14a_sensibilidade_todo_pap": "h_p14a_sensibilidade_todo_pap.csv",
+    "h_p14b_pooling_grade": "h_p14b_pooling_grade.csv",
+    "h_p14b_pooling_por_limiar_de_carga": "h_p14b_pooling_por_limiar_de_carga.csv",
+    "correlacao_volume_diario_relevantes": "correlacao_volume_diario_relevantes.csv",
+    "perfil_horario_compat_outros": "perfil_horario_compat_outros.csv",
+    "frota_individual_por_grupo": "frota_individual_por_grupo.csv",
+    "correlacao_volume_diario_maiores": "correlacao_volume_diario_maiores.csv",
+    "perfil_por_depositante_e_tipo_de_onda": "perfil_por_depositante_e_tipo_de_onda.csv"
+  },
+  "figuras": [
+    "demanda_compativel_contra_capacidade.png",
+    "perfil_horario_compativel.png"
+  ],
+  "notas": "H-P14a (CR5, F1a): razão entre a demanda média por hora da janela observada (linhas operacionais do pedido-a-pedido com pedido_multi_endereco, sem palete, dos depositantes que não são a Royal Canin, MULTI incluído como em ANA-000) e PR07; janela longa; bootstrap de dias estratificado por dia da semana; mesmo gerador de ANA-000 (cr5|dia; ep_confere_ana000_cr5). Direção >= 1. A classe lê o IC de 95% contra 1; o MDE de ANA-000 e o efeito relevante (10% de uma capacidade) dizem se um inconclusivo seria por desenho; p unilateral e p de Holm no pior caso da F1a (o Holm exato exige ANA-004 e ANA-007). Checkout: só faixa de cenários na grade de PR08 de ANA-006, sem p. Robustez: meses, janela base, sem o maior depositante compatível, com ctx.estat.robustez (inversão de sinal entre meses). H-P14b (H03), verificação determinística com premissas, fora das famílias: frota pela regra de M22 como teto inteiro da carga em robôs-equivalentes (linhas ÷ PR07 + pedidos ÷ PR08) por hora, máximo na janela observada; perfil p90 pela banda PAR05 de cada tipo, dias plenos do período inteiro; variante literal (todos com PAR07 registros, os menores em 'outros') e variante relevantes (carga média >= 10% de um robô, convenção de efeito relevante do G2): o literal é inflado pelo teto inteiro de depositantes minúsculos e não deve ser lido como ganho real de pooling; a tabela por limiar de carga mostra a dependência. A regra por tipo (teto inteiro de cada tipo, somado) fica na grade como variante; a grade de PR07 (0,75 a 1,25 vezes) é sensibilidade do estatístico. Correlação dos volumes diários entre os maiores depositantes: descritiva. Receita adicional (M21, variante do depositante adicional): receita do escopo com o volume dos outros menos a receita do escopo, faixas de PAR14, tarifa reduzida só sobre o excedente (retroativa como sensibilidade), taxa corrente da janela base mensalizada em agosto/2026 (dias úteis de referência e sábados observados); o volume da Royal Canin só decide em que faixa cai o volume adicional (o volume do escopo não é reamostrado). Linha tarifável = Qtde Produtos (base = limite superior de M06; inferior = conservador; Qtde Endereços = sensibilidade). Margem por robô adicional = receita ÷ robôs − PR13 (sem hardware); hardware máximo = margem conservadora × PR14 quando positiva. Semana do incidente (decisão do orquestrador, revisoes/orquestrador_decisao_semana_incidente.md): a Royal Canin cai para quase zero no WMS de 21 a 25/09 por problemas na operação (confirmado por Marcus; não é falha de extração). Base da oferta = operação normal (quatro semanas terminando em 18/09, chaves *_normal); a janela do plano (31/08 a 25/09) segue reportada como cenário de estresse (chaves sem sufixo e *_estresse). Os outros depositantes seguem normais: H-P14a, a demanda dos outros e o pooling não mudam; o volume da Royal Canin só decide em que faixa de PAR14 cai o volume adicional e entra na razão de volumes. Correção do red team analítico (parte A): a frota do pooling é calculada dia a dia (p90 entre dias da frota diária; a banda ficou com o sufixo _banda e subestima o pico), com a margem por robô adicional e o hardware máximo nessa frota; a correlação entre os depositantes relevantes está na tabela correlacao_volume_diario_relevantes; a sensibilidade de CR5 com todo o pedido-a-pedido dos outros (chaves *_todo_pap) é declarada como sensibilidade e a primária segue a do plano. Tabelas: h_p14a_sensibilidade_todo_pap, correlacao_volume_diario_relevantes, h_p14a_robustez, h_p14b_pooling_grade, h_p14b_pooling_por_limiar_de_carga, frota_individual_por_grupo, perfil_horario_compat_outros, correlacao_volume_diario_maiores, perfil_por_depositante_e_tipo_de_onda. Dependências fora do hash do script: analises/comum.py e saidas/analises/ANA-006 (PR08).",
+  "em": "2026-10-03T21:22:02",
+  "segundos": 21.24
+}

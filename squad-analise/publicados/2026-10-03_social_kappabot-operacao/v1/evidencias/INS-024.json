@@ -1,0 +1,79 @@
+{
+  "id": "INS-024",
+  "estado": "validado",
+  "afirmacao": "Em ciclo completo e no teto base, a colmeia da Royal Canin roda mais coletas por hora que o pedido-a-pedido: {{v.dif_pap}} (M14 bruto, descritivo), e a diferença se mantém no teto conservador ({{v.dif_pap300}}). Contra o checkout o sinal depende do teto: {{v.dif_chk}} no teto base e {{v.dif_chk300}} no teto conservador, então não há vantagem estável sobre o checkout. A vantagem sobre o pedido-a-pedido é em boa parte do método (a separação em lote amortiza a caminhada) e da contagem repetida da mesma visita: {{v.sobrepos}} das linhas da colmeia repetem o fim da tarefa. Não é espaço de ganho para o robô. Entre as linhas de um endereço, {{v.um_col}} têm tempo acima do instante de confirmação na colmeia, contra {{v.um_pap}} no pedido-a-pedido, e {{v.cauda}} do tempo da colmeia (creditado mais descartado) é cauda acima do limite, descartada pela regra base. Até a operação da Social confirmar onde a distribuição no put wall é registrada (E3), o número da colmeia é provisório.",
+  "pergunta_ref": "P17",
+  "criterio_ref": "CR7",
+  "valores": {
+    "dif_pap": "ANA-007.dif_rel_colmeia_pap",
+    "dif_pap300": "ANA-007.dif_rel_colmeia_pap_t300",
+    "dif_chk": "ANA-007.dif_rel_colmeia_checkout",
+    "dif_chk300": "ANA-007.dif_rel_colmeia_checkout_t300",
+    "sobrepos": "ANA-007.fracao_sobreposicao_colmeia",
+    "um_col": "ANA-007.fracao_um_endereco_acima_instante_colmeia",
+    "um_pap": "ANA-007.fracao_um_endereco_acima_instante_pap",
+    "cauda": "ANA-007.fracao_cauda_descartada_colmeia",
+    "vies": "ANA-007.vies_declarado_favorece_exclusao"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "teto de 300 s contra o pedido-a-pedido",
+      "analise": "ANA-007",
+      "resultado": "passa",
+      "nota": "a diferença segue positiva e com IC inteiro acima de zero (chave dif_rel_colmeia_pap_t300)"
+    },
+    {
+      "recorte": "teto de 300 s contra o checkout",
+      "analise": "ANA-007",
+      "resultado": "falha",
+      "nota": "o sinal inverte: a colmeia fica abaixo do checkout no teto conservador (chave dif_rel_colmeia_checkout_t300); por isso a afirmação se limita ao pedido-a-pedido"
+    },
+    {
+      "recorte": "semana de incidente da Royal Canin fora",
+      "analise": "ANA-007",
+      "resultado": "passa",
+      "nota": "a variante sem 21 a 25/09 praticamente não muda a comparação com o pedido-a-pedido (chave dif_rel_colmeia_pap_normal)"
+    },
+    {
+      "recorte": "S3 contra a cauda base",
+      "analise": "ANA-007",
+      "resultado": "parcial",
+      "nota": "o limite S3 aumenta a parcela de cauda descartada (chave fracao_cauda_descartada_colmeia_s3)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: a vantagem fica restrita ao pedido-a-pedido, a inversão contra o checkout é declarada e a vantagem é atribuída ao método e à contagem repetida. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Apresentar a produtividade da colmeia como provisória e a exclusão como a rever com a resposta de E3; não usar a diferença contra o pedido-a-pedido como ganho potencial do robô.",
+  "dono": "estatistico (ANA-007); operação da Social (E3)",
+  "premissas": [
+    "M14 bruto, sem padronizar por faixa de endereços (comparação descritiva entre tipos de onda)",
+    "M05 conta a mesma visita física mais de uma vez na colmeia e no checkout (viés declarado)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:24",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:20",
+      "por": "red-team-analitico"
+    }
+  ]
+}

@@ -1,0 +1,1203 @@
+{
+  "id": "ANA-016",
+  "valores": {
+    "n_semanas_pares_marcadas_rc": {
+      "valor": 0,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "volume_rc_semana_par_minimo_sobre_referencia": {
+      "valor": 0.8332052267486548,
+      "unidade": "razão",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "menor volume por dia pleno da Royal Canin entre as semanas pares, sobre a mediana das semanas ímpares sem o incidente; a regra marca abaixo da metade"
+      }
+    },
+    "n_operadores_pt_d1": {
+      "valor": 30,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d1_rc": {
+      "valor": 18,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d1_outros": {
+      "valor": 26,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_pt_d1": {
+      "valor": 8,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pt_d1": {
+      "valor": 40,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d1_dif_m14_pad": {
+      "valor": -19.467849760299167,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -29.93173454144741,
+        "superior": -10.511962771039459,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -29.93173454144741,
+            -10.511962771039459
+          ],
+          "semana": [
+            -24.937266404788794,
+            -15.02645704826763
+          ],
+          "dia": [
+            -23.440121726646073,
+            -15.745469620002948
+          ]
+        }
+      }
+    },
+    "pt_d1_m14_pad_rc": {
+      "valor": 36.77106212325481,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 31.905619489567023,
+        "superior": 41.387842242155195,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            31.905619489567023,
+            41.387842242155195
+          ],
+          "semana": [
+            31.63067942242301,
+            40.39847781838649
+          ],
+          "dia": [
+            33.76234077765109,
+            39.90078230778079
+          ]
+        }
+      }
+    },
+    "pt_d1_m14_pad_outros": {
+      "valor": 56.238911883553975,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 48.20646791027442,
+        "superior": 64.41984757297395,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            48.20646791027442,
+            64.41984757297395
+          ],
+          "semana": [
+            54.66112760144262,
+            57.8688958087254
+          ],
+          "dia": [
+            54.014614655689506,
+            58.7268009132234
+          ]
+        }
+      }
+    },
+    "pt_d1_participacao_maior_depositante_b": {
+      "valor": 0.3649199213262152,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "participação do maior depositante do grupo B (coletas, ou intervalos em PT-D3)"
+      }
+    },
+    "n_operadores_pt_d1_maior_depositante_b": {
+      "valor": 5,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d1_sem_maior_depositante": {
+      "valor": -11.117354246975395,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -17.556432536200766,
+        "superior": -6.48648514346156,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -17.556432536200766,
+            -6.48648514346156
+          ],
+          "semana": [
+            -16.44530540029224,
+            -7.639575730468627
+          ],
+          "dia": [
+            -15.032362840899832,
+            -7.011492021054856
+          ]
+        }
+      }
+    },
+    "pt_d1_mesmos_operadores": {
+      "valor": -10.399948962202927,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -16.065229868752375,
+        "superior": -5.519469504643483,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -16.065229868752375,
+            -5.519469504643483
+          ],
+          "semana": [
+            -16.250639412291186,
+            -6.355400580092114
+          ],
+          "dia": [
+            -14.544976337511432,
+            -6.326344526039679
+          ]
+        }
+      }
+    },
+    "n_operadores_pt_d1_mesmos": {
+      "valor": 14,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_depositantes_pt_d1": {
+      "valor": 12,
+      "unidade": "depositantes com PAR07 operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_depositantes_pt_d1_sinal_oposto": {
+      "valor": 3,
+      "unidade": "depositantes",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_depositantes_pt_d1_inversao_forte": {
+      "valor": 0,
+      "unidade": "depositantes",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_retiradas_pt_d1_loo": {
+      "valor": 23,
+      "unidade": "retiradas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_retiradas_pt_d1_loo_ic_fora_do_zero": {
+      "valor": 23,
+      "unidade": "retiradas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d1_loo_estimativa_minima": {
+      "valor": -20.852878601798075,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "menor estimativa entre as retiradas de um depositante"
+      }
+    },
+    "pt_d1_loo_estimativa_maxima": {
+      "valor": -11.117354246975395,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "maior estimativa entre as retiradas de um depositante"
+      }
+    },
+    "pt_d1_loo_limite_do_ic_mais_proximo_de_zero": {
+      "valor": -6.091413103274164,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "limite do IC por operador mais próximo de zero entre todas as retiradas"
+      }
+    },
+    "pt_d1_depositante_minimo": {
+      "valor": -35.36882315472662,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "menor contraste Royal Canin contra um depositante do grupo B (com PAR07 operadores)"
+      }
+    },
+    "pt_d1_depositante_maximo": {
+      "valor": 5.179812214981688,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "maior contraste Royal Canin contra um depositante do grupo B (com PAR07 operadores)"
+      }
+    },
+    "n_operadores_pt_d3": {
+      "valor": 30,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d3_rc": {
+      "valor": 18,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d3_outros": {
+      "valor": 25,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_pt_d3": {
+      "valor": 8,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pt_d3": {
+      "valor": 39,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d3_dif_mediana_intervalo_s": {
+      "valor": 37.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 22.0,
+        "superior": 62.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            22.0,
+            62.0
+          ],
+          "semana": [
+            28.0,
+            57.0
+          ],
+          "dia": [
+            27.5,
+            49.0
+          ]
+        }
+      }
+    },
+    "pt_d3_mediana_intervalo_rc_s": {
+      "valor": 100.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 90.0,
+        "superior": 125.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            90.0,
+            125.0
+          ],
+          "semana": [
+            92.0,
+            121.0
+          ],
+          "dia": [
+            92.5,
+            111.0
+          ]
+        }
+      }
+    },
+    "pt_d3_mediana_intervalo_outros_s": {
+      "valor": 63.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 57.0,
+        "superior": 73.51250000000005,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            57.0,
+            73.51250000000005
+          ],
+          "semana": [
+            60.0,
+            68.0
+          ],
+          "dia": [
+            60.0,
+            67.0
+          ]
+        }
+      }
+    },
+    "pt_d3_participacao_maior_depositante_b": {
+      "valor": 0.39239278090432755,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "participação do maior depositante do grupo B (coletas, ou intervalos em PT-D3)"
+      }
+    },
+    "n_operadores_pt_d3_maior_depositante_b": {
+      "valor": 5,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d3_sem_maior_depositante": {
+      "valor": 27.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 14.0,
+        "superior": 51.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            14.0,
+            51.0
+          ],
+          "semana": [
+            18.0,
+            45.0
+          ],
+          "dia": [
+            18.0,
+            37.0
+          ]
+        }
+      }
+    },
+    "pt_d3_mesmos_operadores": {
+      "valor": 26.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 13.0,
+        "superior": 51.0,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            13.0,
+            51.0
+          ],
+          "semana": [
+            16.0,
+            47.0
+          ],
+          "dia": [
+            17.0,
+            37.0
+          ]
+        }
+      }
+    },
+    "n_operadores_pt_d3_mesmos": {
+      "valor": 13,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_depositantes_pt_d3": {
+      "valor": 13,
+      "unidade": "depositantes com PAR07 operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_depositantes_pt_d3_sinal_oposto": {
+      "valor": 2,
+      "unidade": "depositantes",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_depositantes_pt_d3_inversao_forte": {
+      "valor": 1,
+      "unidade": "depositantes",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_retiradas_pt_d3_loo": {
+      "valor": 24,
+      "unidade": "retiradas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_retiradas_pt_d3_loo_ic_fora_do_zero": {
+      "valor": 24,
+      "unidade": "retiradas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d3_loo_estimativa_minima": {
+      "valor": 27.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "menor estimativa entre as retiradas de um depositante"
+      }
+    },
+    "pt_d3_loo_estimativa_maxima": {
+      "valor": 38.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "maior estimativa entre as retiradas de um depositante"
+      }
+    },
+    "pt_d3_loo_limite_do_ic_mais_proximo_de_zero": {
+      "valor": 15.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "limite do IC por operador mais próximo de zero entre todas as retiradas"
+      }
+    },
+    "pt_d3_depositante_minimo": {
+      "valor": -29.5,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "menor contraste Royal Canin contra um depositante do grupo B (com PAR07 operadores)"
+      }
+    },
+    "pt_d3_depositante_maximo": {
+      "valor": 100.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "maior contraste Royal Canin contra um depositante do grupo B (com PAR07 operadores)"
+      }
+    },
+    "n_operadores_pt_d4": {
+      "valor": 18,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d4_rc": {
+      "valor": 13,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_d4_outros": {
+      "valor": 15,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_pt_d4": {
+      "valor": 8,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pt_d4": {
+      "valor": 39,
+      "unidade": "dias",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d4_dif_m14_pad": {
+      "valor": -36.09310495953564,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -50.64440750297066,
+        "superior": -21.359955167516073,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -50.64440750297066,
+            -21.359955167516073
+          ],
+          "semana": [
+            -47.30599996808526,
+            -24.83538524165695
+          ],
+          "dia": [
+            -45.72372795297908,
+            -25.96002673554106
+          ]
+        }
+      }
+    },
+    "pt_d4_m14_pad_rc": {
+      "valor": 66.4758566133327,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 59.755981346314925,
+        "superior": 76.41220591129837,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            59.755981346314925,
+            76.41220591129837
+          ],
+          "semana": [
+            62.094267587850595,
+            70.40097286754731
+          ],
+          "dia": [
+            61.505641877200794,
+            71.60588144026941
+          ]
+        }
+      }
+    },
+    "pt_d4_m14_pad_outros": {
+      "valor": 102.56896157286833,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 90.0340633330125,
+        "superior": 116.96287467812206,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            90.0340633330125,
+            116.96287467812206
+          ],
+          "semana": [
+            93.05544755941821,
+            111.60959560626254
+          ],
+          "dia": [
+            91.32794534345365,
+            112.514466199945
+          ]
+        }
+      }
+    },
+    "pt_d4_participacao_maior_depositante_b": {
+      "valor": 0.2571188840526509,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "participação do maior depositante do grupo B (coletas, ou intervalos em PT-D3)"
+      }
+    },
+    "n_operadores_pt_d4_maior_depositante_b": {
+      "valor": 10,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d4_sem_maior_depositante": {
+      "valor": -44.69631077390024,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -58.393255731068024,
+        "superior": -29.3884690892447,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -58.393255731068024,
+            -29.3884690892447
+          ],
+          "semana": [
+            -53.964264678086884,
+            -35.14563347534751
+          ],
+          "dia": [
+            -53.378474138084854,
+            -34.7652078033805
+          ]
+        }
+      }
+    },
+    "pt_d4_mesmos_operadores": {
+      "valor": -36.16881412644635,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -51.69934049669999,
+        "superior": -20.417358118808657,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            -51.69934049669999,
+            -20.417358118808657
+          ],
+          "semana": [
+            -47.6841587745201,
+            -24.899361171831174
+          ],
+          "dia": [
+            -46.197528508976596,
+            -25.515442892003048
+          ]
+        }
+      }
+    },
+    "n_operadores_pt_d4_mesmos": {
+      "valor": 10,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_depositantes_pt_d4": {
+      "valor": 8,
+      "unidade": "depositantes com PAR07 operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_depositantes_pt_d4_sinal_oposto": {
+      "valor": 1,
+      "unidade": "depositantes",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_depositantes_pt_d4_inversao_forte": {
+      "valor": 1,
+      "unidade": "depositantes",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_retiradas_pt_d4_loo": {
+      "valor": 9,
+      "unidade": "retiradas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_retiradas_pt_d4_loo_ic_fora_do_zero": {
+      "valor": 9,
+      "unidade": "retiradas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d4_loo_estimativa_minima": {
+      "valor": -44.69631077390024,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "menor estimativa entre as retiradas de um depositante"
+      }
+    },
+    "pt_d4_loo_estimativa_maxima": {
+      "valor": -23.223468499989124,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "maior estimativa entre as retiradas de um depositante"
+      }
+    },
+    "pt_d4_loo_limite_do_ic_mais_proximo_de_zero": {
+      "valor": -9.853877212842526,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "limite do IC por operador mais próximo de zero entre todas as retiradas"
+      }
+    },
+    "pt_d4_depositante_minimo": {
+      "valor": -91.46121577468548,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "menor contraste Royal Canin contra um depositante do grupo B (com PAR07 operadores)"
+      }
+    },
+    "pt_d4_depositante_maximo": {
+      "valor": 33.60477291459622,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "maior contraste Royal Canin contra um depositante do grupo B (com PAR07 operadores)"
+      }
+    },
+    "n_operadores_pt_h04": {
+      "valor": 16,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_pt_h04": {
+      "valor": 8,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_h04_efeito": {
+      "valor": 45.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 26.0,
+        "superior": 61.5,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            26.0,
+            61.5
+          ],
+          "semana": [
+            39.0,
+            63.0
+          ]
+        }
+      }
+    },
+    "pt_h04_mediana_intervalo_s": {
+      "valor": 98.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "mediana do intervalo (M10 b) das linhas de dois endereços; descritivo"
+      }
+    },
+    "pt_h04_mediana_duracao_s": {
+      "valor": 53.0,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "mediana da duração da linha (um só intervalo N−1); descritivo"
+      }
+    },
+    "n_dias_pt_h10": {
+      "valor": 39,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_pt_h10": {
+      "valor": 8,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_h10_coef": {
+      "valor": 2.238252938648687,
+      "unidade": "operadores ativos por mil linhas operacionais",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 1.2134985022984681,
+        "superior": 2.8226812316590815,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "bloco de semana",
+        "ics": {
+          "dia": [
+            1.7159976237021866,
+            2.7605082535951873
+          ],
+          "semana": [
+            1.2134985022984681,
+            2.8226812316590815
+          ]
+        }
+      }
+    },
+    "pt_h10_ativos_dia_media": {
+      "valor": 4.487179487179487,
+      "unidade": "operadores ativos por dia",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "média dos dias plenos pares com corte de uma hora de jornada ativa; descritivo"
+      }
+    },
+    "n_operadores_pt_h09": {
+      "valor": 8,
+      "unidade": "novatos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_celulas_pt_h09": {
+      "valor": 19,
+      "unidade": "células novato-semana",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_h09_inclinacao": {
+      "valor": -0.5799116444451551,
+      "unidade": "razão por semana",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "só descritivo: menos de 10 novatos, sem p nem IC inferencial (definicoes.poder.minimo_clusters)"
+      }
+    },
+    "pt_h04_confirmada": {
+      "valor": 1,
+      "unidade": "1 = confirmada pela regra do plano",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_h04_p_unilateral": {
+      "valor": 0.00024993751562109475,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "p unilateral do bootstrap (ou do erro HAC) da unidade que dá o IC mais largo"
+      }
+    },
+    "pt_h04_p_ajustado_holm": {
+      "valor": 0.0014996250937265685,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "Holm sobre os seis testes da F2 (m fixo em seis)"
+      }
+    },
+    "pt_h04_mde": {
+      "valor": 24.74764367738059,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "MDE de ANA-000 (poder de 80%, alfa da F2 dividido por seis)"
+      }
+    },
+    "pt_h04_efeito_relevante": {
+      "valor": 9.8,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "10% do valor de referência da pista nas semanas pares"
+      }
+    },
+    "pt_h09_confirmada": {
+      "valor": 0,
+      "unidade": "1 = confirmada pela regra do plano",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_h09_mde": {
+      "valor": 1.5794019919815963,
+      "unidade": "razão por semana",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "MDE de ANA-000 (poder de 80%, alfa da F2 dividido por seis)"
+      }
+    },
+    "pt_h09_efeito_relevante": {
+      "valor": 0.1,
+      "unidade": "razão por semana",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "10% do valor de referência da pista nas semanas pares"
+      }
+    },
+    "pt_h10_confirmada": {
+      "valor": 1,
+      "unidade": "1 = confirmada pela regra do plano",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_h10_p_unilateral": {
+      "valor": 0.0004998750312421895,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "p unilateral do bootstrap (ou do erro HAC) da unidade que dá o IC mais largo"
+      }
+    },
+    "pt_h10_p_ajustado_holm": {
+      "valor": 0.0014996250937265685,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "Holm sobre os seis testes da F2 (m fixo em seis)"
+      }
+    },
+    "pt_h10_mde": {
+      "valor": 1.2914807349374757,
+      "unidade": "operadores ativos por mil linhas operacionais",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "MDE de ANA-000 (poder de 80%, alfa da F2 dividido por seis)"
+      }
+    },
+    "pt_h10_efeito_relevante": {
+      "valor": 0.4057594657886805,
+      "unidade": "operadores ativos por mil linhas operacionais",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "10% do valor de referência da pista nas semanas pares"
+      }
+    },
+    "pt_d1_leitura_a_ic_oposto_confirmada": {
+      "valor": 1,
+      "unidade": "1 = confirmada nesta leitura do critério de inversão",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d1_leitura_b_so_sinal_confirmada": {
+      "valor": 0,
+      "unidade": "1 = confirmada nesta leitura do critério de inversão",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d1_leitura_c_leave_one_out_confirmada": {
+      "valor": 1,
+      "unidade": "1 = confirmada nesta leitura do critério de inversão",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d1_confirmada": {
+      "valor": 1,
+      "unidade": "1 = confirmada pela regra do plano",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d1_p_unilateral": {
+      "valor": 0.00024993751562109475,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "p unilateral do bootstrap (ou do erro HAC) da unidade que dá o IC mais largo"
+      }
+    },
+    "pt_d1_p_ajustado_holm": {
+      "valor": 0.0014996250937265685,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "Holm sobre os seis testes da F2 (m fixo em seis)"
+      }
+    },
+    "pt_d1_mde": {
+      "valor": 15.897792314809971,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "MDE de ANA-000 (poder de 80%, alfa da F2 dividido por seis)"
+      }
+    },
+    "pt_d1_efeito_relevante": {
+      "valor": 5.6238911883553975,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "10% do valor de referência da pista nas semanas pares"
+      }
+    },
+    "pt_d3_leitura_a_ic_oposto_confirmada": {
+      "valor": 0,
+      "unidade": "1 = confirmada nesta leitura do critério de inversão",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d3_leitura_b_so_sinal_confirmada": {
+      "valor": 0,
+      "unidade": "1 = confirmada nesta leitura do critério de inversão",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d3_leitura_c_leave_one_out_confirmada": {
+      "valor": 1,
+      "unidade": "1 = confirmada nesta leitura do critério de inversão",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d3_confirmada": {
+      "valor": 0,
+      "unidade": "1 = confirmada pela regra do plano",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d3_p_unilateral": {
+      "valor": 0.00024993751562109475,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "p unilateral do bootstrap (ou do erro HAC) da unidade que dá o IC mais largo"
+      }
+    },
+    "pt_d3_p_ajustado_holm": {
+      "valor": 0.0014996250937265685,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "Holm sobre os seis testes da F2 (m fixo em seis)"
+      }
+    },
+    "pt_d3_mde": {
+      "valor": 33.53615450744299,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "MDE de ANA-000 (poder de 80%, alfa da F2 dividido por seis)"
+      }
+    },
+    "pt_d3_efeito_relevante": {
+      "valor": 6.300000000000001,
+      "unidade": "s",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "10% do valor de referência da pista nas semanas pares"
+      }
+    },
+    "pt_d4_leitura_a_ic_oposto_confirmada": {
+      "valor": 0,
+      "unidade": "1 = confirmada nesta leitura do critério de inversão",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d4_leitura_b_so_sinal_confirmada": {
+      "valor": 0,
+      "unidade": "1 = confirmada nesta leitura do critério de inversão",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d4_leitura_c_leave_one_out_confirmada": {
+      "valor": 1,
+      "unidade": "1 = confirmada nesta leitura do critério de inversão",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d4_confirmada": {
+      "valor": 0,
+      "unidade": "1 = confirmada pela regra do plano",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d4_p_unilateral": {
+      "valor": 0.00024993751562109475,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "p unilateral do bootstrap (ou do erro HAC) da unidade que dá o IC mais largo"
+      }
+    },
+    "pt_d4_p_ajustado_holm": {
+      "valor": 0.0014996250937265685,
+      "unidade": "%",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "Holm sobre os seis testes da F2 (m fixo em seis)"
+      }
+    },
+    "pt_d4_mde": {
+      "valor": 24.46643438660638,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "MDE de ANA-000 (poder de 80%, alfa da F2 dividido por seis)"
+      }
+    },
+    "pt_d4_efeito_relevante": {
+      "valor": 10.256896157286834,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "nenhuma",
+        "nota": "10% do valor de referência da pista nas semanas pares"
+      }
+    },
+    "n_dias_pico_pt_d2": {
+      "valor": 4,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_tipicos_pt_d2": {
+      "valor": 8,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "pt_d2_dif_m14_pico_tipico_descritivo": {
+      "valor": 12.28008105071396,
+      "unidade": "coletas por hora",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.9284313652571976,
+        "superior": 22.821575984691396,
+        "nivel": 0.95,
+        "unidade_de_reamostragem": "operador",
+        "ics": {
+          "operador": [
+            0.9284313652571976,
+            22.821575984691396
+          ],
+          "semana": [
+            6.233221802966213,
+            16.29927849082302
+          ],
+          "dia": [
+            7.448844301024845,
+            16.173315585196278
+          ]
+        },
+        "nota": "IC descritivo (plano: pistas_descartadas): poucos dias de pico, sem p e sem leitura inferencial; fora da F2"
+      }
+    },
+    "n_operadores_confirmacao": {
+      "valor": 32,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_confirmacao": {
+      "valor": 8,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_confirmadas": {
+      "valor": 3,
+      "unidade": "pistas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_pistas_f2": {
+      "valor": 6,
+      "unidade": "pistas",
+      "incerteza": null,
+      "contagem": true
+    }
+  },
+  "tabelas": {
+    "conferencia_volume_rc_semanas": "conferencia_volume_rc_semanas.csv",
+    "classificacao_pistas": "classificacao_pistas.csv",
+    "robustez_pistas": "robustez_pistas.csv",
+    "leituras_criterio_inversao": "leituras_criterio_inversao.csv",
+    "leave_one_out_depositante": "leave_one_out_depositante.csv"
+  },
+  "figuras": [],
+  "notas": "Confirmação nas semanas ISO pares, limiares de ANA-012 lidos do arquivo registrado (sem recálculo). F2 com seis testes, Holm com m = 6; PT-H09 sem p (menos de 10 novatos: só descritivo, inconclusiva por desenho) e PT-D2 só descritiva. IC de 95% por bootstrap por cluster (operador, bloco de semana, dia; vale o mais largo; o mesmo sorteio nos dois grupos); PT-H10 por erro HAC por dia e bloco de semana (vale o mais largo). Confirmada = sinal da direção, IC fora do nulo, p ajustado abaixo de alfa, ao menos dez unidades e sem inversão na robustez (teto conservador, segmentos com PAR07 operadores nos dois grupos, um operador de fora por vez, sem pós-pausa, S3 em PT-D4); a janela base de duas semanas é informativa. Robustez por depositante (PT-D1, PT-D3, PT-D4; correção do red team, parte B): sem o maior depositante do grupo B (com IC), entre os mesmos operadores que separam para os dois grupos (descritivo) e a Royal Canin contra cada depositante com PAR07 operadores; critério de inversão por depositante declarado depois do desenho (o plano não fixa o tamanho do segmento): IC por operador do segmento inteiro do lado oposto; sinais opostos com IC que contém o nulo ficam contados em n_depositantes_*_sinal_oposto e listados em robustez_pistas. PT-D2: IC descritivo sem p. Três leituras do critério de inversão por depositante (chaves pt_d*_leitura_*_confirmada e tabela leituras_criterio_inversao): (a) IC por operador do segmento inteiro do lado oposto (adotada), (b) só sinal, (c) leave-one-out (retirar um depositante por vez do grupo de comparação, IC por operador fora do zero em todas as retiradas). A primeira versão registrada de ANA-016 omitiu a robustez por depositante pré-registrada no plano; ela entrou depois, e a escolha entre as leituras decide o estado das três pistas de ANA-012 (decisão de Marcus no G3). MDE e n de ANA-000 (conferidos aqui). Nenhuma semana par marcada como incidente da Royal Canin (conferência em conferencia_volume_rc_semanas), logo sem filtro de incidente. Exceção declarada: o painel de novatos usa a referência de experientes da mesma semana-calendário, de qualquer paridade.",
+  "em": "2026-10-03T21:23:10",
+  "segundos": 34.76
+}

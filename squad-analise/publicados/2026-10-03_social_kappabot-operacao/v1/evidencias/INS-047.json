@@ -1,0 +1,74 @@
+{
+  "id": "INS-047",
+  "estado": "validado",
+  "afirmacao": "Pelo corte de uma linha por dia, o armazém tem em média {{v.media}} ({{v.p90}} no p90); quando o ativo precisa de uma hora de jornada ativa, {{v.media1h}} ({{v.p901h}} no p90). Na Royal Canin são {{v.rc}} pelo corte de uma linha e {{v.rc1h}} pelo de uma hora. O corte de uma linha conta supervisor e apoio como separador e o de uma hora não tem fonte setorial. Censo do período inteiro, com a semana de incidente da Royal Canin; sem ela, o armazém tem {{v.media_si}} e a Royal Canin {{v.rc_si}} (corte de uma linha).",
+  "pergunta_ref": "P15",
+  "criterio_ref": "CR8",
+  "valores": {
+    "media": "ANA-013.ativos_dia_media",
+    "p90": "ANA-013.ativos_dia_p90",
+    "media1h": "ANA-013.ativos_dia_media_1h",
+    "p901h": "ANA-013.ativos_dia_p90_1h",
+    "rc": "ANA-013.ativos_dia_media_rc",
+    "rc1h": "ANA-013.ativos_dia_media_rc_1h",
+    "media_si": "ANA-013.ativos_dia_media_sem_incidente",
+    "rc_si": "ANA-013.ativos_dia_media_rc_sem_incidente"
+  },
+  "nivel": "descritivo",
+  "exploratorio": false,
+  "robustez": [
+    {
+      "recorte": "corte de uma linha contra uma hora de jornada ativa",
+      "analise": "ANA-013",
+      "resultado": "parcial",
+      "nota": "o nível muda muito com o corte: a escolha do corte é premissa de quem usa o número (robustez pedida pelo plano)"
+    },
+    {
+      "recorte": "com e sem a semana de incidente",
+      "analise": "ANA-013",
+      "resultado": "passa",
+      "nota": "o armazém quase não muda; a Royal Canin sobe um pouco sem a semana, como esperado"
+    },
+    {
+      "recorte": "teto conservador no corte de uma hora",
+      "analise": "ANA-013",
+      "resultado": "passa",
+      "nota": "mesma ordem de grandeza (chave ativos_dia_media_1h_t300)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Sem mudança; nenhum ataque muda a leitura."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Usar o corte de uma linha como base do contrato e o de uma hora como sensibilidade em CR8 e no impacto; perguntar à Social quem conta como separador.",
+  "dono": "analista-de-impacto; Marcus (pergunta à Social)",
+  "premissas": [
+    "censo do período observado (carga inteira em dias plenos): estatísticas exatas do período, sem incerteza amostral",
+    "a semana de incidente operacional da Royal Canin fica nos totais; as variantes sem_incidente e janela_normal estão nas chaves de ANA-013 (revisoes/orquestrador_decisao_semana_incidente.md)",
+    "corte de uma hora de jornada ativa sem fonte setorial ([●])"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:49",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:32",
+      "por": "red-team-analitico"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+recorte,grupo,n_operadores,n_linhas,m14,nota,diferenca_para_pr05,ic95_inferior,ic95_superior,unidade_do_ic,classe
+"mês, desde que a colmeia aparece",2026-07,,,,suprimido (menos de 5 operadores),,,,,
+"mês, desde que a colmeia aparece",2026-08,13.0,1252.0,73.88000032305742,"IC de 95%, operador e semana (vale o mais largo); menos de 20 operadores: IC com aviso",7.880000323057416,66.80396192071551,79.55961463769533,operador,passa
+"mês, desde que a colmeia aparece",2026-09,7.0,903.0,64.39349631535852,só descritivo (menos de 10 operadores): sem IC nem classe,-1.6065036846414813,,,,
+destino de colmeia,COLMEIA AMARELA,6.0,370.0,77.46039022433602,só descritivo (menos de 10 operadores): sem IC nem classe,11.460390224336024,,,,
+destino de colmeia,COLMEIA AZUL,10.0,251.0,80.59233449477351,"IC de 95%, operador e semana (vale o mais largo); menos de 20 operadores: IC com aviso",14.59233449477351,70.33624366831205,108.89128094725511,operador,passa
+destino de colmeia,COLMEIA BRONZE,9.0,396.0,67.01941747572815,só descritivo (menos de 10 operadores): sem IC nem classe,1.0194174757281473,,,,
+destino de colmeia,COLMEIA CHOCOLATE,5.0,175.0,64.2762544758915,só descritivo (menos de 10 operadores): sem IC nem classe,-1.7237455241084945,,,,
+destino de colmeia,COLMEIA OURO,8.0,393.0,65.96582851225716,só descritivo (menos de 10 operadores): sem IC nem classe,-0.034171487742838735,,,,
+destino de colmeia,COLMEIA ROXA,5.0,182.0,83.31384255554872,só descritivo (menos de 10 operadores): sem IC nem classe,17.313842555548717,,,,
+destino de colmeia,COLMEIA TURQUESA,11.0,602.0,67.55585709219312,"IC de 95%, operador e semana (vale o mais largo); menos de 20 operadores: IC com aviso",1.555857092193122,59.193813570123766,76.85029077003665,semana,inconclusivo
+destino de colmeia,COLMEIA VERMELHA,7.0,130.0,78.06195393169182,só descritivo (menos de 10 operadores): sem IC nem classe,12.061953931691818,,,,
+destino de colmeia,COLMEIAS NUMERADAS,11.0,440.0,68.1774900019044,"IC de 95%, operador e semana (vale o mais largo); menos de 20 operadores: IC com aviso",2.1774900019044026,61.885874235140705,74.96427164587752,operador,inconclusivo
+destino de colmeia,outras cores (menos de PAR07 operadores cada),5.0,167.0,66.07975142413258,só descritivo (menos de 10 operadores): sem IC nem classe,0.0797514241325814,,,,
+tercil de pedidos por onda,tercil 1 (ondas menores),13.0,1226.0,63.03398891559174,"IC de 95%, operador e semana (vale o mais largo); menos de 20 operadores: IC com aviso",-2.966011084408258,56.41467650852748,67.61296504962525,operador,inconclusivo
+tercil de pedidos por onda,tercil 2,12.0,1766.0,74.3548845491297,"IC de 95%, operador e semana (vale o mais largo); menos de 20 operadores: IC com aviso",8.354884549129693,68.92613554445363,81.74627481842255,operador,passa
+tercil de pedidos por onda,tercil 3 (ondas maiores),,,,suprimido (menos de 5 operadores),,,,,

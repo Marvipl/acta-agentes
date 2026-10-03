@@ -1,0 +1,74 @@
+{
+  "id": "INS-025",
+  "estado": "validado",
+  "afirmacao": "O WMS não mostra que a primeira hora pese mais nas segundas-feiras que de terça a sexta: a diferença (segunda menos terça a sexta) é {{v.dif}} da participação no volume do dia, com IC que cruza zero. O resultado é inconclusivo por desenho, porque o MDE de ANA-000 ({{v.mde}}) passa do efeito relevante ({{v.ef}}), e não pode ser lido como ausência de efeito. O ajuste de Holm no pior caso da família dá {{v.p_holm}}. A participação é uma medida relativa: nas segundas o dia todo é maior (a retomada do armazém é {{v.ret_arm}} contra {{v.tip_arm}} no dia típico), então a fila pode ser processada sem aumentar a fatia da primeira hora. Em pedidos a diferença tem sinal oposto ao das linhas. Não se pode afirmar nem negar, por esta medida, que a fila acumulada seja processada na chegada da equipe nas segundas.",
+  "pergunta_ref": "P11",
+  "criterio_ref": "CR4",
+  "valores": {
+    "dif": "ANA-008.dif_primeira_hora_segunda",
+    "mde": "ANA-008.mde_h01_de_ana000",
+    "ef": "ANA-008.efeito_relevante_h01",
+    "p_holm": "ANA-008.p_holm_f1b_pior_caso",
+    "ret_arm": "ANA-008.media_retomada_linhas_armazem",
+    "tip_arm": "ANA-008.media_linhas_dia_armazem",
+    "classe": "ANA-008.classe_h01",
+    "por_desenho": "ANA-008.por_desenho_h01",
+    "mesmo_sinal": "ANA-008.h01_variantes_mesmo_sinal",
+    "testadas": "ANA-008.h01_variantes_testadas"
+  },
+  "nivel": "associativo",
+  "robustez": [
+    {
+      "recorte": "metades do período (semanas 23 a 31 e 32 a 39)",
+      "analise": "ANA-008",
+      "resultado": "parcial",
+      "nota": "o mesmo sinal nas duas metades, ambas com IC cruzando zero (tabela h01_variantes)"
+    },
+    {
+      "recorte": "armazém em pedidos em vez de linhas",
+      "analise": "ANA-008",
+      "resultado": "parcial",
+      "nota": "sinal oposto ao das linhas e IC cruzando zero: não há consistência de sinal entre as duas medidas"
+    },
+    {
+      "recorte": "escopo Royal Canin (pedido-a-pedido e checkout)",
+      "analise": "ANA-008",
+      "resultado": "parcial",
+      "nota": "no pedido-a-pedido a diferença é negativa e maior, com IC por bloco de semana inteiro abaixo de zero; escopo pequeno e com o incidente (variante normal na mesma tabela)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: a primeira frase não afirma mais ausência de efeito e o texto explica a limitação da medida relativa. Só apresentação: o p ajustado aparece com uma faixa de cenários degenerada. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Não usar H01 como argumento para horário estendido; tratar a concentração matinal como curva de processamento (PQ06) e revisar com dados de chegada do pedido.",
+  "dono": "estatistico (ANA-008)",
+  "premissas": [
+    "primeira hora = primeira hora com PAR06 do volume do dia; dias pós-pausa fora do teste",
+    "a curva é de processamento (hora da confirmação), não de chegada do pedido (PQ06)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:25",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:21",
+      "por": "red-team-analitico"
+    }
+  ]
+}

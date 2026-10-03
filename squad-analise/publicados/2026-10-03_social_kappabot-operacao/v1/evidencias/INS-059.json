@@ -1,0 +1,98 @@
+{
+  "id": "INS-059",
+  "estado": "aprovado",
+  "afirmacao": "Para cobrir o dia p90 da Royal Canin (ALT3, base pós-colmeia) a vantagem do robô não aparece quando manual e robô são medidos pela mesma regra. Pela regra do excedente de horas ativas (ANA-003), o manual precisa de {{v.b_man_he}} em hora extra ({{v.b_ops_he}}) ou de {{v.b_man_temp}} contratadas de temporário ({{v.b_ops_temp}}); o robô na leitura colaborativa reduz o excedente para {{v.b_rob_he}} em hora extra e mantém {{v.b_rob_temp}} no temporário, uma diferença pequena. Na variante do plano o excedente é {{v.p_man_he}} no manual e {{v.p_rob_he}} com robô. Pela regra da curva de separadores inteiros por hora, o manual ({{v.a_man_he}} em hora extra, {{v.a_man_esc}} em escala adicional) e o robô ({{v.a_rob_he}} e {{v.a_rob_esc}}) cobrem o dia p90 com a escala do dia típico, porque a Royal Canin pede no máximo {{v.sep_tip}} por hora, no dia p90 e no dia típico: a regra inteira é grossa demais para discriminar e não mostra vantagem do robô. A carga adicional do dia p90 é {{v.carga_sem}} sem robô e {{v.carga_com}} com robô. Custos de hora extra e de temporário: [●] (E11), não calculados. A PR05 com robô tem confiança baixa e, no checkout, deixa o robô mais lento que o manual (E9).",
+  "pergunta_ref": "P19",
+  "criterio_ref": "CR8",
+  "valores": {
+    "carga_sem": "ANA-009.h02_carga_adicional_pessoas_hora_sem_robo_p90_pos_colmeia",
+    "carga_com": "ANA-009.h02_carga_adicional_pessoas_hora_com_robo_p90_pos_colmeia",
+    "b_man_he": "ANA-009.h02_regraB_manual_hora_extra_pessoas_hora_p90_pos_colmeia",
+    "b_ops_he": "ANA-009.h02_regraB_manual_operadores_hora_extra_p90_pos_colmeia",
+    "b_man_temp": "ANA-009.h02_regraB_manual_temporario_pessoas_hora_p90_pos_colmeia",
+    "b_ops_temp": "ANA-009.h02_regraB_manual_operadores_temporario_p90_pos_colmeia",
+    "b_rob_he": "ANA-009.h02_regraB_robo_hora_extra_pessoas_hora_p90_pos_colmeia",
+    "b_rob_temp": "ANA-009.h02_regraB_robo_temporario_pessoas_hora_p90_pos_colmeia",
+    "a_man_he": "ANA-009.h02_regraA_manual_hora_extra_pessoas_hora_p90_pos_colmeia",
+    "a_rob_he": "ANA-009.h02_regraA_robo_hora_extra_pessoas_hora_p90_pos_colmeia",
+    "a_man_esc": "ANA-009.h02_regraA_manual_escala_pessoas_hora_p90_pos_colmeia",
+    "a_rob_esc": "ANA-009.h02_regraA_robo_escala_pessoas_hora_p90_pos_colmeia",
+    "p_man_he": "ANA-009.h02_regraB_manual_hora_extra_pessoas_hora_p90",
+    "p_rob_he": "ANA-009.h02_regraB_robo_hora_extra_pessoas_hora_p90",
+    "sep_tip": "ANA-009.separadores_pico_tipico_com_robo_pos_colmeia"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "duas regras, cada uma igual para o manual e para o robô",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "pela regra do excedente de horas o robô poupa pouco e, pela curva inteira, ninguém precisa de pessoa adicional: nenhuma das duas dá vantagem grande ao robô"
+    },
+    {
+      "recorte": "variante do plano e base pós-colmeia",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "a mesma ordem entre manual e robô nas duas leituras (chaves h02_regraB_* com e sem sufixo _pos_colmeia)"
+    },
+    {
+      "recorte": "checkout do robô na taxa manual",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "com o checkout do robô na taxa manual a curva inteira também não pede pessoa adicional (tabela h02_arranjos_pessoas_hora, tratamento robo_checkout_manual)"
+    },
+    {
+      "recorte": "equipe contada em turnos inteiros",
+      "analise": "ANA-009",
+      "resultado": "parcial",
+      "nota": "com a equipe pequena do escopo, a curva inteira não discrimina: um separador por hora cobre os dois dias"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção atendida: os arranjos usam a mesma regra no manual e no robô, e a vantagem do robô no pico não aparece em nenhuma delas. Depende da PR05, declarada."
+  },
+  "impacto": {
+    "modelo": "IMP-CR8-P90-RC-POUPA-COL",
+    "modelos_relacionados": []
+  },
+  "acao": "Usar os arranjos de pessoas-hora como entrada qualitativa de CR8, sempre pela mesma regra no manual e no robô: a poupança do robô no dia p90 da Royal Canin na leitura colaborativa é pequena (IMP-CR8-P90-RC-POUPA-COL). Custos só quando a Social informar hora extra e temporário (E11).",
+  "dono": "Social (via Marcus) (custos); Vinicius Bastos, CTO (PR05, E9)",
+  "premissas": [
+    "M23 em duas leituras: a autônoma é a registrada no plano e é limite superior; a colaborativa é variante e é a coerente com o Kappabot colaborativo; as duas são apresentadas",
+    "hora extra até o limite da CLT e adicional mínimo constitucional, do parecer do especialista",
+    "PR05 com robô de confiança baixa; no checkout o robô pode ficar mais lento que o manual (E9)",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "Sobrevive. Nenhuma persona muda a leitura."
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:30:29",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:43",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:37",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:01",
+      "por": "Marcus"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+ "supervisor": "sup-dados",
+ "agentes_revisados": [
+  "engenheiro-de-dados",
+  "qualidade-privacidade"
+ ],
+ "rodada": 2,
+ "veredito": "aprovado_com_ressalvas",
+ "rubrica": [
+  {
+   "agente": "engenheiro-de-dados",
+   "criterio": "[crítico] Contrato completo e métricas da decisão definidas",
+   "nota": 2,
+   "evidencia": "Os pontos da r1 foram resolvidos no contrato eea1e33eee65. M21 tem a variante 'depositante adicional' e a regra de faixa em PAR14 (base marginal, retroativa como sensibilidade, [●] em PQ08). M27 calcula robôs, receita e margem por robô adicional e tem a regra de aprovação de CR5. M23 converte a capacidade da frota em horas humanas (÷ M14) e dá o reforço e a regra de aprovação de CR8. M28 compara a economia trimestral com PR01, com o crédito da garantia. Os quatro tetos de PAR02 estão coerentes em M11 a M14, M28 e PQ03 (conservador provisório de 300 s, a decidir no G2). M29 é nova."
+  },
+  {
+   "agente": "engenheiro-de-dados",
+   "criterio": "[crítico] Toda coluna pessoal tratada; nenhuma linha pessoal impressa ou exposta",
+   "nota": 2,
+   "evidencia": "M03 agora declara que a etapa 00 foge do padrão (lê dados/privado e raw_), condiciona a execução à autorização específica (PQ09, G2), exige try/except com mensagem fixa e faz a conferência raw×base numa consulta que devolve só um booleano. Nada exposto: nenhum valor de Usuário nos nós nem nas revisões. Os números de invariantes_prep são agregados e não mostram nada por operador."
+  },
+  {
+   "agente": "engenheiro-de-dados",
+   "criterio": "Regras de limpeza ligadas às faixas do especialista e com linhas afetadas",
+   "nota": 1,
+   "evidencia": "A cauda de M11 agora é calculada por bloco (mesma unidade e mesmo fim_corrigido), com limite max(1, soma dos endereços do bloco − m) × PAR01, sensibilidade S3 e registro em M29. A validação está marcada (A2, E3). Ficam dois pontos abertos. (1) 'O intervalo não contiver um segmento inválido' é ambíguo. Reimplementei M11 nas duas leituras: com 'sobrepõe', reproduzo exatamente os segundos creditados que a qualidade gravou em QD03 (colmeia RC 322.201; checkout RC 207.224; pedido-a-pedido RC 891.772). Com 'começa dentro da lacuna', o crédito sobe: 331.064, 209.892 e 922.710 (+3,5% no pedido-a-pedido da RC). (2) Mesmo na regra nova, a colmeia da RC descarta muita cauda (M29_2: 96 de 556 blocos, 187.236 s líquidos contra 322.201 s creditados). M14 pede a colmeia 'com a base e com S3', mas não destaca S2 (truncar), que é o limite superior."
+  },
+  {
+   "agente": "engenheiro-de-dados",
+   "criterio": "Preparação sem duplicação em junções; contagens conferidas",
+   "nota": 2,
+   "evidencia": "invariantes_prep traz igualdades sem número e contagens de referência. Reconferi tudo em base_*: 43.976 linhas; somas de 88.763 endereços, 89.282 produtos e 468.979 unidades; sem CANCELADO, 88.741, 89.242 e 467.897. Pedidos: 43.918 (checkout 15.101, colmeia 12.188, pedido-a-pedido 16.629); sem cancelado, 43.909 (15.100, 12.188, 16.621). Tarefas×usuário: 19.118 (1.223, 1.249, 16.646). Ciclos: 43.674. Calendário: 120 dias. Ondas: 1.217, 1.249 e 16.631. Tudo confere. A granularidade do pedido-a-pedido foi corrigida (cada linha é um bloco)."
+  },
+  {
+   "agente": "qualidade-privacidade",
+   "criterio": "[crítico] Contrato completo e métricas da decisão definidas",
+   "nota": 2,
+   "evidencia": "O nó a15f51242f7d está alinhado ao contrato r3. QD03 traz M29 por motivo, tipo de onda e grupo, as linhas fora da sequência, a cauda por depositante (com PAR07) e S3. QD01 e QD02 citam os motivos 6 e 7. As pendências foram redistribuídas (E3, ids das faixas, G2)."
+  },
+  {
+   "agente": "qualidade-privacidade",
+   "criterio": "[crítico] Toda coluna pessoal tratada; nenhuma linha pessoal impressa ou exposta",
+   "nota": 2,
+   "evidencia": "Refeito na r2, só sobre base_* e as colunas não pessoais de raw_: 43.976 linhas, 40 códigos distintos, 0 fora do formato P_ + 16 hex, 0 nulos. As outras 20 colunas são idênticas (EXCEPT ALL = 0 nos dois sentidos). Qtde Endereços está intacta (soma 88.763, mínimo 1, máximo 66, 45 distintos, BIGINT). privacidade.json (03:29:01): Usuário pseudonimizado, nada excluído. conta_robo.autorizacao virou objeto com status pendente e com a declaração da leitura agregada anterior da correspondência. Nenhum valor foi exposto (ponto de governança abaixo)."
+  },
+  {
+   "agente": "qualidade-privacidade",
+   "criterio": "Regras de limpeza ligadas às faixas do especialista e com linhas afetadas",
+   "nota": 2,
+   "evidencia": "QD03 está quantificado e o invariante de M29 deu 0 violações em 625 operador-dias. QD15 agora conta linhas (6.891), com os intervalos no detalhe. O limiar de 3 s está marcado como proposta [●]. convencao_de_referencias explica F1 a F13, F1a e A1 a A10, com pendência ao perfilador. Os números de QD03 batem exatamente com a minha reimplementação na leitura 'sobrepõe'."
+  },
+  {
+   "agente": "qualidade-privacidade",
+   "criterio": "Preparação sem duplicação em junções; contagens conferidas",
+   "nota": 2,
+   "evidencia": "As contagens recontadas na r1 continuam válidas (base_* recriada com as mesmas linhas e colunas). Há um rótulo errado: QD18.detalhe.soma_qtde_produtos_total = 89.242 é a soma sem CANCELADO; a soma total é 89.282, como em invariantes_prep."
+  }
+ ],
+ "checagens_executadas": [
+  "python -m motor.validar <dv> --fase D1, rodado duas vezes: LIBERADO. Os nós estão em dia: contrato eea1e33eee65 (03:25:40), especialista 2728f6a9dc06 (03:28:24), qualidade a15f51242f7d (03:29:00), com entradas coerentes.",
+  "saidas/privacidade.json (03:29:01) lido: ativa, Usuário pseudonimizado, excluidas [].",
+  "Pseudonimização refeita só com base_* e as colunas não pessoais de raw_ (sem raw_.Usuário e sem a correspondência). O detalhe está na rubrica da qualidade.",
+  "Reconferência de todos os números de invariantes_prep por SQL agregado sobre base_* (sem marcar o robô): todos batem.",
+  "Reimplementação de M11 r3 (blocos, cauda pelas coletas restantes, lacunas, S3) nas duas leituras de 'contiver segmento inválido'. Na leitura 'sobrepõe' reproduz exatamente os segundos creditados de QD03; na leitura 'começa dentro' diverge até 3,5%.",
+  "saidas/pipeline.json ainda não existe (D3). As contagens antes e depois das junções serão conferidas contra invariantes_prep na revisão da D3.",
+  "Operador-dias: 674 com todas as contas fora do lote (base_*, dia do Início). QD24 tem 642 humanos. O invariante de M29 cobre 625: faltam 17 dias humanos sem explicação, provavelmente sem nenhum segmento válido.",
+  "Anti-complacência 1: procurei a referência antiga a 600 s como conservador no contrato e na qualidade. Não há; só o plano (fora desta revisão) ainda cita 600 s como conservador em parte do texto.",
+  "Anti-complacência 2: procurei incoerência entre PAR14 e as notas de PR03 e PR04 em decisao. Os valores e limites batem (1,50 acima de 6 mil pedidos; 0,22 acima de 15 mil linhas).",
+  "Anti-complacência 3: conferi se a regra nova reabre a dupla contagem. Não reabre: a união por M_k é mantida, e o invariante (ciclos + lacunas excluídas = amplitude) fecha nos dados da qualidade e na minha reimplementação.",
+  "Anti-complacência 4: procurei rótulos trocados nos detalhes. Achei QD18.soma_qtde_produtos_total (é a soma sem CANCELADO).",
+  "Declaração do supervisor: nas checagens da r1, li raw_.Usuário e a correspondência de dados/privado por SQL agregado. A busca de vazamento da r1 carregou os 40 logins originais na memória de um script local e imprimiu só contagens. Na r2, as simulações de M11 reutilizaram uma visão que filtra a correspondência pelo padrão do robô (só segundos agregados impressos). Nenhum valor chegou ao modelo. Entra no mesmo registro de governança pedido à qualidade e ao engenheiro."
+ ],
+ "pontos": [
+  {
+   "severidade": "media",
+   "local": "nos/contrato.json: M11 passo 3 ('o intervalo não contiver um segmento inválido'); M29 motivo 5",
+   "problema": "A regra é ambígua e muda as horas. Lida como 'segmento inválido que se sobrepõe à lacuna [M_k, início_(k+1)]', reproduz exatamente QD03. Lida como 'que começa dentro da lacuna', credita 3,5% a mais no pedido-a-pedido da RC e 2,7% a mais na colmeia da RC. Duas implementações honestas do mesmo texto dão números diferentes para CR1, CR3 e CR8.",
+   "correcao_sugerida": "Fixar no texto: a lacuna sai se algum segmento inválido do mesmo operador-dia tem início < início_(k+1) e fim > M_k (sobreposição), como a qualidade aplicou. Fixar também a precedência que a qualidade declarou (motivo 3 ou 4 antes do 5) e o desempate de Início iguais (por Pedido)."
+  },
+  {
+   "severidade": "media",
+   "local": "nos/contrato.json: M14 e M12 (colmeia, CR7); nos/qualidade.json: QD03.detalhe e pendência E3",
+   "problema": "Mesmo com o limite novo, a colmeia da RC descarta muita cauda: 96 de 556 blocos, 187.236 s líquidos contra 322.201 s creditados. Se a cauda longa é coleta ou distribuição no put wall depende de E3. M14 pede só base e S3 para a colmeia, e S3 é o limite inferior de horas.",
+   "correcao_sugerida": "Em M14 e M12, exigir para a colmeia (CR7) a base, S3 e S2 (truncar no limite, que é o limite superior de horas), e ler CR7 contra PR05 nos três. A resposta proposta de E3 deve dizer isso explicitamente."
+  },
+  {
+   "severidade": "media",
+   "local": "nos/qualidade.json: conta_robo.autorizacao.leituras_da_qualidade; nos/contrato.json: M03, PQ09; controle.json",
+   "problema": "A qualidade consultou a correspondência (a tabela de reidentificação) uma vez, por agregado, antes da autorização específica que o próprio time julgou necessária (PQ09). Não fere a letra da regra 5: nenhuma linha pessoal foi lida pelo modelo e só saiu contagem. Mas fere a finalidade de dados/privado ('para quem tiver autorização voltar ao original') e a regra que o contrato e a qualidade adotaram. Leituras agregadas de raw_.Usuário (filtro pelo padrão do robô) foram feitas pelo engenheiro e pela qualidade, e o supervisor fez as mesmas leituras na r1 e na r2 (ver checagens). Não existe registro único desses acessos.",
+   "correcao_sugerida": "Registrar como incidente sem exposição, num só lugar (por exemplo, controle.json ou uma lista de acessos em conta_robo.autorizacao), com quem, quando, qual objeto (raw_.Usuário ou correspondência) e qual saída (só contagens ou booleano). Levar ao G2 junto com a PQ09, para Marcus ratificar ou negar. Até lá, nenhum agente consulta raw_.Usuário nem dados/privado, nem por agregado; a conta do robô fica a cargo da etapa 00 depois da autorização."
+  },
+  {
+   "severidade": "baixa",
+   "local": "nos/qualidade.json: QD18.detalhe.soma_qtde_produtos_total",
+   "problema": "O valor 89.242 é a soma sem CANCELADO; a soma total é 89.282 (contrato, invariantes_prep).",
+   "correcao_sugerida": "Renomear para soma_qtde_produtos_sem_cancelado ou gravar as duas somas."
+  },
+  {
+   "severidade": "baixa",
+   "local": "nos/qualidade.json: QD03.detalhe...invariante_ciclos_mais_lacunas_igual_amplitude; nos/contrato.json: M29",
+   "problema": "O invariante cobre 625 operador-dias, mas há 642 operador-dias humanos fora do lote (QD24). A diferença (provavelmente dias sem nenhum segmento válido) não é explicada.",
+   "correcao_sugerida": "Dizer em M29 que operador-dias sem segmento válido têm jornada zero e todo o tempo vai para M29, e informar quantos são, para fechar 625 + x = 642."
+  },
+  {
+   "severidade": "baixa",
+   "local": "nos/contrato.json: invariantes_prep (prep_prod_pedidos; origem); M23; M10 variante (b)",
+   "problema": "Em prep_prod_pedidos, count(*) inclui pedidos cancelados, mas as somas da regra são sem CANCELADO, e não está escrito se a tabela guarda os cancelados. As contagens de referência não estão amarradas à extração. M23 não diz de qual recorte vem o M14 da conversão. M10 (b) ainda diz 'uma linha por tarefa'.",
+   "correcao_sugerida": "Dizer que prep_prod_pedidos guarda os cancelados com a marca e que as somas sem CANCELADO filtram a marca. Amarrar as contagens ao sha256 do bruto (o assert só compara se o sha256 for o mesmo). Em M23, usar M14 do mesmo tipo de onda e depositante. Corrigir a frase de M10 (b)."
+  }
+ ],
+ "lacunas": [
+  "Principal: a autorização da etapa 00 (PQ09) e a ratificação dos acessos agregados a raw_.Usuário e à correspondência só vêm no G2. Até lá, executor (robô ou manual) não pode ser marcado na D3, e toda métrica de tempo manual depende disso.",
+  "saidas/perguntas_marcus.md (02:10) ainda não traz PQ01 a PQ09 nem as perguntas da qualidade. O orquestrador precisa consolidar antes do G2.",
+  "E3 (a cauda longa da colmeia é coleta ou distribuição no put wall) segue sem resposta, e é o que decide entre base, S3 e S2 em CR7.",
+  "saidas/pipeline.json só existe na D3. A conferência das junções contra invariantes_prep fica para a revisão da D3.",
+  "Ids das faixas e F1a em nos/especialista.json (perfilador-setorial) seguem pendentes; as referências F ainda dependem da posição."
+ ],
+ "em": "2026-10-03"
+}

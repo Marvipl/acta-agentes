@@ -1,0 +1,489 @@
+{
+  "id": "ANA-007",
+  "valores": {
+    "linhas_hora_colmeia_rc": {
+      "valor": 70.27911148630824,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (ciclo completo, teto de 900 s, base)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 65.41283949285214,
+        "superior": 74.70679543488161,
+        "nivel": 0.95,
+        "unidade_ic": "operador",
+        "ic_operador": [
+          65.41283949285214,
+          74.70679543488161
+        ],
+        "ic_semana": [
+          66.64479959597988,
+          73.79732535910135
+        ]
+      }
+    },
+    "linhas_hora_colmeia_rc_s2": {
+      "valor": 47.208045631942355,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (ciclo completo, S2, teto de 900 s)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 43.32641413188193,
+        "superior": 52.44696700697821,
+        "nivel": 0.95,
+        "unidade_ic": "operador",
+        "ic_operador": [
+          43.32641413188193,
+          52.44696700697821
+        ],
+        "ic_semana": [
+          45.22841210128955,
+          49.6546115540793
+        ]
+      }
+    },
+    "linhas_hora_colmeia_rc_t1800": {
+      "valor": 59.17942257986112,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (ciclo completo, teto de 1800 s, base)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 54.982415872884914,
+        "superior": 62.946823119612866,
+        "nivel": 0.95,
+        "unidade_ic": "operador",
+        "ic_operador": [
+          54.982415872884914,
+          62.946823119612866
+        ],
+        "ic_semana": [
+          56.58759787781926,
+          61.629230496561654
+        ]
+      }
+    },
+    "linhas_hora_colmeia_rc_s3": {
+      "valor": 87.56956180414025,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (ciclo completo, S3, teto de 900 s; só reportado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 82.94107853199041,
+        "superior": 102.81950213663094,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "linhas_hora_colmeia_rc_t300": {
+      "valor": 88.86028560552846,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (ciclo completo, teto de 300 s, base; só reportado)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 81.17421572955693,
+        "superior": 94.26123202393465,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "linhas_hora_colmeia_rc_s1": {
+      "valor": 59.612063518807126,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (ciclo completo, S1, teto de 900 s)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 56.2896680959559,
+        "superior": 63.662454798742424,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "linhas_hora_colmeia_rc_t600": {
+      "valor": 77.04635234313595,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (ciclo completo, teto de 600 s, base)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 71.31894691780212,
+        "superior": 80.18154479308568,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "referencia_pr05_linhas_hora": {
+      "valor": 66.0,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (PR05, premissa do deck)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "efeito_relevante_cr7": {
+      "valor": 6.6000000000000005,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (10% de PR05)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_cr7_de_ana000": {
+      "valor": 6.475578242095109,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (MDE de ANA-000)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "p_unilateral_cr7": {
+      "valor": 0.0332416895776056,
+      "unidade": "p unilateral",
+      "descricao": "p unilateral (H0: M14 <= PR05), bootstrap",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.027682509097353394,
+        "superior": 0.03901303987476483,
+        "nivel": 0.95,
+        "tipo_ic": "Clopper-Pearson sobre o número de réplicas"
+      }
+    },
+    "p_holm_f1a_pior_caso": {
+      "valor": 0.09972506873281681,
+      "unidade": "p ajustado",
+      "descricao": "p ajustado (pior caso de Holm na família F1a)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.08304752729206018,
+        "superior": 0.11703911962429449,
+        "nivel": 0.95,
+        "tipo_ic": "Clopper-Pearson sobre o número de réplicas"
+      }
+    },
+    "classe_cr7": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "classe_cr7_primaria": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "classe_cr7_s2": {
+      "valor": -1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "classe_cr7_t1800": {
+      "valor": -1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "classe_cr7_sem_regra_de_inversao": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "inversao_de_sinal_entre_segmentos": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "por_desenho_cr7": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "colmeia_candidata_alt5": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "vies_declarado_favorece_exclusao": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_colmeia": {
+      "valor": 13.0,
+      "unidade": "operadores",
+      "descricao": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_colmeia": {
+      "valor": 11.0,
+      "unidade": "semanas ISO",
+      "descricao": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_linhas_colmeia_rc": {
+      "valor": 3106.0,
+      "unidade": "linhas operacionais",
+      "descricao": "linhas operacionais (linhas da tabela) no recorte de M14",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_coletas_colmeia_rc": {
+      "valor": 6290.0,
+      "unidade": "coletas",
+      "descricao": "coletas (Qtde Endereços)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_ciclo_colmeia_rc": {
+      "valor": 89.50027777777778,
+      "unidade": "horas de ciclo completo",
+      "descricao": "horas de ciclo completo (teto de 900 s, base)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_confere_ana000_cr7": {
+      "valor": 1.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "unid_hora_colmeia_rc": {
+      "valor": 172.53577735637072,
+      "unidade": "unidades por hora",
+      "descricao": "unidades por hora (ciclo completo, teto de 900 s, base)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 159.86992919487545,
+        "superior": 182.95248107139653,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "dif_rel_colmeia_pap": {
+      "valor": 0.9350321161348958,
+      "unidade": "%",
+      "descricao": "diferença relativa da colmeia contra pap (M14 bruto, teto de 900 s; descritivo)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.756665836082197,
+        "superior": 1.2101987399859961,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "dif_rel_colmeia_checkout": {
+      "valor": 0.14212925831598122,
+      "unidade": "%",
+      "descricao": "diferença relativa da colmeia contra checkout (M14 bruto, teto de 900 s; descritivo)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.017167143100950202,
+        "superior": 0.2939173037710028,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "dif_rel_colmeia_pap_t300": {
+      "valor": 0.7744460076207167,
+      "unidade": "%",
+      "descricao": "diferença relativa da colmeia contra pap (M14 bruto, teto de 300 s; descritivo)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.6330385747664261,
+        "superior": 1.0124888515587567,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "dif_rel_colmeia_checkout_t300": {
+      "valor": -0.10112516475981126,
+      "unidade": "%",
+      "descricao": "diferença relativa da colmeia contra checkout (M14 bruto, teto de 300 s; descritivo)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": -0.15022788086446087,
+        "superior": -0.0250195510425898,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "linhas_hora_pap_rc": {
+      "valor": 36.31935144657254,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (ciclo completo, teto de 900 s, base) no pap, M14 bruto",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 31.771255081743984,
+        "superior": 39.27847243618827,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "linhas_hora_checkout_rc": {
+      "valor": 61.53341311817164,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (ciclo completo, teto de 900 s, base) no checkout, M14 bruto",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 52.807279730126574,
+        "superior": 71.05746275647559,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "n_linhas_colmeia_rc_semana_incidente": {
+      "valor": 0.0,
+      "unidade": "linhas da colmeia da Royal Canin de 21 a 25/09",
+      "descricao": "linhas da colmeia da Royal Canin de 21 a 25/09 (incidente operacional da Royal Canin, confirmado por Marcus)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "linhas_hora_colmeia_rc_normal": {
+      "valor": 70.27911148630824,
+      "unidade": "coletas por hora",
+      "descricao": "coletas por hora (ciclo completo, teto de 900 s, base, sem 21 a 25/09)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 65.41283949285214,
+        "superior": 74.70679543488161,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "classe_cr7_primaria_normal": {
+      "valor": 0.0,
+      "unidade": "código",
+      "descricao": "código (ver docstring)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_linhas_pap_rc_semana_incidente": {
+      "valor": 4.0,
+      "unidade": "linhas do pedido-a-pedido da Royal Canin de 21 a 25/09",
+      "descricao": "linhas do pedido-a-pedido da Royal Canin de 21 a 25/09 (incidente operacional da Royal Canin, confirmado por Marcus)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "dif_rel_colmeia_pap_normal": {
+      "valor": 0.9337390959511158,
+      "unidade": "%",
+      "descricao": "diferença relativa da colmeia contra pap (M14 bruto, teto de 900 s, sem 21 a 25/09; descritivo)",
+      "incerteza": {
+        "tipo": "bootstrap",
+        "inferior": 0.7578418103655191,
+        "superior": 1.2017852414370294,
+        "nivel": 0.95,
+        "unidade_ic": "operador"
+      }
+    },
+    "fracao_sobreposicao_colmeia": {
+      "valor": 0.9710238248551192,
+      "unidade": "%",
+      "descricao": "fração das linhas da colmeia com Fim repetido na tarefa (linhas sobrepostas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_sobreposicao_entre_tarefas_colmeia": {
+      "valor": 0.0,
+      "unidade": "%",
+      "descricao": "fração das linhas da colmeia que começam antes do fim de outra tarefa do operador",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_um_endereco_colmeia": {
+      "valor": 0.31004507405022536,
+      "unidade": "%",
+      "descricao": "fração das linhas da colmeia com um endereço",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_um_endereco_acima_instante_colmeia": {
+      "valor": 0.9304257528556594,
+      "unidade": "%",
+      "descricao": "fração das linhas de um endereço da colmeia com tempo acima do instante de confirmação",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_um_endereco_acima_instante_pap": {
+      "valor": 0.5563872255489022,
+      "unidade": "%",
+      "descricao": "fração das linhas de um endereço do pedido-a-pedido com tempo acima do instante de confirmação (referência)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_um_endereco_acima_par01_colmeia": {
+      "valor": 0.6157840083073728,
+      "unidade": "%",
+      "descricao": "fração das linhas de um endereço da colmeia com tempo acima de PAR01",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_destinos_colmeia_publicaveis": {
+      "valor": 10.0,
+      "unidade": "destinos de colmeia",
+      "descricao": "destinos de colmeia (grupos com PAR07 operadores ou mais, mais 'outras')",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_cauda_descartada_colmeia": {
+      "valor": 0.19519446888539532,
+      "unidade": "%",
+      "descricao": "fração (cauda acima do limite ÷ (creditado + descartado líquido), base, teto de 900 s)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_cauda_descartada_colmeia_s3": {
+      "valor": 0.25316656789226205,
+      "unidade": "%",
+      "descricao": "fração (idem com o limite S3 da cauda)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_cadencia_descartada_colmeia": {
+      "valor": 0.08008106518992356,
+      "unidade": "%",
+      "descricao": "fração (cadência acima de PAR01 ÷ (creditado + descartado líquido), base, teto de 900 s)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "fracao_lacuna_acima_teto_colmeia": {
+      "valor": 0.32253020137026855,
+      "unidade": "%",
+      "descricao": "fração (lacuna acima do teto entre tarefas ÷ (creditado + descartado líquido), base, teto de 900 s)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "horas_cauda_descartada_colmeia": {
+      "valor": 52.01,
+      "unidade": "horas líquidas de cauda acima do limite",
+      "descricao": "horas líquidas de cauda acima do limite (base)",
+      "incerteza": null,
+      "contagem": true
+    }
+  },
+  "tabelas": {
+    "m14_colmeia_variantes": "m14_colmeia_variantes.csv",
+    "m14_colmeia_robustez_segmentos": "m14_colmeia_robustez_segmentos.csv",
+    "colmeia_contra_pap_e_checkout": "colmeia_contra_pap_e_checkout.csv",
+    "colmeia_destinos_h11": "colmeia_destinos_h11.csv",
+    "colmeia_descarte_m29": "colmeia_descarte_m29.csv"
+  },
+  "figuras": [
+    "colmeia_m14_variantes.png"
+  ],
+  "notas": "H-P17 (CR7, F1a), colmeia da Royal Canin, executor manual, sem palete. Variante primária: teto de 900 s, cauda de M11 pela regra base, desde a primeira semana com colmeia; unidade primária = operador (de 10 a 19 operadores: IC com aviso, n_operadores_colmeia) com bloco de semana como comparação; vale o mais largo. Regra de passa: IC inteiro em PR05 ou acima na variante primária, em S2 e no teto de 1.800 s; falha se a primária fica inteira abaixo; senão inconclusivo (colmeia candidata a teste, ALT5). S1, S3 e os tetos de 300 e 600 s são só reportados (S3 e 300 s são o limite favorável à exclusão). Códigos: classe_* = 1 passa, 0 inconclusivo, -1 falha. Poder (ANA-000): MDE e EP lidos de saidas/analises/ANA-000; o EP daqui confere (ep_confere_ana000_cr7). p unilateral e p de Holm no pior caso da família F1a (o Holm exato exige os p de ANA-004 e ANA-010). Viés declarado a favor da exclusão (M05 conta a mesma visita várias vezes; a distribuição no put wall não está no WMS: E3): uma falha é robusta e uma aprovação é fraca; enquanto E3 não for confirmada pela operação da Social, mesmo um 'passa' é declarado otimista para o manual e a exclusão da colmeia é apresentada como provisória (vies_declarado_favorece_exclusao = 1). H11 (contagens completas, PAR07 operadores): fração de linhas com Fim repetido na tarefa (sobreposição do M09), linhas de um endereço com tempo acima do instante de confirmação (a colmeia contra o pedido-a-pedido) e tarefas e operadores por destino de colmeia (grupos abaixo de PAR07 operadores juntos em 'outras cores'). Robustez: mês (julho suprimido por PAR07), destino de colmeia e tercis de pedidos por onda, com a regra de inversão de sinal (comum.robustez_segmentos). Tempo descartado (M29) da colmeia por motivo em colmeia_descarte_m29: parcela = horas líquidas do motivo ÷ (creditado + descartado líquido dos motivos 1 a 5); lacunas acima do teto entre tarefas incluem pausas. Comparação descritiva com o pedido-a-pedido e o checkout: M14 bruto (sem padronizar por faixa), diferença relativa por bootstrap de operador e semana; não é teste. Dependência fora do hash do script: analises/comum.py. Semana do incidente (decisão do orquestrador, revisoes/orquestrador_decisao_semana_incidente.md): a Royal Canin cai para quase zero no WMS de 21 a 25/09 por problemas na operação (confirmado por Marcus; não é falha de extração). A colmeia não tem registros nessas datas e o pedido-a-pedido tem só umas poucas linhas (n_linhas_pap_rc_semana_incidente). A variante do plano (chaves sem sufixo) é o cenário de estresse e segue como primária; as chaves *_normal excluem esses dias (operação normal, base da oferta) e, para a colmeia, coincidem com a do plano.",
+  "em": "2026-10-03T21:21:06",
+  "segundos": 1.36
+}

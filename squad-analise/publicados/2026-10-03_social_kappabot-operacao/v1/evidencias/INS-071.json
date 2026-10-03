@@ -1,0 +1,120 @@
+{
+  "id": "INS-071",
+  "estado": "validado",
+  "afirmacao": "No checkout e na colmeia, nas semanas pares, a Royal Canin roda menos coletas por hora que o conjunto dos outros depositantes, com o mix de tipo de onda e faixa igualado: diferença padronizada de {{v.dif}} (Royal Canin em {{v.rc}}, outros em {{v.outros}}; p unilateral ajustado por Holm na F2 de {{v.padj}}, IC inteiro abaixo de zero). Mas a pista PT-D4 de ANA-012 não se confirma pelo critério de inversão fixado depois dos sinais (decisão registrada em revisoes/orquestrador_decisao_inversao_ANA-016.md), porque contra um depositante a Royal Canin roda {{v.max}} a mais, com IC por operador inteiro do lado oposto. O plano não fixava o critério por depositante. Isso mostra heterogeneidade do grupo de comparação, não necessariamente inversão do efeito agregado: tirando um depositante por vez do grupo de comparação, o IC por operador continua fora do zero em {{v.loo_fora}} do total de {{v.loo_n}} (leave-one-out registrado em ANA-016). O sinal resiste sem o maior depositante do grupo de comparação ({{v.sem_maior}}) e entre os operadores que separam para os dois grupos ({{v.mesmos}}), mas a magnitude cai nesses recortes. A lentidão da Royal Canin no checkout e na colmeia vale contra a maioria dos depositantes, não contra todos: fica como hipótese exploratória, sem número no memorando. Com poucos depositantes comparados, uma inversão isolada pode ser acaso, e isso não está resolvido. O IC do agregado sai com aviso, porque há poucos operadores nesses tipos de onda. O efeito mínimo detectável é {{v.mde}}, acima do efeito relevante de {{v.er}}. Associativo. A pista não altera a regra de CR7 de ANA-007.",
+  "pergunta_ref": "P9",
+  "criterio_ref": "CR7",
+  "valores": {
+    "dif": "ANA-016.pt_d4_dif_m14_pad",
+    "rc": "ANA-016.pt_d4_m14_pad_rc",
+    "outros": "ANA-016.pt_d4_m14_pad_outros",
+    "padj": "ANA-016.pt_d4_p_ajustado_holm",
+    "mde": "ANA-016.pt_d4_mde",
+    "er": "ANA-016.pt_d4_efeito_relevante",
+    "max": "ANA-016.pt_d4_depositante_maximo",
+    "sem_maior": "ANA-016.pt_d4_sem_maior_depositante",
+    "mesmos": "ANA-016.pt_d4_mesmos_operadores",
+    "loo_n": "ANA-016.n_retiradas_pt_d4_loo",
+    "loo_fora": "ANA-016.n_retiradas_pt_d4_loo_ic_fora_do_zero"
+  },
+  "nivel": "associativo",
+  "robustez": [
+    {
+      "recorte": "teto conservador do G2",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "mesmo sinal no agregado"
+    },
+    {
+      "recorte": "checkout e colmeia separados",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "mesmo sinal nos dois tipos de onda"
+    },
+    {
+      "recorte": "S3 da cauda",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "mesmo sinal no agregado"
+    },
+    {
+      "recorte": "deixar um operador de fora por vez",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "os extremos da retirada ficam do mesmo lado do zero"
+    },
+    {
+      "recorte": "sem o maior depositante do grupo de comparação",
+      "analise": "ANA-016",
+      "resultado": "parcial",
+      "nota": "o sinal resiste, mas a magnitude cai (chave pt_d4_sem_maior_depositante)"
+    },
+    {
+      "recorte": "entre os mesmos operadores (separam para os dois grupos)",
+      "analise": "ANA-016",
+      "resultado": "parcial",
+      "nota": "o sinal resiste, mas a magnitude cai (chave pt_d4_mesmos_operadores); descritivo"
+    },
+    {
+      "recorte": "Royal Canin contra cada depositante com operadores suficientes",
+      "analise": "ANA-016",
+      "resultado": "falha",
+      "nota": "critério fixado depois dos sinais: um depositante com sinal oposto e IC por operador inteiro do lado oposto (chave pt_d4_depositante_maximo e tabela robustez_pistas)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "O texto diz 'não se confirma pela regra do plano', mas o plano não fixava o critério por depositante: ele foi fixado depois de ver os sinais (revisoes/orquestrador_decisao_inversao_ANA-016.md). O que aparece é heterogeneidade do grupo de comparação, não inversão do efeito agregado: retirando qualquer depositante do grupo B, um por vez, o IC continua abaixo de zero (consulta só de leitura em revisoes/red-team-analitico_parteB_r2.json). Manter fora do memorando é conservador e aceitável; corrigir a frase e citar os dois critérios."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Não deve ir ao memorando como achado confirmado: a pista não se confirma pelo critério de inversão adotado e só aparece como confirmada na leitura leave-one-out, a decidir por Marcus no G3. Não levar PT-D4 ao memorando como número. Ao ler a colmeia em CR7, lembrar que a produtividade da Royal Canin pode refletir produto, layout ou o depositante de comparação; a diferença não prova processo.",
+  "dono": "estatistico (ANA-016)",
+  "premissas": [
+    "confirmação nas semanas ISO pares, com limiares, pesos e cortes de ANA-012 lidos do arquivo registrado, sem recálculo; Holm com seis testes na F2 (PT-H04, PT-H09, PT-H10, PT-D1, PT-D3, PT-D4)",
+    "o MDE de ANA-000 passa do efeito relevante (10% do valor de referência): a magnitude pode estar exagerada (poder baixo, erro tipo M) e não deve ser citada como precisa",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador do G2 como robustez",
+    "nenhuma semana par foi marcada como incidente da Royal Canin, por isso não há filtro de incidente na confirmação",
+    "poucos operadores no checkout e na colmeia (de dez a dezenove): IC com aviso, comparado ao de bloco de semana e de dia; vale o mais largo"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:29:04",
+      "por": "estatistico"
+    },
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T18:24:35",
+      "por": "estatistico",
+      "nota": "revisado após as correções do red team (parte B) e a robustez por depositante"
+    },
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T18:47:36",
+      "por": "estatistico",
+      "nota": "ajuste de texto do critério de inversão (red team r2, parte B)"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:48",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T19:07:43",
+      "por": "estatistico",
+      "nota": "condições do sup-metodologia D3: três leituras do critério de inversão e leave-one-out registrado"
+    }
+  ]
+}

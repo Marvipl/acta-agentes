@@ -1,0 +1,89 @@
+{
+  "id": "INS-060",
+  "estado": "validado",
+  "afirmacao": "Na última semana completa da carga, os pedidos diários da Royal Canin variaram {{v.var_rc}} contra a média das quatro semanas anteriores, nos três tipos de onda e nas duas contagens de linha, enquanto os demais depositantes variaram {{v.var_outros}}. Marcus confirmou que a causa é um incidente operacional da Royal Canin, não lacuna de extração; a natureza do incidente é [●]. A base da oferta é a operação normal, as quatro semanas até o incidente: o mês 1 projeta {{v.proj_normal}} de linhas tarifáveis do pedido-a-pedido. A janela do plano, que inclui o incidente, vira cenário de estresse e projeta {{v.proj_estresse}}; se o ritmo do incidente persistisse, seriam {{v.proj_persiste}}. Os intervalos de previsão são o mínimo e o máximo dos erros de poucas origens, com nível nominal de {{v.cob_normal}} na operação normal e {{v.cob_estresse}} no estresse (nível muito abaixo do de um intervalo de confiança usual, e a cobertura real pode ser menor, porque os horizontes das origens se sobrepõem).",
+  "pergunta_ref": "P4",
+  "criterio_ref": "CR2",
+  "valores": {
+    "var_rc": "ANA-014.variacao_pedidos_dia_rc_semana39_vs_35a38",
+    "var_outros": "ANA-014.variacao_pedidos_dia_outros_semana39_vs_35a38",
+    "proj_normal": "ANA-014.proj_mes1_linhas_tarif_pap_rc_normal",
+    "proj_estresse": "ANA-014.proj_mes1_linhas_tarif_pap_rc_estresse",
+    "proj_persiste": "ANA-014.proj_mes1_se_semana39_persistir_linhas_tarif_pap_rc",
+    "cob_normal": "ANA-014.cobertura_nominal_intervalo_normal",
+    "cob_estresse": "ANA-014.cobertura_nominal_intervalo"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "por tipo de onda (pedido-a-pedido, checkout, colmeia)",
+      "analise": "ANA-014",
+      "resultado": "passa",
+      "nota": "os três tipos caem a quase zero (chave tipos_de_onda_rc_com_queda_na_semana39 e tabela queda_semana39)"
+    },
+    {
+      "recorte": "por unidade de volume (pedidos, linhas tarifáveis M06, linhas operacionais M05)",
+      "analise": "ANA-014",
+      "resultado": "passa",
+      "nota": "a mesma queda nas três unidades (tabela queda_semana39)"
+    },
+    {
+      "recorte": "demais depositantes como controle de lacuna geral de extração",
+      "analise": "ANA-014",
+      "resultado": "passa",
+      "nota": "os demais depositantes variam pouco no mesmo período (chave variacao_pedidos_dia_outros_semana39_vs_35a38); a queda é específica da Royal Canin, coerente com o incidente confirmado por Marcus"
+    },
+    {
+      "recorte": "por dia pleno da semana",
+      "analise": "ANA-014",
+      "resultado": "passa",
+      "nota": "todos os dias plenos da semana têm poucos pedidos da Royal Canin (chave dias_da_semana39_com_pedidos_rc_abaixo_de_10), não é um dia isolado"
+    },
+    {
+      "recorte": "base da projeção: operação normal contra estresse",
+      "analise": "ANA-014",
+      "resultado": "parcial",
+      "nota": "o nível do mês 1 muda muito entre a base normal e o estresse (chaves proj_mes1_*_normal e proj_mes1_*_estresse); a leitura do incidente é robusta, o volume que vale para CR2 depende da base escolhida por Marcus no G3"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Apresentar CR2 e a garantia em duas leituras: operação normal (base da oferta, quatro semanas até o incidente) e estresse (janela do plano, com o incidente). Perguntar à Social o que parou (cliente, estoque, sistema ou operação), a duração e a frequência esperada de incidentes como esse, e se um incidente assim também pararia o robô; só com essa resposta avaliar se a dependência da operação manual a incidentes serve de argumento de venda.",
+  "dono": "Marcus (pergunta à operação da Social; troca de base no G3)",
+  "premissas": [
+    "PR01",
+    "PR02",
+    "PR14",
+    "PAR08",
+    "PAR10",
+    "incidente operacional da Royal Canin confirmado por Marcus em 2026-10-03 (revisoes/orquestrador_decisao_semana_incidente.md)",
+    "base normal = quatro semanas até 18/09 (decisão do orquestrador, não do plano)",
+    "duração e repetição do incidente: [●]"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T16:49:39",
+      "por": "cientista-de-dados"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:44",
+      "por": "red-team-analitico"
+    }
+  ]
+}

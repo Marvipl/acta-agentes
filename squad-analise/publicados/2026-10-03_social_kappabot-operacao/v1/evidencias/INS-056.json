@@ -1,0 +1,107 @@
+{
+  "id": "INS-056",
+  "estado": "aprovado",
+  "afirmacao": "CR8 no dia p90 da Royal Canin (ALT3) depende de como se lê M23, e a leitura é de Marcus no G3. Na base pós-colmeia o excedente é {{v.exc_h}} de jornada ativa sobre o dia típico, ou {{v.exc_fte}}. A leitura registrada no plano é a autônoma (a fórmula do contrato: o robô tira todo o trabalho humano das linhas absorvidas): por ela a frota absorve {{v.abs}}, o reforço é {{v.reforco_a}} e CR8 passa no dia p90, mas é o limite superior da absorção. A leitura colaborativa é a variante, a que o H02 usa (o trabalho humano das linhas absorvidas continua, mais rápido pela PR05, {{v.robo}}): por ela o robô poupa só {{v.poup}}; as horas residuais ficam em {{v.resid_c}}, ou {{v.resid_fte}}, e o reforço é {{v.reforco_c}} além da equipe com robô; pela regra de teto inteiro de M23, CR8 não passa no dia p90 nessa variante, embora o residual seja só uma fração de FTE. O reforço só seria zero com PR05 de {{v.pr05_zero}}. Na leitura do período inteiro (chaves sem sufixo, regime pré-colmeia incluído) o excedente é {{v.exc_p}}, a leitura colaborativa poupa {{v.poup_p}} e o reforço é {{v.reforco_cp}} (leitura autônoma: {{v.reforco_ap}}). O excedente de horas (jornada ativa) e as horas absorvidas (M14) vêm de recortes diferentes, e o reforço inteiro de M23 é regra, não mensagem: o que importa é a fração de FTE.",
+  "pergunta_ref": "P19",
+  "criterio_ref": "CR8",
+  "valores": {
+    "exc_h": "ANA-009.excedente_horas_p90_alt3_pos_colmeia",
+    "abs": "ANA-009.horas_absorvidas_p90_pos_colmeia",
+    "exc_fte": "ANA-009.excedente_fte_p90_alt3_pos_colmeia",
+    "reforco_a": "ANA-009.reforco_p90_cr8_pos_colmeia",
+    "robo": "ANA-009.horas_com_robo_nas_linhas_absorvidas_p90_pos_colmeia",
+    "poup": "ANA-009.horas_poupadas_colab_pos_colmeia",
+    "resid_c": "ANA-009.horas_residuais_colab_pos_colmeia",
+    "resid_fte": "ANA-009.horas_residuais_colab_em_fte_pos_colmeia",
+    "reforco_c": "ANA-009.reforco_p90_cr8_colab_pos_colmeia",
+    "pr05_zero": "ANA-009.pr05_para_reforco_zero_pos_colmeia",
+    "exc_p": "ANA-009.excedente_horas_p90_alt3",
+    "poup_p": "ANA-009.horas_poupadas_colab",
+    "reforco_cp": "ANA-009.reforco_p90_cr8_colab",
+    "reforco_ap": "ANA-009.reforco_p90_cr8"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "leitura autônoma de M23 (a registrada no plano, limite superior da absorção)",
+      "analise": "ANA-009",
+      "resultado": "parcial",
+      "nota": "na leitura autônoma o reforço é zero e CR8 passa em toda a grade; na variante colaborativa ele é positivo: a conclusão muda com a leitura de M23, que é de Marcus no G3"
+    },
+    {
+      "recorte": "teto conservador contra teto base",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "na leitura colaborativa o reforço continua positivo com o teto base (chave reforco_p90_cr8_colab_t900_pos_colmeia)"
+    },
+    {
+      "recorte": "quatro pontas de PR09 (slides 12 e 14)",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "o reforço da leitura colaborativa é o mesmo nas quatro pontas (chaves reforco_p90_cr8_colab_slide14_min a slide12_max)"
+    },
+    {
+      "recorte": "economia por tipo com piso zero (PR05 no checkout)",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "sem deixar o checkout com robô piorar o manual, o reforço colaborativo continua positivo (chave reforco_p90_cr8_colab_por_tipo_piso_zero_pos_colmeia)"
+    },
+    {
+      "recorte": "variante do plano e janela normal",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "o reforço da leitura colaborativa é positivo nas três leituras da Royal Canin (chaves reforco_p90_cr8_colab, _pos_colmeia e _normal)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Correção atendida: as duas leituras de M23 estão no texto e, na colaborativa, CR8 não passa no dia p90. Segue em aberto a leitura de Marcus no G3 e a PR05 (confiança baixa). Se a leitura colaborativa for adotada, o contrato (M23) precisa ser atualizado pelo engenheiro de dados."
+  },
+  "impacto": {
+    "modelo": "IMP-CR8-P90-RC-PCT-COL",
+    "modelos_relacionados": [
+      "IMP-CR8-P90-RC-PCT-AUT"
+    ]
+  },
+  "acao": "Citar primeiro a leitura colaborativa de M23, a que descreve o Kappabot (o operador permanece): a frota absorve só uma fração do excedente do dia p90 e deixa reforço (IMP-CR8-P90-RC-PCT-COL). A leitura autônoma é a registrada no plano e é o limite superior: absorve o excedente inteiro (IMP-CR8-P90-RC-PCT-AUT). Levar as duas a Marcus no G3. Não usar pico sem temporário na oferta da Royal Canin; validar PR05 com a engenharia (E9) e confirmar com a Social como o pico é coberto hoje.",
+  "dono": "Marcus Lima, CEO (leitura no G3); Vinicius Bastos, CTO (PR05, E9)",
+  "premissas": [
+    "M23 colaborativa (variante): o Kappabot é colaborativo, o operador permanece e o robô poupa só a diferença de ritmo; é a leitura que vale para a oferta e vem primeiro",
+    "M23 autônoma: a registrada no plano, limite superior, apresentada ao lado; não descreve um robô colaborativo",
+    "regime pós-colmeia como base, sem a semana do incidente (a confirmar por Marcus no G3)",
+    "excedente de horas (jornada ativa) e horas absorvidas (ritmo manual) vêm de recortes diferentes",
+    "frota necessária dia a dia na base pós-colmeia (decisão do orquestrador, a confirmar por Marcus no G3), com capacidade do robô de confiança baixa (PR07, PR08) e sem reserva de disponibilidade",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "ressalva",
+    "nota": "Ressalva. O modelo principal do insight é o da leitura autônoma (IMP-CR8-P90-RC-PCT-AUT), que é limite superior e não descreve um robô colaborativo. Para a decisão, citar primeiro a leitura colaborativa (IMP-CR8-P90-RC-PCT-COL), que falha. A conclusão prática (não usar 'pico sem temporário' na RC) já está na ação e sobrevive."
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:30:26",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:40",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:36",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:01",
+      "por": "Marcus"
+    }
+  ]
+}

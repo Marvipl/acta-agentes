@@ -1,0 +1,90 @@
+{
+  "id": "INS-048",
+  "estado": "aprovado",
+  "afirmacao": "Nos dias de pico (volume diário no percentil mais alto, período inteiro) o armazém coloca {{v.pico}} em atividade contra {{v.tipico}} nos dias típicos pelo corte de uma linha, e {{v.pico1h}} contra {{v.tipico1h}} pelo corte de uma hora. As horas ativas de separação sobem de {{v.h_tip}} nos dias típicos para {{v.h_pico}} nos de pico: {{v.h_exc}} de excedente no teto base e {{v.h_exc300}} no teto conservador. Censo descritivo: mostra que a Social cobre o pico com mais gente e mais horas, e não diz como (hora extra, temporário, remanejamento ou a folga da própria equipe, já que boa parte do tempo da equipe não é creditada a coletas, INS-052). As horas ativas são tempo creditado de separação, não horas pagas, e os dias de pico são escolhidos pelo próprio volume: o excedente é limite superior para planejar picos futuros.",
+  "pergunta_ref": "P19",
+  "criterio_ref": "CR8",
+  "valores": {
+    "pico": "ANA-013.ativos_pico_media",
+    "tipico": "ANA-013.ativos_tipico_media",
+    "pico1h": "ANA-013.ativos_pico_media_1h",
+    "tipico1h": "ANA-013.ativos_tipico_media_1h",
+    "h_tip": "ANA-013.horas_armazem_tipico",
+    "h_pico": "ANA-013.horas_armazem_pico",
+    "h_exc": "ANA-013.horas_armazem_excedente_pico",
+    "h_exc300": "ANA-013.horas_armazem_excedente_pico_t300"
+  },
+  "nivel": "descritivo",
+  "exploratorio": false,
+  "robustez": [
+    {
+      "recorte": "quatro tetos de intervalo",
+      "analise": "ANA-013",
+      "resultado": "passa",
+      "nota": "o excedente de horas do pico é positivo nos quatro tetos (chaves horas_armazem_excedente_pico, _t300, _t600, _t1800)"
+    },
+    {
+      "recorte": "corte de uma linha contra uma hora",
+      "analise": "ANA-013",
+      "resultado": "passa",
+      "nota": "mais operadores ativos no pico nos dois cortes"
+    },
+    {
+      "recorte": "com e sem a semana de incidente",
+      "analise": "ANA-013",
+      "resultado": "passa",
+      "nota": "o excedente quase não muda sem a semana (chave horas_armazem_excedente_pico_sem_incidente)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo."
+  },
+  "impacto": {
+    "modelo": "IMP-CR8-PICO-ARM-PESSOAS",
+    "modelos_relacionados": [
+      "IMP-CR8-PICO-ARM-EXCEDENTE",
+      "IMP-CR8-PICO-ARM-ALIVIO-COL"
+    ]
+  },
+  "acao": "Usar o argumento de elasticidade no armazém em pessoas e pessoas-hora, não em reais: no pico a separação puxa gente de outras áreas e a frota alivia só uma parte (IMP-CR8-PICO-ARM-PESSOAS, IMP-CR8-PICO-ARM-EXCEDENTE, IMP-CR8-PICO-ARM-ALIVIO-COL). Pedir à Social os custos de hora extra e de temporário (E11).",
+  "dono": "Matheus Correa, Comercial; decisão de Marcus Lima, CEO (argumento); Social (via Marcus) (custos de hora extra e de temporário)",
+  "premissas": [
+    "o aumento de operadores ativos no pico pode ser remanejamento interno, sem contratação",
+    "o alívio da frota é um teto: supõe todo o excedente absorvível pelo robô e usa a leitura colaborativa; na autônoma o teto seria o excedente inteiro",
+    "M23 em duas leituras: a autônoma é a registrada no plano e é limite superior; a colaborativa é variante e é a coerente com o Kappabot colaborativo; as duas são apresentadas",
+    "dias de pico e típicos definidos pelo volume diário do período inteiro; a série não cobre alta temporada",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "sobrevive",
+    "nota": "Sobrevive. Usar em pessoas-hora e deixar claro que, na leitura colaborativa, a frota alivia só parte do excedente (IMP-CR8-PICO-ARM-ALIVIO-COL). Um concorrente ofereceria robôs só no pico; a oferta da Acta deveria prever um pool de pico."
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:50",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:32",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:33",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:01",
+      "por": "Marcus"
+    }
+  ]
+}

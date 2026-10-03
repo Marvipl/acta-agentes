@@ -1,0 +1,14 @@
+teste,familia,alfa_familia,unidade_independente,n_unidades,n_menor_grupo,regra_clusters,ep_mais_largo_de,ep,mde,unidade_da_medida
+ANA-004 H-P7 (CR3),F1a,0.016666666666666666,operador,22,,ic_por_cluster,operador,3.206516692298635,9.522285099425224,coletas/h
+"ANA-004 H-P7 (CR3), variante anterior a PAR11",F1a,0.016666666666666666,operador,17,,ic_com_aviso_e_bloco,operador (bloco de semana só comparação: abaixo do mínimo de clusters),3.8674797116059634,11.485124814290213,coletas/h
+ANA-007 H-P17 (CR7),F1a,0.016666666666666666,operador,13,,ic_com_aviso_e_bloco,operador,2.180574253843456,6.475578242095109,coletas/h
+ANA-010 H-P14a (CR5),F1a,0.016666666666666666,dia pleno (estratificado por dia da semana),38,,ic_por_cluster,dia,0.05297359570269058,0.15731391083484406,razão (demanda por hora ÷ PR07)
+ANA-005 H-P8 (H06),F1b,0.0125,operador (cluster); semana como comparação,21,21.0,ic_por_cluster,semana,0.02254324058151499,0.06950135087540786,fração (proporção de linhas)
+ANA-003 H13a,F1b,0.0125,operador; dia como comparação,23,,ic_por_cluster,dia,0.29516332714042626,0.9099956100349138,h por operador-dia
+ANA-003 H13b,F1b,0.0125,semana (bloco) e dia,17,,ic_com_aviso_e_bloco,semana,0.016984225839991592,0.052362775226750265,fração por unidade de log do volume
+ANA-008 H-P11 (H01),F1b,0.0125,dia pleno; bloco de semana como comparação,77,15.0,ic_por_cluster,dia,0.022699546370432575,0.06998324536791158,fração do volume do dia
+ANA-006 equivalência (t_unidade),fora das famílias,0.05,operador; semana como comparação,13,,ic_com_aviso_e_bloco,operador,3.625081591533787,9.013674244698493,s por unidade
+ANA-006 equivalência (unid_onda),fora das famílias,0.05,operador; semana como comparação,13,,ic_com_aviso_e_bloco,operador,0.3570903601151316,0.8878962033618748,unidades por onda
+ANA-016 PT-H04,F2,0.008333333333333333,operador; semana como comparação,16,,ic_com_aviso_e_bloco,operador,7.648546103794856,24.74764367738059,s
+ANA-016 PT-H09,F2,0.008333333333333333,novato (operador),8,,so_descritivo,operador,0.48813249089803007,1.5794019919815963,razão por semana
+ANA-016 PT-H10,F2,0.008333333333333333,dia pleno (erro HAC); bloco de semana como comparação,39,,ic_por_cluster,semana,0.00039914708939989377,0.0012914807349374757,operadores ativos por linha operacional

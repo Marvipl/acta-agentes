@@ -1,0 +1,5 @@
+ponto,pedidos_por_hora_por_robo,ic95_inferior,ic95_superior,definicao
+inferior,61.53341311817164,52.624033250546084,71.48759200124904,"pedidos por hora do checkout manual em ciclo completo (M14), teto de 900 s; teto de 1800 s dá o piso da faixa"
+provável,106.37017221200469,87.46421732055033,128.31027007540624,"3600 ÷ tempo por pedido dentro da tarefa (M09, cadências de Início a Início)"
+superior,154.01069518716577,113.43283582089552,187.39726027397262,3600 ÷ quartil inferior do tempo por pedido entre as tarefas (ponderado por cadências)
+"superior (quartil simples entre tarefas, sensibilidade)",144.88455835628045,,,idem sem ponderar as tarefas pelo número de cadências

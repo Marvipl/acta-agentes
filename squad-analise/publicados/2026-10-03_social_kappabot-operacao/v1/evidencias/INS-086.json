@@ -1,0 +1,95 @@
+{
+  "id": "INS-086",
+  "estado": "aprovado",
+  "afirmacao": "Com o piso da franquia, a margem por robô da ALT3 é não negativa com a frota do slide 14, mas ela vem da franquia, não da receita por transação. A receita por transação ({{v.rec}}) fica abaixo da franquia ({{v.fr}}), então a receita por robô é a franquia dividida pela frota. Pela métrica de CR6 (franquia se maior que a receita), a margem é {{v.m5}} na ponta de mais robôs e {{v.m4}} na de menos, e o hardware máximo pagável no prazo do contrato é {{v.hw5}} na ponta de mais robôs e {{v.hw4}} na de menos, a comparar com o custo de hardware (PR20), que não foi informado ([●]). A maior frota que a franquia sustenta, com margem não negativa, é {{v.fmax}}, que coincide com a ponta de mais robôs de PR09. Na ALT2, a margem com o piso é {{v.alt2}}. A franquia do deck implica um volume maior que o do WMS (ANA-011), então a margem com o piso depende de a franquia ser cobrada integralmente no volume corrente e de o cliente aceitá-la, o que a verificação de CR2 põe em dúvida.",
+  "pergunta_ref": "P16",
+  "criterio_ref": "CR6",
+  "valores": {
+    "rec": "ANA-015.receita_mes_alt3_taxa_corrente",
+    "fr": "ANA-015.franquia_pr02",
+    "m5": "ANA-015.margem_robo_alt3_pr09_5",
+    "m4": "ANA-015.margem_robo_alt3_pr09_4",
+    "hw5": "ANA-015.hardware_max_alt3_pr09_5",
+    "hw4": "ANA-015.hardware_max_alt3_pr09_4",
+    "fmax": "ANA-015.frota_maxima_com_piso_alt3",
+    "alt2": "ANA-015.margem_robo_alt2_slide14_pap"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "operação normal, sem a semana do incidente",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "a receita por transação também fica abaixo da franquia na operação normal, então a margem com o piso é a mesma (chaves _normal)"
+    },
+    {
+      "recorte": "variantes do envelope de ANA-002",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "a receita por transação fica abaixo da franquia em todas as variantes (tabela grade_margem_por_robo), então a margem com o piso não muda"
+    },
+    {
+      "recorte": "leitura do slide 12 da frota",
+      "analise": "ANA-015",
+      "resultado": "passa",
+      "nota": "com a frota do slide 12 (menos robôs) a margem com o piso é maior (chaves margem_robo_alt3_slide12_*)"
+    },
+    {
+      "recorte": "frota maior que a ponta de PR09",
+      "analise": "ANA-015",
+      "resultado": "parcial",
+      "nota": "acima da frota em que a franquia por robô iguala PR13 a margem com o piso fica negativa (chave frota_equilibrio_com_piso_alt3)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Cita a dúvida de CR2 sobre a franquia; nenhum ataque muda a leitura."
+  },
+  "impacto": {
+    "modelo": "IMP-CR6-ALT3-DECK5-COM-PISO",
+    "modelos_relacionados": [
+      "IMP-CR6-ALT3-COM-PISO",
+      "IMP-CR6-ALT3-HW-COM-PISO",
+      "IMP-CR6-ALT3-DECK5-HW-COM-PISO"
+    ]
+  },
+  "acao": "Apresentar a margem com a franquia só como contraste: ela vem de uma franquia que o volume não cobre (CR2 falha) e vira custo extra da Social (IMP-CR6-ALT3-COM-PISO). Não usar o hardware máximo com piso (IMP-CR6-ALT3-HW-COM-PISO, IMP-CR6-ALT3-DECK5-HW-COM-PISO) como referência para comparar com o custo de hardware (PR20, [●]). A referência para o CFO é o hardware sem piso depois de recuperar a implementação (IMP-CR6-ALT3-HW-SEM-PISO-SO-HARDWARE) ou, com PR11 confirmado, o da janela de preço (IMP-REC-HW-MAX-INT-COM-IMPL, IMP-HW-ALT4-INT-NO-TETO-SO-HARDWARE); os modelos de hardware sem esse sufixo pagam, somados, hardware, implantação, mapeamento e integração.",
+  "dono": "Renato Correa, CFO (hardware, PR20)",
+  "premissas": [
+    "tarifas e franquia do deck (PR02, PR03, PR04) e custo de servir sem hardware informado por Marcus (PR13); custo de hardware (PR20) é [●] e o motor entrega o máximo pagável",
+    "frota necessária dia a dia na base pós-colmeia (decisão do orquestrador, a confirmar por Marcus no G3), com capacidade do robô de confiança baixa (PR07, PR08) e sem reserva de disponibilidade",
+    "a margem com piso supõe que a Social paga a franquia integral no volume corrente",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "ressalva",
+    "nota": "Ressalva. Não usar o hardware máximo com piso (IMP-CR6-ALT3-HW-COM-PISO, IMP-CR6-ALT3-DECK5-HW-COM-PISO) como referência para comparar com PR20, porque ele depende de uma franquia que CR2 reprova. A referência para Renato Correa é o hardware sem piso (IMP-CR6-ALT3-HW-SEM-PISO) ou, com PR11 confirmado, o da janela de preço (RTD-HW-ALT4-INT-NO-TETO). Detalhes em revisoes/red-team-decisao.json."
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:52:09",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:55:02",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:41",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:02",
+      "por": "Marcus"
+    }
+  ]
+}

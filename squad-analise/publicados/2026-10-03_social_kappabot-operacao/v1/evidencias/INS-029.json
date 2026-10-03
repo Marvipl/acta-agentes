@@ -1,0 +1,84 @@
+{
+  "id": "INS-029",
+  "estado": "validado",
+  "afirmacao": "Pela definição registrada (pedido-a-pedido com dois ou mais endereços), CR5 em linhas não passa: a razão da demanda média por hora dos outros depositantes à capacidade de um robô (PR07) é {{v.razao}}, com IC inteiro abaixo de um, mas a leitura não se sustenta entre meses. O ajuste de Holm no pior caso da família dá {{v.p_holm}}. Na janela base a razão é {{v.razao_base}}, com IC que cruza um, e sem o maior depositante compatível cai para {{v.razao_sem}}. O MDE de ANA-000 ({{v.mde}}) passa do efeito relevante: magnitude possivelmente exagerada (poder baixo, erro tipo M). Depois da regra de inversão de sinal entre meses, CR5 em linhas fica inconclusivo. A classe depende da definição de compatível: como sensibilidade declarada, e não como primária, com todo o pedido-a-pedido dos outros (incluindo pedidos de um endereço, que são {{v.um_end}} dos pedidos) a razão é {{v.razao_todo}}, com IC inteiro acima de um; sem o maior depositante dessa variante cai para {{v.razao_todo_sem}}. A janela não cobre a alta temporada.",
+  "pergunta_ref": "P14",
+  "criterio_ref": "CR5",
+  "valores": {
+    "razao": "ANA-010.razao_demanda_pr07_outros",
+    "p_holm": "ANA-010.p_holm_f1a_pior_caso",
+    "razao_base": "ANA-010.razao_demanda_pr07_outros_janela_base",
+    "razao_sem": "ANA-010.razao_demanda_pr07_outros_sem_maior",
+    "mde": "ANA-010.mde_cr5_de_ana000",
+    "classe": "ANA-010.classe_cr5_linhas",
+    "classe_apos": "ANA-010.classe_cr5_linhas_apos_robustez",
+    "inversao": "ANA-010.h_p14a_inversao_entre_meses",
+    "razao_todo": "ANA-010.razao_demanda_pr07_outros_todo_pap",
+    "razao_todo_sem": "ANA-010.razao_demanda_pr07_outros_todo_pap_sem_maior",
+    "um_end": "ANA-010.fracao_pedidos_um_endereco_pap_outros",
+    "classe_todo": "ANA-010.classe_cr5_linhas_todo_pap"
+  },
+  "nivel": "associativo",
+  "robustez": [
+    {
+      "recorte": "meses da janela longa",
+      "analise": "ANA-010",
+      "resultado": "parcial",
+      "nota": "agosto fica abaixo de uma capacidade e setembro no limite: há inversão de sinal entre meses (h_p14a_inversao_entre_meses), que invalida a leitura agregada"
+    },
+    {
+      "recorte": "janela base",
+      "analise": "ANA-010",
+      "resultado": "parcial",
+      "nota": "razão no limite, IC cruzando um"
+    },
+    {
+      "recorte": "sem o maior depositante compatível",
+      "analise": "ANA-010",
+      "resultado": "passa",
+      "nota": "a razão cai bastante: a demanda depende de poucos depositantes (tabela h_p14a_robustez)"
+    },
+    {
+      "recorte": "definição de compatível: todo o pedido-a-pedido dos outros (sensibilidade)",
+      "analise": "ANA-010",
+      "resultado": "falha",
+      "nota": "com pedidos de um endereço incluídos a razão passa de um e a classe muda; a primária segue a do plano (tabela h_p14a_sensibilidade_todo_pap)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Rodada dois. Correção atendida: a sensibilidade com todo o pedido-a-pedido está no texto, com IC e sem o maior depositante, e a pergunta a Marcus e à engenharia está na ação. A ressalva continua porque a classe de CR5 depende de uma definição ainda em aberto: pela primária fica inconclusiva; pela sensibilidade passa. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "CR5 não passa pela definição do plano: a expansão não entra como fase com número e fica como oportunidade a medir com dados do depositante (destino do inconclusivo, equivale a falha para ALT6). Perguntar a Marcus e à engenharia da Acta se o robô ganha em pedido de um endereço; se sim, CR5 passa a ser lido também pela variante com todo o pedido-a-pedido.",
+  "dono": "estatistico (ANA-010); analista de impacto (ALT6)",
+  "premissas": [
+    "MULTI incluído entre os outros depositantes, como em ANA-000",
+    "janela longa fixada no plano para ter dias suficientes",
+    "a semana de incidente da Royal Canin não afeta os outros depositantes",
+    "variante primária = definição do plano (pedido_multi_endereco); todo o pedido-a-pedido é sensibilidade declarada, a decidir com Marcus e a engenharia da Acta se o robô ganha também em pedido de um endereço (E9)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:28",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:25",
+      "por": "red-team-analitico"
+    }
+  ]
+}

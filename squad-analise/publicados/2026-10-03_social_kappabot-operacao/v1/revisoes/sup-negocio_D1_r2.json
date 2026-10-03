@@ -1,0 +1,115 @@
+{
+  "supervisor": "sup-negocio",
+  "agentes_revisados": ["perfilador-setorial", "especialista-setorial"],
+  "rodada": 2,
+  "veredito": "aprovado_com_ressalvas",
+  "rubrica": [
+    {
+      "agente": "perfilador-setorial",
+      "criterio": "[crítico] Decisão com alternativas, critérios e limites",
+      "nota": null,
+      "evidencia": "Não se aplica: critério do arquiteto."
+    },
+    {
+      "agente": "perfilador-setorial",
+      "criterio": "[crítico] Premissas do impacto com fonte; impacto comparado aos limites",
+      "nota": 2,
+      "evidencia": "nos/especialista.json: o absenteísmo (indicadores[6]) traz as duas definições do BLS e usa a lost worktime rate nas horas. O ganho com AMR (indicadores[14]) mostra a faixa completa da MD Logistics. Os 13% da ABOL estão vetados como pico (conhecimentos[22], armadilhas[25]). Os componentes de CR8 (hora extra, temporário, desligamento, reposição, rotatividade, encargos) têm fonte e confiança; o que não tem fonte está em [●] com pergunta. motor.impacto continua em IMP-001 (impacto.json é modelo), sem culpa do perfilador."
+    },
+    {
+      "agente": "perfilador-setorial",
+      "criterio": "Perfil do especialista com fontes e confiança",
+      "nota": 2,
+      "evidencia": "As 7 afirmações da r1 foram corrigidas (Fig. 15.5 sem denominador e com confiança baixa; BLS; MD; DHL; SC Digest como interpretação; ICVA; 'more than two pick-lines' citado literalmente). As confianças foram rebaixadas. Conferi 4 fontes novas: CAP 2012, ASSERTTEM/InfoMoney, Dematic RapidPick e DIEESE 2016. Todas batem nos números. Ressalvas de severidade baixa: os 34,7% (taxa descontada) estão na Tabela 8 do DIEESE 2016, não no Anexo, Tabela 5; conhecimentos[41] ainda traz pesos de saco de ração 'sem verificação'."
+    },
+    {
+      "agente": "perfilador-setorial",
+      "criterio": "Recomendações viáveis na operação",
+      "nota": 2,
+      "evidencia": "Entraram armadilhas sobre AMR colaborativo, que exige separador na mesma hora (armadilhas[24]), e sobre treino, que não é proficiência (armadilhas[23]). Entraram também ISO 3691-4, NR-17, carga por segmento e implantação, com perguntas novas à Social e à engenharia (perguntas 16 a 22). O custo de implantação do lado da Social e um caso brasileiro de AMR em 3PL seguem [●], com pergunta e resposta proposta, sem invenção."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "[crítico] Decisão com alternativas, critérios e limites",
+      "nota": null,
+      "evidencia": "Não se aplica: critério do arquiteto."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "[crítico] Premissas do impacto com fonte; impacto comparado aos limites",
+      "nota": 2,
+      "evidencia": "revisoes/especialista_D1.md: A4 retira a justificativa com PR16 e volta o conservador para 300 s. Ficam 600 s como intermediário e 1.800 s como limite superior, e a escolha é de Marcus no G2 (linhas 76 a 78, F12, E8). H02 mede pessoas-hora em quatro arranjos (linha 185). Os pedidos de propagação aos outros nós estão nas pendências (linhas 217 a 229). O resíduo no contrato é do engenheiro (ponto 1)."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "Perfil do especialista com fontes e confiança",
+      "nota": 2,
+      "evidencia": "Corpus Christi, a ponte, 'raramente para tanto', o multipedido e A8, A9 e F6 estão marcados [●] com confiança baixa e ligados a E1 e E4. F4 declara a unidade da SSI (caixas por hora, pessoa ou robô). 3.1 e E5 citam a CF, art. 7º, XIII. A reconferência de F1 a F13 e A1 a A10 foi feita contra o contrato e a qualidade atuais. Ressalva de severidade média: o ponto 3."
+    },
+    {
+      "agente": "especialista-setorial",
+      "criterio": "Recomendações viáveis na operação",
+      "nota": 2,
+      "evidencia": "H02 deixou de prometer pico 'sem hora extra nem temporário'. Agora compara manual com hora extra, manual com temporário, robô com escala escalonada e robô com hora extra, dentro dos limites legais (CLT, arts. 59 e 73; CF, art. 7º, XVI), com custos [●] (E11). H09 separa treino de proficiência. A seção 6 assume julgar implantação, segurança e ergonomia na D3 e na D4."
+    }
+  ],
+  "checagens_executadas": [
+    "Fontes novas abertas por WebFetch (4): Boushey e Glynn, CAP, 16/11/2012 (11 estudos, 31 casos, de 1992 a 2007, 16% abaixo de US$ 30 mil e 20% abaixo de US$ 50 mil, só 2 estudos com custos indiretos): confere. ASSERTTEM via InfoMoney, 26/01/2026 (mais de 2,5 milhões de contratos, +4,5%, 522 mil no 4º trimestre, +5,1%, cerca de 500 mil efetivados, logística do e-commerce como motor): confere. Dematic RapidPick, Food Processing, 02/11/2010 ('up to 1800 items per hour'): confere. DIEESE 2016, lido com pdftotext (definição pelo mínimo entre admissões e desligamentos ÷ estoque médio; Brasil 62,8% e 43,1%; Transporte e Comunicação 53,0% na nota 6, citando o Anexo, Tabela 5): confere. Os 34,7% descontados estão na Tabela 8, p. 109.",
+    "Reconferi a Fulfill.com. O texto é 'Hybrid models mix the above, most often a base subscription plus per-transaction fees beyond an included allowance, or a percentage of order value.' O ponto baixo da r1 sobre o híbrido estava parcialmente errado: o perfil só omitia a segunda alternativa. A correção do perfilador está certa.",
+    "python -m motor.impacto <dv>: 'ERRO impacto: IMP-001: premissa nome sem fonte' (impacto.json ainda é modelo; não imputado).",
+    "python -m motor.validar <dv> --fase D1: LIBERADO.",
+    "controle.json: especialista 2728f6a9dc06, carimbado contra o contrato eea1e33eee65 (atual); qualidade a15f51242f7d, carimbada contra o especialista atual.",
+    "Anti-complacência 1: procurei resíduos das justificativas retiradas em todos os nós. Em nos/contrato.json, PAR02 (nota e fonte), sobrou o seguinte: 'O conservador é provisório porque 300 s fica abaixo do ciclo do pedido-a-pedido que o próprio deck documenta (trajeto ao packing em PR16…)' e 'base endossada pelo especialista (parecer D1, A4, corrigido)'. Na M18 do contrato e na QD06 da qualidade sobrou 'o máximo pós-pausa é argumento de horário estendido, não de mais robôs (H02)'. A resposta r3 do engenheiro diz 'Ressalva mantida na nota de PAR02'.",
+    "Anti-complacência 2: conferi o sentido da nova sensibilidade do piso (de 2,0 s a 5,5 s). Um piso mais baixo marca menos linhas rápidas e deixa o manual mais rápido. Isso joga contra a oferta, logo é conservador. Sem objeção.",
+    "Anti-complacência 3: testei a nova âncora da base, 'Base de 900 s, que reproduz a mediana do slide 6' (especialista_D1.md, A4, F12, E8; contrato, PAR02, fonte). O deck, slide 6, mostra mediana e quartis abaixo de 300 s. Por isso, qualquer teto a partir de 300 s tende a reproduzir a mediana. A âncora não discrimina 600, 900 e 1.800 s.",
+    "Anti-complacência 4: procurei números novos sem fonte verificada. conhecimentos[41] traz pesos de saco de ração tirados de 'listagens de varejo', sem verificação. O .md já mostra [●].",
+    "Anti-complacência 5: grep de disciplina de nomes ([nome interno do orquestrador], [nome interno de produto], [nome interno de produto], [não parceiro], [não parceiro], reconhecimento facial) nos arquivos revisados e nas respostas: nada encontrado.",
+    "Pontos da r1 conferidos: (1) A4 resolvido no parecer, com resíduo no contrato (ponto 1); (2) H02 resolvido, com resíduo em M18 e QD06 (ponto 2); (3) contratação resolvida, com [●] declarados; (4) as 7 afirmações foram resolvidas; (5) a âncora da CLT saiu; (6) as confianças foram resolvidas; (7) implantação, segurança, ergonomia e carga foram resolvidas como [●] com pergunta; (8) as afirmações sem fonte foram resolvidas; (9) H09 foi resolvido; (10) F4 foi resolvido no parecer, mas a qualidade ainda está sem unidade (ponto 5); (11) o art. 58 foi resolvido; (12) o híbrido foi resolvido, e o meu ponto estava parcialmente errado."
+  ],
+  "pontos": [
+    {
+      "severidade": "alta",
+      "local": "nos/contrato.json, parametros, PAR02 (campos 'nota' e 'fonte'); revisoes/engenheiro-de-dados_resposta_r3.md, seção 5. Fora dos agentes revisados.",
+      "problema": "O especialista retirou a justificativa com PR16, mas o contrato ainda chama 300 s de 'conservador provisório' porque 'fica abaixo do ciclo do pedido-a-pedido que o próprio deck documenta (trajeto ao packing em PR16…)'. Diz também 'base endossada pelo especialista'. A premissa é falsa: PR16 é o trajeto do robô, e o slide 6 mostra o intervalo humano com mediana e quartis abaixo de 300 s. A nota induz Marcus no G2 a descartar o conservador.",
+      "correcao_sugerida": "O engenheiro tira a frase e o 'endosso' e renomeia o campo para cenario_conservador, ancorado no slide 6 e em PQ03, com confiança baixa, como pedem as pendências do especialista. Se não corrigir antes do G2, o orquestrador leva o conflito a Marcus com esta revisão."
+    },
+    {
+      "severidade": "media",
+      "local": "nos/contrato.json, M18; nos/qualidade.json, QD06. Fora dos agentes revisados.",
+      "problema": "Ainda dizem 'o máximo pós-pausa é argumento de horário estendido, não de mais robôs (H02)', que é o texto antigo de H02. O analista de impacto pode ler isso como pico absorvido sem pessoas.",
+      "correcao_sugerida": "Trocar por 'o máximo pós-pausa entra em H02, que mede robôs e pessoas na janela estendida', como pede a pendência do especialista."
+    },
+    {
+      "severidade": "media",
+      "local": "revisoes/especialista_D1.md, A4, F12 e E8; nos/contrato.json, PAR02 (fonte)",
+      "problema": "Especialista (e engenheiro). A nova âncora da base, '900 s reproduz a mediana do slide 6', não discrimina tetos. Como a mediana e os quartis do slide 6 ficam abaixo de 300 s, os tetos de 300, 600, 900 e 1.800 s tendem a reproduzir a mesma mediana. A base de 900 s fica sem fundamento setorial nem de dados, embora a confiança baixa esteja declarada.",
+      "correcao_sugerida": "Pedir ao planejador a mediana e os quartis do intervalo de M10 com cada teto, comparados aos quartis do slide 6, e a fração de intervalos entre 300 e 900 s. Se todos os tetos reproduzem o slide, declarar que a base depende só de PQ03."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/especialista.json, conhecimentos[36] e indicadores (rotatividade); perfil_especialista.md, linhas 49 e 76",
+      "problema": "Perfilador. Os 53,0% vêm do DIEESE (2016), nota 6, que cita o Anexo, Tabela 5. Os 34,7% (descontada) estão na Tabela 8, p. 109. A citação atribui os dois ao Anexo, Tabela 5.",
+      "correcao_sugerida": "Citar 'nota 6 e Anexo, Tabela 5 (global); Tabela 8 (descontada)'."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/especialista.json, conhecimentos[41]",
+      "problema": "Perfilador. O nó ainda traz pesos de saco de ração tirados de 'listagens de varejo', sem verificação. O .md já mostra [●]. Pela regra 3, número sem fonte verificada não entra no nó.",
+      "correcao_sugerida": "Tirar os números e deixar [●] com a pergunta à Social sobre peso e dimensão máximos por item."
+    },
+    {
+      "severidade": "baixa",
+      "local": "nos/qualidade.json, limiares.piso_s_por_coleta.fonte_sensibilidade. Fora dos agentes revisados.",
+      "problema": "Ainda diz 'SSI Schäfer, 650 por hora', sem a unidade (caixas por hora, pessoa ou robô) e sem a nova sensibilidade de 2,0 s (Dematic RapidPick, itens por hora).",
+      "correcao_sugerida": "A qualidade declara as unidades e a faixa de 2,0 s a 5,5 s, como no perfil."
+    }
+  ],
+  "lacunas": [
+    "Custos da Social (hora extra paga, temporários por pico, taxa da agência, custo e prazo de reposição, rotatividade própria): seguem [●] (E11 e perguntas novas do perfil). Sem eles, CR8 sai em pessoas-hora e pessoas, sem reais.",
+    "Custo e prazo de implantação do lado da Social e um caso brasileiro de AMR em 3PL: seguem [●].",
+    "Pessoa da operação da Social para validar A4, H02, H05, H06, H11 e H13: segue [●] (A08).",
+    "Texto da CLT no Planalto (arts. 59, 71, 73, 487 e 611-A): conferido só em resumos (LegJur, TRT-3); Planalto fora do ar.",
+    "Proxy de rotatividade no WMS (entradas e saídas de logins por mês, em agregado): ainda não está no plano."
+  ],
+  "em": "2026-10-03"
+}

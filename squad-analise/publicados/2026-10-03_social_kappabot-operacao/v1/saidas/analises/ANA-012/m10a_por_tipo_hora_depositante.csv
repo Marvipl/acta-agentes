@@ -1,0 +1,228 @@
+tipo_onda,hora,n_linhas,n_operadores,mediana_s,q1_s,q3_s,media_s,teto_s,corte,depositante
+checkout,8.0,91.0,9.0,193.0,153.5,244.0,195.78021978021977,300,tipo_onda_hora,
+checkout,9.0,60.0,7.0,188.5,141.75,239.5,184.38333333333333,300,tipo_onda_hora,
+checkout,10.0,31.0,7.0,214.0,147.0,241.5,191.96774193548387,300,tipo_onda_hora,
+checkout,11.0,19.0,6.0,149.0,116.0,168.5,140.42105263157896,300,tipo_onda_hora,
+checkout,12.0,19.0,7.0,147.0,107.5,189.5,145.73684210526315,300,tipo_onda_hora,
+checkout,15.0,8.0,5.0,214.5,156.0,235.5,196.5,300,tipo_onda_hora,
+checkout,16.0,25.0,7.0,211.0,157.0,252.0,198.92,300,tipo_onda_hora,
+checkout,17.0,19.0,6.0,126.0,0.0,222.5,118.47368421052632,300,tipo_onda_hora,
+colmeia,8.0,45.0,8.0,177.0,114.0,245.0,170.35555555555555,300,tipo_onda_hora,
+colmeia,9.0,62.0,8.0,175.0,122.75,224.75,166.08064516129033,300,tipo_onda_hora,
+colmeia,10.0,19.0,9.0,170.0,105.5,234.5,155.94736842105263,300,tipo_onda_hora,
+colmeia,11.0,28.0,7.0,164.5,134.0,216.25,169.32142857142858,300,tipo_onda_hora,
+colmeia,12.0,27.0,6.0,188.0,151.5,222.0,182.0,300,tipo_onda_hora,
+colmeia,15.0,16.0,9.0,187.5,166.75,261.25,189.5625,300,tipo_onda_hora,
+colmeia,16.0,21.0,7.0,136.0,0.0,241.0,140.42857142857142,300,tipo_onda_hora,
+colmeia,17.0,19.0,8.0,0.0,0.0,149.5,75.73684210526316,300,tipo_onda_hora,
+pedido_a_pedido,8.0,1036.0,19.0,52.0,0.0,82.25,56.85328185328186,300,tipo_onda_hora,
+pedido_a_pedido,9.0,760.0,18.0,76.0,39.75,123.0,88.87105263157895,300,tipo_onda_hora,
+pedido_a_pedido,10.0,707.0,18.0,72.0,42.0,120.5,87.995756718529,300,tipo_onda_hora,
+pedido_a_pedido,11.0,867.0,20.0,74.0,43.0,120.0,89.73241061130335,300,tipo_onda_hora,
+pedido_a_pedido,12.0,890.0,21.0,72.5,46.25,113.75,87.93483146067416,300,tipo_onda_hora,
+pedido_a_pedido,13.0,518.0,18.0,56.5,24.0,96.75,71.17374517374517,300,tipo_onda_hora,
+pedido_a_pedido,14.0,509.0,16.0,75.0,47.0,119.0,91.13752455795678,300,tipo_onda_hora,
+pedido_a_pedido,15.0,443.0,17.0,72.0,42.5,120.0,88.9255079006772,300,tipo_onda_hora,
+pedido_a_pedido,16.0,659.0,23.0,56.0,28.0,106.5,76.39757207890743,300,tipo_onda_hora,
+pedido_a_pedido,17.0,393.0,19.0,56.0,0.0,97.0,69.50127226463104,300,tipo_onda_hora,
+checkout,,55.0,9.0,184.0,137.5,233.5,180.0,300,tipo_onda_depositante,ALFAPARF MILANO
+checkout,,7.0,5.0,237.0,183.5,260.0,222.57142857142858,300,tipo_onda_depositante,COTY IT
+checkout,,93.0,9.0,189.0,149.0,241.0,183.95698924731184,300,tipo_onda_depositante,ESTRELA
+checkout,,42.0,6.0,186.5,152.5,240.75,183.07142857142858,300,tipo_onda_depositante,ROYAL CANIN
+checkout,,50.0,7.0,176.5,117.5,235.0,171.08,300,tipo_onda_depositante,SR PRECO
+checkout,,40.0,8.0,180.0,127.5,231.0,180.95,300,tipo_onda_depositante,VIC BEAUTE
+colmeia,,41.0,9.0,154.0,115.0,195.0,157.8048780487805,300,tipo_onda_depositante,ALFAPARF MILANO
+colmeia,,48.0,9.0,188.5,0.0,231.5,151.3125,300,tipo_onda_depositante,COTY IT
+colmeia,,33.0,7.0,159.0,129.0,227.0,168.9090909090909,300,tipo_onda_depositante,ESTRELA
+colmeia,,34.0,7.0,169.0,0.0,250.75,145.73529411764707,300,tipo_onda_depositante,ROYAL CANIN
+colmeia,,21.0,5.0,158.0,114.0,204.0,149.52380952380952,300,tipo_onda_depositante,SR PRECO
+colmeia,,49.0,12.0,179.0,128.0,247.0,171.24489795918367,300,tipo_onda_depositante,VIC BEAUTE
+pedido_a_pedido,,511.0,13.0,62.0,40.0,122.5,87.66144814090019,300,tipo_onda_depositante,ALFAPARF MILANO
+pedido_a_pedido,,71.0,6.0,77.0,45.5,108.5,92.28169014084507,300,tipo_onda_depositante,CONDOR
+pedido_a_pedido,,353.0,13.0,64.0,25.0,122.0,83.06515580736544,300,tipo_onda_depositante,COTY IT
+pedido_a_pedido,,699.0,14.0,56.0,31.0,120.0,83.64520743919886,300,tipo_onda_depositante,ESTRELA
+pedido_a_pedido,,56.0,9.0,77.5,46.0,120.75,92.44642857142857,300,tipo_onda_depositante,GOMES DA COSTA
+pedido_a_pedido,,2056.0,6.0,51.0,0.0,80.25,54.13424124513619,300,tipo_onda_depositante,HIVE
+pedido_a_pedido,,111.0,12.0,87.0,59.0,134.0,101.14414414414415,300,tipo_onda_depositante,IMBERA
+pedido_a_pedido,,6.0,6.0,75.0,13.0,150.5,82.16666666666667,300,tipo_onda_depositante,MULTI
+pedido_a_pedido,,16.0,5.0,164.0,86.0,245.5,160.875,300,tipo_onda_depositante,PHILIPS ILUMIN. B2B
+pedido_a_pedido,,37.0,8.0,77.0,56.0,147.0,98.89189189189189,300,tipo_onda_depositante,RABBITOHS
+pedido_a_pedido,,1757.0,18.0,92.0,65.0,138.0,107.36596471257826,300,tipo_onda_depositante,ROYAL CANIN
+pedido_a_pedido,,389.0,17.0,67.0,44.0,116.0,86.41388174807199,300,tipo_onda_depositante,SR PRECO
+pedido_a_pedido,,620.0,12.0,38.0,28.0,76.25,64.8225806451613,300,tipo_onda_depositante,VIC BEAUTE
+pedido_a_pedido,,18.0,10.0,0.0,0.0,0.0,25.333333333333332,300,tipo_onda_depositante,VIC BEAUTE AG
+checkout,8.0,142.0,10.0,251.0,179.5,378.0,279.4225352112676,600,tipo_onda_hora,
+checkout,9.0,92.0,10.0,241.5,164.75,358.0,265.45652173913044,600,tipo_onda_hora,
+checkout,10.0,45.0,7.0,239.0,169.0,313.0,253.73333333333332,600,tipo_onda_hora,
+checkout,11.0,35.0,8.0,196.0,149.0,360.5,255.0,600,tipo_onda_hora,
+checkout,12.0,35.0,8.0,239.0,145.5,408.5,274.6857142857143,600,tipo_onda_hora,
+checkout,13.0,15.0,6.0,229.0,173.0,333.5,258.4,600,tipo_onda_hora,
+checkout,15.0,14.0,7.0,277.0,214.25,368.75,294.57142857142856,600,tipo_onda_hora,
+checkout,16.0,36.0,9.0,249.0,185.5,305.5,263.9166666666667,600,tipo_onda_hora,
+checkout,17.0,26.0,7.0,196.5,0.0,302.5,194.1153846153846,600,tipo_onda_hora,
+colmeia,8.0,78.0,11.0,269.0,172.75,355.0,277.47435897435895,600,tipo_onda_hora,
+colmeia,9.0,101.0,9.0,233.0,162.0,377.0,268.7029702970297,600,tipo_onda_hora,
+colmeia,10.0,43.0,11.0,326.0,187.5,404.5,294.8139534883721,600,tipo_onda_hora,
+colmeia,11.0,52.0,9.0,269.0,158.25,393.5,285.0576923076923,600,tipo_onda_hora,
+colmeia,12.0,38.0,7.0,216.5,159.25,305.5,230.3421052631579,600,tipo_onda_hora,
+colmeia,13.0,8.0,5.0,305.5,189.25,398.0,306.875,600,tipo_onda_hora,
+colmeia,15.0,27.0,9.0,269.0,184.5,376.5,276.6666666666667,600,tipo_onda_hora,
+colmeia,16.0,46.0,8.0,314.5,170.75,394.0,287.0217391304348,600,tipo_onda_hora,
+colmeia,17.0,27.0,11.0,128.0,0.0,311.0,166.11111111111111,600,tipo_onda_hora,
+pedido_a_pedido,8.0,1077.0,19.0,54.0,0.0,90.0,70.5338904363974,600,tipo_onda_hora,
+pedido_a_pedido,9.0,826.0,19.0,82.5,44.0,145.0,115.5641646489104,600,tipo_onda_hora,
+pedido_a_pedido,10.0,759.0,18.0,76.0,44.0,140.5,112.0764163372859,600,tipo_onda_hora,
+pedido_a_pedido,11.0,970.0,20.0,81.0,46.0,154.5,123.1680412371134,600,tipo_onda_hora,
+pedido_a_pedido,12.0,997.0,21.0,80.0,50.0,143.0,122.86559679037111,600,tipo_onda_hora,
+pedido_a_pedido,13.0,572.0,18.0,64.0,27.0,128.0,103.28496503496504,600,tipo_onda_hora,
+pedido_a_pedido,14.0,552.0,16.0,81.0,50.0,145.25,116.44384057971014,600,tipo_onda_hora,
+pedido_a_pedido,15.0,490.0,18.0,80.0,45.25,143.75,119.7673469387755,600,tipo_onda_hora,
+pedido_a_pedido,16.0,722.0,23.0,63.0,30.0,134.75,106.82686980609418,600,tipo_onda_hora,
+pedido_a_pedido,17.0,416.0,19.0,61.0,12.25,109.0,88.97596153846153,600,tipo_onda_hora,
+checkout,,75.0,9.0,211.0,150.0,310.5,245.2,600,tipo_onda_depositante,ALFAPARF MILANO
+checkout,,13.0,5.0,291.0,237.0,430.0,318.3076923076923,600,tipo_onda_depositante,COTY IT
+checkout,,133.0,12.0,239.0,167.0,350.0,255.0375939849624,600,tipo_onda_depositante,ESTRELA
+checkout,,103.0,8.0,324.0,209.5,417.0,316.84466019417476,600,tipo_onda_depositante,ROYAL CANIN
+checkout,,69.0,8.0,222.0,129.0,314.0,239.6231884057971,600,tipo_onda_depositante,SR PRECO
+checkout,,52.0,9.0,222.5,147.75,284.75,238.40384615384616,600,tipo_onda_depositante,VIC BEAUTE
+colmeia,,55.0,9.0,184.0,133.5,299.0,233.43636363636364,600,tipo_onda_depositante,ALFAPARF MILANO
+colmeia,,76.0,12.0,245.5,171.0,346.0,240.77631578947367,600,tipo_onda_depositante,COTY IT
+colmeia,,61.0,9.0,277.0,151.0,372.0,274.91803278688525,600,tipo_onda_depositante,ESTRELA
+colmeia,,9.0,5.0,326.0,259.0,486.0,361.55555555555554,600,tipo_onda_depositante,GOMES DA COSTA
+colmeia,,25.0,5.0,255.0,201.0,377.0,277.84,600,tipo_onda_depositante,IMBERA
+colmeia,,88.0,9.0,328.5,226.75,417.25,306.53409090909093,600,tipo_onda_depositante,ROYAL CANIN
+colmeia,,35.0,5.0,226.0,157.5,373.0,255.85714285714286,600,tipo_onda_depositante,SR PRECO
+colmeia,,81.0,12.0,268.0,170.0,347.0,268.24691358024694,600,tipo_onda_depositante,VIC BEAUTE
+pedido_a_pedido,,569.0,14.0,72.0,43.0,161.0,121.81370826010544,600,tipo_onda_depositante,ALFAPARF MILANO
+pedido_a_pedido,,80.0,6.0,87.5,51.25,160.25,131.9,600,tipo_onda_depositante,CONDOR
+pedido_a_pedido,,399.0,13.0,72.0,31.5,179.0,120.46115288220551,600,tipo_onda_depositante,COTY IT
+pedido_a_pedido,,787.0,15.0,70.0,34.0,169.0,122.02287166454892,600,tipo_onda_depositante,ESTRELA
+pedido_a_pedido,,65.0,9.0,88.0,51.0,180.0,138.3846153846154,600,tipo_onda_depositante,GOMES DA COSTA
+pedido_a_pedido,,2087.0,6.0,53.0,0.0,82.0,59.49113560134164,600,tipo_onda_depositante,HIVE
+pedido_a_pedido,,130.0,13.0,98.5,63.5,195.75,144.36923076923077,600,tipo_onda_depositante,IMBERA
+pedido_a_pedido,,8.0,7.0,133.0,39.0,230.0,178.375,600,tipo_onda_depositante,MULTI
+pedido_a_pedido,,24.0,6.0,249.0,134.25,400.5,260.75,600,tipo_onda_depositante,PHILIPS ILUMIN. B2B
+pedido_a_pedido,,39.0,8.0,89.0,57.0,150.5,115.15384615384616,600,tipo_onda_depositante,RABBITOHS
+pedido_a_pedido,,1970.0,18.0,102.0,68.0,169.0,140.90304568527918,600,tipo_onda_depositante,ROYAL CANIN
+pedido_a_pedido,,11.0,6.0,88.0,54.5,183.5,156.36363636363637,600,tipo_onda_depositante,SHOP VINHO
+pedido_a_pedido,,433.0,18.0,74.0,47.0,144.0,118.59122401847576,600,tipo_onda_depositante,SR PRECO
+pedido_a_pedido,,667.0,12.0,41.0,29.0,98.0,89.63568215892055,600,tipo_onda_depositante,VIC BEAUTE
+pedido_a_pedido,,20.0,10.0,0.0,0.0,18.0,55.6,600,tipo_onda_depositante,VIC BEAUTE AG
+checkout,8.0,157.0,10.0,272.0,186.0,430.0,320.81528662420385,900,tipo_onda_hora,
+checkout,9.0,104.0,10.0,260.0,182.25,406.25,316.4519230769231,900,tipo_onda_hora,
+checkout,10.0,55.0,8.0,270.0,181.5,445.0,349.4909090909091,900,tipo_onda_hora,
+checkout,11.0,44.0,8.0,328.5,154.25,452.5,346.8636363636364,900,tipo_onda_hora,
+checkout,12.0,39.0,8.0,321.0,150.0,470.5,327.43589743589746,900,tipo_onda_hora,
+checkout,13.0,16.0,6.0,241.0,175.0,369.75,294.25,900,tipo_onda_hora,
+checkout,14.0,26.0,6.0,295.0,196.5,434.5,353.2307692307692,900,tipo_onda_hora,
+checkout,15.0,18.0,7.0,344.5,218.25,542.75,389.94444444444446,900,tipo_onda_hora,
+checkout,16.0,38.0,9.0,253.0,193.75,317.5,292.57894736842104,900,tipo_onda_hora,
+checkout,17.0,29.0,7.0,239.0,0.0,336.0,245.9655172413793,900,tipo_onda_hora,
+colmeia,8.0,89.0,12.0,298.0,177.0,469.0,336.0561797752809,900,tipo_onda_hora,
+colmeia,9.0,120.0,10.0,281.5,174.5,487.0,339.8833333333333,900,tipo_onda_hora,
+colmeia,10.0,49.0,11.0,344.0,204.0,451.0,354.0204081632653,900,tipo_onda_hora,
+colmeia,11.0,64.0,9.0,332.5,185.0,528.0,368.84375,900,tipo_onda_hora,
+colmeia,12.0,43.0,7.0,248.0,166.5,331.0,284.4418604651163,900,tipo_onda_hora,
+colmeia,13.0,8.0,5.0,305.5,189.25,398.0,306.875,900,tipo_onda_hora,
+colmeia,15.0,28.0,9.0,272.5,185.25,384.75,296.32142857142856,900,tipo_onda_hora,
+colmeia,16.0,49.0,8.0,323.0,179.0,423.0,315.3061224489796,900,tipo_onda_hora,
+colmeia,17.0,28.0,11.0,149.5,0.0,321.5,181.96428571428572,900,tipo_onda_hora,
+pedido_a_pedido,8.0,1094.0,19.0,55.0,0.0,93.0,80.60877513711152,900,tipo_onda_hora,
+pedido_a_pedido,9.0,853.0,19.0,85.0,46.0,153.0,135.12778429073856,900,tipo_onda_hora,
+pedido_a_pedido,10.0,774.0,18.0,78.0,45.0,148.75,123.44832041343669,900,tipo_onda_hora,
+pedido_a_pedido,11.0,997.0,20.0,83.0,47.0,167.0,139.9197592778335,900,tipo_onda_hora,
+pedido_a_pedido,12.0,1035.0,21.0,84.0,51.0,163.0,145.10048309178745,900,tipo_onda_hora,
+pedido_a_pedido,13.0,589.0,18.0,66.0,28.0,136.0,122.1358234295416,900,tipo_onda_hora,
+pedido_a_pedido,14.0,568.0,16.0,82.0,51.0,159.0,133.85915492957747,900,tipo_onda_hora,
+pedido_a_pedido,15.0,513.0,18.0,85.0,46.0,163.0,147.88109161793372,900,tipo_onda_hora,
+pedido_a_pedido,16.0,745.0,23.0,66.0,31.0,150.0,125.85369127516779,900,tipo_onda_hora,
+pedido_a_pedido,17.0,430.0,19.0,62.5,19.25,127.5,110.71860465116279,900,tipo_onda_hora,
+checkout,,82.0,9.0,233.5,154.5,369.5,280.1951219512195,900,tipo_onda_depositante,ALFAPARF MILANO
+checkout,,14.0,5.0,312.5,241.25,430.75,340.2142857142857,900,tipo_onda_depositante,COTY IT
+checkout,,150.0,12.0,251.0,170.0,422.5,307.7266666666667,900,tipo_onda_depositante,ESTRELA
+checkout,,131.0,8.0,366.0,250.5,550.0,409.4503816793893,900,tipo_onda_depositante,ROYAL CANIN
+checkout,,76.0,8.0,237.5,146.75,359.25,286.14473684210526,900,tipo_onda_depositante,SR PRECO
+checkout,,56.0,9.0,227.5,151.75,339.25,274.64285714285717,900,tipo_onda_depositante,VIC BEAUTE
+colmeia,,63.0,9.0,199.0,138.0,427.0,294.984126984127,900,tipo_onda_depositante,ALFAPARF MILANO
+colmeia,,88.0,12.0,269.5,183.25,404.5,306.96590909090907,900,tipo_onda_depositante,COTY IT
+colmeia,,63.0,9.0,281.0,155.0,377.0,288.7936507936508,900,tipo_onda_depositante,ESTRELA
+colmeia,,12.0,6.0,421.5,304.75,593.0,456.8333333333333,900,tipo_onda_depositante,GOMES DA COSTA
+colmeia,,31.0,6.0,294.0,218.0,494.5,368.2903225806452,900,tipo_onda_depositante,IMBERA
+colmeia,,104.0,9.0,355.5,257.0,492.0,374.47115384615387,900,tipo_onda_depositante,ROYAL CANIN
+colmeia,,39.0,5.0,258.0,158.0,438.0,295.9230769230769,900,tipo_onda_depositante,SR PRECO
+colmeia,,89.0,12.0,279.0,176.0,427.0,313.23595505617976,900,tipo_onda_depositante,VIC BEAUTE
+pedido_a_pedido,,590.0,14.0,76.0,43.0,174.75,143.11525423728813,900,tipo_onda_depositante,ALFAPARF MILANO
+pedido_a_pedido,,81.0,6.0,88.0,52.0,164.0,138.49382716049382,900,tipo_onda_depositante,CONDOR
+pedido_a_pedido,,418.0,13.0,81.0,34.0,205.0,148.9354066985646,900,tipo_onda_depositante,COTY IT
+pedido_a_pedido,,813.0,15.0,75.0,34.0,190.0,141.79581795817958,900,tipo_onda_depositante,ESTRELA
+pedido_a_pedido,,66.0,9.0,88.5,51.25,190.5,145.8030303030303,900,tipo_onda_depositante,GOMES DA COSTA
+pedido_a_pedido,,2100.0,6.0,53.0,0.0,82.0,63.65571428571429,900,tipo_onda_depositante,HIVE
+pedido_a_pedido,,141.0,13.0,103.0,66.0,263.0,191.17730496453902,900,tipo_onda_depositante,IMBERA
+pedido_a_pedido,,10.0,8.0,171.5,63.5,503.0,269.0,900,tipo_onda_depositante,MULTI
+pedido_a_pedido,,26.0,6.0,262.0,143.25,416.25,301.8076923076923,900,tipo_onda_depositante,PHILIPS ILUMIN. B2B
+pedido_a_pedido,,40.0,8.0,91.0,57.5,154.5,128.65,900,tipo_onda_depositante,RABBITOHS
+pedido_a_pedido,,2042.0,18.0,105.0,69.0,184.0,161.34524975514202,900,tipo_onda_depositante,ROYAL CANIN
+pedido_a_pedido,,11.0,6.0,88.0,54.5,183.5,156.36363636363637,900,tipo_onda_depositante,SHOP VINHO
+pedido_a_pedido,,451.0,18.0,76.0,48.0,162.5,144.0487804878049,900,tipo_onda_depositante,SR PRECO
+pedido_a_pedido,,690.0,12.0,42.5,29.0,117.0,112.01159420289855,900,tipo_onda_depositante,VIC BEAUTE
+pedido_a_pedido,,20.0,10.0,0.0,0.0,18.0,55.6,900,tipo_onda_depositante,VIC BEAUTE AG
+checkout,8.0,162.0,10.0,276.5,187.5,444.0,347.7654320987654,1800,tipo_onda_hora,
+checkout,9.0,115.0,10.0,294.0,187.0,497.0,399.8695652173913,1800,tipo_onda_hora,
+checkout,10.0,65.0,8.0,306.0,215.0,749.0,489.9076923076923,1800,tipo_onda_hora,
+checkout,11.0,50.0,9.0,351.5,160.25,616.75,469.86,1800,tipo_onda_hora,
+checkout,12.0,45.0,8.0,329.0,166.0,548.0,459.1777777777778,1800,tipo_onda_hora,
+checkout,13.0,18.0,7.0,258.0,180.0,450.0,401.3888888888889,1800,tipo_onda_hora,
+checkout,14.0,27.0,6.0,300.0,201.0,495.5,395.18518518518516,1800,tipo_onda_hora,
+checkout,15.0,24.0,7.0,473.0,250.5,894.25,585.2083333333334,1800,tipo_onda_hora,
+checkout,16.0,43.0,9.0,277.0,207.0,441.5,416.86046511627904,1800,tipo_onda_hora,
+checkout,17.0,30.0,7.0,240.0,24.0,348.75,275.93333333333334,1800,tipo_onda_hora,
+colmeia,8.0,97.0,12.0,320.0,190.0,567.0,396.6185567010309,1800,tipo_onda_hora,
+colmeia,9.0,152.0,11.0,381.0,198.5,763.0,533.9934210526316,1800,tipo_onda_hora,
+colmeia,10.0,64.0,12.0,404.5,277.75,812.25,586.0,1800,tipo_onda_hora,
+colmeia,11.0,72.0,9.0,367.0,194.0,631.0,451.22222222222223,1800,tipo_onda_hora,
+colmeia,12.0,48.0,9.0,265.0,173.75,379.5,371.9166666666667,1800,tipo_onda_hora,
+colmeia,13.0,8.0,5.0,305.5,189.25,398.0,306.875,1800,tipo_onda_hora,
+colmeia,14.0,15.0,5.0,332.0,192.5,384.0,396.3333333333333,1800,tipo_onda_hora,
+colmeia,15.0,32.0,9.0,298.5,188.25,429.5,403.6875,1800,tipo_onda_hora,
+colmeia,16.0,53.0,8.0,352.0,186.0,461.0,392.66037735849056,1800,tipo_onda_hora,
+colmeia,17.0,28.0,11.0,149.5,0.0,321.5,181.96428571428572,1800,tipo_onda_hora,
+pedido_a_pedido,8.0,1102.0,19.0,56.0,0.0,94.75,89.26588021778585,1800,tipo_onda_hora,
+pedido_a_pedido,9.0,893.0,19.0,89.0,48.0,175.0,185.03471444568868,1800,tipo_onda_hora,
+pedido_a_pedido,10.0,833.0,18.0,84.0,48.0,180.0,208.28691476590637,1800,tipo_onda_hora,
+pedido_a_pedido,11.0,1025.0,20.0,86.0,48.0,180.0,172.53560975609756,1800,tipo_onda_hora,
+pedido_a_pedido,12.0,1080.0,21.0,88.0,52.0,190.0,191.65648148148148,1800,tipo_onda_hora,
+pedido_a_pedido,13.0,602.0,18.0,67.0,30.0,144.5,147.24750830564784,1800,tipo_onda_hora,
+pedido_a_pedido,14.0,585.0,16.0,87.0,52.0,169.0,165.85811965811965,1800,tipo_onda_hora,
+pedido_a_pedido,15.0,544.0,19.0,90.5,48.0,205.25,213.24080882352942,1800,tipo_onda_hora,
+pedido_a_pedido,16.0,784.0,23.0,73.0,32.0,181.25,183.49617346938774,1800,tipo_onda_hora,
+pedido_a_pedido,17.0,438.0,19.0,64.0,21.0,131.0,132.05707762557077,1800,tipo_onda_hora,
+checkout,,88.0,9.0,252.5,159.75,416.0,334.54545454545456,1800,tipo_onda_depositante,ALFAPARF MILANO
+checkout,,15.0,5.0,334.0,245.5,434.5,422.1333333333333,1800,tipo_onda_depositante,COTY IT
+checkout,,161.0,12.0,272.0,173.0,451.0,357.99378881987576,1800,tipo_onda_depositante,ESTRELA
+checkout,,147.0,8.0,401.0,277.0,715.0,517.4353741496599,1800,tipo_onda_depositante,ROYAL CANIN
+checkout,,87.0,8.0,268.0,158.0,491.0,416.42528735632186,1800,tipo_onda_depositante,SR PRECO
+checkout,,61.0,9.0,234.0,155.0,390.0,353.9344262295082,1800,tipo_onda_depositante,VIC BEAUTE
+colmeia,,77.0,9.0,280.0,152.0,657.0,466.5974025974026,1800,tipo_onda_depositante,ALFAPARF MILANO
+colmeia,,96.0,12.0,294.5,189.75,480.0,386.1979166666667,1800,tipo_onda_depositante,COTY IT
+colmeia,,70.0,9.0,324.5,172.5,405.5,392.1714285714286,1800,tipo_onda_depositante,ESTRELA
+colmeia,,14.0,6.0,525.5,321.5,718.25,529.3571428571429,1800,tipo_onda_depositante,GOMES DA COSTA
+colmeia,,38.0,8.0,405.0,238.0,765.0,542.2894736842105,1800,tipo_onda_depositante,IMBERA
+colmeia,,128.0,9.0,399.5,283.0,749.25,528.875,1800,tipo_onda_depositante,ROYAL CANIN
+colmeia,,46.0,5.0,316.5,159.25,541.5,436.45652173913044,1800,tipo_onda_depositante,SR PRECO
+colmeia,,97.0,12.0,298.0,179.0,485.0,391.78350515463916,1800,tipo_onda_depositante,VIC BEAUTE
+pedido_a_pedido,,619.0,14.0,80.0,44.0,195.0,199.1502423263328,1800,tipo_onda_depositante,ALFAPARF MILANO
+pedido_a_pedido,,83.0,6.0,88.0,53.5,172.5,167.66265060240963,1800,tipo_onda_depositante,CONDOR
+pedido_a_pedido,,446.0,13.0,90.0,39.0,242.75,221.0067264573991,1800,tipo_onda_depositante,COTY IT
+pedido_a_pedido,,851.0,15.0,79.0,35.0,208.5,190.6639247943596,1800,tipo_onda_depositante,ESTRELA
+pedido_a_pedido,,67.0,9.0,89.0,51.5,200.0,164.59701492537314,1800,tipo_onda_depositante,GOMES DA COSTA
+pedido_a_pedido,,2125.0,6.0,54.0,0.0,84.0,77.46494117647059,1800,tipo_onda_depositante,HIVE
+pedido_a_pedido,,152.0,13.0,109.0,68.75,324.75,279.8421052631579,1800,tipo_onda_depositante,IMBERA
+pedido_a_pedido,,11.0,8.0,175.0,75.0,583.5,374.45454545454544,1800,tipo_onda_depositante,MULTI
+pedido_a_pedido,,43.0,5.0,64.0,40.5,119.5,136.32558139534885,1800,tipo_onda_depositante,PET TREATS
+pedido_a_pedido,,29.0,6.0,274.0,162.0,477.0,433.9310344827586,1800,tipo_onda_depositante,PHILIPS ILUMIN. B2B
+pedido_a_pedido,,42.0,8.0,96.5,58.5,168.0,180.83333333333334,1800,tipo_onda_depositante,RABBITOHS
+pedido_a_pedido,,2132.0,18.0,108.0,70.0,206.0,207.83630393996248,1800,tipo_onda_depositante,ROYAL CANIN
+pedido_a_pedido,,11.0,6.0,88.0,54.5,183.5,156.36363636363637,1800,tipo_onda_depositante,SHOP VINHO
+pedido_a_pedido,,472.0,18.0,80.5,49.0,187.5,197.875,1800,tipo_onda_depositante,SR PRECO
+pedido_a_pedido,,718.0,12.0,44.0,30.0,138.5,158.4025069637883,1800,tipo_onda_depositante,VIC BEAUTE
+pedido_a_pedido,,22.0,10.0,0.0,0.0,99.0,145.27272727272728,1800,tipo_onda_depositante,VIC BEAUTE AG

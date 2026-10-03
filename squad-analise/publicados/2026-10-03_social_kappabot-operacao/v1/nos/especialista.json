@@ -1,0 +1,885 @@
+{
+  "setor": "Logística: armazenagem e operação logística terceirizada (3PL), fulfillment de e-commerce/B2C e B2B de itens fracionados",
+  "subsetor": "Armazém geral multi-depositante no Brasil; separação manual com coletor RF no WMS Senior (ondas pedido-a-pedido, checkout express e colmeia); automação com AMR colaborativo (picking assistido e transporte até o packing)",
+  "papel": "Gerente de operações e engenharia de armazém de operador logístico (3PL) no Brasil, responsável pela produtividade da separação (picking) e pela avaliação e implantação de AMR colaborativo",
+  "senioridade": "Sênior: gerência de operações ou de engenharia de processos de CD, com vivência em dimensionamento de mão de obra, leitura de dados de WMS e de gestão de mão de obra (LMS) e projetos de automação",
+  "foco": "Julgar se a linha de base manual medida no WMS é fiel à operação real (tempo fora do relógio, pausas, tarefas em lote, tarefas abandonadas), se o ganho prometido com AMR em zona e no checkout é plausível no layout e no mix de ondas da Social, e se FTE liberados, picos e contratações evitadas se sustentam. Lente secundária (perfil 2, conhecimentos marcados 'Perfil 2'): comercial e precificação de robótica como serviço (RaaS) para 3PL.",
+  "perfil_secundario": {
+    "papel": "Gerente comercial ou de precificação de soluções de automação vendidas como serviço (RaaS) a operadores logísticos",
+    "foco": "Se a tarifa por transação, a franquia mínima e a garantia de economia cabem na forma como o 3PL cobra seus depositantes e no risco de volume do 3PL; como o prazo e a frota de pico afetam a margem de quem oferece o serviço.",
+    "confianca_geral": "baixa: as fontes públicas encontradas sobre preço de 3PL e RaaS são dos EUA ou de blogs de mercado; não há referência brasileira verificada"
+  },
+  "conhecimentos": [
+    {
+      "tema": "Peso da separação no custo do armazém",
+      "conteudo": "A separação de pedidos é a atividade mais intensiva em mão de obra e a mais cara do armazém; estima-se que responda por até 55% do custo operacional do armazém. São estimativas da literatura dos anos 1990 e 2000 (Frazelle, Tompkins); a aplicação à separação com coletor da Social é de confiança média.",
+      "fonte": "de Koster, Le-Duc e Roodbergen (2007), 'Design and control of warehouse order picking: a literature review', European Journal of Operational Research, resumo; Bartholdi e Hackman, 'Warehouse & Distribution Science', release 0.98, seção 3.3",
+      "url": "https://pure.eur.nl/ws/portalfiles/portal/46713708/DesignandControl_2007.pdf",
+      "confianca": "media"
+    },
+    {
+      "tema": "Composição do tempo do separador (separador vai ao produto)",
+      "conteudo": "O deslocamento é o maior componente do tempo de separação manual: cerca de 50%, seguido de busca (cerca de 20%), extração (cerca de 15%), preparação (cerca de 10%) e outros (cerca de 5%), segundo Tompkins et al. (2003), reproduzido em de Koster et al. (2007), Fig. 4. Bartholdi e Hackman (seção 3.3, citando Frazelle, 1996) dão 55% de deslocamento, 15% de busca, 10% de extração e 20% de papelada e outras atividades. São estimativas para separação com papel; com coletor, a parcela de papelada muda e a distribuição da Social não foi medida. Aplicação à Social: confiança média.",
+      "fonte": "de Koster et al. (2007), Fig. 4; Bartholdi e Hackman, release 0.98, seção 3.3 (citando Frazelle, World-Class Warehousing, 1996)",
+      "url": "https://pure.eur.nl/ws/portalfiles/portal/46713708/DesignandControl_2007.pdf",
+      "confianca": "media"
+    },
+    {
+      "tema": "Método de separação conforme o perfil de pedidos",
+      "conteudo": "Pedidos de uma linha quase sempre compensam ser separados em lote, porque não exigem triagem. Com até cerca de 4 linhas por pedido, tende a valer o lote com um separador por lote; acima disso, a separação por zona com montagem progressiva. O desafio é tornar econômicos os pedidos de tamanho intermediário: 'more than two pick-lines but too few to sufficiently amortize the cost of walking'. Olhar a distribuição de linhas por pedido, não a média.",
+      "fonte": "Bartholdi e Hackman, release 0.98, seção 3.3 (p. 26-27) e cap. 14 (discussão da Fig. 14.4)",
+      "url": "https://www2.isye.gatech.edu/~jjb/wh/book/editions/wh-sci-0.98.pdf",
+      "confianca": "alta"
+    },
+    {
+      "tema": "Interpretação: pedido-a-pedido como alvo do AMR",
+      "conteudo": "Interpretação do perfilador, não da fonte: pela definição de Bartholdi e Hackman (mais de duas linhas), o pedido-a-pedido com 3 ou mais endereços cai na faixa intermediária, a mais cara de separar à mão; o de 2 endereços fica na fronteira. Sustenta o recorte do AMR em zona só como hipótese.",
+      "fonte": "interpretação do perfilador sobre Bartholdi e Hackman, seção 3.3",
+      "url": "https://www2.isye.gatech.edu/~jjb/wh/book/editions/wh-sci-0.98.pdf",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Perfil de pedidos de e-commerce e picos antes do corte",
+      "conteudo": "Em fulfillment de e-commerce os pedidos costumam ter só 1 a 3 itens e chegam em grande número, para envio imediato. Prazos de corte para envio no mesmo dia fazem os clientes concentrarem pedidos antes do horário de corte, o que gera picos dentro do dia.",
+      "fonte": "Bartholdi e Hackman, release 0.98, cap. 1 (tipos de armazém) e seção 16.3",
+      "url": "https://www2.isye.gatech.edu/~jjb/wh/book/editions/wh-sci-0.98.pdf",
+      "confianca": "alta"
+    },
+    {
+      "tema": "Operador logístico multi-cliente",
+      "conteudo": "O 3PL atende vários clientes numa mesma instalação e ganha escala e sazonalidades complementares que cada cliente não teria sozinho; também pode absorver picos de fluxo.",
+      "fonte": "Bartholdi e Hackman, release 0.98, cap. 1 (3PL warehouse)",
+      "url": "https://www2.isye.gatech.edu/~jjb/wh/book/editions/wh-sci-0.98.pdf",
+      "confianca": "alta"
+    },
+    {
+      "tema": "Interpretação: frota compartilhada entre depositantes (ALT6)",
+      "conteudo": "Interpretação do perfilador, que a fonte não trata: uma frota de robôs compartilhada entre depositantes com picos em datas diferentes tenderia a ter ocupação melhor que uma frota dedicada. Depende da sazonalidade real de cada depositante ([●]) e da compatibilidade de carga.",
+      "fonte": "interpretação do perfilador sobre Bartholdi e Hackman, cap. 1; sem fonte direta",
+      "url": "",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Senior WMS: Checkout Express",
+      "conteudo": "No Senior WMS, a conferência por Checkout Express só aceita pedidos de uma peça: ao ativar o parâmetro, o número mínimo e o máximo de peças do pedido passam a ser 1. Os produtos de toda a onda são separados (pulmão e picking) e levados a bancadas, onde a conferência é feita bipando o código de barras e as quantidades, com emissão da etiqueta de volume.",
+      "fonte": "Senior Sistemas, documentação do Gestão de Armazenagem WMS 8.12, página 'Packing de Checkout Express'",
+      "url": "https://documentacao.senior.com.br/gestaodearmazenagemwms/8.12/manuais-wms/gestao-armazenagem-wms/movimentacao/saida/packing-checkout-express.html",
+      "confianca": "alta"
+    },
+    {
+      "tema": "Senior WMS: Colmeia",
+      "conteudo": "Na colmeia do Senior WMS a onda é separada em lote pelo coletor ('Separação Onda'). Se o produto não está no endereço, o operador usa 'pular' e o sistema busca um endereço compatível posterior; sem estoque compatível, cria uma atividade de resolução de problemas para um grupo próprio de usuários. A colmeia aceita leitura de código de barras com fator de conversão maior que um (caixa fechada gera volume ao bipar).",
+      "fonte": "Senior Sistemas, documentação WMS 8.12, páginas 'Resolução de problemas na separação Colmeia' e 'Colmeia com maior fator de conversão'",
+      "url": "https://documentacao.senior.com.br/gestaodearmazenagemwms/8.12/manuais-wms/manuais-operacionais/expedicao/resolucao-problemas-sep-colmeia.htm",
+      "confianca": "media"
+    },
+    {
+      "tema": "Senior WMS: tempo de produtividade, turno e meta",
+      "conteudo": "No relatório de produtividade de separação do Senior, o 'tempo aplicado' é só o tempo de execução da tarefa de separação, não o tempo no armazém; a produção média é peças dividido por tempo aplicado. Turnos que começam num dia e terminam no outro têm a produtividade lançada no dia anterior. O Senior também pode exibir meta por hora no coletor, por colaborador. A configuração usada pela Social não é conhecida.",
+      "fonte": "Senior Sistemas, documentação WMS 8.12: 'Relatório de Performance de Separação para o fluxo de Checkout Express e Colmeia' (funcionalidade descontinuada) e 'Coletor - Meta por colaborador'",
+      "url": "https://documentacao.senior.com.br/gestaodearmazenagemwms/8.12/manuais-wms/manuais-operacionais/expedicao/rel-performance-sep-ck-col.html",
+      "confianca": "media"
+    },
+    {
+      "tema": "Como a planilha do WMS da Social mede o tempo (achado da Acta)",
+      "conteudo": "A planilha de produtividade do WMS Senior registra o intervalo entre confirmações de endereços, não a duração desde o início da tarefa: a tarefa de um endereço fica com tempo quase nulo, e o tempo por coleta exige a correção N−1 (tempo da tarefa dividido por endereços menos um), que supõe confirmação na ordem de execução. O WMS não registra etiqueta, ida ao packing nem trajeto ao faturamento. Coletas acima de 300 s foram tratadas como tarefas abandonadas. Horas por operador no WMS subestimam a jornada, porque o operador tem outras atividades.",
+      "fonte": "Acta Robotics, relatório 9fleet v1 (Análise de Performance), p. 5, 6, 12 e 13 (insumo da análise)",
+      "url": "",
+      "confianca": "media"
+    },
+    {
+      "tema": "Imperfeições típicas de registros com carimbo de tempo",
+      "conteudo": "A literatura de mineração de processos cataloga padrões de imperfeição de registros reais, entre eles: captura em formulário (vários eventos com o mesmo carimbo de tempo, típico de confirmação em bloco), viagem no tempo inadvertida (carimbos errados que invertem a ordem, como fim antes do início) e evento sem âncora (carimbo em formato ou referência inesperados). Cada padrão tem detecção e correção próprias; um único corte de valor não resolve.",
+      "fonte": "Suriadi, Andrews, ter Hofstede e Wynn (2017), 'Event log imperfection patterns for process mining: towards a systematic approach to cleaning event logs', Information Systems, v. 64, p. 132-150",
+      "url": "https://doi.org/10.1016/j.is.2016.07.011",
+      "confianca": "alta"
+    },
+    {
+      "tema": "Tolerâncias de padrão de mão de obra (PF&D)",
+      "conteudo": "Padrões de engenharia de mão de obra em CDs somam ao tempo normal tolerâncias de PF&D: tempo pessoal em torno de 5% da jornada, fadiga em geral de 3% a 5% conforme a tarefa e demoras de 2% a 4% conforme a tarefa. Interpretação do perfilador, não da fonte: por isso a ocupação de planejamento fica abaixo de 100%.",
+      "fonte": "Supply Chain Digest, On-Target, 17/07/2013 (texto sobre PF&D em padrões de mão de obra de armazém)",
+      "url": "https://www.scdigest.com/ontarget/13-07-17-1.php?cid=7230",
+      "confianca": "media"
+    },
+    {
+      "tema": "Filas: utilização próxima de 100% faz a espera explodir",
+      "conteudo": "Pela teoria de filas, quando a taxa de chegada se aproxima da capacidade de atendimento, a espera cresce de forma acentuada mesmo com fluxo regular; por isso o processo seguinte precisa de folga de capacidade. Aplicação (interpretação): vale para o par operador–robô (espera do robô pelo operador e vice-versa) e para o packing que recebe os robôs.",
+      "fonte": "Bartholdi e Hackman, release 0.98, seção 16.3",
+      "url": "https://www2.isye.gatech.edu/~jjb/wh/book/editions/wh-sci-0.98.pdf",
+      "confianca": "alta"
+    },
+    {
+      "tema": "Benchmark de coletas por pessoa-hora em 36 armazéns",
+      "conteudo": "A Fig. 15.5 de Bartholdi e Hackman mostra 'pick-lines per person-hour' em 36 armazéns de uma mesma empresa nos EUA, com eixo de cerca de 15 a 25 (leitura aproximada do gráfico) e produtividade caindo com a área. A fonte não declara o denominador de horas. Interpretação do perfilador: só compare benchmark com o mesmo denominador declarado (horas pagas, jornada ativa ou tempo em tarefa).",
+      "fonte": "Bartholdi e Hackman, release 0.98, cap. 15, Fig. 15.5 (p. 264)",
+      "url": "https://www2.isye.gatech.edu/~jjb/wh/book/editions/wh-sci-0.98.pdf",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Reabastecimento",
+      "conteudo": "Regra prática: um reabastecedor para cada cinco separadores, variando com o fluxo. O reabastecimento não é feito pelo AMR de picking e pode aparecer ou não na planilha de produtividade.",
+      "fonte": "Bartholdi e Hackman, release 0.98, seção 3.3",
+      "url": "https://www2.isye.gatech.edu/~jjb/wh/book/editions/wh-sci-0.98.pdf",
+      "confianca": "media"
+    },
+    {
+      "tema": "AMR colaborativo em 3PL: DHL Supply Chain",
+      "conteudo": "A DHL Supply Chain relata aumentos de 30% a 180% em unidades separadas por hora e redução de 80% no tempo de treinamento com AMR colaborativo (Locus), em mais de 40 sites no mundo (Automated Warehouse, 23/02/2026). Segundo o Supply Chain Dive (02/06/2021), num armazém a separação passou de 78 para 150 unidades por hora, e os robôs eliminaram cerca de 60% da caminhada. As fontes não informam o método nem o país da linha de base.",
+      "fonte": "Automated Warehouse, 'DHL Supply Chain completes 1B picks with Locus Robotics', 23/02/2026; Supply Chain Dive, 02/06/2021",
+      "url": "https://www.automatedwarehouseonline.com/dhl-supply-chain-completes-1-billion-picks-locus-robotics/",
+      "confianca": "media"
+    },
+    {
+      "tema": "AMR colaborativo em 3PL: GEODIS",
+      "conteudo": "A GEODIS, num CD em Dallas que atende sete clientes, implantou 12 AMRs com carrinho numa área de separação de 40 mil pés quadrados e passou de 65 para 98 unidades por hora (+50%), com queda de 75% nas horas extras e auditoria reduzida de 100% para 10% das coletas, graças à checagem automática de qualidade.",
+      "fonte": "GEODIS, estudo de caso 'Mini logistics case study: mobile robotics'",
+      "url": "https://geodis.com/us-en/resources/case-studies/mini-logistics-case-study-mobile-robotics",
+      "confianca": "media"
+    },
+    {
+      "tema": "AMR colaborativo em 3PL: MD Logistics (6 River Systems)",
+      "conteudo": "Um 3PL com 30 AMRs em 3 CDs. O estudo de caso traz '2.6x pick rate improvement' e, na fala do diretor de operações, ganho de 'more than 25% on a daily basis, and 50% on the busiest days'; a página não define a base de cada número. Segundo o depoimento do gerente de operações, o treinamento caiu de cerca de duas semanas para cerca de duas horas, o que é tempo de treino, não tempo até a proficiência.",
+      "fonte": "Ocado Intelligent Automation (6 River Systems), estudo de caso MD Logistics (material de fornecedor)",
+      "url": "https://ocadointelligentautomation.com/case-studies/md-logistics",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Política de colaboração humano–AMR",
+      "conteudo": "Estudo com modelagem analítica e simulação de mais de 12 mil cenários: o modo 'swarm', em que o separador alterna entre vários robôs na sua zona, em geral dá mais vazão do que o modo dirigido pelo sistema, em que um separador acompanha um robô por pedido. O ganho cresce com a razão robôs/separador e com a razão de velocidade robô/separador. O modo dirigido só é melhor quando as velocidades são parecidas, os pedidos são grandes e há poucos robôs. Leitura (interpretação): o piloto atual (um robô, operador compartilhado) parece o modo dirigido; o cenário em zona do deck parece o swarm.",
+      "fonte": "Ghorashi Khalilabadi et al. (RSM, Erasmus University), Transportation Science (2026), segundo resumo da DC Velocity; o artigo não foi lido na íntegra",
+      "url": "https://www.dcvelocity.com/material-handling/order-fulfillment-packing/robotic-picking-and-loading/research-warehouse-workers-do-best-when-they-switch-between-co-bots",
+      "confianca": "media"
+    },
+    {
+      "tema": "Teto de produtividade sem deslocamento (goods-to-person)",
+      "conteudo": "Em estações goods-to-person, onde o operador não anda, há três referências. (1) A Dematic anuncia 'picking rates of up to 1800 items per hour' na RapidPick (Food Processing, 2010; verificado; itens, não coletas). (2) O white paper da Dematic cita de 450 a 800 coletas por hora sustentadas e até 1.000 em parte do turno (SupplyChain247 bloqueado, número do resumo de busca, não verificado). (3) A SSI Schäfer cita de 350 a 650 'cases per hour between a person or picking robot' (verificado; caixas, com pessoa ou robô). Só servem como ordem de grandeza do teto físico, em unidades diferentes de coleta manual.",
+      "fonte": "Dematic RapidPick (Food Processing, 02/11/2010); Dematic, white paper 'Goods To Person Order Fulfillment' (inacessível); SSI Schäfer",
+      "url": "https://foodprocessing.com.au/content/materials-handling-storage-and-supply-chain/product/dematic-rapidpick-ergonomic-picking-stations-572380528",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Base de Conhecimento da Acta: proporções e multiplicadores de AMR",
+      "conteudo": "A base interna da Acta registra: picking colaborativo com 1 AMR para 1 a 2 operadores; Kappabot em picking assistido com 2 a 3 robôs por operador e produtividade esperada de 2x; multiplicador padrão da indústria de 2x a 3x; taxa de separação de 78 UPH antes e 150 a 180 UPH depois; acurácia de 99,9% com AMR contra 99,7% humana. A base não individualiza as fontes primárias de cada número.",
+      "fonte": "Acta Robotics, 'Base de Conhecimento - ROI e Proporções Operacionais de AMRs para Armazéns' (ago/2025), seções 2.1, 3.1, 3.3 e 6.1 (insumo da análise)",
+      "url": "",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Alta temporada no Brasil (Black Friday e Natal)",
+      "conteudo": "Na Black Friday de 2025, as atividades dos operadores logísticos cresceram em média 13% sobre o ano anterior, segundo a ABOL: é crescimento anual, não multiplicador de pico sobre dias normais. Para o pico, as empresas aumentaram o quadro de temporários e estenderam turnos. O crescimento de 16,1% do e-commerce no evento é do Índice Cielo do Varejo Ampliado (ICVA), não da ABOL. Não usar os 13% como pico em CR8 ou P19.",
+      "fonte": "ABOL e ICVA (Cielo), citados por Times Brasil (Black Friday 2025)",
+      "url": "https://timesbrasil.com.br/brasil/boom-logistico-black-friday-eleva-em-13-o-volume-de-operacoes/",
+      "confianca": "media"
+    },
+    {
+      "tema": "Retenção e contratação em armazéns no Brasil",
+      "conteudo": "Em pesquisa com 2 mil profissionais de cadeia de suprimentos em 12 países, 84% dos entrevistados do Brasil relataram dificuldade de reter colaboradores de armazém; contratar e treinar temporários e garantir produtividade aparecem entre os desafios.",
+      "fonte": "Manhattan Associates e Vanson Bourne (2024), citada por Mundo Logística",
+      "url": "https://mundologistica.com.br/noticias/profissionais-de-cadeia-de-suprimentos-querem-modernizacao-na-ti",
+      "confianca": "media"
+    },
+    {
+      "tema": "Rotatividade: cuidado com a definição",
+      "conteudo": "O portal Salário (dados do CAGED, ago/2025 a jul/2026) publica 'rotatividade' de 45,5% para auxiliar de logística e de 49,3% para armazéns gerais (CNAE 5211-7/01), mas a métrica é desligamentos dividido por movimentações (admissões mais desligamentos), não a taxa usual (desligamentos dividido por efetivo médio). Indica apenas que houve mais admissões que desligamentos. O DIEESE (2011) descreve comércio e serviços com rotatividade próxima ou acima de 50% nos anos 2000. Taxa de rotatividade de separadores no Brasil com a definição usual: [●].",
+      "fonte": "salario.com.br (CAGED/MTE), páginas de auxiliar de logística e de armazéns gerais, atualizadas em 03/09/2026; DIEESE, 'Rotatividade e flexibilidade no mercado de trabalho' (2011), p. 92",
+      "url": "https://www.salario.com.br/empresas/armazens-gerais-emissao-de-warrant/",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Salário de referência de separação",
+      "conteudo": "Salário médio de admissão e desligamento no CAGED (ago/2025 a jul/2026): auxiliar de logística R$ 1.998,58 por mês, com 43 h semanais em média; armazenista em armazéns gerais R$ 2.068; média de todas as ocupações de armazéns gerais R$ 3.626. Não inclui encargos nem benefícios.",
+      "fonte": "salario.com.br (CAGED/MTE), páginas 'Auxiliar de Logística' e 'Armazéns Gerais - CNAE 5211-7/01', atualizadas em 03/09/2026",
+      "url": "https://www.salario.com.br/profissao/auxiliar-de-logistica-414110",
+      "confianca": "media"
+    },
+    {
+      "tema": "Encargos e provisões sobre a folha (regime geral)",
+      "conteudo": "No regime geral incidem INSS patronal de 20% e RAT de 1% a 3% (Lei 8.212/1991, art. 22, I e II), FGTS de 8% (Lei 8.036/1990, art. 15), 13º salário (Lei 4.090/1962), férias com um terço (Constituição, art. 7º, XVII) e contribuições a terceiros conforme o enquadramento. O custo total depende do regime tributário e dos benefícios (transporte, refeição, saúde). A análise usa o custo por operador da própria Social (PR10) e não deve recalculá-lo.",
+      "fonte": "Lei 8.212/1991; Lei 8.036/1990; Lei 4.090/1962; Constituição Federal, art. 7º",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm",
+      "confianca": "alta"
+    },
+    {
+      "tema": "Jornada e intervalos pela CLT",
+      "conteudo": "Jornada normal de 8 h por dia (CLT, art. 58) e 44 h por semana (Constituição, art. 7º, XIII); até 2 h extras por dia (art. 59); regime 12x36 por acordo (art. 59-A); mínimo de 11 h entre duas jornadas (art. 66). Intervalo de 1 h a 2 h para trabalho contínuo acima de 6 h (art. 71); a convenção ou o acordo coletivo pode reduzi-lo a 30 min (art. 611-A, III). A pausa de 15 min (art. 71, §1º) só vale para trabalho de 4 a 6 h, então não se aplica à jornada de PR12. A lei não diz se um intervalo curto entre tarefas é trabalho ou pausa. Texto da CLT não reconferido no Planalto em 03/10/2026 (HTTP 503).",
+      "fonte": "CLT (Decreto-Lei 5.452/1943), arts. 58, 59, 59-A, 66, 71 e 611-A; Constituição Federal, art. 7º, XIII",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm",
+      "confianca": "alta"
+    },
+    {
+      "tema": "Curva de aprendizagem: treino não é proficiência",
+      "conteudo": "Tempo de treino e tempo até a proficiência são métricas diferentes. Os casos com AMR falam de treino: DHL, menos 80% no tempo de treinamento; MD Logistics, de cerca de duas semanas para cerca de duas horas (depoimento). Isso não mostra quanto tempo um novo separador leva para chegar ao ritmo dos experientes, com ou sem robô. Grosse e Glock (2013) estudam efeitos de aprendizagem na separação, mas o artigo não foi lido. Tempo até a proficiência, manual ou com AMR, no Brasil: [●]. Na oferta, só cabe dizer 'treino mais curto, segundo casos de fornecedores e operadores no exterior'.",
+      "fonte": "Grosse e Glock (2013), 'An experimental investigation of learning effects in order picking systems', Journal of Manufacturing Technology Management (não lido na íntegra); DHL Supply Chain via Automated Warehouse",
+      "url": "",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Perfil 2: modelos de preço de 3PL",
+      "conteudo": "Modelos usuais de preço de 3PL: por transação (cada coleta, palete ou devolução), assinatura, cost-plus (custo real mais margem) e híbrido. Texto da fonte, conferido em 03/10/2026: 'Hybrid models mix the above, most often a base subscription plus per-transaction fees beyond an included allowance, or a percentage of order value.' Pesquisa de 2025 com mais de 600 armazéns nos EUA: média de US$ 3,20 pelo primeiro item do pedido B2C, US$ 0,48 por item adicional e US$ 4,80 por pedido B2B; mínimo mensal médio de US$ 517. Interpretação do perfilador: a estrutura da oferta da Acta (por pedido, por linha, com franquia) se parece com a cobrança de 3PL. Como a Social cobra seus depositantes: [●], e é o que decide se a tarifa cabe (CR2).",
+      "fonte": "Fulfill.com, guia '3PL pricing' (2026), citando a pesquisa 2025 da The Fulfillment Advisor",
+      "url": "https://fulfill.com/3pl-pricing",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Perfil 2: contratos de robótica como serviço (RaaS)",
+      "conteudo": "Contratos de RaaS para armazéns costumam usar mensalidade por robô em prazo de dois a três anos ou cobrança por pedido ou coleta; para 3PL com demanda variável, aparecem cláusulas de flexibilidade e pools de robôs para pico. A Base de Conhecimento da Acta cita RaaS a partir de 575 euros por mês em contratos de 48 meses, referência que a decisão deixou de usar (PR13).",
+      "fonte": "Cleverence, artigo 'Robotics as a Service (RaaS) for Warehouses' (blog de mercado); Acta, Base de Conhecimento, seção 1.3",
+      "url": "https://www.cleverence.com/articles/3pl-business/robotics-as-a-service-raas-warehouse-robot-leasing-4831",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Contratação (CR8): hora extra e adicional noturno",
+      "conteudo": "A hora extra é limitada a 2 h por dia (CLT, art. 59) e paga com adicional de no mínimo 50% sobre a hora normal (Constituição, art. 7º, XVI; CLT, art. 59, §1º). A convenção coletiva pode fixar adicional maior: [●] para a Social. O trabalho entre 22 h e 5 h tem adicional de no mínimo 20%, e a hora noturna conta 52 min 30 s (CLT, art. 73). Interessa ao horário estendido: estender turno com pessoas custa adicional ou exige escala nova, porque o Kappabot é colaborativo e precisa de separador no mesmo horário. Texto da CLT não reconferido no Planalto em 03/10/2026 (HTTP 503).",
+      "fonte": "Constituição Federal, art. 7º, XVI; CLT, arts. 59 e 73",
+      "url": "https://www.legjur.com/legislacao/art/DCL_00054521943-73",
+      "confianca": "alta"
+    },
+    {
+      "tema": "Contratação (CR8): trabalho temporário",
+      "conteudo": "O temporário é contratado por empresa de trabalho temporário e posto à disposição da tomadora para substituir pessoal permanente ou atender demanda complementar, definida como a que vem de fatores imprevisíveis ou, se previsíveis, de natureza intermitente, periódica ou sazonal (Lei 6.019/1974, art. 2º e §2º, na redação da Lei 13.429/2017). O contrato vai até 180 dias, consecutivos ou não, prorrogável por até 90 (art. 10, §§1º e 2º); depois disso, o mesmo trabalhador só volta à mesma tomadora 90 dias após o fim do contrato (art. 10, §5º). Custo e taxa da agência: [●].",
+      "fonte": "Lei 6.019/1974, na redação da Lei 13.429/2017 (Câmara dos Deputados, publicação original)",
+      "url": "https://www2.camara.leg.br/legin/fed/lei/2017/lei-13429-31-marco-2017-784561-publicacaooriginal-152293-pl.html",
+      "confianca": "alta"
+    },
+    {
+      "tema": "Contratação (CR8): volume de temporários no Brasil",
+      "conteudo": "Segundo a ASSERTTEM, o trabalho temporário fechou 2025 com mais de 2,5 milhões de contratos (cerca de 4,5% acima de 2024), com 522 mil contratos de outubro a dezembro (5,1% acima do mesmo período de 2024) e cerca de 500 mil trabalhadores efetivados. O comércio eletrônico, sobretudo logística e distribuição, foi o principal motor. Não informa custo nem prazo médio.",
+      "fonte": "ASSERTTEM, citada por InfoMoney, 26/01/2026",
+      "url": "https://www.infomoney.com.br/?p=3187433",
+      "confianca": "media"
+    },
+    {
+      "tema": "Contratação (CR8): custo de desligamento sem justa causa",
+      "conteudo": "Na dispensa sem justa causa, o empregador deve: aviso prévio de 30 dias, mais 3 dias por ano de serviço, até 90 dias (CLT, art. 487; Lei 12.506/2011); multa de 40% sobre os depósitos do FGTS do contrato (Lei 8.036/1990, art. 18, §1º); férias proporcionais com um terço e 13º proporcional. O valor por separador depende do tempo de casa e do salário: [●] para a Social.",
+      "fonte": "Lei 12.506/2011; Lei 8.036/1990, art. 18, §1º; CLT, art. 487 (resumos do TRT-3 e da LegJur; Planalto indisponível em 03/10/2026)",
+      "url": "https://www.legjur.com/legislacao/art/lei_00080361990-18",
+      "confianca": "alta"
+    },
+    {
+      "tema": "Contratação (CR8): custo de repor um empregado",
+      "conteudo": "Revisão de 11 estudos com 31 casos (1992 a 2007) nos EUA: o custo típico de substituir um empregado é cerca de 16% do salário anual em cargos de menos de US$ 30 mil por ano e cerca de 20% até US$ 50 mil. Inclui recrutamento, contratação, desligamento e treinamento; só 2 dos 11 estudos incluem a perda de produtividade da curva de aprendizagem. Referência externa e antiga: equivalente brasileiro para separadores: [●].",
+      "fonte": "Boushey e Glynn, 'There Are Significant Business Costs to Replacing Employees', Center for American Progress, 16/11/2012",
+      "url": "https://www.americanprogress.org/article/there-are-significant-business-costs-to-replacing-employees/",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Contratação (CR8): rotatividade na definição usual",
+      "conteudo": "DIEESE, com dados da RAIS: a taxa de rotatividade global é o menor valor entre admissões e desligamentos dividido pelo estoque médio do ano. A taxa descontada exclui transferências, aposentadorias, mortes e pedidos de demissão. Em 2014, nos vínculos celetistas do subsetor Transporte e Comunicação, a global foi de 53,0% e a descontada de 34,7%; no total do Brasil, 62,8% e 43,1%. O subsetor é amplo (inclui transporte de passageiros e comunicações) e o dado é de 2014: proxy para armazenagem, não para separadores.",
+      "fonte": "DIEESE, 'Rotatividade no mercado de trabalho brasileiro' (2016), Anexo, Tabela 5, e cap. 2, nota 6",
+      "url": "https://www.dieese.org.br/livro/2016/rotatividade2016.pdf",
+      "confianca": "media"
+    },
+    {
+      "tema": "Contratação (CR8): encargos sobre o salário dependem do conceito",
+      "conteudo": "O peso dos encargos varia com o conceito. O DIEESE (2006) chega a 27,8% da folha média mensal (ou 25,2% do que o trabalhador recebe), contando só contribuições que não revertem ao trabalhador. Pastore (1996) chega a 102,06% sobre o salário-base, incluindo 13º, férias, descanso semanal, feriados e verbas rescisórias. Para auxiliar de logística vale o mesmo: o custo total depende do conceito e dos benefícios. A análise usa PR10 (custo da Social) e não recalcula.",
+      "fonte": "DIEESE, 'Encargos sociais no Brasil: conceito, magnitude e reflexos no emprego', abr/2006 (cita Pastore, 1996)",
+      "url": "https://serpina.dieese.org.br/relatoriotecnico/2006/encargosSociais.pdf",
+      "confianca": "media"
+    },
+    {
+      "tema": "Contratação (CR8): tempo para repor uma vaga",
+      "conteudo": "Não foi encontrada fonte brasileira de tempo médio para preencher vaga de separador nem de custo de recrutamento operacional: [●]. Perguntar à Social.",
+      "fonte": "[●] sem fonte setorial encontrada",
+      "url": "",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Viabilidade: segurança de AMR com pessoas",
+      "conteudo": "A ISO 3691-4:2023 especifica requisitos de segurança, e como verificá-los, para veículos industriais sem condutor e seus sistemas; entre os exemplos estão 'autonomous mobile robot' e 'automated guided cart'. Trata da preparação da zona de operação e exclui, entre outros, vias públicas, atmosferas explosivas e climas extremos. Se o Kappabot foi avaliado por essa norma: [●], perguntar à engenharia da Acta.",
+      "fonte": "ISO 3691-4:2023, resumo do escopo (Genorma)",
+      "url": "https://genorma.com/en/standards/iso-3691-4-2023",
+      "confianca": "alta"
+    },
+    {
+      "tema": "Viabilidade: ergonomia (NR-17)",
+      "conteudo": "A NR-17, na redação da Portaria MTP 423/2021, proíbe exigir transporte manual de carga cujo peso possa comprometer a saúde ou a segurança do trabalhador (17.5.1), sem fixar limite numérico. Quando as pausas forem medida de prevenção, contam como tempo de trabalho efetivo (17.4.3.1). Sistemas de avaliação de desempenho devem considerar as repercussões sobre a saúde (17.4.4). Interpretação do perfilador: tirar do separador a caminhada e o transporte até o packing é argumento de ergonomia e de retenção, a validar com a Social.",
+      "fonte": "NR-17, redação da Portaria MTP 423/2021 (Guia Trabalhista)",
+      "url": "https://www.guiatrabalhista.com.br/legislacao/nr/nr17.htm",
+      "confianca": "media"
+    },
+    {
+      "tema": "Viabilidade: carga por segmento",
+      "conteudo": "A base da Acta indica, para o Kappabot K100 no transporte autônomo, itens de até 100 kg (seção 6.1). Peso e volume por item e por pedido dos depositantes (ração da Royal Canin, cosméticos, brinquedos): [●], sem fonte verificada. Perguntar à Social o peso e a dimensão máximos por item e por pedido no escopo.",
+      "fonte": "Acta, Base de Conhecimento, seção 6.1; [●] para o perfil de carga dos depositantes",
+      "url": "",
+      "confianca": "baixa"
+    },
+    {
+      "tema": "Viabilidade: sazonalidade por segmento",
+      "conteudo": "Brinquedos: segundo a ABRINQ, a indústria concentrou 64% do movimento anual de agosto a dezembro em 2017 (64,1% em 2016), com o Dia das Crianças e o Natal como principais datas. É dado da indústria, não do varejo nem de 3PL. Cosméticos e pet food: [●]. Sustenta, só como hipótese, picos de depositantes em datas diferentes (ALT6).",
+      "fonte": "ABRINQ, citada por Mercado & Consumo, 28/11/2018",
+      "url": "https://mercadoeconsumo.com.br/28/11/2018/noticias/industria-de-brinquedos-cresce-gracas-as-vendas-de-fim-de-ano/",
+      "confianca": "media"
+    },
+    {
+      "tema": "Viabilidade: implantação do lado da Social",
+      "conteudo": "Custo e prazo de implantação para a Social não têm fonte: adequação de layout e corredores, rede sem fio, integração com o WMS Senior (o deck diz que importação de ondas, confirmação e devolutiva já estão em produção), treinamento, queda de produtividade no go-live e acordo coletivo ou sindicato: [●]. O plano da Acta prevê cerca de 10 semanas em três fases (deck, slide 19). A base da Acta cita implantação em semanas para AMR (seção 4.1), sem fonte primária.",
+      "fonte": "deck 'Kappabot na Social', slide 19; Acta, Base de Conhecimento, seção 4.1; [●] para o lado da Social",
+      "url": "",
+      "confianca": "baixa"
+    }
+  ],
+  "indicadores": [
+    {
+      "nome": "Linhas operacionais (coletas) por hora por separador",
+      "formula": "coletas (soma de Qtde Endereços, M05) ÷ horas de separação do operador. O denominador precisa ser declarado: tempo em tarefa, jornada ativa em ciclo completo (M11, M14) ou horas pagas.",
+      "faixa_tipica": "[●] Não há faixa pública confiável por método (pedido-a-pedido, lote/colmeia, zona) para o Brasil. Referências indiretas, todas de confiança baixa: (1) um CD na Grande São Paulo, com separação de pequeno volume, foi de 28,3 para 38,4 linhas por homem-hora em 2018 (TCC; texto inacessível, número do resumo de busca); (2) 36 armazéns de uma empresa nos EUA com eixo de cerca de 15 a 25 'pick-lines per person-hour', sem denominador declarado. A linha de base da Social sai do WMS (CR3) e se compara a PR06; em zona, PR05 é premissa do deck.",
+      "fonte": "TCC FEC/Unicamp, LALT, turma 22 (resultado de busca; texto não acessível); Bartholdi e Hackman, Fig. 15.5",
+      "url": "https://lalt.fec.unicamp.br/tccs_fec_0600/turma22/victor_carvalho/tcc.pdf",
+      "confianca": "baixa"
+    },
+    {
+      "nome": "Ganho do lote/colmeia e da zona sobre o pedido-a-pedido",
+      "formula": "(coletas por hora no método ÷ coletas por hora no pedido-a-pedido, mesmo denominador) − 1",
+      "faixa_tipica": "[●] Sem faixa robusta. Regra de projeto: lote para pedidos de uma linha e até cerca de 4 linhas; zona acima disso (alta). Ganhos citados em blogs de mercado de 20% a 50% para lote com sobreposição de SKUs e cerca de 15% para zona com 4 pedidos por lote numa simulação (baixa).",
+      "fonte": "Bartholdi e Hackman, seção 3.3; Racklify (blog); simulação publicada pela Mahidol University (resultado de busca)",
+      "url": "https://www2.isye.gatech.edu/~jjb/wh/book/editions/wh-sci-0.98.pdf",
+      "confianca": "baixa"
+    },
+    {
+      "nome": "Unidades por hora por separador (UPH)",
+      "formula": "unidades separadas ÷ horas de separação (mesmo denominador das linhas por hora)",
+      "faixa_tipica": "Linhas de base manuais antes do AMR: 65 UPH (GEODIS, Dallas, EUA) e 78 UPH (um armazém DHL; método e país não informados). Depois do AMR: 98 e 150 UPH. Depende das unidades por linha e do fator de conversão (unidade, caixa).",
+      "fonte": "GEODIS, estudo de caso; Supply Chain Dive, 02/06/2021",
+      "url": "https://geodis.com/us-en/resources/case-studies/mini-logistics-case-study-mobile-robotics",
+      "confianca": "media"
+    },
+    {
+      "nome": "Proporção de deslocamento no tempo de separação",
+      "formula": "tempo de deslocamento ÷ tempo total de separação (estudo de tempos; não sai do WMS)",
+      "faixa_tipica": "Cerca de 50% (Tompkins et al., 2003) a 55% (Frazelle, 1996), em estimativas para separação com papel; busca de 15% a 20%; extração de 10% a 15%. Num armazém DHL, o AMR eliminou cerca de 60% da caminhada. Aplicação à Social: confiança média.",
+      "fonte": "de Koster et al. (2007), Fig. 4; Bartholdi e Hackman, seção 3.3; Supply Chain Dive (2021)",
+      "url": "https://pure.eur.nl/ws/portalfiles/portal/46713708/DesignandControl_2007.pdf",
+      "confianca": "media"
+    },
+    {
+      "nome": "Tempo por coleta (tempo por linha operacional)",
+      "formula": "Pedido-a-pedido, por linha: Tempo em Segundos ÷ (Qtde Endereços − 1), com 2 ou mais endereços (M08). Checkout e colmeia, por Tarefa × Usuário: (max Fim − min Início) ÷ (coletas − 1) (M09). Em ciclo completo, somar o intervalo até a próxima atividade com teto PAR02 (M11, M14). Equivale a 3.600 ÷ coletas por hora.",
+      "faixa_tipica": "[●] Sem faixa setorial pública por método. A linha de base desta operação foi medida pela Acta (relatório 9fleet v1, p. 5 e 8) e é refeita no WMS (CR3, P7). Piso físico e corte de abandono nas faixas plausíveis.",
+      "fonte": "Acta, relatório 9fleet v1, p. 5 e 8; decisão (CR3)",
+      "url": "",
+      "confianca": "baixa"
+    },
+    {
+      "nome": "Ocupação (utilização) do separador",
+      "formula": "tempo em tarefa ÷ tempo disponível (jornada paga − intervalos legais)",
+      "faixa_tipica": "Tolerâncias de PF&D: pessoal cerca de 5%, fadiga de 3% a 5%, demoras de 2% a 4%. Interpretação: a ocupação de planejamento fica abaixo de 100% (o deck usa 85% em PR05). Com robôs, utilização perto de 100% do operador ou do robô faz a espera crescer muito (filas).",
+      "fonte": "Supply Chain Digest (2013); Bartholdi e Hackman, seção 16.3",
+      "url": "https://www.scdigest.com/ontarget/13-07-17-1.php?cid=7230",
+      "confianca": "media"
+    },
+    {
+      "nome": "Absenteísmo",
+      "formula": "Duas definições do BLS. Taxa de tempo perdido (lost worktime rate) = horas ausentes ÷ horas habitualmente trabalhadas; é a que entra no cálculo de horas e FTE. Taxa de ausência (absence rate) = trabalhadores com ausência na semana ÷ total de trabalhadores.",
+      "faixa_tipica": "EUA, 2025, tempo integral, ocupações de transporte e movimentação de materiais: tempo perdido de 1,8% e taxa de ausência de 3,4%; setor de transporte e armazenagem: 1,7% e 3,1%. Separadores no Brasil: [●].",
+      "fonte": "U.S. Bureau of Labor Statistics, Current Population Survey, tabela 47 (2025)",
+      "url": "https://www.bls.gov/cps/cpsaat47.htm",
+      "confianca": "media"
+    },
+    {
+      "nome": "Rotatividade (turnover) de separadores",
+      "formula": "Definição usual (DIEESE, RAIS): menor valor entre admissões e desligamentos ÷ estoque médio do ano. A taxa descontada exclui transferências, aposentadorias, mortes e pedidos de demissão.",
+      "faixa_tipica": "Proxy: celetistas do subsetor Transporte e Comunicação em 2014, global de 53,0% e descontada de 34,7% (total do Brasil: 62,8% e 43,1%). Separadores e a Social: [●]. A 'rotatividade' do portal Salário (desligamentos ÷ movimentações) não é essa taxa.",
+      "fonte": "DIEESE (2016), Anexo, Tabela 5; salario.com.br (CAGED); Manhattan Associates e Vanson Bourne (2024)",
+      "url": "https://www.dieese.org.br/livro/2016/rotatividade2016.pdf",
+      "confianca": "media"
+    },
+    {
+      "nome": "Pico sazonal (Black Friday e Natal)",
+      "formula": "volume do dia (ou semana) de pico ÷ volume do dia típico (mediana dos dias úteis), por depositante e tipo de onda",
+      "faixa_tipica": "[●] Sem multiplicador público confiável por depositante. Os 13% da ABOL (Black Friday 2025) são crescimento sobre o ano anterior, não multiplicador de pico; não usar em CR8 ou P19. Brinquedos: 64% do movimento anual da indústria de agosto a dezembro (ABRINQ, 2017). O período do WMS não cobre a alta temporada.",
+      "fonte": "ABOL via Times Brasil (2025); ABRINQ via Mercado & Consumo (2018)",
+      "url": "https://timesbrasil.com.br/brasil/boom-logistico-black-friday-eleva-em-13-o-volume-de-operacoes/",
+      "confianca": "baixa"
+    },
+    {
+      "nome": "Custo anual por separador",
+      "formula": "salário mensal × (12 salários + 13º + um terço de férias) × (1 + encargos sobre a folha) + benefícios",
+      "faixa_tipica": "Salário médio de auxiliar de logística de R$ 1.998,58 e de armazenista em armazéns gerais de R$ 2.068 (CAGED, ago/2025 a jul/2026). Encargos do regime geral: INSS patronal 20%, RAT de 1% a 3%, FGTS 8%, terceiros conforme o enquadramento. Benefícios e regime da Social: [●]. A análise usa PR10 (fonte Social).",
+      "fonte": "salario.com.br (CAGED/MTE); Lei 8.212/1991; Lei 8.036/1990",
+      "url": "https://www.salario.com.br/profissao/auxiliar-de-logistica-414110",
+      "confianca": "media"
+    },
+    {
+      "nome": "Custo da hora extra",
+      "formula": "salário-hora × (1 + adicional) por hora extra, mais os reflexos em descanso semanal, férias e 13º quando habituais",
+      "faixa_tipica": "Adicional mínimo de 50% (Constituição, art. 7º, XVI; CLT, art. 59, §1º); entre 22 h e 5 h, mais adicional noturno de no mínimo 20%, com hora de 52 min 30 s (art. 73). Adicional da convenção da Social e horas extras pagas: [●].",
+      "fonte": "Constituição Federal, art. 7º, XVI; CLT, arts. 59 e 73",
+      "url": "https://www.legjur.com/legislacao/art/DCL_00054521943-73",
+      "confianca": "alta"
+    },
+    {
+      "nome": "Custo de repor um separador",
+      "formula": "custo de desligamento do anterior (aviso prévio, multa de 40% do FGTS, verbas proporcionais) + recrutamento e admissão + treinamento + perda de produtividade até a proficiência",
+      "faixa_tipica": "Componentes legais do desligamento: alta (Lei 12.506/2011; Lei 8.036/1990, art. 18, §1º). Custo total típico nos EUA: cerca de 16% do salário anual em cargos de menos de US$ 30 mil (CAP, 2012; baixa). Brasil e Social: [●].",
+      "fonte": "Lei 12.506/2011; Lei 8.036/1990; Boushey e Glynn (CAP, 2012)",
+      "url": "https://www.americanprogress.org/article/there-are-significant-business-costs-to-replacing-employees/",
+      "confianca": "baixa"
+    },
+    {
+      "nome": "Uso de temporários no pico",
+      "formula": "temporários contratados × dias de contrato por pico, e custo por hora do temporário (salário + encargos + taxa da agência) ÷ custo por hora do efetivo",
+      "faixa_tipica": "Limites legais: até 180 dias, prorrogáveis por mais 90 (Lei 6.019/1974, art. 10). Mercado: mais de 2,5 milhões de contratos em 2025, 522 mil de outubro a dezembro (ASSERTTEM). Taxa da agência e uso da Social: [●].",
+      "fonte": "Lei 6.019/1974 (redação da Lei 13.429/2017); ASSERTTEM via InfoMoney (2026)",
+      "url": "https://www.infomoney.com.br/?p=3187433",
+      "confianca": "media"
+    },
+    {
+      "nome": "Tempo para preencher uma vaga de separador",
+      "formula": "dias entre a abertura da vaga e o primeiro dia de trabalho do contratado",
+      "faixa_tipica": "[●] Sem fonte brasileira encontrada.",
+      "fonte": "[●] sem fonte setorial encontrada",
+      "url": "",
+      "confianca": "baixa"
+    },
+    {
+      "nome": "Ganho de produtividade com AMR colaborativo",
+      "formula": "(UPH ou coletas por hora com AMR ÷ mesma métrica manual, no mesmo recorte e denominador) − 1",
+      "faixa_tipica": "Casos públicos de 3PL: de 30% a 180% (DHL, mais de 40 sites no mundo); 50% (GEODIS); MD Logistics com '2.6x pick rate improvement' e, na fala do diretor, mais de 25% no dia a dia e 50% nos dias de maior movimento (base não definida). Fornecedores anunciam 2 a 3 vezes; a base da Acta usa 2 vezes no picking assistido. O ganho depende de layout, densidade de coletas, mix de pedidos e política de colaboração.",
+      "fonte": "DHL Supply Chain via Automated Warehouse; GEODIS; Ocado/6 River Systems; Acta, Base de Conhecimento",
+      "url": "https://www.automatedwarehouseonline.com/dhl-supply-chain-completes-1-billion-picks-locus-robotics/",
+      "confianca": "media"
+    },
+    {
+      "nome": "Robôs por separador",
+      "formula": "robôs ativos na zona ÷ separadores na zona",
+      "faixa_tipica": "Base da Acta: picking colaborativo com 1 AMR para 1 a 2 operadores; Kappabot em picking assistido com 2 a 3 robôs por operador. O ganho do modo swarm cresce com a razão robôs/separador (estudo RSM).",
+      "fonte": "Acta, Base de Conhecimento, seções 2.1 e 6.1; RSM/Transportation Science via DC Velocity",
+      "url": "",
+      "confianca": "baixa"
+    },
+    {
+      "nome": "Parcela da separação no custo do armazém",
+      "formula": "custo de separação ÷ custo operacional total do armazém",
+      "faixa_tipica": "Até cerca de 55%",
+      "fonte": "de Koster et al. (2007); Bartholdi e Hackman, seção 3.3",
+      "url": "https://pure.eur.nl/ws/portalfiles/portal/46713708/DesignandControl_2007.pdf",
+      "confianca": "alta"
+    },
+    {
+      "nome": "Taxa de auditoria (conferência) das coletas",
+      "formula": "coletas conferidas por um segundo operador ÷ coletas separadas",
+      "faixa_tipica": "Com checagem automática por bipe e AMR, a GEODIS reduziu a auditoria de 100% para 10% das coletas. O nível aceito depende do SLA de acurácia do depositante: [●] para a Royal Canin.",
+      "fonte": "GEODIS, estudo de caso",
+      "url": "https://geodis.com/us-en/resources/case-studies/mini-logistics-case-study-mobile-robotics",
+      "confianca": "media"
+    },
+    {
+      "nome": "Tempo até a proficiência de um separador novo",
+      "formula": "semanas desde a primeira tarefa até a mediana do separador novo alcançar a mediana dos experientes, na mesma métrica e por coorte (nunca por pessoa)",
+      "faixa_tipica": "[●] Proficiência, manual ou com AMR, não tem fonte. Os casos com AMR medem treino, não proficiência: DHL, menos 80% no tempo de treinamento; MD Logistics, de cerca de duas semanas para cerca de duas horas (depoimento). M25 mede só a curva do manual.",
+      "fonte": "DHL Supply Chain via Automated Warehouse; Ocado/6 River Systems; Grosse e Glock (2013)",
+      "url": "https://ocadointelligentautomation.com/case-studies/md-logistics",
+      "confianca": "baixa"
+    }
+  ],
+  "faixas_plausiveis": [
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "Tempo em Segundos (por linha = Tarefa × Pedido, executor manual)",
+      "unidade": "segundos por linha",
+      "min": 0,
+      "max": 43200,
+      "justificativa": "A linha é um pedido dentro de uma tarefa, com Início e Fim próprios (contrato, granularidade). Zero ou quase zero é legítimo, não faltante: (a) linha de um endereço (só o instante da confirmação); (b) no checkout e na colmeia o Tempo por linha não mede o pedido: as linhas da mesma tarefa e do mesmo usuário repetem o Fim (fim em bloco), o Início é o primeiro bipe do pedido e as linhas se sobrepõem. Não somar nem tirar a média por linha; o tempo vem das cadências Início a Início por Usuário e Tarefa (M09, M11). Valor −1 é arredondamento de um segundo do carimbo (NQ01): tratar como zero, sem excluir a linha do volume; negativo maior seria erro de relógio. Nenhuma linha dura mais que a maior jornada legal (12 h no 12x36; 10 h no regime normal com 2 h extras): acima disso é tarefa deixada aberta e fechada depois (abandono, NQ02), não trabalho nem erro de carga. O crédito de tempo por linha já é limitado em M11; para tempo por coleta, valem as faixas abaixo.",
+      "fonte": "CLT, arts. 58, 59 e 59-A; contrato (granularidade, NQ01 a NQ03, M09, M11); Acta, relatório 9fleet v1, p. 5",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm",
+      "confianca": "alta"
+    },
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "Tempo em Segundos (linhas da conta do robô, executor = robo)",
+      "unidade": "segundos por linha",
+      "min": 0,
+      "max": null,
+      "justificativa": "A devolutiva automática do 9fleet confirma o pedido inteiro no WMS de uma vez, então tempo próximo de zero com vários endereços é o comportamento esperado da conta de integração, não anomalia manual nem confirmação em bloco de operador. Essas linhas não medem o tempo do robô: ficam no volume e saem de todas as métricas de tempo (M03). Linhas da conta antes do início da operação do robô são provavelmente testes (PQ04).",
+      "fonte": "Acta, relatório 9fleet v1, p. 4 (fluxo e devolutiva automática) e p. 7; contrato (nota do robô no WMS, M03, NQ04)",
+      "url": "",
+      "confianca": "media"
+    },
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "tempo por coleta N−1, corte de abandono (pedido-a-pedido: por linha, M08; checkout e colmeia: cadências Início a Início por Usuário e Tarefa, M09)",
+      "unidade": "segundos por coleta",
+      "min": null,
+      "max": 300,
+      "justificativa": "Acima de 300 s por coleta, a Acta tratou a tarefa como abandonada; é o PAR01 do contrato. A unidade de medida muda com o tipo de onda: no pedido-a-pedido a linha basta (Tempo ÷ (Qtde Endereços − 1)); no checkout e na colmeia vale cada cadência Início a Início, com PAR01, por Usuário e Tarefa (M09). Visto do setor, o corte é razoável para separação fracionada, mas exclui coletas longas legítimas (busca, reabastecimento, corte); reportar a fração excluída e a sensibilidade sem o corte.",
+      "fonte": "Acta, relatório 9fleet v1, p. 6; deck, slide 3; contrato (PAR01, M08, M09)",
+      "url": "",
+      "confianca": "media"
+    },
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "tempo por coleta N−1, piso físico (mesmas unidades: linha no pedido-a-pedido, cadências Início a Início por Usuário e Tarefa no checkout e na colmeia; só executor manual)",
+      "unidade": "segundos por coleta",
+      "min": 3.6,
+      "max": null,
+      "justificativa": "[●] O valor de 3,6 s (3.600 s ÷ 1.000 coletas por hora) vem de um white paper da Dematic inacessível (número só do resumo de busca). Fica como limiar de marcação já usado pela qualidade, com sensibilidade entre referências verificadas em outras unidades: 2,0 s pela Dematic RapidPick (1.800 itens por hora, 2010, estação goods-to-person) e 5,5 s pela SSI Schäfer (650 caixas por hora, pessoa ou robô). A média por coleta abaixo do limiar, numa linha ou unidade Usuário × Tarefa manual com 2 ou mais endereços, indica confirmação em lote (NQ04) ou carimbo errado. Serve para marcar como tempo não mensurável, nunca para apagar do volume, e não se aplica a uma cadência isolada.",
+      "fonte": "Dematic, white paper 'Goods To Person Order Fulfillment' (inacessível); Dematic RapidPick (Food Processing, 2010, verificado); SSI Schäfer (verificado); contrato (NQ04)",
+      "url": "https://foodprocessing.com.au/content/materials-handling-storage-and-supply-chain/product/dematic-rapidpick-ergonomic-picking-stations-572380528",
+      "confianca": "baixa"
+    },
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "Qtde Endereços (por linha; linha operacional M05)",
+      "unidade": "endereços (posições de estoque) por linha",
+      "min": 1,
+      "max": null,
+      "justificativa": "Toda linha de separação visita ao menos um endereço (o coletor pede local, produto e quantidade); zero só se espera em linha cancelada. No checkout, um endereço por linha é parte da definição do tipo de onda (M02), não um teste de qualidade. No pedido-a-pedido a linha é o pedido inteiro; na colmeia, o pedido dentro do lote. Sem máximo setorial: pedido de e-commerce costuma ter 1 a 3 itens, então linhas com muitos endereços tendem a ser B2B ou pedido grande, não erro; segmentar por depositante e tipo de onda em vez de cortar. Por pedido, somar os segmentos (NQ08). Endereço é posição de estoque, não dado pessoal (NQ11).",
+      "fonte": "Senior, documentação WMS 8.12 'Separação por Tarefa'; Bartholdi e Hackman, cap. 1; contrato (M02, M05, NQ08, NQ11)",
+      "url": "https://documentacao.senior.com.br/gestaodearmazenagemwms/8.12/manuais-wms/mobile/gestao-armazenagem-mobile/separacao-tarefa.html",
+      "confianca": "media"
+    },
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "Qtde Produtos (por linha; linha tarifável M06, somada por pedido)",
+      "unidade": "produtos (SKUs) distintos por linha",
+      "min": 1,
+      "max": null,
+      "justificativa": "Uma linha de separação tem ao menos um produto. No checkout, um produto por linha (Checkout Express). Máximo setorial [●]. Leitura do setor: em geral Qtde Produtos ≤ Qtde Endereços (um SKU em duas posições soma endereços); Qtde Produtos maior que Qtde Endereços só com posição mista (vários SKUs no mesmo endereço) ou outra regra do WMS: [●], a confirmar com a Social junto com PQ02. Como é a base da tarifa, uma leitura errada da coluna muda a fatura, não só a limpeza.",
+      "fonte": "Senior, documentação WMS 8.12 'Packing de Checkout Express'; contrato (M06, PQ02)",
+      "url": "https://documentacao.senior.com.br/gestaodearmazenagemwms/8.12/manuais-wms/gestao-armazenagem-wms/movimentacao/saida/packing-checkout-express.html",
+      "confianca": "media"
+    },
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "Qtde Un (por linha)",
+      "unidade": "unidades por linha",
+      "min": 1,
+      "max": null,
+      "justificativa": "Separação produz ao menos uma unidade. Zero indica corte (falta no endereço), pulo, cancelamento ou resolução de problemas: não é produção e sai das taxas de unidades (NQ10). Máximo setorial [●]: não cortar por valor. Linhas com milhares de unidades (NQ10) são, pela leitura do setor, movimentação de palete ou caixa fechada, não separação fracionada. Ficam no volume, mas saem das comparações de unidades por hora com referências de picking fracionado. Usar area_origem (PALLET ALTO, PORTA PALET ALTO) e Qtde CxG > 0 como marcadores.",
+      "fonte": "Senior, documentação WMS 8.12 ('Separação por Tarefa': Pular e Corte; 'Colmeia com maior fator de conversão'); contrato (NQ10, area_origem)",
+      "url": "https://documentacao.senior.com.br/gestaodearmazenagemwms/8.12/manuais-wms/manuais-operacionais/expedicao/colmeia-com-fator-maior.html",
+      "confianca": "media"
+    },
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "Peças (por linha)",
+      "unidade": "peças por linha",
+      "min": 1,
+      "max": null,
+      "justificativa": "Mesma lógica de Qtde Un. Pelo contrato, Peças = unidades soltas + conteúdo das caixas e só difere de Qtde Un onde há caixa grande (fator de conversão maior que um). Para esforço de separação, usar Qtde Un ou contar a caixa como uma coleta; Peças infla o trabalho quando há caixa fechada.",
+      "fonte": "Senior, documentação WMS 8.12 'Colmeia com maior fator de conversão'; contrato (definições de Peças, Qtde Embalagens e Qtde Un)",
+      "url": "https://documentacao.senior.com.br/gestaodearmazenagemwms/8.12/manuais-wms/manuais-operacionais/expedicao/colmeia-com-fator-maior.html",
+      "confianca": "media"
+    },
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "Qtde Un (ou Peças) por linha em onda de checkout (linha = pedido)",
+      "unidade": "peças por pedido",
+      "min": 1,
+      "max": 1,
+      "justificativa": "No Senior, a conferência por Checkout Express exige pedidos com mínimo e máximo de uma peça. Como no checkout a linha é o pedido, a regra vale por linha. Uma linha de checkout com mais de uma peça indica parâmetro diferente na Social ou o mesmo SKU com várias unidades: marcar e perguntar, não apagar. Também afeta o tempo por unidade do checkout (M09) e a tarifa por pedido (PR03).",
+      "fonte": "Senior, documentação WMS 8.12 'Packing de Checkout Express'; Acta, relatório 9fleet v1, p. 4; contrato (M02, M09)",
+      "url": "https://documentacao.senior.com.br/gestaodearmazenagemwms/8.12/manuais-wms/gestao-armazenagem-wms/movimentacao/saida/packing-checkout-express.html",
+      "confianca": "alta"
+    },
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "Embalagens / Hora",
+      "unidade": "embalagens por hora, por linha",
+      "min": 0,
+      "max": null,
+      "justificativa": "Taxa negativa é impossível. A coluna divide por um tempo de linha que costuma ser zero ou de poucos segundos (NQ05) e não tem teto válido. Não usar: as taxas vêm de M08, M09 e M14, no nível de tarefa, operador-dia e recorte, comparadas com o UPH setorial no mesmo denominador.",
+      "fonte": "Acta, relatório 9fleet v1, p. 5 e 12; contrato (NQ05); GEODIS e DHL (UPH de referência)",
+      "url": "",
+      "confianca": "media"
+    },
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "jornada ativa por operador-dia (M11: soma dos ciclos, descontadas as pausas acima de PAR02)",
+      "unidade": "horas",
+      "min": null,
+      "max": 12,
+      "justificativa": "A jornada ativa já exclui pausas, então o teto setorial é o de horas de trabalho: 12 h no 12x36 (art. 59-A), 10 h no regime normal com 2 h extras (arts. 58 e 59). Acima de 12 h: dois turnos fundidos ou crédito de tarefa aberta. A amplitude (primeiro início ao último fim) pode chegar a 14 h com intervalo de até 2 h (art. 71). Não há mínimo setorial: valores baixos são esperados, porque M11 é limite inferior (o operador faz outras atividades fora do WMS) e não presença. Dia = data do Início; turno que cruza a meia-noite fica no dia de início, como no Senior. Um intervalo de 11 h ou mais (art. 66) separa jornadas.",
+      "fonte": "CLT, arts. 58, 59, 59-A, 66 e 71; Senior, documentação de produtividade (turno no dia anterior); contrato (M11); Acta, relatório 9fleet v1, p. 12",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm",
+      "confianca": "alta"
+    },
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "intervalo entre atividades consecutivas do mesmo operador-dia (M10; teto PAR02)",
+      "unidade": "segundos",
+      "min": 0,
+      "max": 1800,
+      "justificativa": "Intervalo negativo é sobreposição de atividades (comum em colmeia) e entra como zero (M10). A CLT não diz se um intervalo curto entre tarefas é trabalho ou pausa: a pausa de 15 min (art. 71, §1º) só vale para trabalho de 4 a 6 h e não se aplica à jornada de PR12, em que a pausa legal é a refeição de 1 a 2 h, reduzível a 30 min por convenção (arts. 71 e 611-A, III). O máximo de 1.800 s é o limite superior do contrato e coincide com a refeição mínima por convenção: acima dele o intervalo comporta uma refeição legal e não conta como trabalho fora do relógio. Este perfil não sustenta valor para o teto base nem para o conservador. Eles se apoiam nos dados (intervalo humano entre pedidos do deck, slide 6, com mediana e quartis abaixo de 300 s, e a distribuição de M10 no WMS) e na validação da Social (PQ03).",
+      "fonte": "CLT, arts. 71 e 611-A (texto não reconferido no Planalto em 03/10/2026); contrato (PAR02, M10); deck, slide 6; sup-negocio, D1 r1",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm",
+      "confianca": "baixa"
+    },
+    {
+      "tabela": "base_prod_90dias_produtividade",
+      "coluna": "Data/Hora Início e Data/Hora Fim",
+      "unidade": "carimbo de tempo",
+      "min": null,
+      "max": null,
+      "justificativa": "Regras lógicas, sem número setorial. Fim ≥ Início, com tolerância de −1 s por arredondamento (NQ01). Data é a data do Fim (contrato), e Início pode cair em dia anterior quando a linha cruza a meia-noite. Início semanas ou meses antes do período é tarefa deixada aberta e fechada em lote (NQ02, abandono). Fim igual em todas as linhas de uma tarefa de checkout ou colmeia é característica do WMS (fim em bloco), não anomalia. Fora disso, várias linhas humanas de 2 ou mais endereços com tempo de poucos segundos indicam captura em bloco; na conta do robô é a devolutiva automática.",
+      "fonte": "Suriadi et al. (2017), Information Systems 64; contrato (NQ01, NQ02, NQ09)",
+      "url": "https://doi.org/10.1016/j.is.2016.07.011",
+      "confianca": "alta"
+    }
+  ],
+  "armadilhas": [
+    "O tempo do WMS é o intervalo entre confirmações, não a duração da tarefa: tarefa de um endereço tem tempo quase nulo, e o tempo por coleta só existe com correção N−1, que supõe confirmação na ordem de execução (Acta, relatório 9fleet v1, p. 5 e 12).",
+    "Tempo fora do relógio: etiqueta, ida ao packing ou faturamento e a primeira coleta não ficam no tempo da tarefa; o 'tempo aplicado' do Senior é só a execução da tarefa. Somar Tempo em Segundos subestima a jornada (relatório 9fleet v1, p. 12 e 13; documentação Senior).",
+    "Tarefas abertas ou abandonadas: coletas acima de 300 s e tarefas que atravessam refeição, fim de turno ou outro dia inflam o tempo e a média; o efeito sobre a média é grande porque a cauda é longa (relatório 9fleet v1, p. 6).",
+    "Relógio do coletor e ordem dos carimbos: tempos negativos, Fim antes de Início e Início meses antes do período são erros de carimbo ('viagem no tempo inadvertida'), não trabalho (Suriadi et al., 2017).",
+    "Confirmações em bloco: o operador separa vários endereços e confirma de uma vez, o que gera coletas com tempo zero e taxas por hora absurdas ('captura em formulário'). Metas por hora exibidas no coletor podem incentivar esse comportamento (Suriadi et al., 2017; Senior, meta por colaborador).",
+    "Tarefas em lote diluem o tempo: checkout e colmeia agrupam pedidos, e o tempo por pedido ou por unidade não é comparável ao do pedido-a-pedido unidade a unidade. Compare por coleta e em ciclo completo, separado por tipo de onda (relatório 9fleet v1, p. 4).",
+    "Granularidade: a linha da tabela é um pedido dentro de uma tarefa (Tarefa × Pedido). No checkout e na colmeia as linhas da tarefa repetem o Fim (fim em bloco), o Início é o primeiro bipe do pedido e as linhas se sobrepõem. O tempo vem das cadências Início a Início por Usuário e Tarefa (M09, M11), nunca da soma ou média de Tempo em Segundos por linha. O pedido é (depositante, Pedido), e os segmentos do mesmo pedido se somam (contrato).",
+    "Fim de turno e virada do dia: o Senior lança turnos que cruzam a meia-noite no dia anterior; tarefas deixadas abertas no fim do turno fecham no dia seguinte (documentação Senior; CLT, art. 66).",
+    "Pausas: em jornada acima de 6 h, a pausa legal é a refeição de 1 a 2 h (30 min por convenção); a pausa de 15 min da CLT só vale de 4 a 6 h. A lei não classifica intervalos curtos entre tarefas. O teto de intervalo muda horas, FTE e linha de base: escolher pelos dados, com sensibilidade e validação da Social (CLT, arts. 71 e 611-A; contrato, PAR02).",
+    "O operador faz outras coisas fora do WMS (reabastecimento, recebimento, interação com o robô, conferência): horas no WMS subestimam a jornada paga, mas o tempo fora do WMS também não é ócio. FTE liberado só vira economia com realocação (relatório 9fleet v1, p. 12; decisão).",
+    "Denominador de horas: tempo em tarefa, jornada ativa e horas pagas dão produtividades de ordens de grandeza diferentes; benchmark só com o mesmo denominador. Casos públicos de AMR usam UPH sobre horas de separação do turno (Bartholdi e Hackman, Fig. 15.5).",
+    "Unidade, peça e embalagem: caixa fechada com fator de conversão maior que um infla unidades por hora sem aumentar o esforço; definir no contrato qual coluna mede o trabalho (documentação Senior, colmeia com fator maior).",
+    "Cortes, pulos, cancelamentos e tarefas de resolução de problemas geram linhas com quantidade zero ou tarefas repetidas; não são produção e distorcem tempo por coleta (documentação Senior).",
+    "Conta do robô no WMS: a conta de integração confirma o pedido inteiro de uma vez (devolutiva automática), com tempo de cerca de zero e vários endereços. Não é confirmação em lote de operador nem anomalia: fica no volume e sai do tempo (M03). Pedidos do robô com devolutiva não automática aparecem sob logins humanos e contaminam o tempo manual do escopo. Logins genéricos ou compartilhados de pessoas: [●] (contrato, M03 e NQ04).",
+    "Seleção do recorte: o filtro de 2 ou mais endereços exclui pedidos de uma linha, que no e-commerce costumam ser maioria; a linha de base de 2 ou mais endereços não representa todo o pedido-a-pedido (Bartholdi e Hackman, cap. 1 e Fig. 14.4).",
+    "Média contra mediana: tempos de separação têm cauda longa; o corte e a estatística escolhidos (a Acta usou média com corte de 300 s) mudam a linha de base. Mostrar as duas e a sensibilidade ao corte (relatório 9fleet v1, p. 5 e 6; Bartholdi e Hackman, cap. 14).",
+    "Alta temporada fora da série: junho a setembro não inclui Black Friday nem Natal; o maior dia do período não é o pico do ano e não deve ser rotulado como tal (decisão, restrições; ABOL 2025).",
+    "Robô x manual com um robô e operador compartilhado: a espera do robô reflete a disponibilidade do operador e cai com frota e zona fixa, mas pela teoria de filas sobe de novo se operador ou robôs operarem perto de 100%. Não extrapolar para frota sem teste controlado (relatório 9fleet v1, p. 11; Bartholdi e Hackman, seção 16.3).",
+    "Benchmarks de AMR vêm de casos divulgados por operadores e fornecedores (DHL, com mais de 40 sites no mundo; GEODIS, nos EUA; MD Logistics), sem método de base declarado e com faixa de ganho larga (de 30% a 180% na própria DHL). Usar só como ordem de grandeza.",
+    "Multi-depositante: cada depositante tem perfil próprio (SKU, peso, unidades por linha, tipo de onda); uma média única do armazém esconde diferenças e pode levar a frota errada (Bartholdi e Hackman, cap. 1).",
+    "Terminologia: no deck e no relatório 9fleet v1, 'tarefa' é a linha da tabela (um pedido numa tarefa), não a coluna Tarefa do WMS. Ao comparar números do deck, confirme qual unidade foi contada (contrato, notas).",
+    "Dia de maior volume logo depois de dias úteis sem registro: pode ser fila acumulada (feriado ou parada), não demanda de pico. O especialista de operação não dimensiona frota por esse dia sem ver o p90 com e sem os dias pós-pausa (contrato, M18).",
+    "Linhas com milhares de unidades vêm de palete ou caixa fechada, não de separação fracionada: entram no volume, mas distorcem unidades por hora e tempo por unidade se misturadas com picking fracionado (contrato, NQ10).",
+    "Tempo de treino não é tempo até a proficiência: os casos de AMR falam de treino; o argumento do temporário guiado pelo robô não pode usar treino como prova de ritmo (DHL; MD Logistics).",
+    "Horário estendido com AMR colaborativo exige separador no mesmo horário: a frota não absorve o pico sozinha, e estender o turno custa hora extra (adicional mínimo de 50%), adicional noturno ou nova escala (Constituição, art. 7º, XVI; CLT, arts. 59 e 73).",
+    "Crescimento anual não é multiplicador de pico: os 13% da ABOL na Black Friday comparam com o ano anterior, não com um dia normal."
+  ],
+  "perguntas_do_especialista": [
+    "Qual é o regime de jornada dos separadores (5x2, 6x1, 12x36), os horários de turno e os intervalos de refeição e pausa? Há turno noturno ou que cruza a meia-noite? Resposta proposta: pedir à operação da Social; até lá, assumir CLT padrão com intervalo de 1 h e reportar sensibilidade.",
+    "Que atividades os separadores fazem fora do WMS (reabastecimento, recebimento, conferência, packing, apoio ao robô) e quanto do dia elas tomam?",
+    "Como o coletor registra a tarefa: bipe de endereço e de produto em cada coleta? Há confirmação em bloco? O que marca Data/Hora Início e Data/Hora Fim?",
+    "Há metas por hora no coletor (meta por colaborador do Senior) ou prêmio de produtividade? Isso pode induzir confirmações em bloco?",
+    "Quais usuários são genéricos, compartilhados, de supervisão, de teste ou do robô?",
+    "Qual foi o volume diário de novembro e dezembro do ano passado por depositante (pico dividido pela mediana dos dias úteis), e quantos temporários foram contratados e por quanto tempo?",
+    "Qual a rotatividade (desligamentos dividido por efetivo médio) e o absenteísmo dos separadores nos últimos 12 meses, e quanto tempo leva para preencher uma vaga e para um temporário pegar o ritmo?",
+    "A Royal Canin exige conferência de 100% no checkout? Aceitaria conferência pelo bipe na coleta, com auditoria amostral? Qual é o SLA de acurácia?",
+    "O layout permite zona fixa com robôs em fila (largura de corredor, piso, rede sem fio, área de espera)? Qual a distância até o packing e até o faturamento?",
+    "Qual o horário de corte de pedidos de cada depositante, e onde se concentram os picos dentro do dia?",
+    "O custo por operador (PR10) inclui encargos, benefícios, uniforme, EPI, treinamento e supervisão? Qual o custo de um temporário?",
+    "Pedidos de uma linha da Royal Canin vão sempre para checkout, ou também caem no pedido-a-pedido?",
+    "Como a colmeia é montada (escaninhos, caixas por pedido, quem distribui) e onde a distribuição aparece no WMS?",
+    "Perfil 2: como a Social cobra seus depositantes (por pedido, por linha, por unidade, cost-plus)? A tarifa da Acta cabe nessa receita, por pedido e por linha?",
+    "Perfil 2: a Social aceita franquia mínima e garantia de economia condicionada à desmobilização da conferência num contrato de 24 meses? Quem aprova: operações, financeiro ou o depositante?",
+    "Quantas horas extras a separação paga por mês, com que adicional (convenção coletiva) e em quais meses? Há adicional noturno?",
+    "Quantos temporários a Social contrata por pico, por quanto tempo, por qual agência, a que custo por hora (taxa da agência) e quantos são efetivados?",
+    "Quanto custa desligar e repor um separador (aviso, multa do FGTS, recrutamento, exames, treinamento) e quantos dias leva para preencher a vaga?",
+    "Qual o custo e o prazo de implantação para a Social (layout, corredores, rede sem fio, TI, treinamento, queda no go-live)? Há acordo coletivo ou sindicato que trate de automação?",
+    "Qual o peso e a dimensão máximos por item e por pedido no escopo (ração da Royal Canin) e nos depositantes candidatos (cosméticos, brinquedos)?",
+    "À engenharia da Acta: o Kappabot foi avaliado pela ISO 3691-4 (ou norma equivalente) para circular com pessoas?",
+    "Qual a sazonalidade anual de cada depositante (Dia das Mães, Dia das Crianças, Black Friday, Natal)?"
+  ],
+  "lacunas": [
+    {
+      "lacuna": "Faixa pública confiável de linhas por hora por método (pedido-a-pedido, lote/colmeia, zona) no Brasil: [●]",
+      "pergunta": "A Social tem metas por hora configuradas no Senior por tipo de onda ou histórico de produtividade por método?",
+      "resposta_proposta": "Usar a medição do WMS como linha de base (CR3, CR7) e as referências públicas só como ordem de grandeza, sem tratá-las como meta.",
+      "destinatario": "terceiros"
+    },
+    {
+      "lacuna": "Multiplicador de pico de Black Friday e Natal por depositante: [●]",
+      "pergunta": "A Social fornece o volume diário de novembro e dezembro do ano anterior por depositante?",
+      "resposta_proposta": "Até lá, CR4 e CR8 usam o pico do período (p90 e máximo) e uma sensibilidade declarada como premissa, sem chamar o maior dia do período de Black Friday.",
+      "destinatario": "terceiros"
+    },
+    {
+      "lacuna": "Absenteísmo e rotatividade dos separadores da Social e do setor no Brasil: [●]",
+      "pergunta": "O RH da Social informa rotatividade, absenteísmo e tempo de reposição de vagas de separação nos últimos 12 meses?",
+      "resposta_proposta": "Usar como argumento qualitativo (pesquisa de 2024 e CAGED) e o BLS só como proxy; não quantificar contratações evitadas por rotatividade sem o dado da Social.",
+      "destinatario": "terceiros"
+    },
+    {
+      "lacuna": "Teto do intervalo entre atividades: o contrato usa PAR02 com sensibilidade; o perfil setorial não sustenta valor específico",
+      "pergunta": "A operação da Social confirma até quanto tempo entre tarefas ainda é trabalho (etiqueta, ida ao packing, primeira coleta)? (PQ03)",
+      "resposta_proposta": "Ancorar o teto nos dados: intervalo humano do deck (slide 6) e distribuição de M10 no WMS, com o percentil declarado antes do resultado; reportar 300, 600, 900 e 1.800 s; Marcus decide o conservador; a Social valida.",
+      "destinatario": "marcus"
+    },
+    {
+      "lacuna": "Máximo plausível de endereços, produtos e unidades por tarefa: [●]",
+      "pergunta": "Há limite operacional de itens por tarefa ou por onda configurado no Senior da Social?",
+      "resposta_proposta": "Não cortar por valor; segmentar por tipo de onda e tratar as caudas como casos a revisar pela qualidade.",
+      "destinatario": "terceiros"
+    },
+    {
+      "lacuna": "Tarifa que a Social cobra dos depositantes e regime de custo da mão de obra: [●]",
+      "pergunta": "Quanto a Social recebe da Royal Canin por pedido e por linha, e qual é o custo de um temporário?",
+      "resposta_proposta": "Fora do escopo dos dados; Marcus pergunta na reunião. A análise usa PR10 e não recalcula encargos.",
+      "destinatario": "marcus"
+    },
+    {
+      "lacuna": "Custo e práticas de temporário, hora extra e reposição de separadores na Social: [●]",
+      "pergunta": "Horas extras pagas por mês, adicional da convenção, temporários por pico e custo da agência, custo de desligamento e reposição, tempo para preencher vaga.",
+      "resposta_proposta": "Até a resposta, CR8 usa os componentes legais (alta) e a referência externa de reposição (CAP, baixa) só como argumento qualitativo, sem quantificar a economia.",
+      "destinatario": "terceiros"
+    },
+    {
+      "lacuna": "Tempo até a proficiência, manual e com AMR: [●]",
+      "pergunta": "A Social tem registro de quanto tempo um novo separador leva para atingir a meta?",
+      "resposta_proposta": "M25 mede a curva manual por coorte; na oferta, só 'treino mais curto' com confiança baixa.",
+      "destinatario": "terceiros"
+    },
+    {
+      "lacuna": "Custo e prazo de implantação do lado da Social, carga por item e avaliação de segurança do Kappabot: [●]",
+      "pergunta": "Ver as perguntas sobre implantação, peso por item e ISO 3691-4.",
+      "resposta_proposta": "Declarar como premissa a validar na reunião; o especialista julga cada recomendação também por custo e prazo de implantação (D3, D4).",
+      "destinatario": "marcus"
+    },
+    {
+      "lacuna": "Sazonalidade de cosméticos e pet food e taxa de rotatividade de armazenagem no Brasil: [●]",
+      "pergunta": "A Social fornece o histórico mensal por depositante e a rotatividade da equipe de separação?",
+      "resposta_proposta": "Usar ABRINQ (brinquedos) e DIEESE (subsetor Transporte e Comunicação) só como proxy, com confiança média.",
+      "destinatario": "terceiros"
+    }
+  ],
+  "vocabulario": [
+    {
+      "termo": "Onda",
+      "significado": "Agrupamento de pedidos liberado pelo WMS para separação."
+    },
+    {
+      "termo": "Pedido-a-pedido (separação discreta)",
+      "significado": "Onda com um único pedido; o separador coleta todas as linhas de um pedido por vez."
+    },
+    {
+      "termo": "Checkout (Checkout Express no Senior)",
+      "significado": "Onda de vários pedidos de uma peça cada, separados juntos e conferidos em bancada por bipe."
+    },
+    {
+      "termo": "Colmeia",
+      "significado": "Onda separada em lote pelo coletor e distribuída por pedido em caixas ou escaninhos; equivale ao put wall."
+    },
+    {
+      "termo": "Separação em lote (batch)",
+      "significado": "Um separador coleta itens de vários pedidos numa só rota e depois separa por pedido."
+    },
+    {
+      "termo": "Separação por zona (pick and pass)",
+      "significado": "Cada separador fica numa área; o pedido passa de zona em zona ou é consolidado depois."
+    },
+    {
+      "termo": "Linha de pedido (linha tarifável)",
+      "significado": "Linha de produto do pedido: um SKU com sua quantidade; base da tarifa por linha (PR04)."
+    },
+    {
+      "termo": "Coleta (linha operacional, picking)",
+      "significado": "Visita a um endereço para retirar um produto; base da produtividade e da frota."
+    },
+    {
+      "termo": "Endereço",
+      "significado": "Posição física de estoque visitada numa coleta (relatório 9fleet v1, glossário). Não é endereço de pessoa."
+    },
+    {
+      "termo": "Pulmão",
+      "significado": "Estoque de reserva, em geral em paletes, que abastece as posições de picking."
+    },
+    {
+      "termo": "Reabastecimento",
+      "significado": "Transferência do pulmão para a posição de picking."
+    },
+    {
+      "termo": "Coletor (RF)",
+      "significado": "Terminal portátil com leitor de código de barras em que o separador recebe a tarefa e confirma as coletas."
+    },
+    {
+      "termo": "Bipe",
+      "significado": "Leitura de código de barras que confirma endereço, produto ou volume."
+    },
+    {
+      "termo": "Corte",
+      "significado": "Falta do produto no endereço na hora da separação; a quantidade é cortada."
+    },
+    {
+      "termo": "Pular",
+      "significado": "Botão do coletor para deixar a coleta e buscar outro endereço compatível."
+    },
+    {
+      "termo": "Pré-conferência e conferência",
+      "significado": "Checagem por um segundo operador do que foi separado antes da embalagem."
+    },
+    {
+      "termo": "Packing",
+      "significado": "Embalagem e etiquetagem do pedido para expedição."
+    },
+    {
+      "termo": "Faturamento",
+      "significado": "Emissão da nota fiscal; no fluxo da Social, também o ponto físico onde o pedido é entregue após a separação."
+    },
+    {
+      "termo": "Depositante",
+      "significado": "Cliente do armazém geral dono da mercadoria armazenada (ex.: Royal Canin)."
+    },
+    {
+      "termo": "Armazém geral / operador logístico (OL, 3PL)",
+      "significado": "Empresa que armazena e movimenta mercadoria de terceiros e cobra por serviço."
+    },
+    {
+      "termo": "Jornada ativa",
+      "significado": "Tempo do primeiro início ao último fim do operador no dia, descontados intervalos acima do teto."
+    },
+    {
+      "termo": "FTE",
+      "significado": "Equivalente a um trabalhador em tempo integral: horas necessárias divididas pela jornada de referência."
+    },
+    {
+      "termo": "UPH / LPH",
+      "significado": "Unidades por hora / linhas por hora por separador."
+    },
+    {
+      "termo": "PF&D",
+      "significado": "Tolerâncias de tempo pessoal, fadiga e demoras somadas ao tempo normal num padrão de mão de obra."
+    },
+    {
+      "termo": "LMS (gestão da mão de obra)",
+      "significado": "Sistema que mede produtividade por padrão de tempo, com tempo trabalhado, pausa e ócio."
+    },
+    {
+      "termo": "Goods-to-person (GTP)",
+      "significado": "Sistema em que o produto vem até o operador numa estação, sem deslocamento do operador."
+    },
+    {
+      "termo": "AMR colaborativo",
+      "significado": "Robô móvel autônomo que leva o recipiente de endereço em endereço enquanto o operador coleta; elimina deslocamento."
+    },
+    {
+      "termo": "Swarm",
+      "significado": "Política em que o separador atende vários robôs na sua zona, em vez de acompanhar um robô por pedido."
+    },
+    {
+      "termo": "Espera do robô",
+      "significado": "Tempo em que o robô parado no endereço aguarda o operador."
+    },
+    {
+      "termo": "Devolutiva",
+      "significado": "Confirmação da separação enviada ao WMS."
+    },
+    {
+      "termo": "RaaS",
+      "significado": "Robótica como serviço: o cliente paga mensalidade ou por transação em vez de comprar o robô."
+    },
+    {
+      "termo": "Franquia mínima",
+      "significado": "Valor mínimo mensal cobrado mesmo que o volume fique abaixo dele."
+    },
+    {
+      "termo": "Cost-plus",
+      "significado": "Contrato de 3PL que repassa o custo real com margem combinada."
+    },
+    {
+      "termo": "Fator de conversão",
+      "significado": "Quantas unidades há numa embalagem (caixa, display) lida por um único bipe."
+    },
+    {
+      "termo": "Linha (da tabela)",
+      "significado": "Um pedido dentro de uma tarefa do WMS (Tarefa × Pedido). No deck e no relatório 9fleet v1 é chamada de 'tarefa'."
+    },
+    {
+      "termo": "Tarefa (coluna do WMS)",
+      "significado": "Unidade de trabalho do WMS dentro da onda: um pedido no pedido-a-pedido, vários no checkout e na colmeia."
+    },
+    {
+      "termo": "Conta de integração do robô",
+      "significado": "Login do WMS que recebe a devolutiva automática do 9fleet; não é pessoa e não mede o tempo do robô."
+    }
+  ]
+}

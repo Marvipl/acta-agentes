@@ -1,0 +1,6 @@
+escopo,inicio_h,fim_h_exclusivo,horas,buraco_na_janela
+"armazém, linhas",8,18,10,False
+"armazém, pedidos",8,18,10,False
+"Royal Canin pedido-a-pedido, linhas",8,18,10,False
+"Royal Canin checkout, pedidos",8,18,10,False
+"Royal Canin colmeia, linhas",8,18,10,False

@@ -1,0 +1,75 @@
+{
+  "id": "INS-049",
+  "estado": "validado",
+  "afirmacao": "O armazém consome em média {{v.base}} de separação ativa no teto base, {{v.t300}} no teto conservador, {{v.t600}} no intermediário e {{v.t1800}} no limite superior. Pelas regras S1, S2 e S3 do teto base, a média é {{v.s1}}, {{v.s2}} e {{v.s3}}. É um limite inferior do tempo dedicado à separação: o WMS não registra reabastecimento nem apoio ao packing. Sem a semana de incidente da Royal Canin o teto base fica em {{v.base_si}}; nas quatro semanas de operação normal da oferta, em {{v.base_jn}}.",
+  "pergunta_ref": "P15",
+  "criterio_ref": "CR8",
+  "valores": {
+    "base": "ANA-013.horas_armazem_dia",
+    "t300": "ANA-013.horas_armazem_dia_t300",
+    "t600": "ANA-013.horas_armazem_dia_t600",
+    "t1800": "ANA-013.horas_armazem_dia_t1800",
+    "s1": "ANA-013.horas_armazem_dia_s1",
+    "s2": "ANA-013.horas_armazem_dia_s2",
+    "s3": "ANA-013.horas_armazem_dia_s3",
+    "base_si": "ANA-013.horas_armazem_dia_sem_incidente",
+    "base_jn": "ANA-013.horas_armazem_dia_janela_normal"
+  },
+  "nivel": "descritivo",
+  "exploratorio": false,
+  "robustez": [
+    {
+      "recorte": "quatro tetos de intervalo",
+      "analise": "ANA-013",
+      "resultado": "parcial",
+      "nota": "as horas variam muito com o teto (o dado não identifica o teto): reportar sempre os quatro"
+    },
+    {
+      "recorte": "regras S1 a S3 da cauda e do segmento inválido",
+      "analise": "ANA-013",
+      "resultado": "parcial",
+      "nota": "S1 e S3 ficam perto da base; S2 (truncar no limite) dá o limite superior de horas, bem acima da base"
+    },
+    {
+      "recorte": "com e sem a semana de incidente",
+      "analise": "ANA-013",
+      "resultado": "passa",
+      "nota": "diferença pequena no armazém inteiro"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Sem mudança; nenhum ataque muda a leitura."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Usar as horas do teto conservador como extremo desfavorável de CR1 e CR8 e levar os quatro tetos ao memorando.",
+  "dono": "analista-de-impacto",
+  "premissas": [
+    "censo do período observado (carga inteira em dias plenos): estatísticas exatas do período, sem incerteza amostral",
+    "a semana de incidente operacional da Royal Canin fica nos totais; as variantes sem_incidente e janela_normal estão nas chaves de ANA-013 (revisoes/orquestrador_decisao_semana_incidente.md)",
+    "jornada ativa de M11 é limite inferior do tempo de separação"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:11:51",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:33",
+      "por": "red-team-analitico"
+    }
+  ]
+}

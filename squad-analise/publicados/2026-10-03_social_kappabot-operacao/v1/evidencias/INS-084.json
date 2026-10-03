@@ -1,0 +1,64 @@
+{
+  "id": "INS-084",
+  "estado": "validado",
+  "afirmacao": "O intervalo mediano entre pedidos do slide 6 é compatível com o teto base de intervalo ({{v.med900}}). No teto conservador do G2 a mediana é {{v.med300}}, fora da tolerância pontual embora o IC da mediana, entre parênteses, contenha o valor do slide; o dado não identifica o teto. As linhas por hora manuais em ciclo completo do slide 6 só se aproximam do deck com o teto de intervalo mais alto ({{v.m1800}}), enquanto o teto conservador dá {{v.m300}}. Os dois números do slide 6 são compatíveis com tetos diferentes, e o deck pode ter usado um teto mais folgado que o conservador na linha de base de CR3 ou outra definição de linhas por hora (outra base de tempo, como a presença). A confirmar com Marcus. Se o teto do deck for mais folgado, as linhas por hora manuais da linha de base ficam reduzidas e a promessa de dobrar fica mais fácil de sustentar.",
+  "pergunta_ref": "P7",
+  "criterio_ref": "CR3",
+  "valores": {
+    "med900": "ANA-011.intervalo_mediano_teto_base_s",
+    "med300": "ANA-004.intervalo_mediano_pap_rc_s",
+    "m1800": "ANA-004.linhas_hora_pap_rc_t1800",
+    "m300": "ANA-004.linhas_hora_pap_rc_t300"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "quatro tetos de intervalo",
+      "analise": "ANA-011",
+      "resultado": "passa",
+      "nota": "o intervalo mediano cresce com o teto e só fica dentro da tolerância nos tetos intermediários (linhas S6a da tabela ponte)"
+    },
+    {
+      "recorte": "quartis e número de pares",
+      "analise": "ANA-011",
+      "resultado": "parcial",
+      "nota": "os quartis e o número de pares reproduzem-se no teto base; no conservador o número de pares cai bem abaixo do deck"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Perguntar a Marcus qual teto de intervalo e qual base de tempo sustentam o PR06 do deck; até a resposta, declarar na linha de base de CR3 que o PR06 é compatível com o teto mais folgado e mostrar sempre os quatro tetos (decisão de Marcus no G2: teto conservador).",
+  "dono": "analista-de-impacto; Marcus",
+  "premissas": [
+    "censo de verificação com a tolerância fixada no plano antes dos resultados: percentual fixo para números exatos e o arredondamento do próprio número para os aproximados",
+    "a confirmação final de qual método é o do deck é do autor (Marcus); a linguagem é descritiva: o WMS reproduz ou não reproduz",
+    "a semana de incidente operacional da Royal Canin (21 a 25/09) está na variante do plano; a variante de operação normal está nas chaves com sufixo _normal",
+    "teto de intervalo não identificado pelos dados (PAR02)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:41:58",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:55:00",
+      "por": "red-team-analitico"
+    }
+  ]
+}

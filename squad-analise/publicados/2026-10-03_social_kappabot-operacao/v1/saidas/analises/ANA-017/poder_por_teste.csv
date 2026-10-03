@@ -1,0 +1,4 @@
+teste,familia,alfa_familia,unidade_independente,n_unidades,n_menor_grupo,regra_clusters,ep_mais_largo_de,ep,mde,unidade_da_medida,regra_clusters_menor_grupo
+ANA-016 PT-D1,F2,0.008333333333333333,"operador, semana e dia (mais largo)",30,18,ic_por_cluster,operador,4.913396970375719,15.897792314809971,coletas/h,ic_com_aviso_e_bloco
+ANA-016 PT-D3,F2,0.008333333333333333,"operador, semana e dia (mais largo)",30,18,ic_por_cluster,operador,10.364737234705283,33.53615450744299,s,ic_com_aviso_e_bloco
+ANA-016 PT-D4,F2,0.008333333333333333,"operador, semana e dia (mais largo)",18,13,ic_com_aviso_e_bloco,operador,7.561635113264154,24.46643438660638,coletas/h,ic_com_aviso_e_bloco

@@ -1,0 +1,74 @@
+{
+  "id": "INS-077",
+  "estado": "validado",
+  "afirmacao": "Na família F2 (Holm com seis testes) há {{v.total}} e se confirmam nas semanas pares {{v.conf}}: PT-D1 (pedido-a-pedido), PT-H04 e PT-H10. PT-D3 e PT-D4 têm sinal agregado forte, mas não se confirmam, porque contra um depositante o sinal se inverte com IC inteiro do lado oposto; PT-H09 é inconclusiva por desenho. Nas pistas testadas o efeito mínimo detectável de ANA-000 passa do efeito relevante: as confirmações valem pelo sinal e pelo intervalo, e as magnitudes levam o aviso de poder baixo (possivelmente exageradas); em PT-D1 a magnitude cai sem o maior depositante e entre os mesmos operadores. A confirmação é replicação em semanas intercaladas, com os mesmos operadores, layout e período: protege contra acaso e contra escolhas de caminho, não contra confusão estável. O critério de inversão por depositante (IC por operador do segmento inteiro do lado oposto) foi declarado depois do desenho; pelo critério só de sinal, depositantes pequenos com sinal oposto fariam PT-D1 também falhar. Todas são associativas ou descritivas e nenhuma é causal.",
+  "pergunta_ref": "P9",
+  "criterio_ref": "CR3",
+  "valores": {
+    "total": "ANA-016.n_pistas_f2",
+    "conf": "ANA-016.n_confirmadas"
+  },
+  "nivel": "associativo",
+  "robustez": [
+    {
+      "recorte": "Holm sobre seis testes com m fixo",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "p ajustado abaixo de alfa nas pistas com sinal agregado forte (tabela classificacao_pistas); os p estão no piso da resolução do bootstrap"
+    },
+    {
+      "recorte": "IC mais largo entre operador, semana e dia",
+      "analise": "ANA-016",
+      "resultado": "passa",
+      "nota": "a classificação vale com o intervalo mais largo de cada pista"
+    },
+    {
+      "recorte": "robustez por depositante",
+      "analise": "ANA-016",
+      "resultado": "parcial",
+      "nota": "duas pistas de ANA-012 não resistem; uma resiste com magnitude menor"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Resumo correto, com o critério de inversão declarado como posterior ao desenho e a alternativa só de sinal. Ver a avaliação do critério em revisoes/red-team-analitico_parteB_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Levar ao memorando só as estimativas das semanas pares das pistas confirmadas, com o aviso de magnitude e a queda sem o maior depositante; manter PT-D3, PT-D4, PT-H09 e PT-D2 como hipóteses do teste controlado.",
+  "dono": "estatistico (ANA-016); orquestrador",
+  "premissas": [
+    "confirmação nas semanas ISO pares, com limiares, pesos e cortes de ANA-012 lidos do arquivo registrado, sem recálculo; Holm com seis testes na F2 (PT-H04, PT-H09, PT-H10, PT-D1, PT-D3, PT-D4)",
+    "o MDE de ANA-000 passa do efeito relevante (10% do valor de referência): a magnitude pode estar exagerada (poder baixo, erro tipo M) e não deve ser citada como precisa",
+    "teto de intervalo não identificado pelos dados (PAR02): teto base como variante primária e teto conservador do G2 como robustez",
+    "nenhuma semana par foi marcada como incidente da Royal Canin, por isso não há filtro de incidente na confirmação"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:29:04",
+      "por": "estatistico"
+    },
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T18:24:35",
+      "por": "estatistico",
+      "nota": "revisado após as correções do red team (parte B) e a robustez por depositante"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:54",
+      "por": "red-team-analitico"
+    }
+  ]
+}

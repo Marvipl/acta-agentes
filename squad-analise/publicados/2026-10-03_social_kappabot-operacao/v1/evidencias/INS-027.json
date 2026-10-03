@@ -1,0 +1,72 @@
+{
+  "id": "INS-027",
+  "estado": "validado",
+  "afirmacao": "A janela observada do armazém vai de {{v.ini}} a {{v.fim}} (fim exclusivo), e a concentração matinal reproduz o slide 17: {{v.conc}} das linhas começam nas duas primeiras horas da janela; razão ao valor do deck: {{v.razao}} (verificação, não evidência nova). No dia p90, o pico horário do pedido-a-pedido da Royal Canin começa às {{v.pico_pap}} (regime pós-colmeia: {{v.pico_pap_pc}}), o do checkout às {{v.pico_chk}} (intervalo largo demais para orientar decisão) e o do armazém às {{v.pico_arm}}. É curva de processamento (hora da confirmação), não de chegada do pedido (PQ06): a frota por ela copia o dimensionamento atual de pessoal.",
+  "pergunta_ref": "P11",
+  "criterio_ref": "CR4",
+  "valores": {
+    "ini": "ANA-008.janela_inicio_h",
+    "fim": "ANA-008.janela_fim_h",
+    "conc": "ANA-008.concentracao_matinal",
+    "razao": "ANA-008.razao_concentracao_ao_slide17",
+    "pico_pap": "ANA-008.pico_h_linhas_pap_rc_p90",
+    "pico_pap_pc": "ANA-008.pico_h_linhas_pap_rc_p90_pos_colmeia",
+    "pico_chk": "ANA-008.pico_h_pedidos_checkout_rc_p90",
+    "pico_arm": "ANA-008.pico_h_linhas_armazem_p90"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "cinco escopos (armazém em linhas e pedidos, Royal Canin em três tipos de onda)",
+      "analise": "ANA-008",
+      "resultado": "passa",
+      "nota": "a janela observada é a mesma em todos os escopos (tabela janela_observada)"
+    },
+    {
+      "recorte": "com e sem dias pós-pausa",
+      "analise": "ANA-008",
+      "resultado": "parcial",
+      "nota": "o pico do armazém passa de uma hora para a anterior sem os dias pós-pausa (chave pico_h_linhas_armazem_p90_sem_pos_pausa); os ICs do bootstrap do pico são largos, sobretudo no checkout"
+    },
+    {
+      "recorte": "período inteiro contra regime pós-colmeia (Royal Canin)",
+      "analise": "ANA-008",
+      "resultado": "passa",
+      "nota": "a hora de pico do pedido-a-pedido e do checkout não muda de regime (chaves pico_h_*_pos_colmeia); a demanda no pico cai pela metade no pedido-a-pedido"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Mantido e reforçado: a hora de pico pós-colmeia foi acrescentada e coincide com a do período inteiro. Só formatação das horas (casas decimais). Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Usar a janela observada como PR15 em CR4 e CR6; declarar nos entregáveis que o perfil horário é de processamento.",
+  "dono": "estatistico (ANA-008)",
+  "premissas": [
+    "janela = horas com demanda média de pelo menos PAR06 do volume diário médio",
+    "perfil do dia p90 pela banda PAR05, com PAR07 dias no mínimo"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "media",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:26",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:23",
+      "por": "red-team-analitico"
+    }
+  ]
+}

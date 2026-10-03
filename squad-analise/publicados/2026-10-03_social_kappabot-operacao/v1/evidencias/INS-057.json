@@ -1,0 +1,77 @@
+{
+  "id": "INS-057",
+  "estado": "validado",
+  "afirmacao": "Na retomada (média dos dias pós-pausa e das segundas, base pós-colmeia), a frota proposta processa a fila dentro da janela observada: {{v.he}} além da janela na ALT3, e o pior caso da grade de PR08 e das pontas de PR09 é {{v.he_pior}}. Só o dia de maior volume, usado como limite superior, exigiria horas estendidas: {{v.he_max}} no pior caso. No pico do dia p90 a Royal Canin pede {{v.sep_com}} com robô e {{v.sep_sem}} sem robô (sem arredondar: {{v.cont_com}} e {{v.cont_sem}}), contra {{v.ativos}} ativos hoje no armazém na mesma hora. O separador contínuo com robô sai maior que o sem robô porque a PR05 é aplicada também ao pedido do checkout, o que deixa o robô mais lento que o checkout manual: é efeito dessa premissa, a validar com a engenharia (E9). Nas horas depois da janela nenhum grupo de operadores atinge o mínimo de privacidade para ser reportado ({{v.ativos_ext}} é convenção, não ausência medida); isso não prova que ninguém trabalhe nesse horário. O horário estendido só absorve o pico sem reforço se os separadores já existirem na escala.",
+  "pergunta_ref": "P19",
+  "criterio_ref": "CR8",
+  "valores": {
+    "he": "ANA-009.horas_extra_janela_retomada_pos_colmeia",
+    "he_pior": "ANA-009.horas_extra_janela_retomada_pior_caso_pos_colmeia",
+    "he_max": "ANA-009.horas_extra_janela_retomada_dia_maximo_limite_superior_pior_caso_pos_colmeia",
+    "sep_com": "ANA-009.separadores_pico_p90_com_robo_pos_colmeia",
+    "sep_sem": "ANA-009.separadores_pico_p90_sem_robo_pos_colmeia",
+    "cont_com": "ANA-009.separadores_pico_p90_com_robo_continuo_pos_colmeia",
+    "cont_sem": "ANA-009.separadores_pico_p90_sem_robo_continuo_pos_colmeia",
+    "ativos": "ANA-009.ativos_hoje_pico_armazem_dias_p90_pos_colmeia",
+    "ativos_ext": "ANA-009.ativos_hoje_horas_estendidas"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "retomada média contra dia máximo",
+      "analise": "ANA-009",
+      "resultado": "parcial",
+      "nota": "a retomada média não exige horas estendidas; o dia máximo exige no pior caso da grade (tabela retomada_horas_alem_da_janela)"
+    },
+    {
+      "recorte": "variante do plano contra base pós-colmeia",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "a retomada média não exige horas estendidas em nenhuma das duas (chaves horas_extra_janela_retomada e _pos_colmeia)"
+    },
+    {
+      "recorte": "PR05 abaixo e acima do valor do plano (sensibilidade da grade)",
+      "analise": "ANA-009",
+      "resultado": "passa",
+      "nota": "a faixa de separadores com robô é estreita (faixa de separadores_pico_p90_com_robo_pos_colmeia)"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Correção da rodada anterior atendida no texto; nenhum problema novo. O efeito da PR05 no checkout está declarado como premissa a validar (E9)."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Perguntar à Social se há equipe depois da janela (horário estendido ou turno escalonado na escala), porque o dado agregado não mostra grupo reportável nesse horário; sem separadores depois da janela, o horário estendido é hora extra ou turno adicional (custo [●], E11). Validar a PR05 no checkout com a engenharia (E9).",
+  "dono": "Marcus (pergunta à Social); analista-de-impacto",
+  "premissas": [
+    "PR07 (linhas por hora por robô) e PR08 (capacidade no checkout, faixa de ANA-006) são premissas de confiança baixa: a frota é determinística dado o que elas valem, e não considera disponibilidade do robô (recarga, manutenção, reserva), que aumenta a frota necessária",
+    "a curva horária é de processamento (hora da confirmação), não de chegada do pedido: a frota por ela copia o dimensionamento atual de pessoal (PQ06)",
+    "regime da colmeia (revisoes/orquestrador_decisao_regime_colmeia.md, a confirmar por Marcus no G3): a base da oferta é o regime pós-colmeia sem a semana do incidente operacional da Royal Canin (21 a 25/09); a variante do plano é o período inteiro, com o regime pré-colmeia e o incidente incluídos (chaves sem sufixo e _estresse); _normal é a janela normal de ANA-002, com poucos dias",
+    "PR09 em duas leituras do deck: slide 14 (frota da ALT3 e da ALT2) e slide 12 (frota para a Royal Canin)",
+    "operadores ativos hoje = operadores distintos com linha iniciada na hora, armazém inteiro, grupos abaixo do mínimo de privacidade omitidos; a comparação com o escopo da Royal Canin é de ordem de grandeza",
+    "PR05 (linhas por hora por operador em zona) é premissa de confiança baixa; no checkout uma coleta por pedido (M09)"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:30:27",
+      "por": "analista-exploratorio"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:41",
+      "por": "red-team-analitico"
+    }
+  ]
+}

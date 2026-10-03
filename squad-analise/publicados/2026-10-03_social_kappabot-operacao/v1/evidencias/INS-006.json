@@ -1,0 +1,89 @@
+{
+  "id": "INS-006",
+  "estado": "aprovado",
+  "afirmacao": "Com PR05 como constante, o ganho que o deck sugere sobre o manual medido é {{v.r300}} no teto conservador, {{v.r900}} no teto base e {{v.r1800}} no limite superior do teto na regra base de pausas: nessa regra o dobro só aparece no limite superior. Com truncamento das pausas (S2) a razão sobe para {{v.s2_300}} no teto conservador e {{v.s2_900}} no teto base, perto do dobro ou acima dele em todos os tetos. O WMS não decide o dobro, nem a favor nem contra: PR05 tem método de medição desconhecido (com ou sem pausas) e vem de amostra pequena, cuja incerteza não está nos intervalos, então a razão só é comparável se o denominador for o mesmo. A oferta não deve afirmar o dobro com base no WMS.",
+  "pergunta_ref": "P7",
+  "criterio_ref": "CR3",
+  "valores": {
+    "r300": "ANA-004.razao_pr05_sobre_m14_t300",
+    "r900": "ANA-004.razao_pr05_sobre_m14_t900",
+    "r1800": "ANA-004.razao_pr05_sobre_m14_t1800",
+    "s2_300": "ANA-004.razao_pr05_sobre_m14_s2_t300",
+    "s2_900": "ANA-004.razao_pr05_sobre_m14_s2_t900"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "quatro tetos de intervalo, regra base de pausas",
+      "analise": "ANA-004",
+      "resultado": "passa",
+      "nota": "a razão cresce com o teto e só se aproxima do dobro no limite superior (chaves razao_pr05_sobre_m14_t300 a _t1800)"
+    },
+    {
+      "recorte": "S2 (truncar as pausas) por teto",
+      "analise": "ANA-004",
+      "resultado": "falha",
+      "nota": "com S2 a razão chega perto do dobro ou passa dele em todos os tetos (chaves razao_pr05_sobre_m14_s2_t*): a frase 'só no limite superior' vale apenas na regra base"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "sobrevive",
+    "nota": "Rodada dois. Correção atendida: 'só no limite superior' ficou restrito à regra base e a razão em S2 aparece com IC; método de PR05 declarado [●]. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": "IMP-CR1-ALT2",
+    "modelos_relacionados": [
+      "IMP-CR1-ALT2-ALTO",
+      "IMP-CR1-ALT2-AUT",
+      "IMP-INV-PR05-ALT6-SEM",
+      "IMP-INV-PR05-ALT6-SEM-ALTO",
+      "IMP-FOLGA-ALT2-PR05-TETO",
+      "IMP-FOLGA-ALT2-PR05-TETO-ALTO",
+      "IMP-PILOTO-ECONOMIA-SOCIAL-RC-PAP",
+      "IMP-PILOTO-ECONOMIA-SOBRE-CUSTO-ROBO",
+      "IMP-INV-PR05-ALT6-SEM-BASE"
+    ]
+  },
+  "acao": "Não prometer o dobro de produtividade e reescrever a promessa como hipótese do teste controlado. Dizer que o teste do dobro não decide a oferta da Royal Canin: mesmo com PR05 no teto de manuseio do deck, a folga de preço da ALT2 é negativa nos dois tetos de intervalo (IMP-FOLGA-ALT2-PR05-TETO, IMP-FOLGA-ALT2-PR05-TETO-ALTO), e a economia bruta de separação no pedido-a-pedido da Royal Canin não paga nem um robô (IMP-PILOTO-ECONOMIA-SOBRE-CUSTO-ROBO). O denominador só decide a oferta de armazém sem conferência (IMP-INV-PR05-ALT6-SEM-ALTO, IMP-FOLGA-ARM-PAP-POOL-ALTO). Planejador e engenharia desenham o teste com semanas, pedidos sorteados e ritmo manual em dois tetos de intervalo, não o teste curto do slide 19. Meta do piloto por teto de intervalo, com a frota do piloto: IMP-PILOTO-META-PR05-T300, IMP-PILOTO-META-PR05-T900 e IMP-PILOTO-META-PR05-T1800, comparadas ao teto de manuseio do deck (IMP-PILOTO-META-FOLGA-FISICA-*). Vale para o critério de sucesso a do teto mais exigente que o robô consegue atingir, hoje só a do teto mais folgado; a meta com a frota da ALT6 total é outra (IMP-INV-PR05-ALT6-SEM-BASE).",
+  "dono": "Marcus Lima, CEO (promessa); Vinicius Bastos, CTO (teste controlado)",
+  "premissas": [
+    "PR05 (produtividade do robô em zona) vem de amostra pequena do deck, de confiança baixa, com método de medição desconhecido; o ritmo manual vem do WMS por teto de intervalo",
+    "o teto de manuseio do deck é usado como sensibilidade do PR05, não como premissa do modelo principal",
+    "teto de intervalo conservador do G2 como valor provável e o limite superior do teto como sensibilidade favorável; o dado não identifica o teto",
+    "mão de obra residual pela leitura colaborativa (o operador permanece; ritmo manual medido ÷ PR05); no checkout não há ganho de separação",
+    "ALT2 sem franquia, porque a franquia do deck pressupõe o checkout; no armazém, o escopo de mão de obra é a separação do armazém inteiro, que é o teto do escopo compatível e torna os resultados limite superior",
+    "custo por operador (PR10) e tarifa por linha (PR04) do deck e da Social via Marcus",
+    "as premissas do modelo têm fonte mas nenhuma tem faixa com fonte; as faixas P10 a P90 vêm das incertezas das análises, com amostras independentes entre resultados"
+  ],
+  "red_team_decisao": {
+    "veredito": "ressalva",
+    "nota": "Ressalva. A ação sugere que o teste controlado pode levar a ALT2 ao mínimo da garantia. Mesmo que CR1 passe no teto folgado, a margem da Acta na ALT2 continua negativa com PR05 no teto de manuseio do deck (RTD-FOLGA-ALT2-PR05-TETO). Reescrever: o teste do dobro não decide a oferta da RC; decide a oferta de armazém sem conferência (RTD-INV-PR05-ALT6-SEM-ALTO, RTD-FOLGA-ARM-PAP-POOL-ALTO). Detalhes em revisoes/red-team-decisao.json."
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:59",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:06",
+      "por": "red-team-analitico"
+    },
+    {
+      "estado": "acionavel",
+      "em": "2026-10-03T19:13:28",
+      "por": "analista-de-impacto"
+    },
+    {
+      "estado": "aprovado",
+      "em": "2026-10-03T21:16:01",
+      "por": "Marcus"
+    }
+  ]
+}

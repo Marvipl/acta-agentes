@@ -1,0 +1,511 @@
+{
+  "id": "ANA-000",
+  "valores": {
+    "n_operadores_cr3": {
+      "valor": 22,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_cr3": {
+      "valor": 17,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_cr3_operador": {
+      "valor": 3.206516692298635,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_cr3_semana": {
+      "valor": 1.469599666197441,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_cr3": {
+      "valor": 3.206516692298635,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_cr3": {
+      "valor": 9.522285099425224,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_cr3_pre": {
+      "valor": 17,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_cr3_pre": {
+      "valor": 7,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_cr3_pre_operador": {
+      "valor": 3.8674797116059634,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_cr3_pre_semana": {
+      "valor": 0.9950610790364742,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_cr3_pre": {
+      "valor": 3.8674797116059634,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_cr3_pre": {
+      "valor": 11.485124814290213,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_colmeia": {
+      "valor": 13,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_colmeia": {
+      "valor": 11,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_cr7_operador": {
+      "valor": 2.180574253843456,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_cr7_semana": {
+      "valor": 1.8408290103688938,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_cr7": {
+      "valor": 2.180574253843456,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_cr7": {
+      "valor": 6.475578242095109,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_cr7_s2": {
+      "valor": 2.2116030795575465,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_cr7_s2": {
+      "valor": 6.567723505352148,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_cr7_t1800": {
+      "valor": 1.967995823470476,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_cr7_t1800": {
+      "valor": 5.844291205647863,
+      "unidade": "coletas/h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_janela_longa": {
+      "valor": 38,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_cr5": {
+      "valor": 0.05297359570269058,
+      "unidade": "razão (demanda por hora ÷ PR07)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_cr5": {
+      "valor": 0.15731391083484406,
+      "unidade": "razão (demanda por hora ÷ PR07)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_h06_rc": {
+      "valor": 21,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_h06_controle": {
+      "valor": 33,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_h06_pre": {
+      "valor": 7,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_h06_pos": {
+      "valor": 10,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_celulas_h06": {
+      "valor": 294,
+      "unidade": "células operador-semana-grupo",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h06_permutacao": {
+      "valor": 0.017140615774857038,
+      "unidade": "fração",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h06_operador": {
+      "valor": 0.010717151334521929,
+      "unidade": "fração",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h06_semana": {
+      "valor": 0.02254324058151499,
+      "unidade": "fração",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h06": {
+      "valor": 0.02254324058151499,
+      "unidade": "fração (proporção de linhas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_h06": {
+      "valor": 0.06950135087540786,
+      "unidade": "fração (proporção de linhas)",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_h13a": {
+      "valor": 23,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pico_h13a": {
+      "valor": 8,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_tipicos_h13a": {
+      "valor": 40,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h13a_operador": {
+      "valor": 0.21212412416998763,
+      "unidade": "h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h13a_dia": {
+      "valor": 0.29516332714042626,
+      "unidade": "h",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h13a": {
+      "valor": 0.29516332714042626,
+      "unidade": "h por operador-dia",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_h13a": {
+      "valor": 0.9099956100349138,
+      "unidade": "h por operador-dia",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_h13b": {
+      "valor": 80,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_h13b": {
+      "valor": 17,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_celulas_h13b": {
+      "valor": 622,
+      "unidade": "células dia-hora",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h13b_dia": {
+      "valor": 0.01264207514191779,
+      "unidade": "fração por unidade de log do volume",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h13b_semana": {
+      "valor": 0.016984225839991592,
+      "unidade": "fração por unidade de log do volume",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h13b": {
+      "valor": 0.016984225839991592,
+      "unidade": "fração por unidade de log do volume",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_h13b": {
+      "valor": 0.052362775226750265,
+      "unidade": "fração por unidade de log do volume",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_segundas_h01": {
+      "valor": 15,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_ter_sex_h01": {
+      "valor": 62,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_h01": {
+      "valor": 17,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h01_dia": {
+      "valor": 0.022699546370432575,
+      "unidade": "fração",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h01_semana": {
+      "valor": 0.018557128950050603,
+      "unidade": "fração",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_h01": {
+      "valor": 0.022699546370432575,
+      "unidade": "fração do volume do dia",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_h01": {
+      "valor": 0.06998324536791158,
+      "unidade": "fração do volume do dia",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_equiv_t_unidade": {
+      "valor": 3.625081591533787,
+      "unidade": "s por unidade",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_equiv_t_unidade": {
+      "valor": 9.013674244698493,
+      "unidade": "s por unidade",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_equiv_unid_onda": {
+      "valor": 0.3570903601151316,
+      "unidade": "unidades por onda",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_equiv_unid_onda": {
+      "valor": 0.8878962033618748,
+      "unidade": "unidades por onda",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_checkout": {
+      "valor": 13,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_checkout": {
+      "valor": 16,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_ondas_checkout": {
+      "valor": 324,
+      "unidade": "ondas",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_equiv_slide10": {
+      "valor": 0.23720195380785505,
+      "unidade": "fração do valor do slide 10",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_equiv_slide10": {
+      "valor": 0.09539688398773123,
+      "unidade": "fração do valor do slide 10",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_h04": {
+      "valor": 16,
+      "unidade": "operadores",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_pt_h04": {
+      "valor": 8,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_h04_operador": {
+      "valor": 7.648546103794856,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_h04_semana": {
+      "valor": 6.258866467799136,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_h04": {
+      "valor": 7.648546103794856,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_pt_h04": {
+      "valor": 24.74764367738059,
+      "unidade": "s",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_operadores_pt_h09": {
+      "valor": 8,
+      "unidade": "novatos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_celulas_pt_h09": {
+      "valor": 19,
+      "unidade": "células novato-semana",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_h09_operador": {
+      "valor": 0.48813249089803007,
+      "unidade": "razão por semana",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_h09_semana": {
+      "valor": 0.1709350449417073,
+      "unidade": "razão por semana",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_h09": {
+      "valor": 0.48813249089803007,
+      "unidade": "razão por semana",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_pt_h09": {
+      "valor": 1.5794019919815963,
+      "unidade": "razão por semana",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_dias_pt_h10": {
+      "valor": 39,
+      "unidade": "dias plenos",
+      "incerteza": null,
+      "contagem": true
+    },
+    "n_semanas_pt_h10": {
+      "valor": 8,
+      "unidade": "semanas ISO",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_h10_hac": {
+      "valor": 0.0002664616875343121,
+      "unidade": "operadores ativos por linha",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_h10_semana": {
+      "valor": 0.00039914708939989377,
+      "unidade": "operadores ativos por linha",
+      "incerteza": null,
+      "contagem": true
+    },
+    "ep_pt_h10": {
+      "valor": 0.00039914708939989377,
+      "unidade": "operadores ativos por linha operacional",
+      "incerteza": null,
+      "contagem": true
+    },
+    "mde_pt_h10": {
+      "valor": 0.0012914807349374757,
+      "unidade": "operadores ativos por linha operacional",
+      "incerteza": null,
+      "contagem": true
+    }
+  },
+  "tabelas": {
+    "poder_por_teste": "poder_por_teste.csv",
+    "parametros_do_poder": "parametros_do_poder.csv"
+  },
+  "figuras": [],
+  "notas": "Só poder: n_*, ep_* e mde_*; nenhuma estimativa de efeito foi calculada ou gravada. MDE = (z(1 − alfa_família) + z(0,80)) × EP, unilateral, alfa_família = alfa ÷ nº de testes da família (F1a, F1b e F2 lidos do plano; equivalência com alfa 0,05). EP: diferença = permutação dos rótulos dentro do bloco (H06 entre células operador-semana dentro da semana, H13a dentro do operador e entre dias, H13b e H01); contra limite e pistas = réplicas por cluster; vale o mais largo entre as unidades de dependência declaradas. cr3_pre (anterior a PAR11) usa o EP por operador, as 7 semanas ficam só como comparação. F2 com seis testes (PT-H04, PT-H09, PT-H10, PT-D1, PT-D3, PT-D4; alfa ÷ 6 no pior caso); PT-D2 é descritiva e fica sem MDE. As pistas PT-D1, PT-D3 e PT-D4 estão em ANA-017. Compare mde_* com o efeito relevante de cada teste nas análises (regra sem_poder). Menos de 10 unidades independentes: só descritivo (ver regra_clusters na tabela poder_por_teste). O número de novatos que saíram antes de completar K fica abaixo de PAR07 e não é reportado (privacidade; grupo de operadores). Dependência não coberta pelo hash do script no registro: analises/comum.py, sha256 33a173b93351db3d.",
+  "em": "2026-10-03T21:20:37",
+  "segundos": 4.29
+}

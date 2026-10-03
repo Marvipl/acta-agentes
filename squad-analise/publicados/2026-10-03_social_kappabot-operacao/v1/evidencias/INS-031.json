@@ -1,0 +1,86 @@
+{
+  "id": "INS-031",
+  "estado": "validado",
+  "afirmacao": "Calculada dia a dia (máximo horário do teto inteiro da carga de cada dia; p90 entre dias), a frota agrupada dos depositantes relevantes (carga média acima do corte de efeito relevante do G2) é {{v.robos_rel}} contra {{v.soma_rel}} individuais: o pooling poupa {{v.poupados_rel}}, a única leitura creditável. Na leitura literal, com todos os depositantes compatíveis, a frota agrupada é {{v.robos}} contra {{v.soma}} se cada um fosse atendido sozinho e o pooling poupa {{v.poupados}}, número inflado pelo teto inteiro de depositantes pequenos. O perfil pela banda (média de perfis de dias diferentes) dava frota agrupada de {{v.robos_banda}}, e de {{v.robos_rel_banda}} nos relevantes, menor que a de um deles sozinho, o que é impossível no mesmo dia: a banda alisa o pico e foi abandonada para a frota. A correlação entre os volumes diários dos dois depositantes relevantes é {{v.cor_jl}} na janela longa, positiva, e {{v.cor_per}} no período inteiro, sem separar de zero: não há evidência de que os picos dos dois se compensem, o que limita o ganho de pooling. A média de três pares com um terceiro depositante, perto de zero ({{v.cor3}}), não descreve o par que define a leitura.",
+  "pergunta_ref": "P14",
+  "criterio_ref": "CR6",
+  "valores": {
+    "robos": "ANA-010.robos_adicionais_alt6",
+    "soma": "ANA-010.soma_frotas_individuais_literal",
+    "poupados": "ANA-010.robos_poupados_pooling",
+    "poupados_rel": "ANA-010.robos_poupados_pooling_relevantes",
+    "robos_rel": "ANA-010.robos_adicionais_alt6_relevantes",
+    "soma_rel": "ANA-010.soma_frotas_individuais_relevantes",
+    "robos_banda": "ANA-010.robos_adicionais_alt6_banda",
+    "robos_rel_banda": "ANA-010.robos_adicionais_alt6_relevantes_banda",
+    "cor_jl": "ANA-010.correlacao_volume_dia_relevantes_janela_longa",
+    "cor_per": "ANA-010.correlacao_volume_dia_relevantes_periodo",
+    "cor3": "ANA-010.correlacao_media_volume_dia_maiores_depositantes",
+    "poupa": "ANA-010.pooling_poupa_ao_menos_um_robo",
+    "poupa_rel": "ANA-010.pooling_poupa_ao_menos_um_robo_relevantes",
+    "dias_incoerentes": "ANA-010.dias_com_frota_agrupada_menor_que_maior_individual"
+  },
+  "nivel": "descritivo",
+  "robustez": [
+    {
+      "recorte": "grade de PR07 e de PR08, dia a dia",
+      "analise": "ANA-010",
+      "resultado": "passa",
+      "nota": "o pooling poupa ao menos um robô em todas as células da grade dia a dia, na leitura literal e na relevante (tabela h_p14b_pooling_grade, coluna metodo)"
+    },
+    {
+      "recorte": "limiar de carga mínima do depositante",
+      "analise": "ANA-010",
+      "resultado": "parcial",
+      "nota": "o ganho cai conforme se retiram os depositantes pequenos (tabela h_p14b_pooling_por_limiar_de_carga): a leitura conservadora é a relevante"
+    },
+    {
+      "recorte": "coerência dia a dia",
+      "analise": "ANA-010",
+      "resultado": "passa",
+      "nota": "em nenhum dia a frota agrupada fica abaixo da maior frota individual (chave dias_com_frota_agrupada_menor_que_maior_individual igual a zero)"
+    },
+    {
+      "recorte": "regra da frota por tipo",
+      "analise": "ANA-010",
+      "resultado": "passa",
+      "nota": "contando o teto inteiro de cada tipo, o ganho continua positivo"
+    }
+  ],
+  "confirmacao": {
+    "analise": "",
+    "resultado": ""
+  },
+  "red_team_analitico": {
+    "veredito": "ressalva",
+    "nota": "Rodada dois. Correção atendida: frota agrupada e individual dia a dia, coerência verificada (nenhum dia com agrupada abaixo da maior individual), banda abandonada para a frota e correlação do par relevante citada. Reproduz o red team. Ressalva: o texto abre com o ganho literal, inflado pelo teto inteiro de depositantes pequenos; o memorando deve abrir com a leitura dos relevantes, a única creditável. Pooling entre áreas do armazém segue [●]. Detalhes: revisoes/red-team-analitico_parteA_r2.json."
+  },
+  "impacto": {
+    "modelo": ""
+  },
+  "acao": "Para ALT6, dimensionar robôs adicionais pela frota agrupada dia a dia e creditar só o ganho conservador de pooling (relevantes); não creditar o ganho literal nem o da banda. A mesma regra de frota vale para ANA-009.",
+  "dono": "estatistico (ANA-010); analista de impacto (ALT6); cientista de dados (ANA-009, mesma regra de frota)",
+  "premissas": [
+    "frota do dia = máximo, nas horas da janela observada, do teto inteiro da carga em robôs-equivalentes (linhas ÷ PR07 + pedidos ÷ PR08 provável); p90 entre os dias plenos do período inteiro, método higher (sem frações de robô)",
+    "a grade de PR07 (0,75 a 1,25 vezes) é sensibilidade do estatístico",
+    "depositantes abaixo de PAR07 registros juntos em outros",
+    "pooling entre depositantes supõe robôs fungíveis entre as áreas do armazém (layout e deslocamento [●])"
+  ],
+  "red_team_decisao": {
+    "veredito": "",
+    "nota": ""
+  },
+  "confianca": "baixa",
+  "historico": [
+    {
+      "estado": "quantificado",
+      "em": "2026-10-03T17:16:30",
+      "por": "estatistico"
+    },
+    {
+      "estado": "validado",
+      "em": "2026-10-03T18:54:27",
+      "por": "red-team-analitico"
+    }
+  ]
+}

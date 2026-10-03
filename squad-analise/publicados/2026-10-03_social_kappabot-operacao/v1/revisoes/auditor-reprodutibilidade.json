@@ -1,0 +1,121 @@
+{
+  "agente": "dados-auditor-reprodutibilidade",
+  "fase": "D4",
+  "tentativa": 2,
+  "status": "ok",
+  "em": "2026-10-03T20:33:37",
+  "auditoria": "saidas/auditoria.json",
+  "registro_auditado": "83355130f40d9233578bf4913a23ad3bbab7a3ac8eb913151760b8bee1d6df1a",
+  "resumo": "Reprodução a partir dos brutos ok, sem divergências. As 8 etapas, as 18 análises (ANA-000 a ANA-017, com ANA-017 antes de ANA-016) e os 193 modelos de impacto deram valores iguais ao refazer numa cópia limpa.",
+  "reproducao": {
+    "preparacao": "8 de 8 etapas com as mesmas tabelas",
+    "analises": "18 de 18 com valores iguais",
+    "impacto": "193 modelos iguais",
+    "dependencias": "nenhuma análise lê outra registrada depois dela na ordem do plano, e não há ciclo (ANA-017 lê ANA-012; ANA-016 lê ANA-000, ANA-012 e ANA-017)"
+  },
+  "divergencias": [],
+  "observacoes": [
+    {
+      "id": "AUD-O2",
+      "dono": "orquestrador (manutenção do motor)",
+      "situacao": "aberta, não bloqueia",
+      "descricao": "analises/comum.py continua fora do hash do registro e da linhagem. Só a nota de ANA-000 o cobre, e o sha256 confere.",
+      "proposta": "Incluir comum.py na linhagem, ou no hash de script do registro."
+    },
+    {
+      "id": "AUD-O3",
+      "dono": "qualidade-privacidade",
+      "situacao": "aberta, não bloqueia",
+      "descricao": "O insumo insumos/originais/performance-report.html, recebido de terceiros, segue com 5 identificadores distintos de operador no formato nome.sobrenome (10 ocorrências; valores não impressos). Nenhum arquivo produzido pelo squad os repete. O arquivo fica fora do git e publicar_nuvem.py ignora 'originais'.",
+      "pergunta_marcus": "Mascarar o campo op no insumo guardado na versão?",
+      "resposta_proposta": "Sim: manter o original só no computador de Marcus e deixar na versão uma cópia com op mascarado; registrar em revisoes/registro_acessos_privados.md."
+    },
+    {
+      "id": "AUD-O5",
+      "dono": "qualidade-privacidade",
+      "situacao": "aberta, não bloqueia",
+      "descricao": "revisoes/registro_acessos_privados.md ainda diz que a PQ09 depende de autorização, mas controle.json (G2) já registra que Marcus a autorizou.",
+      "proposta": "Atualizar o registro com a decisão do G2."
+    },
+    {
+      "id": "AUD-O1",
+      "situacao": "resolvida",
+      "descricao": "Linhagem regenerada pelo motor às 20:30:41, antes da auditoria. Confere com o estado atual e inclui ANA-017, então não foi preciso regenerar."
+    },
+    {
+      "id": "AUD-O4",
+      "situacao": "resolvida",
+      "descricao": "A revisão de sup-comunicacao existe (revisoes/sup-comunicacao_r1.json)."
+    }
+  ],
+  "checagens": {
+    "1_validar_D4": "LIBERADO, sem bloqueios nem avisos.",
+    "2_insights": "20 acionáveis (71 no total), sem referência quebrada em nenhum estado. Nenhuma chave movida de ANA-000 para ANA-017 ficou órfã. Robustez, confirmação e impacto apontam para análises e modelos que existem.",
+    "3_linhagem": "1 bruto com sha256 igual ao do arquivo, 8 etapas iguais ao disco e ao pipeline, 18 análises (com ANA-017) iguais ao registro e aos scripts, 71 insights iguais. Ambiente: Python 3.11.15 e os 9 pacotes com versão.",
+    "4_comum_py": "sha256 33a173b93351db3d... igual ao citado nas notas de ANA-000. O arquivo não muda desde 17:18.",
+    "5_privacidade": "Etapa 00 sem alteração: o sha256 é o mesmo do pipeline, grava só prep_conta_robo(codigo) com 1 linha e de raw_ lê só um booleano agregado. PQ09 autorizada por Marcus no G2. Nenhum login de operador nos 319 arquivos de texto da versão, exceto o insumo de terceiros (AUD-O3)."
+  },
+  "autoverificacao": {
+    "reproducao_a_partir_dos_brutos": "ok",
+    "numeros_dos_entregaveis_so_do_motor": "ok",
+    "linhagem_completa": "ok, com a lacuna AUD-O2",
+    "divergencias_com_dono": "ok"
+  },
+  "historico": [
+    {
+      "tentativa": 1,
+      "status": "falhou",
+      "em": "2026-10-03T19:55:11",
+      "registro_auditado": "5153a92f3c66915382f778e9f44ceb0a260ba171ef0ff9fde29097d3edf02443",
+      "resumo": "Reprodução a partir dos brutos falhou por dependência circular entre ANA-000 e ANA-012. Preparação reproduzida igual (8 etapas, mesmas tabelas e impressões). ANA-001, ANA-002, ANA-013 e ANA-014 reproduzidas sem divergência. As outras 13 análises e o impacto não puderam ser refeitos, então seus números ficam sem conferência.",
+      "reproducao": {
+        "preparacao": "8 de 8 etapas com as mesmas tabelas ao refazer",
+        "analises_reproduzidas": [
+          "ANA-001",
+          "ANA-002",
+          "ANA-013",
+          "ANA-014"
+        ],
+        "analises_nao_reproduzidas": [
+          "ANA-000",
+          "ANA-003",
+          "ANA-004",
+          "ANA-005",
+          "ANA-006",
+          "ANA-007",
+          "ANA-008",
+          "ANA-009",
+          "ANA-010",
+          "ANA-011",
+          "ANA-012",
+          "ANA-015",
+          "ANA-016"
+        ],
+        "impacto": "não reproduzido (modelos dependem de ANA-003, ANA-009 e ANA-010)"
+      },
+      "divergencias": [
+        {
+          "id": "AUD-D1",
+          "gravidade": "bloqueia",
+          "dono": "estatistico (ANA-000, responsável no plano), com analista-exploratorio (ANA-012)",
+          "scripts": [
+            "analises/ANA-000.py",
+            "analises/ANA-012.py",
+            "analises/comum.py"
+          ],
+          "descricao": "Ciclo: ANA-000 (bloco F2 das pistas PT-D1, PT-D3 e PT-D4, em torno das linhas 386 a 431) lê saidas/analises/ANA-012/limiares_descoberta.csv por comum.limiar, comum.pesos_limiar e comum.semanas_pares_marcadas. ANA-012 (seção 5, poder_pistas_a_priori, em torno da linha 743) lê mde_* e n_* de ANA-000 por comum.poder. Numa cópia limpa, sem saidas/, nenhuma ordem do plano resolve isso. No original funcionou porque os resultados foram registrados aos poucos.",
+          "proposta": "Quebrar o ciclo sem mudar o método: mover o bloco F2 das pistas de ANA-000 para uma análise registrada depois de ANA-012 (ou para o início de ANA-016, que já lê os dois), ou mover a seção 5 de ANA-012 para depois de ANA-000. Em seguida o planejador e o orquestrador atualizam o plano, registram de novo na ordem e pedem a tentativa 2.",
+          "situacao": "resolvida na tentativa 2: o poder de PT-D1/D3/D4 foi para ANA-017, e ANA-000 não lê mais ANA-012 (revisoes/planejador-analitico_resposta_r4.md)"
+        },
+        {
+          "id": "AUD-D2",
+          "gravidade": "bloqueia (consequência de AUD-D1)",
+          "dono": "estatistico e analista-exploratorio, via AUD-D1; orquestrador para registrar de novo e rodar o impacto",
+          "descricao": "Em cascata, falharam ANA-003 a ANA-012, ANA-015 e ANA-016, e os modelos de impacto ficaram sem entrada. As linhas 'valores diferentes ao refazer' de saidas/auditoria.json vêm dessas falhas: não indicam diferença numérica conhecida, mas os números não foram conferidos.",
+          "proposta": "Nenhuma ação própria além de AUD-D1. Na tentativa 2, conferir os 13 resultados e o impacto.",
+          "situacao": "resolvida na tentativa 2: o poder de PT-D1/D3/D4 foi para ANA-017, e ANA-000 não lê mais ANA-012 (revisoes/planejador-analitico_resposta_r4.md)"
+        }
+      ]
+    }
+  ]
+}
