@@ -12,7 +12,7 @@
 
 Regras para todos os squads, em especial na nuvem:
 - Cada squad tem o seu `CLAUDE.md`, motor e base de conhecimento. Rode os comandos do motor de dentro da pasta do squad (`cd squad-x && python -m motor...`).
-- Na nuvem, arquivos de entrada vêm do Google Drive pelo conector: baixe para `<squad>/entrada/<trabalho>/` (fora do git) e importe como no uso local.
+- Na nuvem, arquivos de entrada vêm do Google Drive: baixe para `<squad>/entrada/<trabalho>/` (fora do git) e importe como no uso local. Use primeiro `python ferramentas/drive.py baixar <link, id ou "Acta > pasta"> <squad>/entrada/<trabalho>/`, que não tem limite de tamanho; se ele sair com código 3 (sem credencial), use o conector do Google Drive, que só baixa até 10 MB por arquivo. Arquivo acima de 10 MB sem credencial: não trabalhe com o texto extraído parcial; avise Marcus que falta configurar `ACTA_DRIVE_CREDENCIAL` (NUVEM.md, Arquivos grandes) ou peça o arquivo anexado no chat.
 - Ao concluir, os comandos principais dos squads publicam sozinhos; para publicar de novo ou manualmente, use `/publicar-drive <squad> <pasta da versão>`: ele envia ao Drive o pacote completo (documentos finais e metadados: JSON, CSV, planilha, nós, revisões), igual à publicação local, e faz commit de `<squad>/publicados/`. A publicação do próprio squad (`python -m motor.publicar`) só funciona no computador, com a pasta do Drive sincronizada. Nunca commite `projetos/`, `entrada/`, `dados/` nem chaves.
 - Dados com informação pessoal ou de cliente (squad de análise) só na nuvem se Marcus autorizar; a opção padrão é rodar no computador dele com Remote Control.
 <!-- squads:fim -->

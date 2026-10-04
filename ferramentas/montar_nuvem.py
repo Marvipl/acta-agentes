@@ -87,8 +87,8 @@ def montar(simular=False):
                     f"\n\n**Publicação automática: passo final obrigatório, sem esperar novo pedido.** Assim que a versão for congelada "
                     f"(ou, se o fluxo não congelar, assim que Marcus aprovar o último portão), publique:\n"
                     f"- na nuvem (variável de ambiente `CLAUDE_CODE_REMOTE=true`): siga `.claude/commands/publicar-drive.md` com `{s.name}` e a pasta da versão, "
-                    f"enviando o pacote completo (documentos finais e metadados) para `{(destinos.get(s.name) or {}).get('drive', 'Acta')}`. Se o conector do Google Drive "
-                    f"não estiver habilitado na sessão, peça a Marcus para habilitar e publique logo em seguida;\n"
+                    f"enviando o pacote completo (documentos finais e metadados) para `{(destinos.get(s.name) or {}).get('drive', 'Acta')}`. Se não houver `ACTA_DRIVE_CREDENCIAL` nem conector do Google Drive "
+                    f"habilitado na sessão, peça a Marcus para habilitar e publique logo em seguida;\n"
                     f"- no computador: `cd {s.name} && python -m motor.publicar <pasta da versão>`.\n"
                     f"Termine a resposta final com o link da pasta no Drive e o total de arquivos publicados.\n")
             gerar[f".claude/commands/{nome}.md"] = fm + "---\n" + cab + corpo
@@ -101,10 +101,10 @@ def montar(simular=False):
         '---\ndescription: "Publica no Google Drive o pacote completo de uma versão: documentos finais e metadados (JSON, CSV, planilha, nós, revisões), igual à publicação local"\n'
         "argument-hint: <squad> <pasta da versão, relativa ao squad>\n---\n"
         "1. Rode `python ferramentas/publicar_nuvem.py $ARGUMENTS`. Ele monta `<squad>/publicados/<projeto>/v<n>/` com as mesmas subpastas da publicação local, o `manifesto_publicacao.json` e um zip com tudo.\n"
-        "2. Leia o manifesto: `pasta_drive` é o destino (por exemplo `Acta > Orçamentos > <projeto> > v1`). Com o conector do Google Drive, encontre cada nível dessa pasta e crie só o que não existir; nunca crie pasta duplicada.\n"
-        "3. Envie **todos** os arquivos listados em `arquivos`, recriando as subpastas (`saidas/`, `nos/`, `revisoes/`, `insumos/` e as demais do manifesto), mais o próprio `manifesto_publicacao.json`. Use o tipo do manifesto e mantenha o formato original: não converta JSON, CSV, MD ou XLSX para Google Docs ou Planilhas.\n"
-        "4. Se a pasta da versão já tiver arquivos de uma publicação anterior, substitua os que têm o mesmo nome e caminho.\n"
-        "5. Confira: liste cada pasta no Drive e compare nomes e quantidades com o manifesto. Reenvie o que faltar. Se um arquivo não subir depois de duas tentativas, informe nome, tamanho e erro, e confirme que ele está dentro do zip enviado.\n"
+        "2. Envie com `python ferramentas/drive.py publicar <squad>/publicados/<projeto>/v<n>/manifesto_publicacao.json`. Ele cria só as pastas que faltam em `pasta_drive`, envia todos os arquivos do manifesto e o próprio manifesto sem limite de tamanho e sem converter formatos, substitui os de mesmo nome e confere no Drive nomes e tamanhos. Se terminar com pendências, rode de novo uma vez e informe o que continuar faltando.\n"
+        "3. Só se o passo 2 sair com código 3 (sem `ACTA_DRIVE_CREDENCIAL`), use o conector do Google Drive: encontre cada nível de `pasta_drive` e crie só o que não existir (nunca pasta duplicada); envie **todos** os arquivos de `arquivos`, recriando as subpastas, mais o `manifesto_publicacao.json`, com o tipo do manifesto e `disableConversionToGoogleType`; substitua os de mesmo nome e caminho.\n"
+        "4. Pelo conector, arquivos acima de 10 MB costumam falhar. Não insista: liste nome e tamanho como pendência, diga que eles estão no zip e no commit de `publicados/`, e lembre Marcus de configurar `ACTA_DRIVE_CREDENCIAL` (NUVEM.md, Arquivos grandes).\n"
+        "5. Pelo conector, confira: liste cada pasta no Drive e compare nomes e quantidades com o manifesto. Reenvie o que faltar, no máximo duas tentativas por arquivo.\n"
         "6. Faça commit e push de `<squad>/publicados/` na branch da sessão.\n"
         "7. Responda com o link da pasta da versão no Drive, o total enviado por subpasta e qualquer pendência.\n")
     for rel in gerar:
@@ -127,7 +127,7 @@ def montar(simular=False):
     linhas += [f"| {NOMES.get(n, n)} | `{n}/` | `{p}-` | {', '.join(c)} | {(destinos.get(n) or {}).get('drive', '[●]')} |" for n, p, _, c in resumo]
     linhas += ["", "Regras para todos os squads, em especial na nuvem:",
                "- Cada squad tem o seu `CLAUDE.md`, motor e base de conhecimento. Rode os comandos do motor de dentro da pasta do squad (`cd squad-x && python -m motor...`).",
-               "- Na nuvem, arquivos de entrada vêm do Google Drive pelo conector: baixe para `<squad>/entrada/<trabalho>/` (fora do git) e importe como no uso local.",
+               "- Na nuvem, arquivos de entrada vêm do Google Drive: baixe para `<squad>/entrada/<trabalho>/` (fora do git) e importe como no uso local. Use primeiro `python ferramentas/drive.py baixar <link, id ou \"Acta > pasta\"> <squad>/entrada/<trabalho>/`, que não tem limite de tamanho; se ele sair com código 3 (sem credencial), use o conector do Google Drive, que só baixa até 10 MB por arquivo. Arquivo acima de 10 MB sem credencial: não trabalhe com o texto extraído parcial; avise Marcus que falta configurar `ACTA_DRIVE_CREDENCIAL` (NUVEM.md, Arquivos grandes) ou peça o arquivo anexado no chat.",
                "- Ao concluir, os comandos principais dos squads publicam sozinhos; para publicar de novo ou manualmente, use `/publicar-drive <squad> <pasta da versão>`: ele envia ao Drive o pacote completo (documentos finais e metadados: JSON, CSV, planilha, nós, revisões), igual à publicação local, e faz commit de `<squad>/publicados/`. A publicação do próprio squad (`python -m motor.publicar`) só funciona no computador, com a pasta do Drive sincronizada. Nunca commite `projetos/`, `entrada/`, `dados/` nem chaves.",
                "- Dados com informação pessoal ou de cliente (squad de análise) só na nuvem se Marcus autorizar; a opção padrão é rodar no computador dele com Remote Control.",
                "<!-- squads:fim -->"]
@@ -138,7 +138,8 @@ def montar(simular=False):
     gbloco = ("# squads:inicio (gerado; vale só dentro das pastas squad-*)\n"
               "squad-*/**/dados/\nsquad-*/**/entrada/*\n!squad-*/**/entrada/LEIA.md\nsquad-*/**/projetos/*\n!squad-*/**/projetos/.gitkeep\n"
               "squad-*/**/chave_local.key\nsquad-*/**/*.duckdb\nsquad-*/**/*.duckdb.wal\nsquad-*/**/__pycache__/\n.playwright-mcp/\n# squads:fim\n")
-    gtxt = re.sub(r"# squads:inicio.*?# squads:fim\n?", "", gtxt, flags=re.S).rstrip() + ("\n\n" if gtxt.strip() else "") + gbloco
+    gtxt = re.sub(r"# squads:inicio.*?# squads:fim\n?", "", gtxt, flags=re.S).rstrip()
+    gtxt = gtxt + ("\n\n" if gtxt else "") + gbloco
     if simular:
         print(f"[simulação] {len(gerar)} arquivos em .claude/, settings.json mesclado, bloco no CLAUDE.md e no .gitignore")
     else:

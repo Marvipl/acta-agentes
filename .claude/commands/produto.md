@@ -7,6 +7,6 @@ argument-hint: <completo|oportunidade> "<segmento>" "<produto>" [pastas ou arqui
 Siga a skill `produto` em `squad-produto/.claude/skills/produto/SKILL.md` com os argumentos: $ARGUMENTS
 
 **Publicação automática: passo final obrigatório, sem esperar novo pedido.** Assim que a versão for congelada (ou, se o fluxo não congelar, assim que Marcus aprovar o último portão), publique:
-- na nuvem (variável de ambiente `CLAUDE_CODE_REMOTE=true`): siga `.claude/commands/publicar-drive.md` com `squad-produto` e a pasta da versão, enviando o pacote completo (documentos finais e metadados) para `Acta > Produtos`. Se o conector do Google Drive não estiver habilitado na sessão, peça a Marcus para habilitar e publique logo em seguida;
+- na nuvem (variável de ambiente `CLAUDE_CODE_REMOTE=true`): siga `.claude/commands/publicar-drive.md` com `squad-produto` e a pasta da versão, enviando o pacote completo (documentos finais e metadados) para `Acta > Produtos`. Se não houver `ACTA_DRIVE_CREDENCIAL` nem conector do Google Drive habilitado na sessão, peça a Marcus para habilitar e publique logo em seguida;
 - no computador: `cd squad-produto && python -m motor.publicar <pasta da versão>`.
 Termine a resposta final com o link da pasta no Drive e o total de arquivos publicados.

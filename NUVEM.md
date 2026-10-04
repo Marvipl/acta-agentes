@@ -23,15 +23,29 @@ Na nuvem a sessão começa na raiz do repositório e só o `.claude/` da raiz re
 
 ## A cada uso
 1. Abra uma sessão em claude.ai/code com o repositório `acta-agentes` e o ambiente "Squads Acta".
-2. Habilite o conector do Google Drive na sessão para buscar as entradas e, se quiser, devolver os entregáveis ao Drive.
+2. Com `ACTA_DRIVE_CREDENCIAL` configurada (seção Arquivos grandes), os squads baixam e publicam no Drive sem limite de tamanho. Sem ela, habilite o conector do Google Drive na sessão, que só baixa arquivos de até 10 MB.
 3. Rode o comando do squad, por exemplo:
    - `/orcar completo "Cliente" "Projeto" <pasta do Drive com os documentos>`
    - `/estrategia plano "2027" "Plano estratégico 2027" <pasta do Drive>`
    - `/produto oportunidade "Segmento" "Produto" <pasta do Drive>`
    - `/analisar padrao "<objetivo>" <pasta do Drive com os dados>`
-   O squad baixa os arquivos pelo conector para `<squad>/entrada/<trabalho>/` e segue como no uso local. Os portões você aprova pelo chat, no navegador ou no celular.
+   O squad baixa os arquivos (com `ferramentas/drive.py` ou, sem credencial, pelo conector) para `<squad>/entrada/<trabalho>/` e segue como no uso local. Os portões você aprova pelo chat, no navegador ou no celular.
 4. No fim, a publicação é automática: os comandos principais (`/orcar`, `/estrategia`, `/revisao-trimestral`, `/produto`, `/revisao-produto`, `/analisar`, `/atualizar-analise`) publicam sozinhos assim que a versão é congelada ou o último portão é aprovado, sem você pedir. Para publicar de novo ou manualmente, use `/publicar-drive <squad> <pasta da versão>` (por exemplo `/publicar-drive squad-orcamento projetos/<id>/v1`). Ele envia ao Drive o pacote completo, igual à publicação local: documentos finais, planilha, JSON, CSV, nós, revisões, o índice dos insumos, um manifesto com todos os arquivos e um zip com tudo. A pasta de destino de cada squad está em `ferramentas/squads.json`. Depois ele faz commit de `<squad>/publicados/` na branch da sessão. A máquina da nuvem é descartável: o que não for publicado assim se perde quando a sessão expira.
    Para republicar um pacote que já está commitado numa branch: `/publicar-drive squad-orcamento publicados/<id>/v1`.
+
+## Arquivos grandes (acima de 10 MB)
+O conector do Google Drive só baixa arquivos de até 10 MB, e no envio o conteúdo vai dentro da chamada, o que também falha com arquivos grandes. Por isso os squads usam primeiro `ferramentas/drive.py`, que fala direto com a API do Drive, sem limite de tamanho, e só caem no conector quando não há credencial. Para ligar, uma vez:
+
+1. Em console.cloud.google.com, com a sua conta do Google, crie um projeto (por exemplo "Acta Agentes") e ative a **Google Drive API** (APIs e serviços > Biblioteca).
+2. Em **Tela de consentimento OAuth** (Google Auth Platform), escolha público externo, preencha nome e e-mail e adicione a sua conta como usuário de teste. Depois clique em **Publicar app** (status "Em produção"). Sem publicar, o Google expira a autorização em 7 dias. Como o app é só seu, não precisa de verificação; na autorização vai aparecer o aviso "app não verificado", e basta seguir em Avançado.
+3. Em **Credenciais** > Criar credenciais > ID do cliente OAuth > tipo **App para computador**. Baixe o JSON (`client_secret_....json`).
+4. No seu computador, na raiz do `acta-agentes`: `python ferramentas\drive.py autorizar caminho\do\client_secret.json`. O navegador abre; autorize com a conta dona das pastas Acta. O script imprime uma linha JSON.
+5. No ambiente de nuvem do projeto (configurações do ambiente, variáveis de ambiente), crie `ACTA_DRIVE_CREDENCIAL` com essa linha inteira como valor. Não cole a linha no chat. Novas sessões já pegam a variável.
+6. Teste numa sessão nova: `python ferramentas/drive.py testar` deve mostrar o seu nome e e-mail. Se der erro de rede, o acesso de rede do ambiente está bloqueando o Google: troque para **Full** ou, em **Custom**, libere `www.googleapis.com` e `oauth2.googleapis.com`.
+
+Cuidados: a credencial dá acesso de leitura e escrita a todo o seu Drive, e quem usa o ambiente consegue lê-la; não compartilhe esse ambiente. Para revogar, remova o app em myaccount.google.com/permissions. Planilhas e documentos nativos do Google acima de 10 MB continuam limitados pela própria API de exportação; nesse caso baixe como .xlsx/.docx no Drive e use o arquivo baixado.
+
+Comandos úteis: `python ferramentas/drive.py listar "Acta > Fornecedores"`, `python ferramentas/drive.py baixar "<link ou Acta > pasta>" squad-orcamento/entrada/<trabalho>/`, `python ferramentas/drive.py enviar <arquivo> "Acta > Orçamentos > <projeto>"`.
 
 ## Dados sensíveis
 Tudo o que entra numa sessão de nuvem passa pela máquina da nuvem e pelo modelo. Para dados com informação pessoal ou de cliente (squad de análise), a opção padrão é rodar no seu computador e acompanhar de qualquer lugar com Remote Control (`/remote-control` na sessão local): os arquivos não saem do seu PC, mas ele precisa ficar ligado.
