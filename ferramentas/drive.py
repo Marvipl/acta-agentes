@@ -372,7 +372,7 @@ def autorizar(client_secret):
             if q.get("state", [""])[0] == estado:
                 recebido.update({k: v[0] for k, v in q.items()})
             self.send_response(200); self.send_header("Content-Type", "text/plain; charset=utf-8"); self.end_headers()
-            self.wfile.write("Autorização recebida. Pode fechar esta aba.".encode())
+            self.wfile.write("Autorização recebida. Volte ao terminal: a linha para ACTA_DRIVE_CREDENCIAL está lá (e no arquivo credencial_drive.txt).".encode())
 
         def log_message(self, *a):
             pass
@@ -393,8 +393,12 @@ def autorizar(client_secret):
     r = json.load(urllib.request.urlopen(urllib.request.Request(TOKEN_URL, data=corpo), context=CTX))
     if not r.get("refresh_token"):
         sys.exit("O Google não devolveu refresh token. Remova o acesso do app em myaccount.google.com/permissions e rode de novo.")
-    print("\nCopie a linha abaixo inteira como valor da variável ACTA_DRIVE_CREDENCIAL no ambiente de nuvem (não cole no chat):\n")
-    print(json.dumps({"client_id": dados["client_id"], "client_secret": dados["client_secret"], "refresh_token": r["refresh_token"]}))
+    linha = json.dumps({"client_id": dados["client_id"], "client_secret": dados["client_secret"], "refresh_token": r["refresh_token"]})
+    arquivo = Path(client_secret).with_name("credencial_drive.txt")
+    arquivo.write_text(linha + "\n", encoding="utf-8")
+    print("\nCopie a linha abaixo inteira como valor da variável ACTA_DRIVE_CREDENCIAL no ambiente de nuvem (não cole no chat).")
+    print(f"Ela também foi salva em {arquivo}; apague o arquivo depois de copiar.\n")
+    print(linha)
 
 
 if __name__ == "__main__":
