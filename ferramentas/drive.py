@@ -73,6 +73,10 @@ def _credencial():
         cred = json.loads(bruto)
     except json.JSONDecodeError:
         sys.exit("ACTA_DRIVE_CREDENCIAL não é um JSON válido.")
+    if isinstance(cred, dict) and ("installed" in cred or "web" in cred):
+        sys.exit("ACTA_DRIVE_CREDENCIAL contém o client_secret.json baixado do Google Cloud, não a autorização. "
+                 "No computador, rode `python ferramentas/drive.py autorizar <client_secret.json>` e use a linha JSON "
+                 "que ele imprime (com refresh_token) como valor da variável.")
     falta = [k for k in ("client_id", "client_secret", "refresh_token") if not cred.get(k)]
     if falta:
         sys.exit("ACTA_DRIVE_CREDENCIAL sem: " + ", ".join(falta))
