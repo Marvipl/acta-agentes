@@ -10,3 +10,4 @@ squad-*/**/*.duckdb.wal
 squad-*/**/__pycache__/
 .playwright-mcp/
 # squads:fim
+__pycache__/
