@@ -1,0 +1,55 @@
+name: Consolidar no main
+
+# Cada sessão do Claude na nuvem trabalha numa branch claude/*. Este workflow
+# leva o que cada rodada produziu para o main, para que a próxima rodada já
+# comece com os agentes enriquecidos. Regras em .github/scripts/consolidar.sh.
+
+on:
+  push:
+    branches: ['claude/**']
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch claude/* a consolidar (vazio = todas)'
+        required: false
+        default: ''
+
+# Uma consolidação por vez, para os merges no main não se atropelarem.
+concurrency:
+  group: consolidar-main
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  consolidar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # O script troca de branch durante o merge; roda a partir de uma cópia.
+      - name: Preparar
+        run: cp .github/scripts/consolidar.sh "$RUNNER_TEMP/consolidar.sh"
+
+      - name: Consolidar
+        env:
+          GH_TOKEN: ${{ github.token }}
+          # true = mudanças de código (motor, scripts) viram PR em vez de entrar direto.
+          REVISAR_CODIGO: 'false'
+          ENTRADA: ${{ inputs.branch }}
+        run: |
+          if [ "${{ github.event_name }}" = push ]; then
+            bash "$RUNNER_TEMP/consolidar.sh" "${GITHUB_REF_NAME}"
+          elif [ -n "$ENTRADA" ]; then
+            bash "$RUNNER_TEMP/consolidar.sh" "$ENTRADA"
+          else
+            falhou=0
+            for b in $(git ls-remote --heads origin 'refs/heads/claude/*' | sed 's|.*refs/heads/||'); do
+              bash "$RUNNER_TEMP/consolidar.sh" "$b" || falhou=1
+            done
+            exit $falhou
+          fi
